@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TacticVision EPL 26/27 - Interactive Sandbox</title>
+    <!-- Tailwind CSS & FontAwesome Icons -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Noto+Sans+KR:wght@400;500;700&family=Urbanist:wght@600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Noto Sans KR', 'sans-serif'],
+                        urban: ['Urbanist', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace']
+                    },
+                    colors: {
+                        eplDark: '#0a0314',
+                        eplPurple: '#3d195a',
+                        eplNeon: '#00ff87',
+                        eplBlue: '#00f0ff'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar and pitch background */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0d0415;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #3d195a;
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00ff87;
+        }
+
+        /* Tactical field styling mimicking modern tactical boards */
+        .football-field {
+            background-color: #0b1c16;
+            background-image:
+                radial-gradient(circle at 50% 50%, transparent 100px, rgba(0, 255, 135, 0.02) 100px),
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 10% 10%, 10% 10%;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-[#06010c] text-slate-100 font-sans min-h-screen overflow-x-hidden flex flex-col justify-between">
+
+    <!-- Navbar -->
+    <header
+        class="border-b border-purple-900/30 bg-[#0a0314]/90 backdrop-blur px-6 py-4 flex justify-between items-center sticky top-0 z-50">
+        <div class="flex items-center gap-3">
+            <div
+                class="w-10 h-10 rounded-xl bg-gradient-to-tr from-eplPurple via-[#672f9c] to-[#a05cf2] flex items-center justify-center shadow-lg shadow-eplPurple/30">
+                <i class="fa-solid fa-compass-drafting text-eplNeon text-lg"></i>
+            </div>
+            <div>
+                <h1 class="font-urban font-bold text-xl tracking-tight leading-none">TacticVision <span
+                        class="text-eplNeon">EPL 26/27</span></h1>
+                <p class="text-[10px] text-slate-400 mt-1 uppercase tracking-widest font-semibold">Pre-season Tactical
+                    Lab</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-4">
+            <span
+                class="text-xs px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-eplNeon font-medium flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-eplNeon animate-pulse"></span> Sandbox v1.0
+            </span>
+        </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <main class="flex-grow p-6 grid grid-cols-1 xl:grid-cols-12 gap-6 max-w-7xl w-full mx-auto">
+
+        <!-- Left Panel: Tactical Control (5 cols) -->
+        <section
+            class="xl:col-span-5 flex flex-col gap-5 bg-[#0a0314] p-5 rounded-2xl border border-white/5 shadow-2xl h-auto xl:h-[calc(100vh-140px)] overflow-y-auto">
+            <div>
+                <h2 class="text-lg font-bold text-white flex items-center gap-2"><i
+                        class="fa-solid fa-sliders text-eplNeon"></i> 1. 클럽 & 감독 전술 설정</h2>
+                <p class="text-xs text-slate-400 mt-1">26/27 신임 감독 전술 프리셋을 기점으로 세부 지시를 튜닝하세요.</p>
+            </div>
+
+            <!-- Team Selector buttons -->
+            <div class="grid grid-cols-3 gap-2">
+                <button onclick="changeTeam('chelsea')" id="btn-chelsea"
+                    class="team-btn px-3 py-3 rounded-xl border font-bold text-sm transition-all duration-300 flex flex-col items-center gap-1 bg-eplPurple/20 border-eplNeon/40 text-white shadow-lg shadow-eplNeon/10">
+                    <span class="text-xs opacity-60">Alonso</span>
+                    <span>Chelsea</span>
+                </button>
+                <button onclick="changeTeam('mancity')" id="btn-mancity"
+                    class="team-btn px-3 py-3 rounded-xl border border-white/5 bg-white/5 font-bold text-sm transition-all duration-300 text-slate-400 hover:bg-white/10 flex flex-col items-center gap-1">
+                    <span class="text-xs opacity-60">Maresca</span>
+                    <span>Man City</span>
+                </button>
+                <button onclick="changeTeam('tottenham')" id="btn-tottenham"
+                    class="team-btn px-3 py-3 rounded-xl border border-white/5 bg-white/5 font-bold text-sm transition-all duration-300 text-slate-400 hover:bg-white/10 flex flex-col items-center gap-1">
+                    <span class="text-xs opacity-60">De Zerbi</span>
+                    <span>Tottenham</span>
+                </button>
+            </div>
+
+            <!-- Squad Info Cards -->
+            <div class="p-4 rounded-xl bg-slate-900/40 border border-white/5">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-xs text-slate-400 font-semibold uppercase tracking-wider">클럽 전술 정보</span>
+                    <span id="txt-formation"
+                        class="text-xs px-2 py-0.5 rounded-md bg-eplPurple text-eplNeon font-bold font-mono">3-4-2-1</span>
+                </div>
+                <div class="text-sm font-bold text-white" id="txt-manager">사비 알론소 (Xabi Alonso) 감독</div>
+                <p class="text-xs text-slate-400 mt-1" id="txt-style">3-4-2-1 하이브리드 윙백 & 좁은 채널 빌드업</p>
+                <div class="mt-3 pt-3 border-t border-white/5 text-xs">
+                    <span class="text-eplNeon font-semibold"><i class="fa-solid fa-bolt"></i> 핵심 전력보강:</span>
+                    <span id="txt-signings" class="text-slate-300 ml-1">피에로 인카피에 (CB/LB)</span>
+                </div>
+            </div>
+
+            <!-- Tactical Philosophy Presets -->
+            <div class="space-y-2">
+                <span class="text-xs text-slate-400 font-semibold uppercase tracking-wider block">전술 마스터 템플릿</span>
+                <div class="grid grid-cols-3 gap-2">
+                    <button onclick="applyPreset('tikitaka')"
+                        class="preset-btn px-3 py-2 rounded-lg bg-slate-950 border border-white/10 hover:border-eplNeon/30 text-xs font-semibold text-slate-300 transition-all flex items-center justify-center gap-1.5">
+                        <i class="fa-solid fa-arrows-spin text-eplBlue"></i> 티키타카
+                    </button>
+                    <button onclick="applyPreset('gegen')"
+                        class="preset-btn px-3 py-2 rounded-lg bg-slate-950 border border-white/10 hover:border-eplNeon/30 text-xs font-semibold text-slate-300 transition-all flex items-center justify-center gap-1.5">
+                        <i class="fa-solid fa-forward text-rose-400"></i> 게겐프레싱
+                    </button>
+                    <button onclick="applyPreset('lowblock')"
+                        class="preset-btn px-3 py-2 rounded-lg bg-slate-950 border border-white/10 hover:border-eplNeon/30 text-xs font-semibold text-slate-300 transition-all flex items-center justify-center gap-1.5">
+                        <i class="fa-solid fa-shield-halved text-amber-400"></i> 텐백 수비
+                    </button>
+                </div>
+            </div>
+
+            <!-- Detailed Tactical Adjustments -->
+            <div class="space-y-4 pt-2">
+                <span class="text-xs text-slate-400 font-semibold uppercase tracking-wider block">세부 전술 튜닝 (실시간 그래픽
+                    반영)</span>
+
+                <!-- Slider: Defensive Line -->
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-xs">
+                        <span class="text-slate-200 font-medium">수비 라인 높이 (Defensive Line)</span>
+                        <span id="val-defline" class="font-mono text-eplNeon font-bold">50</span>
+                    </div>
+                    <input type="range" id="slider-defline" min="10" max="90" value="50" oninput="updateSliders()"
+                        class="w-full h-1.5 bg-slate-950 rounded-lg appearance-none cursor-pointer accent-eplNeon">
+                    <div class="flex justify-between text-[10px] text-slate-500">
+                        <span>Low Block (낮음)</span>
+                        <span>High Pressing (높음)</span>
+                    </div>
+                </div>
+
+                <!-- Slider: Attack Width -->
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-xs">
+                        <span class="text-slate-200 font-medium">공격 대형 폭 (Attack Width)</span>
+                        <span id="val-width" class="font-mono text-eplBlue font-bold">50</span>
+                    </div>
+                    <input type="range" id="slider-width" min="15" max="85" value="50" oninput="updateSliders()"
+                        class="w-full h-1.5 bg-slate-950 rounded-lg appearance-none cursor-pointer accent-eplBlue">
+                    <div class="flex justify-between text-[10px] text-slate-500">
+                        <span>Narrow (좁게)</span>
+                        <span>Wide (넓게)</span>
+                    </div>
+                </div>
+
+                <!-- Slider: Pressing Intensity -->
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-xs">
+                        <span class="text-slate-200 font-medium">전방 압박 강도 (Pressing Intensity)</span>
+                        <span id="val-pressing" class="font-mono text-purple-400 font-bold">50</span>
+                    </div>
+                    <input type="range" id="slider-pressing" min="10" max="100" value="50" oninput="updateSliders()"
+                        class="w-full h-1.5 bg-slate-950 rounded-lg appearance-none cursor-pointer accent-purple-400">
+                    <div class="flex justify-between text-[10px] text-slate-500">
+                        <span>지연/대기</span>
+                        <span>격렬한 압박 (실시간 펄스 발생)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Export / Save button -->
+            <button onclick="exportTactics()"
+                class="mt-4 xl:mt-auto w-full py-3 bg-gradient-to-r from-eplNeon to-eplBlue text-slate-950 font-bold rounded-xl shadow-lg hover:shadow-eplNeon/20 hover:brightness-110 active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+                <i class="fa-solid fa-file-export"></i> 전술 분석 카드 내려받기
+            </button>
+        </section>
+
+        <!-- Right Panel: Pitch Visualization (7 cols) -->
+        <section
+            class="xl:col-span-7 bg-[#0a0314] p-5 rounded-2xl border border-white/5 shadow-2xl flex flex-col h-[500px] xl:h-[calc(100vh-140px)]">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-lg font-bold text-white flex items-center gap-2"><i
+                        class="fa-solid fa-gamepad text-eplNeon"></i> 2. 실시간 반응 가변 전술 보드 (2D Pitch)</h2>
+                <span
+                    class="text-[10px] bg-white/5 px-2 py-1 rounded border border-white/5 text-slate-400 uppercase tracking-widest font-mono">Interactive
+                    View</span>
+            </div>
+
+            <!-- Football Pitch Field Container -->
+            <div
+                class="flex-grow football-field rounded-xl relative overflow-hidden flex items-center justify-center p-4">
+
+                <!-- Standard Pitch Markings (SVG layer for perfect scaling) -->
+                <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-20" viewBox="0 0 100 100"
+                    preserveAspectRatio="none">
+                    <!-- Outer Line -->
+                    <rect x="2" y="2" width="96" height="96" fill="none" stroke="#fff" stroke-width="0.5"></rect>
+                    <!-- Mid Line -->
+                    <line x1="2" y1="50" x2="98" y2="50" stroke="#fff" stroke-width="0.5"></line>
+                    <!-- Center Circle -->
+                    <circle cx="50" cy="50" r="15" fill="none" stroke="#fff" stroke-width="0.5"></circle>
+                    <circle cx="50" cy="50" r="1" fill="#fff"></circle>
+                    <!-- Penalty Area Bottom -->
+                    <rect x="25" y="2" width="50" height="15" fill="none" stroke="#fff" stroke-width="0.5"></rect>
+                    <rect x="38" y="2" width="24" height="5" fill="none" stroke="#fff" stroke-width="0.5"></rect>
+                    <circle cx="50" cy="11" r="0.8" fill="#fff"></circle>
+                    <path d="M 38 17 Q 50 21 62 17" fill="none" stroke="#fff" stroke-width="0.5"></path>
+                    <!-- Penalty Area Top -->
+                    <rect x="25" y="83" width="50" height="15" fill="none" stroke="#fff" stroke-width="0.5"></rect>
+                    <rect x="38" y="93" width="24" height="5" fill="none" stroke="#fff" stroke-width="0.5"></rect>
+                    <circle cx="50" cy="89" r="0.8" fill="#fff"></circle>
+                    <path d="M 38 83 Q 50 79 62 83" fill="none" stroke="#fff" stroke-width="0.5"></path>
+                </svg>
+
+                <!-- Player Nodes Render Container -->
+                <div id="pitch-players" class="absolute inset-0 w-full h-full">
+                    <!-- Dynamic rendering happens via JS -->
+                </div>
+
+                <!-- Touchline / Sideline Direction Arrows -->
+                <div
+                    class="absolute right-4 top-1/2 -translate-y-1/2 flex flex-col items-center gap-1.5 opacity-30 select-none">
+                    <i class="fa-solid fa-chevron-up text-white animate-bounce"></i>
+                    <span
+                        class="text-[9px] text-white font-bold tracking-widest uppercase [writing-mode:vertical-lr]">Attack
+                        Direction (공격 방향)</span>
+                </div>
+            </div>
+
+            <!-- Real-time Tactical Analysis Insight Box -->
+            <div class="mt-4 p-3 bg-slate-950/50 rounded-xl border border-white/5 flex gap-3 items-center">
+                <div
+                    class="w-8 h-8 rounded-full bg-eplBlue/10 border border-eplBlue/20 flex items-center justify-center text-eplBlue shrink-0">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </div>
+                <div class="text-xs">
+                    <span class="text-slate-300 font-semibold block">AI 전술 피드백 시뮬레이션:</span>
+                    <p id="txt-ai-feedback" class="text-slate-400 mt-0.5">선택한 클럽의 주된 빌드업 경로와 26/27 영입생 배치 시 시너지 가중치를
+                        분석합니다.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Custom Toast Notification Box -->
+    <div id="toast-box"
+        class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+        <div
+            class="bg-gradient-to-r from-emerald-950/95 to-slate-950/95 border border-eplNeon/30 text-white px-5 py-3.5 rounded-xl shadow-2xl flex items-center gap-3">
+            <div
+                class="w-6 h-6 rounded-full bg-eplNeon/20 border border-eplNeon/40 flex items-center justify-center text-eplNeon">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <div class="text-xs font-semibold" id="toast-message">알림 메시지</div>
+        </div>
+    </div>
+
+    <!-- Export Summary Modal (Hidden by default) -->
+    <div id="export-modal"
+        class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+        <div
+            class="bg-gradient-to-b from-[#110620] to-[#0a0314] border border-eplNeon/20 p-6 rounded-2xl max-w-md w-full shadow-2xl">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="font-urban font-bold text-lg text-white flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-eplNeon"></i> 전술 분석 리포트 완성
+                </h3>
+                <button onclick="closeModal()" class="text-slate-400 hover:text-white"><i
+                        class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-950/50 border border-white/5 space-y-3 text-sm">
+                <div class="flex justify-between text-xs text-slate-400 pb-2 border-b border-white/5">
+                    <span>TacticVision EPL 26/27</span>
+                    <span>시뮬레이터 빌드데이터</span>
+                </div>
+                <div>
+                    <span class="text-xs text-slate-400">선택한 구단 및 감독</span>
+                    <p id="modal-team" class="font-bold text-white text-base mt-0.5">Chelsea (Xabi Alonso)</p>
+                </div>
+                <div class="grid grid-cols-3 gap-2 py-2">
+                    <div class="p-2 rounded bg-slate-900 border border-white/5 text-center">
+                        <span class="text-[10px] text-slate-400 block">수비라인</span>
+                        <span id="modal-def" class="font-mono font-bold text-eplNeon text-sm">50</span>
+                    </div>
+                    <div class="p-2 rounded bg-slate-900 border border-white/5 text-center">
+                        <span class="text-[10px] text-slate-400 block">공격 폭</span>
+                        <span id="modal-wid" class="font-mono font-bold text-eplBlue text-sm">50</span>
+                    </div>
+                    <div class="p-2 rounded bg-slate-900 border border-white/5 text-center">
+                        <span class="text-[10px] text-slate-400 block">압박 강도</span>
+                        <span id="modal-press" class="font-mono font-bold text-purple-400 text-sm">50</span>
+                    </div>
+                </div>
+                <div>
+                    <span class="text-xs text-slate-400">시뮬레이션 인덱스 진단</span>
+                    <p id="modal-analysis" class="text-xs text-slate-300 mt-1 leading-relaxed">로딩 중...</p>
+                </div>
+            </div>
+
+            <div class="mt-5 flex gap-2">
+                <button onclick="closeModal()"
+                    class="flex-1 py-2.5 bg-white/5 border border-white/10 hover:bg-white/10 text-xs font-bold rounded-xl transition-all">
+                    수정하기
+                </button>
+                <button onclick="triggerDownload()"
+                    class="flex-1 py-2.5 bg-gradient-to-r from-eplNeon to-eplBlue text-slate-950 text-xs font-bold rounded-xl shadow-lg shadow-eplNeon/10 transition-all">
+                    이미지로 보드 저장
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer
+        class="border-t border-purple-900/10 py-3 px-6 bg-[#0a0314]/50 flex justify-between items-center text-xs text-slate-500">
+        <span>&copy; 2026 TacticVision Project. Designed for EPL Pre-season Spec.</span>
+        <span>Tech Stack: Tailwind, HTML5 Canvas/DOM, JavaScript, CSS Grid</span>
+    </footer>
+
+    <!-- Interactive Logic Script -->
+    <script>
+        // Static Tactical Team Data Object based on 26/27 Pre-season realities
+        const teamData = {
+            chelsea: {
+                manager: "사비 알론소 (Xabi Alonso)",
+                formation: "3-4-2-1 Hybrid",
+                style: "하이브리드 윙백 & 하프스페이스 좁은 채널 빌드업",
+                signings: "피에로 인카피에 (Piero Hincapié) 완전 영입",
+                players: [
+                    { name: "산체스", pos: "GK", x: 50, y: 92, role: "gk" },
+                    { name: "포파나", pos: "RCB", x: 68, y: 76, role: "def" },
+                    { name: "콜윌", pos: "CB", x: 50, y: 78, role: "def" },
+                    { name: "인카피에", pos: "LCB", x: 32, y: 76, role: "def" },
+                    { name: "리스 제임스", pos: "RWB", x: 86, y: 55, role: "wide" },
+                    { name: "카이세도", pos: "CM", x: 60, y: 62, role: "mid" },
+                    { name: "엔조", pos: "CM", x: 40, y: 62, role: "mid" },
+                    { name: "쿠쿠렐라", pos: "LWB", x: 14, y: 55, role: "wide" },
+                    { name: "콜 파머", pos: "RAM", x: 65, y: 38, role: "mid" },
+                    { name: "은쿤쿠", pos: "LAM", x: 35, y: 38, role: "mid" },
+                    { name: "잭슨", pos: "ST", x: 50, y: 16, role: "att" }
+                ],
+                presets: {
+                    tikitaka: { defline: 55, width: 35, pressing: 65 },
+                    gegen: { defline: 80, width: 45, pressing: 95 },
+                    lowblock: { defline: 20, width: 25, pressing: 20 }
+                },
+                feedback: "알론소 감독의 첼시는 가변 3백과 좁혀진 공격 포지션이 특징입니다. 인카피에의 합류로 수비 시 백4로 부드럽게 복귀할 수 있습니다."
+            },
+            mancity: {
+                manager: "엔초 마레스카 (Enzo Maresca)",
+                formation: "3-2-4-1 Inverted",
+                style: "극단적 인버티드 풀백 기용 및 하프스페이스 수적 우위 점유",
+                signings: "엘리엇 앤더슨 (Elliot Anderson) 영입 (€135M)",
+                players: [
+                    { name: "에데르송", pos: "GK", x: 50, y: 92, role: "gk" },
+                    { name: "아칸지", pos: "RCB", x: 72, y: 76, role: "def" },
+                    { name: "디아스", pos: "CB", x: 50, y: 78, role: "def" },
+                    { name: "그바르디올", pos: "LCB", x: 28, y: 76, role: "def" },
+                    { name: "스톤스", pos: "DM", x: 62, y: 63, role: "mid" },
+                    { name: "로드리", pos: "DM", x: 38, y: 63, role: "mid" },
+                    { name: "포든", pos: "RAM", x: 84, y: 40, role: "wide" },
+                    { name: "더 브라위너", pos: "CM", x: 60, y: 38, role: "mid" },
+                    { name: "엘리엇 앤더슨", pos: "CM", x: 40, y: 38, role: "mid" },
+                    { name: "도쿠", pos: "LAM", x: 16, y: 40, role: "wide" },
+                    { name: "홀란드", pos: "ST", x: 50, y: 16, role: "att" }
+                ],
+                presets: {
+                    tikitaka: { defline: 60, width: 65, pressing: 75 },
+                    gegen: { defline: 82, width: 55, pressing: 90 },
+                    lowblock: { defline: 25, width: 45, pressing: 30 }
+                },
+                feedback: "마레스카 볼은 인버티드 풀백인 스톤스 또는 그바르디올이 로드리와 나란히 서서 중앙 박스를 장악하고, 더 브라위너와 신입생 앤더슨이 메짤라처럼 전진합니다."
+            },
+            tottenham: {
+                manager: "로베르토 데 제르비 (Roberto De Zerbi)",
+                formation: "4-2-3-1 Attacking",
+                style: "골키퍼를 유인 요소로 삼는 고도 설계 빌드업 및 빠른 종전환",
+                signings: "산드로 토날리 (€108M), 마테우스 페르난데스 (€99M)",
+                players: [
+                    { name: "비카리오", pos: "GK", x: 50, y: 92, role: "gk" },
+                    { name: "포로", pos: "RB", x: 82, y: 70, role: "wide" },
+                    { name: "로메로", pos: "RCB", x: 62, y: 76, role: "def" },
+                    { name: "반더벤", pos: "LCB", x: 38, y: 76, role: "def" },
+                    { name: "우도기", pos: "LB", x: 18, y: 70, role: "wide" },
+                    { name: "토날리", pos: "DM", x: 60, y: 60, role: "mid" },
+                    { name: "페르난데스", pos: "DM", x: 40, y: 60, role: "mid" },
+                    { name: "쿨루셉스키", pos: "RW", x: 78, y: 36, role: "wide" },
+                    { name: "매디슨", pos: "AM", x: 50, y: 36, role: "mid" },
+                    { name: "손흥민", pos: "LW", x: 22, y: 36, role: "wide" },
+                    { name: "솔랑케", pos: "ST", x: 50, y: 16, role: "att" }
+                ],
+                presets: {
+                    tikitaka: { defline: 65, width: 70, pressing: 80 },
+                    gegen: { defline: 85, width: 60, pressing: 95 },
+                    lowblock: { defline: 22, width: 40, pressing: 25 }
+                },
+                feedback: "데 제르비 수장 아래에서 토트넘은 토날리와 페르난데스라는 엄청난 더블 피벗을 구축해 후방 빌드업에서 상대 압박을 유도하고 손흥민과 쿨루셉스키 공간을 엽니다."
+            }
+        };
+
+        let currentTeam = 'chelsea';
+
+        // Initialize Screen safely after DOM is ready
+        document.addEventListener('DOMContentLoaded', function () {
+            renderTeam();
+        });
+
+        // Select Team and Update UI Content
+        function changeTeam(teamKey) {
+            currentTeam = teamKey;
+
+            // Toggle Button Styling
+            document.querySelectorAll('.team-btn').forEach(btn => {
+                btn.classList.remove('bg-eplPurple/20', 'border-eplNeon/40', 'text-white', 'shadow-lg', 'shadow-eplNeon/10');
+                btn.classList.add('border-white/5', 'bg-white/5', 'text-slate-400');
+            });
+
+            const selectedBtn = document.getElementById(`btn-${teamKey}`);
+            if (selectedBtn) {
+                selectedBtn.classList.remove('border-white/5', 'bg-white/5', 'text-slate-400');
+                selectedBtn.classList.add('bg-eplPurple/20', 'border-eplNeon/40', 'text-white', 'shadow-lg', 'shadow-eplNeon/10');
+            }
+
+            // Render details
+            renderTeam();
+            showToast(`${teamData[teamKey].manager} 전술 스쿼드가 배치되었습니다.`);
+        }
+
+        // Render dynamic changes based on State values
+        function renderTeam() {
+            const team = teamData[currentTeam];
+            if (!team) return;
+
+            // Text values inject
+            document.getElementById('txt-formation').innerText = team.formation;
+            document.getElementById('txt-manager').innerText = `${team.manager} 감독`;
+            document.getElementById('txt-style').innerText = team.style;
+            document.getElementById('txt-signings').innerText = team.signings;
+            document.getElementById('txt-ai-feedback').innerText = team.feedback;
+
+            // Apply positions based on slider values
+            updateSliders();
+        }
+
+        // Sliders change calculations dynamically affecting DOM elements (Player dots)
+        function updateSliders() {
+            const team = teamData[currentTeam];
+            if (!team) return;
+
+            const defLine = parseInt(document.getElementById('slider-defline').value);
+            const width = parseInt(document.getElementById('slider-width').value);
+            const pressing = parseInt(document.getElementById('slider-pressing').value);
+
+            // Print values inside panel
+            document.getElementById('val-defline').innerText = defLine;
+            document.getElementById('val-width').innerText = width;
+            document.getElementById('val-pressing').innerText = pressing;
+
+            // Target DOM render box
+            const pitch = document.getElementById('pitch-players');
+            if (!pitch) return;
+            pitch.innerHTML = '';
+
+            // Compute positions and render
+            team.players.forEach(p => {
+                let x = p.x;
+                let y = p.y;
+
+                // 1. Shift Defensive Line (Y axis offset except GK)
+                if (p.role !== 'gk') {
+                    const shiftY = (defLine - 50) * 0.35; // mapping offset factor
+                    y = y - shiftY;
+                    if (y < 5) y = 5;
+                    if (y > 88) y = 88;
+                }
+
+                // 2. Shift Width (X axis offset)
+                if (p.role === 'wide') {
+                    const offset = (width - 50) * 0.28; // stretch outwards or inwards
+                    if (x > 50) {
+                        x = x + offset;
+                    } else {
+                        x = x - offset;
+                    }
+                    if (x < 4) x = 4;
+                    if (x > 96) x = 96;
+                } else if (p.role === 'mid') {
+                    const offset = (width - 50) * 0.12; // mild adjustment for mids
+                    if (x > 50) {
+                        x = x + offset;
+                    } else if (x < 50) {
+                        x = x - offset;
+                    }
+                }
+
+                // Create player node
+                const dot = document.createElement('div');
+                dot.className = "absolute flex flex-col items-center justify-center transition-all duration-500 ease-out z-10 select-none";
+                dot.style.left = `${x}%`;
+                dot.style.top = `${y}%`;
+                dot.style.transform = "translate(-50%, -50%)";
+
+                // CSS Pressing Glow Pulse effect (Fast ping animation on high intensity)
+                const pulseClass = pressing > 75
+                    ? "absolute w-10 h-10 rounded-full bg-eplNeon/30 animate-ping"
+                    : (pressing > 40 ? "absolute w-9 h-9 rounded-full bg-eplNeon/15 animate-pulse" : "hidden");
+
+                // Check if signing to highlight them uniquely
+                const isSigning = team.signings.includes(p.name);
+                const borderClass = isSigning
+                    ? "border-eplBlue shadow-[0_0_12px_rgba(0,240,255,0.8)]"
+                    : "border-eplNeon shadow-[0_0_8px_rgba(0,255,135,0.4)]";
+
+                const labelClass = isSigning
+                    ? "bg-gradient-to-r from-slate-900 to-eplBlue/20 border border-eplBlue/40 text-eplBlue"
+                    : "bg-slate-900/95 border border-slate-700/50 text-white";
+
+                dot.innerHTML = `
+                    <div class="relative flex items-center justify-center cursor-pointer group">
+                        <div class="${pulseClass}"></div>
+                        <div class="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-950 via-[#190933] to-slate-950 border-2 ${borderClass} flex items-center justify-center text-[10px] font-bold text-white tracking-tighter group-hover:scale-110 transition-transform">
+                            ${p.pos}
+                        </div>
+                    </div>
+                    <span class="mt-1 px-1.5 py-0.5 rounded text-[10px] font-bold whitespace-nowrap shadow-md ${labelClass}">
+                        ${p.name}
+                    </span>
+                `;
+                pitch.appendChild(dot);
+            });
+        }
+
+        // Apply tactical master template presets
+        function applyPreset(presetKey) {
+            const team = teamData[currentTeam];
+            if (!team) return;
+            const preset = team.presets[presetKey];
+            if (!preset) return;
+
+            // Update inputs values
+            document.getElementById('slider-defline').value = preset.defline;
+            document.getElementById('slider-width').value = preset.width;
+            document.getElementById('slider-pressing').value = preset.pressing;
+
+            // Render
+            updateSliders();
+
+            const presetNames = { tikitaka: '티키타카', gegen: '게겐프레싱', lowblock: '텐백 수비' };
+            showToast(`[${presetNames[presetKey]}] 전술 마스터 템플릿이 적용되었습니다.`);
+        }
+
+        // Custom Toast Notification Trigger (No raw alert)
+        function showToast(msg) {
+            const toast = document.getElementById('toast-box');
+            const toastMsg = document.getElementById('toast-message');
+            toastMsg.innerText = msg;
+
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        // Export Data and Trigger Mock Diagnostic report modal
+        function exportTactics() {
+            const team = teamData[currentTeam];
+            if (!team) return;
+            const defLine = document.getElementById('slider-defline').value;
+            const width = document.getElementById('slider-width').value;
+            const pressing = document.getElementById('slider-pressing').value;
+
+            document.getElementById('modal-team').innerText = `${team.manager} | ${team.formation}`;
+            document.getElementById('modal-def').innerText = defLine;
+            document.getElementById('modal-wid').innerText = width;
+            document.getElementById('modal-press').innerText = pressing;
+
+            // Generate Diagnostic text
+            let diagnosticText = "";
+            if (defLine > 70 && pressing > 75) {
+                diagnosticText = `극단적인 초고전방 압박 대형입니다. ${team.manager} 감독의 핵심 전력들이 높은 하이라인 백업에서 배후 노출 리스크가 증가할 수 있으므로 민첩성이 강한 CB 조합이 필수적으로 요구됩니다.`;
+            } else if (defLine < 35) {
+                diagnosticText = "단단한 백블록 저지 구조입니다. 상대 역공을 원천 차단하고 종방향으로 빠르게 치고 갈 수 있는 기동력 좋은 공격 채널(손흥민, 도쿠 등)의 순간 카운터 역량에 의존해야 합니다.";
+            } else {
+                diagnosticText = "공수 균형이 고도로 이식된 가변 밸런스 지공 대형입니다. 현대 전술가들이 가장 지향하는 수적 우위를 통한 패스 레인 확보에 용이합니다.";
+            }
+
+            document.getElementById('modal-analysis').innerText = diagnosticText;
+            document.getElementById('export-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('export-modal').classList.add('hidden');
+        }
+
+        function triggerDownload() {
+            closeModal();
+            showToast("📸 전술 보드 이미지가 다운로드되었습니다. (데모 프로토타입)");
+        }
+    </script>
+</body>
+
+</html>
