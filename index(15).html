@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TacticVision EPL 26/27 - Interactive Sandbox</title>
+    <!-- Tailwind CSS & FontAwesome Icons -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Noto+Sans+KR:wght@400;500;700&family=Urbanist:wght=600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Noto Sans KR', 'sans-serif'],
+                        urban: ['Urbanist', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace']
+                    },
+                    colors: {
+                        eplDark: '#0a0314',
+                        eplPurple: '#3d195a',
+                        eplNeon: '#00ff87',
+                        eplBlue: '#00f0ff'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar and pitch background */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0d0415;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #3d195a;
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00ff87;
+        }
+
+        /* Tactical field styling mimicking modern tactical boards */
+        .football-field {
+            background-color: #0b1c16;
+            background-image:
+                radial-gradient(circle at 50% 50%, transparent 100px, rgba(0, 255, 135, 0.02) 100px),
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 10% 10%, 10% 10%;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Custom Toast notification styling */
+        #toast {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform: translateY(100px);
+            opacity: 0;
+        }
+
+        #toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+
+        /* Drag & drop player interactions */
+        .player-node {
+            touch-action: none;
+            cursor: grab;
+            will-change: left, top, transform;
+        }
+
+        .player-node.is-dragging {
+            cursor: grabbing;
+            z-index: 40 !important;
+            transition: none !important;
+            filter: brightness(1.18);
+        }
+
+        .player-node.is-dragging>div:first-child {
+            transform: scale(1.12);
+        }
+
+        #pitch-players.drag-active {
+            background: radial-gradient(circle at center, rgba(0, 255, 135, 0.05), transparent 65%);
+        }
+    </style>
+</head>
+
+<body class="bg-[#06010c] text-slate-100 font-sans min-h-screen overflow-x-hidden flex flex-col justify-between">
+
+    <!-- Navbar -->
+    <header
+        class="border-b border-purple-900/30 bg-[#0a0314]/90 backdrop-blur px-6 py-4 flex justify-between items-center sticky top-0 z-50">
+        <div class="flex items-center gap-3">
+            <div
+                class="w-10 h-10 rounded-xl bg-gradient-to-tr from-eplPurple via-[#672f9c] to-[#a05cf2] flex items-center justify-center shadow-lg shadow-eplPurple/30">
+                <i class="fa-solid fa-compass-drafting text-eplNeon text-lg"></i>
+            </div>
+            <div>
+                <h1 class="font-urban font-bold text-xl tracking-tight leading-none">TacticVision <span
+                        class="text-eplNeon">EPL 26/27</span></h1>
+                <p class="text-[10px] text-slate-400 mt-1 uppercase tracking-widest font-semibold">Pre-season Tactical
+                    Lab</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-4">
+            <span
+                class="text-xs px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-eplNeon font-medium flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-eplNeon animate-pulse"></span> Active Sandbox
+            </span>
+        </div>
+    </header>
+
+    <!-- Desktop-first Main Workspace -->
+    <main class="flex-grow w-full max-w-[1800px] mx-auto px-5 py-5">
+        <div
+            class="grid grid-cols-1 2xl:grid-cols-[300px_minmax(760px,1fr)_300px] xl:grid-cols-[280px_minmax(680px,1fr)_280px] gap-5 items-stretch">
+
+            <!-- Left Control Rail -->
+            <section
+                class="bg-[#0a0314] rounded-2xl border border-white/5 shadow-2xl p-4 flex flex-col gap-4 xl:h-[calc(100vh-126px)] overflow-y-auto">
+                <div class="pb-3 border-b border-white/5">
+                    <h2 class="text-base font-bold text-white flex items-center gap-2"><i
+                            class="fa-solid fa-sliders text-eplNeon"></i> 전술 설정</h2>
+                    <p class="text-[11px] text-slate-500 mt-1">팀, 포메이션, 전술 수치를 조정하세요.</p>
+                </div>
+
+                <div class="space-y-2">
+                    <span class="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">Club</span>
+                    <div class="space-y-2">
+                        <select id="team-select" onchange="changeTeam(this.value)"
+                            class="w-full px-3 py-3 rounded-xl bg-slate-950 border border-white/10 text-sm font-bold text-white focus:outline-none focus:border-eplNeon/60">
+                            <option>구단 데이터를 불러오는 중...</option>
+                        </select>
+                        <p id="team-data-status" class="text-[10px] text-slate-500">20개 구단 공통 구조</p>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <span
+                        class="text-[11px] text-slate-400 font-semibold uppercase tracking-wider flex items-center gap-1.5"><i
+                            class="fa-solid fa-people-group text-eplBlue"></i> Formation</span>
+                    <div class="grid grid-cols-2 gap-2">
+                        <button onclick="changeFormation('4-3-3')" id="form-4-3-3"
+                            class="form-btn py-2.5 rounded-lg bg-slate-950 border border-white/10 hover:border-eplBlue/45 text-xs font-mono font-bold text-slate-300 transition-all">4-3-3</button>
+                        <button onclick="changeFormation('4-4-2')" id="form-4-4-2"
+                            class="form-btn py-2.5 rounded-lg bg-slate-950 border border-white/10 hover:border-eplBlue/45 text-xs font-mono font-bold text-slate-300 transition-all">4-4-2</button>
+                        <button onclick="changeFormation('3-5-2')" id="form-3-5-2"
+                            class="form-btn py-2.5 rounded-lg bg-slate-950 border border-white/10 hover:border-eplBlue/45 text-xs font-mono font-bold text-slate-300 transition-all">3-5-2</button>
+                        <button onclick="changeFormation('4-2-3-1')" id="form-4-2-3-1"
+                            class="form-btn py-2.5 rounded-lg bg-slate-950 border border-white/10 hover:border-eplBlue/45 text-xs font-mono font-bold text-slate-300 transition-all">4-2-3-1</button>
+                        <button onclick="changeFormation('3-4-2-1')" id="form-3-4-2-1"
+                            class="form-btn col-span-2 py-2.5 rounded-lg bg-slate-950 border border-white/10 hover:border-eplBlue/45 text-xs font-mono font-bold text-slate-300 transition-all">3-4-2-1</button>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <span class="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">Tactical
+                        presets</span>
+                    <div class="grid grid-cols-1 gap-2">
+                        <button onclick="applyPreset('tikitaka')"
+                            class="preset-btn px-3 py-2.5 rounded-lg bg-slate-950 border border-white/10 hover:border-eplNeon/30 text-xs font-semibold text-slate-300 transition-all flex items-center gap-2"><i
+                                class="fa-solid fa-arrows-spin text-eplBlue"></i> 티키타카</button>
+                        <button onclick="applyPreset('gegen')"
+                            class="preset-btn px-3 py-2.5 rounded-lg bg-slate-950 border border-white/10 hover:border-eplNeon/30 text-xs font-semibold text-slate-300 transition-all flex items-center gap-2"><i
+                                class="fa-solid fa-forward text-rose-400"></i> 게겐프레싱</button>
+                        <button onclick="applyPreset('lowblock')"
+                            class="preset-btn px-3 py-2.5 rounded-lg bg-slate-950 border border-white/10 hover:border-eplNeon/30 text-xs font-semibold text-slate-300 transition-all flex items-center gap-2"><i
+                                class="fa-solid fa-shield-halved text-amber-400"></i> 텐백 수비</button>
+                    </div>
+                </div>
+
+                <div class="space-y-5 pt-1">
+                    <div class="space-y-1.5">
+                        <div class="flex justify-between text-xs"><span class="text-slate-200">수비 라인</span><span
+                                id="val-defline" class="font-mono text-eplNeon font-bold">50</span></div><input
+                            type="range" id="slider-defline" min="10" max="90" value="50" oninput="updateSliders()"
+                            class="w-full h-1.5 bg-slate-950 rounded-lg appearance-none cursor-pointer accent-eplNeon">
+                        <div class="flex justify-between text-[9px] text-slate-600"><span>LOW</span><span>HIGH</span>
+                        </div>
+                    </div>
+                    <div class="space-y-1.5">
+                        <div class="flex justify-between text-xs"><span class="text-slate-200">공격 폭</span><span
+                                id="val-width" class="font-mono text-eplBlue font-bold">50</span></div><input
+                            type="range" id="slider-width" min="15" max="85" value="50" oninput="updateSliders()"
+                            class="w-full h-1.5 bg-slate-950 rounded-lg appearance-none cursor-pointer accent-eplBlue">
+                        <div class="flex justify-between text-[9px] text-slate-600"><span>NARROW</span><span>WIDE</span>
+                        </div>
+                    </div>
+                    <div class="space-y-1.5">
+                        <div class="flex justify-between text-xs"><span class="text-slate-200">압박 강도</span><span
+                                id="val-pressing" class="font-mono text-purple-400 font-bold">50</span></div><input
+                            type="range" id="slider-pressing" min="10" max="100" value="50" oninput="updateSliders()"
+                            class="w-full h-1.5 bg-slate-950 rounded-lg appearance-none cursor-pointer accent-purple-400">
+                        <div class="flex justify-between text-[9px] text-slate-600"><span>WAIT</span><span>PRESS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button onclick="exportTactics()"
+                    class="mt-auto w-full py-3 bg-gradient-to-r from-eplNeon to-eplBlue text-slate-950 font-bold rounded-xl shadow-lg hover:brightness-110 active:scale-[0.98] transition-all flex items-center justify-center gap-2"><i
+                        class="fa-solid fa-file-export"></i> 전술 분석 카드</button>
+            </section>
+
+            <!-- Central Tactical Board -->
+            <section
+                class="bg-[#0a0314] rounded-2xl border border-white/5 shadow-2xl p-4 flex flex-col min-h-[760px] xl:h-[calc(100vh-126px)]">
+                <div class="flex justify-between items-center mb-3">
+                    <div>
+                        <h2 class="text-lg font-bold text-white flex items-center gap-2"><i
+                                class="fa-solid fa-gamepad text-eplNeon"></i> Tactical Board</h2>
+                        <p class="text-[11px] text-slate-500 mt-0.5">선수를 드래그해 원하는 위치로 이동하세요.</p>
+                    </div>
+                    <span id="txt-formation"
+                        class="text-xs px-3 py-1 rounded-md bg-eplPurple text-eplNeon font-bold font-mono">3-4-2-1</span>
+                </div>
+
+                <div
+                    class="flex-1 football-field rounded-2xl relative overflow-hidden min-h-[600px] shadow-inner shadow-black/40">
+                    <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-25" viewBox="0 0 100 100"
+                        preserveAspectRatio="none">
+                        <rect x="2" y="2" width="96" height="96" fill="none" stroke="#fff" stroke-width="0.5"></rect>
+                        <line x1="2" y1="50" x2="98" y2="50" stroke="#fff" stroke-width="0.5"></line>
+                        <circle cx="50" cy="50" r="15" fill="none" stroke="#fff" stroke-width="0.5"></circle>
+                        <circle cx="50" cy="50" r="1" fill="#fff"></circle>
+                        <rect x="25" y="2" width="50" height="15" fill="none" stroke="#fff" stroke-width="0.5"></rect>
+                        <rect x="38" y="2" width="24" height="5" fill="none" stroke="#fff" stroke-width="0.5"></rect>
+                        <circle cx="50" cy="11" r="0.8" fill="#fff"></circle>
+                        <path d="M 38 17 Q 50 21 62 17" fill="none" stroke="#fff" stroke-width="0.5"></path>
+                        <rect x="25" y="83" width="50" height="15" fill="none" stroke="#fff" stroke-width="0.5"></rect>
+                        <rect x="38" y="93" width="24" height="5" fill="none" stroke="#fff" stroke-width="0.5"></rect>
+                        <circle cx="50" cy="89" r="0.8" fill="#fff"></circle>
+                        <path d="M 38 83 Q 50 79 62 83" fill="none" stroke="#fff" stroke-width="0.5"></path>
+                    </svg>
+                    <div id="pitch-players" class="absolute inset-0 w-full h-full"></div>
+                    <div
+                        class="absolute right-4 top-1/2 -translate-y-1/2 flex flex-col items-center gap-1.5 opacity-30 select-none">
+                        <i class="fa-solid fa-chevron-up text-white animate-bounce"></i><span
+                            class="text-[9px] text-white font-bold tracking-widest uppercase [writing-mode:vertical-lr]">Attack
+                            Direction</span></div>
+                </div>
+
+                <div class="mt-3 p-3 rounded-xl bg-slate-950/70 border border-white/5">
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-chair text-eplBlue"></i><span
+                                class="text-xs font-bold text-white">후보 선수</span></div><span id="substitute-count"
+                            class="text-[10px] text-slate-500 font-mono">0명</span>
+                    </div>
+                    <div id="substitute-players" class="grid grid-cols-4 2xl:grid-cols-7 gap-2"></div>
+                </div>
+            </section>
+
+            <!-- Right Information Rail -->
+            <aside
+                class="bg-[#0a0314] rounded-2xl border border-white/5 shadow-2xl p-4 flex flex-col gap-4 xl:h-[calc(100vh-126px)] overflow-y-auto">
+                <div class="pb-3 border-b border-white/5">
+                    <h2 class="text-base font-bold text-white flex items-center gap-2"><i
+                            class="fa-solid fa-chart-line text-eplBlue"></i> Match Intelligence</h2>
+                    <p class="text-[11px] text-slate-500 mt-1">팀과 전술 정보를 한눈에 확인하세요.</p>
+                </div>
+
+                <button id="manager-summary-card" type="button" onclick="openManagerProfile()"
+                    class="w-full text-left p-4 rounded-xl bg-gradient-to-br from-slate-900/80 to-[#130823] border border-white/5 hover:border-eplNeon/35 transition-all group">
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-[10px] uppercase tracking-wider text-slate-500">Manager</span>
+                        <span class="text-[10px] text-eplNeon">상세 보기 <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></span>
+                    </div>
+                    <div id="txt-manager" class="text-sm font-bold text-white leading-snug">감독 정보</div>
+                    <p id="txt-style" class="text-xs text-slate-400 mt-2 leading-relaxed">전술 스타일</p>
+                    <div id="manager-keywords" class="flex flex-wrap gap-1.5 mt-3"></div>
+                </button>
+
+                <div class="p-4 rounded-xl bg-slate-950/60 border border-white/5">
+                    <span class="text-[10px] uppercase tracking-wider text-slate-500">Key signing</span>
+                    <div class="mt-2 text-xs"><span class="text-eplNeon font-semibold"><i
+                                class="fa-solid fa-bolt mr-1"></i>핵심 전력보강</span>
+                        <p id="txt-signings" class="text-slate-300 mt-1.5 leading-relaxed">피에로 인카피에 (CB/LB)</p>
+                    </div>
+                </div>
+
+                <div class="p-4 rounded-xl bg-slate-950/60 border border-white/5">
+                    <div class="flex items-center gap-2 mb-2">
+                        <div
+                            class="w-8 h-8 rounded-full bg-eplBlue/10 border border-eplBlue/20 flex items-center justify-center text-eplBlue">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i></div><span
+                            class="text-xs font-semibold text-slate-200">AI 전술 피드백</span>
+                    </div>
+                    <p id="txt-ai-feedback" class="text-xs text-slate-400 leading-relaxed">선택한 클럽의 주된 빌드업 경로와 26/27 영입생
+                        배치 시 시너지 가중치를 분석합니다.</p>
+                </div>
+
+                <div class="grid grid-cols-3 gap-2">
+                    <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5 text-center"><span
+                            class="text-[9px] text-slate-500 block">LINE</span><span
+                            class="font-mono font-bold text-eplNeon text-sm">LIVE</span></div>
+                    <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5 text-center"><span
+                            class="text-[9px] text-slate-500 block">WIDTH</span><span
+                            class="font-mono font-bold text-eplBlue text-sm">LIVE</span></div>
+                    <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5 text-center"><span
+                            class="text-[9px] text-slate-500 block">PRESS</span><span
+                            class="font-mono font-bold text-purple-400 text-sm">LIVE</span></div>
+                </div>
+
+                <div class="mt-auto p-4 rounded-xl border border-dashed border-white/10 text-center"><i
+                        class="fa-solid fa-circle-info text-slate-600"></i>
+                    <p class="text-[10px] text-slate-600 mt-2 leading-relaxed">다음 단계에서 선수 상세정보와 감독 프로필이 이 영역에 표시됩니다.</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Custom Toast Notification Box -->
+    <div id="toast"
+        class="fixed bottom-6 right-6 z-50 bg-slate-900 border border-eplNeon/30 px-5 py-3 rounded-xl shadow-2xl flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-eplNeon/10 text-eplNeon flex items-center justify-center shrink-0">
+            <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <div class="text-xs">
+            <span class="font-bold text-white block">시스템 정보</span>
+            <span id="toast-msg" class="text-slate-300">알림 내용이 노출됩니다.</span>
+        </div>
+    </div>
+
+
+    <div id="manager-modal" class="hidden fixed inset-0 z-[60] bg-black/85 backdrop-blur-md p-4 overflow-y-auto" onclick="if(event.target.id==='manager-modal') closeManagerProfile()">
+        <div class="min-h-full flex items-center justify-center py-6">
+            <article class="w-full max-w-6xl rounded-3xl border border-eplNeon/20 bg-gradient-to-b from-[#120720] to-[#08020f] shadow-2xl overflow-hidden">
+                <header class="px-6 py-5 border-b border-white/5 bg-white/[0.025] flex items-start justify-between gap-4">
+                    <div>
+                        <span id="manager-profile-club" class="px-2 py-1 rounded-full bg-eplNeon/10 border border-eplNeon/20 text-[10px] font-bold text-eplNeon">Club</span>
+                        <h2 id="manager-profile-name" class="mt-2 text-2xl font-urban font-extrabold text-white">Manager</h2>
+                        <p id="manager-profile-meta" class="text-xs text-slate-400 mt-1">국적 · 생년월일 · 계약</p>
+                    </div>
+                    <button onclick="closeManagerProfile()" class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 text-slate-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
+                </header>
+                <div class="grid grid-cols-1 lg:grid-cols-2">
+                    <section class="p-6 border-b lg:border-b-0 lg:border-r border-white/5">
+                        <div class="flex items-center justify-between mb-3">
+                            <div><h3 class="text-sm font-bold text-white">Tactical DNA</h3><p class="text-[10px] text-slate-500 mt-1">감독의 우열이 아닌 전술 성향 지표</p></div>
+                            <span id="manager-dna-average" class="font-mono text-eplNeon font-bold text-xl">0</span>
+                        </div>
+                        <div class="rounded-2xl bg-slate-950/60 border border-white/5 p-3"><canvas id="manager-dna-chart" width="560" height="410" class="w-full h-auto"></canvas></div>
+                        <div id="manager-dna-metrics" class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-4"></div>
+                    </section>
+                    <section class="p-6 space-y-5">
+                        <div><span class="text-[10px] uppercase tracking-wider text-slate-500">Tactical Philosophy</span><p id="manager-profile-philosophy" class="mt-2 text-sm leading-7 text-slate-300"></p></div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div class="rounded-xl bg-white/[0.035] border border-white/5 p-4"><span class="text-[10px] text-slate-500">Preferred formations</span><div id="manager-formations" class="flex flex-wrap gap-2 mt-3"></div></div>
+                            <div class="rounded-xl bg-white/[0.035] border border-white/5 p-4"><span class="text-[10px] text-slate-500">Tactical keywords</span><div id="manager-profile-keywords" class="flex flex-wrap gap-2 mt-3"></div></div>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div class="rounded-xl bg-emerald-500/[0.045] border border-emerald-500/10 p-4"><h3 class="text-xs font-bold text-emerald-300">강점</h3><ul id="manager-strengths" class="mt-3 space-y-2 text-xs text-slate-300"></ul></div>
+                            <div class="rounded-xl bg-rose-500/[0.045] border border-rose-500/10 p-4"><h3 class="text-xs font-bold text-rose-300">주의점</h3><ul id="manager-risks" class="mt-3 space-y-2 text-xs text-slate-300"></ul></div>
+                        </div>
+                        <div class="rounded-xl bg-white/[0.035] border border-white/5 p-4"><span class="text-[10px] text-slate-500">Key players</span><div id="manager-key-players" class="flex flex-wrap gap-2 mt-3"></div><p id="manager-career" class="mt-4 text-xs leading-6 text-slate-300"></p></div>
+                        <button onclick="applyManagerTacticalPreset()" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-eplNeon to-eplBlue text-slate-950 font-bold">이 감독의 전술을 전술판에 적용</button>
+                    </section>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <!-- Export Summary Modal (Hidden by default) -->
+    <div id="export-modal"
+        class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+        <div
+            class="bg-gradient-to-b from-[#110620] to-[#0a0314] border border-eplNeon/20 p-6 rounded-2xl max-w-md w-full shadow-2xl">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="font-urban font-bold text-lg text-white flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-eplNeon"></i> 전술 분석 리포트 완성
+                </h3>
+                <button onclick="closeModal()" class="text-slate-400 hover:text-white"><i
+                        class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-950/50 border border-white/5 space-y-3 text-sm">
+                <div class="flex justify-between text-xs text-slate-400 pb-2 border-b border-white/5">
+                    <span>TacticVision EPL 26/27</span>
+                    <span>시뮬레이터 빌드데이터</span>
+                </div>
+                <div>
+                    <span class="text-xs text-slate-400">선택한 구단 및 감독</span>
+                    <p id="modal-team" class="font-bold text-white text-base mt-0.5">Chelsea (Xabi Alonso)</p>
+                </div>
+                <div class="grid grid-cols-3 gap-2 py-2">
+                    <div class="p-2 rounded bg-slate-900 border border-white/5 text-center">
+                        <span class="text-[10px] text-slate-400 block">수비라인</span>
+                        <span id="modal-def" class="font-mono font-bold text-eplNeon text-sm">50</span>
+                    </div>
+                    <div class="p-2 rounded bg-slate-900 border border-white/5 text-center">
+                        <span class="text-[10px] text-slate-400 block">공격 폭</span>
+                        <span id="modal-wid" class="font-mono font-bold text-eplBlue text-sm">50</span>
+                    </div>
+                    <div class="p-2 rounded bg-slate-900 border border-white/5 text-center">
+                        <span class="text-[10px] text-slate-400 block">압박 강도</span>
+                        <span id="modal-press" class="font-mono font-bold text-purple-400 text-sm">50</span>
+                    </div>
+                </div>
+                <div>
+                    <span class="text-xs text-slate-400">시뮬레이션 인덱스 진단</span>
+                    <p id="modal-analysis" class="text-xs text-slate-300 mt-1 leading-relaxed">로딩 중...</p>
+                </div>
+            </div>
+
+            <div class="mt-5 flex gap-2">
+                <button onclick="closeModal()"
+                    class="flex-1 py-2.5 bg-white/5 border border-white/10 hover:bg-white/10 text-xs font-bold rounded-xl transition-all">
+                    수정하기
+                </button>
+                <button onclick="showToast('이미지 저장 기능이 작동되었습니다. (포토타입 데모)')"
+                    class="flex-1 py-2.5 bg-gradient-to-r from-eplNeon to-eplBlue text-slate-950 text-xs font-bold rounded-xl shadow-lg shadow-eplNeon/10 transition-all">
+                    이미지로 보드 저장
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer
+        class="border-t border-purple-900/10 py-3 px-6 bg-[#0a0314]/50 flex justify-between items-center text-xs text-slate-500">
+        <span>&copy; 2026 TacticVision Project. Designed for EPL Pre-season Spec.</span>
+        <span>Tech Stack: Tailwind, HTML5 Canvas/DOM, JavaScript, CSS Grid</span>
+    </footer>
+
+    <!-- Interactive Logic Script -->
+    <script>
+        // 분리된 JSON 데이터에서 로드됩니다.
+        let teamsMeta = {};
+        let formationsMap = {};
+        let teamSquads = {};
+        let managerData = {};
+        let tacticsData = {};
+        let teamData = {};
+
+        // 외부 JSON이 없거나 경로가 달라도 20개 팀을 테스트할 수 있는 내장 데이터입니다.
+        const EMBEDDED_PROJECT_DATA = {"teams":{"arsenal":{"id":"arsenal","name":"Arsenal","koreanName":"아스널","shortName":"ARS","primaryColor":"#EF0107","defaultFormation":"4-3-3","dataStatus":"planned"},"astonvilla":{"id":"astonvilla","name":"Aston Villa","koreanName":"애스턴 빌라","shortName":"AVL","primaryColor":"#670E36","defaultFormation":"4-2-3-1","dataStatus":"planned"},"bournemouth":{"id":"bournemouth","name":"AFC Bournemouth","koreanName":"본머스","shortName":"BOU","primaryColor":"#DA291C","defaultFormation":"4-2-3-1","dataStatus":"planned"},"brentford":{"id":"brentford","name":"Brentford","koreanName":"브렌트퍼드","shortName":"BRE","primaryColor":"#E30613","defaultFormation":"4-3-3","dataStatus":"planned"},"brighton":{"id":"brighton","name":"Brighton & Hove Albion","koreanName":"브라이튼","shortName":"BHA","primaryColor":"#0057B8","defaultFormation":"4-2-3-1","dataStatus":"planned"},"chelsea":{"id":"chelsea","name":"Chelsea","koreanName":"첼시","shortName":"CHE","primaryColor":"#034694","defaultFormation":"3-4-2-1","dataStatus":"ready"},"coventry":{"id":"coventry","name":"Coventry City","koreanName":"코번트리 시티","shortName":"COV","primaryColor":"#69B3E7","defaultFormation":"4-2-3-1","dataStatus":"planned"},"crystalpalace":{"id":"crystalpalace","name":"Crystal Palace","koreanName":"크리스털 팰리스","shortName":"CRY","primaryColor":"#1B458F","defaultFormation":"3-4-2-1","dataStatus":"planned"},"everton":{"id":"everton","name":"Everton","koreanName":"에버턴","shortName":"EVE","primaryColor":"#003399","defaultFormation":"4-2-3-1","dataStatus":"planned"},"fulham":{"id":"fulham","name":"Fulham","koreanName":"풀럼","shortName":"FUL","primaryColor":"#000000","defaultFormation":"4-2-3-1","dataStatus":"planned"},"hullcity":{"id":"hullcity","name":"Hull City","koreanName":"헐 시티","shortName":"HUL","primaryColor":"#F5A12D","defaultFormation":"4-2-3-1","dataStatus":"planned"},"ipswich":{"id":"ipswich","name":"Ipswich Town","koreanName":"입스위치 타운","shortName":"IPS","primaryColor":"#0044AA","defaultFormation":"4-2-3-1","dataStatus":"planned"},"leeds":{"id":"leeds","name":"Leeds United","koreanName":"리즈 유나이티드","shortName":"LEE","primaryColor":"#FFCD00","defaultFormation":"4-2-3-1","dataStatus":"planned"},"liverpool":{"id":"liverpool","name":"Liverpool","koreanName":"리버풀","shortName":"LIV","primaryColor":"#C8102E","defaultFormation":"4-3-3","dataStatus":"planned"},"mancity":{"id":"mancity","name":"Manchester City","koreanName":"맨체스터 시티","shortName":"MCI","primaryColor":"#6CABDD","defaultFormation":"3-4-2-1","dataStatus":"ready"},"manutd":{"id":"manutd","name":"Manchester United","koreanName":"맨체스터 유나이티드","shortName":"MUN","primaryColor":"#DA291C","defaultFormation":"3-4-2-1","dataStatus":"planned"},"newcastle":{"id":"newcastle","name":"Newcastle United","koreanName":"뉴캐슬 유나이티드","shortName":"NEW","primaryColor":"#241F20","defaultFormation":"4-3-3","dataStatus":"planned"},"nottinghamforest":{"id":"nottinghamforest","name":"Nottingham Forest","koreanName":"노팅엄 포리스트","shortName":"NFO","primaryColor":"#DD0000","defaultFormation":"4-2-3-1","dataStatus":"planned"},"sunderland":{"id":"sunderland","name":"Sunderland","koreanName":"선덜랜드","shortName":"SUN","primaryColor":"#EB172B","defaultFormation":"4-3-3","dataStatus":"planned"},"tottenham":{"id":"tottenham","name":"Tottenham Hotspur","koreanName":"토트넘 홋스퍼","shortName":"TOT","primaryColor":"#132257","defaultFormation":"4-2-3-1","dataStatus":"ready"}},"formations":{"4-3-3":[{"pos":"GK","x":50,"y":92,"role":"gk"},{"pos":"RB","x":80,"y":75,"role":"wide"},{"pos":"RCB","x":62,"y":78,"role":"def"},{"pos":"LCB","x":38,"y":78,"role":"def"},{"pos":"LB","x":20,"y":75,"role":"wide"},{"pos":"RCM","x":65,"y":58,"role":"mid"},{"pos":"DM","x":50,"y":63,"role":"mid"},{"pos":"LCM","x":35,"y":58,"role":"mid"},{"pos":"RW","x":80,"y":32,"role":"wide"},{"pos":"ST","x":50,"y":18,"role":"att"},{"pos":"LW","x":20,"y":32,"role":"wide"}],"4-4-2":[{"pos":"GK","x":50,"y":92,"role":"gk"},{"pos":"RB","x":82,"y":75,"role":"wide"},{"pos":"RCB","x":62,"y":78,"role":"def"},{"pos":"LCB","x":38,"y":78,"role":"def"},{"pos":"LB","x":18,"y":75,"role":"wide"},{"pos":"RM","x":85,"y":52,"role":"wide"},{"pos":"RCM","x":60,"y":58,"role":"mid"},{"pos":"LCM","x":40,"y":58,"role":"mid"},{"pos":"LM","x":15,"y":52,"role":"wide"},{"pos":"RST","x":60,"y":18,"role":"att"},{"pos":"LST","x":40,"y":18,"role":"att"}],"3-5-2":[{"pos":"GK","x":50,"y":92,"role":"gk"},{"pos":"RCB","x":68,"y":78,"role":"def"},{"pos":"CB","x":50,"y":80,"role":"def"},{"pos":"LCB","x":32,"y":78,"role":"def"},{"pos":"RWB","x":85,"y":55,"role":"wide"},{"pos":"RCM","x":62,"y":60,"role":"mid"},{"pos":"DM","x":50,"y":65,"role":"mid"},{"pos":"LCM","x":38,"y":60,"role":"mid"},{"pos":"LWB","x":15,"y":55,"role":"wide"},{"pos":"RST","x":60,"y":18,"role":"att"},{"pos":"LST","x":40,"y":18,"role":"att"}],"4-2-3-1":[{"pos":"GK","x":50,"y":92,"role":"gk"},{"pos":"RB","x":82,"y":70,"role":"wide"},{"pos":"RCB","x":62,"y":76,"role":"def"},{"pos":"LCB","x":38,"y":76,"role":"def"},{"pos":"LB","x":18,"y":70,"role":"wide"},{"pos":"RDM","x":60,"y":60,"role":"mid"},{"pos":"LDM","x":40,"y":60,"role":"mid"},{"pos":"RAM","x":78,"y":36,"role":"wide"},{"pos":"AM","x":50,"y":36,"role":"mid"},{"pos":"LAM","x":22,"y":36,"role":"wide"},{"pos":"ST","x":50,"y":16,"role":"att"}],"3-4-2-1":[{"pos":"GK","x":50,"y":92,"role":"gk"},{"pos":"RCB","x":68,"y":76,"role":"def"},{"pos":"CB","x":50,"y":78,"role":"def"},{"pos":"LCB","x":32,"y":76,"role":"def"},{"pos":"RWB","x":86,"y":55,"role":"wide"},{"pos":"RCM","x":60,"y":62,"role":"mid"},{"pos":"LCM","x":40,"y":62,"role":"mid"},{"pos":"LWB","x":14,"y":55,"role":"wide"},{"pos":"RAM","x":65,"y":38,"role":"mid"},{"pos":"LAM","x":35,"y":38,"role":"mid"},{"pos":"ST","x":50,"y":16,"role":"att"}]},"squads":{"chelsea":{"starters":[{"id":"che-01","name":"산체스","position":"GK","availablePositions":["GK"]},{"id":"che-02","name":"포파나","position":"RCB","availablePositions":["CB","RB"]},{"id":"che-03","name":"콜윌","position":"CB","availablePositions":["CB","LB"]},{"id":"che-04","name":"인카피에","position":"LCB","availablePositions":["CB","LB"]},{"id":"che-05","name":"리스 제임스","position":"RWB","availablePositions":["RB","RWB","RCB"]},{"id":"che-06","name":"카이세도","position":"RCM","availablePositions":["DM","CM"]},{"id":"che-07","name":"엔조","position":"LCM","availablePositions":["CM","DM","AM"]},{"id":"che-08","name":"쿠쿠렐라","position":"LWB","availablePositions":["LB","LWB"]},{"id":"che-09","name":"콜 파머","position":"RAM","availablePositions":["AM","RW"]},{"id":"che-10","name":"은쿤쿠","position":"LAM","availablePositions":["AM","ST"]},{"id":"che-11","name":"잭슨","position":"ST","availablePositions":["ST"]}],"substitutes":[{"id":"che-12","name":"요르겐센","position":"GK","availablePositions":["GK"]},{"id":"che-13","name":"아다라비오요","position":"CB","availablePositions":["CB"]},{"id":"che-14","name":"구스토","position":"RB","availablePositions":["RB","RWB"]},{"id":"che-15","name":"라비아","position":"DM","availablePositions":["DM","CM"]},{"id":"che-16","name":"마두에케","position":"RW","availablePositions":["RW","LW"]},{"id":"che-17","name":"무드리크","position":"LW","availablePositions":["LW","RW"]},{"id":"che-18","name":"구이우","position":"ST","availablePositions":["ST"]}]},"mancity":{"starters":[{"id":"mci-01","name":"에데르송","position":"GK","availablePositions":["GK"]},{"id":"mci-02","name":"아칸지","position":"RCB","availablePositions":["CB","RB"]},{"id":"mci-03","name":"디아스","position":"CB","availablePositions":["CB"]},{"id":"mci-04","name":"그바르디올","position":"LCB","availablePositions":["CB","LB"]},{"id":"mci-05","name":"스톤스","position":"RWB","availablePositions":["CB","DM","RB"]},{"id":"mci-06","name":"로드리","position":"RCM","availablePositions":["DM","CM"]},{"id":"mci-07","name":"포든","position":"LCM","availablePositions":["AM","CM","RW"]},{"id":"mci-08","name":"더 브라위너","position":"LWB","availablePositions":["AM","CM"]},{"id":"mci-09","name":"엘리엇 앤더슨","position":"RAM","availablePositions":["CM","AM"]},{"id":"mci-10","name":"도쿠","position":"LAM","availablePositions":["LW","RW"]},{"id":"mci-11","name":"홀란드","position":"ST","availablePositions":["ST"]}],"substitutes":[{"id":"mci-12","name":"오르테가","position":"GK","availablePositions":["GK"]},{"id":"mci-13","name":"아케","position":"CB","availablePositions":["CB","LB"]},{"id":"mci-14","name":"워커","position":"RB","availablePositions":["RB","RCB"]},{"id":"mci-15","name":"코바치치","position":"CM","availablePositions":["CM","DM"]},{"id":"mci-16","name":"누네스","position":"CM","availablePositions":["CM","AM"]},{"id":"mci-17","name":"그릴리시","position":"LW","availablePositions":["LW","AM"]},{"id":"mci-18","name":"마르무시","position":"ST","availablePositions":["ST","LW"]}]},"tottenham":{"starters":[{"id":"tot-01","name":"비카리오","position":"GK","availablePositions":["GK"]},{"id":"tot-02","name":"포로","position":"RB","availablePositions":["RB","RWB"]},{"id":"tot-03","name":"로메로","position":"RCB","availablePositions":["CB"]},{"id":"tot-04","name":"반더벤","position":"LCB","availablePositions":["CB","LB"]},{"id":"tot-05","name":"우도기","position":"LB","availablePositions":["LB","LWB"]},{"id":"tot-06","name":"토날리","position":"RDM","availablePositions":["DM","CM"]},{"id":"tot-07","name":"페르난데스","position":"LDM","availablePositions":["DM","CM"]},{"id":"tot-08","name":"쿨루셉스키","position":"RAM","availablePositions":["RW","AM"]},{"id":"tot-09","name":"매디슨","position":"AM","availablePositions":["AM","CM"]},{"id":"tot-10","name":"손흥민","position":"LAM","availablePositions":["LW","ST"]},{"id":"tot-11","name":"솔랑케","position":"ST","availablePositions":["ST"]}],"substitutes":[{"id":"tot-12","name":"킨스키","position":"GK","availablePositions":["GK"]},{"id":"tot-13","name":"드라구신","position":"CB","availablePositions":["CB"]},{"id":"tot-14","name":"스펜스","position":"RB","availablePositions":["RB","LB","RWB"]},{"id":"tot-15","name":"벤탄쿠르","position":"CM","availablePositions":["CM","DM"]},{"id":"tot-16","name":"사르","position":"CM","availablePositions":["CM","DM"]},{"id":"tot-17","name":"브레넌 존슨","position":"RW","availablePositions":["RW","LW"]},{"id":"tot-18","name":"히샬리송","position":"ST","availablePositions":["ST","LW"]}]},"arsenal":{"starters":[{"id":"arsenal-starter-01","name":"선수 데이터 1","position":"GK","availablePositions":["GK"]},{"id":"arsenal-starter-02","name":"선수 데이터 2","position":"RB","availablePositions":["RB"]},{"id":"arsenal-starter-03","name":"선수 데이터 3","position":"RCB","availablePositions":["RCB"]},{"id":"arsenal-starter-04","name":"선수 데이터 4","position":"LCB","availablePositions":["LCB"]},{"id":"arsenal-starter-05","name":"선수 데이터 5","position":"LB","availablePositions":["LB"]},{"id":"arsenal-starter-06","name":"선수 데이터 6","position":"RCM","availablePositions":["RCM"]},{"id":"arsenal-starter-07","name":"선수 데이터 7","position":"DM","availablePositions":["DM"]},{"id":"arsenal-starter-08","name":"선수 데이터 8","position":"LCM","availablePositions":["LCM"]},{"id":"arsenal-starter-09","name":"선수 데이터 9","position":"RW","availablePositions":["RW"]},{"id":"arsenal-starter-10","name":"선수 데이터 10","position":"ST","availablePositions":["ST"]},{"id":"arsenal-starter-11","name":"선수 데이터 11","position":"LW","availablePositions":["LW"]}],"substitutes":[{"id":"arsenal-sub-01","name":"후보 데이터 1","position":"GK","availablePositions":["GK"]},{"id":"arsenal-sub-02","name":"후보 데이터 2","position":"CB","availablePositions":["CB"]},{"id":"arsenal-sub-03","name":"후보 데이터 3","position":"FB","availablePositions":["FB"]},{"id":"arsenal-sub-04","name":"후보 데이터 4","position":"DM","availablePositions":["DM"]},{"id":"arsenal-sub-05","name":"후보 데이터 5","position":"CM","availablePositions":["CM"]},{"id":"arsenal-sub-06","name":"후보 데이터 6","position":"WG","availablePositions":["WG"]},{"id":"arsenal-sub-07","name":"후보 데이터 7","position":"ST","availablePositions":["ST"]}]},"astonvilla":{"starters":[{"id":"astonvilla-starter-01","name":"선수 데이터 1","position":"GK","availablePositions":["GK"]},{"id":"astonvilla-starter-02","name":"선수 데이터 2","position":"RB","availablePositions":["RB"]},{"id":"astonvilla-starter-03","name":"선수 데이터 3","position":"RCB","availablePositions":["RCB"]},{"id":"astonvilla-starter-04","name":"선수 데이터 4","position":"LCB","availablePositions":["LCB"]},{"id":"astonvilla-starter-05","name":"선수 데이터 5","position":"LB","availablePositions":["LB"]},{"id":"astonvilla-starter-06","name":"선수 데이터 6","position":"RDM","availablePositions":["RDM"]},{"id":"astonvilla-starter-07","name":"선수 데이터 7","position":"LDM","availablePositions":["LDM"]},{"id":"astonvilla-starter-08","name":"선수 데이터 8","position":"RAM","availablePositions":["RAM"]},{"id":"astonvilla-starter-09","name":"선수 데이터 9","position":"AM","availablePositions":["AM"]},{"id":"astonvilla-starter-10","name":"선수 데이터 10","position":"LAM","availablePositions":["LAM"]},{"id":"astonvilla-starter-11","name":"선수 데이터 11","position":"ST","availablePositions":["ST"]}],"substitutes":[{"id":"astonvilla-sub-01","name":"후보 데이터 1","position":"GK","availablePositions":["GK"]},{"id":"astonvilla-sub-02","name":"후보 데이터 2","position":"CB","availablePositions":["CB"]},{"id":"astonvilla-sub-03","name":"후보 데이터 3","position":"FB","availablePositions":["FB"]},{"id":"astonvilla-sub-04","name":"후보 데이터 4","position":"DM","availablePositions":["DM"]},{"id":"astonvilla-sub-05","name":"후보 데이터 5","position":"CM","availablePositions":["CM"]},{"id":"astonvilla-sub-06","name":"후보 데이터 6","position":"WG","availablePositions":["WG"]},{"id":"astonvilla-sub-07","name":"후보 데이터 7","position":"ST","availablePositions":["ST"]}]},"bournemouth":{"starters":[{"id":"bournemouth-starter-01","name":"선수 데이터 1","position":"GK","availablePositions":["GK"]},{"id":"bournemouth-starter-02","name":"선수 데이터 2","position":"RB","availablePositions":["RB"]},{"id":"bournemouth-starter-03","name":"선수 데이터 3","position":"RCB","availablePositions":["RCB"]},{"id":"bournemouth-starter-04","name":"선수 데이터 4","position":"LCB","availablePositions":["LCB"]},{"id":"bournemouth-starter-05","name":"선수 데이터 5","position":"LB","availablePositions":["LB"]},{"id":"bournemouth-starter-06","name":"선수 데이터 6","position":"RDM","availablePositions":["RDM"]},{"id":"bournemouth-starter-07","name":"선수 데이터 7","position":"LDM","availablePositions":["LDM"]},{"id":"bournemouth-starter-08","name":"선수 데이터 8","position":"RAM","availablePositions":["RAM"]},{"id":"bournemouth-starter-09","name":"선수 데이터 9","position":"AM","availablePositions":["AM"]},{"id":"bournemouth-starter-10","name":"선수 데이터 10","position":"LAM","availablePositions":["LAM"]},{"id":"bournemouth-starter-11","name":"선수 데이터 11","position":"ST","availablePositions":["ST"]}],"substitutes":[{"id":"bournemouth-sub-01","name":"후보 데이터 1","position":"GK","availablePositions":["GK"]},{"id":"bournemouth-sub-02","name":"후보 데이터 2","position":"CB","availablePositions":["CB"]},{"id":"bournemouth-sub-03","name":"후보 데이터 3","position":"FB","availablePositions":["FB"]},{"id":"bournemouth-sub-04","name":"후보 데이터 4","position":"DM","availablePositions":["DM"]},{"id":"bournemouth-sub-05","name":"후보 데이터 5","position":"CM","availablePositions":["CM"]},{"id":"bournemouth-sub-06","name":"후보 데이터 6","position":"WG","availablePositions":["WG"]},{"id":"bournemouth-sub-07","name":"후보 데이터 7","position":"ST","availablePositions":["ST"]}]},"brentford":{"starters":[{"id":"brentford-starter-01","name":"선수 데이터 1","position":"GK","availablePositions":["GK"]},{"id":"brentford-starter-02","name":"선수 데이터 2","position":"RB","availablePositions":["RB"]},{"id":"brentford-starter-03","name":"선수 데이터 3","position":"RCB","availablePositions":["RCB"]},{"id":"brentford-starter-04","name":"선수 데이터 4","position":"LCB","availablePositions":["LCB"]},{"id":"brentford-starter-05","name":"선수 데이터 5","position":"LB","availablePositions":["LB"]},{"id":"brentford-starter-06","name":"선수 데이터 6","position":"RCM","availablePositions":["RCM"]},{"id":"brentford-starter-07","name":"선수 데이터 7","position":"DM","availablePositions":["DM"]},{"id":"brentford-starter-08","name":"선수 데이터 8","position":"LCM","availablePositions":["LCM"]},{"id":"brentford-starter-09","name":"선수 데이터 9","position":"RW","availablePositions":["RW"]},{"id":"brentford-starter-10","name":"선수 데이터 10","position":"ST","availablePositions":["ST"]},{"id":"brentford-starter-11","name":"선수 데이터 11","position":"LW","availablePositions":["LW"]}],"substitutes":[{"id":"brentford-sub-01","name":"후보 데이터 1","position":"GK","availablePositions":["GK"]},{"id":"brentford-sub-02","name":"후보 데이터 2","position":"CB","availablePositions":["CB"]},{"id":"brentford-sub-03","name":"후보 데이터 3","position":"FB","availablePositions":["FB"]},{"id":"brentford-sub-04","name":"후보 데이터 4","position":"DM","availablePositions":["DM"]},{"id":"brentford-sub-05","name":"후보 데이터 5","position":"CM","availablePositions":["CM"]},{"id":"brentford-sub-06","name":"후보 데이터 6","position":"WG","availablePositions":["WG"]},{"id":"brentford-sub-07","name":"후보 데이터 7","position":"ST","availablePositions":["ST"]}]},"brighton":{"starters":[{"id":"brighton-starter-01","name":"선수 데이터 1","position":"GK","availablePositions":["GK"]},{"id":"brighton-starter-02","name":"선수 데이터 2","position":"RB","availablePositions":["RB"]},{"id":"brighton-starter-03","name":"선수 데이터 3","position":"RCB","availablePositions":["RCB"]},{"id":"brighton-starter-04","name":"선수 데이터 4","position":"LCB","availablePositions":["LCB"]},{"id":"brighton-starter-05","name":"선수 데이터 5","position":"LB","availablePositions":["LB"]},{"id":"brighton-starter-06","name":"선수 데이터 6","position":"RDM","availablePositions":["RDM"]},{"id":"brighton-starter-07","name":"선수 데이터 7","position":"LDM","availablePositions":["LDM"]},{"id":"brighton-starter-08","name":"선수 데이터 8","position":"RAM","availablePositions":["RAM"]},{"id":"brighton-starter-09","name":"선수 데이터 9","position":"AM","availablePositions":["AM"]},{"id":"brighton-starter-10","name":"선수 데이터 10","position":"LAM","availablePositions":["LAM"]},{"id":"brighton-starter-11","name":"선수 데이터 11","position":"ST","availablePositions":["ST"]}],"substitutes":[{"id":"brighton-sub-01","name":"후보 데이터 1","position":"GK","availablePositions":["GK"]},{"id":"brighton-sub-02","name":"후보 데이터 2","position":"CB","availablePositions":["CB"]},{"id":"brighton-sub-03","name":"후보 데이터 3","position":"FB","availablePositions":["FB"]},{"id":"brighton-sub-04","name":"후보 데이터 4","position":"DM","availablePositions":["DM"]},{"id":"brighton-sub-05","name":"후보 데이터 5","position":"CM","availablePositions":["CM"]},{"id":"brighton-sub-06","name":"후보 데이터 6","position":"WG","availablePositions":["WG"]},{"id":"brighton-sub-07","name":"후보 데이터 7","position":"ST","availablePositions":["ST"]}]},"coventry":{"starters":[{"id":"coventry-starter-01","name":"선수 데이터 1","position":"GK","availablePositions":["GK"]},{"id":"coventry-starter-02","name":"선수 데이터 2","position":"RB","availablePositions":["RB"]},{"id":"coventry-starter-03","name":"선수 데이터 3","position":"RCB","availablePositions":["RCB"]},{"id":"coventry-starter-04","name":"선수 데이터 4","position":"LCB","availablePositions":["LCB"]},{"id":"coventry-starter-05","name":"선수 데이터 5","position":"LB","availablePositions":["LB"]},{"id":"coventry-starter-06","name":"선수 데이터 6","position":"RDM","availablePositions":["RDM"]},{"id":"coventry-starter-07","name":"선수 데이터 7","position":"LDM","availablePositions":["LDM"]},{"id":"coventry-starter-08","name":"선수 데이터 8","position":"RAM","availablePositions":["RAM"]},{"id":"coventry-starter-09","name":"선수 데이터 9","position":"AM","availablePositions":["AM"]},{"id":"coventry-starter-10","name":"선수 데이터 10","position":"LAM","availablePositions":["LAM"]},{"id":"coventry-starter-11","name":"선수 데이터 11","position":"ST","availablePositions":["ST"]}],"substitutes":[{"id":"coventry-sub-01","name":"후보 데이터 1","position":"GK","availablePositions":["GK"]},{"id":"coventry-sub-02","name":"후보 데이터 2","position":"CB","availablePositions":["CB"]},{"id":"coventry-sub-03","name":"후보 데이터 3","position":"FB","availablePositions":["FB"]},{"id":"coventry-sub-04","name":"후보 데이터 4","position":"DM","availablePositions":["DM"]},{"id":"coventry-sub-05","name":"후보 데이터 5","position":"CM","availablePositions":["CM"]},{"id":"coventry-sub-06","name":"후보 데이터 6","position":"WG","availablePositions":["WG"]},{"id":"coventry-sub-07","name":"후보 데이터 7","position":"ST","availablePositions":["ST"]}]},"crystalpalace":{"starters":[{"id":"crystalpalace-starter-01","name":"선수 데이터 1","position":"GK","availablePositions":["GK"]},{"id":"crystalpalace-starter-02","name":"선수 데이터 2","position":"RCB","availablePositions":["RCB"]},{"id":"crystalpalace-starter-03","name":"선수 데이터 3","position":"CB","availablePositions":["CB"]},{"id":"crystalpalace-starter-04","name":"선수 데이터 4","position":"LCB","availablePositions":["LCB"]},{"id":"crystalpalace-starter-05","name":"선수 데이터 5","position":"RWB","availablePositions":["RWB"]},{"id":"crystalpalace-starter-06","name":"선수 데이터 6","position":"RCM","availablePositions":["RCM"]},{"id":"crystalpalace-starter-07","name":"선수 데이터 7","position":"LCM","availablePositions":["LCM"]},{"id":"crystalpalace-starter-08","name":"선수 데이터 8","position":"LWB","availablePositions":["LWB"]},{"id":"crystalpalace-starter-09","name":"선수 데이터 9","position":"RAM","availablePositions":["RAM"]},{"id":"crystalpalace-starter-10","name":"선수 데이터 10","position":"LAM","availablePositions":["LAM"]},{"id":"crystalpalace-starter-11","name":"선수 데이터 11","position":"ST","availablePositions":["ST"]}],"substitutes":[{"id":"crystalpalace-sub-01","name":"후보 데이터 1","position":"GK","availablePositions":["GK"]},{"id":"crystalpalace-sub-02","name":"후보 데이터 2","position":"CB","availablePositions":["CB"]},{"id":"crystalpalace-sub-03","name":"후보 데이터 3","position":"FB","availablePositions":["FB"]},{"id":"crystalpalace-sub-04","name":"후보 데이터 4","position":"DM","availablePositions":["DM"]},{"id":"crystalpalace-sub-05","name":"후보 데이터 5","position":"CM","availablePositions":["CM"]},{"id":"crystalpalace-sub-06","name":"후보 데이터 6","position":"WG","availablePositions":["WG"]},{"id":"crystalpalace-sub-07","name":"후보 데이터 7","position":"ST","availablePositions":["ST"]}]},"everton":{"starters":[{"id":"everton-starter-01","name":"선수 데이터 1","position":"GK","availablePositions":["GK"]},{"id":"everton-starter-02","name":"선수 데이터 2","position":"RB","availablePositions":["RB"]},{"id":"everton-starter-03","name":"선수 데이터 3","position":"RCB","availablePositions":["RCB"]},{"id":"everton-starter-04","name":"선수 데이터 4","position":"LCB","availablePositions":["LCB"]},{"id":"everton-starter-05","name":"선수 데이터 5","position":"LB","availablePositions":["LB"]},{"id":"everton-starter-06","name":"선수 데이터 6","position":"RDM","availablePositions":["RDM"]},{"id":"everton-starter-07","name":"선수 데이터 7","position":"LDM","availablePositions":["LDM"]},{"id":"everton-starter-08","name":"선수 데이터 8","position":"RAM","availablePositions":["RAM"]},{"id":"everton-starter-09","name":"선수 데이터 9","position":"AM","availablePositions":["AM"]},{"id":"everton-starter-10","name":"선수 데이터 10","position":"LAM","availablePositions":["LAM"]},{"id":"everton-starter-11","name":"선수 데이터 11","position":"ST","availablePositions":["ST"]}],"substitutes":[{"id":"everton-sub-01","name":"후보 데이터 1","position":"GK","availablePositions":["GK"]},{"id":"everton-sub-02","name":"후보 데이터 2","position":"CB","availablePositions":["CB"]},{"id":"everton-sub-03","name":"후보 데이터 3","position":"FB","availablePositions":["FB"]},{"id":"everton-sub-04","name":"후보 데이터 4","position":"DM","availablePositions":["DM"]},{"id":"everton-sub-05","name":"후보 데이터 5","position":"CM","availablePositions":["CM"]},{"id":"everton-sub-06","name":"후보 데이터 6","position":"WG","availablePositions":["WG"]},{"id":"everton-sub-07","name":"후보 데이터 7","position":"ST","availablePositions":["ST"]}]},"fulham":{"starters":[{"id":"fulham-starter-01","name":"선수 데이터 1","position":"GK","availablePositions":["GK"]},{"id":"fulham-starter-02","name":"선수 데이터 2","position":"RB","availablePositions":["RB"]},{"id":"fulham-starter-03","name":"선수 데이터 3","position":"RCB","availablePositions":["RCB"]},{"id":"fulham-starter-04","name":"선수 데이터 4","position":"LCB","availablePositions":["LCB"]},{"id":"fulham-starter-05","name":"선수 데이터 5","position":"LB","availablePositions":["LB"]},{"id":"fulham-starter-06","name":"선수 데이터 6","position":"RDM","availablePositions":["RDM"]},{"id":"fulham-starter-07","name":"선수 데이터 7","position":"LDM","availablePositions":["LDM"]},{"id":"fulham-starter-08","name":"선수 데이터 8","position":"RAM","availablePositions":["RAM"]},{"id":"fulham-starter-09","name":"선수 데이터 9","position":"AM","availablePositions":["AM"]},{"id":"fulham-starter-10","name":"선수 데이터 10","position":"LAM","availablePositions":["LAM"]},{"id":"fulham-starter-11","name":"선수 데이터 11","position":"ST","availablePositions":["ST"]}],"substitutes":[{"id":"fulham-sub-01","name":"후보 데이터 1","position":"GK","availablePositions":["GK"]},{"id":"fulham-sub-02","name":"후보 데이터 2","position":"CB","availablePositions":["CB"]},{"id":"fulham-sub-03","name":"후보 데이터 3","position":"FB","availablePositions":["FB"]},{"id":"fulham-sub-04","name":"후보 데이터 4","position":"DM","availablePositions":["DM"]},{"id":"fulham-sub-05","name":"후보 데이터 5","position":"CM","availablePositions":["CM"]},{"id":"fulham-sub-06","name":"후보 데이터 6","position":"WG","availablePositions":["WG"]},{"id":"fulham-sub-07","name":"후보 데이터 7","position":"ST","availablePositions":["ST"]}]},"hullcity":{"starters":[{"id":"hullcity-starter-01","name":"선수 데이터 1","position":"GK","availablePositions":["GK"]},{"id":"hullcity-starter-02","name":"선수 데이터 2","position":"RB","availablePositions":["RB"]},{"id":"hullcity-starter-03","name":"선수 데이터 3","position":"RCB","availablePositions":["RCB"]},{"id":"hullcity-starter-04","name":"선수 데이터 4","position":"LCB","availablePositions":["LCB"]},{"id":"hullcity-starter-05","name":"선수 데이터 5","position":"LB","availablePositions":["LB"]},{"id":"hullcity-starter-06","name":"선수 데이터 6","position":"RDM","availablePositions":["RDM"]},{"id":"hullcity-starter-07","name":"선수 데이터 7","position":"LDM","availablePositions":["LDM"]},{"id":"hullcity-starter-08","name":"선수 데이터 8","position":"RAM","availablePositions":["RAM"]},{"id":"hullcity-starter-09","name":"선수 데이터 9","position":"AM","availablePositions":["AM"]},{"id":"hullcity-starter-10","name":"선수 데이터 10","position":"LAM","availablePositions":["LAM"]},{"id":"hullcity-starter-11","name":"선수 데이터 11","position":"ST","availablePositions":["ST"]}],"substitutes":[{"id":"hullcity-sub-01","name":"후보 데이터 1","position":"GK","availablePositions":["GK"]},{"id":"hullcity-sub-02","name":"후보 데이터 2","position":"CB","availablePositions":["CB"]},{"id":"hullcity-sub-03","name":"후보 데이터 3","position":"FB","availablePositions":["FB"]},{"id":"hullcity-sub-04","name":"후보 데이터 4","position":"DM","availablePositions":["DM"]},{"id":"hullcity-sub-05","name":"후보 데이터 5","position":"CM","availablePositions":["CM"]},{"id":"hullcity-sub-06","name":"후보 데이터 6","position":"WG","availablePositions":["WG"]},{"id":"hullcity-sub-07","name":"후보 데이터 7","position":"ST","availablePositions":["ST"]}]},"ipswich":{"starters":[{"id":"ipswich-starter-01","name":"선수 데이터 1","position":"GK","availablePositions":["GK"]},{"id":"ipswich-starter-02","name":"선수 데이터 2","position":"RB","availablePositions":["RB"]},{"id":"ipswich-starter-03","name":"선수 데이터 3","position":"RCB","availablePositions":["RCB"]},{"id":"ipswich-starter-04","name":"선수 데이터 4","position":"LCB","availablePositions":["LCB"]},{"id":"ipswich-starter-05","name":"선수 데이터 5","position":"LB","availablePositions":["LB"]},{"id":"ipswich-starter-06","name":"선수 데이터 6","position":"RDM","availablePositions":["RDM"]},{"id":"ipswich-starter-07","name":"선수 데이터 7","position":"LDM","availablePositions":["LDM"]},{"id":"ipswich-starter-08","name":"선수 데이터 8","position":"RAM","availablePositions":["RAM"]},{"id":"ipswich-starter-09","name":"선수 데이터 9","position":"AM","availablePositions":["AM"]},{"id":"ipswich-starter-10","name":"선수 데이터 10","position":"LAM","availablePositions":["LAM"]},{"id":"ipswich-starter-11","name":"선수 데이터 11","position":"ST","availablePositions":["ST"]}],"substitutes":[{"id":"ipswich-sub-01","name":"후보 데이터 1","position":"GK","availablePositions":["GK"]},{"id":"ipswich-sub-02","name":"후보 데이터 2","position":"CB","availablePositions":["CB"]},{"id":"ipswich-sub-03","name":"후보 데이터 3","position":"FB","availablePositions":["FB"]},{"id":"ipswich-sub-04","name":"후보 데이터 4","position":"DM","availablePositions":["DM"]},{"id":"ipswich-sub-05","name":"후보 데이터 5","position":"CM","availablePositions":["CM"]},{"id":"ipswich-sub-06","name":"후보 데이터 6","position":"WG","availablePositions":["WG"]},{"id":"ipswich-sub-07","name":"후보 데이터 7","position":"ST","availablePositions":["ST"]}]},"leeds":{"starters":[{"id":"leeds-starter-01","name":"선수 데이터 1","position":"GK","availablePositions":["GK"]},{"id":"leeds-starter-02","name":"선수 데이터 2","position":"RB","availablePositions":["RB"]},{"id":"leeds-starter-03","name":"선수 데이터 3","position":"RCB","availablePositions":["RCB"]},{"id":"leeds-starter-04","name":"선수 데이터 4","position":"LCB","availablePositions":["LCB"]},{"id":"leeds-starter-05","name":"선수 데이터 5","position":"LB","availablePositions":["LB"]},{"id":"leeds-starter-06","name":"선수 데이터 6","position":"RDM","availablePositions":["RDM"]},{"id":"leeds-starter-07","name":"선수 데이터 7","position":"LDM","availablePositions":["LDM"]},{"id":"leeds-starter-08","name":"선수 데이터 8","position":"RAM","availablePositions":["RAM"]},{"id":"leeds-starter-09","name":"선수 데이터 9","position":"AM","availablePositions":["AM"]},{"id":"leeds-starter-10","name":"선수 데이터 10","position":"LAM","availablePositions":["LAM"]},{"id":"leeds-starter-11","name":"선수 데이터 11","position":"ST","availablePositions":["ST"]}],"substitutes":[{"id":"leeds-sub-01","name":"후보 데이터 1","position":"GK","availablePositions":["GK"]},{"id":"leeds-sub-02","name":"후보 데이터 2","position":"CB","availablePositions":["CB"]},{"id":"leeds-sub-03","name":"후보 데이터 3","position":"FB","availablePositions":["FB"]},{"id":"leeds-sub-04","name":"후보 데이터 4","position":"DM","availablePositions":["DM"]},{"id":"leeds-sub-05","name":"후보 데이터 5","position":"CM","availablePositions":["CM"]},{"id":"leeds-sub-06","name":"후보 데이터 6","position":"WG","availablePositions":["WG"]},{"id":"leeds-sub-07","name":"후보 데이터 7","position":"ST","availablePositions":["ST"]}]},"liverpool":{"starters":[{"id":"liverpool-starter-01","name":"선수 데이터 1","position":"GK","availablePositions":["GK"]},{"id":"liverpool-starter-02","name":"선수 데이터 2","position":"RB","availablePositions":["RB"]},{"id":"liverpool-starter-03","name":"선수 데이터 3","position":"RCB","availablePositions":["RCB"]},{"id":"liverpool-starter-04","name":"선수 데이터 4","position":"LCB","availablePositions":["LCB"]},{"id":"liverpool-starter-05","name":"선수 데이터 5","position":"LB","availablePositions":["LB"]},{"id":"liverpool-starter-06","name":"선수 데이터 6","position":"RCM","availablePositions":["RCM"]},{"id":"liverpool-starter-07","name":"선수 데이터 7","position":"DM","availablePositions":["DM"]},{"id":"liverpool-starter-08","name":"선수 데이터 8","position":"LCM","availablePositions":["LCM"]},{"id":"liverpool-starter-09","name":"선수 데이터 9","position":"RW","availablePositions":["RW"]},{"id":"liverpool-starter-10","name":"선수 데이터 10","position":"ST","availablePositions":["ST"]},{"id":"liverpool-starter-11","name":"선수 데이터 11","position":"LW","availablePositions":["LW"]}],"substitutes":[{"id":"liverpool-sub-01","name":"후보 데이터 1","position":"GK","availablePositions":["GK"]},{"id":"liverpool-sub-02","name":"후보 데이터 2","position":"CB","availablePositions":["CB"]},{"id":"liverpool-sub-03","name":"후보 데이터 3","position":"FB","availablePositions":["FB"]},{"id":"liverpool-sub-04","name":"후보 데이터 4","position":"DM","availablePositions":["DM"]},{"id":"liverpool-sub-05","name":"후보 데이터 5","position":"CM","availablePositions":["CM"]},{"id":"liverpool-sub-06","name":"후보 데이터 6","position":"WG","availablePositions":["WG"]},{"id":"liverpool-sub-07","name":"후보 데이터 7","position":"ST","availablePositions":["ST"]}]},"manutd":{"starters":[{"id":"manutd-starter-01","name":"선수 데이터 1","position":"GK","availablePositions":["GK"]},{"id":"manutd-starter-02","name":"선수 데이터 2","position":"RCB","availablePositions":["RCB"]},{"id":"manutd-starter-03","name":"선수 데이터 3","position":"CB","availablePositions":["CB"]},{"id":"manutd-starter-04","name":"선수 데이터 4","position":"LCB","availablePositions":["LCB"]},{"id":"manutd-starter-05","name":"선수 데이터 5","position":"RWB","availablePositions":["RWB"]},{"id":"manutd-starter-06","name":"선수 데이터 6","position":"RCM","availablePositions":["RCM"]},{"id":"manutd-starter-07","name":"선수 데이터 7","position":"LCM","availablePositions":["LCM"]},{"id":"manutd-starter-08","name":"선수 데이터 8","position":"LWB","availablePositions":["LWB"]},{"id":"manutd-starter-09","name":"선수 데이터 9","position":"RAM","availablePositions":["RAM"]},{"id":"manutd-starter-10","name":"선수 데이터 10","position":"LAM","availablePositions":["LAM"]},{"id":"manutd-starter-11","name":"선수 데이터 11","position":"ST","availablePositions":["ST"]}],"substitutes":[{"id":"manutd-sub-01","name":"후보 데이터 1","position":"GK","availablePositions":["GK"]},{"id":"manutd-sub-02","name":"후보 데이터 2","position":"CB","availablePositions":["CB"]},{"id":"manutd-sub-03","name":"후보 데이터 3","position":"FB","availablePositions":["FB"]},{"id":"manutd-sub-04","name":"후보 데이터 4","position":"DM","availablePositions":["DM"]},{"id":"manutd-sub-05","name":"후보 데이터 5","position":"CM","availablePositions":["CM"]},{"id":"manutd-sub-06","name":"후보 데이터 6","position":"WG","availablePositions":["WG"]},{"id":"manutd-sub-07","name":"후보 데이터 7","position":"ST","availablePositions":["ST"]}]},"newcastle":{"starters":[{"id":"newcastle-starter-01","name":"선수 데이터 1","position":"GK","availablePositions":["GK"]},{"id":"newcastle-starter-02","name":"선수 데이터 2","position":"RB","availablePositions":["RB"]},{"id":"newcastle-starter-03","name":"선수 데이터 3","position":"RCB","availablePositions":["RCB"]},{"id":"newcastle-starter-04","name":"선수 데이터 4","position":"LCB","availablePositions":["LCB"]},{"id":"newcastle-starter-05","name":"선수 데이터 5","position":"LB","availablePositions":["LB"]},{"id":"newcastle-starter-06","name":"선수 데이터 6","position":"RCM","availablePositions":["RCM"]},{"id":"newcastle-starter-07","name":"선수 데이터 7","position":"DM","availablePositions":["DM"]},{"id":"newcastle-starter-08","name":"선수 데이터 8","position":"LCM","availablePositions":["LCM"]},{"id":"newcastle-starter-09","name":"선수 데이터 9","position":"RW","availablePositions":["RW"]},{"id":"newcastle-starter-10","name":"선수 데이터 10","position":"ST","availablePositions":["ST"]},{"id":"newcastle-starter-11","name":"선수 데이터 11","position":"LW","availablePositions":["LW"]}],"substitutes":[{"id":"newcastle-sub-01","name":"후보 데이터 1","position":"GK","availablePositions":["GK"]},{"id":"newcastle-sub-02","name":"후보 데이터 2","position":"CB","availablePositions":["CB"]},{"id":"newcastle-sub-03","name":"후보 데이터 3","position":"FB","availablePositions":["FB"]},{"id":"newcastle-sub-04","name":"후보 데이터 4","position":"DM","availablePositions":["DM"]},{"id":"newcastle-sub-05","name":"후보 데이터 5","position":"CM","availablePositions":["CM"]},{"id":"newcastle-sub-06","name":"후보 데이터 6","position":"WG","availablePositions":["WG"]},{"id":"newcastle-sub-07","name":"후보 데이터 7","position":"ST","availablePositions":["ST"]}]},"nottinghamforest":{"starters":[{"id":"nottinghamforest-starter-01","name":"선수 데이터 1","position":"GK","availablePositions":["GK"]},{"id":"nottinghamforest-starter-02","name":"선수 데이터 2","position":"RB","availablePositions":["RB"]},{"id":"nottinghamforest-starter-03","name":"선수 데이터 3","position":"RCB","availablePositions":["RCB"]},{"id":"nottinghamforest-starter-04","name":"선수 데이터 4","position":"LCB","availablePositions":["LCB"]},{"id":"nottinghamforest-starter-05","name":"선수 데이터 5","position":"LB","availablePositions":["LB"]},{"id":"nottinghamforest-starter-06","name":"선수 데이터 6","position":"RDM","availablePositions":["RDM"]},{"id":"nottinghamforest-starter-07","name":"선수 데이터 7","position":"LDM","availablePositions":["LDM"]},{"id":"nottinghamforest-starter-08","name":"선수 데이터 8","position":"RAM","availablePositions":["RAM"]},{"id":"nottinghamforest-starter-09","name":"선수 데이터 9","position":"AM","availablePositions":["AM"]},{"id":"nottinghamforest-starter-10","name":"선수 데이터 10","position":"LAM","availablePositions":["LAM"]},{"id":"nottinghamforest-starter-11","name":"선수 데이터 11","position":"ST","availablePositions":["ST"]}],"substitutes":[{"id":"nottinghamforest-sub-01","name":"후보 데이터 1","position":"GK","availablePositions":["GK"]},{"id":"nottinghamforest-sub-02","name":"후보 데이터 2","position":"CB","availablePositions":["CB"]},{"id":"nottinghamforest-sub-03","name":"후보 데이터 3","position":"FB","availablePositions":["FB"]},{"id":"nottinghamforest-sub-04","name":"후보 데이터 4","position":"DM","availablePositions":["DM"]},{"id":"nottinghamforest-sub-05","name":"후보 데이터 5","position":"CM","availablePositions":["CM"]},{"id":"nottinghamforest-sub-06","name":"후보 데이터 6","position":"WG","availablePositions":["WG"]},{"id":"nottinghamforest-sub-07","name":"후보 데이터 7","position":"ST","availablePositions":["ST"]}]},"sunderland":{"starters":[{"id":"sunderland-starter-01","name":"선수 데이터 1","position":"GK","availablePositions":["GK"]},{"id":"sunderland-starter-02","name":"선수 데이터 2","position":"RB","availablePositions":["RB"]},{"id":"sunderland-starter-03","name":"선수 데이터 3","position":"RCB","availablePositions":["RCB"]},{"id":"sunderland-starter-04","name":"선수 데이터 4","position":"LCB","availablePositions":["LCB"]},{"id":"sunderland-starter-05","name":"선수 데이터 5","position":"LB","availablePositions":["LB"]},{"id":"sunderland-starter-06","name":"선수 데이터 6","position":"RCM","availablePositions":["RCM"]},{"id":"sunderland-starter-07","name":"선수 데이터 7","position":"DM","availablePositions":["DM"]},{"id":"sunderland-starter-08","name":"선수 데이터 8","position":"LCM","availablePositions":["LCM"]},{"id":"sunderland-starter-09","name":"선수 데이터 9","position":"RW","availablePositions":["RW"]},{"id":"sunderland-starter-10","name":"선수 데이터 10","position":"ST","availablePositions":["ST"]},{"id":"sunderland-starter-11","name":"선수 데이터 11","position":"LW","availablePositions":["LW"]}],"substitutes":[{"id":"sunderland-sub-01","name":"후보 데이터 1","position":"GK","availablePositions":["GK"]},{"id":"sunderland-sub-02","name":"후보 데이터 2","position":"CB","availablePositions":["CB"]},{"id":"sunderland-sub-03","name":"후보 데이터 3","position":"FB","availablePositions":["FB"]},{"id":"sunderland-sub-04","name":"후보 데이터 4","position":"DM","availablePositions":["DM"]},{"id":"sunderland-sub-05","name":"후보 데이터 5","position":"CM","availablePositions":["CM"]},{"id":"sunderland-sub-06","name":"후보 데이터 6","position":"WG","availablePositions":["WG"]},{"id":"sunderland-sub-07","name":"후보 데이터 7","position":"ST","availablePositions":["ST"]}]}},"managers":{"arsenal":{"name":"감독 데이터 업데이트 예정","nationality":"업데이트 예정","career":[],"preferredFormations":["4-3-3"],"style":"전술 데이터 업데이트 예정","keyPlayers":[],"signings":"이적 데이터 업데이트 예정","feedback":"해당 구단의 26/27 상세 데이터는 이후 단계에서 추가됩니다."},"astonvilla":{"name":"감독 데이터 업데이트 예정","nationality":"업데이트 예정","career":[],"preferredFormations":["4-2-3-1"],"style":"전술 데이터 업데이트 예정","keyPlayers":[],"signings":"이적 데이터 업데이트 예정","feedback":"해당 구단의 26/27 상세 데이터는 이후 단계에서 추가됩니다."},"bournemouth":{"name":"감독 데이터 업데이트 예정","nationality":"업데이트 예정","career":[],"preferredFormations":["4-2-3-1"],"style":"전술 데이터 업데이트 예정","keyPlayers":[],"signings":"이적 데이터 업데이트 예정","feedback":"해당 구단의 26/27 상세 데이터는 이후 단계에서 추가됩니다."},"brentford":{"name":"감독 데이터 업데이트 예정","nationality":"업데이트 예정","career":[],"preferredFormations":["4-3-3"],"style":"전술 데이터 업데이트 예정","keyPlayers":[],"signings":"이적 데이터 업데이트 예정","feedback":"해당 구단의 26/27 상세 데이터는 이후 단계에서 추가됩니다."},"brighton":{"name":"감독 데이터 업데이트 예정","nationality":"업데이트 예정","career":[],"preferredFormations":["4-2-3-1"],"style":"전술 데이터 업데이트 예정","keyPlayers":[],"signings":"이적 데이터 업데이트 예정","feedback":"해당 구단의 26/27 상세 데이터는 이후 단계에서 추가됩니다."},"chelsea":{"name":"사비 알론소 (Xabi Alonso)","nationality":"업데이트 예정","career":[],"preferredFormations":["3-4-2-1"],"style":"하이브리드 윙백 & 하프스페이스 좁은 채널 빌드업","keyPlayers":[],"signings":"피에로 인카피에 (Piero Hincapié) 완전 영입","feedback":"알론소 감독의 첼시는 가변 3백과 좁혀진 공격 포지션이 특징입니다. 인카피에의 합류로 수비 시 백4로 부드럽게 복귀할 수 있습니다."},"coventry":{"name":"감독 데이터 업데이트 예정","nationality":"업데이트 예정","career":[],"preferredFormations":["4-2-3-1"],"style":"전술 데이터 업데이트 예정","keyPlayers":[],"signings":"이적 데이터 업데이트 예정","feedback":"해당 구단의 26/27 상세 데이터는 이후 단계에서 추가됩니다."},"crystalpalace":{"name":"감독 데이터 업데이트 예정","nationality":"업데이트 예정","career":[],"preferredFormations":["3-4-2-1"],"style":"전술 데이터 업데이트 예정","keyPlayers":[],"signings":"이적 데이터 업데이트 예정","feedback":"해당 구단의 26/27 상세 데이터는 이후 단계에서 추가됩니다."},"everton":{"name":"감독 데이터 업데이트 예정","nationality":"업데이트 예정","career":[],"preferredFormations":["4-2-3-1"],"style":"전술 데이터 업데이트 예정","keyPlayers":[],"signings":"이적 데이터 업데이트 예정","feedback":"해당 구단의 26/27 상세 데이터는 이후 단계에서 추가됩니다."},"fulham":{"name":"감독 데이터 업데이트 예정","nationality":"업데이트 예정","career":[],"preferredFormations":["4-2-3-1"],"style":"전술 데이터 업데이트 예정","keyPlayers":[],"signings":"이적 데이터 업데이트 예정","feedback":"해당 구단의 26/27 상세 데이터는 이후 단계에서 추가됩니다."},"hullcity":{"name":"감독 데이터 업데이트 예정","nationality":"업데이트 예정","career":[],"preferredFormations":["4-2-3-1"],"style":"전술 데이터 업데이트 예정","keyPlayers":[],"signings":"이적 데이터 업데이트 예정","feedback":"해당 구단의 26/27 상세 데이터는 이후 단계에서 추가됩니다."},"ipswich":{"name":"감독 데이터 업데이트 예정","nationality":"업데이트 예정","career":[],"preferredFormations":["4-2-3-1"],"style":"전술 데이터 업데이트 예정","keyPlayers":[],"signings":"이적 데이터 업데이트 예정","feedback":"해당 구단의 26/27 상세 데이터는 이후 단계에서 추가됩니다."},"leeds":{"name":"감독 데이터 업데이트 예정","nationality":"업데이트 예정","career":[],"preferredFormations":["4-2-3-1"],"style":"전술 데이터 업데이트 예정","keyPlayers":[],"signings":"이적 데이터 업데이트 예정","feedback":"해당 구단의 26/27 상세 데이터는 이후 단계에서 추가됩니다."},"liverpool":{"name":"감독 데이터 업데이트 예정","nationality":"업데이트 예정","career":[],"preferredFormations":["4-3-3"],"style":"전술 데이터 업데이트 예정","keyPlayers":[],"signings":"이적 데이터 업데이트 예정","feedback":"해당 구단의 26/27 상세 데이터는 이후 단계에서 추가됩니다."},"mancity":{"name":"엔초 마레스카 (Enzo Maresca)","nationality":"업데이트 예정","career":[],"preferredFormations":["3-2-4-1"],"style":"극단적 인버티드 풀백 기용 및 하프스페이스 수적 우위 점유","keyPlayers":[],"signings":"엘리엇 앤더슨 (Elliot Anderson) 영입 (€135M)","feedback":"마레스카 볼은 인버티드 풀백인 스톤스 또는 그바르디올이 로드리와 나란히 서서 중앙 박스를 장악하고, 더 브라위너와 신입생 앤더슨이 메짤라처럼 전진합니다."},"manutd":{"name":"감독 데이터 업데이트 예정","nationality":"업데이트 예정","career":[],"preferredFormations":["3-4-2-1"],"style":"전술 데이터 업데이트 예정","keyPlayers":[],"signings":"이적 데이터 업데이트 예정","feedback":"해당 구단의 26/27 상세 데이터는 이후 단계에서 추가됩니다."},"newcastle":{"name":"감독 데이터 업데이트 예정","nationality":"업데이트 예정","career":[],"preferredFormations":["4-3-3"],"style":"전술 데이터 업데이트 예정","keyPlayers":[],"signings":"이적 데이터 업데이트 예정","feedback":"해당 구단의 26/27 상세 데이터는 이후 단계에서 추가됩니다."},"nottinghamforest":{"name":"감독 데이터 업데이트 예정","nationality":"업데이트 예정","career":[],"preferredFormations":["4-2-3-1"],"style":"전술 데이터 업데이트 예정","keyPlayers":[],"signings":"이적 데이터 업데이트 예정","feedback":"해당 구단의 26/27 상세 데이터는 이후 단계에서 추가됩니다."},"sunderland":{"name":"감독 데이터 업데이트 예정","nationality":"업데이트 예정","career":[],"preferredFormations":["4-3-3"],"style":"전술 데이터 업데이트 예정","keyPlayers":[],"signings":"이적 데이터 업데이트 예정","feedback":"해당 구단의 26/27 상세 데이터는 이후 단계에서 추가됩니다."},"tottenham":{"name":"로베르토 데 제르비 (Roberto De Zerbi)","nationality":"업데이트 예정","career":[],"preferredFormations":["4-2-3-1"],"style":"골키퍼를 유인 요소로 삼는 고도 설계 빌드업 및 빠른 종전환","keyPlayers":[],"signings":"산드로 토날리 (€108M), 마테우스 페르난데스 (€99M)","feedback":"데 제르비 수장 아래에서 토트넘은 토날리와 페르난데스라는 엄청난 더블 피벗을 구축해 후방 빌드업에서 상대 압박을 유도하고 손흥민과 쿨루셉스키 공간을 엽니다."}},"tactics":{"arsenal":{"presets":{"tikitaka":{"defline":55,"width":50,"pressing":65},"gegen":{"defline":78,"width":50,"pressing":90},"lowblock":{"defline":25,"width":35,"pressing":25}}},"astonvilla":{"presets":{"tikitaka":{"defline":55,"width":50,"pressing":65},"gegen":{"defline":78,"width":50,"pressing":90},"lowblock":{"defline":25,"width":35,"pressing":25}}},"bournemouth":{"presets":{"tikitaka":{"defline":55,"width":50,"pressing":65},"gegen":{"defline":78,"width":50,"pressing":90},"lowblock":{"defline":25,"width":35,"pressing":25}}},"brentford":{"presets":{"tikitaka":{"defline":55,"width":50,"pressing":65},"gegen":{"defline":78,"width":50,"pressing":90},"lowblock":{"defline":25,"width":35,"pressing":25}}},"brighton":{"presets":{"tikitaka":{"defline":55,"width":50,"pressing":65},"gegen":{"defline":78,"width":50,"pressing":90},"lowblock":{"defline":25,"width":35,"pressing":25}}},"chelsea":{"presets":{"tikitaka":{"defline":55,"width":35,"pressing":65},"gegen":{"defline":80,"width":45,"pressing":95},"lowblock":{"defline":20,"width":25,"pressing":20}}},"coventry":{"presets":{"tikitaka":{"defline":55,"width":50,"pressing":65},"gegen":{"defline":78,"width":50,"pressing":90},"lowblock":{"defline":25,"width":35,"pressing":25}}},"crystalpalace":{"presets":{"tikitaka":{"defline":55,"width":50,"pressing":65},"gegen":{"defline":78,"width":50,"pressing":90},"lowblock":{"defline":25,"width":35,"pressing":25}}},"everton":{"presets":{"tikitaka":{"defline":55,"width":50,"pressing":65},"gegen":{"defline":78,"width":50,"pressing":90},"lowblock":{"defline":25,"width":35,"pressing":25}}},"fulham":{"presets":{"tikitaka":{"defline":55,"width":50,"pressing":65},"gegen":{"defline":78,"width":50,"pressing":90},"lowblock":{"defline":25,"width":35,"pressing":25}}},"hullcity":{"presets":{"tikitaka":{"defline":55,"width":50,"pressing":65},"gegen":{"defline":78,"width":50,"pressing":90},"lowblock":{"defline":25,"width":35,"pressing":25}}},"ipswich":{"presets":{"tikitaka":{"defline":55,"width":50,"pressing":65},"gegen":{"defline":78,"width":50,"pressing":90},"lowblock":{"defline":25,"width":35,"pressing":25}}},"leeds":{"presets":{"tikitaka":{"defline":55,"width":50,"pressing":65},"gegen":{"defline":78,"width":50,"pressing":90},"lowblock":{"defline":25,"width":35,"pressing":25}}},"liverpool":{"presets":{"tikitaka":{"defline":55,"width":50,"pressing":65},"gegen":{"defline":78,"width":50,"pressing":90},"lowblock":{"defline":25,"width":35,"pressing":25}}},"mancity":{"presets":{"tikitaka":{"defline":60,"width":65,"pressing":75},"gegen":{"defline":82,"width":55,"pressing":90},"lowblock":{"defline":25,"width":45,"pressing":30}}},"manutd":{"presets":{"tikitaka":{"defline":55,"width":50,"pressing":65},"gegen":{"defline":78,"width":50,"pressing":90},"lowblock":{"defline":25,"width":35,"pressing":25}}},"newcastle":{"presets":{"tikitaka":{"defline":55,"width":50,"pressing":65},"gegen":{"defline":78,"width":50,"pressing":90},"lowblock":{"defline":25,"width":35,"pressing":25}}},"nottinghamforest":{"presets":{"tikitaka":{"defline":55,"width":50,"pressing":65},"gegen":{"defline":78,"width":50,"pressing":90},"lowblock":{"defline":25,"width":35,"pressing":25}}},"sunderland":{"presets":{"tikitaka":{"defline":55,"width":50,"pressing":65},"gegen":{"defline":78,"width":50,"pressing":90},"lowblock":{"defline":25,"width":35,"pressing":25}}},"tottenham":{"presets":{"tikitaka":{"defline":65,"width":70,"pressing":80},"gegen":{"defline":85,"width":60,"pressing":95},"lowblock":{"defline":22,"width":40,"pressing":25}}}}};
+
+        async function fetchJsonWithFallback(filename, embeddedValue) {
+            const candidates = [`./data/${filename}`, `./${filename}`];
+            for (const path of candidates) {
+                try {
+                    const response = await fetch(path, { cache: 'no-store' });
+                    if (response.ok) return await response.json();
+                } catch (error) {
+                    console.warn(`${path} 로드 실패`, error);
+                }
+            }
+            return structuredClone ? structuredClone(embeddedValue) : JSON.parse(JSON.stringify(embeddedValue));
+        }
+
+        async function loadProjectData() {
+            const [teams, formations, squads, managers, tactics] = await Promise.all([
+                fetchJsonWithFallback('teams.json', EMBEDDED_PROJECT_DATA.teams),
+                fetchJsonWithFallback('formations.json', EMBEDDED_PROJECT_DATA.formations),
+                fetchJsonWithFallback('squads.json', EMBEDDED_PROJECT_DATA.squads),
+                fetchJsonWithFallback('managers.json', EMBEDDED_PROJECT_DATA.managers),
+                fetchJsonWithFallback('tactics.json', EMBEDDED_PROJECT_DATA.tactics)
+            ]);
+
+            teamsMeta = teams;
+            formationsMap = formations;
+            teamSquads = squads;
+            managerData = managers;
+            tacticsData = tactics;
+            teamData = Object.fromEntries(Object.keys(teamsMeta).map(teamKey => {
+                const meta = teamsMeta[teamKey] || {};
+                const manager = managerData[teamKey] || {};
+                const tactical = tacticsData[teamKey] || {};
+                return [teamKey, {
+                    manager: manager.name || '감독 정보 준비 중',
+                    defaultFormation: meta.defaultFormation || '4-3-3',
+                    style: manager.style || manager.philosophy || '전술 스타일 데이터 준비 중',
+                    signings: manager.signings || '',
+                    presets: tactical.presets || {},
+                    feedback: manager.feedback || '상세 분석 데이터 준비 중'
+                }];
+            }));
+
+            if (!teamsMeta[currentTeam]) currentTeam = Object.keys(teamsMeta)[0];
+            renderTeamSelector();
+            const status = document.getElementById('team-data-status');
+            if (status) status.innerText = `${Object.keys(teamsMeta).length}개 구단 데이터 로드 완료`;
+        }
+
+        function renderTeamSelector() {
+            const select = document.getElementById('team-select');
+            if (!select) return;
+            select.innerHTML = Object.entries(teamsMeta).map(([key, team]) =>
+                `<option value="${key}">${team.koreanName} · ${team.name}${team.dataStatus === 'planned' ? ' (데이터 준비 중)' : ''}</option>`
+            ).join('');
+            select.value = currentTeam;
+        }
+
+        let currentTeam = 'chelsea';
+        let currentFormation = '3-4-2-1';
+        let selectedSubstituteId = null;
+        const DNA_LABELS = [['possession','점유'],['buildUp','빌드업'],['verticality','직선성'],['highPress','전방 압박'],['defensiveLine','수비 라인'],['width','공격 폭'],['flexibility','유연성'],['transition','전환 공격']];
+
+        // 팀/포메이션별 사용자 배치 상태를 저장합니다.
+        // 좌표는 슬라이더 보정 전의 기준 좌표(base coordinate)로 보관됩니다.
+        const customLayouts = new Map();
+
+        function getLayoutKey() {
+            return `${currentTeam}:${currentFormation}`;
+        }
+
+        function cloneFormationLayout() {
+            return formationsMap[currentFormation].map(player => ({ ...player }));
+        }
+
+        function getCurrentLayout() {
+            const key = getLayoutKey();
+            if (!customLayouts.has(key)) {
+                customLayouts.set(key, cloneFormationLayout());
+            }
+            return customLayouts.get(key);
+        }
+
+        function clamp(value, min, max) {
+            return Math.min(max, Math.max(min, value));
+        }
+
+        // 경기장 좌표를 기준으로 가장 자연스러운 포지션을 판정합니다.
+        function inferPosition(x, y) {
+            const side = x < 42 ? 'L' : x > 58 ? 'R' : '';
+            const veryWide = x < 25 || x > 75;
+
+            if (y >= 86) return { pos: 'GK', role: 'gk' };
+
+            if (y >= 68) {
+                if (veryWide) return { pos: side === 'L' ? 'LB' : 'RB', role: 'wide' };
+                return { pos: side ? `${side}CB` : 'CB', role: 'def' };
+            }
+
+            if (y >= 51) {
+                if (veryWide) return { pos: side === 'L' ? 'LWB' : 'RWB', role: 'wide' };
+                if (y >= 60) return { pos: side ? `${side}DM` : 'DM', role: 'mid' };
+                return { pos: side ? `${side}CM` : 'CM', role: 'mid' };
+            }
+
+            if (y >= 29) {
+                if (veryWide) return { pos: side === 'L' ? 'LW' : 'RW', role: 'wide' };
+                return { pos: side ? `${side}AM` : 'AM', role: 'mid' };
+            }
+
+            if (veryWide) return { pos: side === 'L' ? 'LW' : 'RW', role: 'wide' };
+            return { pos: side ? `${side}ST` : 'ST', role: 'att' };
+        }
+
+        function getSliderValues() {
+            return {
+                defLine: parseInt(document.getElementById('slider-defline').value),
+                width: parseInt(document.getElementById('slider-width').value),
+                pressing: parseInt(document.getElementById('slider-pressing').value)
+            };
+        }
+
+        function baseToDisplay(player, sliders) {
+            let x = player.x;
+            let y = player.y;
+
+            if (player.role !== 'gk') {
+                y -= (sliders.defLine - 50) * 0.35;
+            }
+
+            if (player.role === 'wide') {
+                const offset = (sliders.width - 50) * 0.28;
+                x += x > 50 ? offset : -offset;
+            } else if (player.role === 'mid') {
+                const offset = (sliders.width - 50) * 0.12;
+                if (x > 50) x += offset;
+                else if (x < 50) x -= offset;
+            }
+
+            return { x: clamp(x, 4, 96), y: clamp(y, 5, 92) };
+        }
+
+        function displayToBase(x, y, role, sliders) {
+            let baseX = x;
+            let baseY = y;
+
+            if (role !== 'gk') {
+                baseY += (sliders.defLine - 50) * 0.35;
+            }
+
+            if (role === 'wide') {
+                const offset = (sliders.width - 50) * 0.28;
+                baseX += x > 50 ? -offset : offset;
+            } else if (role === 'mid') {
+                const offset = (sliders.width - 50) * 0.12;
+                if (x > 50) baseX -= offset;
+                else if (x < 50) baseX += offset;
+            }
+
+            return { x: clamp(baseX, 4, 96), y: clamp(baseY, 5, 92) };
+        }
+
+        function enablePlayerDrag(node, playerIndex) {
+            const pitch = document.getElementById('pitch-players');
+            let dragging = false;
+            let startX = 0;
+            let startY = 0;
+            let moved = false;
+
+            const moveNode = (event) => {
+                if (!dragging) return;
+                const rect = pitch.getBoundingClientRect();
+                const x = clamp(((event.clientX - rect.left) / rect.width) * 100, 4, 96);
+                const y = clamp(((event.clientY - rect.top) / rect.height) * 100, 5, 92);
+                const inferred = inferPosition(x, y);
+
+                node.style.left = `${x}%`;
+                node.style.top = `${y}%`;
+                const positionBadge = node.querySelector('[data-position-badge]');
+                if (positionBadge) positionBadge.textContent = inferred.pos;
+                node.dataset.dragX = x;
+                node.dataset.dragY = y;
+                node.dataset.dragPos = inferred.pos;
+                node.dataset.dragRole = inferred.role;
+            };
+
+            node.addEventListener('pointerdown', (event) => {
+                dragging = true;
+                moved = false;
+                startX = event.clientX;
+                startY = event.clientY;
+                node.setPointerCapture(event.pointerId);
+                node.classList.add('is-dragging');
+                pitch.classList.add('drag-active');
+                moveNode(event);
+            });
+
+            node.addEventListener('pointermove', (event) => {
+                if (Math.hypot(event.clientX - startX, event.clientY - startY) > 6) moved = true;
+                moveNode(event);
+            });
+
+            node.addEventListener('pointerup', (event) => {
+                if (!dragging) return;
+                dragging = false;
+                node.releasePointerCapture(event.pointerId);
+                node.classList.remove('is-dragging');
+                pitch.classList.remove('drag-active');
+
+                if (!moved) {
+                    // 클릭만 한 경우에는 노드를 다시 렌더링하지 않습니다.
+                    // 기존에는 updateSliders()가 노드를 제거해 click 이벤트가 실행되지 않았습니다.
+                    if (selectedSubstituteId) {
+                        substitutePlayer(playerIndex);
+                    }
+                    return;
+                }
+
+                const displayX = parseFloat(node.dataset.dragX);
+                const displayY = parseFloat(node.dataset.dragY);
+                const pos = node.dataset.dragPos;
+                const role = node.dataset.dragRole;
+                const layout = getCurrentLayout();
+                const base = displayToBase(displayX, displayY, role, getSliderValues());
+
+                layout[playerIndex] = { ...layout[playerIndex], ...base, pos, role };
+                showToast(`${teamSquads[currentTeam].starters[playerIndex].name} 선수가 ${pos} 포지션으로 변경되었습니다.`);
+                updateSliders();
+            });
+
+            node.addEventListener('pointercancel', () => {
+                dragging = false;
+                node.classList.remove('is-dragging');
+                pitch.classList.remove('drag-active');
+                updateSliders();
+            });
+        }
+
+        // Initialize Screen safely after DOM is ready
+        document.addEventListener('DOMContentLoaded', async function () {
+            try {
+                await loadProjectData();
+                renderTeam();
+            } catch (error) {
+                console.error(error);
+                showToast('구단 데이터 초기화 중 오류가 발생했습니다. 콘솔을 확인해 주세요.');
+            }
+        });
+
+        // Select Team
+        function changeTeam(teamKey) {
+            currentTeam = teamKey;
+            selectedSubstituteId = null;
+
+            const select = document.getElementById('team-select');
+            if (select) select.value = teamKey;
+            const status = document.getElementById('team-data-status');
+            if (status && teamsMeta[teamKey]) {
+                status.innerText = teamsMeta[teamKey].dataStatus === 'ready'
+                    ? '상세 선수단·전술 데이터 연결 완료'
+                    : '공통 구조 연결 완료 · 상세 데이터 준비 중';
+            }
+
+            // Fallback default formation mapping if the team has default config
+            if (!teamData[teamKey] || !teamSquads[teamKey]) return;
+            const teamDefaultForm = teamData[teamKey].defaultFormation;
+            if (formationsMap[teamDefaultForm]) {
+                currentFormation = teamDefaultForm;
+            } else {
+                currentFormation = '3-4-2-1'; // fallback
+            }
+
+            showToast(`${teamKey.toUpperCase()} 구단 데이터가 정상 로드되었습니다.`);
+            renderTeam();
+        }
+
+        // Handle Manual Formation Button click
+        function changeFormation(formKey) {
+            currentFormation = formKey;
+            selectedSubstituteId = null;
+            showToast(`대형 포메이션이 ${formKey} 상태로 실시간 재배치되었습니다.`);
+            renderTeam();
+        }
+
+        // Show Custom Animated Toast Notification (No-Alert Policy)
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-msg');
+            toastMsg.innerText = message;
+
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Render details and sync configuration controls
+        function renderTeam() {
+            const team = teamData[currentTeam];
+            if (!team) return;
+
+            // Sync formation select buttons highlighted
+            document.querySelectorAll('.form-btn').forEach(btn => {
+                btn.classList.remove('bg-eplBlue/20', 'border-eplBlue', 'text-eplBlue', 'shadow-lg', 'shadow-eplBlue/10');
+                btn.classList.add('bg-slate-950', 'border-white/10', 'text-slate-300');
+            });
+            const activeFormBtn = document.getElementById(`form-${currentFormation}`);
+            if (activeFormBtn) {
+                activeFormBtn.classList.remove('bg-slate-950', 'border-white/10', 'text-slate-300');
+                activeFormBtn.classList.add('bg-eplBlue/20', 'border-eplBlue', 'text-eplBlue', 'shadow-lg', 'shadow-eplBlue/10');
+            }
+
+            // Text values inject
+            document.getElementById('txt-formation').innerText = currentFormation;
+            document.getElementById('txt-manager').innerText = `${team.manager} 감독`;
+            document.getElementById('txt-style').innerText = team.style;
+            document.getElementById('txt-signings').innerText = team.signings;
+            document.getElementById('txt-ai-feedback').innerText = team.feedback;
+
+            // Apply positions based on slider values
+            updateSliders();
+            renderSubstitutes();
+            renderManagerSummary();
+        }
+
+        function substitutePlayer(starterIndex) {
+            if (!selectedSubstituteId) {
+                showToast('먼저 아래 후보 선수 한 명을 선택해주세요.');
+                return;
+            }
+
+            const squad = teamSquads[currentTeam];
+            const substituteIndex = squad.substitutes.findIndex(player => player.id === selectedSubstituteId);
+            if (substituteIndex < 0 || !squad.starters[starterIndex]) return;
+
+            const outgoing = squad.starters[starterIndex];
+            const incoming = squad.substitutes[substituteIndex];
+            const assignedPosition = getCurrentLayout()[starterIndex]?.pos || outgoing.position;
+
+            squad.starters[starterIndex] = { ...incoming, position: assignedPosition };
+            squad.substitutes[substituteIndex] = { ...outgoing, position: outgoing.position };
+            selectedSubstituteId = null;
+
+            showToast(`${outgoing.name} OUT · ${incoming.name} IN 교체가 완료되었습니다.`);
+            updateSliders();
+            renderSubstitutes();
+        }
+
+        // 후보 선수 명단 출력 및 교체 대상 선택
+        function renderSubstitutes() {
+            const substitutes = teamSquads[currentTeam]?.substitutes || [];
+            const container = document.getElementById('substitute-players');
+            const count = document.getElementById('substitute-count');
+            if (!container || !count) return;
+
+            count.innerText = selectedSubstituteId ? '선발 선수를 선택하세요' : `${substitutes.length}명`;
+            container.innerHTML = '';
+
+            substitutes.forEach((player) => {
+                const selected = player.id === selectedSubstituteId;
+                const card = document.createElement('button');
+                card.type = 'button';
+                card.className = `w-full flex items-center gap-2 px-2.5 py-2 rounded-lg border transition-all text-left ${selected ? 'bg-eplBlue/15 border-eplBlue shadow-[0_0_16px_rgba(0,240,255,0.18)]' : 'bg-white/5 border-white/5 hover:border-eplBlue/40 hover:bg-eplBlue/5'}`;
+                card.innerHTML = `
+                    <span class="w-8 h-8 shrink-0 rounded-full bg-[#160824] border ${selected ? 'border-eplNeon text-eplNeon' : 'border-eplBlue/40 text-eplBlue'} flex items-center justify-center text-[10px] font-mono font-bold">
+                        ${player.position}
+                    </span>
+                    <span class="min-w-0 flex-1">
+                        <span class="block text-[11px] font-bold text-white truncate">${player.name}</span>
+                        <span class="block text-[9px] text-slate-500 truncate">${player.availablePositions.join(' · ')}</span>
+                    </span>
+                    ${selected ? '<i class="fa-solid fa-arrow-up-right-dots text-eplNeon text-xs"></i>' : ''}
+                `;
+                card.addEventListener('click', () => {
+                    selectedSubstituteId = selected ? null : player.id;
+                    renderSubstitutes();
+                    showToast(selected ? '후보 선수 선택을 취소했습니다.' : `${player.name} 선택 완료. 경기장에서 교체할 선발 선수를 클릭하세요.`);
+                });
+                container.appendChild(card);
+            });
+        }
+
+        // Sliders change calculations dynamically affecting DOM elements (Player dots)
+        function updateSliders() {
+            const team = teamData[currentTeam];
+            const starters = teamSquads[currentTeam]?.starters;
+            const formationLayouts = getCurrentLayout();
+            if (!team || !starters || !formationLayouts) return;
+
+            const sliders = getSliderValues();
+            const { defLine, width, pressing } = sliders;
+
+            document.getElementById('val-defline').innerText = defLine;
+            document.getElementById('val-width').innerText = width;
+            document.getElementById('val-pressing').innerText = pressing;
+
+            const pitch = document.getElementById('pitch-players');
+            if (!pitch) return;
+            pitch.innerHTML = '';
+
+            formationLayouts.forEach((player, idx) => {
+                const { x, y } = baseToDisplay(player, sliders);
+                const playerData = starters[idx];
+                const playerName = playerData?.name || `선수 ${idx + 1}`;
+
+                const dot = document.createElement('div');
+                dot.className = 'player-node absolute flex flex-col items-center justify-center transition-all duration-300 ease-out z-10 select-none';
+                dot.style.left = `${x}%`;
+                dot.style.top = `${y}%`;
+                dot.style.transform = 'translate(-50%, -50%)';
+                dot.dataset.playerIndex = idx;
+
+                const pulseClass = pressing > 75
+                    ? 'absolute w-10 h-10 rounded-full bg-eplNeon/30 animate-ping'
+                    : (pressing > 40 ? 'absolute w-9 h-9 rounded-full bg-eplNeon/15 animate-pulse' : 'hidden');
+
+                const isSigning = String(team.signings || '').includes(playerName);
+                const borderClass = isSigning
+                    ? 'border-eplBlue shadow-[0_0_12px_rgba(0,240,255,0.8)]'
+                    : 'border-eplNeon shadow-[0_0_8px_rgba(0,255,135,0.4)]';
+
+                const labelClass = isSigning
+                    ? 'bg-gradient-to-r from-slate-900 to-eplBlue/20 border border-eplBlue/40 text-eplBlue'
+                    : 'bg-slate-900/95 border border-slate-700/50 text-white';
+
+                dot.innerHTML = `
+                    <div class="relative flex items-center justify-center group">
+                        <div class="${pulseClass}"></div>
+                        <div data-position-badge class="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-950 via-[#190933] to-slate-950 border-2 ${borderClass} flex items-center justify-center text-[10px] font-bold text-white tracking-tighter group-hover:scale-110 transition-transform">
+                            ${player.pos}
+                        </div>
+                    </div>
+                    <span class="mt-1 px-1.5 py-0.5 rounded text-[10px] font-bold whitespace-nowrap shadow-md ${labelClass}">
+                        ${playerName}
+                    </span>
+                `;
+
+                pitch.appendChild(dot);
+                enablePlayerDrag(dot, idx);
+            });
+        }
+
+        // Apply tactical master template presets
+        function applyPreset(presetKey) {
+            const team = teamData[currentTeam];
+            if (!team) return;
+            const preset = team.presets[presetKey];
+            if (!preset) return;
+
+            // Update inputs values
+            document.getElementById('slider-defline').value = preset.defline;
+            document.getElementById('slider-width').value = preset.width;
+            document.getElementById('slider-pressing').value = preset.pressing;
+
+            showToast(`${presetKey.toUpperCase()} 전술 템플릿 프리셋이 적용되었습니다.`);
+            updateSliders();
+        }
+
+
+        function listValue(value, fallback=[]) { return Array.isArray(value) ? value : (typeof value === 'string' && value ? [value] : fallback); }
+        function getManagerProfile() {
+            const raw = managerData[currentTeam] || {};
+            const dna = raw.tacticalDNA || raw.dna || {possession:72,buildUp:75,verticality:65,highPress:70,defensiveLine:68,width:66,flexibility:74,transition:64};
+            return {
+                name: raw.name || teamData[currentTeam]?.manager || '감독 정보 준비 중', nationality: raw.nationality || '정보 준비 중', birthDate: raw.birthDate || '정보 준비 중', contract: raw.contract || '정보 준비 중',
+                philosophy: raw.philosophy || raw.description || raw.style || teamData[currentTeam]?.style || '전술 철학 정보가 준비 중입니다.',
+                formations: listValue(raw.formations || raw.preferredFormations,[teamData[currentTeam]?.defaultFormation || currentFormation]),
+                keywords: listValue(raw.keywords || raw.tacticalKeywords,['전술 데이터 준비 중']), strengths: listValue(raw.strengths,['상세 분석 준비 중']), risks: listValue(raw.risks || raw.weaknesses,['상세 분석 준비 중']), keyPlayers: listValue(raw.keyPlayers,['선수 데이터 준비 중']),
+                career: Array.isArray(raw.career) ? raw.career.join(' → ') : (raw.career || '경력 및 주요 성과 데이터 준비 중'),
+                dna: Object.fromEntries(DNA_LABELS.map(([k])=>[k,Math.max(0,Math.min(100,Number(dna[k] ?? 50)))])),
+                preset: raw.preset || raw.tacticalPreset || {defline:65,width:55,pressing:70}
+            };
+        }
+        function renderManagerSummary(){ const p=getManagerProfile(); const box=document.getElementById('manager-keywords'); if(box) box.innerHTML=p.keywords.slice(0,3).map(k=>`<span class="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] text-slate-300">${k}</span>`).join(''); }
+        function openManagerProfile(){
+            const p=getManagerProfile(), team=teamsMeta[currentTeam]||{};
+            document.getElementById('manager-profile-name').innerText=p.name; document.getElementById('manager-profile-club').innerText=team.koreanName||team.name||currentTeam; document.getElementById('manager-profile-meta').innerText=`${p.nationality} · ${p.birthDate} · 계약 ${p.contract}`; document.getElementById('manager-profile-philosophy').innerText=p.philosophy;
+            document.getElementById('manager-formations').innerHTML=p.formations.map(f=>`<button onclick="applyManagerFormation('${f}')" class="px-2.5 py-1.5 rounded-lg bg-eplBlue/10 border border-eplBlue/20 text-[10px] font-mono font-bold text-eplBlue">${f}</button>`).join('');
+            document.getElementById('manager-profile-keywords').innerHTML=p.keywords.map(k=>`<span class="px-2.5 py-1.5 rounded-lg bg-purple-500/10 border border-purple-400/20 text-[10px] text-purple-200">${k}</span>`).join('');
+            document.getElementById('manager-strengths').innerHTML=p.strengths.map(x=>`<li>• ${x}</li>`).join(''); document.getElementById('manager-risks').innerHTML=p.risks.map(x=>`<li>• ${x}</li>`).join(''); document.getElementById('manager-key-players').innerHTML=p.keyPlayers.map(x=>`<span class="px-2.5 py-1.5 rounded-lg bg-eplNeon/10 border border-eplNeon/20 text-[10px] text-eplNeon">${x}</span>`).join(''); document.getElementById('manager-career').innerText=p.career;
+            renderDNAMetrics(p.dna); drawDNA(p.dna); document.getElementById('manager-modal').classList.remove('hidden'); document.body.classList.add('overflow-hidden');
+        }
+        function closeManagerProfile(){ document.getElementById('manager-modal').classList.add('hidden'); document.body.classList.remove('overflow-hidden'); }
+        function applyManagerFormation(f){ if(!formationsMap[f]){showToast(`${f} 포메이션 좌표 데이터가 없습니다.`);return;} closeManagerProfile(); changeFormation(f); }
+        function applyManagerTacticalPreset(){ const p=getManagerProfile(); document.getElementById('slider-defline').value=p.preset.defline??65; document.getElementById('slider-width').value=p.preset.width??55; document.getElementById('slider-pressing').value=p.preset.pressing??70; const f=p.formations.find(x=>formationsMap[x]); if(f) currentFormation=f; closeManagerProfile(); renderTeam(); showToast(`${p.name} 감독의 전술 성향을 적용했습니다.`); }
+        function renderDNAMetrics(dna){ const vals=DNA_LABELS.map(([k])=>dna[k]); document.getElementById('manager-dna-average').innerText=Math.round(vals.reduce((a,b)=>a+b,0)/vals.length); document.getElementById('manager-dna-metrics').innerHTML=DNA_LABELS.map(([k,l])=>`<div class="rounded-xl bg-white/[0.035] border border-white/5 px-3 py-2.5"><div class="flex justify-between text-[10px]"><span>${l}</span><span class="font-mono font-bold text-eplNeon">${dna[k]}</span></div><div class="mt-2 h-1.5 rounded-full bg-slate-900"><div class="h-full rounded-full bg-gradient-to-r from-eplNeon to-eplBlue" style="width:${dna[k]}%"></div></div></div>`).join(''); }
+        function drawDNA(dna){ const c=document.getElementById('manager-dna-chart'),ctx=c.getContext('2d'),w=c.width,h=c.height,cx=w/2,cy=h/2+4,r=Math.min(w,h)*.34,n=DNA_LABELS.length; ctx.clearRect(0,0,w,h); for(let lv=1;lv<=5;lv++){ctx.beginPath();for(let i=0;i<n;i++){let a=-Math.PI/2+Math.PI*2*i/n,rr=r*lv/5,x=cx+Math.cos(a)*rr,y=cy+Math.sin(a)*rr;i?ctx.lineTo(x,y):ctx.moveTo(x,y)}ctx.closePath();ctx.strokeStyle='rgba(255,255,255,'+(lv===5?.18:.07)+')';ctx.stroke()} DNA_LABELS.forEach(([,l],i)=>{let a=-Math.PI/2+Math.PI*2*i/n,x=cx+Math.cos(a)*r,y=cy+Math.sin(a)*r;ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(x,y);ctx.strokeStyle='rgba(255,255,255,.08)';ctx.stroke();let lr=r+34,lx=cx+Math.cos(a)*lr,ly=cy+Math.sin(a)*lr;ctx.fillStyle='#94a3b8';ctx.font='600 13px sans-serif';ctx.textAlign=Math.cos(a)>.25?'left':Math.cos(a)<-.25?'right':'center';ctx.fillText(l,lx,ly)});ctx.beginPath();DNA_LABELS.forEach(([k],i)=>{let a=-Math.PI/2+Math.PI*2*i/n,rr=r*dna[k]/100,x=cx+Math.cos(a)*rr,y=cy+Math.sin(a)*rr;i?ctx.lineTo(x,y):ctx.moveTo(x,y)});ctx.closePath();ctx.fillStyle='rgba(0,255,135,.25)';ctx.fill();ctx.strokeStyle='#00ff87';ctx.lineWidth=3;ctx.stroke();}
+
+        // Export Data and Trigger Mock Diagnostic report modal
+        function exportTactics() {
+            const team = teamData[currentTeam];
+            if (!team) return;
+            const defLine = document.getElementById('slider-defline').value;
+            const width = document.getElementById('slider-width').value;
+            const pressing = document.getElementById('slider-pressing').value;
+
+            document.getElementById('modal-team').innerText = `${team.manager} | ${currentFormation}`;
+            document.getElementById('modal-def').innerText = defLine;
+            document.getElementById('modal-wid').innerText = width;
+            document.getElementById('modal-press').innerText = pressing;
+
+            // Generate Diagnostic text
+            let diagnosticText = "";
+            if (defLine > 70 && pressing > 75) {
+                diagnosticText = `극단적인 초고전방 압박 대형입니다. ${team.manager} 감독의 핵심 전력들이 높은 하이라인 백업에서 배후 노출 리스크가 증가할 수 있으므로 민첩성이 강한 CB 조합이 필수적으로 요구됩니다.`;
+            } else if (defLine < 35) {
+                diagnosticText = "단단한 백블록 저지 구조입니다. 상대 역공을 원천 차단하고 종방향으로 빠르게 치고 갈 수 있는 기동력 좋은 공격 채널의 순간 카운터 역량에 의존해야 합니다.";
+            } else {
+                diagnosticText = "공수 균형이 고도로 이식된 가변 밸런스 지공 대형입니다. 현대 전술가들이 가장 지향하는 수적 우위를 통한 패스 레인 확보에 용이합니다.";
+            }
+
+            document.getElementById('modal-analysis').innerText = diagnosticText;
+            document.getElementById('export-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('export-modal').classList.add('hidden');
+        }
+    </script>
+</body>
+
+</html>
