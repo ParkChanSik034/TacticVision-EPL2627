@@ -1,0 +1,3047 @@
+{
+  "chelsea": {
+    "starters": [
+      {
+        "id": "che-01",
+        "name": "산체스",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "che-02",
+        "name": "포파나",
+        "position": "RCB",
+        "availablePositions": [
+          "CB",
+          "RB"
+        ]
+      },
+      {
+        "id": "che-03",
+        "name": "콜윌",
+        "position": "CB",
+        "availablePositions": [
+          "CB",
+          "LB"
+        ]
+      },
+      {
+        "id": "che-04",
+        "name": "인카피에",
+        "position": "LCB",
+        "availablePositions": [
+          "CB",
+          "LB"
+        ]
+      },
+      {
+        "id": "che-05",
+        "name": "리스 제임스",
+        "position": "RWB",
+        "availablePositions": [
+          "RB",
+          "RWB",
+          "RCB"
+        ]
+      },
+      {
+        "id": "che-06",
+        "name": "카이세도",
+        "position": "RCM",
+        "availablePositions": [
+          "DM",
+          "CM"
+        ]
+      },
+      {
+        "id": "che-07",
+        "name": "엔조",
+        "position": "LCM",
+        "availablePositions": [
+          "CM",
+          "DM",
+          "AM"
+        ]
+      },
+      {
+        "id": "che-08",
+        "name": "쿠쿠렐라",
+        "position": "LWB",
+        "availablePositions": [
+          "LB",
+          "LWB"
+        ]
+      },
+      {
+        "id": "che-09",
+        "name": "콜 파머",
+        "position": "RAM",
+        "availablePositions": [
+          "AM",
+          "RW"
+        ]
+      },
+      {
+        "id": "che-10",
+        "name": "은쿤쿠",
+        "position": "LAM",
+        "availablePositions": [
+          "AM",
+          "ST"
+        ]
+      },
+      {
+        "id": "che-11",
+        "name": "잭슨",
+        "position": "ST",
+        "availablePositions": [
+          "ST"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "id": "che-12",
+        "name": "요르겐센",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "che-13",
+        "name": "아다라비오요",
+        "position": "CB",
+        "availablePositions": [
+          "CB"
+        ]
+      },
+      {
+        "id": "che-14",
+        "name": "구스토",
+        "position": "RB",
+        "availablePositions": [
+          "RB",
+          "RWB"
+        ]
+      },
+      {
+        "id": "che-15",
+        "name": "라비아",
+        "position": "DM",
+        "availablePositions": [
+          "DM",
+          "CM"
+        ]
+      },
+      {
+        "id": "che-16",
+        "name": "마두에케",
+        "position": "RW",
+        "availablePositions": [
+          "RW",
+          "LW"
+        ]
+      },
+      {
+        "id": "che-17",
+        "name": "무드리크",
+        "position": "LW",
+        "availablePositions": [
+          "LW",
+          "RW"
+        ]
+      },
+      {
+        "id": "che-18",
+        "name": "구이우",
+        "position": "ST",
+        "availablePositions": [
+          "ST"
+        ]
+      }
+    ]
+  },
+  "mancity": {
+    "starters": [
+      {
+        "id": "mci-01",
+        "name": "에데르송",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "mci-02",
+        "name": "아칸지",
+        "position": "RCB",
+        "availablePositions": [
+          "CB",
+          "RB"
+        ]
+      },
+      {
+        "id": "mci-03",
+        "name": "디아스",
+        "position": "CB",
+        "availablePositions": [
+          "CB"
+        ]
+      },
+      {
+        "id": "mci-04",
+        "name": "그바르디올",
+        "position": "LCB",
+        "availablePositions": [
+          "CB",
+          "LB"
+        ]
+      },
+      {
+        "id": "mci-05",
+        "name": "스톤스",
+        "position": "RWB",
+        "availablePositions": [
+          "CB",
+          "DM",
+          "RB"
+        ]
+      },
+      {
+        "id": "mci-06",
+        "name": "로드리",
+        "position": "RCM",
+        "availablePositions": [
+          "DM",
+          "CM"
+        ]
+      },
+      {
+        "id": "mci-07",
+        "name": "포든",
+        "position": "LCM",
+        "availablePositions": [
+          "AM",
+          "CM",
+          "RW"
+        ]
+      },
+      {
+        "id": "mci-08",
+        "name": "더 브라위너",
+        "position": "LWB",
+        "availablePositions": [
+          "AM",
+          "CM"
+        ]
+      },
+      {
+        "id": "mci-09",
+        "name": "엘리엇 앤더슨",
+        "position": "RAM",
+        "availablePositions": [
+          "CM",
+          "AM"
+        ]
+      },
+      {
+        "id": "mci-10",
+        "name": "도쿠",
+        "position": "LAM",
+        "availablePositions": [
+          "LW",
+          "RW"
+        ]
+      },
+      {
+        "id": "mci-11",
+        "name": "홀란드",
+        "position": "ST",
+        "availablePositions": [
+          "ST"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "id": "mci-12",
+        "name": "오르테가",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "mci-13",
+        "name": "아케",
+        "position": "CB",
+        "availablePositions": [
+          "CB",
+          "LB"
+        ]
+      },
+      {
+        "id": "mci-14",
+        "name": "워커",
+        "position": "RB",
+        "availablePositions": [
+          "RB",
+          "RCB"
+        ]
+      },
+      {
+        "id": "mci-15",
+        "name": "코바치치",
+        "position": "CM",
+        "availablePositions": [
+          "CM",
+          "DM"
+        ]
+      },
+      {
+        "id": "mci-16",
+        "name": "누네스",
+        "position": "CM",
+        "availablePositions": [
+          "CM",
+          "AM"
+        ]
+      },
+      {
+        "id": "mci-17",
+        "name": "그릴리시",
+        "position": "LW",
+        "availablePositions": [
+          "LW",
+          "AM"
+        ]
+      },
+      {
+        "id": "mci-18",
+        "name": "마르무시",
+        "position": "ST",
+        "availablePositions": [
+          "ST",
+          "LW"
+        ]
+      }
+    ]
+  },
+  "tottenham": {
+    "starters": [
+      {
+        "id": "tot-01",
+        "name": "비카리오",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "tot-02",
+        "name": "포로",
+        "position": "RB",
+        "availablePositions": [
+          "RB",
+          "RWB"
+        ]
+      },
+      {
+        "id": "tot-03",
+        "name": "로메로",
+        "position": "RCB",
+        "availablePositions": [
+          "CB"
+        ]
+      },
+      {
+        "id": "tot-04",
+        "name": "반더벤",
+        "position": "LCB",
+        "availablePositions": [
+          "CB",
+          "LB"
+        ]
+      },
+      {
+        "id": "tot-05",
+        "name": "우도기",
+        "position": "LB",
+        "availablePositions": [
+          "LB",
+          "LWB"
+        ]
+      },
+      {
+        "id": "tot-06",
+        "name": "토날리",
+        "position": "RDM",
+        "availablePositions": [
+          "DM",
+          "CM"
+        ]
+      },
+      {
+        "id": "tot-07",
+        "name": "페르난데스",
+        "position": "LDM",
+        "availablePositions": [
+          "DM",
+          "CM"
+        ]
+      },
+      {
+        "id": "tot-08",
+        "name": "쿨루셉스키",
+        "position": "RAM",
+        "availablePositions": [
+          "RW",
+          "AM"
+        ]
+      },
+      {
+        "id": "tot-09",
+        "name": "매디슨",
+        "position": "AM",
+        "availablePositions": [
+          "AM",
+          "CM"
+        ]
+      },
+      {
+        "id": "tot-10",
+        "name": "손흥민",
+        "position": "LAM",
+        "availablePositions": [
+          "LW",
+          "ST"
+        ]
+      },
+      {
+        "id": "tot-11",
+        "name": "솔랑케",
+        "position": "ST",
+        "availablePositions": [
+          "ST"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "id": "tot-12",
+        "name": "킨스키",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "tot-13",
+        "name": "드라구신",
+        "position": "CB",
+        "availablePositions": [
+          "CB"
+        ]
+      },
+      {
+        "id": "tot-14",
+        "name": "스펜스",
+        "position": "RB",
+        "availablePositions": [
+          "RB",
+          "LB",
+          "RWB"
+        ]
+      },
+      {
+        "id": "tot-15",
+        "name": "벤탄쿠르",
+        "position": "CM",
+        "availablePositions": [
+          "CM",
+          "DM"
+        ]
+      },
+      {
+        "id": "tot-16",
+        "name": "사르",
+        "position": "CM",
+        "availablePositions": [
+          "CM",
+          "DM"
+        ]
+      },
+      {
+        "id": "tot-17",
+        "name": "브레넌 존슨",
+        "position": "RW",
+        "availablePositions": [
+          "RW",
+          "LW"
+        ]
+      },
+      {
+        "id": "tot-18",
+        "name": "히샬리송",
+        "position": "ST",
+        "availablePositions": [
+          "ST",
+          "LW"
+        ]
+      }
+    ]
+  },
+  "arsenal": {
+    "starters": [
+      {
+        "id": "arsenal-starter-01",
+        "name": "선수 데이터 1",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "arsenal-starter-02",
+        "name": "선수 데이터 2",
+        "position": "RB",
+        "availablePositions": [
+          "RB"
+        ]
+      },
+      {
+        "id": "arsenal-starter-03",
+        "name": "선수 데이터 3",
+        "position": "RCB",
+        "availablePositions": [
+          "RCB"
+        ]
+      },
+      {
+        "id": "arsenal-starter-04",
+        "name": "선수 데이터 4",
+        "position": "LCB",
+        "availablePositions": [
+          "LCB"
+        ]
+      },
+      {
+        "id": "arsenal-starter-05",
+        "name": "선수 데이터 5",
+        "position": "LB",
+        "availablePositions": [
+          "LB"
+        ]
+      },
+      {
+        "id": "arsenal-starter-06",
+        "name": "선수 데이터 6",
+        "position": "RCM",
+        "availablePositions": [
+          "RCM"
+        ]
+      },
+      {
+        "id": "arsenal-starter-07",
+        "name": "선수 데이터 7",
+        "position": "DM",
+        "availablePositions": [
+          "DM"
+        ]
+      },
+      {
+        "id": "arsenal-starter-08",
+        "name": "선수 데이터 8",
+        "position": "LCM",
+        "availablePositions": [
+          "LCM"
+        ]
+      },
+      {
+        "id": "arsenal-starter-09",
+        "name": "선수 데이터 9",
+        "position": "RW",
+        "availablePositions": [
+          "RW"
+        ]
+      },
+      {
+        "id": "arsenal-starter-10",
+        "name": "선수 데이터 10",
+        "position": "ST",
+        "availablePositions": [
+          "ST"
+        ]
+      },
+      {
+        "id": "arsenal-starter-11",
+        "name": "선수 데이터 11",
+        "position": "LW",
+        "availablePositions": [
+          "LW"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "id": "arsenal-sub-01",
+        "name": "후보 데이터 1",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "arsenal-sub-02",
+        "name": "후보 데이터 2",
+        "position": "CB",
+        "availablePositions": [
+          "CB"
+        ]
+      },
+      {
+        "id": "arsenal-sub-03",
+        "name": "후보 데이터 3",
+        "position": "FB",
+        "availablePositions": [
+          "FB"
+        ]
+      },
+      {
+        "id": "arsenal-sub-04",
+        "name": "후보 데이터 4",
+        "position": "DM",
+        "availablePositions": [
+          "DM"
+        ]
+      },
+      {
+        "id": "arsenal-sub-05",
+        "name": "후보 데이터 5",
+        "position": "CM",
+        "availablePositions": [
+          "CM"
+        ]
+      },
+      {
+        "id": "arsenal-sub-06",
+        "name": "후보 데이터 6",
+        "position": "WG",
+        "availablePositions": [
+          "WG"
+        ]
+      },
+      {
+        "id": "arsenal-sub-07",
+        "name": "후보 데이터 7",
+        "position": "ST",
+        "availablePositions": [
+          "ST"
+        ]
+      }
+    ]
+  },
+  "astonvilla": {
+    "starters": [
+      {
+        "id": "astonvilla-starter-01",
+        "name": "선수 데이터 1",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "astonvilla-starter-02",
+        "name": "선수 데이터 2",
+        "position": "RB",
+        "availablePositions": [
+          "RB"
+        ]
+      },
+      {
+        "id": "astonvilla-starter-03",
+        "name": "선수 데이터 3",
+        "position": "RCB",
+        "availablePositions": [
+          "RCB"
+        ]
+      },
+      {
+        "id": "astonvilla-starter-04",
+        "name": "선수 데이터 4",
+        "position": "LCB",
+        "availablePositions": [
+          "LCB"
+        ]
+      },
+      {
+        "id": "astonvilla-starter-05",
+        "name": "선수 데이터 5",
+        "position": "LB",
+        "availablePositions": [
+          "LB"
+        ]
+      },
+      {
+        "id": "astonvilla-starter-06",
+        "name": "선수 데이터 6",
+        "position": "RDM",
+        "availablePositions": [
+          "RDM"
+        ]
+      },
+      {
+        "id": "astonvilla-starter-07",
+        "name": "선수 데이터 7",
+        "position": "LDM",
+        "availablePositions": [
+          "LDM"
+        ]
+      },
+      {
+        "id": "astonvilla-starter-08",
+        "name": "선수 데이터 8",
+        "position": "RAM",
+        "availablePositions": [
+          "RAM"
+        ]
+      },
+      {
+        "id": "astonvilla-starter-09",
+        "name": "선수 데이터 9",
+        "position": "AM",
+        "availablePositions": [
+          "AM"
+        ]
+      },
+      {
+        "id": "astonvilla-starter-10",
+        "name": "선수 데이터 10",
+        "position": "LAM",
+        "availablePositions": [
+          "LAM"
+        ]
+      },
+      {
+        "id": "astonvilla-starter-11",
+        "name": "선수 데이터 11",
+        "position": "ST",
+        "availablePositions": [
+          "ST"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "id": "astonvilla-sub-01",
+        "name": "후보 데이터 1",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "astonvilla-sub-02",
+        "name": "후보 데이터 2",
+        "position": "CB",
+        "availablePositions": [
+          "CB"
+        ]
+      },
+      {
+        "id": "astonvilla-sub-03",
+        "name": "후보 데이터 3",
+        "position": "FB",
+        "availablePositions": [
+          "FB"
+        ]
+      },
+      {
+        "id": "astonvilla-sub-04",
+        "name": "후보 데이터 4",
+        "position": "DM",
+        "availablePositions": [
+          "DM"
+        ]
+      },
+      {
+        "id": "astonvilla-sub-05",
+        "name": "후보 데이터 5",
+        "position": "CM",
+        "availablePositions": [
+          "CM"
+        ]
+      },
+      {
+        "id": "astonvilla-sub-06",
+        "name": "후보 데이터 6",
+        "position": "WG",
+        "availablePositions": [
+          "WG"
+        ]
+      },
+      {
+        "id": "astonvilla-sub-07",
+        "name": "후보 데이터 7",
+        "position": "ST",
+        "availablePositions": [
+          "ST"
+        ]
+      }
+    ]
+  },
+  "bournemouth": {
+    "starters": [
+      {
+        "id": "bournemouth-starter-01",
+        "name": "선수 데이터 1",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "bournemouth-starter-02",
+        "name": "선수 데이터 2",
+        "position": "RB",
+        "availablePositions": [
+          "RB"
+        ]
+      },
+      {
+        "id": "bournemouth-starter-03",
+        "name": "선수 데이터 3",
+        "position": "RCB",
+        "availablePositions": [
+          "RCB"
+        ]
+      },
+      {
+        "id": "bournemouth-starter-04",
+        "name": "선수 데이터 4",
+        "position": "LCB",
+        "availablePositions": [
+          "LCB"
+        ]
+      },
+      {
+        "id": "bournemouth-starter-05",
+        "name": "선수 데이터 5",
+        "position": "LB",
+        "availablePositions": [
+          "LB"
+        ]
+      },
+      {
+        "id": "bournemouth-starter-06",
+        "name": "선수 데이터 6",
+        "position": "RDM",
+        "availablePositions": [
+          "RDM"
+        ]
+      },
+      {
+        "id": "bournemouth-starter-07",
+        "name": "선수 데이터 7",
+        "position": "LDM",
+        "availablePositions": [
+          "LDM"
+        ]
+      },
+      {
+        "id": "bournemouth-starter-08",
+        "name": "선수 데이터 8",
+        "position": "RAM",
+        "availablePositions": [
+          "RAM"
+        ]
+      },
+      {
+        "id": "bournemouth-starter-09",
+        "name": "선수 데이터 9",
+        "position": "AM",
+        "availablePositions": [
+          "AM"
+        ]
+      },
+      {
+        "id": "bournemouth-starter-10",
+        "name": "선수 데이터 10",
+        "position": "LAM",
+        "availablePositions": [
+          "LAM"
+        ]
+      },
+      {
+        "id": "bournemouth-starter-11",
+        "name": "선수 데이터 11",
+        "position": "ST",
+        "availablePositions": [
+          "ST"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "id": "bournemouth-sub-01",
+        "name": "후보 데이터 1",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "bournemouth-sub-02",
+        "name": "후보 데이터 2",
+        "position": "CB",
+        "availablePositions": [
+          "CB"
+        ]
+      },
+      {
+        "id": "bournemouth-sub-03",
+        "name": "후보 데이터 3",
+        "position": "FB",
+        "availablePositions": [
+          "FB"
+        ]
+      },
+      {
+        "id": "bournemouth-sub-04",
+        "name": "후보 데이터 4",
+        "position": "DM",
+        "availablePositions": [
+          "DM"
+        ]
+      },
+      {
+        "id": "bournemouth-sub-05",
+        "name": "후보 데이터 5",
+        "position": "CM",
+        "availablePositions": [
+          "CM"
+        ]
+      },
+      {
+        "id": "bournemouth-sub-06",
+        "name": "후보 데이터 6",
+        "position": "WG",
+        "availablePositions": [
+          "WG"
+        ]
+      },
+      {
+        "id": "bournemouth-sub-07",
+        "name": "후보 데이터 7",
+        "position": "ST",
+        "availablePositions": [
+          "ST"
+        ]
+      }
+    ]
+  },
+  "brentford": {
+    "starters": [
+      {
+        "id": "brentford-starter-01",
+        "name": "선수 데이터 1",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "brentford-starter-02",
+        "name": "선수 데이터 2",
+        "position": "RB",
+        "availablePositions": [
+          "RB"
+        ]
+      },
+      {
+        "id": "brentford-starter-03",
+        "name": "선수 데이터 3",
+        "position": "RCB",
+        "availablePositions": [
+          "RCB"
+        ]
+      },
+      {
+        "id": "brentford-starter-04",
+        "name": "선수 데이터 4",
+        "position": "LCB",
+        "availablePositions": [
+          "LCB"
+        ]
+      },
+      {
+        "id": "brentford-starter-05",
+        "name": "선수 데이터 5",
+        "position": "LB",
+        "availablePositions": [
+          "LB"
+        ]
+      },
+      {
+        "id": "brentford-starter-06",
+        "name": "선수 데이터 6",
+        "position": "RCM",
+        "availablePositions": [
+          "RCM"
+        ]
+      },
+      {
+        "id": "brentford-starter-07",
+        "name": "선수 데이터 7",
+        "position": "DM",
+        "availablePositions": [
+          "DM"
+        ]
+      },
+      {
+        "id": "brentford-starter-08",
+        "name": "선수 데이터 8",
+        "position": "LCM",
+        "availablePositions": [
+          "LCM"
+        ]
+      },
+      {
+        "id": "brentford-starter-09",
+        "name": "선수 데이터 9",
+        "position": "RW",
+        "availablePositions": [
+          "RW"
+        ]
+      },
+      {
+        "id": "brentford-starter-10",
+        "name": "선수 데이터 10",
+        "position": "ST",
+        "availablePositions": [
+          "ST"
+        ]
+      },
+      {
+        "id": "brentford-starter-11",
+        "name": "선수 데이터 11",
+        "position": "LW",
+        "availablePositions": [
+          "LW"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "id": "brentford-sub-01",
+        "name": "후보 데이터 1",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "brentford-sub-02",
+        "name": "후보 데이터 2",
+        "position": "CB",
+        "availablePositions": [
+          "CB"
+        ]
+      },
+      {
+        "id": "brentford-sub-03",
+        "name": "후보 데이터 3",
+        "position": "FB",
+        "availablePositions": [
+          "FB"
+        ]
+      },
+      {
+        "id": "brentford-sub-04",
+        "name": "후보 데이터 4",
+        "position": "DM",
+        "availablePositions": [
+          "DM"
+        ]
+      },
+      {
+        "id": "brentford-sub-05",
+        "name": "후보 데이터 5",
+        "position": "CM",
+        "availablePositions": [
+          "CM"
+        ]
+      },
+      {
+        "id": "brentford-sub-06",
+        "name": "후보 데이터 6",
+        "position": "WG",
+        "availablePositions": [
+          "WG"
+        ]
+      },
+      {
+        "id": "brentford-sub-07",
+        "name": "후보 데이터 7",
+        "position": "ST",
+        "availablePositions": [
+          "ST"
+        ]
+      }
+    ]
+  },
+  "brighton": {
+    "starters": [
+      {
+        "id": "brighton-starter-01",
+        "name": "선수 데이터 1",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "brighton-starter-02",
+        "name": "선수 데이터 2",
+        "position": "RB",
+        "availablePositions": [
+          "RB"
+        ]
+      },
+      {
+        "id": "brighton-starter-03",
+        "name": "선수 데이터 3",
+        "position": "RCB",
+        "availablePositions": [
+          "RCB"
+        ]
+      },
+      {
+        "id": "brighton-starter-04",
+        "name": "선수 데이터 4",
+        "position": "LCB",
+        "availablePositions": [
+          "LCB"
+        ]
+      },
+      {
+        "id": "brighton-starter-05",
+        "name": "선수 데이터 5",
+        "position": "LB",
+        "availablePositions": [
+          "LB"
+        ]
+      },
+      {
+        "id": "brighton-starter-06",
+        "name": "선수 데이터 6",
+        "position": "RDM",
+        "availablePositions": [
+          "RDM"
+        ]
+      },
+      {
+        "id": "brighton-starter-07",
+        "name": "선수 데이터 7",
+        "position": "LDM",
+        "availablePositions": [
+          "LDM"
+        ]
+      },
+      {
+        "id": "brighton-starter-08",
+        "name": "선수 데이터 8",
+        "position": "RAM",
+        "availablePositions": [
+          "RAM"
+        ]
+      },
+      {
+        "id": "brighton-starter-09",
+        "name": "선수 데이터 9",
+        "position": "AM",
+        "availablePositions": [
+          "AM"
+        ]
+      },
+      {
+        "id": "brighton-starter-10",
+        "name": "선수 데이터 10",
+        "position": "LAM",
+        "availablePositions": [
+          "LAM"
+        ]
+      },
+      {
+        "id": "brighton-starter-11",
+        "name": "선수 데이터 11",
+        "position": "ST",
+        "availablePositions": [
+          "ST"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "id": "brighton-sub-01",
+        "name": "후보 데이터 1",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "brighton-sub-02",
+        "name": "후보 데이터 2",
+        "position": "CB",
+        "availablePositions": [
+          "CB"
+        ]
+      },
+      {
+        "id": "brighton-sub-03",
+        "name": "후보 데이터 3",
+        "position": "FB",
+        "availablePositions": [
+          "FB"
+        ]
+      },
+      {
+        "id": "brighton-sub-04",
+        "name": "후보 데이터 4",
+        "position": "DM",
+        "availablePositions": [
+          "DM"
+        ]
+      },
+      {
+        "id": "brighton-sub-05",
+        "name": "후보 데이터 5",
+        "position": "CM",
+        "availablePositions": [
+          "CM"
+        ]
+      },
+      {
+        "id": "brighton-sub-06",
+        "name": "후보 데이터 6",
+        "position": "WG",
+        "availablePositions": [
+          "WG"
+        ]
+      },
+      {
+        "id": "brighton-sub-07",
+        "name": "후보 데이터 7",
+        "position": "ST",
+        "availablePositions": [
+          "ST"
+        ]
+      }
+    ]
+  },
+  "coventry": {
+    "starters": [
+      {
+        "id": "coventry-starter-01",
+        "name": "선수 데이터 1",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "coventry-starter-02",
+        "name": "선수 데이터 2",
+        "position": "RB",
+        "availablePositions": [
+          "RB"
+        ]
+      },
+      {
+        "id": "coventry-starter-03",
+        "name": "선수 데이터 3",
+        "position": "RCB",
+        "availablePositions": [
+          "RCB"
+        ]
+      },
+      {
+        "id": "coventry-starter-04",
+        "name": "선수 데이터 4",
+        "position": "LCB",
+        "availablePositions": [
+          "LCB"
+        ]
+      },
+      {
+        "id": "coventry-starter-05",
+        "name": "선수 데이터 5",
+        "position": "LB",
+        "availablePositions": [
+          "LB"
+        ]
+      },
+      {
+        "id": "coventry-starter-06",
+        "name": "선수 데이터 6",
+        "position": "RDM",
+        "availablePositions": [
+          "RDM"
+        ]
+      },
+      {
+        "id": "coventry-starter-07",
+        "name": "선수 데이터 7",
+        "position": "LDM",
+        "availablePositions": [
+          "LDM"
+        ]
+      },
+      {
+        "id": "coventry-starter-08",
+        "name": "선수 데이터 8",
+        "position": "RAM",
+        "availablePositions": [
+          "RAM"
+        ]
+      },
+      {
+        "id": "coventry-starter-09",
+        "name": "선수 데이터 9",
+        "position": "AM",
+        "availablePositions": [
+          "AM"
+        ]
+      },
+      {
+        "id": "coventry-starter-10",
+        "name": "선수 데이터 10",
+        "position": "LAM",
+        "availablePositions": [
+          "LAM"
+        ]
+      },
+      {
+        "id": "coventry-starter-11",
+        "name": "선수 데이터 11",
+        "position": "ST",
+        "availablePositions": [
+          "ST"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "id": "coventry-sub-01",
+        "name": "후보 데이터 1",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "coventry-sub-02",
+        "name": "후보 데이터 2",
+        "position": "CB",
+        "availablePositions": [
+          "CB"
+        ]
+      },
+      {
+        "id": "coventry-sub-03",
+        "name": "후보 데이터 3",
+        "position": "FB",
+        "availablePositions": [
+          "FB"
+        ]
+      },
+      {
+        "id": "coventry-sub-04",
+        "name": "후보 데이터 4",
+        "position": "DM",
+        "availablePositions": [
+          "DM"
+        ]
+      },
+      {
+        "id": "coventry-sub-05",
+        "name": "후보 데이터 5",
+        "position": "CM",
+        "availablePositions": [
+          "CM"
+        ]
+      },
+      {
+        "id": "coventry-sub-06",
+        "name": "후보 데이터 6",
+        "position": "WG",
+        "availablePositions": [
+          "WG"
+        ]
+      },
+      {
+        "id": "coventry-sub-07",
+        "name": "후보 데이터 7",
+        "position": "ST",
+        "availablePositions": [
+          "ST"
+        ]
+      }
+    ]
+  },
+  "crystalpalace": {
+    "starters": [
+      {
+        "id": "crystalpalace-starter-01",
+        "name": "선수 데이터 1",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "crystalpalace-starter-02",
+        "name": "선수 데이터 2",
+        "position": "RCB",
+        "availablePositions": [
+          "RCB"
+        ]
+      },
+      {
+        "id": "crystalpalace-starter-03",
+        "name": "선수 데이터 3",
+        "position": "CB",
+        "availablePositions": [
+          "CB"
+        ]
+      },
+      {
+        "id": "crystalpalace-starter-04",
+        "name": "선수 데이터 4",
+        "position": "LCB",
+        "availablePositions": [
+          "LCB"
+        ]
+      },
+      {
+        "id": "crystalpalace-starter-05",
+        "name": "선수 데이터 5",
+        "position": "RWB",
+        "availablePositions": [
+          "RWB"
+        ]
+      },
+      {
+        "id": "crystalpalace-starter-06",
+        "name": "선수 데이터 6",
+        "position": "RCM",
+        "availablePositions": [
+          "RCM"
+        ]
+      },
+      {
+        "id": "crystalpalace-starter-07",
+        "name": "선수 데이터 7",
+        "position": "LCM",
+        "availablePositions": [
+          "LCM"
+        ]
+      },
+      {
+        "id": "crystalpalace-starter-08",
+        "name": "선수 데이터 8",
+        "position": "LWB",
+        "availablePositions": [
+          "LWB"
+        ]
+      },
+      {
+        "id": "crystalpalace-starter-09",
+        "name": "선수 데이터 9",
+        "position": "RAM",
+        "availablePositions": [
+          "RAM"
+        ]
+      },
+      {
+        "id": "crystalpalace-starter-10",
+        "name": "선수 데이터 10",
+        "position": "LAM",
+        "availablePositions": [
+          "LAM"
+        ]
+      },
+      {
+        "id": "crystalpalace-starter-11",
+        "name": "선수 데이터 11",
+        "position": "ST",
+        "availablePositions": [
+          "ST"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "id": "crystalpalace-sub-01",
+        "name": "후보 데이터 1",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "crystalpalace-sub-02",
+        "name": "후보 데이터 2",
+        "position": "CB",
+        "availablePositions": [
+          "CB"
+        ]
+      },
+      {
+        "id": "crystalpalace-sub-03",
+        "name": "후보 데이터 3",
+        "position": "FB",
+        "availablePositions": [
+          "FB"
+        ]
+      },
+      {
+        "id": "crystalpalace-sub-04",
+        "name": "후보 데이터 4",
+        "position": "DM",
+        "availablePositions": [
+          "DM"
+        ]
+      },
+      {
+        "id": "crystalpalace-sub-05",
+        "name": "후보 데이터 5",
+        "position": "CM",
+        "availablePositions": [
+          "CM"
+        ]
+      },
+      {
+        "id": "crystalpalace-sub-06",
+        "name": "후보 데이터 6",
+        "position": "WG",
+        "availablePositions": [
+          "WG"
+        ]
+      },
+      {
+        "id": "crystalpalace-sub-07",
+        "name": "후보 데이터 7",
+        "position": "ST",
+        "availablePositions": [
+          "ST"
+        ]
+      }
+    ]
+  },
+  "everton": {
+    "starters": [
+      {
+        "id": "everton-starter-01",
+        "name": "선수 데이터 1",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "everton-starter-02",
+        "name": "선수 데이터 2",
+        "position": "RB",
+        "availablePositions": [
+          "RB"
+        ]
+      },
+      {
+        "id": "everton-starter-03",
+        "name": "선수 데이터 3",
+        "position": "RCB",
+        "availablePositions": [
+          "RCB"
+        ]
+      },
+      {
+        "id": "everton-starter-04",
+        "name": "선수 데이터 4",
+        "position": "LCB",
+        "availablePositions": [
+          "LCB"
+        ]
+      },
+      {
+        "id": "everton-starter-05",
+        "name": "선수 데이터 5",
+        "position": "LB",
+        "availablePositions": [
+          "LB"
+        ]
+      },
+      {
+        "id": "everton-starter-06",
+        "name": "선수 데이터 6",
+        "position": "RDM",
+        "availablePositions": [
+          "RDM"
+        ]
+      },
+      {
+        "id": "everton-starter-07",
+        "name": "선수 데이터 7",
+        "position": "LDM",
+        "availablePositions": [
+          "LDM"
+        ]
+      },
+      {
+        "id": "everton-starter-08",
+        "name": "선수 데이터 8",
+        "position": "RAM",
+        "availablePositions": [
+          "RAM"
+        ]
+      },
+      {
+        "id": "everton-starter-09",
+        "name": "선수 데이터 9",
+        "position": "AM",
+        "availablePositions": [
+          "AM"
+        ]
+      },
+      {
+        "id": "everton-starter-10",
+        "name": "선수 데이터 10",
+        "position": "LAM",
+        "availablePositions": [
+          "LAM"
+        ]
+      },
+      {
+        "id": "everton-starter-11",
+        "name": "선수 데이터 11",
+        "position": "ST",
+        "availablePositions": [
+          "ST"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "id": "everton-sub-01",
+        "name": "후보 데이터 1",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "everton-sub-02",
+        "name": "후보 데이터 2",
+        "position": "CB",
+        "availablePositions": [
+          "CB"
+        ]
+      },
+      {
+        "id": "everton-sub-03",
+        "name": "후보 데이터 3",
+        "position": "FB",
+        "availablePositions": [
+          "FB"
+        ]
+      },
+      {
+        "id": "everton-sub-04",
+        "name": "후보 데이터 4",
+        "position": "DM",
+        "availablePositions": [
+          "DM"
+        ]
+      },
+      {
+        "id": "everton-sub-05",
+        "name": "후보 데이터 5",
+        "position": "CM",
+        "availablePositions": [
+          "CM"
+        ]
+      },
+      {
+        "id": "everton-sub-06",
+        "name": "후보 데이터 6",
+        "position": "WG",
+        "availablePositions": [
+          "WG"
+        ]
+      },
+      {
+        "id": "everton-sub-07",
+        "name": "후보 데이터 7",
+        "position": "ST",
+        "availablePositions": [
+          "ST"
+        ]
+      }
+    ]
+  },
+  "fulham": {
+    "starters": [
+      {
+        "id": "fulham-starter-01",
+        "name": "선수 데이터 1",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "fulham-starter-02",
+        "name": "선수 데이터 2",
+        "position": "RB",
+        "availablePositions": [
+          "RB"
+        ]
+      },
+      {
+        "id": "fulham-starter-03",
+        "name": "선수 데이터 3",
+        "position": "RCB",
+        "availablePositions": [
+          "RCB"
+        ]
+      },
+      {
+        "id": "fulham-starter-04",
+        "name": "선수 데이터 4",
+        "position": "LCB",
+        "availablePositions": [
+          "LCB"
+        ]
+      },
+      {
+        "id": "fulham-starter-05",
+        "name": "선수 데이터 5",
+        "position": "LB",
+        "availablePositions": [
+          "LB"
+        ]
+      },
+      {
+        "id": "fulham-starter-06",
+        "name": "선수 데이터 6",
+        "position": "RDM",
+        "availablePositions": [
+          "RDM"
+        ]
+      },
+      {
+        "id": "fulham-starter-07",
+        "name": "선수 데이터 7",
+        "position": "LDM",
+        "availablePositions": [
+          "LDM"
+        ]
+      },
+      {
+        "id": "fulham-starter-08",
+        "name": "선수 데이터 8",
+        "position": "RAM",
+        "availablePositions": [
+          "RAM"
+        ]
+      },
+      {
+        "id": "fulham-starter-09",
+        "name": "선수 데이터 9",
+        "position": "AM",
+        "availablePositions": [
+          "AM"
+        ]
+      },
+      {
+        "id": "fulham-starter-10",
+        "name": "선수 데이터 10",
+        "position": "LAM",
+        "availablePositions": [
+          "LAM"
+        ]
+      },
+      {
+        "id": "fulham-starter-11",
+        "name": "선수 데이터 11",
+        "position": "ST",
+        "availablePositions": [
+          "ST"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "id": "fulham-sub-01",
+        "name": "후보 데이터 1",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "fulham-sub-02",
+        "name": "후보 데이터 2",
+        "position": "CB",
+        "availablePositions": [
+          "CB"
+        ]
+      },
+      {
+        "id": "fulham-sub-03",
+        "name": "후보 데이터 3",
+        "position": "FB",
+        "availablePositions": [
+          "FB"
+        ]
+      },
+      {
+        "id": "fulham-sub-04",
+        "name": "후보 데이터 4",
+        "position": "DM",
+        "availablePositions": [
+          "DM"
+        ]
+      },
+      {
+        "id": "fulham-sub-05",
+        "name": "후보 데이터 5",
+        "position": "CM",
+        "availablePositions": [
+          "CM"
+        ]
+      },
+      {
+        "id": "fulham-sub-06",
+        "name": "후보 데이터 6",
+        "position": "WG",
+        "availablePositions": [
+          "WG"
+        ]
+      },
+      {
+        "id": "fulham-sub-07",
+        "name": "후보 데이터 7",
+        "position": "ST",
+        "availablePositions": [
+          "ST"
+        ]
+      }
+    ]
+  },
+  "hullcity": {
+    "starters": [
+      {
+        "id": "hullcity-starter-01",
+        "name": "선수 데이터 1",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "hullcity-starter-02",
+        "name": "선수 데이터 2",
+        "position": "RB",
+        "availablePositions": [
+          "RB"
+        ]
+      },
+      {
+        "id": "hullcity-starter-03",
+        "name": "선수 데이터 3",
+        "position": "RCB",
+        "availablePositions": [
+          "RCB"
+        ]
+      },
+      {
+        "id": "hullcity-starter-04",
+        "name": "선수 데이터 4",
+        "position": "LCB",
+        "availablePositions": [
+          "LCB"
+        ]
+      },
+      {
+        "id": "hullcity-starter-05",
+        "name": "선수 데이터 5",
+        "position": "LB",
+        "availablePositions": [
+          "LB"
+        ]
+      },
+      {
+        "id": "hullcity-starter-06",
+        "name": "선수 데이터 6",
+        "position": "RDM",
+        "availablePositions": [
+          "RDM"
+        ]
+      },
+      {
+        "id": "hullcity-starter-07",
+        "name": "선수 데이터 7",
+        "position": "LDM",
+        "availablePositions": [
+          "LDM"
+        ]
+      },
+      {
+        "id": "hullcity-starter-08",
+        "name": "선수 데이터 8",
+        "position": "RAM",
+        "availablePositions": [
+          "RAM"
+        ]
+      },
+      {
+        "id": "hullcity-starter-09",
+        "name": "선수 데이터 9",
+        "position": "AM",
+        "availablePositions": [
+          "AM"
+        ]
+      },
+      {
+        "id": "hullcity-starter-10",
+        "name": "선수 데이터 10",
+        "position": "LAM",
+        "availablePositions": [
+          "LAM"
+        ]
+      },
+      {
+        "id": "hullcity-starter-11",
+        "name": "선수 데이터 11",
+        "position": "ST",
+        "availablePositions": [
+          "ST"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "id": "hullcity-sub-01",
+        "name": "후보 데이터 1",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "hullcity-sub-02",
+        "name": "후보 데이터 2",
+        "position": "CB",
+        "availablePositions": [
+          "CB"
+        ]
+      },
+      {
+        "id": "hullcity-sub-03",
+        "name": "후보 데이터 3",
+        "position": "FB",
+        "availablePositions": [
+          "FB"
+        ]
+      },
+      {
+        "id": "hullcity-sub-04",
+        "name": "후보 데이터 4",
+        "position": "DM",
+        "availablePositions": [
+          "DM"
+        ]
+      },
+      {
+        "id": "hullcity-sub-05",
+        "name": "후보 데이터 5",
+        "position": "CM",
+        "availablePositions": [
+          "CM"
+        ]
+      },
+      {
+        "id": "hullcity-sub-06",
+        "name": "후보 데이터 6",
+        "position": "WG",
+        "availablePositions": [
+          "WG"
+        ]
+      },
+      {
+        "id": "hullcity-sub-07",
+        "name": "후보 데이터 7",
+        "position": "ST",
+        "availablePositions": [
+          "ST"
+        ]
+      }
+    ]
+  },
+  "ipswich": {
+    "starters": [
+      {
+        "id": "ipswich-starter-01",
+        "name": "선수 데이터 1",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "ipswich-starter-02",
+        "name": "선수 데이터 2",
+        "position": "RB",
+        "availablePositions": [
+          "RB"
+        ]
+      },
+      {
+        "id": "ipswich-starter-03",
+        "name": "선수 데이터 3",
+        "position": "RCB",
+        "availablePositions": [
+          "RCB"
+        ]
+      },
+      {
+        "id": "ipswich-starter-04",
+        "name": "선수 데이터 4",
+        "position": "LCB",
+        "availablePositions": [
+          "LCB"
+        ]
+      },
+      {
+        "id": "ipswich-starter-05",
+        "name": "선수 데이터 5",
+        "position": "LB",
+        "availablePositions": [
+          "LB"
+        ]
+      },
+      {
+        "id": "ipswich-starter-06",
+        "name": "선수 데이터 6",
+        "position": "RDM",
+        "availablePositions": [
+          "RDM"
+        ]
+      },
+      {
+        "id": "ipswich-starter-07",
+        "name": "선수 데이터 7",
+        "position": "LDM",
+        "availablePositions": [
+          "LDM"
+        ]
+      },
+      {
+        "id": "ipswich-starter-08",
+        "name": "선수 데이터 8",
+        "position": "RAM",
+        "availablePositions": [
+          "RAM"
+        ]
+      },
+      {
+        "id": "ipswich-starter-09",
+        "name": "선수 데이터 9",
+        "position": "AM",
+        "availablePositions": [
+          "AM"
+        ]
+      },
+      {
+        "id": "ipswich-starter-10",
+        "name": "선수 데이터 10",
+        "position": "LAM",
+        "availablePositions": [
+          "LAM"
+        ]
+      },
+      {
+        "id": "ipswich-starter-11",
+        "name": "선수 데이터 11",
+        "position": "ST",
+        "availablePositions": [
+          "ST"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "id": "ipswich-sub-01",
+        "name": "후보 데이터 1",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "ipswich-sub-02",
+        "name": "후보 데이터 2",
+        "position": "CB",
+        "availablePositions": [
+          "CB"
+        ]
+      },
+      {
+        "id": "ipswich-sub-03",
+        "name": "후보 데이터 3",
+        "position": "FB",
+        "availablePositions": [
+          "FB"
+        ]
+      },
+      {
+        "id": "ipswich-sub-04",
+        "name": "후보 데이터 4",
+        "position": "DM",
+        "availablePositions": [
+          "DM"
+        ]
+      },
+      {
+        "id": "ipswich-sub-05",
+        "name": "후보 데이터 5",
+        "position": "CM",
+        "availablePositions": [
+          "CM"
+        ]
+      },
+      {
+        "id": "ipswich-sub-06",
+        "name": "후보 데이터 6",
+        "position": "WG",
+        "availablePositions": [
+          "WG"
+        ]
+      },
+      {
+        "id": "ipswich-sub-07",
+        "name": "후보 데이터 7",
+        "position": "ST",
+        "availablePositions": [
+          "ST"
+        ]
+      }
+    ]
+  },
+  "leeds": {
+    "starters": [
+      {
+        "id": "leeds-starter-01",
+        "name": "선수 데이터 1",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "leeds-starter-02",
+        "name": "선수 데이터 2",
+        "position": "RB",
+        "availablePositions": [
+          "RB"
+        ]
+      },
+      {
+        "id": "leeds-starter-03",
+        "name": "선수 데이터 3",
+        "position": "RCB",
+        "availablePositions": [
+          "RCB"
+        ]
+      },
+      {
+        "id": "leeds-starter-04",
+        "name": "선수 데이터 4",
+        "position": "LCB",
+        "availablePositions": [
+          "LCB"
+        ]
+      },
+      {
+        "id": "leeds-starter-05",
+        "name": "선수 데이터 5",
+        "position": "LB",
+        "availablePositions": [
+          "LB"
+        ]
+      },
+      {
+        "id": "leeds-starter-06",
+        "name": "선수 데이터 6",
+        "position": "RDM",
+        "availablePositions": [
+          "RDM"
+        ]
+      },
+      {
+        "id": "leeds-starter-07",
+        "name": "선수 데이터 7",
+        "position": "LDM",
+        "availablePositions": [
+          "LDM"
+        ]
+      },
+      {
+        "id": "leeds-starter-08",
+        "name": "선수 데이터 8",
+        "position": "RAM",
+        "availablePositions": [
+          "RAM"
+        ]
+      },
+      {
+        "id": "leeds-starter-09",
+        "name": "선수 데이터 9",
+        "position": "AM",
+        "availablePositions": [
+          "AM"
+        ]
+      },
+      {
+        "id": "leeds-starter-10",
+        "name": "선수 데이터 10",
+        "position": "LAM",
+        "availablePositions": [
+          "LAM"
+        ]
+      },
+      {
+        "id": "leeds-starter-11",
+        "name": "선수 데이터 11",
+        "position": "ST",
+        "availablePositions": [
+          "ST"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "id": "leeds-sub-01",
+        "name": "후보 데이터 1",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "leeds-sub-02",
+        "name": "후보 데이터 2",
+        "position": "CB",
+        "availablePositions": [
+          "CB"
+        ]
+      },
+      {
+        "id": "leeds-sub-03",
+        "name": "후보 데이터 3",
+        "position": "FB",
+        "availablePositions": [
+          "FB"
+        ]
+      },
+      {
+        "id": "leeds-sub-04",
+        "name": "후보 데이터 4",
+        "position": "DM",
+        "availablePositions": [
+          "DM"
+        ]
+      },
+      {
+        "id": "leeds-sub-05",
+        "name": "후보 데이터 5",
+        "position": "CM",
+        "availablePositions": [
+          "CM"
+        ]
+      },
+      {
+        "id": "leeds-sub-06",
+        "name": "후보 데이터 6",
+        "position": "WG",
+        "availablePositions": [
+          "WG"
+        ]
+      },
+      {
+        "id": "leeds-sub-07",
+        "name": "후보 데이터 7",
+        "position": "ST",
+        "availablePositions": [
+          "ST"
+        ]
+      }
+    ]
+  },
+  "liverpool": {
+    "starters": [
+      {
+        "id": "liverpool-starter-01",
+        "name": "선수 데이터 1",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "liverpool-starter-02",
+        "name": "선수 데이터 2",
+        "position": "RB",
+        "availablePositions": [
+          "RB"
+        ]
+      },
+      {
+        "id": "liverpool-starter-03",
+        "name": "선수 데이터 3",
+        "position": "RCB",
+        "availablePositions": [
+          "RCB"
+        ]
+      },
+      {
+        "id": "liverpool-starter-04",
+        "name": "선수 데이터 4",
+        "position": "LCB",
+        "availablePositions": [
+          "LCB"
+        ]
+      },
+      {
+        "id": "liverpool-starter-05",
+        "name": "선수 데이터 5",
+        "position": "LB",
+        "availablePositions": [
+          "LB"
+        ]
+      },
+      {
+        "id": "liverpool-starter-06",
+        "name": "선수 데이터 6",
+        "position": "RCM",
+        "availablePositions": [
+          "RCM"
+        ]
+      },
+      {
+        "id": "liverpool-starter-07",
+        "name": "선수 데이터 7",
+        "position": "DM",
+        "availablePositions": [
+          "DM"
+        ]
+      },
+      {
+        "id": "liverpool-starter-08",
+        "name": "선수 데이터 8",
+        "position": "LCM",
+        "availablePositions": [
+          "LCM"
+        ]
+      },
+      {
+        "id": "liverpool-starter-09",
+        "name": "선수 데이터 9",
+        "position": "RW",
+        "availablePositions": [
+          "RW"
+        ]
+      },
+      {
+        "id": "liverpool-starter-10",
+        "name": "선수 데이터 10",
+        "position": "ST",
+        "availablePositions": [
+          "ST"
+        ]
+      },
+      {
+        "id": "liverpool-starter-11",
+        "name": "선수 데이터 11",
+        "position": "LW",
+        "availablePositions": [
+          "LW"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "id": "liverpool-sub-01",
+        "name": "후보 데이터 1",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "liverpool-sub-02",
+        "name": "후보 데이터 2",
+        "position": "CB",
+        "availablePositions": [
+          "CB"
+        ]
+      },
+      {
+        "id": "liverpool-sub-03",
+        "name": "후보 데이터 3",
+        "position": "FB",
+        "availablePositions": [
+          "FB"
+        ]
+      },
+      {
+        "id": "liverpool-sub-04",
+        "name": "후보 데이터 4",
+        "position": "DM",
+        "availablePositions": [
+          "DM"
+        ]
+      },
+      {
+        "id": "liverpool-sub-05",
+        "name": "후보 데이터 5",
+        "position": "CM",
+        "availablePositions": [
+          "CM"
+        ]
+      },
+      {
+        "id": "liverpool-sub-06",
+        "name": "후보 데이터 6",
+        "position": "WG",
+        "availablePositions": [
+          "WG"
+        ]
+      },
+      {
+        "id": "liverpool-sub-07",
+        "name": "후보 데이터 7",
+        "position": "ST",
+        "availablePositions": [
+          "ST"
+        ]
+      }
+    ]
+  },
+  "manutd": {
+    "starters": [
+      {
+        "id": "manutd-starter-01",
+        "name": "선수 데이터 1",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "manutd-starter-02",
+        "name": "선수 데이터 2",
+        "position": "RCB",
+        "availablePositions": [
+          "RCB"
+        ]
+      },
+      {
+        "id": "manutd-starter-03",
+        "name": "선수 데이터 3",
+        "position": "CB",
+        "availablePositions": [
+          "CB"
+        ]
+      },
+      {
+        "id": "manutd-starter-04",
+        "name": "선수 데이터 4",
+        "position": "LCB",
+        "availablePositions": [
+          "LCB"
+        ]
+      },
+      {
+        "id": "manutd-starter-05",
+        "name": "선수 데이터 5",
+        "position": "RWB",
+        "availablePositions": [
+          "RWB"
+        ]
+      },
+      {
+        "id": "manutd-starter-06",
+        "name": "선수 데이터 6",
+        "position": "RCM",
+        "availablePositions": [
+          "RCM"
+        ]
+      },
+      {
+        "id": "manutd-starter-07",
+        "name": "선수 데이터 7",
+        "position": "LCM",
+        "availablePositions": [
+          "LCM"
+        ]
+      },
+      {
+        "id": "manutd-starter-08",
+        "name": "선수 데이터 8",
+        "position": "LWB",
+        "availablePositions": [
+          "LWB"
+        ]
+      },
+      {
+        "id": "manutd-starter-09",
+        "name": "선수 데이터 9",
+        "position": "RAM",
+        "availablePositions": [
+          "RAM"
+        ]
+      },
+      {
+        "id": "manutd-starter-10",
+        "name": "선수 데이터 10",
+        "position": "LAM",
+        "availablePositions": [
+          "LAM"
+        ]
+      },
+      {
+        "id": "manutd-starter-11",
+        "name": "선수 데이터 11",
+        "position": "ST",
+        "availablePositions": [
+          "ST"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "id": "manutd-sub-01",
+        "name": "후보 데이터 1",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "manutd-sub-02",
+        "name": "후보 데이터 2",
+        "position": "CB",
+        "availablePositions": [
+          "CB"
+        ]
+      },
+      {
+        "id": "manutd-sub-03",
+        "name": "후보 데이터 3",
+        "position": "FB",
+        "availablePositions": [
+          "FB"
+        ]
+      },
+      {
+        "id": "manutd-sub-04",
+        "name": "후보 데이터 4",
+        "position": "DM",
+        "availablePositions": [
+          "DM"
+        ]
+      },
+      {
+        "id": "manutd-sub-05",
+        "name": "후보 데이터 5",
+        "position": "CM",
+        "availablePositions": [
+          "CM"
+        ]
+      },
+      {
+        "id": "manutd-sub-06",
+        "name": "후보 데이터 6",
+        "position": "WG",
+        "availablePositions": [
+          "WG"
+        ]
+      },
+      {
+        "id": "manutd-sub-07",
+        "name": "후보 데이터 7",
+        "position": "ST",
+        "availablePositions": [
+          "ST"
+        ]
+      }
+    ]
+  },
+  "newcastle": {
+    "starters": [
+      {
+        "id": "newcastle-starter-01",
+        "name": "선수 데이터 1",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "newcastle-starter-02",
+        "name": "선수 데이터 2",
+        "position": "RB",
+        "availablePositions": [
+          "RB"
+        ]
+      },
+      {
+        "id": "newcastle-starter-03",
+        "name": "선수 데이터 3",
+        "position": "RCB",
+        "availablePositions": [
+          "RCB"
+        ]
+      },
+      {
+        "id": "newcastle-starter-04",
+        "name": "선수 데이터 4",
+        "position": "LCB",
+        "availablePositions": [
+          "LCB"
+        ]
+      },
+      {
+        "id": "newcastle-starter-05",
+        "name": "선수 데이터 5",
+        "position": "LB",
+        "availablePositions": [
+          "LB"
+        ]
+      },
+      {
+        "id": "newcastle-starter-06",
+        "name": "선수 데이터 6",
+        "position": "RCM",
+        "availablePositions": [
+          "RCM"
+        ]
+      },
+      {
+        "id": "newcastle-starter-07",
+        "name": "선수 데이터 7",
+        "position": "DM",
+        "availablePositions": [
+          "DM"
+        ]
+      },
+      {
+        "id": "newcastle-starter-08",
+        "name": "선수 데이터 8",
+        "position": "LCM",
+        "availablePositions": [
+          "LCM"
+        ]
+      },
+      {
+        "id": "newcastle-starter-09",
+        "name": "선수 데이터 9",
+        "position": "RW",
+        "availablePositions": [
+          "RW"
+        ]
+      },
+      {
+        "id": "newcastle-starter-10",
+        "name": "선수 데이터 10",
+        "position": "ST",
+        "availablePositions": [
+          "ST"
+        ]
+      },
+      {
+        "id": "newcastle-starter-11",
+        "name": "선수 데이터 11",
+        "position": "LW",
+        "availablePositions": [
+          "LW"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "id": "newcastle-sub-01",
+        "name": "후보 데이터 1",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "newcastle-sub-02",
+        "name": "후보 데이터 2",
+        "position": "CB",
+        "availablePositions": [
+          "CB"
+        ]
+      },
+      {
+        "id": "newcastle-sub-03",
+        "name": "후보 데이터 3",
+        "position": "FB",
+        "availablePositions": [
+          "FB"
+        ]
+      },
+      {
+        "id": "newcastle-sub-04",
+        "name": "후보 데이터 4",
+        "position": "DM",
+        "availablePositions": [
+          "DM"
+        ]
+      },
+      {
+        "id": "newcastle-sub-05",
+        "name": "후보 데이터 5",
+        "position": "CM",
+        "availablePositions": [
+          "CM"
+        ]
+      },
+      {
+        "id": "newcastle-sub-06",
+        "name": "후보 데이터 6",
+        "position": "WG",
+        "availablePositions": [
+          "WG"
+        ]
+      },
+      {
+        "id": "newcastle-sub-07",
+        "name": "후보 데이터 7",
+        "position": "ST",
+        "availablePositions": [
+          "ST"
+        ]
+      }
+    ]
+  },
+  "nottinghamforest": {
+    "starters": [
+      {
+        "id": "nottinghamforest-starter-01",
+        "name": "선수 데이터 1",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "nottinghamforest-starter-02",
+        "name": "선수 데이터 2",
+        "position": "RB",
+        "availablePositions": [
+          "RB"
+        ]
+      },
+      {
+        "id": "nottinghamforest-starter-03",
+        "name": "선수 데이터 3",
+        "position": "RCB",
+        "availablePositions": [
+          "RCB"
+        ]
+      },
+      {
+        "id": "nottinghamforest-starter-04",
+        "name": "선수 데이터 4",
+        "position": "LCB",
+        "availablePositions": [
+          "LCB"
+        ]
+      },
+      {
+        "id": "nottinghamforest-starter-05",
+        "name": "선수 데이터 5",
+        "position": "LB",
+        "availablePositions": [
+          "LB"
+        ]
+      },
+      {
+        "id": "nottinghamforest-starter-06",
+        "name": "선수 데이터 6",
+        "position": "RDM",
+        "availablePositions": [
+          "RDM"
+        ]
+      },
+      {
+        "id": "nottinghamforest-starter-07",
+        "name": "선수 데이터 7",
+        "position": "LDM",
+        "availablePositions": [
+          "LDM"
+        ]
+      },
+      {
+        "id": "nottinghamforest-starter-08",
+        "name": "선수 데이터 8",
+        "position": "RAM",
+        "availablePositions": [
+          "RAM"
+        ]
+      },
+      {
+        "id": "nottinghamforest-starter-09",
+        "name": "선수 데이터 9",
+        "position": "AM",
+        "availablePositions": [
+          "AM"
+        ]
+      },
+      {
+        "id": "nottinghamforest-starter-10",
+        "name": "선수 데이터 10",
+        "position": "LAM",
+        "availablePositions": [
+          "LAM"
+        ]
+      },
+      {
+        "id": "nottinghamforest-starter-11",
+        "name": "선수 데이터 11",
+        "position": "ST",
+        "availablePositions": [
+          "ST"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "id": "nottinghamforest-sub-01",
+        "name": "후보 데이터 1",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "nottinghamforest-sub-02",
+        "name": "후보 데이터 2",
+        "position": "CB",
+        "availablePositions": [
+          "CB"
+        ]
+      },
+      {
+        "id": "nottinghamforest-sub-03",
+        "name": "후보 데이터 3",
+        "position": "FB",
+        "availablePositions": [
+          "FB"
+        ]
+      },
+      {
+        "id": "nottinghamforest-sub-04",
+        "name": "후보 데이터 4",
+        "position": "DM",
+        "availablePositions": [
+          "DM"
+        ]
+      },
+      {
+        "id": "nottinghamforest-sub-05",
+        "name": "후보 데이터 5",
+        "position": "CM",
+        "availablePositions": [
+          "CM"
+        ]
+      },
+      {
+        "id": "nottinghamforest-sub-06",
+        "name": "후보 데이터 6",
+        "position": "WG",
+        "availablePositions": [
+          "WG"
+        ]
+      },
+      {
+        "id": "nottinghamforest-sub-07",
+        "name": "후보 데이터 7",
+        "position": "ST",
+        "availablePositions": [
+          "ST"
+        ]
+      }
+    ]
+  },
+  "sunderland": {
+    "starters": [
+      {
+        "id": "sunderland-starter-01",
+        "name": "선수 데이터 1",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "sunderland-starter-02",
+        "name": "선수 데이터 2",
+        "position": "RB",
+        "availablePositions": [
+          "RB"
+        ]
+      },
+      {
+        "id": "sunderland-starter-03",
+        "name": "선수 데이터 3",
+        "position": "RCB",
+        "availablePositions": [
+          "RCB"
+        ]
+      },
+      {
+        "id": "sunderland-starter-04",
+        "name": "선수 데이터 4",
+        "position": "LCB",
+        "availablePositions": [
+          "LCB"
+        ]
+      },
+      {
+        "id": "sunderland-starter-05",
+        "name": "선수 데이터 5",
+        "position": "LB",
+        "availablePositions": [
+          "LB"
+        ]
+      },
+      {
+        "id": "sunderland-starter-06",
+        "name": "선수 데이터 6",
+        "position": "RCM",
+        "availablePositions": [
+          "RCM"
+        ]
+      },
+      {
+        "id": "sunderland-starter-07",
+        "name": "선수 데이터 7",
+        "position": "DM",
+        "availablePositions": [
+          "DM"
+        ]
+      },
+      {
+        "id": "sunderland-starter-08",
+        "name": "선수 데이터 8",
+        "position": "LCM",
+        "availablePositions": [
+          "LCM"
+        ]
+      },
+      {
+        "id": "sunderland-starter-09",
+        "name": "선수 데이터 9",
+        "position": "RW",
+        "availablePositions": [
+          "RW"
+        ]
+      },
+      {
+        "id": "sunderland-starter-10",
+        "name": "선수 데이터 10",
+        "position": "ST",
+        "availablePositions": [
+          "ST"
+        ]
+      },
+      {
+        "id": "sunderland-starter-11",
+        "name": "선수 데이터 11",
+        "position": "LW",
+        "availablePositions": [
+          "LW"
+        ]
+      }
+    ],
+    "substitutes": [
+      {
+        "id": "sunderland-sub-01",
+        "name": "후보 데이터 1",
+        "position": "GK",
+        "availablePositions": [
+          "GK"
+        ]
+      },
+      {
+        "id": "sunderland-sub-02",
+        "name": "후보 데이터 2",
+        "position": "CB",
+        "availablePositions": [
+          "CB"
+        ]
+      },
+      {
+        "id": "sunderland-sub-03",
+        "name": "후보 데이터 3",
+        "position": "FB",
+        "availablePositions": [
+          "FB"
+        ]
+      },
+      {
+        "id": "sunderland-sub-04",
+        "name": "후보 데이터 4",
+        "position": "DM",
+        "availablePositions": [
+          "DM"
+        ]
+      },
+      {
+        "id": "sunderland-sub-05",
+        "name": "후보 데이터 5",
+        "position": "CM",
+        "availablePositions": [
+          "CM"
+        ]
+      },
+      {
+        "id": "sunderland-sub-06",
+        "name": "후보 데이터 6",
+        "position": "WG",
+        "availablePositions": [
+          "WG"
+        ]
+      },
+      {
+        "id": "sunderland-sub-07",
+        "name": "후보 데이터 7",
+        "position": "ST",
+        "availablePositions": [
+          "ST"
+        ]
+      }
+    ]
+  }
+}

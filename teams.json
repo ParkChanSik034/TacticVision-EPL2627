@@ -1,0 +1,182 @@
+{
+  "arsenal": {
+    "id": "arsenal",
+    "name": "Arsenal",
+    "koreanName": "아스널",
+    "shortName": "ARS",
+    "primaryColor": "#EF0107",
+    "defaultFormation": "4-3-3",
+    "dataStatus": "planned"
+  },
+  "astonvilla": {
+    "id": "astonvilla",
+    "name": "Aston Villa",
+    "koreanName": "애스턴 빌라",
+    "shortName": "AVL",
+    "primaryColor": "#670E36",
+    "defaultFormation": "4-2-3-1",
+    "dataStatus": "planned"
+  },
+  "bournemouth": {
+    "id": "bournemouth",
+    "name": "AFC Bournemouth",
+    "koreanName": "본머스",
+    "shortName": "BOU",
+    "primaryColor": "#DA291C",
+    "defaultFormation": "4-2-3-1",
+    "dataStatus": "planned"
+  },
+  "brentford": {
+    "id": "brentford",
+    "name": "Brentford",
+    "koreanName": "브렌트퍼드",
+    "shortName": "BRE",
+    "primaryColor": "#E30613",
+    "defaultFormation": "4-3-3",
+    "dataStatus": "planned"
+  },
+  "brighton": {
+    "id": "brighton",
+    "name": "Brighton & Hove Albion",
+    "koreanName": "브라이튼",
+    "shortName": "BHA",
+    "primaryColor": "#0057B8",
+    "defaultFormation": "4-2-3-1",
+    "dataStatus": "planned"
+  },
+  "chelsea": {
+    "id": "chelsea",
+    "name": "Chelsea",
+    "koreanName": "첼시",
+    "shortName": "CHE",
+    "primaryColor": "#034694",
+    "defaultFormation": "3-4-2-1",
+    "dataStatus": "ready"
+  },
+  "coventry": {
+    "id": "coventry",
+    "name": "Coventry City",
+    "koreanName": "코번트리 시티",
+    "shortName": "COV",
+    "primaryColor": "#69B3E7",
+    "defaultFormation": "4-2-3-1",
+    "dataStatus": "planned"
+  },
+  "crystalpalace": {
+    "id": "crystalpalace",
+    "name": "Crystal Palace",
+    "koreanName": "크리스털 팰리스",
+    "shortName": "CRY",
+    "primaryColor": "#1B458F",
+    "defaultFormation": "3-4-2-1",
+    "dataStatus": "planned"
+  },
+  "everton": {
+    "id": "everton",
+    "name": "Everton",
+    "koreanName": "에버턴",
+    "shortName": "EVE",
+    "primaryColor": "#003399",
+    "defaultFormation": "4-2-3-1",
+    "dataStatus": "planned"
+  },
+  "fulham": {
+    "id": "fulham",
+    "name": "Fulham",
+    "koreanName": "풀럼",
+    "shortName": "FUL",
+    "primaryColor": "#000000",
+    "defaultFormation": "4-2-3-1",
+    "dataStatus": "planned"
+  },
+  "hullcity": {
+    "id": "hullcity",
+    "name": "Hull City",
+    "koreanName": "헐 시티",
+    "shortName": "HUL",
+    "primaryColor": "#F5A12D",
+    "defaultFormation": "4-2-3-1",
+    "dataStatus": "planned"
+  },
+  "ipswich": {
+    "id": "ipswich",
+    "name": "Ipswich Town",
+    "koreanName": "입스위치 타운",
+    "shortName": "IPS",
+    "primaryColor": "#0044AA",
+    "defaultFormation": "4-2-3-1",
+    "dataStatus": "planned"
+  },
+  "leeds": {
+    "id": "leeds",
+    "name": "Leeds United",
+    "koreanName": "리즈 유나이티드",
+    "shortName": "LEE",
+    "primaryColor": "#FFCD00",
+    "defaultFormation": "4-2-3-1",
+    "dataStatus": "planned"
+  },
+  "liverpool": {
+    "id": "liverpool",
+    "name": "Liverpool",
+    "koreanName": "리버풀",
+    "shortName": "LIV",
+    "primaryColor": "#C8102E",
+    "defaultFormation": "4-3-3",
+    "dataStatus": "planned"
+  },
+  "mancity": {
+    "id": "mancity",
+    "name": "Manchester City",
+    "koreanName": "맨체스터 시티",
+    "shortName": "MCI",
+    "primaryColor": "#6CABDD",
+    "defaultFormation": "3-4-2-1",
+    "dataStatus": "ready"
+  },
+  "manutd": {
+    "id": "manutd",
+    "name": "Manchester United",
+    "koreanName": "맨체스터 유나이티드",
+    "shortName": "MUN",
+    "primaryColor": "#DA291C",
+    "defaultFormation": "3-4-2-1",
+    "dataStatus": "planned"
+  },
+  "newcastle": {
+    "id": "newcastle",
+    "name": "Newcastle United",
+    "koreanName": "뉴캐슬 유나이티드",
+    "shortName": "NEW",
+    "primaryColor": "#241F20",
+    "defaultFormation": "4-3-3",
+    "dataStatus": "planned"
+  },
+  "nottinghamforest": {
+    "id": "nottinghamforest",
+    "name": "Nottingham Forest",
+    "koreanName": "노팅엄 포리스트",
+    "shortName": "NFO",
+    "primaryColor": "#DD0000",
+    "defaultFormation": "4-2-3-1",
+    "dataStatus": "planned"
+  },
+  "sunderland": {
+    "id": "sunderland",
+    "name": "Sunderland",
+    "koreanName": "선덜랜드",
+    "shortName": "SUN",
+    "primaryColor": "#EB172B",
+    "defaultFormation": "4-3-3",
+    "dataStatus": "planned"
+  },
+  "tottenham": {
+    "id": "tottenham",
+    "name": "Tottenham Hotspur",
+    "koreanName": "토트넘 홋스퍼",
+    "shortName": "TOT",
+    "primaryColor": "#132257",
+    "defaultFormation": "4-2-3-1",
+    "dataStatus": "ready"
+  }
+}

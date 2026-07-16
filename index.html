@@ -125,215 +125,201 @@
         </div>
     </header>
 
-    <!-- Main Workspace -->
-    <main class="flex-grow p-6 grid grid-cols-1 xl:grid-cols-12 gap-6 max-w-7xl w-full mx-auto">
+    <!-- Desktop-first Main Workspace -->
+    <main class="flex-grow w-full max-w-[1800px] mx-auto px-5 py-5">
+        <div
+            class="grid grid-cols-1 2xl:grid-cols-[300px_minmax(760px,1fr)_300px] xl:grid-cols-[280px_minmax(680px,1fr)_280px] gap-5 items-stretch">
 
-        <!-- Left Panel: Tactical Control (5 cols) -->
-        <section
-            class="xl:col-span-5 flex flex-col gap-5 bg-[#0a0314] p-5 rounded-2xl border border-white/5 shadow-2xl h-auto xl:h-[calc(100vh-140px)] overflow-y-auto">
-            <div>
-                <h2 class="text-lg font-bold text-white flex items-center gap-2"><i
-                        class="fa-solid fa-sliders text-eplNeon"></i> 1. 클럽 및 감독 설정</h2>
-                <p class="text-xs text-slate-400 mt-1">실시간 전술 분석을 시작할 프리미어리그 팀을 선택하세요.</p>
-            </div>
-
-            <!-- Team Selector buttons -->
-            <div class="grid grid-cols-3 gap-2">
-                <button onclick="changeTeam('chelsea')" id="btn-chelsea"
-                    class="team-btn px-3 py-3 rounded-xl border font-bold text-sm transition-all duration-300 flex flex-col items-center gap-1 bg-eplPurple/20 border-eplNeon/40 text-white shadow-lg shadow-eplNeon/10">
-                    <span class="text-xs opacity-60">Alonso</span>
-                    <span>Chelsea</span>
-                </button>
-                <button onclick="changeTeam('mancity')" id="btn-mancity"
-                    class="team-btn px-3 py-3 rounded-xl border border-white/5 bg-white/5 font-bold text-sm transition-all duration-300 text-slate-400 hover:bg-white/10 flex flex-col items-center gap-1">
-                    <span class="text-xs opacity-60">Maresca</span>
-                    <span>Man City</span>
-                </button>
-                <button onclick="changeTeam('tottenham')" id="btn-tottenham"
-                    class="team-btn px-3 py-3 rounded-xl border border-white/5 bg-white/5 font-bold text-sm transition-all duration-300 text-slate-400 hover:bg-white/10 flex flex-col items-center gap-1">
-                    <span class="text-xs opacity-60">De Zerbi</span>
-                    <span>Tottenham</span>
-                </button>
-            </div>
-
-            <!-- Formation Selector -->
-            <div class="space-y-2">
-                <span
-                    class="text-xs text-slate-400 font-semibold uppercase tracking-wider block flex items-center gap-1.5">
-                    <i class="fa-solid fa-people-group text-eplBlue"></i> 포메이션 수동 변경 (실시간 대응)
-                </span>
-                <div class="grid grid-cols-5 gap-1.5">
-                    <button onclick="changeFormation('4-3-3')" id="form-4-3-3"
-                        class="form-btn py-2 rounded-lg bg-slate-950 border border-white/10 hover:border-eplBlue/45 text-xs font-mono font-bold text-slate-300 transition-all">4-3-3</button>
-                    <button onclick="changeFormation('4-4-2')" id="form-4-4-2"
-                        class="form-btn py-2 rounded-lg bg-slate-950 border border-white/10 hover:border-eplBlue/45 text-xs font-mono font-bold text-slate-300 transition-all">4-4-2</button>
-                    <button onclick="changeFormation('3-5-2')" id="form-3-5-2"
-                        class="form-btn py-2 rounded-lg bg-slate-950 border border-white/10 hover:border-eplBlue/45 text-xs font-mono font-bold text-slate-300 transition-all">3-5-2</button>
-                    <button onclick="changeFormation('4-2-3-1')" id="form-4-2-3-1"
-                        class="form-btn py-2 rounded-lg bg-slate-950 border border-white/10 hover:border-eplBlue/45 text-xs font-mono font-bold text-slate-300 transition-all">4-2-3-1</button>
-                    <button onclick="changeFormation('3-4-2-1')" id="form-3-4-2-1"
-                        class="form-btn py-2 rounded-lg bg-slate-950 border border-white/10 hover:border-eplBlue/45 text-xs font-mono font-bold text-slate-300 transition-all">3-4-2-1</button>
+            <!-- Left Control Rail -->
+            <section
+                class="bg-[#0a0314] rounded-2xl border border-white/5 shadow-2xl p-4 flex flex-col gap-4 xl:h-[calc(100vh-126px)] overflow-y-auto">
+                <div class="pb-3 border-b border-white/5">
+                    <h2 class="text-base font-bold text-white flex items-center gap-2"><i
+                            class="fa-solid fa-sliders text-eplNeon"></i> 전술 설정</h2>
+                    <p class="text-[11px] text-slate-500 mt-1">팀, 포메이션, 전술 수치를 조정하세요.</p>
                 </div>
-            </div>
 
-            <!-- Squad Info Cards -->
-            <div class="p-4 rounded-xl bg-slate-900/40 border border-white/5">
-                <div class="flex justify-between items-center mb-2">
-                    <span class="text-xs text-slate-400 font-semibold uppercase tracking-wider">클럽 전술 정보</span>
+                <div class="space-y-2">
+                    <span class="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">Club</span>
+                    <div class="space-y-2">
+                        <select id="team-select" onchange="changeTeam(this.value)"
+                            class="w-full px-3 py-3 rounded-xl bg-slate-950 border border-white/10 text-sm font-bold text-white focus:outline-none focus:border-eplNeon/60">
+                            <option>구단 데이터를 불러오는 중...</option>
+                        </select>
+                        <p id="team-data-status" class="text-[10px] text-slate-500">20개 구단 공통 구조</p>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <span
+                        class="text-[11px] text-slate-400 font-semibold uppercase tracking-wider flex items-center gap-1.5"><i
+                            class="fa-solid fa-people-group text-eplBlue"></i> Formation</span>
+                    <div class="grid grid-cols-2 gap-2">
+                        <button onclick="changeFormation('4-3-3')" id="form-4-3-3"
+                            class="form-btn py-2.5 rounded-lg bg-slate-950 border border-white/10 hover:border-eplBlue/45 text-xs font-mono font-bold text-slate-300 transition-all">4-3-3</button>
+                        <button onclick="changeFormation('4-4-2')" id="form-4-4-2"
+                            class="form-btn py-2.5 rounded-lg bg-slate-950 border border-white/10 hover:border-eplBlue/45 text-xs font-mono font-bold text-slate-300 transition-all">4-4-2</button>
+                        <button onclick="changeFormation('3-5-2')" id="form-3-5-2"
+                            class="form-btn py-2.5 rounded-lg bg-slate-950 border border-white/10 hover:border-eplBlue/45 text-xs font-mono font-bold text-slate-300 transition-all">3-5-2</button>
+                        <button onclick="changeFormation('4-2-3-1')" id="form-4-2-3-1"
+                            class="form-btn py-2.5 rounded-lg bg-slate-950 border border-white/10 hover:border-eplBlue/45 text-xs font-mono font-bold text-slate-300 transition-all">4-2-3-1</button>
+                        <button onclick="changeFormation('3-4-2-1')" id="form-3-4-2-1"
+                            class="form-btn col-span-2 py-2.5 rounded-lg bg-slate-950 border border-white/10 hover:border-eplBlue/45 text-xs font-mono font-bold text-slate-300 transition-all">3-4-2-1</button>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <span class="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">Tactical
+                        presets</span>
+                    <div class="grid grid-cols-1 gap-2">
+                        <button onclick="applyPreset('tikitaka')"
+                            class="preset-btn px-3 py-2.5 rounded-lg bg-slate-950 border border-white/10 hover:border-eplNeon/30 text-xs font-semibold text-slate-300 transition-all flex items-center gap-2"><i
+                                class="fa-solid fa-arrows-spin text-eplBlue"></i> 티키타카</button>
+                        <button onclick="applyPreset('gegen')"
+                            class="preset-btn px-3 py-2.5 rounded-lg bg-slate-950 border border-white/10 hover:border-eplNeon/30 text-xs font-semibold text-slate-300 transition-all flex items-center gap-2"><i
+                                class="fa-solid fa-forward text-rose-400"></i> 게겐프레싱</button>
+                        <button onclick="applyPreset('lowblock')"
+                            class="preset-btn px-3 py-2.5 rounded-lg bg-slate-950 border border-white/10 hover:border-eplNeon/30 text-xs font-semibold text-slate-300 transition-all flex items-center gap-2"><i
+                                class="fa-solid fa-shield-halved text-amber-400"></i> 텐백 수비</button>
+                    </div>
+                </div>
+
+                <div class="space-y-5 pt-1">
+                    <div class="space-y-1.5">
+                        <div class="flex justify-between text-xs"><span class="text-slate-200">수비 라인</span><span
+                                id="val-defline" class="font-mono text-eplNeon font-bold">50</span></div><input
+                            type="range" id="slider-defline" min="10" max="90" value="50" oninput="updateSliders()"
+                            class="w-full h-1.5 bg-slate-950 rounded-lg appearance-none cursor-pointer accent-eplNeon">
+                        <div class="flex justify-between text-[9px] text-slate-600"><span>LOW</span><span>HIGH</span>
+                        </div>
+                    </div>
+                    <div class="space-y-1.5">
+                        <div class="flex justify-between text-xs"><span class="text-slate-200">공격 폭</span><span
+                                id="val-width" class="font-mono text-eplBlue font-bold">50</span></div><input
+                            type="range" id="slider-width" min="15" max="85" value="50" oninput="updateSliders()"
+                            class="w-full h-1.5 bg-slate-950 rounded-lg appearance-none cursor-pointer accent-eplBlue">
+                        <div class="flex justify-between text-[9px] text-slate-600"><span>NARROW</span><span>WIDE</span>
+                        </div>
+                    </div>
+                    <div class="space-y-1.5">
+                        <div class="flex justify-between text-xs"><span class="text-slate-200">압박 강도</span><span
+                                id="val-pressing" class="font-mono text-purple-400 font-bold">50</span></div><input
+                            type="range" id="slider-pressing" min="10" max="100" value="50" oninput="updateSliders()"
+                            class="w-full h-1.5 bg-slate-950 rounded-lg appearance-none cursor-pointer accent-purple-400">
+                        <div class="flex justify-between text-[9px] text-slate-600"><span>WAIT</span><span>PRESS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button onclick="exportTactics()"
+                    class="mt-auto w-full py-3 bg-gradient-to-r from-eplNeon to-eplBlue text-slate-950 font-bold rounded-xl shadow-lg hover:brightness-110 active:scale-[0.98] transition-all flex items-center justify-center gap-2"><i
+                        class="fa-solid fa-file-export"></i> 전술 분석 카드</button>
+            </section>
+
+            <!-- Central Tactical Board -->
+            <section
+                class="bg-[#0a0314] rounded-2xl border border-white/5 shadow-2xl p-4 flex flex-col min-h-[760px] xl:h-[calc(100vh-126px)]">
+                <div class="flex justify-between items-center mb-3">
+                    <div>
+                        <h2 class="text-lg font-bold text-white flex items-center gap-2"><i
+                                class="fa-solid fa-gamepad text-eplNeon"></i> Tactical Board</h2>
+                        <p class="text-[11px] text-slate-500 mt-0.5">선수를 드래그해 원하는 위치로 이동하세요.</p>
+                    </div>
                     <span id="txt-formation"
-                        class="text-xs px-2 py-0.5 rounded-md bg-eplPurple text-eplNeon font-bold font-mono">3-4-2-1</span>
+                        class="text-xs px-3 py-1 rounded-md bg-eplPurple text-eplNeon font-bold font-mono">3-4-2-1</span>
                 </div>
-                <div class="text-sm font-bold text-white" id="txt-manager">사비 알론소 (Xabi Alonso) 감독</div>
-                <p class="text-xs text-slate-400 mt-1" id="txt-style">3-4-2-1 하이브리드 윙백 & 좁은 채널 빌드업</p>
-                <div class="mt-3 pt-3 border-t border-white/5 text-xs">
-                    <span class="text-eplNeon font-semibold"><i class="fa-solid fa-bolt"></i> 핵심 전력보강:</span>
-                    <span id="txt-signings" class="text-slate-300 ml-1">피에로 인카피에 (CB/LB)</span>
-                </div>
-            </div>
 
-            <!-- Tactical Philosophy Presets -->
-            <div class="space-y-2">
-                <span class="text-xs text-slate-400 font-semibold uppercase tracking-wider block">전술 마스터 템플릿</span>
+                <div
+                    class="flex-1 football-field rounded-2xl relative overflow-hidden min-h-[600px] shadow-inner shadow-black/40">
+                    <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-25" viewBox="0 0 100 100"
+                        preserveAspectRatio="none">
+                        <rect x="2" y="2" width="96" height="96" fill="none" stroke="#fff" stroke-width="0.5"></rect>
+                        <line x1="2" y1="50" x2="98" y2="50" stroke="#fff" stroke-width="0.5"></line>
+                        <circle cx="50" cy="50" r="15" fill="none" stroke="#fff" stroke-width="0.5"></circle>
+                        <circle cx="50" cy="50" r="1" fill="#fff"></circle>
+                        <rect x="25" y="2" width="50" height="15" fill="none" stroke="#fff" stroke-width="0.5"></rect>
+                        <rect x="38" y="2" width="24" height="5" fill="none" stroke="#fff" stroke-width="0.5"></rect>
+                        <circle cx="50" cy="11" r="0.8" fill="#fff"></circle>
+                        <path d="M 38 17 Q 50 21 62 17" fill="none" stroke="#fff" stroke-width="0.5"></path>
+                        <rect x="25" y="83" width="50" height="15" fill="none" stroke="#fff" stroke-width="0.5"></rect>
+                        <rect x="38" y="93" width="24" height="5" fill="none" stroke="#fff" stroke-width="0.5"></rect>
+                        <circle cx="50" cy="89" r="0.8" fill="#fff"></circle>
+                        <path d="M 38 83 Q 50 79 62 83" fill="none" stroke="#fff" stroke-width="0.5"></path>
+                    </svg>
+                    <div id="pitch-players" class="absolute inset-0 w-full h-full"></div>
+                    <div
+                        class="absolute right-4 top-1/2 -translate-y-1/2 flex flex-col items-center gap-1.5 opacity-30 select-none">
+                        <i class="fa-solid fa-chevron-up text-white animate-bounce"></i><span
+                            class="text-[9px] text-white font-bold tracking-widest uppercase [writing-mode:vertical-lr]">Attack
+                            Direction</span></div>
+                </div>
+
+                <div class="mt-3 p-3 rounded-xl bg-slate-950/70 border border-white/5">
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-chair text-eplBlue"></i><span
+                                class="text-xs font-bold text-white">후보 선수</span></div><span id="substitute-count"
+                            class="text-[10px] text-slate-500 font-mono">0명</span>
+                    </div>
+                    <div id="substitute-players" class="grid grid-cols-4 2xl:grid-cols-7 gap-2"></div>
+                </div>
+            </section>
+
+            <!-- Right Information Rail -->
+            <aside
+                class="bg-[#0a0314] rounded-2xl border border-white/5 shadow-2xl p-4 flex flex-col gap-4 xl:h-[calc(100vh-126px)] overflow-y-auto">
+                <div class="pb-3 border-b border-white/5">
+                    <h2 class="text-base font-bold text-white flex items-center gap-2"><i
+                            class="fa-solid fa-chart-line text-eplBlue"></i> Match Intelligence</h2>
+                    <p class="text-[11px] text-slate-500 mt-1">팀과 전술 정보를 한눈에 확인하세요.</p>
+                </div>
+
+                <div class="p-4 rounded-xl bg-gradient-to-br from-slate-900/80 to-[#130823] border border-white/5">
+                    <div class="flex justify-between items-center mb-3"><span
+                            class="text-[10px] uppercase tracking-wider text-slate-500">Manager</span><i
+                            class="fa-solid fa-user-tie text-eplNeon"></i></div>
+                    <div id="txt-manager" class="text-sm font-bold text-white leading-snug">사비 알론소 (Xabi Alonso) 감독
+                    </div>
+                    <p id="txt-style" class="text-xs text-slate-400 mt-2 leading-relaxed">3-4-2-1 하이브리드 윙백 & 좁은 채널 빌드업
+                    </p>
+                </div>
+
+                <div class="p-4 rounded-xl bg-slate-950/60 border border-white/5">
+                    <span class="text-[10px] uppercase tracking-wider text-slate-500">Key signing</span>
+                    <div class="mt-2 text-xs"><span class="text-eplNeon font-semibold"><i
+                                class="fa-solid fa-bolt mr-1"></i>핵심 전력보강</span>
+                        <p id="txt-signings" class="text-slate-300 mt-1.5 leading-relaxed">피에로 인카피에 (CB/LB)</p>
+                    </div>
+                </div>
+
+                <div class="p-4 rounded-xl bg-slate-950/60 border border-white/5">
+                    <div class="flex items-center gap-2 mb-2">
+                        <div
+                            class="w-8 h-8 rounded-full bg-eplBlue/10 border border-eplBlue/20 flex items-center justify-center text-eplBlue">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i></div><span
+                            class="text-xs font-semibold text-slate-200">AI 전술 피드백</span>
+                    </div>
+                    <p id="txt-ai-feedback" class="text-xs text-slate-400 leading-relaxed">선택한 클럽의 주된 빌드업 경로와 26/27 영입생
+                        배치 시 시너지 가중치를 분석합니다.</p>
+                </div>
+
                 <div class="grid grid-cols-3 gap-2">
-                    <button onclick="applyPreset('tikitaka')"
-                        class="preset-btn px-3 py-2 rounded-lg bg-slate-950 border border-white/10 hover:border-eplNeon/30 text-xs font-semibold text-slate-300 transition-all flex items-center justify-center gap-1.5">
-                        <i class="fa-solid fa-arrows-spin text-eplBlue"></i> 티키타카
-                    </button>
-                    <button onclick="applyPreset('gegen')"
-                        class="preset-btn px-3 py-2 rounded-lg bg-slate-950 border border-white/10 hover:border-eplNeon/30 text-xs font-semibold text-slate-300 transition-all flex items-center justify-center gap-1.5">
-                        <i class="fa-solid fa-forward text-rose-400"></i> 게겐프레싱
-                    </button>
-                    <button onclick="applyPreset('lowblock')"
-                        class="preset-btn px-3 py-2 rounded-lg bg-slate-950 border border-white/10 hover:border-eplNeon/30 text-xs font-semibold text-slate-300 transition-all flex items-center justify-center gap-1.5">
-                        <i class="fa-solid fa-shield-halved text-amber-400"></i> 텐백 수비
-                    </button>
-                </div>
-            </div>
-
-            <!-- Detailed Tactical Adjustments -->
-            <div class="space-y-4 pt-2">
-                <span class="text-xs text-slate-400 font-semibold uppercase tracking-wider block">세부 전술 튜닝 (실시간 그래픽
-                    반영)</span>
-
-                <!-- Slider: Defensive Line -->
-                <div class="space-y-1.5">
-                    <div class="flex justify-between items-center text-xs">
-                        <span class="text-slate-200 font-medium">수비 라인 높이 (Defensive Line)</span>
-                        <span id="val-defline" class="font-mono text-eplNeon font-bold">50</span>
-                    </div>
-                    <input type="range" id="slider-defline" min="10" max="90" value="50" oninput="updateSliders()"
-                        class="w-full h-1.5 bg-slate-950 rounded-lg appearance-none cursor-pointer accent-eplNeon">
-                    <div class="flex justify-between text-[10px] text-slate-500">
-                        <span>Low Block (낮음)</span>
-                        <span>High Pressing (높음)</span>
-                    </div>
+                    <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5 text-center"><span
+                            class="text-[9px] text-slate-500 block">LINE</span><span
+                            class="font-mono font-bold text-eplNeon text-sm">LIVE</span></div>
+                    <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5 text-center"><span
+                            class="text-[9px] text-slate-500 block">WIDTH</span><span
+                            class="font-mono font-bold text-eplBlue text-sm">LIVE</span></div>
+                    <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5 text-center"><span
+                            class="text-[9px] text-slate-500 block">PRESS</span><span
+                            class="font-mono font-bold text-purple-400 text-sm">LIVE</span></div>
                 </div>
 
-                <!-- Slider: Attack Width -->
-                <div class="space-y-1.5">
-                    <div class="flex justify-between items-center text-xs">
-                        <span class="text-slate-200 font-medium">공격 대형 폭 (Attack Width)</span>
-                        <span id="val-width" class="font-mono text-eplBlue font-bold">50</span>
-                    </div>
-                    <input type="range" id="slider-width" min="15" max="85" value="50" oninput="updateSliders()"
-                        class="w-full h-1.5 bg-slate-950 rounded-lg appearance-none cursor-pointer accent-eplBlue">
-                    <div class="flex justify-between text-[10px] text-slate-500">
-                        <span>Narrow (좁게)</span>
-                        <span>Wide (넓게)</span>
-                    </div>
+                <div class="mt-auto p-4 rounded-xl border border-dashed border-white/10 text-center"><i
+                        class="fa-solid fa-circle-info text-slate-600"></i>
+                    <p class="text-[10px] text-slate-600 mt-2 leading-relaxed">다음 단계에서 선수 상세정보와 감독 프로필이 이 영역에 표시됩니다.</p>
                 </div>
-
-                <!-- Slider: Pressing Intensity -->
-                <div class="space-y-1.5">
-                    <div class="flex justify-between items-center text-xs">
-                        <span class="text-slate-200 font-medium">전방 압박 강도 (Pressing Intensity)</span>
-                        <span id="val-pressing" class="font-mono text-purple-400 font-bold">50</span>
-                    </div>
-                    <input type="range" id="slider-pressing" min="10" max="100" value="50" oninput="updateSliders()"
-                        class="w-full h-1.5 bg-slate-950 rounded-lg appearance-none cursor-pointer accent-purple-400">
-                    <div class="flex justify-between text-[10px] text-slate-500">
-                        <span>지연/대기</span>
-                        <span>격렬한 압박 (실시간 펄스 발생)</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Export / Save button -->
-            <button onclick="exportTactics()"
-                class="mt-4 xl:mt-auto w-full py-3 bg-gradient-to-r from-eplNeon to-eplBlue text-slate-950 font-bold rounded-xl shadow-lg hover:shadow-eplNeon/20 hover:brightness-110 active:scale-[0.98] transition-all flex items-center justify-center gap-2">
-                <i class="fa-solid fa-file-export"></i> 전술 분석 카드 내려받기
-            </button>
-        </section>
-
-        <!-- Right Panel: Pitch Visualization (7 cols) -->
-        <section
-            class="xl:col-span-7 bg-[#0a0314] p-5 rounded-2xl border border-white/5 shadow-2xl flex flex-col h-[500px] xl:h-[calc(100vh-140px)]">
-            <div class="flex justify-between items-center mb-4">
-                <h2 class="text-lg font-bold text-white flex items-center gap-2"><i
-                        class="fa-solid fa-gamepad text-eplNeon"></i> 2. 실시간 반응 가변 전술 보드 (2D Pitch)</h2>
-                <div class="flex items-center gap-2">
-                    <span class="hidden sm:inline text-[10px] text-eplNeon/80"><i
-                            class="fa-solid fa-hand-pointer mr-1"></i>선수를 드래그해 포지션 변경</span>
-                    <span
-                        class="text-[10px] bg-white/5 px-2 py-1 rounded border border-white/5 text-slate-400 uppercase tracking-widest font-mono">Interactive
-                        View</span>
-                </div>
-            </div>
-
-            <!-- Football Pitch Field Container -->
-            <div
-                class="flex-grow football-field rounded-xl relative overflow-hidden flex items-center justify-center p-4">
-
-                <!-- Standard Pitch Markings (SVG layer for perfect scaling) -->
-                <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-20" viewBox="0 0 100 100"
-                    preserveAspectRatio="none">
-                    <!-- Outer Line -->
-                    <rect x="2" y="2" width="96" height="96" fill="none" stroke="#fff" stroke-width="0.5"></rect>
-                    <!-- Mid Line -->
-                    <line x1="2" y1="50" x2="98" y2="50" stroke="#fff" stroke-width="0.5"></line>
-                    <!-- Center Circle -->
-                    <circle cx="50" cy="50" r="15" fill="none" stroke="#fff" stroke-width="0.5"></circle>
-                    <circle cx="50" cy="50" r="1" fill="#fff"></circle>
-                    <!-- Penalty Area Bottom -->
-                    <rect x="25" y="2" width="50" height="15" fill="none" stroke="#fff" stroke-width="0.5"></rect>
-                    <rect x="38" y="2" width="24" height="5" fill="none" stroke="#fff" stroke-width="0.5"></rect>
-                    <circle cx="50" cy="11" r="0.8" fill="#fff"></circle>
-                    <path d="M 38 17 Q 50 21 62 17" fill="none" stroke="#fff" stroke-width="0.5"></path>
-                    <!-- Penalty Area Top -->
-                    <rect x="25" y="83" width="50" height="15" fill="none" stroke="#fff" stroke-width="0.5"></rect>
-                    <rect x="38" y="93" width="24" height="5" fill="none" stroke="#fff" stroke-width="0.5"></rect>
-                    <circle cx="50" cy="89" r="0.8" fill="#fff"></circle>
-                    <path d="M 38 83 Q 50 79 62 83" fill="none" stroke="#fff" stroke-width="0.5"></path>
-                </svg>
-
-                <!-- Player Nodes Render Container -->
-                <div id="pitch-players" class="absolute inset-0 w-full h-full">
-                    <!-- Dynamic rendering happens via JS -->
-                </div>
-
-                <!-- Touchline / Sideline Direction Arrows -->
-                <div
-                    class="absolute right-4 top-1/2 -translate-y-1/2 flex flex-col items-center gap-1.5 opacity-30 select-none">
-                    <i class="fa-solid fa-chevron-up text-white animate-bounce"></i>
-                    <span
-                        class="text-[9px] text-white font-bold tracking-widest uppercase [writing-mode:vertical-lr]">Attack
-                        Direction (공격 방향)</span>
-                </div>
-            </div>
-
-            <!-- Real-time Tactical Analysis Insight Box -->
-            <div class="mt-4 p-3 bg-slate-950/50 rounded-xl border border-white/5 flex gap-3 items-center">
-                <div
-                    class="w-8 h-8 rounded-full bg-eplBlue/10 border border-eplBlue/20 flex items-center justify-center text-eplBlue shrink-0">
-                    <i class="fa-solid fa-wand-magic-sparkles"></i>
-                </div>
-                <div class="text-xs">
-                    <span class="text-slate-300 font-semibold block">AI 전술 피드백 시뮬레이션:</span>
-                    <p id="txt-ai-feedback" class="text-slate-400 mt-0.5 font-sans leading-relaxed">선택한 클럽의 주된 빌드업 경로와
-                        26/27 영입생 배치 시 시너지 가중치를 분석합니다.</p>
-                </div>
-            </div>
-        </section>
+            </aside>
+        </div>
     </main>
 
     <!-- Custom Toast Notification Box -->
@@ -412,123 +398,61 @@
 
     <!-- Interactive Logic Script -->
     <script>
-        // Pre-defined formations coordinates and slot mappings
-        const formationsMap = {
-            "4-3-3": [
-                { pos: "GK", x: 50, y: 92, role: "gk" },
-                { pos: "RB", x: 80, y: 75, role: "wide" },
-                { pos: "RCB", x: 62, y: 78, role: "def" },
-                { pos: "LCB", x: 38, y: 78, role: "def" },
-                { pos: "LB", x: 20, y: 75, role: "wide" },
-                { pos: "RCM", x: 65, y: 58, role: "mid" },
-                { pos: "DM", x: 50, y: 63, role: "mid" },
-                { pos: "LCM", x: 35, y: 58, role: "mid" },
-                { pos: "RW", x: 80, y: 32, role: "wide" },
-                { pos: "ST", x: 50, y: 18, role: "att" },
-                { pos: "LW", x: 20, y: 32, role: "wide" }
-            ],
-            "4-4-2": [
-                { pos: "GK", x: 50, y: 92, role: "gk" },
-                { pos: "RB", x: 82, y: 75, role: "wide" },
-                { pos: "RCB", x: 62, y: 78, role: "def" },
-                { pos: "LCB", x: 38, y: 78, role: "def" },
-                { pos: "LB", x: 18, y: 75, role: "wide" },
-                { pos: "RM", x: 85, y: 52, role: "wide" },
-                { pos: "RCM", x: 60, y: 58, role: "mid" },
-                { pos: "LCM", x: 40, y: 58, role: "mid" },
-                { pos: "LM", x: 15, y: 52, role: "wide" },
-                { pos: "RST", x: 60, y: 18, role: "att" },
-                { pos: "LST", x: 40, y: 18, role: "att" }
-            ],
-            "3-5-2": [
-                { pos: "GK", x: 50, y: 92, role: "gk" },
-                { pos: "RCB", x: 68, y: 78, role: "def" },
-                { pos: "CB", x: 50, y: 80, role: "def" },
-                { pos: "LCB", x: 32, y: 78, role: "def" },
-                { pos: "RWB", x: 85, y: 55, role: "wide" },
-                { pos: "RCM", x: 62, y: 60, role: "mid" },
-                { pos: "DM", x: 50, y: 65, role: "mid" },
-                { pos: "LCM", x: 38, y: 60, role: "mid" },
-                { pos: "LWB", x: 15, y: 55, role: "wide" },
-                { pos: "RST", x: 60, y: 18, role: "att" },
-                { pos: "LST", x: 40, y: 18, role: "att" }
-            ],
-            "4-2-3-1": [
-                { pos: "GK", x: 50, y: 92, role: "gk" },
-                { pos: "RB", x: 82, y: 70, role: "wide" },
-                { pos: "RCB", x: 62, y: 76, role: "def" },
-                { pos: "LCB", x: 38, y: 76, role: "def" },
-                { pos: "LB", x: 18, y: 70, role: "wide" },
-                { pos: "RDM", x: 60, y: 60, role: "mid" },
-                { pos: "LDM", x: 40, y: 60, role: "mid" },
-                { pos: "RAM", x: 78, y: 36, role: "wide" },
-                { pos: "AM", x: 50, y: 36, role: "mid" },
-                { pos: "LAM", x: 22, y: 36, role: "wide" },
-                { pos: "ST", x: 50, y: 16, role: "att" }
-            ],
-            "3-4-2-1": [
-                { pos: "GK", x: 50, y: 92, role: "gk" },
-                { pos: "RCB", x: 68, y: 76, role: "def" },
-                { pos: "CB", x: 50, y: 78, role: "def" },
-                { pos: "LCB", x: 32, y: 76, role: "def" },
-                { pos: "RWB", x: 86, y: 55, role: "wide" },
-                { pos: "RCM", x: 60, y: 62, role: "mid" },
-                { pos: "LCM", x: 40, y: 62, role: "mid" },
-                { pos: "LWB", x: 14, y: 55, role: "wide" },
-                { pos: "RAM", x: 65, y: 38, role: "mid" },
-                { pos: "LAM", x: 35, y: 38, role: "mid" },
-                { pos: "ST", x: 50, y: 16, role: "att" }
-            ]
-        };
+        // 분리된 JSON 데이터에서 로드됩니다.
+        let teamsMeta = {};
+        let formationsMap = {};
+        let teamSquads = {};
+        let managerData = {};
+        let tacticsData = {};
+        let teamData = {};
 
-        // Static Tactical Team Player Names mapped to indices
-        const teamPlayersBase = {
-            chelsea: ["산체스", "포파나", "콜윌", "인카피에", "리스 제임스", "카이세도", "엔조", "쿠쿠렐라", "콜 파머", "은쿤쿠", "잭슨"],
-            mancity: ["에데르송", "아칸지", "디아스", "그바르디올", "스톤스", "로드리", "포든", "더 브라위너", "엘리엇 앤더슨", "도쿠", "홀란드"],
-            tottenham: ["비카리오", "포로", "로메로", "반더벤", "우도기", "토날리", "페르난데스", "쿨루셉스키", "매디슨", "손흥민", "솔랑케"]
-        };
+        async function loadProjectData() {
+            const paths = [
+                './data/teams.json',
+                './data/formations.json',
+                './data/squads.json',
+                './data/managers.json',
+                './data/tactics.json'
+            ];
+            const [teams, formations, squads, managers, tactics] = await Promise.all(
+                paths.map(path => fetch(path).then(response => {
+                    if (!response.ok) throw new Error(`${path} 로드 실패`);
+                    return response.json();
+                }))
+            );
+            teamsMeta = teams;
+            formationsMap = formations;
+            teamSquads = squads;
+            managerData = managers;
+            tacticsData = tactics;
+            teamData = Object.fromEntries(Object.keys(teamsMeta).map(teamKey => {
+                const meta = teamsMeta[teamKey];
+                const manager = managerData[teamKey];
+                const tactical = tacticsData[teamKey];
+                return [teamKey, {
+                    manager: manager.name,
+                    defaultFormation: meta.defaultFormation,
+                    style: manager.style,
+                    signings: manager.signings,
+                    presets: tactical.presets,
+                    feedback: manager.feedback
+                }];
+            }));
+            renderTeamSelector();
+        }
 
-        const teamData = {
-            chelsea: {
-                manager: "사비 알론소 (Xabi Alonso)",
-                defaultFormation: "3-4-2-1",
-                style: "하이브리드 윙백 & 하프스페이스 좁은 채널 빌드업",
-                signings: "피에로 인카피에 (Piero Hincapié) 완전 영입",
-                presets: {
-                    tikitaka: { defline: 55, width: 35, pressing: 65 },
-                    gegen: { defline: 80, width: 45, pressing: 95 },
-                    lowblock: { defline: 20, width: 25, pressing: 20 }
-                },
-                feedback: "알론소 감독의 첼시는 가변 3백과 좁혀진 공격 포지션이 특징입니다. 인카피에의 합류로 수비 시 백4로 부드럽게 복귀할 수 있습니다."
-            },
-            mancity: {
-                manager: "엔초 마레스카 (Enzo Maresca)",
-                defaultFormation: "3-2-4-1", // default map uses closest "3-4-2-1" or custom representation
-                style: "극단적 인버티드 풀백 기용 및 하프스페이스 수적 우위 점유",
-                signings: "엘리엇 앤더슨 (Elliot Anderson) 영입 (€135M)",
-                presets: {
-                    tikitaka: { defline: 60, width: 65, pressing: 75 },
-                    gegen: { defline: 82, width: 55, pressing: 90 },
-                    lowblock: { defline: 25, width: 45, pressing: 30 }
-                },
-                feedback: "마레스카 볼은 인버티드 풀백인 스톤스 또는 그바르디올이 로드리와 나란히 서서 중앙 박스를 장악하고, 더 브라위너와 신입생 앤더슨이 메짤라처럼 전진합니다."
-            },
-            tottenham: {
-                manager: "로베르토 데 제르비 (Roberto De Zerbi)",
-                defaultFormation: "4-2-3-1",
-                style: "골키퍼를 유인 요소로 삼는 고도 설계 빌드업 및 빠른 종전환",
-                signings: "산드로 토날리 (€108M), 마테우스 페르난데스 (€99M)",
-                presets: {
-                    tikitaka: { defline: 65, width: 70, pressing: 80 },
-                    gegen: { defline: 85, width: 60, pressing: 95 },
-                    lowblock: { defline: 22, width: 40, pressing: 25 }
-                },
-                feedback: "데 제르비 수장 아래에서 토트넘은 토날리와 페르난데스라는 엄청난 더블 피벗을 구축해 후방 빌드업에서 상대 압박을 유도하고 손흥민과 쿨루셉스키 공간을 엽니다."
-            }
-        };
+        function renderTeamSelector() {
+            const select = document.getElementById('team-select');
+            if (!select) return;
+            select.innerHTML = Object.entries(teamsMeta).map(([key, team]) =>
+                `<option value="${key}">${team.koreanName} · ${team.name}${team.dataStatus === 'planned' ? ' (데이터 준비 중)' : ''}</option>`
+            ).join('');
+            select.value = currentTeam;
+        }
 
         let currentTeam = 'chelsea';
         let currentFormation = '3-4-2-1';
+        let selectedSubstituteId = null;
 
         // 팀/포메이션별 사용자 배치 상태를 저장합니다.
         // 좌표는 슬라이더 보정 전의 기준 좌표(base coordinate)로 보관됩니다.
@@ -632,6 +556,9 @@
         function enablePlayerDrag(node, playerIndex) {
             const pitch = document.getElementById('pitch-players');
             let dragging = false;
+            let startX = 0;
+            let startY = 0;
+            let moved = false;
 
             const moveNode = (event) => {
                 if (!dragging) return;
@@ -652,13 +579,19 @@
 
             node.addEventListener('pointerdown', (event) => {
                 dragging = true;
+                moved = false;
+                startX = event.clientX;
+                startY = event.clientY;
                 node.setPointerCapture(event.pointerId);
                 node.classList.add('is-dragging');
                 pitch.classList.add('drag-active');
                 moveNode(event);
             });
 
-            node.addEventListener('pointermove', moveNode);
+            node.addEventListener('pointermove', (event) => {
+                if (Math.hypot(event.clientX - startX, event.clientY - startY) > 6) moved = true;
+                moveNode(event);
+            });
 
             node.addEventListener('pointerup', (event) => {
                 if (!dragging) return;
@@ -666,6 +599,15 @@
                 node.releasePointerCapture(event.pointerId);
                 node.classList.remove('is-dragging');
                 pitch.classList.remove('drag-active');
+
+                if (!moved) {
+                    // 클릭만 한 경우에는 노드를 다시 렌더링하지 않습니다.
+                    // 기존에는 updateSliders()가 노드를 제거해 click 이벤트가 실행되지 않았습니다.
+                    if (selectedSubstituteId) {
+                        substitutePlayer(playerIndex);
+                    }
+                    return;
+                }
 
                 const displayX = parseFloat(node.dataset.dragX);
                 const displayY = parseFloat(node.dataset.dragY);
@@ -675,7 +617,7 @@
                 const base = displayToBase(displayX, displayY, role, getSliderValues());
 
                 layout[playerIndex] = { ...layout[playerIndex], ...base, pos, role };
-                showToast(`${teamPlayersBase[currentTeam][playerIndex]} 선수가 ${pos} 포지션으로 변경되었습니다.`);
+                showToast(`${teamSquads[currentTeam].starters[playerIndex].name} 선수가 ${pos} 포지션으로 변경되었습니다.`);
                 updateSliders();
             });
 
@@ -688,27 +630,32 @@
         }
 
         // Initialize Screen safely after DOM is ready
-        document.addEventListener('DOMContentLoaded', function () {
-            renderTeam();
+        document.addEventListener('DOMContentLoaded', async function () {
+            try {
+                await loadProjectData();
+                renderTeam();
+            } catch (error) {
+                console.error(error);
+                showToast('데이터 파일을 불러오지 못했습니다. GitHub Pages에서 실행해 주세요.');
+            }
         });
 
         // Select Team
         function changeTeam(teamKey) {
             currentTeam = teamKey;
+            selectedSubstituteId = null;
 
-            // Toggle Button Styling
-            document.querySelectorAll('.team-btn').forEach(btn => {
-                btn.classList.remove('bg-eplPurple/20', 'border-eplNeon/40', 'text-white', 'shadow-lg', 'shadow-eplNeon/10');
-                btn.classList.add('border-white/5', 'bg-white/5', 'text-slate-400');
-            });
-
-            const selectedBtn = document.getElementById(`btn-${teamKey}`);
-            if (selectedBtn) {
-                selectedBtn.classList.remove('border-white/5', 'bg-white/5', 'text-slate-400');
-                selectedBtn.classList.add('bg-eplPurple/20', 'border-eplNeon/40', 'text-white', 'shadow-lg', 'shadow-eplNeon/10');
+            const select = document.getElementById('team-select');
+            if (select) select.value = teamKey;
+            const status = document.getElementById('team-data-status');
+            if (status && teamsMeta[teamKey]) {
+                status.innerText = teamsMeta[teamKey].dataStatus === 'ready'
+                    ? '상세 선수단·전술 데이터 연결 완료'
+                    : '공통 구조 연결 완료 · 상세 데이터 준비 중';
             }
 
             // Fallback default formation mapping if the team has default config
+            if (!teamData[teamKey] || !teamSquads[teamKey]) return;
             const teamDefaultForm = teamData[teamKey].defaultFormation;
             if (formationsMap[teamDefaultForm]) {
                 currentFormation = teamDefaultForm;
@@ -723,6 +670,7 @@
         // Handle Manual Formation Button click
         function changeFormation(formKey) {
             currentFormation = formKey;
+            selectedSubstituteId = null;
             showToast(`대형 포메이션이 ${formKey} 상태로 실시간 재배치되었습니다.`);
             renderTeam();
         }
@@ -764,14 +712,72 @@
 
             // Apply positions based on slider values
             updateSliders();
+            renderSubstitutes();
+        }
+
+        function substitutePlayer(starterIndex) {
+            if (!selectedSubstituteId) {
+                showToast('먼저 아래 후보 선수 한 명을 선택해주세요.');
+                return;
+            }
+
+            const squad = teamSquads[currentTeam];
+            const substituteIndex = squad.substitutes.findIndex(player => player.id === selectedSubstituteId);
+            if (substituteIndex < 0 || !squad.starters[starterIndex]) return;
+
+            const outgoing = squad.starters[starterIndex];
+            const incoming = squad.substitutes[substituteIndex];
+            const assignedPosition = getCurrentLayout()[starterIndex]?.pos || outgoing.position;
+
+            squad.starters[starterIndex] = { ...incoming, position: assignedPosition };
+            squad.substitutes[substituteIndex] = { ...outgoing, position: outgoing.position };
+            selectedSubstituteId = null;
+
+            showToast(`${outgoing.name} OUT · ${incoming.name} IN 교체가 완료되었습니다.`);
+            updateSliders();
+            renderSubstitutes();
+        }
+
+        // 후보 선수 명단 출력 및 교체 대상 선택
+        function renderSubstitutes() {
+            const substitutes = teamSquads[currentTeam]?.substitutes || [];
+            const container = document.getElementById('substitute-players');
+            const count = document.getElementById('substitute-count');
+            if (!container || !count) return;
+
+            count.innerText = selectedSubstituteId ? '선발 선수를 선택하세요' : `${substitutes.length}명`;
+            container.innerHTML = '';
+
+            substitutes.forEach((player) => {
+                const selected = player.id === selectedSubstituteId;
+                const card = document.createElement('button');
+                card.type = 'button';
+                card.className = `w-full flex items-center gap-2 px-2.5 py-2 rounded-lg border transition-all text-left ${selected ? 'bg-eplBlue/15 border-eplBlue shadow-[0_0_16px_rgba(0,240,255,0.18)]' : 'bg-white/5 border-white/5 hover:border-eplBlue/40 hover:bg-eplBlue/5'}`;
+                card.innerHTML = `
+                    <span class="w-8 h-8 shrink-0 rounded-full bg-[#160824] border ${selected ? 'border-eplNeon text-eplNeon' : 'border-eplBlue/40 text-eplBlue'} flex items-center justify-center text-[10px] font-mono font-bold">
+                        ${player.position}
+                    </span>
+                    <span class="min-w-0 flex-1">
+                        <span class="block text-[11px] font-bold text-white truncate">${player.name}</span>
+                        <span class="block text-[9px] text-slate-500 truncate">${player.availablePositions.join(' · ')}</span>
+                    </span>
+                    ${selected ? '<i class="fa-solid fa-arrow-up-right-dots text-eplNeon text-xs"></i>' : ''}
+                `;
+                card.addEventListener('click', () => {
+                    selectedSubstituteId = selected ? null : player.id;
+                    renderSubstitutes();
+                    showToast(selected ? '후보 선수 선택을 취소했습니다.' : `${player.name} 선택 완료. 경기장에서 교체할 선발 선수를 클릭하세요.`);
+                });
+                container.appendChild(card);
+            });
         }
 
         // Sliders change calculations dynamically affecting DOM elements (Player dots)
         function updateSliders() {
             const team = teamData[currentTeam];
-            const playersNames = teamPlayersBase[currentTeam];
+            const starters = teamSquads[currentTeam]?.starters;
             const formationLayouts = getCurrentLayout();
-            if (!team || !playersNames || !formationLayouts) return;
+            if (!team || !starters || !formationLayouts) return;
 
             const sliders = getSliderValues();
             const { defLine, width, pressing } = sliders;
@@ -786,7 +792,8 @@
 
             formationLayouts.forEach((player, idx) => {
                 const { x, y } = baseToDisplay(player, sliders);
-                const playerName = playersNames[idx] || `선수 ${idx + 1}`;
+                const playerData = starters[idx];
+                const playerName = playerData?.name || `선수 ${idx + 1}`;
 
                 const dot = document.createElement('div');
                 dot.className = 'player-node absolute flex flex-col items-center justify-center transition-all duration-300 ease-out z-10 select-none';
