@@ -1,0 +1,132 @@
+standard: TVS-001
+version: 0.1.0
+status: draft
+sport: football
+discipline: football_11v11
+
+positions:
+  - id: FB-POS-GK
+    code: GK
+    name: Goalkeeper
+    unit: goalkeeper
+    description: Own goal을 보호하며 후방에서 플레이를 시작하는 중앙 골키퍼 위치.
+    adjacent_positions: []
+
+  - id: FB-POS-RB
+    code: RB
+    name: Right Back
+    unit: defensive_line
+    description: 수비 라인의 오른쪽 측면에서 주로 활동하는 위치.
+    adjacent_positions: [FB-POS-RCB, FB-POS-RWB, FB-POS-RM]
+
+  - id: FB-POS-RCB
+    code: RCB
+    name: Right Centre Back
+    unit: defensive_line
+    description: 중앙 수비 구역의 오른쪽에서 주로 활동하는 위치.
+    adjacent_positions: [FB-POS-RB, FB-POS-CB]
+
+  - id: FB-POS-CB
+    code: CB
+    name: Centre Back
+    unit: defensive_line
+    description: 중앙 수비 구역에서 주로 활동하는 위치.
+    adjacent_positions: [FB-POS-RCB, FB-POS-LCB, FB-POS-DM]
+
+  - id: FB-POS-LCB
+    code: LCB
+    name: Left Centre Back
+    unit: defensive_line
+    description: 중앙 수비 구역의 왼쪽에서 주로 활동하는 위치.
+    adjacent_positions: [FB-POS-CB, FB-POS-LB]
+
+  - id: FB-POS-LB
+    code: LB
+    name: Left Back
+    unit: defensive_line
+    description: 수비 라인의 왼쪽 측면에서 주로 활동하는 위치.
+    adjacent_positions: [FB-POS-LCB, FB-POS-LWB, FB-POS-LM]
+
+  - id: FB-POS-RWB
+    code: RWB
+    name: Right Wing Back
+    unit: wide
+    description: 오른쪽 터치라인 부근에서 수비와 공격의 넓은 구역을 오가는 위치.
+    adjacent_positions: [FB-POS-RB, FB-POS-RM, FB-POS-RW]
+
+  - id: FB-POS-LWB
+    code: LWB
+    name: Left Wing Back
+    unit: wide
+    description: 왼쪽 터치라인 부근에서 수비와 공격의 넓은 구역을 오가는 위치.
+    adjacent_positions: [FB-POS-LB, FB-POS-LM, FB-POS-LW]
+
+  - id: FB-POS-DM
+    code: DM
+    name: Defensive Midfielder
+    unit: midfield
+    description: 수비 라인 앞 중앙 미드필드 구역에서 주로 활동하는 위치.
+    adjacent_positions: [FB-POS-CB, FB-POS-CM]
+
+  - id: FB-POS-CM
+    code: CM
+    name: Central Midfielder
+    unit: midfield
+    description: 경기장 중앙 미드필드 구역에서 주로 활동하는 위치.
+    adjacent_positions: [FB-POS-DM, FB-POS-AM, FB-POS-RM, FB-POS-LM]
+
+  - id: FB-POS-AM
+    code: AM
+    name: Attacking Midfielder
+    unit: midfield
+    description: 중앙 미드필드와 공격 라인 사이에서 주로 활동하는 위치.
+    adjacent_positions: [FB-POS-CM, FB-POS-CF, FB-POS-SS]
+
+  - id: FB-POS-RM
+    code: RM
+    name: Right Midfielder
+    unit: wide
+    description: 미드필드 라인의 오른쪽 측면에서 주로 활동하는 위치.
+    adjacent_positions: [FB-POS-RB, FB-POS-RWB, FB-POS-CM, FB-POS-RW]
+
+  - id: FB-POS-LM
+    code: LM
+    name: Left Midfielder
+    unit: wide
+    description: 미드필드 라인의 왼쪽 측면에서 주로 활동하는 위치.
+    adjacent_positions: [FB-POS-LB, FB-POS-LWB, FB-POS-CM, FB-POS-LW]
+
+  - id: FB-POS-RW
+    code: RW
+    name: Right Winger
+    unit: attack
+    description: 공격 라인의 오른쪽 측면에서 주로 활동하는 위치.
+    adjacent_positions: [FB-POS-RM, FB-POS-RWB, FB-POS-CF, FB-POS-ST]
+
+  - id: FB-POS-LW
+    code: LW
+    name: Left Winger
+    unit: attack
+    description: 공격 라인의 왼쪽 측면에서 주로 활동하는 위치.
+    adjacent_positions: [FB-POS-LM, FB-POS-LWB, FB-POS-CF, FB-POS-ST]
+
+  - id: FB-POS-CF
+    code: CF
+    name: Centre Forward
+    unit: attack
+    description: 중앙 공격 구역에서 미드필드와 최전방 사이를 연결하며 활동하는 위치.
+    adjacent_positions: [FB-POS-AM, FB-POS-SS, FB-POS-ST, FB-POS-RW, FB-POS-LW]
+
+  - id: FB-POS-SS
+    code: SS
+    name: Second Striker
+    unit: attack
+    description: 최전방 공격수의 뒤 또는 주변 중앙 공격 구역에서 활동하는 위치.
+    adjacent_positions: [FB-POS-AM, FB-POS-CF, FB-POS-ST]
+
+  - id: FB-POS-ST
+    code: ST
+    name: Striker
+    unit: attack
+    description: 상대 골문에 가장 가까운 중앙 공격 구역에서 주로 활동하는 위치.
+    adjacent_positions: [FB-POS-CF, FB-POS-SS, FB-POS-RW, FB-POS-LW]
