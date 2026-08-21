@@ -1,0 +1,342 @@
+{
+  "4-3-3": [
+    {
+      "pos": "GK",
+      "x": 50,
+      "y": 92,
+      "role": "gk"
+    },
+    {
+      "pos": "RB",
+      "x": 80,
+      "y": 75,
+      "role": "wide"
+    },
+    {
+      "pos": "RCB",
+      "x": 62,
+      "y": 78,
+      "role": "def"
+    },
+    {
+      "pos": "LCB",
+      "x": 38,
+      "y": 78,
+      "role": "def"
+    },
+    {
+      "pos": "LB",
+      "x": 20,
+      "y": 75,
+      "role": "wide"
+    },
+    {
+      "pos": "RCM",
+      "x": 65,
+      "y": 58,
+      "role": "mid"
+    },
+    {
+      "pos": "DM",
+      "x": 50,
+      "y": 63,
+      "role": "mid"
+    },
+    {
+      "pos": "LCM",
+      "x": 35,
+      "y": 58,
+      "role": "mid"
+    },
+    {
+      "pos": "RW",
+      "x": 80,
+      "y": 32,
+      "role": "wide"
+    },
+    {
+      "pos": "ST",
+      "x": 50,
+      "y": 18,
+      "role": "att"
+    },
+    {
+      "pos": "LW",
+      "x": 20,
+      "y": 32,
+      "role": "wide"
+    }
+  ],
+  "4-4-2": [
+    {
+      "pos": "GK",
+      "x": 50,
+      "y": 92,
+      "role": "gk"
+    },
+    {
+      "pos": "RB",
+      "x": 82,
+      "y": 75,
+      "role": "wide"
+    },
+    {
+      "pos": "RCB",
+      "x": 62,
+      "y": 78,
+      "role": "def"
+    },
+    {
+      "pos": "LCB",
+      "x": 38,
+      "y": 78,
+      "role": "def"
+    },
+    {
+      "pos": "LB",
+      "x": 18,
+      "y": 75,
+      "role": "wide"
+    },
+    {
+      "pos": "RM",
+      "x": 85,
+      "y": 52,
+      "role": "wide"
+    },
+    {
+      "pos": "RCM",
+      "x": 60,
+      "y": 58,
+      "role": "mid"
+    },
+    {
+      "pos": "LCM",
+      "x": 40,
+      "y": 58,
+      "role": "mid"
+    },
+    {
+      "pos": "LM",
+      "x": 15,
+      "y": 52,
+      "role": "wide"
+    },
+    {
+      "pos": "RST",
+      "x": 60,
+      "y": 18,
+      "role": "att"
+    },
+    {
+      "pos": "LST",
+      "x": 40,
+      "y": 18,
+      "role": "att"
+    }
+  ],
+  "3-5-2": [
+    {
+      "pos": "GK",
+      "x": 50,
+      "y": 92,
+      "role": "gk"
+    },
+    {
+      "pos": "RCB",
+      "x": 68,
+      "y": 78,
+      "role": "def"
+    },
+    {
+      "pos": "CB",
+      "x": 50,
+      "y": 80,
+      "role": "def"
+    },
+    {
+      "pos": "LCB",
+      "x": 32,
+      "y": 78,
+      "role": "def"
+    },
+    {
+      "pos": "RWB",
+      "x": 85,
+      "y": 55,
+      "role": "wide"
+    },
+    {
+      "pos": "RCM",
+      "x": 62,
+      "y": 60,
+      "role": "mid"
+    },
+    {
+      "pos": "DM",
+      "x": 50,
+      "y": 65,
+      "role": "mid"
+    },
+    {
+      "pos": "LCM",
+      "x": 38,
+      "y": 60,
+      "role": "mid"
+    },
+    {
+      "pos": "LWB",
+      "x": 15,
+      "y": 55,
+      "role": "wide"
+    },
+    {
+      "pos": "RST",
+      "x": 60,
+      "y": 18,
+      "role": "att"
+    },
+    {
+      "pos": "LST",
+      "x": 40,
+      "y": 18,
+      "role": "att"
+    }
+  ],
+  "4-2-3-1": [
+    {
+      "pos": "GK",
+      "x": 50,
+      "y": 92,
+      "role": "gk"
+    },
+    {
+      "pos": "RB",
+      "x": 82,
+      "y": 70,
+      "role": "wide"
+    },
+    {
+      "pos": "RCB",
+      "x": 62,
+      "y": 76,
+      "role": "def"
+    },
+    {
+      "pos": "LCB",
+      "x": 38,
+      "y": 76,
+      "role": "def"
+    },
+    {
+      "pos": "LB",
+      "x": 18,
+      "y": 70,
+      "role": "wide"
+    },
+    {
+      "pos": "RDM",
+      "x": 60,
+      "y": 60,
+      "role": "mid"
+    },
+    {
+      "pos": "LDM",
+      "x": 40,
+      "y": 60,
+      "role": "mid"
+    },
+    {
+      "pos": "RAM",
+      "x": 78,
+      "y": 36,
+      "role": "wide"
+    },
+    {
+      "pos": "AM",
+      "x": 50,
+      "y": 36,
+      "role": "mid"
+    },
+    {
+      "pos": "LAM",
+      "x": 22,
+      "y": 36,
+      "role": "wide"
+    },
+    {
+      "pos": "ST",
+      "x": 50,
+      "y": 16,
+      "role": "att"
+    }
+  ],
+  "3-4-2-1": [
+    {
+      "pos": "GK",
+      "x": 50,
+      "y": 92,
+      "role": "gk"
+    },
+    {
+      "pos": "RCB",
+      "x": 68,
+      "y": 76,
+      "role": "def"
+    },
+    {
+      "pos": "CB",
+      "x": 50,
+      "y": 78,
+      "role": "def"
+    },
+    {
+      "pos": "LCB",
+      "x": 32,
+      "y": 76,
+      "role": "def"
+    },
+    {
+      "pos": "RWB",
+      "x": 86,
+      "y": 55,
+      "role": "wide"
+    },
+    {
+      "pos": "RCM",
+      "x": 60,
+      "y": 62,
+      "role": "mid"
+    },
+    {
+      "pos": "LCM",
+      "x": 40,
+      "y": 62,
+      "role": "mid"
+    },
+    {
+      "pos": "LWB",
+      "x": 14,
+      "y": 55,
+      "role": "wide"
+    },
+    {
+      "pos": "RAM",
+      "x": 65,
+      "y": 38,
+      "role": "mid"
+    },
+    {
+      "pos": "LAM",
+      "x": 35,
+      "y": 38,
+      "role": "mid"
+    },
+    {
+      "pos": "ST",
+      "x": 50,
+      "y": 16,
+      "role": "att"
+    }
+  ]
+}

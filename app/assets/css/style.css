@@ -1,0 +1,95 @@
+/* Custom scrollbar and pitch background */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0d0415;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #3d195a;
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00ff87;
+        }
+
+        /* Tactical field styling mimicking modern tactical boards */
+        .football-field {
+            background-color: #0b1c16;
+            background-image:
+                radial-gradient(circle at 50% 50%, transparent 100px, rgba(0, 255, 135, 0.02) 100px),
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 10% 10%, 10% 10%;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Custom Toast notification styling */
+        #toast {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform: translateY(100px);
+            opacity: 0;
+        }
+
+        #toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+
+        .view-tab.active {
+            background: linear-gradient(135deg, rgba(0,255,135,.18), rgba(0,240,255,.12));
+            border-color: rgba(0,255,135,.45);
+            color: #ffffff;
+            box-shadow: 0 0 22px rgba(0,255,135,.08);
+        }
+
+        .metric-bar {
+            transition: width .65s cubic-bezier(.22, 1, .36, 1);
+        }
+    
+        .form-dot { width: 30px; height: 30px; border-radius: 999px; display: grid; place-items: center; font-size: 10px; font-weight: 800; color: white; }
+        .key-battle-card { text-align:left; border:1px solid rgba(255,255,255,.06); background:rgba(255,255,255,.025); border-radius:16px; padding:20px; transition:.25s ease; }
+        .key-battle-card:hover { transform:translateY(-4px); border-color:rgba(0,255,135,.3); background:rgba(255,255,255,.045); }
+        .key-battle-label { font-size:10px; color:#fcd34d; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+        .key-battle-players { display:grid; grid-template-columns:1fr auto 1fr; gap:8px; align-items:center; margin-top:14px; font-size:13px; }
+        .key-battle-players b:last-child { text-align:right; }
+        .key-battle-players span { color:#475569; font-weight:900; }
+        .key-battle-card p { color:#64748b; font-size:11px; line-height:1.6; margin-top:14px; }
+        .hub-action { min-height:110px; border:1px solid rgba(255,255,255,.06); background:rgba(255,255,255,.025); border-radius:16px; padding:16px 10px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:11px; font-size:12px; font-weight:800; transition:.25s ease; }
+        .hub-action i { color:#00ff87; font-size:19px; }
+        .hub-action:hover { transform:translateY(-4px); border-color:rgba(0,255,135,.3); background:rgba(0,255,135,.06); }
+
+
+/* v0.4 Manager Experience */
+.manager-experience-card { background: linear-gradient(145deg, rgba(23,10,39,.96), rgba(4,13,24,.96)); }
+.manager-glow { position:absolute; width:220px; height:220px; right:-90px; top:-100px; border-radius:999px; background:radial-gradient(circle, rgba(0,255,135,.18), transparent 68%); pointer-events:none; }
+.manager-avatar { background:linear-gradient(135deg, rgba(61,25,90,.9), rgba(0,240,255,.14)); border:1px solid rgba(0,255,135,.22); color:#00ff87; box-shadow:0 0 28px rgba(0,255,135,.08); }
+.manager-trait { padding:6px 9px; border-radius:999px; border:1px solid rgba(0,255,135,.18); background:rgba(0,255,135,.06); color:#b9ffd9; font-size:10px; font-weight:800; }
+.manager-rating { position:relative; padding:11px; border-radius:12px; border:1px solid rgba(255,255,255,.06); background:rgba(0,0,0,.2); }
+.manager-rating span { display:block; color:#94a3b8; font-size:10px; font-weight:700; }
+.manager-rating strong { position:absolute; top:9px; right:10px; color:#fff; font-family:'Fira Code',monospace; font-size:12px; }
+.manager-rating > div { height:4px; margin-top:10px; overflow:hidden; border-radius:999px; background:rgba(255,255,255,.06); }
+.manager-rating > div > i { display:block; width:0; height:100%; border-radius:inherit; background:linear-gradient(90deg,#00ff87,#00f0ff); transition:width .75s cubic-bezier(.22,1,.36,1); }
+
+/* Integrated manager SPA */
+.manager-trait{padding:.45rem .7rem;border-radius:999px;background:rgba(0,255,135,.08);border:1px solid rgba(0,255,135,.2);font-size:.68rem;font-weight:700;color:#b7ffd9}
+.manager-metric{padding:1rem;border-radius:1rem;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06)}
+.manager-metric-track{height:.42rem;background:#07030d;border-radius:999px;overflow:hidden;margin-top:.65rem}
+.manager-metric-fill{height:100%;background:linear-gradient(90deg,#00ff87,#00f0ff);border-radius:999px}
+.manager-role{padding:.75rem;border-radius:.85rem;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.05)}
+.manager-role span{display:block;color:#64748b;font-size:.7rem;margin-top:.3rem;line-height:1.35}
+
+
+/* Tactical role dictionary */
+.role-list-item{width:100%;display:flex;align-items:center;gap:.75rem;text-align:left;padding:.8rem;border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.025);border-radius:.85rem;transition:.2s ease}.role-list-item:hover{border-color:rgba(0,255,135,.25);background:rgba(255,255,255,.045)}.role-list-item.active{border-color:rgba(0,255,135,.4);background:rgba(0,255,135,.08);box-shadow:0 12px 30px rgba(0,255,135,.05)}.role-list-item b{display:block;color:#f8fafc;font-size:.8rem}.role-list-item small{display:block;color:#64748b;font-size:.65rem;margin-top:.2rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.role-list-icon{width:2.35rem;height:2.35rem;flex:none;border-radius:.7rem;display:grid;place-items:center;color:#00ff87;background:rgba(0,255,135,.08);border:1px solid rgba(0,255,135,.12)}
+.role-detail-head{display:flex;align-items:center;gap:1rem;padding-bottom:1.25rem;border-bottom:1px solid rgba(255,255,255,.06)}.role-detail-head h3{font-family:Urbanist,Noto Sans KR,sans-serif;font-size:2rem;line-height:1.1;font-weight:800;color:white;margin-top:.35rem}.role-en{font-family:Fira Code,monospace;color:#64748b;font-size:.75rem;margin-top:.35rem}.role-hero-icon{width:4.4rem;height:4.4rem;flex:none;border-radius:1.2rem;display:grid;place-items:center;font-size:1.5rem;color:#07130e;background:linear-gradient(135deg,#00ff87,#00f0ff);box-shadow:0 18px 45px rgba(0,255,135,.14)}.role-lead{font-size:.95rem;line-height:1.85;color:#cbd5e1;margin-top:1.4rem;max-width:920px}.role-panel{border:1px solid rgba(255,255,255,.06);background:rgba(2,6,23,.42);border-radius:1rem;padding:1.15rem}.role-panel-title{display:flex;align-items:center;gap:.55rem;color:#fff;font-size:.8rem;font-weight:800}.role-panel-title i{color:#00ff87}.role-panel>p,.role-panel li{font-size:.78rem;line-height:1.75;color:#94a3b8}.role-panel>p{margin-top:.75rem}.role-panel ul{margin-top:.7rem;display:grid;gap:.45rem}.role-panel li:before{content:'✓';color:#00ff87;margin-right:.55rem;font-weight:900}.role-movements{display:grid;gap:.6rem;margin-top:.8rem}.role-movements>div{display:grid;grid-template-columns:2rem 1fr;gap:.7rem;align-items:start;padding:.65rem .7rem;border-radius:.7rem;background:rgba(255,255,255,.025)}.role-movements span{font:700 .65rem Fira Code,monospace;color:#00f0ff}.role-movements p{font-size:.76rem;line-height:1.55;color:#cbd5e1}.role-attribute-track{height:.45rem;border-radius:999px;background:rgba(255,255,255,.06);overflow:hidden;margin-top:.4rem}.role-attribute-track>div{height:100%;border-radius:999px;background:linear-gradient(90deg,#672f9c,#00ff87)}.role-difference{border:1px solid rgba(0,240,255,.14);background:rgba(0,240,255,.04);border-radius:1rem;padding:1.1rem}.role-difference>div{display:flex;align-items:center;gap:.55rem;color:#e2e8f0;font-size:.8rem}.role-difference i{color:#00f0ff}.role-difference p{font-size:.78rem;line-height:1.75;color:#94a3b8;margin-top:.65rem}.role-tag{padding:.45rem .65rem;border-radius:.55rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);font-size:.68rem;color:#94a3b8}.role-empty{height:100%;min-height:420px;display:grid;place-content:center;text-align:center;color:#64748b}.role-empty i{font-size:2rem}.role-empty h3{color:white;font-weight:800;margin-top:1rem}.role-empty p{font-size:.75rem;margin-top:.5rem}
+
+/* Contextual detail navigation */
+#pitch-players > div { cursor:pointer; }
+#pitch-players > div:hover span { color:#00ff87; }
+
+.entity-link{cursor:pointer;text-decoration-thickness:1px;text-underline-offset:4px;transition:color .18s ease,background-color .18s ease,transform .18s ease}.entity-link:hover{color:#00ff87!important;text-decoration:underline}.entity-link:focus{outline:2px solid rgba(0,255,135,.55);outline-offset:3px;border-radius:4px}
