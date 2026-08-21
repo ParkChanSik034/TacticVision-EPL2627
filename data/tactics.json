@@ -1,0 +1,382 @@
+{
+  "arsenal": {
+    "presets": {
+      "tikitaka": {
+        "defline": 55,
+        "width": 50,
+        "pressing": 65
+      },
+      "gegen": {
+        "defline": 78,
+        "width": 50,
+        "pressing": 90
+      },
+      "lowblock": {
+        "defline": 25,
+        "width": 35,
+        "pressing": 25
+      }
+    }
+  },
+  "astonvilla": {
+    "presets": {
+      "tikitaka": {
+        "defline": 55,
+        "width": 50,
+        "pressing": 65
+      },
+      "gegen": {
+        "defline": 78,
+        "width": 50,
+        "pressing": 90
+      },
+      "lowblock": {
+        "defline": 25,
+        "width": 35,
+        "pressing": 25
+      }
+    }
+  },
+  "bournemouth": {
+    "presets": {
+      "tikitaka": {
+        "defline": 55,
+        "width": 50,
+        "pressing": 65
+      },
+      "gegen": {
+        "defline": 78,
+        "width": 50,
+        "pressing": 90
+      },
+      "lowblock": {
+        "defline": 25,
+        "width": 35,
+        "pressing": 25
+      }
+    }
+  },
+  "brentford": {
+    "presets": {
+      "tikitaka": {
+        "defline": 55,
+        "width": 50,
+        "pressing": 65
+      },
+      "gegen": {
+        "defline": 78,
+        "width": 50,
+        "pressing": 90
+      },
+      "lowblock": {
+        "defline": 25,
+        "width": 35,
+        "pressing": 25
+      }
+    }
+  },
+  "brighton": {
+    "presets": {
+      "tikitaka": {
+        "defline": 55,
+        "width": 50,
+        "pressing": 65
+      },
+      "gegen": {
+        "defline": 78,
+        "width": 50,
+        "pressing": 90
+      },
+      "lowblock": {
+        "defline": 25,
+        "width": 35,
+        "pressing": 25
+      }
+    }
+  },
+  "chelsea": {
+    "presets": {
+      "tikitaka": {
+        "defline": 55,
+        "width": 35,
+        "pressing": 65
+      },
+      "gegen": {
+        "defline": 80,
+        "width": 45,
+        "pressing": 95
+      },
+      "lowblock": {
+        "defline": 20,
+        "width": 25,
+        "pressing": 20
+      }
+    }
+  },
+  "coventry": {
+    "presets": {
+      "tikitaka": {
+        "defline": 55,
+        "width": 50,
+        "pressing": 65
+      },
+      "gegen": {
+        "defline": 78,
+        "width": 50,
+        "pressing": 90
+      },
+      "lowblock": {
+        "defline": 25,
+        "width": 35,
+        "pressing": 25
+      }
+    }
+  },
+  "crystalpalace": {
+    "presets": {
+      "tikitaka": {
+        "defline": 55,
+        "width": 50,
+        "pressing": 65
+      },
+      "gegen": {
+        "defline": 78,
+        "width": 50,
+        "pressing": 90
+      },
+      "lowblock": {
+        "defline": 25,
+        "width": 35,
+        "pressing": 25
+      }
+    }
+  },
+  "everton": {
+    "presets": {
+      "tikitaka": {
+        "defline": 55,
+        "width": 50,
+        "pressing": 65
+      },
+      "gegen": {
+        "defline": 78,
+        "width": 50,
+        "pressing": 90
+      },
+      "lowblock": {
+        "defline": 25,
+        "width": 35,
+        "pressing": 25
+      }
+    }
+  },
+  "fulham": {
+    "presets": {
+      "tikitaka": {
+        "defline": 55,
+        "width": 50,
+        "pressing": 65
+      },
+      "gegen": {
+        "defline": 78,
+        "width": 50,
+        "pressing": 90
+      },
+      "lowblock": {
+        "defline": 25,
+        "width": 35,
+        "pressing": 25
+      }
+    }
+  },
+  "hullcity": {
+    "presets": {
+      "tikitaka": {
+        "defline": 55,
+        "width": 50,
+        "pressing": 65
+      },
+      "gegen": {
+        "defline": 78,
+        "width": 50,
+        "pressing": 90
+      },
+      "lowblock": {
+        "defline": 25,
+        "width": 35,
+        "pressing": 25
+      }
+    }
+  },
+  "ipswich": {
+    "presets": {
+      "tikitaka": {
+        "defline": 55,
+        "width": 50,
+        "pressing": 65
+      },
+      "gegen": {
+        "defline": 78,
+        "width": 50,
+        "pressing": 90
+      },
+      "lowblock": {
+        "defline": 25,
+        "width": 35,
+        "pressing": 25
+      }
+    }
+  },
+  "leeds": {
+    "presets": {
+      "tikitaka": {
+        "defline": 55,
+        "width": 50,
+        "pressing": 65
+      },
+      "gegen": {
+        "defline": 78,
+        "width": 50,
+        "pressing": 90
+      },
+      "lowblock": {
+        "defline": 25,
+        "width": 35,
+        "pressing": 25
+      }
+    }
+  },
+  "liverpool": {
+    "presets": {
+      "tikitaka": {
+        "defline": 55,
+        "width": 50,
+        "pressing": 65
+      },
+      "gegen": {
+        "defline": 78,
+        "width": 50,
+        "pressing": 90
+      },
+      "lowblock": {
+        "defline": 25,
+        "width": 35,
+        "pressing": 25
+      }
+    }
+  },
+  "mancity": {
+    "presets": {
+      "tikitaka": {
+        "defline": 60,
+        "width": 65,
+        "pressing": 75
+      },
+      "gegen": {
+        "defline": 82,
+        "width": 55,
+        "pressing": 90
+      },
+      "lowblock": {
+        "defline": 25,
+        "width": 45,
+        "pressing": 30
+      }
+    }
+  },
+  "manutd": {
+    "presets": {
+      "tikitaka": {
+        "defline": 55,
+        "width": 50,
+        "pressing": 65
+      },
+      "gegen": {
+        "defline": 78,
+        "width": 50,
+        "pressing": 90
+      },
+      "lowblock": {
+        "defline": 25,
+        "width": 35,
+        "pressing": 25
+      }
+    }
+  },
+  "newcastle": {
+    "presets": {
+      "tikitaka": {
+        "defline": 55,
+        "width": 50,
+        "pressing": 65
+      },
+      "gegen": {
+        "defline": 78,
+        "width": 50,
+        "pressing": 90
+      },
+      "lowblock": {
+        "defline": 25,
+        "width": 35,
+        "pressing": 25
+      }
+    }
+  },
+  "nottinghamforest": {
+    "presets": {
+      "tikitaka": {
+        "defline": 55,
+        "width": 50,
+        "pressing": 65
+      },
+      "gegen": {
+        "defline": 78,
+        "width": 50,
+        "pressing": 90
+      },
+      "lowblock": {
+        "defline": 25,
+        "width": 35,
+        "pressing": 25
+      }
+    }
+  },
+  "sunderland": {
+    "presets": {
+      "tikitaka": {
+        "defline": 55,
+        "width": 50,
+        "pressing": 65
+      },
+      "gegen": {
+        "defline": 78,
+        "width": 50,
+        "pressing": 90
+      },
+      "lowblock": {
+        "defline": 25,
+        "width": 35,
+        "pressing": 25
+      }
+    }
+  },
+  "tottenham": {
+    "presets": {
+      "tikitaka": {
+        "defline": 65,
+        "width": 70,
+        "pressing": 80
+      },
+      "gegen": {
+        "defline": 85,
+        "width": 60,
+        "pressing": 95
+      },
+      "lowblock": {
+        "defline": 22,
+        "width": 40,
+        "pressing": 25
+      }
+    }
+  }
+}
