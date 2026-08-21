@@ -63,6 +63,8 @@ Tactical Board를 반드시 거칠 필요는 없다. AI Match Simulation은 이 
 
 위 항목은 MVP에 포함하기로 확정한 범위다. 범위 포함은 구현 완료를
 의미하지 않으며, 각 기능의 구현 상태와 완료 조건은 후속 Issue에서 관리한다.
+기능 완료 판정에는 [`ACCEPTANCE.md`](./ACCEPTANCE.md)의 공통·기능별 기준과
+검증 증거 형식을 사용한다.
 
 ## 기능 우선순위
 
