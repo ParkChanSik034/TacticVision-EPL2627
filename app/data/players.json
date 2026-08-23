@@ -1,15 +1,15 @@
 {
-    "player001": {
-        "name": "Cole Palmer",
-        "number": 10,
-        "position": "AM",
-        "age": 24,
-        "height": 189,
-        "foot": "Left",
-        "nationality": "England",
-        "positions": [
-            "AM",
-            "RW"
-        ]
-    }
+  "player-cole-palmer": {
+    "name": "Cole Palmer",
+    "number": 10,
+    "position": "AM",
+    "age": 24,
+    "height": 189,
+    "foot": "Left",
+    "nationality": "England",
+    "positions": [
+      "AM",
+      "RW"
+    ]
+  }
 }
