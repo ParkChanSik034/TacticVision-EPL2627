@@ -79,6 +79,7 @@ canonical player와 아직 연결되지 않는다. 실제 데이터 이전 시 `
 | 필드 | 형식 | 필수 | 규칙 |
 | --- | --- | --- | --- |
 | `name` | string | 예 | 표시 이름 |
+| `teamId` | string | 예 | `teams.json`에 존재하는 소속 팀 ID |
 | `number` | integer/null | 예 | 1~99 또는 미확정 `null` |
 | `position` | string | 예 | 주 포지션이며 `positions`에 포함 |
 | `positions` | string[] | 예 | 비어 있지 않고 중복 없음 |

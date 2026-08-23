@@ -124,17 +124,18 @@ def validate_teams(value: Any, formations: dict[str, Any]) -> set[str]:
     return set(value)
 
 
-def validate_players(value: Any) -> None:
+def validate_players(value: Any, team_ids: set[str]) -> None:
     check(isinstance(value, dict), "players.json", "must be an object")
     if not isinstance(value, dict):
         return
-    required = {"name", "number", "position", "age", "height", "foot", "nationality", "positions"}
+    required = {"name", "teamId", "number", "position", "age", "height", "foot", "nationality", "positions"}
     for player_id, player in value.items():
         location = f"players.json.{player_id}"
         check(player_id.startswith("player-") and bool(KEBAB.fullmatch(player_id)), location, "must use player-<name-slug>")
         if not fields(player, required, location):
             continue
         check(nonempty(player["name"]), f"{location}.name", "must be non-empty")
+        check(player["teamId"] in team_ids, f"{location}.teamId", "must reference teams.json")
         check(player["number"] is None or (isinstance(player["number"], int) and 1 <= player["number"] <= 99),
               f"{location}.number", "must be null or 1..99")
         positions = player["positions"]
@@ -262,7 +263,7 @@ def main() -> int:
     validate_manifest(data["manifest.json"])
     validate_formations(data["formations.json"])
     team_ids = validate_teams(data["teams.json"], formations)
-    validate_players(data["players.json"])
+    validate_players(data["players.json"], team_ids)
     validate_managers(data["managers.json"], team_ids, formations)
     validate_squads(data["squads.json"], team_ids)
     validate_roles(data["roles.json"])
