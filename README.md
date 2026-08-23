@@ -190,6 +190,7 @@ MVP 데이터는 세 층으로 구분합니다.
 - [MVP 범위](docs/product/MVP.md)
 - [기능 완료 조건](docs/product/ACCEPTANCE.md)
 - [개발 로드맵](docs/roadmap/README.md)
+- [MVP 구현 기준선 검증](docs/verification/MVP_BASELINE.md)
 - [저장소 구조](docs/architecture/repository-structure.md)
 - [데이터 다음 단계](docs/data/DATA_FOUNDATION_NEXT.md)
 - [TacticVision Standards](docs/standards/README.md)
