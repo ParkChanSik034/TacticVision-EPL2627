@@ -1,6 +1,7 @@
 {
   "player-cole-palmer": {
     "name": "Cole Palmer",
+    "teamId": "chelsea",
     "number": 10,
     "position": "AM",
     "age": 24,

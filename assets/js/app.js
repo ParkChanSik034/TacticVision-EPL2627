@@ -224,6 +224,98 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
 
         const managerBarClasses = ['from-eplNeon to-emerald-300', 'from-eplBlue to-cyan-300', 'from-purple-400 to-fuchsia-300'];
 
+        const entityData = { status:'idle', teams:{}, players:{}, managers:{}, squads:{}, error:null, readyPromise:null };
+        let homeSearchRows=[];
+        let homeSearchIndex=-1;
+
+        function escapeHtml(value=''){
+            return String(value).replace(/[&<>'"]/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]));
+        }
+
+        async function fetchEntityJson(name){
+            const response=await fetch(`data/${name}.json`,{cache:'no-store'});
+            if(!response.ok) throw new Error(`${name}.json HTTP ${response.status}`);
+            return response.json();
+        }
+
+        function buildManagerProfilesFromContract(){
+            Object.entries(entityData.managers).forEach(([teamId,manager])=>{
+                const team=entityData.teams[teamId];
+                if(!team)return;
+                managerProfileData[teamId]={
+                    teamId,
+                    team:team.name,
+                    name:manager.name,
+                    nationality:manager.nationality,
+                    formation:manager.preferredFormations[0]||team.defaultFormation,
+                    identity:manager.style,
+                    traits:manager.preferredFormations.map(shape=>`${shape} 선호`),
+                    style:manager.style,
+                    ratings:{},
+                    sliders:{defline:50,width:50,press:50},
+                    keyPlayers:[],
+                    career:Array.isArray(manager.career)?manager.career:[],
+                    achievements:[],
+                    principles:[],
+                    feedback:manager.feedback,
+                    dataStatus:team.dataStatus
+                };
+            });
+            const select=document.getElementById('manager-profile-select');
+            if(select){delete select.dataset.ready;initialiseManagerProfile();}
+        }
+
+        async function initialiseEntityData(){
+            if(entityData.readyPromise)return entityData.readyPromise;
+            entityData.status='loading';
+            entityData.readyPromise=Promise.all(['teams','players','managers','squads'].map(fetchEntityJson))
+                .then(([teams,players,managers,squads])=>{
+                    entityData.teams=teams;entityData.players=players;entityData.managers=managers;entityData.squads=squads;
+                    entityData.status='ready';entityData.error=null;
+                    buildManagerProfilesFromContract();
+                    restoreEntityRoute();
+                    return entityData;
+                })
+                .catch(error=>{
+                    entityData.status='error';entityData.error=error;
+                    console.error('Entity data load failed',error);
+                    renderHomeSearch();
+                    return entityData;
+                });
+            return entityData.readyPromise;
+        }
+
+        function getContractPlayers(){
+            return Object.entries(entityData.players).map(([id,player])=>{
+                const team=entityData.teams[player.teamId];
+                const comparison=playerComparisonData.find(item=>normalisePersonName(item.english)===normalisePersonName(player.name));
+                return {
+                    id,
+                    comparisonId:comparison?.id||null,
+                    teamId:player.teamId,
+                    club:team?.name||'소속 미확정',
+                    name:player.name,
+                    english:player.name,
+                    number:player.number,
+                    position:player.position,
+                    positions:player.positions,
+                    nationality:player.nationality,
+                    age:player.age,
+                    birthDate:player.age==null?'미확정':`${player.age}세 · ${entityData.teams[player.teamId]?.dataStatus||'prototype'} snapshot`,
+                    height:player.height==null?'미확정':`${player.height} cm`,
+                    foot:player.foot||'미확정',
+                    tags:player.positions,
+                    attributes:{},
+                    positionGroup:'',
+                    roleStats:{}
+                };
+            });
+        }
+
+        function setSearchExpanded(expanded){
+            document.getElementById('home-global-search')?.setAttribute('aria-expanded',String(expanded));
+        }
+
         function getHomeSearchItems(){
             const tools = [
                 {label:'전술 보드',meta:'기능 · 팀 포메이션 편집',type:'view',target:'tactical',icon:'fa-chess-board'},
@@ -232,27 +324,58 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
                 {label:'팀 비교',meta:'기능 · 팀 스타일 비교',type:'view',target:'teamCompare',icon:'fa-shield-halved'},
                 {label:'선수 비교',meta:'기능 · 선수 데이터 비교',type:'view',target:'playerCompare',icon:'fa-person-running'}
             ];
-            const players = playerComparisonData.map(p=>({label:p.english,sub:p.name,meta:`선수 · ${p.club} · ${p.position}`,type:'player',target:p.id,icon:'fa-person-running'}));
-            const managers = Object.entries(managerProfileData).map(([key,m])=>({label:m.name.replace(/\s*\([^)]*\)/,''),sub:m.name,meta:`감독 · ${m.team} · ${m.formation}`,type:'manager',target:key,icon:'fa-user-tie'}));
-            const teams = getAllTeams().map(t=>({label:t.name,sub:t.short,meta:`팀 · ${t.manager} · ${t.formation}`,type:'team',target:t.id,icon:'fa-shield-halved'}));
+            const players = getContractPlayers().map(p=>({label:p.name,meta:`선수 · ${p.club} · ${p.position}`,type:'player',target:p.id,icon:'fa-person-running'}));
+            const managers = Object.entries(entityData.managers).map(([teamId,m])=>({label:m.name,meta:`감독 · ${entityData.teams[teamId]?.name||teamId} · ${(m.preferredFormations||[]).join(', ')}`,type:'manager',target:teamId,icon:'fa-user-tie'}));
+            const teams = getAllTeams().map(t=>({label:t.name,sub:`${t.koreanName||''} ${t.short}`,meta:`팀 · ${t.manager} · ${t.formation}`,type:'team',target:t.id,icon:'fa-shield-halved'}));
             return [...players,...managers,...teams,...tools];
         }
         function renderHomeSearch(){
             const input=document.getElementById('home-global-search'),box=document.getElementById('home-search-results');
             if(!input||!box)return;
             const q=input.value.toLowerCase().trim();
-            if(!q){box.classList.add('hidden');box.innerHTML='';return;}
-            const rows=getHomeSearchItems().filter(x=>`${x.label} ${x.sub||''} ${x.meta}`.toLowerCase().includes(q)).slice(0,8);
-            box.innerHTML=rows.length?rows.map(x=>`<button onclick="openHomeSearchResult('${x.type}','${x.target}')" class="w-full flex items-center gap-3 p-3.5 border-b border-white/5 last:border-0 hover:bg-white/5 text-left"><span class="w-9 h-9 rounded-lg bg-white/5 grid place-items-center text-eplNeon"><i class="fa-solid ${x.icon}"></i></span><span class="min-w-0"><strong class="block text-sm truncate">${x.label}</strong><span class="text-[11px] text-slate-500">${x.meta}</span></span></button>`).join(''):'<div class="p-5 text-center text-xs text-slate-500">검색 결과가 없습니다.</div>';
-            box.classList.remove('hidden');
+            if(!q){box.classList.add('hidden');box.innerHTML='';homeSearchRows=[];homeSearchIndex=-1;setSearchExpanded(false);return;}
+            if(entityData.status==='idle')initialiseEntityData();
+            if(entityData.status==='loading'){
+                box.innerHTML='<div role="status" class="p-5 text-center text-xs text-slate-400"><i class="fa-solid fa-spinner fa-spin mr-2"></i>계약 데이터를 불러오는 중입니다.</div>';
+                box.classList.remove('hidden');setSearchExpanded(true);return;
+            }
+            if(entityData.status==='error'){
+                box.innerHTML='<div role="alert" class="p-5 text-center text-xs text-rose-300">데이터를 불러오지 못했습니다. HTTP 서버로 실행한 뒤 다시 시도해 주세요.<button type="button" onclick="retryEntityData()" class="block mx-auto mt-3 text-eplNeon font-bold">다시 시도</button></div>';
+                box.classList.remove('hidden');setSearchExpanded(true);return;
+            }
+            homeSearchRows=getHomeSearchItems().filter(x=>`${x.label} ${x.sub||''} ${x.meta}`.toLowerCase().includes(q)).slice(0,8);
+            homeSearchIndex=-1;
+            box.innerHTML=homeSearchRows.length?homeSearchRows.map((x,index)=>`<button id="home-search-option-${index}" role="option" aria-selected="false" onclick="openHomeSearchResult('${x.type}','${x.target}')" class="w-full flex items-center gap-3 p-3.5 border-b border-white/5 last:border-0 hover:bg-white/5 focus:bg-white/5 text-left"><span class="w-9 h-9 rounded-lg bg-white/5 grid place-items-center text-eplNeon"><i class="fa-solid ${x.icon}"></i></span><span class="min-w-0"><strong class="block text-sm truncate">${escapeHtml(x.label)}</strong><span class="text-[11px] text-slate-500">${escapeHtml(x.meta)}</span></span></button>`).join(''):'<div role="status" class="p-5 text-center text-xs text-slate-500">검색 결과가 없습니다.</div>';
+            box.classList.remove('hidden');setSearchExpanded(true);
         }
-        function openHomeSearchResult(type,target){
+        function handleHomeSearchKeydown(event){
+            if(event.key==='Escape'){
+                document.getElementById('home-search-results')?.classList.add('hidden');setSearchExpanded(false);return;
+            }
+            if(!['ArrowDown','ArrowUp','Enter'].includes(event.key)||!homeSearchRows.length)return;
+            if(event.key==='Enter'&&homeSearchIndex<0)return;
+            event.preventDefault();
+            if(event.key==='ArrowDown')homeSearchIndex=(homeSearchIndex+1)%homeSearchRows.length;
+            if(event.key==='ArrowUp')homeSearchIndex=(homeSearchIndex-1+homeSearchRows.length)%homeSearchRows.length;
+            if(event.key==='Enter')return openHomeSearchResult(homeSearchRows[homeSearchIndex].type,homeSearchRows[homeSearchIndex].target);
+            document.querySelectorAll('#home-search-results [role="option"]').forEach((option,index)=>{
+                const active=index===homeSearchIndex;option.setAttribute('aria-selected',String(active));option.classList.toggle('bg-white/5',active);
+                if(active){document.getElementById('home-global-search')?.setAttribute('aria-activedescendant',option.id);option.scrollIntoView({block:'nearest'});}
+            });
+        }
+        async function retryEntityData(){entityData.readyPromise=null;entityData.error=null;await initialiseEntityData();renderHomeSearch();}
+        async function openHomeSearchResult(type,target){
+            if(entityData.status!=='ready')await initialiseEntityData();
+            if(entityData.status!=='ready')return showToast('데이터를 불러오지 못해 상세 화면을 열 수 없습니다.');
             document.getElementById('home-search-results')?.classList.add('hidden');
+            setSearchExpanded(false);
             if(type==='player') return openPlayerProfile(target);
             if(type==='team') return openTeamProfile(target);
             if(type==='manager') return openManagerProfile(target);
             switchView(target);
         }
+
+        document.addEventListener('DOMContentLoaded',initialiseEntityData);
 
         function setFeaturedMatchTeams(){
             initMatchCompare();
@@ -1014,7 +1137,9 @@ function initialiseManagerProfile(){
   renderManagerProfile(activeManagerProfileKey);
 }
 function openManagerProfile(key){
-  if(key && managerProfileData[key]) activeManagerProfileKey=key;
+  if(entityData.status!=='ready')return initialiseEntityData().then(()=>openManagerProfile(key));
+  if(!key||!managerProfileData[key]){showToast('해당 ID의 감독 정보를 찾을 수 없습니다.');switchView('home');return;}
+  activeManagerProfileKey=key;
   renderManagerProfile(activeManagerProfileKey);
   switchView('manager');
   history.pushState({view:'manager',key:activeManagerProfileKey},'',`#manager/${activeManagerProfileKey}`);
@@ -1030,11 +1155,11 @@ function renderManagerProfile(key=activeManagerProfileKey){
   const set=(id,value)=>{const el=document.getElementById(id);if(el)el.textContent=value};
   set('profile-team',m.team.toUpperCase()); set('profile-name',m.name); set('profile-nationality',`🌍 ${m.nationality}`); set('profile-formation',m.formation); set('profile-identity',m.identity); set('profile-style',m.style); set('profile-feedback',m.feedback);
   const traits=document.getElementById('profile-traits'); if(traits) traits.innerHTML=m.traits.map(x=>`<span class="manager-trait">${x}</span>`).join('');
-  const ratings=document.getElementById('profile-ratings'); if(ratings) ratings.innerHTML=Object.entries(m.ratings).map(([k,v])=>`<div class="manager-metric"><div class="flex justify-between text-xs"><span class="font-bold text-slate-300">${k}</span><b class="font-mono text-eplNeon">${v}</b></div><div class="manager-metric-track"><div class="manager-metric-fill" style="width:${v}%"></div></div></div>`).join('');
-  const roles=document.getElementById('profile-roles'); if(roles) roles.innerHTML=m.keyPlayers.map(([a,b,pid])=>`<button ${pid?`onclick="openPlayerProfile('${pid}')"`:''} class="manager-role w-full text-left ${pid?'hover:border-eplNeon/30 cursor-pointer':''}"><b class="text-sm">${a}</b><span>${b}${pid?' · 선수 보기':''}</span></button>`).join('');
-  const career=document.getElementById('profile-career'); if(career) career.innerHTML=m.career.map(x=>`<div class="relative pl-5 border-l border-white/10"><span class="absolute -left-1.5 top-1 w-3 h-3 rounded-full bg-eplNeon"></span><div class="text-[10px] font-mono text-eplNeon">${x.period}</div><button onclick="openTeamProfileByName('${x.club.replace(/'/g,"\\'")}')" class="font-bold text-sm mt-1 text-left hover:text-eplNeon transition">${x.club} <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[9px] opacity-50"></i></button><div class="text-[11px] text-cyan-300 mt-0.5">${x.role}</div><p class="text-xs text-slate-400 leading-5 mt-2">${x.note}</p></div>`).join('');
-  const achievements=document.getElementById('profile-achievements'); if(achievements) achievements.innerHTML=m.achievements.map(x=>`<div class="flex gap-3 rounded-xl bg-white/[.02] border border-white/5 p-3"><i class="fa-solid fa-star text-amber-300 mt-0.5"></i><span class="text-xs text-slate-300 leading-5">${x}</span></div>`).join('');
-  const principles=document.getElementById('profile-principles'); if(principles) principles.innerHTML=m.principles.map(([a,b])=>`<div class="rounded-xl bg-slate-950/50 border border-white/5 p-4"><div class="text-xs font-bold text-rose-300">${a}</div><p class="text-xs text-slate-400 leading-5 mt-2">${b}</p></div>`).join('');
+  const ratings=document.getElementById('profile-ratings'); if(ratings) ratings.innerHTML=Object.keys(m.ratings).length?Object.entries(m.ratings).map(([k,v])=>`<div class="manager-metric"><div class="flex justify-between text-xs"><span class="font-bold text-slate-300">${k}</span><b class="font-mono text-eplNeon">${v}</b></div><div class="manager-metric-track"><div class="manager-metric-fill" style="width:${v}%"></div></div></div>`).join(''):'<div class="md:col-span-2 rounded-xl border border-white/5 p-4 text-xs text-slate-500">감독 평가 지표가 아직 없습니다.</div>';
+  const roles=document.getElementById('profile-roles'); if(roles) roles.innerHTML=m.keyPlayers.length?m.keyPlayers.map(([a,b,pid])=>`<button ${pid?`onclick="openPlayerProfile('${pid}')"`:''} class="manager-role w-full text-left ${pid?'hover:border-eplNeon/30 cursor-pointer':''}"><b class="text-sm">${a}</b><span>${b}${pid?' · 선수 보기':''}</span></button>`).join(''):'<div class="rounded-xl border border-white/5 p-4 text-xs text-slate-500">핵심 선수 역할 데이터가 아직 없습니다.</div>';
+  const career=document.getElementById('profile-career'); if(career) career.innerHTML=m.career.length?m.career.map(x=>`<div class="relative pl-5 border-l border-white/10"><span class="absolute -left-1.5 top-1 w-3 h-3 rounded-full bg-eplNeon"></span><div class="text-[10px] font-mono text-eplNeon">${x.period}</div><button onclick="openTeamProfileByName('${x.club.replace(/'/g,"\\'")}')" class="font-bold text-sm mt-1 text-left hover:text-eplNeon transition">${x.club} <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[9px] opacity-50"></i></button><div class="text-[11px] text-cyan-300 mt-0.5">${x.role}</div><p class="text-xs text-slate-400 leading-5 mt-2">${x.note}</p></div>`).join(''):'<div class="rounded-xl border border-white/5 p-4 text-xs text-slate-500">경력 데이터가 아직 없습니다.</div>';
+  const achievements=document.getElementById('profile-achievements'); if(achievements) achievements.innerHTML=m.achievements.length?m.achievements.map(x=>`<div class="flex gap-3 rounded-xl bg-white/[.02] border border-white/5 p-3"><i class="fa-solid fa-star text-amber-300 mt-0.5"></i><span class="text-xs text-slate-300 leading-5">${x}</span></div>`).join(''):'<div class="rounded-xl border border-white/5 p-4 text-xs text-slate-500">성과 분석 데이터가 아직 없습니다.</div>';
+  const principles=document.getElementById('profile-principles'); if(principles) principles.innerHTML=m.principles.length?m.principles.map(([a,b])=>`<div class="rounded-xl bg-slate-950/50 border border-white/5 p-4"><div class="text-xs font-bold text-rose-300">${a}</div><p class="text-xs text-slate-400 leading-5 mt-2">${b}</p></div>`).join(''):'<div class="md:col-span-3 rounded-xl border border-white/5 p-4 text-xs text-slate-500">전술 원칙 분석 데이터가 아직 없습니다.</div>';
   const teamLink=document.getElementById('profile-team-link'); if(teamLink) teamLink.onclick=()=>openTeamProfile(m.teamId);
 }
 function applyProfileTactic(){
@@ -1072,13 +1197,14 @@ function findPlayerByName(name){
   return playerComparisonData.find(p=>[p.name,p.english,p.english.split(' ').pop()].some(v=>n.includes(normalisePersonName(v))||normalisePersonName(v).includes(n)));
 }
 function openPlayerProfileByName(name){
-  const player=findPlayerByName(name);
+  const player=getContractPlayers().find(p=>normalisePersonName(p.name).includes(normalisePersonName(name))||normalisePersonName(name).includes(normalisePersonName(p.name)))||findPlayerByName(name);
   if(player) openPlayerProfile(player.id);
   else showToast(`${name}의 상세 데이터는 다음 데이터 업데이트에서 연결됩니다.`);
 }
 function openPlayerProfile(id){
-  const p=playerComparisonData.find(x=>x.id===id);
-  if(!p) return showToast('선수 정보를 찾을 수 없습니다.');
+  if(entityData.status!=='ready')return initialiseEntityData().then(()=>openPlayerProfile(id));
+  const p=getContractPlayers().find(x=>x.id===id);
+  if(!p){showToast('해당 ID의 선수 정보를 찾을 수 없습니다.');switchView('home');return;}
   renderPlayerProfile(p);
   switchView('player');
   history.pushState({view:'player',id},'',`#player/${id}`);
@@ -1086,13 +1212,13 @@ function openPlayerProfile(id){
 }
 function renderPlayerProfile(p){
   const set=(id,v)=>{const el=document.getElementById(id);if(el)el.textContent=v};
-  const clubEl=document.getElementById('player-detail-club'); if(clubEl){clubEl.innerHTML=`<button onclick="openTeamProfileByName('${p.club}')" class="hover:text-cyan-200 underline-offset-4 hover:underline">${p.club} · 팀 정보 보기</button>`;}set('player-detail-name',p.name);set('player-detail-english',p.english);set('player-detail-position',p.position);
+  const clubEl=document.getElementById('player-detail-club'); if(clubEl){clubEl.innerHTML=`<button onclick="openTeamProfile('${p.teamId}')" class="hover:text-cyan-200 underline-offset-4 hover:underline">${p.club} · 팀 정보 보기</button>`;}set('player-detail-name',p.name);set('player-detail-english',p.id);set('player-detail-position',p.position);
   const basic=document.getElementById('player-detail-basic');
-  if(basic) basic.innerHTML=[['국적',p.nationality],['생년월일',p.birthDate],['신장',p.height],['주발',p.foot]].map(([k,v])=>`<div class="flex justify-between border-b border-white/5 pb-3"><span class="text-xs text-slate-500">${k}</span><strong class="text-sm">${v}</strong></div>`).join('');
-  const tags=document.getElementById('player-detail-tags');if(tags)tags.innerHTML=p.tags.map(t=>`<span class="px-3 py-1.5 rounded-lg bg-purple-400/10 border border-purple-400/20 text-xs text-purple-200">${t}</span>`).join('');
-  const attrs=document.getElementById('player-detail-attributes');if(attrs)attrs.innerHTML=Object.entries(p.attributes).map(([k,v])=>`<div><div class="flex justify-between text-xs"><span class="text-slate-400">${playerAttributeLabels[k]||k}</span><b>${v}</b></div><div class="h-2 bg-white/5 rounded-full mt-2 overflow-hidden"><div class="h-full bg-purple-400 rounded-full" style="width:${v}%"></div></div></div>`).join('');
-  const labels=playerRoleStatLabels[p.positionGroup]||{};const stats=document.getElementById('player-detail-role-stats');if(stats)stats.innerHTML=Object.entries(p.roleStats).map(([k,v])=>`<div class="rounded-xl bg-white/[.025] border border-white/5 p-4"><div class="text-[10px] text-slate-500">${labels[k]||k}</div><strong class="text-xl mt-1 block">${v}</strong></div>`).join('');
-  const btn=document.getElementById('player-detail-compare');if(btn)btn.onclick=()=>{selectedPlayerIds.add(p.id);switchView('playerCompare');renderPlayerComparison();};
+  if(basic) basic.innerHTML=[['국적',p.nationality||'미확정'],['나이 기준',p.birthDate],['신장',p.height],['주발',p.foot]].map(([k,v])=>`<div class="flex justify-between border-b border-white/5 pb-3"><span class="text-xs text-slate-500">${k}</span><strong class="text-sm">${v}</strong></div>`).join('');
+  const tags=document.getElementById('player-detail-tags');if(tags)tags.innerHTML=p.tags.map(t=>`<span class="px-3 py-1.5 rounded-lg bg-purple-400/10 border border-purple-400/20 text-xs text-purple-200">${escapeHtml(t)}</span>`).join('');
+  const attrs=document.getElementById('player-detail-attributes');if(attrs)attrs.innerHTML=Object.keys(p.attributes).length?Object.entries(p.attributes).map(([k,v])=>`<div><div class="flex justify-between text-xs"><span class="text-slate-400">${playerAttributeLabels[k]||k}</span><b>${v}</b></div><div class="h-2 bg-white/5 rounded-full mt-2 overflow-hidden"><div class="h-full bg-purple-400 rounded-full" style="width:${v}%"></div></div></div>`).join(''):'<div class="sm:col-span-2 rounded-xl border border-white/5 p-5 text-xs text-slate-500">분석 지표는 실제 데이터 연동 후 제공됩니다.</div>';
+  const labels=playerRoleStatLabels[p.positionGroup]||{};const stats=document.getElementById('player-detail-role-stats');if(stats)stats.innerHTML=Object.keys(p.roleStats).length?Object.entries(p.roleStats).map(([k,v])=>`<div class="rounded-xl bg-white/[.025] border border-white/5 p-4"><div class="text-[10px] text-slate-500">${labels[k]||k}</div><strong class="text-xl mt-1 block">${v}</strong></div>`).join(''):'<div class="col-span-full rounded-xl border border-white/5 p-5 text-xs text-slate-500">포지션 성과 데이터가 아직 없습니다.</div>';
+  const btn=document.getElementById('player-detail-compare');if(btn){btn.disabled=!p.comparisonId;btn.classList.toggle('opacity-50',!p.comparisonId);btn.title=p.comparisonId?'선수 비교에 추가':'비교 데이터 미연결';btn.onclick=()=>{if(!p.comparisonId)return showToast('이 선수의 비교 데이터는 아직 연결되지 않았습니다.');selectedPlayerIds.add(p.comparisonId);switchView('playerCompare');renderPlayerComparison();};}
 }
 function openManagerFromComparison(id){
   const aliases={alonso:'chelsea',maresca:'mancity',dezerbi:'tottenham'};
@@ -1101,6 +1227,12 @@ function openManagerFromComparison(id){
 
 // ===== Team detail navigation =====
 function getAllTeams(){
+  if(entityData.status==='ready'){
+    return Object.entries(entityData.teams).map(([id,team])=>{
+      const manager=entityData.managers[id];
+      return {...team,id,name:team.name,short:team.shortName,koreanName:team.koreanName,formation:team.defaultFormation,manager:manager?.name||'감독 미확정',founded:'미확정',stadium:'미확정',keyPlayer:'미확정',summary:manager?.feedback||'상세 분석 데이터가 아직 없습니다.',strengths:[],metrics:{},dataStatus:team.dataStatus};
+    });
+  }
   const merged=new Map();
   completeTeamDirectory.forEach(t=>merged.set(t.id,t));
   teamComparisonData.forEach(t=>merged.set(t.id,{...merged.get(t.id),...t}));
@@ -1115,27 +1247,32 @@ function findTeamByName(name=''){
 }
 function openTeamProfileByName(name){const team=findTeamByName(name); if(team) openTeamProfile(team.id); else showToast(`${name}의 팀 상세 데이터는 다음 업데이트에서 연결됩니다.`);}
 function openTeamProfile(id){
+  if(entityData.status!=='ready')return initialiseEntityData().then(()=>openTeamProfile(id));
   const t=getAllTeams().find(x=>x.id===id);
-  if(!t) return showToast('팀 정보를 찾을 수 없습니다.');
+  if(!t){showToast('해당 ID의 팀 정보를 찾을 수 없습니다.');switchView('home');return;}
   renderTeamProfile(t);switchView('team');history.pushState({view:'team',id},'',`#team/${id}`);window.scrollTo({top:0,behavior:'smooth'});
 }
 function renderTeamProfile(t){
   const set=(id,v)=>{const el=document.getElementById(id);if(el)el.textContent=v};
-  set('team-detail-short',`${t.short} · PREMIER LEAGUE`);set('team-detail-name',t.name);set('team-detail-korean',({arsenal:'아스널',liverpool:'리버풀',mancity:'맨체스터 시티',chelsea:'첼시',tottenham:'토트넘 홋스퍼',astonvilla:'애스턴 빌라'})[t.id]||t.name);set('team-detail-badge',t.short);set('team-detail-formation',t.formation);set('team-detail-summary',t.summary);
+  set('team-detail-short',`${t.short} · PREMIER LEAGUE · ${String(t.dataStatus||'prototype').toUpperCase()}`);set('team-detail-name',t.name);set('team-detail-korean',t.koreanName||t.name);set('team-detail-badge',t.short);set('team-detail-formation',t.formation);set('team-detail-summary',t.summary);
   const basic=document.getElementById('team-detail-basic'); if(basic) basic.innerHTML=[['창단',t.founded],['홈구장',t.stadium],['감독',t.manager],['기본 포메이션',t.formation],['핵심 선수',t.keyPlayer]].map(([k,v])=>`<div class="flex justify-between gap-4 border-b border-white/5 pb-3"><span class="text-xs text-slate-500">${k}</span><strong class="text-sm text-right">${v}</strong></div>`).join('');
-  const strengths=document.getElementById('team-detail-strengths');if(strengths)strengths.innerHTML=t.strengths.map(x=>`<span class="px-3 py-1.5 rounded-lg bg-cyan-400/10 border border-cyan-400/20 text-xs text-cyan-200">${x}</span>`).join('');
-  const metrics=document.getElementById('team-detail-metrics');if(metrics)metrics.innerHTML=Object.entries(t.metrics).map(([k,v])=>`<div><div class="flex justify-between text-xs"><span class="text-slate-400">${teamMetricLabels[k]||k}</span><b>${v}</b></div><div class="h-2 bg-white/5 rounded-full mt-2 overflow-hidden"><div class="h-full bg-cyan-400 rounded-full" style="width:${v}%"></div></div></div>`).join('');
+  const strengths=document.getElementById('team-detail-strengths');if(strengths)strengths.innerHTML=t.strengths.length?t.strengths.map(x=>`<span class="px-3 py-1.5 rounded-lg bg-cyan-400/10 border border-cyan-400/20 text-xs text-cyan-200">${escapeHtml(x)}</span>`).join(''):'<span class="text-xs text-slate-500">전술 강점 데이터가 아직 없습니다.</span>';
+  const metrics=document.getElementById('team-detail-metrics');if(metrics)metrics.innerHTML=Object.keys(t.metrics).length?Object.entries(t.metrics).map(([k,v])=>`<div><div class="flex justify-between text-xs"><span class="text-slate-400">${teamMetricLabels[k]||k}</span><b>${v}</b></div><div class="h-2 bg-white/5 rounded-full mt-2 overflow-hidden"><div class="h-full bg-cyan-400 rounded-full" style="width:${v}%"></div></div></div>`).join(''):'<div class="sm:col-span-2 rounded-xl border border-white/5 p-4 text-xs text-slate-500">팀 분석 지표가 아직 없습니다.</div>';
   const managerKey=Object.entries(managerProfileData).find(([,m])=>m.teamId===t.id)?.[0]; const manager=document.getElementById('team-detail-manager');if(manager)manager.innerHTML=managerKey?`<button onclick="openManagerProfile('${managerKey}')" class="w-full text-left rounded-xl border border-eplNeon/20 bg-eplNeon/5 p-4 hover:bg-eplNeon/10"><div class="text-[10px] text-eplNeon">MANAGER PROFILE</div><strong class="block mt-1">${managerProfileData[managerKey].name}</strong><p class="text-xs text-slate-400 mt-2">${managerProfileData[managerKey].identity} · 감독 상세 보기</p></button>`:`<div class="rounded-xl border border-white/5 p-4 text-sm text-slate-400">${t.manager}<p class="text-xs mt-2 text-slate-600">상세 감독 프로필은 데이터 업데이트 예정입니다.</p></div>`;
-  const players=playerComparisonData.filter(p=>p.club===t.name);const box=document.getElementById('team-detail-players');if(box)box.innerHTML=players.length?players.map(p=>`<button onclick="openPlayerProfile('${p.id}')" class="text-left rounded-xl border border-white/5 bg-white/[.025] p-4 hover:border-purple-400/30"><div class="text-[10px] font-mono text-purple-300">${p.position}</div><strong class="block mt-1">${p.name}</strong><span class="text-[11px] text-slate-500">${p.english} · 선수 상세 보기</span></button>`).join(''):`<div class="sm:col-span-2 rounded-xl border border-white/5 p-5 text-xs text-slate-500">연결된 선수 데이터가 아직 없습니다.</div>`;
+  const players=getContractPlayers().filter(p=>p.teamId===t.id);const box=document.getElementById('team-detail-players');if(box)box.innerHTML=players.length?players.map(p=>`<button onclick="openPlayerProfile('${p.id}')" class="text-left rounded-xl border border-white/5 bg-white/[.025] p-4 hover:border-purple-400/30"><div class="text-[10px] font-mono text-purple-300">${p.position}</div><strong class="block mt-1">${escapeHtml(p.name)}</strong><span class="text-[11px] text-slate-500">#${p.number??'—'} · 선수 상세 보기</span></button>`).join(''):`<div class="sm:col-span-2 rounded-xl border border-white/5 p-5 text-xs text-slate-500">이 팀에 연결된 canonical 선수 데이터가 아직 없습니다.</div>`;
   const tactic=document.getElementById('team-detail-tactics');if(tactic)tactic.onclick=()=>{if(typeof changeTeam==='function')changeTeam(t.id);switchView('tactical');};
 }
 
-window.addEventListener('popstate',()=>{
+function restoreEntityRoute(){
   const hash=location.hash;
-  if(hash.startsWith('#manager/')){const key=hash.split('/')[1];if(managerProfileData[key]){activeManagerProfileKey=key;renderManagerProfile(key);switchView('manager');}}
-  else if(hash.startsWith('#player/')){const id=hash.split('/')[1];const p=playerComparisonData.find(x=>x.id===id);if(p){renderPlayerProfile(p);switchView('player');}}
-  else if(hash.startsWith('#team/')){const id=hash.split('/')[1];const t=teamComparisonData.find(x=>x.id===id);if(t){renderTeamProfile(t);switchView('team');}}
-});
+  if(!hash)return;
+  const [kind,id]=hash.slice(1).split('/');
+  if(kind==='manager'&&managerProfileData[id]){activeManagerProfileKey=id;renderManagerProfile(id);switchView('manager');return;}
+  if(kind==='player'){const player=getContractPlayers().find(item=>item.id===id);if(player){renderPlayerProfile(player);switchView('player');return;}}
+  if(kind==='team'){const team=getAllTeams().find(item=>item.id===id);if(team){renderTeamProfile(team);switchView('team');return;}}
+  if(['manager','player','team'].includes(kind)){switchView('home');showToast('주소에 해당하는 데이터를 찾을 수 없어 Home으로 이동했습니다.');}
+}
+window.addEventListener('popstate',()=>{if(entityData.status==='ready')restoreEntityRoute();else initialiseEntityData();});
 
 // ===== Tactical role dictionary =====
 let tacticalRoles=[];
