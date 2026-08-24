@@ -9,9 +9,9 @@ TacticVision은 EPL 팀·선수·감독·경기·전술 데이터를 연결해 �
 
 ## 프로젝트 상태
 
-현재 앱 화면과 주요 상호작용은 `app/`에 통합되어 있습니다. 다음 단계는
-샘플·정적 데이터와 화면 내부 데이터 정의를 검증된 EPL 데이터 계약으로
-정규화하고, 두 핵심 사용자 흐름을 종단 검증하는 작업입니다.
+현재 앱 화면과 주요 상호작용은 `app/`에 통합되어 있습니다. openfootball의
+Public Domain 경기 결과는 정기 동기화하며, 나머지 샘플·정적 데이터는 검증된
+EPL 데이터 계약으로 순차적으로 정규화하고 있습니다.
 
 - 공식 MVP 진입점: `app/index.html`
 - 앱 구조: HTML, CSS, JavaScript, JSON
@@ -211,6 +211,23 @@ MVP 데이터는 세 층으로 구분합니다.
 ```bash
 python3 scripts/validate_data.py
 ```
+
+### 경기 결과 자동 갱신
+
+GitHub Actions가 매일 두 번 openfootball의 2026/27 Premier League 원본 변경을
+확인합니다. 원본 SHA-256이 달라진 경우에만 snapshot과 Team Compare 지표를
+갱신하고 `automation/openfootball-data` 브랜치의 PR을 생성하거나 업데이트합니다.
+자동으로 `main`에 병합하지 않으므로 변경 내용과 검증 결과를 확인한 뒤 직접
+병합합니다. Actions 화면의 `Sync openfootball data`에서 수동 실행할 수도 있습니다.
+
+로컬에서 같은 작업을 실행하려면 다음 명령을 사용합니다.
+
+```bash
+python3 scripts/sync_openfootball.py
+python3 scripts/validate_data.py
+```
+
+원본이 같아도 변환 결과를 강제로 다시 생성하려면 `--force`를 사용합니다.
 
 ## 장기 방향
 
