@@ -356,6 +356,7 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
                     renderManagerComparison();
                     renderPlayerComparison();
                     buildManagerProfilesFromContract();
+                    initMatchCompare();
                     restoreEntityRoute();
                     return entityData;
                 })
@@ -466,8 +467,8 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
             initMatchCompare();
             const home=document.getElementById('match-home-team');
             const away=document.getElementById('match-away-team');
-            if(home) home.value='Arsenal';
-            if(away) away.value='Liverpool';
+            if(home) home.value='arsenal';
+            if(away) away.value='liverpool';
             const homeFormation=document.getElementById('match-home-formation');
             const awayFormation=document.getElementById('match-away-formation');
             if(homeFormation) homeFormation.value='4-3-3';
@@ -498,7 +499,12 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
         }
         function openHubFeature(type){
             if(type==='lineup') return openFeaturedMatch('lineup');
-            if(type==='tactical') return openFeaturedMatch('compare');
+            if(type==='tactical'){
+                const teamId=document.getElementById('match-home-team')?.value||'arsenal';
+                if(typeof changeTeam==='function')changeTeam(teamId);
+                switchView('tactical');
+                return;
+            }
             if(type==='team') return openFeaturedMatch('data');
             if(type==='manager') return switchView('compare');
             if(type==='player') return switchView('playerCompare');
@@ -744,24 +750,6 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
                 </div></div>`; */
         }
 
-        const matchTeams={
-            Arsenal:['Raya','White','Saliba','Gabriel','Timber','Rice','Ødegaard','Havertz','Saka','Martinelli','Jesus'],
-            Liverpool:['Alisson','Alexander-Arnold','Konaté','Van Dijk','Robertson','Mac Allister','Szoboszlai','Jones','Salah','Núñez','Díaz'],
-            'Manchester City':['Ederson','Walker','Dias','Gvardiol','Stones','Rodri','De Bruyne','Foden','Savinho','Haaland','Doku'],
-            Chelsea:['Sánchez','James','Fofana','Colwill','Cucurella','Caicedo','Enzo','Palmer','Madueke','Jackson','Neto']
-        };
-        const matchBenches={
-            Arsenal:['Neto','Calafiori','Kiwior','Jorginho','Merino','Trossard','Nwaneri','Sterling','Tomiyasu'],
-            Liverpool:['Kelleher','Gomez','Quansah','Tsimikas','Endo','Elliott','Chiesa','Gakpo','Bradley'],
-            'Manchester City':['Ortega','Aké','Lewis','Kovačić','Grealish','Marmoush','Bernardo','McAtee','Nunes'],
-            Chelsea:['Jørgensen','Badiashile','Gusto','Lavia','Dewsbury-Hall','Mudryk','Nkunku','Guiu','Veiga']
-        };
-        const matchBenchPositions={
-            Arsenal:['GK','CB','AM','RW','CM','DM','LB','RB','ST'],
-            Liverpool:['GK','AM','RW','DM','CB','RB','ST','LB','CM'],
-            'Manchester City':['GK','CB','CM','LW','ST','AM','RB','LB','DM'],
-            Chelsea:['GK','CB','RB','DM','CM','LW','AM','ST','LB']
-        };
         const formationAliases={'4-4-2 Diamond':'4-1-2-1-2'};
         const matchPositionOptions=['GK','RB','RCB','CB','LCB','LB','RWB','RM','DM','RCM','CM','LCM','LM','LWB','RW','RAM','AM','LAM','LW','RF','ST','LF'];
         function formationCounts(form){const normalized=formationAliases[form]||form;const counts=String(normalized).split('-').map(Number).filter(n=>Number.isFinite(n)&&n>0);return counts.reduce((a,b)=>a+b,0)===10?counts:[4,3,3];}
@@ -775,21 +763,45 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
         let matchSelected={home:null,away:null};
         let matchLineupState={home:null,away:null};
         let latestSubstitutionImpact=null;
+        let provisionalLineupEnabled=false;
         const playerStrengthNotes={
             Trossard:'좁은 공간 연계와 박스 침투',Nwaneri:'전진 드리블과 창의적인 패스',Sterling:'뒷공간 침투와 1대1 돌파',Merino:'공중볼과 박스 진입',Jorginho:'템포 조절과 전진 패스',Calafiori:'좌측 빌드업과 전진 수비',Tomiyasu:'수비 안정성과 멀티 포지션',
             Elliott:'하프스페이스 창의성과 전방 압박',Chiesa:'직선적인 돌파와 슈팅',Gakpo:'연계와 중앙 침투',Endo:'볼 회수와 수비 밸런스',Gomez:'커버 범위와 수비 전환',Bradley:'오버래핑과 활동량',
             Grealish:'볼 소유와 파울 유도',Marmoush:'침투 속도와 직접적인 슈팅',Bernardo:'압박 회피와 패스 연결',Kovačić:'볼 운반과 중원 탈압박',Lewis:'인버티드 움직임과 중앙 수적 우위',Aké:'대인 수비와 좌측 안정성',
             Nkunku:'세컨드 스트라이커 움직임과 마무리',Mudryk:'폭발적인 스피드와 전환 공격',Lavia:'수비형 미드필드의 압박 회피',Gusto:'오버래핑과 넓은 폭',Guiu:'박스 안 피지컬과 압박',Veiga:'멀티 포지션과 수비 강도'
         };
-        function initMatchCompare(){const h=document.getElementById('match-home-team'),a=document.getElementById('match-away-team');if(!h||h.dataset.ready)return;const opts=Object.keys(matchTeams).map(t=>`<option>${t}</option>`).join('');h.innerHTML=opts;a.innerHTML=opts;h.value='Arsenal';a.value='Liverpool';document.getElementById('match-home-formation').value='4-3-3';document.getElementById('match-away-formation').value='4-3-3';h.dataset.ready='1';renderMatchCompare();}
-        function ensureMatchSideState(side,team){const current=matchLineupState[side];if(!current||current.team!==team){matchLineupState[side]={team,starters:matchTeams[team].map((name,i)=>({name,pos:defaultMatchPositions[i],custom:null})),bench:matchBenches[team].map((name,i)=>({name,pos:(matchBenchPositions[team]||[])[i]||'CM'}))};}return matchLineupState[side];}
+        function matchTeamLabel(teamId){const team=entityData.teams?.[teamId];return team?.koreanName||team?.name||teamId;}
+        function canonicalLineupPlayer(row,index){const player=entityData.players?.[row.id]||{};return {id:row.id,name:player.koreanName||row.name||player.name||'선수 미확정',pos:row.position||player.position||defaultMatchPositions[index]||'CM',naturalPos:row.position||player.position||'CM',custom:null};}
+        function initMatchCompare(){
+            const h=document.getElementById('match-home-team'),a=document.getElementById('match-away-team');if(!h||!a)return;
+            if(entityData.status!=='ready'){
+                h.innerHTML='<option>선수단 불러오는 중…</option>';a.innerHTML=h.innerHTML;
+                initialiseEntityData().then(()=>{delete h.dataset.ready;delete a.dataset.ready;initMatchCompare();});return;
+            }
+            if(h.dataset.ready)return;
+            const teamIds=Object.keys(entityData.teams).filter(id=>entityData.squads?.[id]);
+            const opts=teamIds.map(id=>`<option value="${id}">${escapeHtml(matchTeamLabel(id))}</option>`).join('');h.innerHTML=opts;a.innerHTML=opts;
+            h.value=teamIds.includes('arsenal')?'arsenal':teamIds[0];a.value=teamIds.includes('liverpool')?'liverpool':teamIds[1]||teamIds[0];
+            h.dataset.ready='1';a.dataset.ready='1';handleMatchTeamChange('home',false);handleMatchTeamChange('away',false);renderMatchCompare();
+        }
+        function ensureMatchSideState(side,teamId){
+            const current=matchLineupState[side];if(current?.teamId===teamId)return current;
+            const squad=entityData.squads?.[teamId];const starters=(squad?.starters||[]).map(canonicalLineupPlayer);const bench=(squad?.substitutes||[]).map(canonicalLineupPlayer);
+            const formation=entityData.teams?.[teamId]?.defaultFormation||'4-3-3',slots=buildFormationSlots(formation);
+            starters.forEach((player,index)=>player.pos=slots[index]||player.pos);
+            matchLineupState[side]={teamId,team:matchTeamLabel(teamId),formation,starters,bench,complete:starters.length===11,confirmed:squad?.selectionStatus==='official-starting-lineup',selectionStatus:squad?.selectionStatus||'unavailable',sourceId:squad?.sourceId||'unavailable'};
+            setFormationSelectorValue(side,formation);
+            return matchLineupState[side];
+        }
+        function handleMatchTeamChange(side,render=true){const teamId=document.getElementById(`match-${side}-team`)?.value;if(!teamId)return;matchLineupState[side]=null;const state=ensureMatchSideState(side,teamId);setFormationSelectorValue(side,state.formation);latestSubstitutionImpact=null;provisionalLineupEnabled=false;if(render)renderMatchCompare();}
+        function enableProvisionalLineup(){provisionalLineupEnabled=true;latestSubstitutionImpact=null;renderMatchCompare();showToast('등록 스쿼드 기반 예상 배치를 열었습니다. 실제 선발이 아닙니다.');}
         function formationCoords(form,away=false){
             const counts=formationCounts(form),coords=[[50,91]],lineTotal=counts.length;
             counts.forEach((count,lineIndex)=>{const depth=lineTotal===1?50:76-(lineIndex*(58/(lineTotal-1)));for(let i=0;i<count;i++){const lateral=count===1?50:12+i*(76/(count-1));coords.push([lateral,depth]);}});
             return coords.map(([x,y])=>away?[100-x,100-y]:[x,y]);
         }
         function resetMatchLayout(){
-            ['home','away'].forEach(side=>{const team=document.getElementById(`match-${side}-team`)?.value;if(!team)return;const state=ensureMatchSideState(side,team),form='4-3-3',slots=buildFormationSlots(form);state.starters.forEach((p,i)=>{p.pos=slots[i]||p.pos;p.custom=null;});setFormationSelectorValue(side,form);});
+            ['home','away'].forEach(side=>{const team=document.getElementById(`match-${side}-team`)?.value;if(!team)return;matchLineupState[side]=null;const state=ensureMatchSideState(side,team),form=state.formation,slots=buildFormationSlots(form);state.starters.forEach((p,i)=>{p.pos=slots[i]||p.pos;p.custom=null;});setFormationSelectorValue(side,form);});
             renderMatchCompare(true);showToast('양 팀 배치를 기본 포메이션으로 초기화했습니다.');
         }
         function liveRating(teamIndex, playerIndex, side){const seed=(teamIndex+1)*17+(playerIndex+1)*11+(side==='home'?5:9);return (6.4+(seed%22)/10).toFixed(1);}
@@ -807,7 +819,7 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
                 showToast(`${player.name}의 포지션을 ${pos}(으)로 변경했습니다.`);
             }
             player.custom=null;if(occupiedIndex>=0)state.starters[occupiedIndex].custom=null;
-            inferFormationFromCoords(side);renderMatchCompare(false);
+            renderMatchCompare(false);
         }
         function buildSubstitutionImpact(side,incoming,outgoing,targetPos,team){
             const strength=playerStrengthNotes[incoming]||`${targetPos} 위치에서 새로운 움직임과 에너지 제공`;
@@ -823,9 +835,9 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
         }
         function substituteMatchPlayer(side,benchIndex,starterIndex){
             const state=matchLineupState[side];if(!state||starterIndex<0)return;
-            const incomingPlayer=state.bench[benchIndex],incoming=incomingPlayer.name,outgoing=state.starters[starterIndex].name,targetPos=state.starters[starterIndex].pos;
-            const outgoingNaturalPos=targetPos;
-            state.starters[starterIndex].name=incoming;state.bench[benchIndex]={name:outgoing,pos:outgoingNaturalPos};
+            const incomingPlayer=state.bench[benchIndex],outgoingPlayer=state.starters[starterIndex];if(!incomingPlayer||!outgoingPlayer)return;
+            const incoming=incomingPlayer.name,outgoing=outgoingPlayer.name,targetPos=outgoingPlayer.pos;
+            state.starters[starterIndex]={...incomingPlayer,pos:targetPos,custom:null};state.bench[benchIndex]={...outgoingPlayer,pos:outgoingPlayer.naturalPos||targetPos,custom:null};
             latestSubstitutionImpact=buildSubstitutionImpact(side,incoming,outgoing,targetPos,state.team);
             renderMatchCompare(false);showToast(`${incoming} IN · ${outgoing} OUT`);
         }
@@ -874,13 +886,24 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
             initMatchCompare();const pitch=document.getElementById('match-pitch');if(!pitch)return;
             const ht=document.getElementById('match-home-team').value,at=document.getElementById('match-away-team').value,hf=document.getElementById('match-home-formation').value,af=document.getElementById('match-away-formation').value;
             const hs=ensureMatchSideState('home',ht),as=ensureMatchSideState('away',at);
-            // 팀을 처음 불러올 때는 실제 기본 포메이션을 사용한다.
-            if(ht==='Liverpool'&&!hs.starters.some(p=>p.custom)){setFormationSelectorValue('home','4-3-3');}
-            if(at==='Liverpool'&&!as.starters.some(p=>p.custom)){setFormationSelectorValue('away','4-3-3');}
             const currentHF=document.getElementById('match-home-formation').value,currentAF=document.getElementById('match-away-formation').value;
-            document.getElementById('match-title').textContent=`${ht}  vs  ${at}`;document.getElementById('match-home-board-title').textContent=`${ht} · ${currentHF}`;document.getElementById('match-away-board-title').textContent=`${at} · ${currentAF}`;
+            const homeLabel=matchTeamLabel(ht),awayLabel=matchTeamLabel(at);
+            document.getElementById('match-title').textContent=`${homeLabel}  vs  ${awayLabel}`;document.getElementById('match-home-board-title').textContent=`${homeLabel} · ${currentHF}`;document.getElementById('match-away-board-title').textContent=`${awayLabel} · ${currentAF}`;
             pitch.querySelectorAll('.match-player').forEach(x=>x.remove());if(resetSelection){matchSelected={home:null,away:null};document.getElementById('matchup-info').textContent='홈 선수와 원정 선수를 차례로 클릭하면 능력 차이를 표시합니다.';}
-            const teamNames=Object.keys(matchTeams),hi=teamNames.indexOf(ht),ai=teamNames.indexOf(at);
+            const officialLineupAvailable=hs.confirmed&&as.confirmed;
+            if(!officialLineupAvailable&&!provisionalLineupEnabled){
+                document.getElementById('match-home-live-team-rating').textContent='—';document.getElementById('match-away-live-team-rating').textContent='—';
+                document.getElementById('match-home-squad-title').textContent=homeLabel;document.getElementById('match-away-squad-title').textContent=awayLabel;
+                document.getElementById('match-squad-compare').innerHTML=`<div class="p-8 text-center"><div class="text-amber-300 font-bold">공식 선발 라인업 발표 전</div><p class="mt-2 text-xs text-slate-500">현재 등록 스쿼드는 실제 경기 선발 명단이 아니므로 기본 화면에 표시하지 않습니다.</p><button type="button" onclick="enableProvisionalLineup()" class="mt-4 px-4 py-2.5 rounded-xl border border-amber-300/20 bg-amber-300/10 text-xs font-bold text-amber-200">스쿼드 기반 예상 배치 보기</button></div>`;
+                document.getElementById('match-home-bench').innerHTML='<div class="text-xs text-slate-600">공식 후보 명단 발표 전입니다.</div>';document.getElementById('match-away-bench').innerHTML='<div class="text-xs text-slate-600">공식 후보 명단 발표 전입니다.</div>';
+                document.getElementById('matchup-info').textContent='공식 선발 발표 후 실제 선수 ID 기반 매치업을 제공합니다.';latestSubstitutionImpact=null;renderSubstitutionImpact();return;
+            }
+            if(!officialLineupAvailable)document.getElementById('matchup-info').textContent='스쿼드 기반 예상 배치입니다. 실제 경기 선발 라인업이 아닙니다.';
+            if(!hs.complete||!as.complete){
+                const missing=[!hs.complete?`${homeLabel} ${hs.starters.length}명`:'',!as.complete?`${awayLabel} ${as.starters.length}명`:''].filter(Boolean).join(' · ');
+                document.getElementById('matchup-info').textContent=`라인업이 불완전합니다: ${missing}. 선발 11명이 연결된 팀을 선택해 주세요.`;
+            }
+            const teamNames=Object.keys(entityData.teams),hi=teamNames.indexOf(ht),ai=teamNames.indexOf(at);
             const positionDepth={GK:94,RB:76,RCB:79,CB:80,LCB:79,LB:76,RWB:61,DM:63,RCM:56,CM:55,LCM:56,LWB:61,RW:32,RAM:39,AM:40,LAM:39,LW:32,RF:23,ST:18,LF:23};
             const positionLateral={GK:50,RB:84,RCB:64,CB:50,LCB:36,LB:16,RWB:88,DM:50,RCM:67,CM:50,LCM:33,LWB:12,RW:84,RAM:70,AM:50,LAM:30,LW:16,RF:65,ST:50,LF:35};
             function coordsFromSelectedPositions(state,side){
@@ -907,11 +930,11 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
             add(hs,'home',coordsFromSelectedPositions(hs,'home'),hi);add(as,'away',coordsFromSelectedPositions(as,'away'),ai);
             const homeRatings=hs.starters.map((_,i)=>Number(liveRating(hi,i,'home'))),awayRatings=as.starters.map((_,i)=>Number(liveRating(ai,i,'away')));
             document.getElementById('match-home-live-team-rating').textContent=(homeRatings.reduce((a,b)=>a+b,0)/homeRatings.length).toFixed(2);document.getElementById('match-away-live-team-rating').textContent=(awayRatings.reduce((a,b)=>a+b,0)/awayRatings.length).toFixed(2);
-            document.getElementById('match-home-squad-title').textContent=ht;document.getElementById('match-away-squad-title').textContent=at;
+            document.getElementById('match-home-squad-title').textContent=homeLabel;document.getElementById('match-away-squad-title').textContent=awayLabel;
             document.getElementById('match-squad-compare').innerHTML=hs.starters.map((homePlayer,i)=>{const awayPlayer=as.starters[i],hr=liveRating(hi,i,'home'),ar=liveRating(ai,i,'away');const posSelect=(side,p)=>`<select onchange="updateMatchPosition('${side}',${i},this.value)" class="w-full bg-slate-950 border border-white/10 rounded-lg px-2 py-2 text-xs font-mono">${matchPositionOptions.map(pos=>`<option ${pos===p.pos?'selected':''}>${pos}</option>`).join('')}</select>`;return `<div class="grid grid-cols-[150px_1fr_90px_130px_1fr_90px] border-b border-white/5 last:border-b-0"><div class="px-3 py-2 bg-white/[0.015]">${posSelect('home',homePlayer)}</div><button onclick="selectMatchPlayer('home','${homePlayer.name}')" class="px-4 py-3 border-l border-white/5 text-left text-sm text-cyan-100 hover:bg-cyan-400/[0.06]">${homePlayer.name}</button><div class="px-4 py-3 border-l border-white/5 flex justify-center"><span class="min-w-10 px-2 py-1 rounded-lg text-xs font-black text-center ${ratingClass(hr)}">${hr}</span></div><div class="px-3 py-2 border-l border-white/5 bg-white/[0.015]">${posSelect('away',awayPlayer)}</div><button onclick="selectMatchPlayer('away','${awayPlayer.name}')" class="px-4 py-3 border-l border-white/5 text-left text-sm text-rose-100 hover:bg-rose-400/[0.06]">${awayPlayer.name}</button><div class="px-4 py-3 border-l border-white/5 flex justify-center"><span class="min-w-10 px-2 py-1 rounded-lg text-xs font-black text-center ${ratingClass(ar)}">${ar}</span></div></div>`}).join('');
             renderBench('home');renderBench('away');renderSubstitutionImpact();
         }
-        function makeDraggable(el,pitch,side,index){let drag=false;el.addEventListener('pointerdown',e=>{drag=true;el.setPointerCapture(e.pointerId)});el.addEventListener('pointermove',e=>{if(!drag)return;const r=pitch.getBoundingClientRect();el.style.left=Math.max(4,Math.min(96,(e.clientX-r.left)/r.width*100))+'%';el.style.top=Math.max(5,Math.min(95,(e.clientY-r.top)/r.height*100))+'%'});el.addEventListener('pointerup',()=>{if(!drag)return;drag=false;const x=parseFloat(el.style.left),y=parseFloat(el.style.top);if(matchLineupState[side]?.starters[index])matchLineupState[side].starters[index].custom=[x,y];const detected=inferFormationFromCoords(side);renderMatchCompare(false);showToast(`선수 배치에 따라 ${detected} 포메이션으로 자동 변경했습니다.`);})}
+        function makeDraggable(el,pitch,side,index){let drag=false;el.addEventListener('pointerdown',e=>{drag=true;el.setPointerCapture(e.pointerId)});el.addEventListener('pointermove',e=>{if(!drag)return;const r=pitch.getBoundingClientRect();el.style.left=Math.max(4,Math.min(96,(e.clientX-r.left)/r.width*100))+'%';el.style.top=Math.max(5,Math.min(95,(e.clientY-r.top)/r.height*100))+'%'});el.addEventListener('pointerup',()=>{if(!drag)return;drag=false;const x=parseFloat(el.style.left),y=parseFloat(el.style.top);if(matchLineupState[side]?.starters[index])matchLineupState[side].starters[index].custom=[x,y];renderMatchCompare(false);showToast('선수 위치를 자유 배치로 저장했습니다.');})}
         function selectMatchPlayer(side,name){matchSelected[side]=name;const info=document.getElementById('matchup-info');if(matchSelected.home&&matchSelected.away)info.innerHTML=`<strong class="text-cyan-300">${matchSelected.home}</strong> vs <strong class="text-rose-300">${matchSelected.away}</strong><span class="block mt-2 text-slate-400">직접 대결 구도가 선택되었습니다. 향후 실제 능력치와 AI 매치업 분석을 연결할 수 있습니다.</span>`;else info.textContent=`${name} 선택됨. 반대 팀 선수를 선택하세요.`;}
 
         function renderTacticalTeamFinder(){
