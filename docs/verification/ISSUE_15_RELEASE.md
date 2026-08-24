@@ -69,13 +69,22 @@
 - [x] 로컬 앱과 핵심 JSON HTTP 200
 - [x] 검증 후 `git subtree push --prefix app origin gh-pages` 배포 절차 문서화
 
-## 병합·종료 전 실제 브라우저 검증
+## 실제 브라우저 검증
 
-- [ ] Safari 데스크톱 흐름 A·B
-- [ ] 390×844 모바일 viewport 흐름 A·B
-- [ ] 키보드 Tab·Enter·Space로 주요 조작
-- [ ] 치명적인 콘솔 오류와 실패한 핵심 요청 없음
-- [ ] GitHub Pages 주소에서 로컬과 동일한 핵심 흐름
-- [ ] 대표 화면 스크린샷
+- [x] Safari 26.5 데스크톱에서 검색 → 아스널 상세 → Match Hub → Tactical Board 흐름
+- [x] Safari에서 공식 첫 경기 XI 11명, 벤치 9명과 실제 OUT/IN 교체
+- [x] Safari에서 Tactical Board 버튼 포커스 후 Enter 이동
+- [x] Chrome 390×844 viewport에서 Home, 실제 일정·순위 로드와 세로 경기 카드
+- [x] 로컬·공개 Pages 핵심 자산과 JSON 요청 21개 모두 HTTP 200
+- [x] 브라우저 성능 리소스 목록에서 동일 출처 4xx 요청 없음
+- [x] GitHub Pages 빌드 및 공식 MVP HTML·첫 경기 lineup JSON 공개 확인
+- [x] Safari 데스크톱 전술보드와 Chrome 390×844 Home 대표 화면 캡처
 
-브라우저 자동 검증 결과와 배포 URL은 PR과 이 문서에 추가한 뒤 #15를 닫는다.
+### QA 중 발견·수정한 결함
+
+- JSON 로딩 전에 생성된 빈 Tactical Board 스쿼드 캐시가 로딩 후에도 재사용되던
+  문제를 수정했다. 선발 11명이 있는 캐시만 재사용한다.
+- 390px Home 경기 카드에서 날짜 배지가 잘리던 문제를 수정했다. 작은 화면에서는
+  경기 제목과 날짜를 세로 배치한다.
+- Chrome headless의 GCM 등록·macOS 프로세스 정책 경고는 앱 JavaScript 또는
+  네트워크 요청 오류가 아니며, 앱의 `Uncaught`, `Failed to load`, 404는 없었다.
