@@ -1,0 +1,3829 @@
+{
+  "schemaVersion": "1.0.0",
+  "season": "2026-27",
+  "asOf": "2026-08-24T11:25:12Z",
+  "sourceId": "openfootball-england-public-domain",
+  "sourceUrl": "https://raw.githubusercontent.com/openfootball/england/master/2026-27/1-premierleague.txt",
+  "sourceSha256": "3c823c4a185357087d97182cf0e96e470dd19f01ee9fd4d1c57fb70b602e847f",
+  "timezone": "Europe/London",
+  "matches": [
+    {
+      "id": "2026-27-md01-arsenal-coventry",
+      "matchday": 1,
+      "kickoff": "2026-08-21T20:00:00+01:00",
+      "homeTeamId": "arsenal",
+      "awayTeamId": "coventry",
+      "venue": "Emirates Stadium",
+      "status": "completed",
+      "score": {
+        "home": 3,
+        "away": 0
+      }
+    },
+    {
+      "id": "2026-27-md01-hullcity-manutd",
+      "matchday": 1,
+      "kickoff": "2026-08-22T12:30:00+01:00",
+      "homeTeamId": "hullcity",
+      "awayTeamId": "manutd",
+      "venue": "The MKM Stadium",
+      "status": "completed",
+      "score": {
+        "home": 2,
+        "away": 0
+      }
+    },
+    {
+      "id": "2026-27-md01-ipswich-sunderland",
+      "matchday": 1,
+      "kickoff": "2026-08-22T15:00:00+01:00",
+      "homeTeamId": "ipswich",
+      "awayTeamId": "sunderland",
+      "venue": "Portman Road",
+      "status": "completed",
+      "score": {
+        "home": 2,
+        "away": 1
+      }
+    },
+    {
+      "id": "2026-27-md01-nottinghamforest-leeds",
+      "matchday": 1,
+      "kickoff": "2026-08-22T15:00:00+01:00",
+      "homeTeamId": "nottinghamforest",
+      "awayTeamId": "leeds",
+      "venue": "Nottingham Arena",
+      "status": "completed",
+      "score": {
+        "home": 0,
+        "away": 1
+      }
+    },
+    {
+      "id": "2026-27-md01-everton-crystalpalace",
+      "matchday": 1,
+      "kickoff": "2026-08-22T15:00:00+01:00",
+      "homeTeamId": "everton",
+      "awayTeamId": "crystalpalace",
+      "venue": "Hill Dickinson Stadium",
+      "status": "completed",
+      "score": {
+        "home": 2,
+        "away": 0
+      }
+    },
+    {
+      "id": "2026-27-md01-brentford-tottenham",
+      "matchday": 1,
+      "kickoff": "2026-08-22T17:30:00+01:00",
+      "homeTeamId": "brentford",
+      "awayTeamId": "tottenham",
+      "venue": "Brentford Community Stadium",
+      "status": "completed",
+      "score": {
+        "home": 3,
+        "away": 0
+      }
+    },
+    {
+      "id": "2026-27-md01-mancity-bournemouth",
+      "matchday": 1,
+      "kickoff": "2026-08-23T14:00:00+01:00",
+      "homeTeamId": "mancity",
+      "awayTeamId": "bournemouth",
+      "venue": "Etihad Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md01-brighton-astonvilla",
+      "matchday": 1,
+      "kickoff": "2026-08-23T14:00:00+01:00",
+      "homeTeamId": "brighton",
+      "awayTeamId": "astonvilla",
+      "venue": "American Express Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md01-newcastle-liverpool",
+      "matchday": 1,
+      "kickoff": "2026-08-23T16:30:00+01:00",
+      "homeTeamId": "newcastle",
+      "awayTeamId": "liverpool",
+      "venue": "St James Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md01-fulham-chelsea",
+      "matchday": 1,
+      "kickoff": "2026-08-24T20:00:00+01:00",
+      "homeTeamId": "fulham",
+      "awayTeamId": "chelsea",
+      "venue": "Craven Cottage",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md02-crystalpalace-mancity",
+      "matchday": 2,
+      "kickoff": "2026-08-28T20:00:00+01:00",
+      "homeTeamId": "crystalpalace",
+      "awayTeamId": "mancity",
+      "venue": "Selhurst Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md02-liverpool-nottinghamforest",
+      "matchday": 2,
+      "kickoff": "2026-08-29T12:30:00+01:00",
+      "homeTeamId": "liverpool",
+      "awayTeamId": "nottinghamforest",
+      "venue": "Anfield",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md02-bournemouth-everton",
+      "matchday": 2,
+      "kickoff": "2026-08-29T15:00:00+01:00",
+      "homeTeamId": "bournemouth",
+      "awayTeamId": "everton",
+      "venue": "Vitality Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md02-coventry-hullcity",
+      "matchday": 2,
+      "kickoff": "2026-08-29T15:00:00+01:00",
+      "homeTeamId": "coventry",
+      "awayTeamId": "hullcity",
+      "venue": "The Coventry Building Society Arena",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md02-tottenham-newcastle",
+      "matchday": 2,
+      "kickoff": "2026-08-29T17:30:00+01:00",
+      "homeTeamId": "tottenham",
+      "awayTeamId": "newcastle",
+      "venue": "Tottenham Hotspur Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md02-sunderland-fulham",
+      "matchday": 2,
+      "kickoff": "2026-08-30T14:00:00+01:00",
+      "homeTeamId": "sunderland",
+      "awayTeamId": "fulham",
+      "venue": "Stadium of Light",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md02-chelsea-brighton",
+      "matchday": 2,
+      "kickoff": "2026-08-30T14:00:00+01:00",
+      "homeTeamId": "chelsea",
+      "awayTeamId": "brighton",
+      "venue": "Stamford Bridge",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md02-leeds-brentford",
+      "matchday": 2,
+      "kickoff": "2026-08-30T14:00:00+01:00",
+      "homeTeamId": "leeds",
+      "awayTeamId": "brentford",
+      "venue": "Elland Road",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md02-manutd-ipswich",
+      "matchday": 2,
+      "kickoff": "2026-08-30T16:30:00+01:00",
+      "homeTeamId": "manutd",
+      "awayTeamId": "ipswich",
+      "venue": "Old Trafford",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md02-astonvilla-arsenal",
+      "matchday": 2,
+      "kickoff": "2026-08-31T20:00:00+01:00",
+      "homeTeamId": "astonvilla",
+      "awayTeamId": "arsenal",
+      "venue": "Villa Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md03-ipswich-liverpool",
+      "matchday": 3,
+      "kickoff": "2026-09-04T20:00:00+01:00",
+      "homeTeamId": "ipswich",
+      "awayTeamId": "liverpool",
+      "venue": "Portman Road",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md03-newcastle-bournemouth",
+      "matchday": 3,
+      "kickoff": "2026-09-05T12:30:00+01:00",
+      "homeTeamId": "newcastle",
+      "awayTeamId": "bournemouth",
+      "venue": "St James Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md03-nottinghamforest-tottenham",
+      "matchday": 3,
+      "kickoff": "2026-09-05T15:00:00+01:00",
+      "homeTeamId": "nottinghamforest",
+      "awayTeamId": "tottenham",
+      "venue": "Nottingham Arena",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md03-mancity-coventry",
+      "matchday": 3,
+      "kickoff": "2026-09-05T15:00:00+01:00",
+      "homeTeamId": "mancity",
+      "awayTeamId": "coventry",
+      "venue": "Etihad Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md03-brighton-leeds",
+      "matchday": 3,
+      "kickoff": "2026-09-05T15:00:00+01:00",
+      "homeTeamId": "brighton",
+      "awayTeamId": "leeds",
+      "venue": "American Express Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md03-brentford-sunderland",
+      "matchday": 3,
+      "kickoff": "2026-09-05T15:00:00+01:00",
+      "homeTeamId": "brentford",
+      "awayTeamId": "sunderland",
+      "venue": "Brentford Community Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md03-fulham-crystalpalace",
+      "matchday": 3,
+      "kickoff": "2026-09-05T15:00:00+01:00",
+      "homeTeamId": "fulham",
+      "awayTeamId": "crystalpalace",
+      "venue": "Craven Cottage",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md03-hullcity-astonvilla",
+      "matchday": 3,
+      "kickoff": "2026-09-05T17:30:00+01:00",
+      "homeTeamId": "hullcity",
+      "awayTeamId": "astonvilla",
+      "venue": "The MKM Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md03-everton-manutd",
+      "matchday": 3,
+      "kickoff": "2026-09-06T14:00:00+01:00",
+      "homeTeamId": "everton",
+      "awayTeamId": "manutd",
+      "venue": "Hill Dickinson Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md03-arsenal-chelsea",
+      "matchday": 3,
+      "kickoff": "2026-09-06T16:30:00+01:00",
+      "homeTeamId": "arsenal",
+      "awayTeamId": "chelsea",
+      "venue": "Emirates Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md04-crystalpalace-ipswich",
+      "matchday": 4,
+      "kickoff": "2026-09-12T15:00:00+01:00",
+      "homeTeamId": "crystalpalace",
+      "awayTeamId": "ipswich",
+      "venue": "Selhurst Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md04-liverpool-fulham",
+      "matchday": 4,
+      "kickoff": "2026-09-12T15:00:00+01:00",
+      "homeTeamId": "liverpool",
+      "awayTeamId": "fulham",
+      "venue": "Anfield",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md04-astonvilla-nottinghamforest",
+      "matchday": 4,
+      "kickoff": "2026-09-12T15:00:00+01:00",
+      "homeTeamId": "astonvilla",
+      "awayTeamId": "nottinghamforest",
+      "venue": "Villa Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md04-bournemouth-brentford",
+      "matchday": 4,
+      "kickoff": "2026-09-12T15:00:00+01:00",
+      "homeTeamId": "bournemouth",
+      "awayTeamId": "brentford",
+      "venue": "Vitality Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md04-chelsea-hullcity",
+      "matchday": 4,
+      "kickoff": "2026-09-12T15:00:00+01:00",
+      "homeTeamId": "chelsea",
+      "awayTeamId": "hullcity",
+      "venue": "Stamford Bridge",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md04-tottenham-everton",
+      "matchday": 4,
+      "kickoff": "2026-09-12T17:30:00+01:00",
+      "homeTeamId": "tottenham",
+      "awayTeamId": "everton",
+      "venue": "Tottenham Hotspur Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md04-sunderland-arsenal",
+      "matchday": 4,
+      "kickoff": "2026-09-12T20:00:00+01:00",
+      "homeTeamId": "sunderland",
+      "awayTeamId": "arsenal",
+      "venue": "Stadium of Light",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md04-coventry-brighton",
+      "matchday": 4,
+      "kickoff": "2026-09-13T14:00:00+01:00",
+      "homeTeamId": "coventry",
+      "awayTeamId": "brighton",
+      "venue": "The Coventry Building Society Arena",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md04-manutd-mancity",
+      "matchday": 4,
+      "kickoff": "2026-09-13T16:30:00+01:00",
+      "homeTeamId": "manutd",
+      "awayTeamId": "mancity",
+      "venue": "Old Trafford",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md04-leeds-newcastle",
+      "matchday": 4,
+      "kickoff": "2026-09-14T20:00:00+01:00",
+      "homeTeamId": "leeds",
+      "awayTeamId": "newcastle",
+      "venue": "Elland Road",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md05-brentford-chelsea",
+      "matchday": 5,
+      "kickoff": "2026-09-18T20:00:00+01:00",
+      "homeTeamId": "brentford",
+      "awayTeamId": "chelsea",
+      "venue": "Brentford Community Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md05-tottenham-astonvilla",
+      "matchday": 5,
+      "kickoff": "2026-09-19T12:30:00+01:00",
+      "homeTeamId": "tottenham",
+      "awayTeamId": "astonvilla",
+      "venue": "Tottenham Hotspur Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md05-everton-ipswich",
+      "matchday": 5,
+      "kickoff": "2026-09-19T15:00:00+01:00",
+      "homeTeamId": "everton",
+      "awayTeamId": "ipswich",
+      "venue": "Hill Dickinson Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md05-leeds-crystalpalace",
+      "matchday": 5,
+      "kickoff": "2026-09-19T15:00:00+01:00",
+      "homeTeamId": "leeds",
+      "awayTeamId": "crystalpalace",
+      "venue": "Elland Road",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md05-brighton-arsenal",
+      "matchday": 5,
+      "kickoff": "2026-09-19T15:00:00+01:00",
+      "homeTeamId": "brighton",
+      "awayTeamId": "arsenal",
+      "venue": "American Express Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md05-newcastle-hullcity",
+      "matchday": 5,
+      "kickoff": "2026-09-19T15:00:00+01:00",
+      "homeTeamId": "newcastle",
+      "awayTeamId": "hullcity",
+      "venue": "St James Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md05-mancity-sunderland",
+      "matchday": 5,
+      "kickoff": "2026-09-19T15:00:00+01:00",
+      "homeTeamId": "mancity",
+      "awayTeamId": "sunderland",
+      "venue": "Etihad Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md05-nottinghamforest-coventry",
+      "matchday": 5,
+      "kickoff": "2026-09-19T17:30:00+01:00",
+      "homeTeamId": "nottinghamforest",
+      "awayTeamId": "coventry",
+      "venue": "Nottingham Arena",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md05-bournemouth-liverpool",
+      "matchday": 5,
+      "kickoff": "2026-09-20T14:00:00+01:00",
+      "homeTeamId": "bournemouth",
+      "awayTeamId": "liverpool",
+      "venue": "Vitality Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md05-fulham-manutd",
+      "matchday": 5,
+      "kickoff": "2026-09-20T16:30:00+01:00",
+      "homeTeamId": "fulham",
+      "awayTeamId": "manutd",
+      "venue": "Craven Cottage",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md06-arsenal-leeds",
+      "matchday": 6,
+      "kickoff": "2026-10-10T12:30:00+01:00",
+      "homeTeamId": "arsenal",
+      "awayTeamId": "leeds",
+      "venue": "Emirates Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md06-sunderland-brighton",
+      "matchday": 6,
+      "kickoff": "2026-10-10T15:00:00+01:00",
+      "homeTeamId": "sunderland",
+      "awayTeamId": "brighton",
+      "venue": "Stadium of Light",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md06-chelsea-bournemouth",
+      "matchday": 6,
+      "kickoff": "2026-10-10T15:00:00+01:00",
+      "homeTeamId": "chelsea",
+      "awayTeamId": "bournemouth",
+      "venue": "Stamford Bridge",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md06-ipswich-fulham",
+      "matchday": 6,
+      "kickoff": "2026-10-10T15:00:00+01:00",
+      "homeTeamId": "ipswich",
+      "awayTeamId": "fulham",
+      "venue": "Portman Road",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md06-astonvilla-brentford",
+      "matchday": 6,
+      "kickoff": "2026-10-10T15:00:00+01:00",
+      "homeTeamId": "astonvilla",
+      "awayTeamId": "brentford",
+      "venue": "Villa Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md06-manutd-tottenham",
+      "matchday": 6,
+      "kickoff": "2026-10-10T17:30:00+01:00",
+      "homeTeamId": "manutd",
+      "awayTeamId": "tottenham",
+      "venue": "Old Trafford",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md06-hullcity-everton",
+      "matchday": 6,
+      "kickoff": "2026-10-11T14:00:00+01:00",
+      "homeTeamId": "hullcity",
+      "awayTeamId": "everton",
+      "venue": "The MKM Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md06-crystalpalace-nottinghamforest",
+      "matchday": 6,
+      "kickoff": "2026-10-11T14:00:00+01:00",
+      "homeTeamId": "crystalpalace",
+      "awayTeamId": "nottinghamforest",
+      "venue": "Selhurst Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md06-liverpool-mancity",
+      "matchday": 6,
+      "kickoff": "2026-10-11T16:30:00+01:00",
+      "homeTeamId": "liverpool",
+      "awayTeamId": "mancity",
+      "venue": "Anfield",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md06-coventry-newcastle",
+      "matchday": 6,
+      "kickoff": "2026-10-12T20:00:00+01:00",
+      "homeTeamId": "coventry",
+      "awayTeamId": "newcastle",
+      "venue": "The Coventry Building Society Arena",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md07-everton-chelsea",
+      "matchday": 7,
+      "kickoff": "2026-10-17T12:30:00+01:00",
+      "homeTeamId": "everton",
+      "awayTeamId": "chelsea",
+      "venue": "Hill Dickinson Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md07-fulham-hullcity",
+      "matchday": 7,
+      "kickoff": "2026-10-17T15:00:00+01:00",
+      "homeTeamId": "fulham",
+      "awayTeamId": "hullcity",
+      "venue": "Craven Cottage",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md07-mancity-ipswich",
+      "matchday": 7,
+      "kickoff": "2026-10-17T15:00:00+01:00",
+      "homeTeamId": "mancity",
+      "awayTeamId": "ipswich",
+      "venue": "Etihad Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md07-brentford-liverpool",
+      "matchday": 7,
+      "kickoff": "2026-10-17T15:00:00+01:00",
+      "homeTeamId": "brentford",
+      "awayTeamId": "liverpool",
+      "venue": "Brentford Community Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md07-newcastle-astonvilla",
+      "matchday": 7,
+      "kickoff": "2026-10-17T17:30:00+01:00",
+      "homeTeamId": "newcastle",
+      "awayTeamId": "astonvilla",
+      "venue": "St James Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md07-bournemouth-sunderland",
+      "matchday": 7,
+      "kickoff": "2026-10-18T14:00:00+01:00",
+      "homeTeamId": "bournemouth",
+      "awayTeamId": "sunderland",
+      "venue": "Vitality Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md07-leeds-manutd",
+      "matchday": 7,
+      "kickoff": "2026-10-18T14:00:00+01:00",
+      "homeTeamId": "leeds",
+      "awayTeamId": "manutd",
+      "venue": "Elland Road",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md07-brighton-crystalpalace",
+      "matchday": 7,
+      "kickoff": "2026-10-18T14:00:00+01:00",
+      "homeTeamId": "brighton",
+      "awayTeamId": "crystalpalace",
+      "venue": "American Express Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md07-nottinghamforest-arsenal",
+      "matchday": 7,
+      "kickoff": "2026-10-18T16:30:00+01:00",
+      "homeTeamId": "nottinghamforest",
+      "awayTeamId": "arsenal",
+      "venue": "Nottingham Arena",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md07-tottenham-coventry",
+      "matchday": 7,
+      "kickoff": "2026-10-19T20:00:00+01:00",
+      "homeTeamId": "tottenham",
+      "awayTeamId": "coventry",
+      "venue": "Tottenham Hotspur Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md08-ipswich-nottinghamforest",
+      "matchday": 8,
+      "kickoff": "2026-10-23T20:00:00+01:00",
+      "homeTeamId": "ipswich",
+      "awayTeamId": "nottinghamforest",
+      "venue": "Portman Road",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md08-astonvilla-mancity",
+      "matchday": 8,
+      "kickoff": "2026-10-24T12:30:00+01:00",
+      "homeTeamId": "astonvilla",
+      "awayTeamId": "mancity",
+      "venue": "Villa Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md08-liverpool-brighton",
+      "matchday": 8,
+      "kickoff": "2026-10-24T15:00:00+01:00",
+      "homeTeamId": "liverpool",
+      "awayTeamId": "brighton",
+      "venue": "Anfield",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md08-arsenal-everton",
+      "matchday": 8,
+      "kickoff": "2026-10-24T15:00:00+01:00",
+      "homeTeamId": "arsenal",
+      "awayTeamId": "everton",
+      "venue": "Emirates Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md08-coventry-fulham",
+      "matchday": 8,
+      "kickoff": "2026-10-24T15:00:00+01:00",
+      "homeTeamId": "coventry",
+      "awayTeamId": "fulham",
+      "venue": "The Coventry Building Society Arena",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md08-chelsea-tottenham",
+      "matchday": 8,
+      "kickoff": "2026-10-24T17:30:00+01:00",
+      "homeTeamId": "chelsea",
+      "awayTeamId": "tottenham",
+      "venue": "Stamford Bridge",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md08-crystalpalace-newcastle",
+      "matchday": 8,
+      "kickoff": "2026-10-25T14:00:00+00:00",
+      "homeTeamId": "crystalpalace",
+      "awayTeamId": "newcastle",
+      "venue": "Selhurst Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md08-manutd-bournemouth",
+      "matchday": 8,
+      "kickoff": "2026-10-25T14:00:00+00:00",
+      "homeTeamId": "manutd",
+      "awayTeamId": "bournemouth",
+      "venue": "Old Trafford",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md08-hullcity-brentford",
+      "matchday": 8,
+      "kickoff": "2026-10-25T14:00:00+00:00",
+      "homeTeamId": "hullcity",
+      "awayTeamId": "brentford",
+      "venue": "The MKM Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md08-sunderland-leeds",
+      "matchday": 8,
+      "kickoff": "2026-10-25T16:30:00+00:00",
+      "homeTeamId": "sunderland",
+      "awayTeamId": "leeds",
+      "venue": "Stadium of Light",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md09-chelsea-manutd",
+      "matchday": 9,
+      "kickoff": "2026-10-31T12:30:00+00:00",
+      "homeTeamId": "chelsea",
+      "awayTeamId": "manutd",
+      "venue": "Stamford Bridge",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md09-mancity-brighton",
+      "matchday": 9,
+      "kickoff": "2026-10-31T15:00:00+00:00",
+      "homeTeamId": "mancity",
+      "awayTeamId": "brighton",
+      "venue": "Etihad Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md09-bournemouth-leeds",
+      "matchday": 9,
+      "kickoff": "2026-10-31T15:00:00+00:00",
+      "homeTeamId": "bournemouth",
+      "awayTeamId": "leeds",
+      "venue": "Vitality Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md09-coventry-sunderland",
+      "matchday": 9,
+      "kickoff": "2026-10-31T15:00:00+00:00",
+      "homeTeamId": "coventry",
+      "awayTeamId": "sunderland",
+      "venue": "The Coventry Building Society Arena",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md09-hullcity-ipswich",
+      "matchday": 9,
+      "kickoff": "2026-10-31T15:00:00+00:00",
+      "homeTeamId": "hullcity",
+      "awayTeamId": "ipswich",
+      "venue": "The MKM Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md09-brentford-nottinghamforest",
+      "matchday": 9,
+      "kickoff": "2026-10-31T15:00:00+00:00",
+      "homeTeamId": "brentford",
+      "awayTeamId": "nottinghamforest",
+      "venue": "Brentford Community Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md09-tottenham-crystalpalace",
+      "matchday": 9,
+      "kickoff": "2026-10-31T17:30:00+00:00",
+      "homeTeamId": "tottenham",
+      "awayTeamId": "crystalpalace",
+      "venue": "Tottenham Hotspur Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md09-astonvilla-fulham",
+      "matchday": 9,
+      "kickoff": "2026-11-01T14:00:00+00:00",
+      "homeTeamId": "astonvilla",
+      "awayTeamId": "fulham",
+      "venue": "Villa Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md09-liverpool-arsenal",
+      "matchday": 9,
+      "kickoff": "2026-11-01T16:30:00+00:00",
+      "homeTeamId": "liverpool",
+      "awayTeamId": "arsenal",
+      "venue": "Anfield",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md09-newcastle-everton",
+      "matchday": 9,
+      "kickoff": "2026-11-02T20:00:00+00:00",
+      "homeTeamId": "newcastle",
+      "awayTeamId": "everton",
+      "venue": "St James Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md10-arsenal-hullcity",
+      "matchday": 10,
+      "kickoff": "2026-11-07T15:00:00+00:00",
+      "homeTeamId": "arsenal",
+      "awayTeamId": "hullcity",
+      "venue": "Emirates Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md10-nottinghamforest-mancity",
+      "matchday": 10,
+      "kickoff": "2026-11-07T15:00:00+00:00",
+      "homeTeamId": "nottinghamforest",
+      "awayTeamId": "mancity",
+      "venue": "Nottingham Arena",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md10-leeds-tottenham",
+      "matchday": 10,
+      "kickoff": "2026-11-07T15:00:00+00:00",
+      "homeTeamId": "leeds",
+      "awayTeamId": "tottenham",
+      "venue": "Elland Road",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md10-fulham-newcastle",
+      "matchday": 10,
+      "kickoff": "2026-11-07T15:00:00+00:00",
+      "homeTeamId": "fulham",
+      "awayTeamId": "newcastle",
+      "venue": "Craven Cottage",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md10-everton-coventry",
+      "matchday": 10,
+      "kickoff": "2026-11-07T15:00:00+00:00",
+      "homeTeamId": "everton",
+      "awayTeamId": "coventry",
+      "venue": "Hill Dickinson Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md10-crystalpalace-liverpool",
+      "matchday": 10,
+      "kickoff": "2026-11-07T15:00:00+00:00",
+      "homeTeamId": "crystalpalace",
+      "awayTeamId": "liverpool",
+      "venue": "Selhurst Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md10-sunderland-chelsea",
+      "matchday": 10,
+      "kickoff": "2026-11-07T15:00:00+00:00",
+      "homeTeamId": "sunderland",
+      "awayTeamId": "chelsea",
+      "venue": "Stadium of Light",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md10-ipswich-bournemouth",
+      "matchday": 10,
+      "kickoff": "2026-11-07T15:00:00+00:00",
+      "homeTeamId": "ipswich",
+      "awayTeamId": "bournemouth",
+      "venue": "Portman Road",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md10-brighton-brentford",
+      "matchday": 10,
+      "kickoff": "2026-11-07T15:00:00+00:00",
+      "homeTeamId": "brighton",
+      "awayTeamId": "brentford",
+      "venue": "American Express Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md10-manutd-astonvilla",
+      "matchday": 10,
+      "kickoff": "2026-11-07T15:00:00+00:00",
+      "homeTeamId": "manutd",
+      "awayTeamId": "astonvilla",
+      "venue": "Old Trafford",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md11-chelsea-leeds",
+      "matchday": 11,
+      "kickoff": "2026-11-21T15:00:00+00:00",
+      "homeTeamId": "chelsea",
+      "awayTeamId": "leeds",
+      "venue": "Stamford Bridge",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md11-mancity-fulham",
+      "matchday": 11,
+      "kickoff": "2026-11-21T15:00:00+00:00",
+      "homeTeamId": "mancity",
+      "awayTeamId": "fulham",
+      "venue": "Etihad Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md11-astonvilla-sunderland",
+      "matchday": 11,
+      "kickoff": "2026-11-21T15:00:00+00:00",
+      "homeTeamId": "astonvilla",
+      "awayTeamId": "sunderland",
+      "venue": "Villa Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md11-liverpool-manutd",
+      "matchday": 11,
+      "kickoff": "2026-11-21T15:00:00+00:00",
+      "homeTeamId": "liverpool",
+      "awayTeamId": "manutd",
+      "venue": "Anfield",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md11-hullcity-brighton",
+      "matchday": 11,
+      "kickoff": "2026-11-21T15:00:00+00:00",
+      "homeTeamId": "hullcity",
+      "awayTeamId": "brighton",
+      "venue": "The MKM Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md11-bournemouth-nottinghamforest",
+      "matchday": 11,
+      "kickoff": "2026-11-21T15:00:00+00:00",
+      "homeTeamId": "bournemouth",
+      "awayTeamId": "nottinghamforest",
+      "venue": "Vitality Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md11-tottenham-ipswich",
+      "matchday": 11,
+      "kickoff": "2026-11-21T15:00:00+00:00",
+      "homeTeamId": "tottenham",
+      "awayTeamId": "ipswich",
+      "venue": "Tottenham Hotspur Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md11-brentford-everton",
+      "matchday": 11,
+      "kickoff": "2026-11-21T15:00:00+00:00",
+      "homeTeamId": "brentford",
+      "awayTeamId": "everton",
+      "venue": "Brentford Community Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md11-coventry-crystalpalace",
+      "matchday": 11,
+      "kickoff": "2026-11-21T15:00:00+00:00",
+      "homeTeamId": "coventry",
+      "awayTeamId": "crystalpalace",
+      "venue": "The Coventry Building Society Arena",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md11-newcastle-arsenal",
+      "matchday": 11,
+      "kickoff": "2026-11-21T15:00:00+00:00",
+      "homeTeamId": "newcastle",
+      "awayTeamId": "arsenal",
+      "venue": "St James Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md12-leeds-coventry",
+      "matchday": 12,
+      "kickoff": "2026-11-28T15:00:00+00:00",
+      "homeTeamId": "leeds",
+      "awayTeamId": "coventry",
+      "venue": "Elland Road",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md12-ipswich-astonvilla",
+      "matchday": 12,
+      "kickoff": "2026-11-28T15:00:00+00:00",
+      "homeTeamId": "ipswich",
+      "awayTeamId": "astonvilla",
+      "venue": "Portman Road",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md12-arsenal-mancity",
+      "matchday": 12,
+      "kickoff": "2026-11-28T15:00:00+00:00",
+      "homeTeamId": "arsenal",
+      "awayTeamId": "mancity",
+      "venue": "Emirates Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md12-manutd-brentford",
+      "matchday": 12,
+      "kickoff": "2026-11-28T15:00:00+00:00",
+      "homeTeamId": "manutd",
+      "awayTeamId": "brentford",
+      "venue": "Old Trafford",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md12-everton-liverpool",
+      "matchday": 12,
+      "kickoff": "2026-11-28T15:00:00+00:00",
+      "homeTeamId": "everton",
+      "awayTeamId": "liverpool",
+      "venue": "Hill Dickinson Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md12-fulham-bournemouth",
+      "matchday": 12,
+      "kickoff": "2026-11-28T15:00:00+00:00",
+      "homeTeamId": "fulham",
+      "awayTeamId": "bournemouth",
+      "venue": "Craven Cottage",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md12-nottinghamforest-chelsea",
+      "matchday": 12,
+      "kickoff": "2026-11-28T15:00:00+00:00",
+      "homeTeamId": "nottinghamforest",
+      "awayTeamId": "chelsea",
+      "venue": "Nottingham Arena",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md12-brighton-newcastle",
+      "matchday": 12,
+      "kickoff": "2026-11-28T15:00:00+00:00",
+      "homeTeamId": "brighton",
+      "awayTeamId": "newcastle",
+      "venue": "American Express Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md12-sunderland-tottenham",
+      "matchday": 12,
+      "kickoff": "2026-11-28T15:00:00+00:00",
+      "homeTeamId": "sunderland",
+      "awayTeamId": "tottenham",
+      "venue": "Stadium of Light",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md12-crystalpalace-hullcity",
+      "matchday": 12,
+      "kickoff": "2026-11-28T15:00:00+00:00",
+      "homeTeamId": "crystalpalace",
+      "awayTeamId": "hullcity",
+      "venue": "Selhurst Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md13-tottenham-fulham",
+      "matchday": 13,
+      "kickoff": "2026-12-02T20:00:00+00:00",
+      "homeTeamId": "tottenham",
+      "awayTeamId": "fulham",
+      "venue": "Tottenham Hotspur Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md13-liverpool-sunderland",
+      "matchday": 13,
+      "kickoff": "2026-12-02T20:00:00+00:00",
+      "homeTeamId": "liverpool",
+      "awayTeamId": "sunderland",
+      "venue": "Anfield",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md13-hullcity-nottinghamforest",
+      "matchday": 13,
+      "kickoff": "2026-12-02T20:00:00+00:00",
+      "homeTeamId": "hullcity",
+      "awayTeamId": "nottinghamforest",
+      "venue": "The MKM Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md13-chelsea-crystalpalace",
+      "matchday": 13,
+      "kickoff": "2026-12-02T20:00:00+00:00",
+      "homeTeamId": "chelsea",
+      "awayTeamId": "crystalpalace",
+      "venue": "Stamford Bridge",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md13-astonvilla-everton",
+      "matchday": 13,
+      "kickoff": "2026-12-02T20:00:00+00:00",
+      "homeTeamId": "astonvilla",
+      "awayTeamId": "everton",
+      "venue": "Villa Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md13-brentford-arsenal",
+      "matchday": 13,
+      "kickoff": "2026-12-02T20:00:00+00:00",
+      "homeTeamId": "brentford",
+      "awayTeamId": "arsenal",
+      "venue": "Brentford Community Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md13-coventry-ipswich",
+      "matchday": 13,
+      "kickoff": "2026-12-02T20:00:00+00:00",
+      "homeTeamId": "coventry",
+      "awayTeamId": "ipswich",
+      "venue": "The Coventry Building Society Arena",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md13-mancity-leeds",
+      "matchday": 13,
+      "kickoff": "2026-12-02T20:00:00+00:00",
+      "homeTeamId": "mancity",
+      "awayTeamId": "leeds",
+      "venue": "Etihad Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md13-newcastle-manutd",
+      "matchday": 13,
+      "kickoff": "2026-12-02T20:00:00+00:00",
+      "homeTeamId": "newcastle",
+      "awayTeamId": "manutd",
+      "venue": "St James Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md13-bournemouth-brighton",
+      "matchday": 13,
+      "kickoff": "2026-12-02T20:00:00+00:00",
+      "homeTeamId": "bournemouth",
+      "awayTeamId": "brighton",
+      "venue": "Vitality Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md14-tottenham-arsenal",
+      "matchday": 14,
+      "kickoff": "2026-12-05T15:00:00+00:00",
+      "homeTeamId": "tottenham",
+      "awayTeamId": "arsenal",
+      "venue": "Tottenham Hotspur Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md14-manutd-coventry",
+      "matchday": 14,
+      "kickoff": "2026-12-05T15:00:00+00:00",
+      "homeTeamId": "manutd",
+      "awayTeamId": "coventry",
+      "venue": "Old Trafford",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md14-leeds-ipswich",
+      "matchday": 14,
+      "kickoff": "2026-12-05T15:00:00+00:00",
+      "homeTeamId": "leeds",
+      "awayTeamId": "ipswich",
+      "venue": "Elland Road",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md14-newcastle-sunderland",
+      "matchday": 14,
+      "kickoff": "2026-12-05T15:00:00+00:00",
+      "homeTeamId": "newcastle",
+      "awayTeamId": "sunderland",
+      "venue": "St James Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md14-chelsea-liverpool",
+      "matchday": 14,
+      "kickoff": "2026-12-05T15:00:00+00:00",
+      "homeTeamId": "chelsea",
+      "awayTeamId": "liverpool",
+      "venue": "Stamford Bridge",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md14-brentford-mancity",
+      "matchday": 14,
+      "kickoff": "2026-12-05T15:00:00+00:00",
+      "homeTeamId": "brentford",
+      "awayTeamId": "mancity",
+      "venue": "Brentford Community Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md14-bournemouth-hullcity",
+      "matchday": 14,
+      "kickoff": "2026-12-05T15:00:00+00:00",
+      "homeTeamId": "bournemouth",
+      "awayTeamId": "hullcity",
+      "venue": "Vitality Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md14-astonvilla-crystalpalace",
+      "matchday": 14,
+      "kickoff": "2026-12-05T15:00:00+00:00",
+      "homeTeamId": "astonvilla",
+      "awayTeamId": "crystalpalace",
+      "venue": "Villa Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md14-nottinghamforest-brighton",
+      "matchday": 14,
+      "kickoff": "2026-12-05T15:00:00+00:00",
+      "homeTeamId": "nottinghamforest",
+      "awayTeamId": "brighton",
+      "venue": "Nottingham Arena",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md14-everton-fulham",
+      "matchday": 14,
+      "kickoff": "2026-12-05T15:00:00+00:00",
+      "homeTeamId": "everton",
+      "awayTeamId": "fulham",
+      "venue": "Hill Dickinson Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md15-sunderland-nottinghamforest",
+      "matchday": 15,
+      "kickoff": "2026-12-12T15:00:00+00:00",
+      "homeTeamId": "sunderland",
+      "awayTeamId": "nottinghamforest",
+      "venue": "Stadium of Light",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md15-crystalpalace-manutd",
+      "matchday": 15,
+      "kickoff": "2026-12-12T15:00:00+00:00",
+      "homeTeamId": "crystalpalace",
+      "awayTeamId": "manutd",
+      "venue": "Selhurst Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md15-hullcity-tottenham",
+      "matchday": 15,
+      "kickoff": "2026-12-12T15:00:00+00:00",
+      "homeTeamId": "hullcity",
+      "awayTeamId": "tottenham",
+      "venue": "The MKM Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md15-brighton-everton",
+      "matchday": 15,
+      "kickoff": "2026-12-12T15:00:00+00:00",
+      "homeTeamId": "brighton",
+      "awayTeamId": "everton",
+      "venue": "American Express Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md15-ipswich-newcastle",
+      "matchday": 15,
+      "kickoff": "2026-12-12T15:00:00+00:00",
+      "homeTeamId": "ipswich",
+      "awayTeamId": "newcastle",
+      "venue": "Portman Road",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md15-coventry-astonvilla",
+      "matchday": 15,
+      "kickoff": "2026-12-12T15:00:00+00:00",
+      "homeTeamId": "coventry",
+      "awayTeamId": "astonvilla",
+      "venue": "The Coventry Building Society Arena",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md15-arsenal-bournemouth",
+      "matchday": 15,
+      "kickoff": "2026-12-12T15:00:00+00:00",
+      "homeTeamId": "arsenal",
+      "awayTeamId": "bournemouth",
+      "venue": "Emirates Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md15-mancity-chelsea",
+      "matchday": 15,
+      "kickoff": "2026-12-12T15:00:00+00:00",
+      "homeTeamId": "mancity",
+      "awayTeamId": "chelsea",
+      "venue": "Etihad Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md15-liverpool-leeds",
+      "matchday": 15,
+      "kickoff": "2026-12-12T15:00:00+00:00",
+      "homeTeamId": "liverpool",
+      "awayTeamId": "leeds",
+      "venue": "Anfield",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md15-fulham-brentford",
+      "matchday": 15,
+      "kickoff": "2026-12-12T15:00:00+00:00",
+      "homeTeamId": "fulham",
+      "awayTeamId": "brentford",
+      "venue": "Craven Cottage",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md16-leeds-fulham",
+      "matchday": 16,
+      "kickoff": "2026-12-19T15:00:00+00:00",
+      "homeTeamId": "leeds",
+      "awayTeamId": "fulham",
+      "venue": "Elland Road",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md16-brighton-ipswich",
+      "matchday": 16,
+      "kickoff": "2026-12-19T15:00:00+00:00",
+      "homeTeamId": "brighton",
+      "awayTeamId": "ipswich",
+      "venue": "American Express Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md16-nottinghamforest-everton",
+      "matchday": 16,
+      "kickoff": "2026-12-19T15:00:00+00:00",
+      "homeTeamId": "nottinghamforest",
+      "awayTeamId": "everton",
+      "venue": "Nottingham Arena",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md16-brentford-newcastle",
+      "matchday": 16,
+      "kickoff": "2026-12-19T15:00:00+00:00",
+      "homeTeamId": "brentford",
+      "awayTeamId": "newcastle",
+      "venue": "Brentford Community Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md16-mancity-hullcity",
+      "matchday": 16,
+      "kickoff": "2026-12-19T15:00:00+00:00",
+      "homeTeamId": "mancity",
+      "awayTeamId": "hullcity",
+      "venue": "Etihad Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md16-sunderland-crystalpalace",
+      "matchday": 16,
+      "kickoff": "2026-12-19T15:00:00+00:00",
+      "homeTeamId": "sunderland",
+      "awayTeamId": "crystalpalace",
+      "venue": "Stadium of Light",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md16-bournemouth-coventry",
+      "matchday": 16,
+      "kickoff": "2026-12-19T15:00:00+00:00",
+      "homeTeamId": "bournemouth",
+      "awayTeamId": "coventry",
+      "venue": "Vitality Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md16-arsenal-manutd",
+      "matchday": 16,
+      "kickoff": "2026-12-19T15:00:00+00:00",
+      "homeTeamId": "arsenal",
+      "awayTeamId": "manutd",
+      "venue": "Emirates Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md16-liverpool-tottenham",
+      "matchday": 16,
+      "kickoff": "2026-12-19T15:00:00+00:00",
+      "homeTeamId": "liverpool",
+      "awayTeamId": "tottenham",
+      "venue": "Anfield",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md16-chelsea-astonvilla",
+      "matchday": 16,
+      "kickoff": "2026-12-19T15:00:00+00:00",
+      "homeTeamId": "chelsea",
+      "awayTeamId": "astonvilla",
+      "venue": "Stamford Bridge",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md17-astonvilla-leeds",
+      "matchday": 17,
+      "kickoff": "2026-12-26T15:00:00+00:00",
+      "homeTeamId": "astonvilla",
+      "awayTeamId": "leeds",
+      "venue": "Villa Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md17-manutd-nottinghamforest",
+      "matchday": 17,
+      "kickoff": "2026-12-26T15:00:00+00:00",
+      "homeTeamId": "manutd",
+      "awayTeamId": "nottinghamforest",
+      "venue": "Old Trafford",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md17-crystalpalace-arsenal",
+      "matchday": 17,
+      "kickoff": "2026-12-26T15:00:00+00:00",
+      "homeTeamId": "crystalpalace",
+      "awayTeamId": "arsenal",
+      "venue": "Selhurst Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md17-everton-sunderland",
+      "matchday": 17,
+      "kickoff": "2026-12-26T15:00:00+00:00",
+      "homeTeamId": "everton",
+      "awayTeamId": "sunderland",
+      "venue": "Hill Dickinson Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md17-coventry-chelsea",
+      "matchday": 17,
+      "kickoff": "2026-12-26T15:00:00+00:00",
+      "homeTeamId": "coventry",
+      "awayTeamId": "chelsea",
+      "venue": "The Coventry Building Society Arena",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md17-newcastle-mancity",
+      "matchday": 17,
+      "kickoff": "2026-12-26T15:00:00+00:00",
+      "homeTeamId": "newcastle",
+      "awayTeamId": "mancity",
+      "venue": "St James Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md17-fulham-brighton",
+      "matchday": 17,
+      "kickoff": "2026-12-26T15:00:00+00:00",
+      "homeTeamId": "fulham",
+      "awayTeamId": "brighton",
+      "venue": "Craven Cottage",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md17-tottenham-bournemouth",
+      "matchday": 17,
+      "kickoff": "2026-12-26T15:00:00+00:00",
+      "homeTeamId": "tottenham",
+      "awayTeamId": "bournemouth",
+      "venue": "Tottenham Hotspur Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md17-hullcity-liverpool",
+      "matchday": 17,
+      "kickoff": "2026-12-26T15:00:00+00:00",
+      "homeTeamId": "hullcity",
+      "awayTeamId": "liverpool",
+      "venue": "The MKM Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md17-ipswich-brentford",
+      "matchday": 17,
+      "kickoff": "2026-12-26T15:00:00+00:00",
+      "homeTeamId": "ipswich",
+      "awayTeamId": "brentford",
+      "venue": "Portman Road",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md18-fulham-arsenal",
+      "matchday": 18,
+      "kickoff": "2026-12-30T20:00:00+00:00",
+      "homeTeamId": "fulham",
+      "awayTeamId": "arsenal",
+      "venue": "Craven Cottage",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md18-coventry-brentford",
+      "matchday": 18,
+      "kickoff": "2026-12-30T20:00:00+00:00",
+      "homeTeamId": "coventry",
+      "awayTeamId": "brentford",
+      "venue": "The Coventry Building Society Arena",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md18-astonvilla-liverpool",
+      "matchday": 18,
+      "kickoff": "2026-12-30T20:00:00+00:00",
+      "homeTeamId": "astonvilla",
+      "awayTeamId": "liverpool",
+      "venue": "Villa Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md18-newcastle-nottinghamforest",
+      "matchday": 18,
+      "kickoff": "2026-12-30T20:00:00+00:00",
+      "homeTeamId": "newcastle",
+      "awayTeamId": "nottinghamforest",
+      "venue": "St James Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md18-hullcity-leeds",
+      "matchday": 18,
+      "kickoff": "2026-12-30T20:00:00+00:00",
+      "homeTeamId": "hullcity",
+      "awayTeamId": "leeds",
+      "venue": "The MKM Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md18-manutd-sunderland",
+      "matchday": 18,
+      "kickoff": "2026-12-30T20:00:00+00:00",
+      "homeTeamId": "manutd",
+      "awayTeamId": "sunderland",
+      "venue": "Old Trafford",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md18-ipswich-chelsea",
+      "matchday": 18,
+      "kickoff": "2026-12-30T20:00:00+00:00",
+      "homeTeamId": "ipswich",
+      "awayTeamId": "chelsea",
+      "venue": "Portman Road",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md18-tottenham-brighton",
+      "matchday": 18,
+      "kickoff": "2026-12-30T20:00:00+00:00",
+      "homeTeamId": "tottenham",
+      "awayTeamId": "brighton",
+      "venue": "Tottenham Hotspur Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md18-everton-mancity",
+      "matchday": 18,
+      "kickoff": "2026-12-30T20:00:00+00:00",
+      "homeTeamId": "everton",
+      "awayTeamId": "mancity",
+      "venue": "Hill Dickinson Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md18-crystalpalace-bournemouth",
+      "matchday": 18,
+      "kickoff": "2026-12-30T20:00:00+00:00",
+      "homeTeamId": "crystalpalace",
+      "awayTeamId": "bournemouth",
+      "venue": "Selhurst Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md19-bournemouth-astonvilla",
+      "matchday": 19,
+      "kickoff": "2027-01-02T15:00:00+00:00",
+      "homeTeamId": "bournemouth",
+      "awayTeamId": "astonvilla",
+      "venue": "Vitality Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md19-brentford-crystalpalace",
+      "matchday": 19,
+      "kickoff": "2027-01-02T15:00:00+00:00",
+      "homeTeamId": "brentford",
+      "awayTeamId": "crystalpalace",
+      "venue": "Brentford Community Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md19-leeds-everton",
+      "matchday": 19,
+      "kickoff": "2027-01-02T15:00:00+00:00",
+      "homeTeamId": "leeds",
+      "awayTeamId": "everton",
+      "venue": "Elland Road",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md19-arsenal-ipswich",
+      "matchday": 19,
+      "kickoff": "2027-01-02T15:00:00+00:00",
+      "homeTeamId": "arsenal",
+      "awayTeamId": "ipswich",
+      "venue": "Emirates Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md19-sunderland-hullcity",
+      "matchday": 19,
+      "kickoff": "2027-01-02T15:00:00+00:00",
+      "homeTeamId": "sunderland",
+      "awayTeamId": "hullcity",
+      "venue": "Stadium of Light",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md19-liverpool-coventry",
+      "matchday": 19,
+      "kickoff": "2027-01-02T15:00:00+00:00",
+      "homeTeamId": "liverpool",
+      "awayTeamId": "coventry",
+      "venue": "Anfield",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md19-chelsea-newcastle",
+      "matchday": 19,
+      "kickoff": "2027-01-02T15:00:00+00:00",
+      "homeTeamId": "chelsea",
+      "awayTeamId": "newcastle",
+      "venue": "Stamford Bridge",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md19-nottinghamforest-fulham",
+      "matchday": 19,
+      "kickoff": "2027-01-02T15:00:00+00:00",
+      "homeTeamId": "nottinghamforest",
+      "awayTeamId": "fulham",
+      "venue": "Nottingham Arena",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md19-brighton-manutd",
+      "matchday": 19,
+      "kickoff": "2027-01-02T15:00:00+00:00",
+      "homeTeamId": "brighton",
+      "awayTeamId": "manutd",
+      "venue": "American Express Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md19-mancity-tottenham",
+      "matchday": 19,
+      "kickoff": "2027-01-02T15:00:00+00:00",
+      "homeTeamId": "mancity",
+      "awayTeamId": "tottenham",
+      "venue": "Etihad Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md20-arsenal-brentford",
+      "matchday": 20,
+      "kickoff": "2027-01-06T20:00:00+00:00",
+      "homeTeamId": "arsenal",
+      "awayTeamId": "brentford",
+      "venue": "Emirates Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md20-leeds-mancity",
+      "matchday": 20,
+      "kickoff": "2027-01-06T20:00:00+00:00",
+      "homeTeamId": "leeds",
+      "awayTeamId": "mancity",
+      "venue": "Elland Road",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md20-manutd-newcastle",
+      "matchday": 20,
+      "kickoff": "2027-01-06T20:00:00+00:00",
+      "homeTeamId": "manutd",
+      "awayTeamId": "newcastle",
+      "venue": "Old Trafford",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md20-brighton-bournemouth",
+      "matchday": 20,
+      "kickoff": "2027-01-06T20:00:00+00:00",
+      "homeTeamId": "brighton",
+      "awayTeamId": "bournemouth",
+      "venue": "American Express Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md20-nottinghamforest-hullcity",
+      "matchday": 20,
+      "kickoff": "2027-01-06T20:00:00+00:00",
+      "homeTeamId": "nottinghamforest",
+      "awayTeamId": "hullcity",
+      "venue": "Nottingham Arena",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md20-fulham-tottenham",
+      "matchday": 20,
+      "kickoff": "2027-01-06T20:00:00+00:00",
+      "homeTeamId": "fulham",
+      "awayTeamId": "tottenham",
+      "venue": "Craven Cottage",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md20-everton-astonvilla",
+      "matchday": 20,
+      "kickoff": "2027-01-06T20:00:00+00:00",
+      "homeTeamId": "everton",
+      "awayTeamId": "astonvilla",
+      "venue": "Hill Dickinson Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md20-sunderland-liverpool",
+      "matchday": 20,
+      "kickoff": "2027-01-06T20:00:00+00:00",
+      "homeTeamId": "sunderland",
+      "awayTeamId": "liverpool",
+      "venue": "Stadium of Light",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md20-crystalpalace-chelsea",
+      "matchday": 20,
+      "kickoff": "2027-01-06T20:00:00+00:00",
+      "homeTeamId": "crystalpalace",
+      "awayTeamId": "chelsea",
+      "venue": "Selhurst Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md20-ipswich-coventry",
+      "matchday": 20,
+      "kickoff": "2027-01-06T20:00:00+00:00",
+      "homeTeamId": "ipswich",
+      "awayTeamId": "coventry",
+      "venue": "Portman Road",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md21-bournemouth-ipswich",
+      "matchday": 21,
+      "kickoff": "2027-01-16T15:00:00+00:00",
+      "homeTeamId": "bournemouth",
+      "awayTeamId": "ipswich",
+      "venue": "Vitality Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md21-mancity-nottinghamforest",
+      "matchday": 21,
+      "kickoff": "2027-01-16T15:00:00+00:00",
+      "homeTeamId": "mancity",
+      "awayTeamId": "nottinghamforest",
+      "venue": "Etihad Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md21-chelsea-sunderland",
+      "matchday": 21,
+      "kickoff": "2027-01-16T15:00:00+00:00",
+      "homeTeamId": "chelsea",
+      "awayTeamId": "sunderland",
+      "venue": "Stamford Bridge",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md21-brentford-brighton",
+      "matchday": 21,
+      "kickoff": "2027-01-16T15:00:00+00:00",
+      "homeTeamId": "brentford",
+      "awayTeamId": "brighton",
+      "venue": "Brentford Community Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md21-astonvilla-manutd",
+      "matchday": 21,
+      "kickoff": "2027-01-16T15:00:00+00:00",
+      "homeTeamId": "astonvilla",
+      "awayTeamId": "manutd",
+      "venue": "Villa Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md21-tottenham-leeds",
+      "matchday": 21,
+      "kickoff": "2027-01-16T15:00:00+00:00",
+      "homeTeamId": "tottenham",
+      "awayTeamId": "leeds",
+      "venue": "Tottenham Hotspur Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md21-coventry-everton",
+      "matchday": 21,
+      "kickoff": "2027-01-16T15:00:00+00:00",
+      "homeTeamId": "coventry",
+      "awayTeamId": "everton",
+      "venue": "The Coventry Building Society Arena",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md21-liverpool-crystalpalace",
+      "matchday": 21,
+      "kickoff": "2027-01-16T15:00:00+00:00",
+      "homeTeamId": "liverpool",
+      "awayTeamId": "crystalpalace",
+      "venue": "Anfield",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md21-hullcity-arsenal",
+      "matchday": 21,
+      "kickoff": "2027-01-16T15:00:00+00:00",
+      "homeTeamId": "hullcity",
+      "awayTeamId": "arsenal",
+      "venue": "The MKM Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md21-newcastle-fulham",
+      "matchday": 21,
+      "kickoff": "2027-01-16T15:00:00+00:00",
+      "homeTeamId": "newcastle",
+      "awayTeamId": "fulham",
+      "venue": "St James Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md22-ipswich-hullcity",
+      "matchday": 22,
+      "kickoff": "2027-01-23T15:00:00+00:00",
+      "homeTeamId": "ipswich",
+      "awayTeamId": "hullcity",
+      "venue": "Portman Road",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md22-everton-brentford",
+      "matchday": 22,
+      "kickoff": "2027-01-23T15:00:00+00:00",
+      "homeTeamId": "everton",
+      "awayTeamId": "brentford",
+      "venue": "Hill Dickinson Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md22-sunderland-coventry",
+      "matchday": 22,
+      "kickoff": "2027-01-23T15:00:00+00:00",
+      "homeTeamId": "sunderland",
+      "awayTeamId": "coventry",
+      "venue": "Stadium of Light",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md22-nottinghamforest-bournemouth",
+      "matchday": 22,
+      "kickoff": "2027-01-23T15:00:00+00:00",
+      "homeTeamId": "nottinghamforest",
+      "awayTeamId": "bournemouth",
+      "venue": "Nottingham Arena",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md22-arsenal-newcastle",
+      "matchday": 22,
+      "kickoff": "2027-01-23T15:00:00+00:00",
+      "homeTeamId": "arsenal",
+      "awayTeamId": "newcastle",
+      "venue": "Emirates Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md22-leeds-chelsea",
+      "matchday": 22,
+      "kickoff": "2027-01-23T15:00:00+00:00",
+      "homeTeamId": "leeds",
+      "awayTeamId": "chelsea",
+      "venue": "Elland Road",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md22-fulham-astonvilla",
+      "matchday": 22,
+      "kickoff": "2027-01-23T15:00:00+00:00",
+      "homeTeamId": "fulham",
+      "awayTeamId": "astonvilla",
+      "venue": "Craven Cottage",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md22-manutd-liverpool",
+      "matchday": 22,
+      "kickoff": "2027-01-23T15:00:00+00:00",
+      "homeTeamId": "manutd",
+      "awayTeamId": "liverpool",
+      "venue": "Old Trafford",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md22-brighton-mancity",
+      "matchday": 22,
+      "kickoff": "2027-01-23T15:00:00+00:00",
+      "homeTeamId": "brighton",
+      "awayTeamId": "mancity",
+      "venue": "American Express Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md22-crystalpalace-tottenham",
+      "matchday": 22,
+      "kickoff": "2027-01-23T15:00:00+00:00",
+      "homeTeamId": "crystalpalace",
+      "awayTeamId": "tottenham",
+      "venue": "Selhurst Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md23-tottenham-sunderland",
+      "matchday": 23,
+      "kickoff": "2027-01-30T15:00:00+00:00",
+      "homeTeamId": "tottenham",
+      "awayTeamId": "sunderland",
+      "venue": "Tottenham Hotspur Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md23-brentford-manutd",
+      "matchday": 23,
+      "kickoff": "2027-01-30T15:00:00+00:00",
+      "homeTeamId": "brentford",
+      "awayTeamId": "manutd",
+      "venue": "Brentford Community Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md23-newcastle-brighton",
+      "matchday": 23,
+      "kickoff": "2027-01-30T15:00:00+00:00",
+      "homeTeamId": "newcastle",
+      "awayTeamId": "brighton",
+      "venue": "St James Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md23-hullcity-crystalpalace",
+      "matchday": 23,
+      "kickoff": "2027-01-30T15:00:00+00:00",
+      "homeTeamId": "hullcity",
+      "awayTeamId": "crystalpalace",
+      "venue": "The MKM Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md23-coventry-leeds",
+      "matchday": 23,
+      "kickoff": "2027-01-30T15:00:00+00:00",
+      "homeTeamId": "coventry",
+      "awayTeamId": "leeds",
+      "venue": "The Coventry Building Society Arena",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md23-bournemouth-fulham",
+      "matchday": 23,
+      "kickoff": "2027-01-30T15:00:00+00:00",
+      "homeTeamId": "bournemouth",
+      "awayTeamId": "fulham",
+      "venue": "Vitality Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md23-chelsea-nottinghamforest",
+      "matchday": 23,
+      "kickoff": "2027-01-30T15:00:00+00:00",
+      "homeTeamId": "chelsea",
+      "awayTeamId": "nottinghamforest",
+      "venue": "Stamford Bridge",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md23-liverpool-everton",
+      "matchday": 23,
+      "kickoff": "2027-01-30T15:00:00+00:00",
+      "homeTeamId": "liverpool",
+      "awayTeamId": "everton",
+      "venue": "Anfield",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md23-mancity-arsenal",
+      "matchday": 23,
+      "kickoff": "2027-01-30T15:00:00+00:00",
+      "homeTeamId": "mancity",
+      "awayTeamId": "arsenal",
+      "venue": "Etihad Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md23-astonvilla-ipswich",
+      "matchday": 23,
+      "kickoff": "2027-01-30T15:00:00+00:00",
+      "homeTeamId": "astonvilla",
+      "awayTeamId": "ipswich",
+      "venue": "Villa Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md24-arsenal-liverpool",
+      "matchday": 24,
+      "kickoff": "2027-02-06T15:00:00+00:00",
+      "homeTeamId": "arsenal",
+      "awayTeamId": "liverpool",
+      "venue": "Emirates Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md24-brighton-hullcity",
+      "matchday": 24,
+      "kickoff": "2027-02-06T15:00:00+00:00",
+      "homeTeamId": "brighton",
+      "awayTeamId": "hullcity",
+      "venue": "American Express Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md24-sunderland-astonvilla",
+      "matchday": 24,
+      "kickoff": "2027-02-06T15:00:00+00:00",
+      "homeTeamId": "sunderland",
+      "awayTeamId": "astonvilla",
+      "venue": "Stadium of Light",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md24-crystalpalace-coventry",
+      "matchday": 24,
+      "kickoff": "2027-02-06T15:00:00+00:00",
+      "homeTeamId": "crystalpalace",
+      "awayTeamId": "coventry",
+      "venue": "Selhurst Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md24-ipswich-tottenham",
+      "matchday": 24,
+      "kickoff": "2027-02-06T15:00:00+00:00",
+      "homeTeamId": "ipswich",
+      "awayTeamId": "tottenham",
+      "venue": "Portman Road",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md24-everton-newcastle",
+      "matchday": 24,
+      "kickoff": "2027-02-06T15:00:00+00:00",
+      "homeTeamId": "everton",
+      "awayTeamId": "newcastle",
+      "venue": "Hill Dickinson Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md24-fulham-mancity",
+      "matchday": 24,
+      "kickoff": "2027-02-06T15:00:00+00:00",
+      "homeTeamId": "fulham",
+      "awayTeamId": "mancity",
+      "venue": "Craven Cottage",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md24-leeds-bournemouth",
+      "matchday": 24,
+      "kickoff": "2027-02-06T15:00:00+00:00",
+      "homeTeamId": "leeds",
+      "awayTeamId": "bournemouth",
+      "venue": "Elland Road",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md24-manutd-chelsea",
+      "matchday": 24,
+      "kickoff": "2027-02-06T15:00:00+00:00",
+      "homeTeamId": "manutd",
+      "awayTeamId": "chelsea",
+      "venue": "Old Trafford",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md24-nottinghamforest-brentford",
+      "matchday": 24,
+      "kickoff": "2027-02-06T15:00:00+00:00",
+      "homeTeamId": "nottinghamforest",
+      "awayTeamId": "brentford",
+      "venue": "Nottingham Arena",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md25-everton-leeds",
+      "matchday": 25,
+      "kickoff": "2027-02-10T20:00:00+00:00",
+      "homeTeamId": "everton",
+      "awayTeamId": "leeds",
+      "venue": "Hill Dickinson Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md25-coventry-liverpool",
+      "matchday": 25,
+      "kickoff": "2027-02-10T20:00:00+00:00",
+      "homeTeamId": "coventry",
+      "awayTeamId": "liverpool",
+      "venue": "The Coventry Building Society Arena",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md25-hullcity-sunderland",
+      "matchday": 25,
+      "kickoff": "2027-02-10T20:00:00+00:00",
+      "homeTeamId": "hullcity",
+      "awayTeamId": "sunderland",
+      "venue": "The MKM Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md25-astonvilla-bournemouth",
+      "matchday": 25,
+      "kickoff": "2027-02-10T20:00:00+00:00",
+      "homeTeamId": "astonvilla",
+      "awayTeamId": "bournemouth",
+      "venue": "Villa Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md25-crystalpalace-brentford",
+      "matchday": 25,
+      "kickoff": "2027-02-10T20:00:00+00:00",
+      "homeTeamId": "crystalpalace",
+      "awayTeamId": "brentford",
+      "venue": "Selhurst Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md25-newcastle-chelsea",
+      "matchday": 25,
+      "kickoff": "2027-02-10T20:00:00+00:00",
+      "homeTeamId": "newcastle",
+      "awayTeamId": "chelsea",
+      "venue": "St James Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md25-fulham-nottinghamforest",
+      "matchday": 25,
+      "kickoff": "2027-02-10T20:00:00+00:00",
+      "homeTeamId": "fulham",
+      "awayTeamId": "nottinghamforest",
+      "venue": "Craven Cottage",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md25-tottenham-mancity",
+      "matchday": 25,
+      "kickoff": "2027-02-10T20:00:00+00:00",
+      "homeTeamId": "tottenham",
+      "awayTeamId": "mancity",
+      "venue": "Tottenham Hotspur Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md25-manutd-brighton",
+      "matchday": 25,
+      "kickoff": "2027-02-10T20:00:00+00:00",
+      "homeTeamId": "manutd",
+      "awayTeamId": "brighton",
+      "venue": "Old Trafford",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md25-ipswich-arsenal",
+      "matchday": 25,
+      "kickoff": "2027-02-10T20:00:00+00:00",
+      "homeTeamId": "ipswich",
+      "awayTeamId": "arsenal",
+      "venue": "Portman Road",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md26-mancity-newcastle",
+      "matchday": 26,
+      "kickoff": "2027-02-20T15:00:00+00:00",
+      "homeTeamId": "mancity",
+      "awayTeamId": "newcastle",
+      "venue": "Etihad Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md26-bournemouth-crystalpalace",
+      "matchday": 26,
+      "kickoff": "2027-02-20T15:00:00+00:00",
+      "homeTeamId": "bournemouth",
+      "awayTeamId": "crystalpalace",
+      "venue": "Vitality Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md26-brentford-coventry",
+      "matchday": 26,
+      "kickoff": "2027-02-20T15:00:00+00:00",
+      "homeTeamId": "brentford",
+      "awayTeamId": "coventry",
+      "venue": "Brentford Community Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md26-chelsea-ipswich",
+      "matchday": 26,
+      "kickoff": "2027-02-20T15:00:00+00:00",
+      "homeTeamId": "chelsea",
+      "awayTeamId": "ipswich",
+      "venue": "Stamford Bridge",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md26-liverpool-hullcity",
+      "matchday": 26,
+      "kickoff": "2027-02-20T15:00:00+00:00",
+      "homeTeamId": "liverpool",
+      "awayTeamId": "hullcity",
+      "venue": "Anfield",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md26-arsenal-fulham",
+      "matchday": 26,
+      "kickoff": "2027-02-20T15:00:00+00:00",
+      "homeTeamId": "arsenal",
+      "awayTeamId": "fulham",
+      "venue": "Emirates Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md26-nottinghamforest-manutd",
+      "matchday": 26,
+      "kickoff": "2027-02-20T15:00:00+00:00",
+      "homeTeamId": "nottinghamforest",
+      "awayTeamId": "manutd",
+      "venue": "Nottingham Arena",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md26-brighton-tottenham",
+      "matchday": 26,
+      "kickoff": "2027-02-20T15:00:00+00:00",
+      "homeTeamId": "brighton",
+      "awayTeamId": "tottenham",
+      "venue": "American Express Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md26-sunderland-everton",
+      "matchday": 26,
+      "kickoff": "2027-02-20T15:00:00+00:00",
+      "homeTeamId": "sunderland",
+      "awayTeamId": "everton",
+      "venue": "Stadium of Light",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md26-leeds-astonvilla",
+      "matchday": 26,
+      "kickoff": "2027-02-20T15:00:00+00:00",
+      "homeTeamId": "leeds",
+      "awayTeamId": "astonvilla",
+      "venue": "Elland Road",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md27-crystalpalace-sunderland",
+      "matchday": 27,
+      "kickoff": "2027-02-27T15:00:00+00:00",
+      "homeTeamId": "crystalpalace",
+      "awayTeamId": "sunderland",
+      "venue": "Selhurst Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md27-manutd-arsenal",
+      "matchday": 27,
+      "kickoff": "2027-02-27T15:00:00+00:00",
+      "homeTeamId": "manutd",
+      "awayTeamId": "arsenal",
+      "venue": "Old Trafford",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md27-ipswich-brighton",
+      "matchday": 27,
+      "kickoff": "2027-02-27T15:00:00+00:00",
+      "homeTeamId": "ipswich",
+      "awayTeamId": "brighton",
+      "venue": "Portman Road",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md27-coventry-bournemouth",
+      "matchday": 27,
+      "kickoff": "2027-02-27T15:00:00+00:00",
+      "homeTeamId": "coventry",
+      "awayTeamId": "bournemouth",
+      "venue": "The Coventry Building Society Arena",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md27-everton-nottinghamforest",
+      "matchday": 27,
+      "kickoff": "2027-02-27T15:00:00+00:00",
+      "homeTeamId": "everton",
+      "awayTeamId": "nottinghamforest",
+      "venue": "Hill Dickinson Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md27-fulham-leeds",
+      "matchday": 27,
+      "kickoff": "2027-02-27T15:00:00+00:00",
+      "homeTeamId": "fulham",
+      "awayTeamId": "leeds",
+      "venue": "Craven Cottage",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md27-astonvilla-chelsea",
+      "matchday": 27,
+      "kickoff": "2027-02-27T15:00:00+00:00",
+      "homeTeamId": "astonvilla",
+      "awayTeamId": "chelsea",
+      "venue": "Villa Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md27-tottenham-liverpool",
+      "matchday": 27,
+      "kickoff": "2027-02-27T15:00:00+00:00",
+      "homeTeamId": "tottenham",
+      "awayTeamId": "liverpool",
+      "venue": "Tottenham Hotspur Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md27-newcastle-brentford",
+      "matchday": 27,
+      "kickoff": "2027-02-27T15:00:00+00:00",
+      "homeTeamId": "newcastle",
+      "awayTeamId": "brentford",
+      "venue": "St James Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md27-hullcity-mancity",
+      "matchday": 27,
+      "kickoff": "2027-02-27T15:00:00+00:00",
+      "homeTeamId": "hullcity",
+      "awayTeamId": "mancity",
+      "venue": "The MKM Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md28-nottinghamforest-newcastle",
+      "matchday": 28,
+      "kickoff": "2027-03-03T20:00:00+00:00",
+      "homeTeamId": "nottinghamforest",
+      "awayTeamId": "newcastle",
+      "venue": "Nottingham Arena",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md28-bournemouth-tottenham",
+      "matchday": 28,
+      "kickoff": "2027-03-03T20:00:00+00:00",
+      "homeTeamId": "bournemouth",
+      "awayTeamId": "tottenham",
+      "venue": "Vitality Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md28-mancity-everton",
+      "matchday": 28,
+      "kickoff": "2027-03-03T20:00:00+00:00",
+      "homeTeamId": "mancity",
+      "awayTeamId": "everton",
+      "venue": "Etihad Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md28-arsenal-crystalpalace",
+      "matchday": 28,
+      "kickoff": "2027-03-03T20:00:00+00:00",
+      "homeTeamId": "arsenal",
+      "awayTeamId": "crystalpalace",
+      "venue": "Emirates Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md28-leeds-hullcity",
+      "matchday": 28,
+      "kickoff": "2027-03-03T20:00:00+00:00",
+      "homeTeamId": "leeds",
+      "awayTeamId": "hullcity",
+      "venue": "Elland Road",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md28-sunderland-manutd",
+      "matchday": 28,
+      "kickoff": "2027-03-03T20:00:00+00:00",
+      "homeTeamId": "sunderland",
+      "awayTeamId": "manutd",
+      "venue": "Stadium of Light",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md28-liverpool-astonvilla",
+      "matchday": 28,
+      "kickoff": "2027-03-03T20:00:00+00:00",
+      "homeTeamId": "liverpool",
+      "awayTeamId": "astonvilla",
+      "venue": "Anfield",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md28-brighton-fulham",
+      "matchday": 28,
+      "kickoff": "2027-03-03T20:00:00+00:00",
+      "homeTeamId": "brighton",
+      "awayTeamId": "fulham",
+      "venue": "American Express Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md28-brentford-ipswich",
+      "matchday": 28,
+      "kickoff": "2027-03-03T20:00:00+00:00",
+      "homeTeamId": "brentford",
+      "awayTeamId": "ipswich",
+      "venue": "Brentford Community Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md28-chelsea-coventry",
+      "matchday": 28,
+      "kickoff": "2027-03-03T20:00:00+00:00",
+      "homeTeamId": "chelsea",
+      "awayTeamId": "coventry",
+      "venue": "Stamford Bridge",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md29-leeds-brighton",
+      "matchday": 29,
+      "kickoff": "2027-03-13T15:00:00+00:00",
+      "homeTeamId": "leeds",
+      "awayTeamId": "brighton",
+      "venue": "Elland Road",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md29-tottenham-nottinghamforest",
+      "matchday": 29,
+      "kickoff": "2027-03-13T15:00:00+00:00",
+      "homeTeamId": "tottenham",
+      "awayTeamId": "nottinghamforest",
+      "venue": "Tottenham Hotspur Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md29-crystalpalace-fulham",
+      "matchday": 29,
+      "kickoff": "2027-03-13T15:00:00+00:00",
+      "homeTeamId": "crystalpalace",
+      "awayTeamId": "fulham",
+      "venue": "Selhurst Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md29-liverpool-ipswich",
+      "matchday": 29,
+      "kickoff": "2027-03-13T15:00:00+00:00",
+      "homeTeamId": "liverpool",
+      "awayTeamId": "ipswich",
+      "venue": "Anfield",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md29-coventry-mancity",
+      "matchday": 29,
+      "kickoff": "2027-03-13T15:00:00+00:00",
+      "homeTeamId": "coventry",
+      "awayTeamId": "mancity",
+      "venue": "The Coventry Building Society Arena",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md29-bournemouth-newcastle",
+      "matchday": 29,
+      "kickoff": "2027-03-13T15:00:00+00:00",
+      "homeTeamId": "bournemouth",
+      "awayTeamId": "newcastle",
+      "venue": "Vitality Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md29-chelsea-arsenal",
+      "matchday": 29,
+      "kickoff": "2027-03-13T15:00:00+00:00",
+      "homeTeamId": "chelsea",
+      "awayTeamId": "arsenal",
+      "venue": "Stamford Bridge",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md29-astonvilla-hullcity",
+      "matchday": 29,
+      "kickoff": "2027-03-13T15:00:00+00:00",
+      "homeTeamId": "astonvilla",
+      "awayTeamId": "hullcity",
+      "venue": "Villa Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md29-manutd-everton",
+      "matchday": 29,
+      "kickoff": "2027-03-13T15:00:00+00:00",
+      "homeTeamId": "manutd",
+      "awayTeamId": "everton",
+      "venue": "Old Trafford",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md29-sunderland-brentford",
+      "matchday": 29,
+      "kickoff": "2027-03-13T15:00:00+00:00",
+      "homeTeamId": "sunderland",
+      "awayTeamId": "brentford",
+      "venue": "Stadium of Light",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md30-brentford-bournemouth",
+      "matchday": 30,
+      "kickoff": "2027-03-20T15:00:00+00:00",
+      "homeTeamId": "brentford",
+      "awayTeamId": "bournemouth",
+      "venue": "Brentford Community Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md30-brighton-coventry",
+      "matchday": 30,
+      "kickoff": "2027-03-20T15:00:00+00:00",
+      "homeTeamId": "brighton",
+      "awayTeamId": "coventry",
+      "venue": "American Express Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md30-mancity-manutd",
+      "matchday": 30,
+      "kickoff": "2027-03-20T15:00:00+00:00",
+      "homeTeamId": "mancity",
+      "awayTeamId": "manutd",
+      "venue": "Etihad Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md30-ipswich-crystalpalace",
+      "matchday": 30,
+      "kickoff": "2027-03-20T15:00:00+00:00",
+      "homeTeamId": "ipswich",
+      "awayTeamId": "crystalpalace",
+      "venue": "Portman Road",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md30-arsenal-sunderland",
+      "matchday": 30,
+      "kickoff": "2027-03-20T15:00:00+00:00",
+      "homeTeamId": "arsenal",
+      "awayTeamId": "sunderland",
+      "venue": "Emirates Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md30-fulham-liverpool",
+      "matchday": 30,
+      "kickoff": "2027-03-20T15:00:00+00:00",
+      "homeTeamId": "fulham",
+      "awayTeamId": "liverpool",
+      "venue": "Craven Cottage",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md30-hullcity-chelsea",
+      "matchday": 30,
+      "kickoff": "2027-03-20T15:00:00+00:00",
+      "homeTeamId": "hullcity",
+      "awayTeamId": "chelsea",
+      "venue": "The MKM Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md30-nottinghamforest-astonvilla",
+      "matchday": 30,
+      "kickoff": "2027-03-20T15:00:00+00:00",
+      "homeTeamId": "nottinghamforest",
+      "awayTeamId": "astonvilla",
+      "venue": "Nottingham Arena",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md30-everton-tottenham",
+      "matchday": 30,
+      "kickoff": "2027-03-20T15:00:00+00:00",
+      "homeTeamId": "everton",
+      "awayTeamId": "tottenham",
+      "venue": "Hill Dickinson Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md30-newcastle-leeds",
+      "matchday": 30,
+      "kickoff": "2027-03-20T15:00:00+00:00",
+      "homeTeamId": "newcastle",
+      "awayTeamId": "leeds",
+      "venue": "St James Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md31-sunderland-ipswich",
+      "matchday": 31,
+      "kickoff": "2027-04-10T15:00:00+01:00",
+      "homeTeamId": "sunderland",
+      "awayTeamId": "ipswich",
+      "venue": "Stadium of Light",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md31-leeds-nottinghamforest",
+      "matchday": 31,
+      "kickoff": "2027-04-10T15:00:00+01:00",
+      "homeTeamId": "leeds",
+      "awayTeamId": "nottinghamforest",
+      "venue": "Elland Road",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md31-manutd-hullcity",
+      "matchday": 31,
+      "kickoff": "2027-04-10T15:00:00+01:00",
+      "homeTeamId": "manutd",
+      "awayTeamId": "hullcity",
+      "venue": "Old Trafford",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md31-chelsea-fulham",
+      "matchday": 31,
+      "kickoff": "2027-04-10T15:00:00+01:00",
+      "homeTeamId": "chelsea",
+      "awayTeamId": "fulham",
+      "venue": "Stamford Bridge",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md31-liverpool-newcastle",
+      "matchday": 31,
+      "kickoff": "2027-04-10T15:00:00+01:00",
+      "homeTeamId": "liverpool",
+      "awayTeamId": "newcastle",
+      "venue": "Anfield",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md31-coventry-arsenal",
+      "matchday": 31,
+      "kickoff": "2027-04-10T15:00:00+01:00",
+      "homeTeamId": "coventry",
+      "awayTeamId": "arsenal",
+      "venue": "The Coventry Building Society Arena",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md31-bournemouth-mancity",
+      "matchday": 31,
+      "kickoff": "2027-04-10T15:00:00+01:00",
+      "homeTeamId": "bournemouth",
+      "awayTeamId": "mancity",
+      "venue": "Vitality Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md31-crystalpalace-everton",
+      "matchday": 31,
+      "kickoff": "2027-04-10T15:00:00+01:00",
+      "homeTeamId": "crystalpalace",
+      "awayTeamId": "everton",
+      "venue": "Selhurst Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md31-tottenham-brentford",
+      "matchday": 31,
+      "kickoff": "2027-04-10T15:00:00+01:00",
+      "homeTeamId": "tottenham",
+      "awayTeamId": "brentford",
+      "venue": "Tottenham Hotspur Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md31-astonvilla-brighton",
+      "matchday": 31,
+      "kickoff": "2027-04-10T15:00:00+01:00",
+      "homeTeamId": "astonvilla",
+      "awayTeamId": "brighton",
+      "venue": "Villa Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md32-brighton-chelsea",
+      "matchday": 32,
+      "kickoff": "2027-04-17T15:00:00+01:00",
+      "homeTeamId": "brighton",
+      "awayTeamId": "chelsea",
+      "venue": "American Express Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md32-fulham-sunderland",
+      "matchday": 32,
+      "kickoff": "2027-04-17T15:00:00+01:00",
+      "homeTeamId": "fulham",
+      "awayTeamId": "sunderland",
+      "venue": "Craven Cottage",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md32-brentford-leeds",
+      "matchday": 32,
+      "kickoff": "2027-04-17T15:00:00+01:00",
+      "homeTeamId": "brentford",
+      "awayTeamId": "leeds",
+      "venue": "Brentford Community Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md32-nottinghamforest-liverpool",
+      "matchday": 32,
+      "kickoff": "2027-04-17T15:00:00+01:00",
+      "homeTeamId": "nottinghamforest",
+      "awayTeamId": "liverpool",
+      "venue": "Nottingham Arena",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md32-hullcity-coventry",
+      "matchday": 32,
+      "kickoff": "2027-04-17T15:00:00+01:00",
+      "homeTeamId": "hullcity",
+      "awayTeamId": "coventry",
+      "venue": "The MKM Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md32-arsenal-astonvilla",
+      "matchday": 32,
+      "kickoff": "2027-04-17T15:00:00+01:00",
+      "homeTeamId": "arsenal",
+      "awayTeamId": "astonvilla",
+      "venue": "Emirates Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md32-ipswich-manutd",
+      "matchday": 32,
+      "kickoff": "2027-04-17T15:00:00+01:00",
+      "homeTeamId": "ipswich",
+      "awayTeamId": "manutd",
+      "venue": "Portman Road",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md32-mancity-crystalpalace",
+      "matchday": 32,
+      "kickoff": "2027-04-17T15:00:00+01:00",
+      "homeTeamId": "mancity",
+      "awayTeamId": "crystalpalace",
+      "venue": "Etihad Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md32-newcastle-tottenham",
+      "matchday": 32,
+      "kickoff": "2027-04-17T15:00:00+01:00",
+      "homeTeamId": "newcastle",
+      "awayTeamId": "tottenham",
+      "venue": "St James Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md32-everton-bournemouth",
+      "matchday": 32,
+      "kickoff": "2027-04-17T15:00:00+01:00",
+      "homeTeamId": "everton",
+      "awayTeamId": "bournemouth",
+      "venue": "Hill Dickinson Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md33-chelsea-mancity",
+      "matchday": 33,
+      "kickoff": "2027-04-24T15:00:00+01:00",
+      "homeTeamId": "chelsea",
+      "awayTeamId": "mancity",
+      "venue": "Stamford Bridge",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md33-bournemouth-arsenal",
+      "matchday": 33,
+      "kickoff": "2027-04-24T15:00:00+01:00",
+      "homeTeamId": "bournemouth",
+      "awayTeamId": "arsenal",
+      "venue": "Vitality Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md33-tottenham-hullcity",
+      "matchday": 33,
+      "kickoff": "2027-04-24T15:00:00+01:00",
+      "homeTeamId": "tottenham",
+      "awayTeamId": "hullcity",
+      "venue": "Tottenham Hotspur Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md33-manutd-crystalpalace",
+      "matchday": 33,
+      "kickoff": "2027-04-24T15:00:00+01:00",
+      "homeTeamId": "manutd",
+      "awayTeamId": "crystalpalace",
+      "venue": "Old Trafford",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md33-everton-brighton",
+      "matchday": 33,
+      "kickoff": "2027-04-24T15:00:00+01:00",
+      "homeTeamId": "everton",
+      "awayTeamId": "brighton",
+      "venue": "Hill Dickinson Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md33-nottinghamforest-sunderland",
+      "matchday": 33,
+      "kickoff": "2027-04-24T15:00:00+01:00",
+      "homeTeamId": "nottinghamforest",
+      "awayTeamId": "sunderland",
+      "venue": "Nottingham Arena",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md33-newcastle-ipswich",
+      "matchday": 33,
+      "kickoff": "2027-04-24T15:00:00+01:00",
+      "homeTeamId": "newcastle",
+      "awayTeamId": "ipswich",
+      "venue": "St James Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md33-astonvilla-coventry",
+      "matchday": 33,
+      "kickoff": "2027-04-24T15:00:00+01:00",
+      "homeTeamId": "astonvilla",
+      "awayTeamId": "coventry",
+      "venue": "Villa Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md33-brentford-fulham",
+      "matchday": 33,
+      "kickoff": "2027-04-24T15:00:00+01:00",
+      "homeTeamId": "brentford",
+      "awayTeamId": "fulham",
+      "venue": "Brentford Community Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md33-leeds-liverpool",
+      "matchday": 33,
+      "kickoff": "2027-04-24T15:00:00+01:00",
+      "homeTeamId": "leeds",
+      "awayTeamId": "liverpool",
+      "venue": "Elland Road",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md34-sunderland-newcastle",
+      "matchday": 34,
+      "kickoff": "2027-05-01T15:00:00+01:00",
+      "homeTeamId": "sunderland",
+      "awayTeamId": "newcastle",
+      "venue": "Stadium of Light",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md34-brighton-nottinghamforest",
+      "matchday": 34,
+      "kickoff": "2027-05-01T15:00:00+01:00",
+      "homeTeamId": "brighton",
+      "awayTeamId": "nottinghamforest",
+      "venue": "American Express Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md34-coventry-manutd",
+      "matchday": 34,
+      "kickoff": "2027-05-01T15:00:00+01:00",
+      "homeTeamId": "coventry",
+      "awayTeamId": "manutd",
+      "venue": "The Coventry Building Society Arena",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md34-hullcity-bournemouth",
+      "matchday": 34,
+      "kickoff": "2027-05-01T15:00:00+01:00",
+      "homeTeamId": "hullcity",
+      "awayTeamId": "bournemouth",
+      "venue": "The MKM Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md34-mancity-brentford",
+      "matchday": 34,
+      "kickoff": "2027-05-01T15:00:00+01:00",
+      "homeTeamId": "mancity",
+      "awayTeamId": "brentford",
+      "venue": "Etihad Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md34-fulham-everton",
+      "matchday": 34,
+      "kickoff": "2027-05-01T15:00:00+01:00",
+      "homeTeamId": "fulham",
+      "awayTeamId": "everton",
+      "venue": "Craven Cottage",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md34-liverpool-chelsea",
+      "matchday": 34,
+      "kickoff": "2027-05-01T15:00:00+01:00",
+      "homeTeamId": "liverpool",
+      "awayTeamId": "chelsea",
+      "venue": "Anfield",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md34-arsenal-tottenham",
+      "matchday": 34,
+      "kickoff": "2027-05-01T15:00:00+01:00",
+      "homeTeamId": "arsenal",
+      "awayTeamId": "tottenham",
+      "venue": "Emirates Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md34-crystalpalace-astonvilla",
+      "matchday": 34,
+      "kickoff": "2027-05-01T15:00:00+01:00",
+      "homeTeamId": "crystalpalace",
+      "awayTeamId": "astonvilla",
+      "venue": "Selhurst Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md34-ipswich-leeds",
+      "matchday": 34,
+      "kickoff": "2027-05-01T15:00:00+01:00",
+      "homeTeamId": "ipswich",
+      "awayTeamId": "leeds",
+      "venue": "Portman Road",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md35-mancity-liverpool",
+      "matchday": 35,
+      "kickoff": "2027-05-08T15:00:00+01:00",
+      "homeTeamId": "mancity",
+      "awayTeamId": "liverpool",
+      "venue": "Etihad Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md35-leeds-arsenal",
+      "matchday": 35,
+      "kickoff": "2027-05-08T15:00:00+01:00",
+      "homeTeamId": "leeds",
+      "awayTeamId": "arsenal",
+      "venue": "Elland Road",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md35-fulham-ipswich",
+      "matchday": 35,
+      "kickoff": "2027-05-08T15:00:00+01:00",
+      "homeTeamId": "fulham",
+      "awayTeamId": "ipswich",
+      "venue": "Craven Cottage",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md35-nottinghamforest-crystalpalace",
+      "matchday": 35,
+      "kickoff": "2027-05-08T15:00:00+01:00",
+      "homeTeamId": "nottinghamforest",
+      "awayTeamId": "crystalpalace",
+      "venue": "Nottingham Arena",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md35-brentford-astonvilla",
+      "matchday": 35,
+      "kickoff": "2027-05-08T15:00:00+01:00",
+      "homeTeamId": "brentford",
+      "awayTeamId": "astonvilla",
+      "venue": "Brentford Community Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md35-newcastle-coventry",
+      "matchday": 35,
+      "kickoff": "2027-05-08T15:00:00+01:00",
+      "homeTeamId": "newcastle",
+      "awayTeamId": "coventry",
+      "venue": "St James Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md35-brighton-sunderland",
+      "matchday": 35,
+      "kickoff": "2027-05-08T15:00:00+01:00",
+      "homeTeamId": "brighton",
+      "awayTeamId": "sunderland",
+      "venue": "American Express Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md35-tottenham-chelsea",
+      "matchday": 35,
+      "kickoff": "2027-05-08T15:00:00+01:00",
+      "homeTeamId": "tottenham",
+      "awayTeamId": "chelsea",
+      "venue": "Tottenham Hotspur Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md35-everton-hullcity",
+      "matchday": 35,
+      "kickoff": "2027-05-08T15:00:00+01:00",
+      "homeTeamId": "everton",
+      "awayTeamId": "hullcity",
+      "venue": "Hill Dickinson Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md35-bournemouth-manutd",
+      "matchday": 35,
+      "kickoff": "2027-05-08T15:00:00+01:00",
+      "homeTeamId": "bournemouth",
+      "awayTeamId": "manutd",
+      "venue": "Vitality Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md36-hullcity-fulham",
+      "matchday": 36,
+      "kickoff": "2027-05-15T15:00:00+01:00",
+      "homeTeamId": "hullcity",
+      "awayTeamId": "fulham",
+      "venue": "The MKM Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md36-manutd-leeds",
+      "matchday": 36,
+      "kickoff": "2027-05-15T15:00:00+01:00",
+      "homeTeamId": "manutd",
+      "awayTeamId": "leeds",
+      "venue": "Old Trafford",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md36-crystalpalace-brighton",
+      "matchday": 36,
+      "kickoff": "2027-05-15T15:00:00+01:00",
+      "homeTeamId": "crystalpalace",
+      "awayTeamId": "brighton",
+      "venue": "Selhurst Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md36-astonvilla-newcastle",
+      "matchday": 36,
+      "kickoff": "2027-05-15T15:00:00+01:00",
+      "homeTeamId": "astonvilla",
+      "awayTeamId": "newcastle",
+      "venue": "Villa Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md36-chelsea-everton",
+      "matchday": 36,
+      "kickoff": "2027-05-15T15:00:00+01:00",
+      "homeTeamId": "chelsea",
+      "awayTeamId": "everton",
+      "venue": "Stamford Bridge",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md36-coventry-tottenham",
+      "matchday": 36,
+      "kickoff": "2027-05-15T15:00:00+01:00",
+      "homeTeamId": "coventry",
+      "awayTeamId": "tottenham",
+      "venue": "The Coventry Building Society Arena",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md36-sunderland-bournemouth",
+      "matchday": 36,
+      "kickoff": "2027-05-15T15:00:00+01:00",
+      "homeTeamId": "sunderland",
+      "awayTeamId": "bournemouth",
+      "venue": "Stadium of Light",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md36-liverpool-brentford",
+      "matchday": 36,
+      "kickoff": "2027-05-15T15:00:00+01:00",
+      "homeTeamId": "liverpool",
+      "awayTeamId": "brentford",
+      "venue": "Anfield",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md36-ipswich-mancity",
+      "matchday": 36,
+      "kickoff": "2027-05-15T15:00:00+01:00",
+      "homeTeamId": "ipswich",
+      "awayTeamId": "mancity",
+      "venue": "Portman Road",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md36-arsenal-nottinghamforest",
+      "matchday": 36,
+      "kickoff": "2027-05-15T15:00:00+01:00",
+      "homeTeamId": "arsenal",
+      "awayTeamId": "nottinghamforest",
+      "venue": "Emirates Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md37-brentford-hullcity",
+      "matchday": 37,
+      "kickoff": "2027-05-23T15:00:00+01:00",
+      "homeTeamId": "brentford",
+      "awayTeamId": "hullcity",
+      "venue": "Brentford Community Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md37-newcastle-crystalpalace",
+      "matchday": 37,
+      "kickoff": "2027-05-23T15:00:00+01:00",
+      "homeTeamId": "newcastle",
+      "awayTeamId": "crystalpalace",
+      "venue": "St James Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md37-tottenham-manutd",
+      "matchday": 37,
+      "kickoff": "2027-05-23T15:00:00+01:00",
+      "homeTeamId": "tottenham",
+      "awayTeamId": "manutd",
+      "venue": "Tottenham Hotspur Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md37-leeds-sunderland",
+      "matchday": 37,
+      "kickoff": "2027-05-23T15:00:00+01:00",
+      "homeTeamId": "leeds",
+      "awayTeamId": "sunderland",
+      "venue": "Elland Road",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md37-brighton-liverpool",
+      "matchday": 37,
+      "kickoff": "2027-05-23T15:00:00+01:00",
+      "homeTeamId": "brighton",
+      "awayTeamId": "liverpool",
+      "venue": "American Express Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md37-nottinghamforest-ipswich",
+      "matchday": 37,
+      "kickoff": "2027-05-23T15:00:00+01:00",
+      "homeTeamId": "nottinghamforest",
+      "awayTeamId": "ipswich",
+      "venue": "Nottingham Arena",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md37-bournemouth-chelsea",
+      "matchday": 37,
+      "kickoff": "2027-05-23T15:00:00+01:00",
+      "homeTeamId": "bournemouth",
+      "awayTeamId": "chelsea",
+      "venue": "Vitality Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md37-fulham-coventry",
+      "matchday": 37,
+      "kickoff": "2027-05-23T15:00:00+01:00",
+      "homeTeamId": "fulham",
+      "awayTeamId": "coventry",
+      "venue": "Craven Cottage",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md37-everton-arsenal",
+      "matchday": 37,
+      "kickoff": "2027-05-23T15:00:00+01:00",
+      "homeTeamId": "everton",
+      "awayTeamId": "arsenal",
+      "venue": "Hill Dickinson Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md37-mancity-astonvilla",
+      "matchday": 37,
+      "kickoff": "2027-05-23T15:00:00+01:00",
+      "homeTeamId": "mancity",
+      "awayTeamId": "astonvilla",
+      "venue": "Etihad Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md38-ipswich-everton",
+      "matchday": 38,
+      "kickoff": "2027-05-30T16:00:00+01:00",
+      "homeTeamId": "ipswich",
+      "awayTeamId": "everton",
+      "venue": "Portman Road",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md38-arsenal-brighton",
+      "matchday": 38,
+      "kickoff": "2027-05-30T16:00:00+01:00",
+      "homeTeamId": "arsenal",
+      "awayTeamId": "brighton",
+      "venue": "Emirates Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md38-liverpool-bournemouth",
+      "matchday": 38,
+      "kickoff": "2027-05-30T16:00:00+01:00",
+      "homeTeamId": "liverpool",
+      "awayTeamId": "bournemouth",
+      "venue": "Anfield",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md38-coventry-nottinghamforest",
+      "matchday": 38,
+      "kickoff": "2027-05-30T16:00:00+01:00",
+      "homeTeamId": "coventry",
+      "awayTeamId": "nottinghamforest",
+      "venue": "The Coventry Building Society Arena",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md38-astonvilla-tottenham",
+      "matchday": 38,
+      "kickoff": "2027-05-30T16:00:00+01:00",
+      "homeTeamId": "astonvilla",
+      "awayTeamId": "tottenham",
+      "venue": "Villa Park",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md38-hullcity-newcastle",
+      "matchday": 38,
+      "kickoff": "2027-05-30T16:00:00+01:00",
+      "homeTeamId": "hullcity",
+      "awayTeamId": "newcastle",
+      "venue": "The MKM Stadium",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md38-manutd-fulham",
+      "matchday": 38,
+      "kickoff": "2027-05-30T16:00:00+01:00",
+      "homeTeamId": "manutd",
+      "awayTeamId": "fulham",
+      "venue": "Old Trafford",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md38-sunderland-mancity",
+      "matchday": 38,
+      "kickoff": "2027-05-30T16:00:00+01:00",
+      "homeTeamId": "sunderland",
+      "awayTeamId": "mancity",
+      "venue": "Stadium of Light",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md38-chelsea-brentford",
+      "matchday": 38,
+      "kickoff": "2027-05-30T16:00:00+01:00",
+      "homeTeamId": "chelsea",
+      "awayTeamId": "brentford",
+      "venue": "Stamford Bridge",
+      "status": "scheduled",
+      "score": null
+    },
+    {
+      "id": "2026-27-md38-crystalpalace-leeds",
+      "matchday": 38,
+      "kickoff": "2027-05-30T16:00:00+01:00",
+      "homeTeamId": "crystalpalace",
+      "awayTeamId": "leeds",
+      "venue": "Selhurst Park",
+      "status": "scheduled",
+      "score": null
+    }
+  ]
+}

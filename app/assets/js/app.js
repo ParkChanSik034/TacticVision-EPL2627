@@ -189,7 +189,6 @@
             {id:'palmer',name:'콜 파머',english:'Cole Palmer',club:'Chelsea',position:'AM',positionGroup:'midfielder',nationality:'England',birthDate:'2002-05-06',height:'189cm',foot:'왼발',image:'',tags:['플레이메이커','하프스페이스','키패스','페널티 킥'],attributes:{passing:91,control:92,dribbling:88,tackling:42,heading:58,physical:75,speed:81,workRate:82,positioning:90,decision:92},roleStats:{assists:'13',xA:'12.1',keyPassesPer90:'2.8',progressivePassesPer90:'7.4',passAccuracy:'86%',carriesPer90:'5.9'}},
             {id:'rice',name:'데클란 라이스',english:'Declan Rice',club:'Arsenal',position:'DM',positionGroup:'defensiveMidfielder',nationality:'England',birthDate:'1999-01-14',height:'188cm',foot:'오른발',image:'',tags:['볼 위닝','전진 운반','커버','세트피스'],attributes:{passing:88,control:86,dribbling:82,tackling:91,heading:83,physical:91,speed:79,workRate:95,positioning:92,decision:90},roleStats:{tacklesPer90:'2.5',interceptionsPer90:'1.8',recoveriesPer90:'8.7',duelWin:'61%',progressivePassesPer90:'6.8',possessionLostPer90:'8.1'}},
             {id:'saliba',name:'윌리엄 살리바',english:'William Saliba',club:'Arsenal',position:'CB',positionGroup:'defender',nationality:'France',birthDate:'2001-03-24',height:'192cm',foot:'오른발',image:'',tags:['빌드업 수비수','대인 수비','스피드','공중볼'],attributes:{passing:86,control:84,dribbling:74,tackling:92,heading:88,physical:90,speed:85,workRate:87,positioning:93,decision:91},roleStats:{tacklesPer90:'1.7',interceptionsPer90:'1.5',clearancesPer90:'4.3',aerialWin:'69%',defensiveDuelWin:'72%',progressivePassesPer90:'5.5'}},
-            {id:'trent',name:'트렌트 알렉산더아놀드',english:'Trent Alexander-Arnold',club:'Liverpool',position:'RB',positionGroup:'fullback',nationality:'England',birthDate:'1998-10-07',height:'180cm',foot:'오른발',image:'',tags:['인버티드 풀백','롱패스','크로스','전개'],attributes:{passing:95,control:88,dribbling:82,tackling:76,heading:62,physical:74,speed:80,workRate:84,positioning:81,decision:91},roleStats:{tacklesPer90:'1.9',interceptionsPer90:'1.3',crossesPer90:'5.8',keyPassesPer90:'2.4',progressivePassesPer90:'9.1',passAccuracy:'84%'}},
             {id:'alisson',name:'알리송 베케르',english:'Alisson Becker',club:'Liverpool',position:'GK',positionGroup:'goalkeeper',nationality:'Brazil',birthDate:'1992-10-02',height:'193cm',foot:'오른발',image:'',tags:['스위퍼 키퍼','1대1','반사신경','빌드업'],attributes:{passing:86,control:82,dribbling:63,tackling:35,heading:40,physical:84,speed:62,workRate:80,positioning:95,decision:93},roleStats:{saveRate:'76%',cleanSheets:'14',goalsPrevented:'+6.4',crossClaims:'38',longPassAccuracy:'58%',sweeperActionsPer90:'1.4'}}
         ];
         const selectedPlayerIds = new Set(['haaland','rice','saliba']);
@@ -224,7 +223,8 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
 
         const managerBarClasses = ['from-eplNeon to-emerald-300', 'from-eplBlue to-cyan-300', 'from-purple-400 to-fuchsia-300'];
 
-        const entityData = { status:'idle', teams:{}, players:{}, managers:{}, squads:{}, teamComparison:null, peopleComparison:null, error:null, readyPromise:null };
+        const entityData = { status:'idle', teams:{}, players:{}, managers:{}, squads:{}, roles:[], formations:{}, matches:null, standings:null, teamHistory:null, firstMatchLineups:null, teamComparison:null, peopleComparison:null, error:null, readyPromise:null };
+        let selectedMatchId=null;
         let homeSearchRows=[];
         let homeSearchIndex=-1;
 
@@ -290,27 +290,34 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
         function buildCurrentManagerComparison(){
             const dataset=entityData.currentManagers;if(!dataset?.managers)return;
             const managers=Object.entries(dataset.managers).map(([teamId,facts])=>{
-                const team=entityData.teams[teamId]||{};
+                const team=entityData.teams[teamId]||{},analysis=entityData.managers?.[teamId]||{};
                 const image=facts.imageUrl||(facts.imageFileName?`https://commons.wikimedia.org/wiki/Special:Redirect/file/${encodeURIComponent(facts.imageFileName)}`:'');
-                return {id:teamId,name:facts.koreanName||facts.englishName,english:facts.englishName,team:team.koreanName||team.name||teamId,birthDate:facts.birthDate||'—',nationality:facts.nationalities?.join(', ')||'—',height:'—',formation:team.defaultFormation||'—',identity:'현재 감독 · 전술 분석 데이터 준비 중',keyIdea:'전술 평가는 검증 가능한 경기 데이터 연동 후 제공됩니다.',strengths:[],metrics:{},image,imageFocus:facts.imageFocus||'50% 18%',imageSelection:facts.imageSelection||'wikidata-p18',sourceUrl:facts.sourceUrl,sourceRevision:facts.sourceRevision,sourceId:dataset.sourceId};
+                return {id:teamId,name:facts.koreanName||facts.englishName,english:facts.englishName,team:team.koreanName||team.name||teamId,birthDate:facts.birthDate||'—',nationality:facts.nationalities?.join(', ')||'—',height:'—',formation:(analysis.preferredFormations||[]).join(' · ')||team.defaultFormation||'—',identity:analysis.identity||'전술 분석 준비 중',keyIdea:analysis.style||'검증된 전술 설명을 준비 중입니다.',strengths:analysis.traits||[],principles:analysis.principles||[],achievements:analysis.achievements||[],career:facts.coachingCareer||[],analysisStatus:analysis.analysisStatus||'planned',sourceLinks:analysis.sourceLinks||[],metrics:{},image,imageFocus:facts.imageFocus||'50% 18%',imageSelection:facts.imageSelection||'wikidata-p18',sourceUrl:facts.sourceUrl,sourceRevision:facts.sourceRevision,sourceId:dataset.sourceId};
             });
             managerComparisonData.splice(0,managerComparisonData.length,...managers);
             const filter=document.getElementById('manager-team-filter');if(filter)delete filter.dataset.ready;
         }
 
         function buildTeamComparisonFromExternalFacts(){
-            const dataset=entityData.teamComparison;
-            if(!dataset?.teams)return;
-            const rows=Object.values(dataset.teams).map(row=>{
-                const team=entityData.teams[row.teamId]||{};
-                const provider=entityData.teamProviderCrosscheck?.teams?.[row.teamId]||{};
-                return {id:row.teamId,name:team.koreanName||team.name||row.name,englishName:team.name||row.name,short:team.shortName||row.shortName,badgeUrl:provider.badgeUrl||'',stadium:provider.stadium||'미확정',website:provider.website||'',season:dataset.season,asOf:dataset.asOf,sourceId:dataset.sourceId,sourceUrl:dataset.sourceUrl,sourceSha256:dataset.sourceSha256,metrics:{played:row.played,wins:row.wins,draws:row.draws,losses:row.losses,goalsFor:row.goalsFor,goalsAgainst:row.goalsAgainst,goalDifference:row.goalDifference,points:row.points,pointsPerGame:row.pointsPerGame}};
+            const dataset=entityData.standings;
+            if(!dataset?.standings)return;
+            const rows=dataset.standings.map(row=>{
+                const team=entityData.teams[row.teamId]||{},provider=entityData.teamProviderCrosscheck?.teams?.[row.teamId]||{},squad=entityData.squads?.[row.teamId]||{},manager=entityData.currentManagers?.managers?.[row.teamId]||{},analysis=entityData.managers?.[row.teamId]||{},previous=entityData.teamHistory?.teams?.[row.teamId]||null;
+                const recent=(dataset.results||[]).filter(result=>result.homeTeamId===row.teamId||result.awayTeamId===row.teamId).slice(0,5);
+                return {id:row.teamId,name:team.koreanName||team.name||row.teamId,englishName:team.name||row.teamId,short:team.shortName||row.teamId.toUpperCase(),badgeUrl:provider.badgeUrl||'',stadium:provider.stadium||'미확정',website:provider.website||'',season:dataset.season,asOf:dataset.asOf,sourceId:dataset.sourceId,sourceUrl:dataset.sourceUrl,formation:(analysis.preferredFormations||[]).join(' · ')||team.defaultFormation||'미확정',manager:manager.koreanName||manager.englishName||'미확정',managerIdentity:analysis.identity||'분석 준비 중',squadSize:(squad.starters||[]).length+(squad.substitutes||[]).length,starterCount:(squad.starters||[]).length,benchCount:(squad.substitutes||[]).length,previous,recent,metrics:{played:row.played,wins:row.wins,draws:row.draws,losses:row.losses,goalsFor:row.goalsFor,goalsAgainst:row.goalsAgainst,goalDifference:row.goalDifference,points:row.points,pointsPerGame:row.played?Math.round(row.points/row.played*100)/100:null,rank:row.rank}};
             });
             teamComparisonData.splice(0,teamComparisonData.length,...rows);
         }
 
         function buildPeopleComparisonFromExternalFacts(){
             const dataset=entityData.peopleComparison;if(!dataset)return;
+            const positionGroupFor=position=>position==='GK'?'goalkeeper':['CB','LB','RB','LWB','RWB'].includes(position)?(position==='CB'?'defender':'fullback'):['DM'].includes(position)?'defensiveMidfielder':['CM','AM','LM','RM'].includes(position)?'midfielder':'forward';
+            const canonicalPlayers=Object.entries(entityData.players).map(([id,player])=>{
+                const team=entityData.teams[player.teamId]||{},squad=entityData.squads?.[player.teamId]||{},starter=(squad.starters||[]).some(row=>row.id===id),bench=(squad.substitutes||[]).some(row=>row.id===id),standing=currentStanding(player.teamId);
+                return {id,name:player.koreanName||player.name,english:player.englishName||player.name,club:team.koreanName||team.name||player.teamId,clubEnglish:team.name||'',teamId:player.teamId,teamRank:standing?.rank||'—',number:player.number??'—',squadRole:starter?'기본 XI 등록':bench?'교체 명단 등록':'1군 스쿼드',position:player.position||'미정',positionGroup:positionGroupFor(player.position),nationality:player.nationality||'미확정',birthDate:player.age?`${player.age}세`:'미확정',height:player.height?`${player.height}cm`:'미확정',foot:player.foot||'미확정',image:player.photoUrl||'',tags:player.positions||[player.position].filter(Boolean),attributes:{},roleStats:{},sourceUrl:player.nameSourceUrl||'',sourceRevision:'현재 EPL 등록 스쿼드',sourceId:player.dataStatus||'canonical-player-contract'};
+            });
+            playerComparisonData.splice(0,playerComparisonData.length,...canonicalPlayers);
+            selectedPlayerIds.clear();const usedTeams=new Set();canonicalPlayers.filter(player=>player.position==='ST').forEach(player=>{if(selectedPlayerIds.size<3&&!usedTeams.has(player.teamId)){selectedPlayerIds.add(player.id);usedTeams.add(player.teamId);}});
             Object.entries(dataset.players).forEach(([id,facts])=>{const player=playerComparisonData.find(item=>item.id===id);if(!player)return;Object.assign(player,{english:facts.englishName,name:facts.koreanName||player.name,birthDate:facts.birthDate,nationality:facts.factWarnings?.nationality?'교차 검증 보류':facts.nationalities.join(', '),height:facts.heightCm?`${facts.heightCm}cm`:'—',club:'소속 검증 보류',foot:'검증 자료 없음',tags:facts.positions,attributes:{},roleStats:{},sourceUrl:facts.sourceUrl,sourceRevision:facts.sourceRevision,sourceId:dataset.sourceId});});
             Object.entries(entityData.playerProviderCrosscheck?.players||{}).forEach(([id,facts])=>{const player=playerComparisonData.find(item=>item.id===id);if(!player)return;Object.assign(player,{club:koreanTeamName(facts.canonicalTeamId,facts.currentTeam)||player.club,clubEnglish:facts.currentTeam||'',teamId:facts.canonicalTeamId||null,position:positionKoreanNames[facts.position]||facts.position||player.position,image:facts.cutoutUrl||facts.thumbnailUrl||'',providerPlayerId:facts.providerPlayerId,providerSourceId:entityData.playerProviderCrosscheck.sourceId,providerAsOf:entityData.playerProviderCrosscheck.asOf});});
             Object.entries(dataset.managers).forEach(([id,facts])=>{const manager=managerComparisonData.find(item=>item.id===id);if(!manager)return;Object.assign(manager,{english:facts.englishName,name:facts.koreanName||manager.name,birthDate:facts.birthDate,nationality:facts.nationalities.join(', '),height:facts.heightCm?`${facts.heightCm}cm`:'—',team:'소속 검증 보류',formation:'—',identity:'외부 전술 데이터 없음',keyIdea:'전술 평가는 검증 가능한 성과 데이터 공급자 연동 후 제공됩니다.',strengths:[],metrics:{},sourceUrl:facts.sourceUrl,sourceRevision:facts.sourceRevision,sourceId:dataset.sourceId});});
@@ -331,32 +338,93 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
                 return;
             }
             if(entityData.status!=='ready')return;
-            const ranked=[...teamComparisonData].sort((a,b)=>b.metrics.points-a.metrics.points||b.metrics.goalDifference-a.metrics.goalDifference||b.metrics.goalsFor-a.metrics.goalsFor||a.name.localeCompare(b.name,'en'));
-            table.innerHTML=ranked.map((team,index)=>{
-                const gd=team.metrics.goalDifference;
-                return `<button type="button" onclick="openTeamProfile('${team.id}')" class="w-full grid grid-cols-[36px_1fr_38px_50px_50px] px-4 py-3 text-left hover:bg-white/5 focus:bg-white/5 transition group"><span class="${index<4?'text-eplNeon font-bold':'text-slate-500'}">${index+1}</span><span class="font-bold truncate group-hover:text-eplNeon flex items-center gap-2">${team.badgeUrl?`<img src="${team.badgeUrl}" alt="" class="w-5 h-5 object-contain" loading="lazy" referrerpolicy="no-referrer">`:''}<span class="truncate">${escapeHtml(team.name)}</span><i class="fa-solid fa-chevron-right ml-1 text-[9px] opacity-0 group-hover:opacity-100"></i></span><span class="text-slate-500">${team.metrics.played}</span><span class="text-slate-500">${gd>0?'+':''}${gd}</span><span class="font-bold">${team.metrics.points}</span></button>`;
+            const ranked=entityData.standings?.standings||[];
+            table.innerHTML=ranked.map((row,index)=>{
+                const team=entityData.teams[row.teamId]||{},provider=entityData.teamProviderCrosscheck?.teams?.[row.teamId]||{},gd=row.goalDifference;
+                return `<button type="button" onclick="openTeamProfile('${row.teamId}')" class="w-full grid grid-cols-[36px_1fr_38px_50px_50px] px-4 py-3 text-left hover:bg-white/5 focus:bg-white/5 transition group"><span class="${index<4?'text-eplNeon font-bold':'text-slate-500'}">${row.rank}</span><span class="font-bold truncate group-hover:text-eplNeon flex items-center gap-2">${provider.badgeUrl?`<img src="${escapeHtml(provider.badgeUrl)}" alt="" class="w-5 h-5 object-contain" loading="lazy" referrerpolicy="no-referrer">`:''}<span class="truncate">${escapeHtml(team.koreanName||team.name||row.teamId)}</span></span><span class="text-slate-500">${row.played}</span><span class="text-slate-500">${gd>0?'+':''}${gd}</span><span class="font-bold">${row.points}</span></button>`;
             }).join('');
-            status.textContent='CURRENT RESULTS';
+            status.textContent='RESULTS SYNCED';
             status.className='text-[10px] px-2 py-1 rounded-full bg-eplNeon/10 border border-eplNeon/20 text-eplNeon';
-            const collected=new Date(entityData.teamComparison.asOf).toLocaleString('ko-KR');
-            source.textContent=`승점 · 득실차 · 득점순 · openfootball/england · ${collected} 수집`;
+            const collected=new Date(entityData.standings.asOf).toLocaleString('ko-KR');
+            source.textContent=`TheSportsDB 완료 경기 ${entityData.standings.completedMatches}개 기준 · ${collected} 갱신`;
+        }
+        function currentStanding(teamId){return entityData.standings?.standings?.find(row=>row.teamId===teamId)||null;}
+
+        function upcomingMatches(){
+            const now=Date.now();
+            return [...(entityData.matches?.matches||[])]
+                .filter(match=>match.status==='scheduled'&&new Date(match.kickoff).getTime()>now)
+                .sort((a,b)=>new Date(a.kickoff)-new Date(b.kickoff));
+        }
+        function selectedMatch(){
+            const rows=entityData.matches?.matches||[];
+            return rows.find(match=>match.id===selectedMatchId)||upcomingMatches()[0]||rows[rows.length-1]||null;
+        }
+        function matchKickoffLabel(match,compact=false){
+            if(!match)return '일정 미정';
+            return new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',month:'long',day:'numeric',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false,...(compact?{}:{year:'numeric'})}).format(new Date(match.kickoff));
+        }
+        function teamBadge(teamId){
+            const provider=entityData.teamProviderCrosscheck?.teams?.[teamId]||{};
+            return provider.badgeUrl?`<img src="${escapeHtml(provider.badgeUrl)}" alt="" class="w-16 h-16 object-contain" loading="lazy" referrerpolicy="no-referrer">`:'<i class="fa-solid fa-shield-halved"></i>';
+        }
+        function renderHomeVerifiedContent(){
+            const status=document.getElementById('home-data-status'),results=document.getElementById('home-recent-results');if(!status||!results)return;
+            const updated=new Date(entityData.standings.asOf).toLocaleString('ko-KR');
+            status.innerHTML=`<div class="flex justify-between"><span>시즌 일정</span><strong class="text-white">380경기</strong></div><div class="flex justify-between"><span>완료 결과</span><strong class="text-eplNeon">${entityData.standings.completedMatches}경기</strong></div><div class="flex justify-between"><span>최근 갱신</span><strong class="text-white">${escapeHtml(updated)}</strong></div><p class="mt-2 text-[10px] text-slate-500">뉴스·추천 콘텐츠 없이 검증 가능한 일정과 결과만 표시합니다.</p>`;
+            results.innerHTML=(entityData.standings.results||[]).slice(0,6).map(row=>`<button onclick="openTeamProfile('${row.homeTeamId}')" class="rounded-2xl border border-white/5 bg-white/[.025] p-5 text-left hover:border-eplNeon/20 transition"><div class="text-[10px] text-slate-500">${escapeHtml(row.date)} · 경기 종료</div><div class="mt-4 grid grid-cols-[1fr_auto] gap-3 text-sm"><span>${escapeHtml(matchTeamLabel(row.homeTeamId))}</span><strong>${row.homeScore}</strong><span>${escapeHtml(matchTeamLabel(row.awayTeamId))}</span><strong>${row.awayScore}</strong></div></button>`).join('');
+        }
+        function chooseMatch(matchId,target='hub'){
+            if(!(entityData.matches?.matches||[]).some(match=>match.id===matchId))return;
+            selectedMatchId=matchId;
+            if(target==='compare')return openFeaturedMatch('compare');
+            openMatchHub();
+        }
+        function renderMatchHubSummary(){
+            const root=document.getElementById('match-hub-summary'),match=selectedMatch();if(!root||!match)return;
+            const home=entityData.teams[match.homeTeamId]||{},away=entityData.teams[match.awayTeamId]||{};
+            root.innerHTML=`<div class="flex flex-wrap items-center justify-between gap-3"><div><span class="text-[10px] tracking-[.22em] uppercase text-eplNeon font-bold">Premier League · Matchweek ${match.matchday}</span><p class="text-xs text-slate-400 mt-2">${escapeHtml(matchKickoffLabel(match))} · ${escapeHtml(match.venue||'경기장 미정')}</p></div><span class="px-3 py-1.5 rounded-full bg-eplNeon/10 border border-eplNeon/20 text-[10px] font-bold text-eplNeon">실제 공식 일정 연동</span></div><div class="grid grid-cols-[1fr_auto_1fr] items-center gap-4 md:gap-10 mt-8"><button onclick="openTeamProfile('${match.homeTeamId}')" class="text-center hover:text-eplNeon transition"><div class="mx-auto w-20 h-20 md:w-24 md:h-24 rounded-3xl bg-cyan-300/10 border border-cyan-300/20 grid place-items-center text-cyan-300 text-4xl">${teamBadge(match.homeTeamId)}</div><h2 class="font-urban text-xl md:text-3xl font-extrabold mt-4">${escapeHtml(home.koreanName||home.name)}</h2><p class="text-xs text-slate-500 mt-1">홈 · ${escapeHtml(home.defaultFormation||'포메이션 미정')}</p></button><div class="text-center"><div class="text-4xl md:text-6xl font-black text-slate-700">VS</div><div class="mt-2 text-[10px] tracking-widest text-slate-500">MATCH HUB</div></div><button onclick="openTeamProfile('${match.awayTeamId}')" class="text-center hover:text-eplNeon transition"><div class="mx-auto w-20 h-20 md:w-24 md:h-24 rounded-3xl bg-rose-400/10 border border-rose-400/20 grid place-items-center text-rose-300 text-4xl">${teamBadge(match.awayTeamId)}</div><h2 class="font-urban text-xl md:text-3xl font-extrabold mt-4">${escapeHtml(away.koreanName||away.name)}</h2><p class="text-xs text-slate-500 mt-1">원정 · ${escapeHtml(away.defaultFormation||'포메이션 미정')}</p></button></div>`;
+            renderMatchHubContent();
+        }
+        function renderMatchHubContent(){
+            const root=document.getElementById('match-hub-live-content'),match=selectedMatch();if(!root||!match||!entityData.standings)return;
+            const teamIds=[match.homeTeamId,match.awayTeamId],table=entityData.standings.standings||[],results=entityData.standings.results||[];
+            const teamPanel=(teamId,tint)=>{const team=entityData.teams[teamId]||{},row=table.find(item=>item.teamId===teamId)||{},manager=entityData.currentManagers?.managers?.[teamId]||{},squad=entityData.squads?.[teamId]||{},recent=results.filter(item=>item.homeTeamId===teamId||item.awayTeamId===teamId).slice(0,5);const form=recent.map(item=>{const home=item.homeTeamId===teamId,scored=home?item.homeScore:item.awayScore,conceded=home?item.awayScore:item.homeScore;return scored>conceded?'W':scored<conceded?'L':'D';});return `<article class="rounded-2xl border border-${tint}-400/15 bg-${tint}-400/[.035] p-6"><div class="flex items-start justify-between gap-4"><div><div class="text-[10px] uppercase tracking-[.2em] text-${tint}-300">${teamId===match.homeTeamId?'Home':'Away'} team</div><button onclick="openTeamProfile('${teamId}')" class="font-urban text-2xl font-extrabold mt-1 hover:text-eplNeon">${escapeHtml(team.koreanName||team.name)}</button></div><div class="w-14 h-14 grid place-items-center">${teamBadge(teamId)}</div></div><div class="grid grid-cols-4 gap-2 mt-6 text-center"><div class="rounded-xl bg-black/20 p-3"><strong class="text-xl">${row.rank||'—'}</strong><span class="block text-[10px] text-slate-500 mt-1">순위</span></div><div class="rounded-xl bg-black/20 p-3"><strong class="text-xl">${row.played??0}</strong><span class="block text-[10px] text-slate-500 mt-1">경기</span></div><div class="rounded-xl bg-black/20 p-3"><strong class="text-xl">${row.goalDifference>0?'+':''}${row.goalDifference??0}</strong><span class="block text-[10px] text-slate-500 mt-1">득실</span></div><div class="rounded-xl bg-black/20 p-3"><strong class="text-xl">${row.points??0}</strong><span class="block text-[10px] text-slate-500 mt-1">승점</span></div></div><div class="mt-5 flex items-center justify-between gap-3"><span class="text-xs text-slate-400">감독</span><strong class="text-sm">${escapeHtml(manager.koreanName||manager.englishName||'미확정')}</strong></div><div class="mt-3 flex items-center justify-between gap-3"><span class="text-xs text-slate-400">최근 결과</span><div class="flex gap-1">${form.length?form.map(value=>`<span class="form-dot ${value==='W'?'bg-emerald-500':value==='L'?'bg-rose-500':'bg-slate-500'}">${value}</span>`).join(''):'<span class="text-xs text-slate-600">아직 없음</span>'}</div></div><div class="mt-3 flex items-center justify-between gap-3"><span class="text-xs text-slate-400">선발 상태</span><strong class="text-xs text-amber-200">${squad.selectionStatus==='official-starting-lineup'?'공식 선발 발표':'공식 발표 전'}</strong></div></article>`;};
+            root.innerHTML=`<div class="grid grid-cols-1 xl:grid-cols-2 gap-6">${teamPanel(teamIds[0],'cyan')}${teamPanel(teamIds[1],'rose')}</div><article class="rounded-2xl border border-white/5 bg-white/[.025] p-6"><div class="flex flex-col md:flex-row md:items-center justify-between gap-4"><div><div class="text-[10px] uppercase tracking-[.2em] text-eplNeon">Availability</div><h3 class="font-urban text-2xl font-extrabold mt-1">현재 제공 가능한 경기 정보</h3><p class="text-xs text-slate-500 mt-2">실제 일정·순위·결과는 연결됨. 공식 선발은 발표 전까지 표시하지 않습니다.</p></div><div class="flex flex-wrap gap-2"><span class="px-3 py-2 rounded-lg bg-eplNeon/10 text-eplNeon text-xs font-bold">일정 연결</span><span class="px-3 py-2 rounded-lg bg-eplNeon/10 text-eplNeon text-xs font-bold">순위 연결</span><span class="px-3 py-2 rounded-lg bg-eplNeon/10 text-eplNeon text-xs font-bold">최근 결과 연결</span><span class="px-3 py-2 rounded-lg bg-amber-300/10 text-amber-200 text-xs font-bold">선발 대기</span></div></div></article>`;
+        }
+        function renderHomeMatches(){
+            if(entityData.status!=='ready')return;
+            const matches=upcomingMatches();if(!selectedMatchId&&matches[0])selectedMatchId=matches[0].id;
+            const featured=selectedMatch(),hero=document.getElementById('home-featured-match'),cards=document.getElementById('home-upcoming-matches'),ticker=document.getElementById('home-match-ticker');
+            if(!featured||!hero||!cards)return;
+            const home=entityData.teams[featured.homeTeamId]||{},away=entityData.teams[featured.awayTeamId]||{};
+            hero.innerHTML=`<div class="absolute -right-24 -top-24 w-80 h-80 rounded-full bg-eplNeon/10 blur-3xl"></div><div class="relative flex items-start justify-between gap-4"><div><div class="text-[10px] uppercase tracking-[0.22em] text-eplNeon font-extrabold">Next Premier League match</div><h2 class="font-urban text-3xl md:text-5xl font-extrabold mt-3">${escapeHtml(home.koreanName||home.name)} <span class="text-slate-600">vs</span> ${escapeHtml(away.koreanName||away.name)}</h2><p class="mt-3 text-sm text-slate-400">실제 2026-27 공식 일정 · ${escapeHtml(featured.venue||'경기장 미정')}</p></div><span class="shrink-0 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold text-slate-300">${escapeHtml(matchKickoffLabel(featured,true))}</span></div><div class="relative grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-center gap-5 py-8"><button onclick="openTeamProfile('${featured.homeTeamId}')" class="text-center md:text-left hover:text-eplNeon transition"><div class="mx-auto md:mx-0 w-20 h-20 rounded-2xl bg-cyan-300/10 border border-cyan-300/20 grid place-items-center text-cyan-300 text-3xl">${teamBadge(featured.homeTeamId)}</div><div class="font-urban text-2xl font-extrabold mt-4">${escapeHtml(home.koreanName||home.name)}</div><div class="text-xs text-slate-500 mt-1">${escapeHtml(home.defaultFormation||'포메이션 미정')}</div></button><div class="text-center"><div class="text-5xl font-black text-slate-700">VS</div><div class="text-[10px] text-slate-500 mt-2">MATCHWEEK ${featured.matchday}</div></div><button onclick="openTeamProfile('${featured.awayTeamId}')" class="text-center md:text-right hover:text-eplNeon transition"><div class="mx-auto md:ml-auto md:mr-0 w-20 h-20 rounded-2xl bg-rose-400/10 border border-rose-400/20 grid place-items-center text-rose-300 text-3xl">${teamBadge(featured.awayTeamId)}</div><div class="font-urban text-2xl font-extrabold mt-4">${escapeHtml(away.koreanName||away.name)}</div><div class="text-xs text-slate-500 mt-1">${escapeHtml(away.defaultFormation||'포메이션 미정')}</div></button></div><button onclick="openMatchHub()" class="relative w-full mb-3 py-4 rounded-xl bg-gradient-to-r from-eplPurple/80 to-cyan-500/30 border border-eplNeon/20 text-sm font-extrabold hover:border-eplNeon/50 transition"><i class="fa-solid fa-circle-nodes mr-2 text-eplNeon"></i>경기 허브 열기</button><div class="relative grid grid-cols-1 sm:grid-cols-3 gap-3"><button onclick="openFeaturedMatch('compare')" class="py-3.5 rounded-xl bg-eplNeon text-slate-950 text-sm font-extrabold">매치 비교</button><button onclick="openFeaturedMatch('lineup')" class="py-3.5 rounded-xl bg-white/5 border border-white/10 text-sm font-bold">라인업</button><button onclick="openFeaturedMatch('data')" class="py-3.5 rounded-xl bg-white/5 border border-white/10 text-sm font-bold">팀 데이터</button></div>`;
+            cards.innerHTML=matches.slice(0,3).map(match=>`<button onclick="chooseMatch('${match.id}')" class="text-left rounded-2xl border border-white/5 bg-white/[.025] p-5 hover:border-eplNeon/25 hover:-translate-y-1 transition"><div class="flex justify-between gap-3 text-[10px] text-slate-500"><span>${escapeHtml(matchKickoffLabel(match,true))}</span><span class="truncate">${escapeHtml(match.venue||'미정')}</span></div><div class="mt-5 flex items-center justify-between gap-2 text-base font-bold"><span>${escapeHtml(matchTeamLabel(match.homeTeamId))}</span><span class="text-slate-600">VS</span><span class="text-right">${escapeHtml(matchTeamLabel(match.awayTeamId))}</span></div><div class="mt-4 text-xs text-eplNeon font-bold">MATCH HUB 열기</div></button>`).join('');
+            if(ticker)ticker.innerHTML=matches.slice(0,5).map(match=>`<button onclick="chooseMatch('${match.id}')" class="hover:text-white"><b class="text-white">${escapeHtml(entityData.teams[match.homeTeamId]?.shortName||match.homeTeamId.toUpperCase())}</b> ${escapeHtml(matchKickoffLabel(match,true))} <b class="text-white">${escapeHtml(entityData.teams[match.awayTeamId]?.shortName||match.awayTeamId.toUpperCase())}</b></button>`).join('');
+            renderMatchHubSummary();
         }
 
         async function initialiseEntityData(){
             if(entityData.readyPromise)return entityData.readyPromise;
             entityData.status='loading';
-            entityData.readyPromise=Promise.all(['teams','players','managers','managers-current','squads','team-comparison','people-comparison','player-provider-crosscheck','team-provider-crosscheck'].map(fetchEntityJson))
-                .then(([teams,players,managers,currentManagers,squads,teamComparison,peopleComparison,playerProviderCrosscheck,teamProviderCrosscheck])=>{
-                    entityData.teams=teams;entityData.players=players;entityData.managers=managers;entityData.currentManagers=currentManagers;entityData.squads=squads;entityData.teamComparison=teamComparison;entityData.peopleComparison=peopleComparison;entityData.playerProviderCrosscheck=playerProviderCrosscheck;entityData.teamProviderCrosscheck=teamProviderCrosscheck;
+            entityData.readyPromise=Promise.all(['teams','players','managers','managers-current','squads','roles','formations','matches','standings','team-history','first-match-lineups','people-comparison','player-provider-crosscheck','team-provider-crosscheck'].map(fetchEntityJson))
+                .then(([teams,players,managers,currentManagers,squads,roles,formations,matches,standings,teamHistory,firstMatchLineups,peopleComparison,playerProviderCrosscheck,teamProviderCrosscheck])=>{
+                    entityData.teams=teams;entityData.players=players;entityData.managers=managers;entityData.currentManagers=currentManagers;entityData.squads=squads;entityData.roles=roles;entityData.formations=formations;entityData.matches=matches;entityData.standings=standings;entityData.teamHistory=teamHistory;entityData.firstMatchLineups=firstMatchLineups;entityData.teamComparison=null;entityData.peopleComparison=peopleComparison;entityData.playerProviderCrosscheck=playerProviderCrosscheck;entityData.teamProviderCrosscheck=teamProviderCrosscheck;
+                    Object.assign(formationsMap,formations);
                     buildTeamComparisonFromExternalFacts();
                     buildPeopleComparisonFromExternalFacts();
                     buildCurrentManagerComparison();
                     entityData.status='ready';entityData.error=null;
                     renderHomeLeagueTable();
+                    renderHomeMatches();
+                    renderHomeVerifiedContent();
                     renderManagerComparison();
                     renderPlayerComparison();
                     buildManagerProfilesFromContract();
                     initMatchCompare();
+                    renderTacticalTeamFinder();
+                    if(!entityData.teams[currentTeam])currentTeam=Object.keys(entityData.teams)[0]||'arsenal';
+                    changeTeam(currentTeam,false);
                     restoreEntityRoute();
                     return entityData;
                 })
@@ -465,22 +533,26 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
 
         function setFeaturedMatchTeams(){
             initMatchCompare();
+            const match=selectedMatch();
             const home=document.getElementById('match-home-team');
             const away=document.getElementById('match-away-team');
-            if(home) home.value='arsenal';
-            if(away) away.value='liverpool';
+            if(home) home.value=match?.homeTeamId||'arsenal';
+            if(away) away.value=match?.awayTeamId||'liverpool';
             const homeFormation=document.getElementById('match-home-formation');
             const awayFormation=document.getElementById('match-away-formation');
-            if(homeFormation) homeFormation.value='4-3-3';
-            if(awayFormation) awayFormation.value='4-3-3';
+            if(homeFormation) homeFormation.value=entityData.teams?.[match?.homeTeamId]?.defaultFormation||'4-3-3';
+            if(awayFormation) awayFormation.value=entityData.teams?.[match?.awayTeamId]?.defaultFormation||'4-3-3';
+            if(home)handleMatchTeamChange('home',false);
+            if(away)handleMatchTeamChange('away',false);
         }
 
         function openFeaturedMatch(mode){
             if(mode==='data'){
+                const match=selectedMatch();
                 selectedTeamIds.clear();
-                selectedTeamIds.add('arsenal');
-                selectedTeamIds.add('liverpool');
+                if(match){selectedTeamIds.add(match.homeTeamId);selectedTeamIds.add(match.awayTeamId);}
                 switchView('teamCompare');
+                renderTeamComparison();
                 return;
             }
             setFeaturedMatchTeams();
@@ -488,12 +560,14 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
             renderMatchCompare();
             if(mode==='lineup'){
                 document.getElementById('match-compare-view')?.scrollIntoView({behavior:'smooth',block:'start'});
-                showToast('Arsenal과 Liverpool의 양 팀 라인업 편집 화면을 열었습니다.');
+                const match=selectedMatch();showToast(`${matchTeamLabel(match?.homeTeamId)}과 ${matchTeamLabel(match?.awayTeamId)}의 라인업 화면을 열었습니다.`);
             }
         }
 
 
-        function openMatchHub(){
+        async function openMatchHub(){
+            if(entityData.status!=='ready')await initialiseEntityData();
+            renderMatchHubSummary();
             switchView('matchHub');
             window.scrollTo({top:0,behavior:'smooth'});
         }
@@ -506,7 +580,11 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
                 return;
             }
             if(type==='team') return openFeaturedMatch('data');
-            if(type==='manager') return switchView('compare');
+            if(type==='manager'){
+                const match=selectedMatch();selectedManagerIds.clear();
+                if(match){selectedManagerIds.add(match.homeTeamId);selectedManagerIds.add(match.awayTeamId);}
+                switchView('compare');renderManagerComparison();return;
+            }
             if(type==='player') return switchView('playerCompare');
         }
         function openKeyBattle(firstId, secondId){
@@ -606,11 +684,11 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
             const managerColumns=`minmax(150px,.8fr) repeat(${selectedManagers.length},minmax(210px,1fr))`;
             cards.innerHTML=`<div class="overflow-x-auto rounded-2xl border border-white/5 bg-slate-950/40"><div class="min-w-[760px]">
                 <div class="grid border-b border-white/5" style="grid-template-columns:${managerColumns}"><div class="p-4 bg-white/[.02] text-[10px] font-mono uppercase tracking-widest text-slate-500">Manager Profile</div>${selectedManagers.map((m,i)=>`<div class="p-4 border-l border-white/5 relative"><div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${managerBarClasses[i]}"></div><button onclick="openManagerFromComparison('${m.id}')" class="flex items-center gap-3 text-left hover:text-eplNeon transition">${m.image?`<img src="${m.image}" alt="${m.name} 감독 프로필" class="w-14 h-[68px] shrink-0 rounded-xl border border-white/10 bg-slate-900 object-cover" style="object-position:${m.imageFocus}" loading="lazy" referrerpolicy="no-referrer">`:'<div class="w-14 h-[68px] shrink-0 rounded-xl border border-dashed border-white/10 bg-white/5 flex items-center justify-center text-slate-600"><i class="fa-solid fa-user-tie"></i></div>'}<span><strong class="block">${m.name}</strong><span class="block text-[11px] text-slate-500 mt-1">${m.english}</span></span></button></div>`).join('')}</div>
-                ${[['생년월일','birthDate'],['국적','nationality'],['신장','height']].map(([l,k])=>`<div class="grid border-b border-white/5" style="grid-template-columns:${managerColumns}"><div class="px-4 py-3 bg-white/[.015] text-xs font-semibold text-slate-400">${l}</div>${selectedManagers.map(m=>`<div class="px-4 py-3 border-l border-white/5 text-sm text-slate-200">${m[k]}</div>`).join('')}</div>`).join('')}
+                ${[['소속팀',m=>m.team],['선호 포메이션',m=>m.formation],['전술 정체성',m=>m.identity],['생년월일',m=>m.birthDate],['국적',m=>m.nationality],['지도 경력 구간',m=>`${m.career.length}개`]].map(([l,getValue])=>`<div class="grid border-b border-white/5" style="grid-template-columns:${managerColumns}"><div class="px-4 py-3 bg-white/[.015] text-xs font-semibold text-slate-400">${l}</div>${selectedManagers.map(m=>`<div class="px-4 py-3 border-l border-white/5 text-sm text-slate-200">${escapeHtml(getValue(m))}</div>`).join('')}</div>`).join('')}
                 <div class="grid" style="grid-template-columns:${managerColumns}"><div class="px-4 py-4 bg-white/[.015] text-xs font-semibold text-slate-400">출처</div>${selectedManagers.map(m=>`<div class="px-4 py-4 border-l border-white/5"><a href="${m.sourceUrl}" target="_blank" rel="noopener noreferrer" class="text-xs text-eplNeon hover:underline">Wikidata ${m.sourceRevision}</a></div>`).join('')}</div>
             </div></div>`;
 
-            metrics.innerHTML = '<div class="rounded-xl border border-dashed border-white/10 p-6 text-center text-xs text-slate-500">출처가 없는 0~100 전술 점수는 숨겼습니다. 검증 가능한 경기·전술 데이터 공급자 연동 후 제공됩니다.</div>';
+            metrics.innerHTML = `<div class="grid grid-cols-1 gap-4" style="grid-template-columns:repeat(${selectedManagers.length},minmax(0,1fr))">${selectedManagers.map((manager,index)=>`<article class="rounded-xl border border-white/5 bg-white/[.025] p-5"><div class="flex items-center justify-between gap-3"><h4 class="font-bold text-white">${escapeHtml(manager.name)}</h4><span class="text-[10px] text-eplNeon">${manager.analysisStatus.startsWith('reviewed')?'REVIEWED':'PARTIAL'}</span></div><div class="mt-4"><div class="text-[10px] uppercase tracking-widest text-slate-500">전술 정체성</div><p class="text-sm text-eplNeon font-bold mt-1">${escapeHtml(manager.identity)}</p><p class="text-xs text-slate-400 leading-5 mt-3">${escapeHtml(manager.keyIdea)}</p></div><div class="mt-4 flex flex-wrap gap-2">${manager.strengths.length?manager.strengths.map(item=>`<span class="px-2 py-1 rounded-md bg-white/5 text-[10px] text-slate-300">${escapeHtml(item)}</span>`).join(''):'<span class="text-xs text-slate-600">전술 특징 검토 중</span>'}</div><div class="mt-5 space-y-3">${manager.principles.map(item=>`<div class="border-l-2 border-eplNeon/30 pl-3"><strong class="block text-xs text-white">${escapeHtml(item[0])}</strong><p class="text-[11px] text-slate-500 leading-5 mt-1">${escapeHtml(item[1])}</p></div>`).join('')}</div></article>`).join('')}</div>`;
             /* Object.keys(metricLabels).map(metricKey => `
                 <div>
                     <div class="flex justify-between items-center mb-3">
@@ -636,9 +714,9 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
                 <article class="rounded-xl border border-white/5 bg-white/[0.025] p-4">
                     <div class="flex items-center gap-2">
                         <span class="w-2.5 h-2.5 rounded-full bg-gradient-to-r ${managerBarClasses[index]}"></span>
-                        <h4 class="font-bold text-sm text-white">${manager.name} 데이터 상태</h4>
+                        <h4 class="font-bold text-sm text-white">${manager.name} 경력·성과</h4>
                     </div>
-                    <p class="text-xs text-slate-400 leading-relaxed mt-3">기본 인물 정보는 Wikidata CC0입니다. 현재 소속팀과 전술 평가는 교차 검증 전이라 표시하지 않습니다.</p>
+                    <p class="text-xs text-slate-400 leading-relaxed mt-3">지도 경력 ${manager.career.length}개 구간 · 검토된 주요 성과 ${manager.achievements.length}개</p><div class="mt-3 space-y-2">${manager.achievements.slice(0,3).map(item=>`<div class="text-[11px] text-slate-300 flex gap-2"><i class="fa-solid fa-trophy text-amber-300 mt-0.5"></i><span>${escapeHtml(item)}</span></div>`).join('')||'<span class="text-[11px] text-slate-600">검증된 성과 자료를 준비 중입니다.</span>'}</div>${manager.sourceLinks[0]?`<a href="${escapeHtml(manager.sourceLinks[0].url)}" target="_blank" rel="noopener noreferrer" class="inline-flex mt-4 text-[11px] text-eplNeon hover:underline">분석 근거 확인</a>`:''}
                 </article>
             `).join('');
         }
@@ -646,8 +724,8 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
         function renderTeamSelector() {
             const selector=document.getElementById('team-selector'),count=document.getElementById('selected-team-count'),guide=document.getElementById('team-selection-guide');if(!selector||!count||!guide)return;
             if(entityData.status!=='ready'){selector.innerHTML='<div class="col-span-full p-8 text-center text-xs text-slate-500">실제 경기 데이터를 불러오는 중입니다.</div>';return;}
-            const q=(document.getElementById('team-search')?.value||'').toLowerCase().trim();const filtered=teamComparisonData.filter(team=>!q||`${team.name} ${team.englishName||''} ${team.short}`.toLowerCase().includes(q));
-            selector.innerHTML=filtered.length?filtered.map(team=>{const selected=selectedTeamIds.has(team.id),disabled=!selected&&selectedTeamIds.size>=MAX_TEAM_SELECTION;return `<button type="button" onclick="toggleTeamSelection('${team.id}')" class="text-left rounded-xl border p-4 transition-all ${selected?'bg-eplBlue/10 border-eplBlue/40 shadow-lg shadow-eplBlue/5':'bg-white/[0.025] border-white/5 hover:bg-white/5 hover:border-white/10'} ${disabled?'opacity-45 cursor-not-allowed':''}"><div class="flex items-start justify-between gap-3"><div><span class="text-[10px] font-mono text-eplBlue">${team.short}</span><h4 class="font-bold text-sm text-white mt-1">${team.name}</h4><p class="text-[11px] text-slate-500">${team.season} Premier League</p></div><span class="w-6 h-6 rounded-full border flex items-center justify-center ${selected?'bg-eplBlue border-eplBlue text-slate-950':'border-white/15 text-transparent'}"><i class="fa-solid fa-check text-[10px]"></i></span></div><div class="mt-3 flex items-center justify-between gap-2"><span class="text-[11px] text-slate-400">${team.metrics.played}경기 · ${team.metrics.wins}승 ${team.metrics.draws}무 ${team.metrics.losses}패</span><span class="px-2 py-0.5 rounded bg-white/5 text-[10px] font-mono text-slate-300">${team.metrics.points} PTS</span></div></button>`}).join(''):'<div class="col-span-full p-8 text-center text-xs text-slate-600">검색 결과가 없습니다.</div>';
+            const q=(document.getElementById('team-search')?.value||'').toLowerCase().trim();const filtered=teamComparisonData.filter(team=>!q||`${team.name} ${team.englishName||''} ${team.short}`.toLowerCase().includes(q)).map(team=>{const live=currentStanding(team.id);return live?{...team,metrics:{...team.metrics,...live}}:team;});
+            selector.innerHTML=filtered.length?filtered.map(team=>{const selected=selectedTeamIds.has(team.id),disabled=!selected&&selectedTeamIds.size>=MAX_TEAM_SELECTION;return `<button type="button" onclick="toggleTeamSelection('${team.id}')" class="text-left rounded-xl border p-4 transition-all ${selected?'bg-eplBlue/10 border-eplBlue/40 shadow-lg shadow-eplBlue/5':'bg-white/[0.025] border-white/5 hover:bg-white/5 hover:border-white/10'} ${disabled?'opacity-45 cursor-not-allowed':''}"><div class="flex items-start justify-between gap-3"><div><span class="text-[10px] font-mono text-eplBlue">현재 ${team.metrics.rank}위 · ${team.short}</span><h4 class="font-bold text-sm text-white mt-1">${team.name}</h4><p class="text-[11px] text-slate-500">2026-27 Premier League</p></div><span class="w-6 h-6 rounded-full border flex items-center justify-center ${selected?'bg-eplBlue border-eplBlue text-slate-950':'border-white/15 text-transparent'}"><i class="fa-solid fa-check text-[10px]"></i></span></div><div class="mt-3 text-[11px] text-slate-400">${team.metrics.played}경기 · ${team.metrics.wins}승 ${team.metrics.draws}무 ${team.metrics.losses}패 · ${team.metrics.goalsFor}득점 ${team.metrics.goalsAgainst}실점</div><div class="mt-2 flex gap-2"><span class="px-2 py-0.5 rounded bg-white/5 text-[10px] font-mono text-slate-300">${team.metrics.points} PTS</span><span class="px-2 py-0.5 rounded bg-white/5 text-[10px] font-mono text-slate-300">GD ${team.metrics.goalDifference>0?'+':''}${team.metrics.goalDifference}</span></div></button>`}).join(''):'<div class="col-span-full p-8 text-center text-xs text-slate-600">검색 결과가 없습니다.</div>';
             count.textContent=`${selectedTeamIds.size} / ${MAX_TEAM_SELECTION} 선택`;guide.textContent=selectedTeamIds.size===0?'팀을 1개 이상 선택하세요.':selectedTeamIds.size===MAX_TEAM_SELECTION?'최대 3개 팀이 선택되었습니다. 다른 팀을 고르려면 기존 선택을 해제하세요.':`팀을 ${MAX_TEAM_SELECTION-selectedTeamIds.size}개 더 선택할 수 있습니다.`;
         }
 
@@ -663,7 +741,7 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
             if(!cards||!metrics||!summary||!empty||!content) return;
             if(entityData.status!=='ready'){renderTeamSelector();initialiseEntityData().then(()=>renderTeamComparison());return;}
             renderTeamSelector();
-            const selected=teamComparisonData.filter(t=>selectedTeamIds.has(t.id));
+            const selected=teamComparisonData.filter(t=>selectedTeamIds.has(t.id)).map(team=>{const live=currentStanding(team.id);return live?{...team,metrics:{...team.metrics,...live,pointsPerGame:live.played?Math.round(live.points/live.played*100)/100:null}}:team;});
             const has=selected.length>0;
             empty.classList.toggle('hidden',has); content.classList.toggle('hidden',!has); cards.classList.toggle('hidden',!has);
             if(!has){cards.innerHTML='';metrics.innerHTML='';summary.innerHTML='';return;}
@@ -671,12 +749,12 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
             const teamColumns=`minmax(150px,.8fr) repeat(${selected.length},minmax(210px,1fr))`;
             cards.innerHTML=`<div class="overflow-x-auto rounded-2xl border border-white/5 bg-slate-950/40"><div class="min-w-[760px]">
                 <div class="grid border-b border-white/5" style="grid-template-columns:${teamColumns}"><div class="p-4 bg-white/[.02] text-[10px] font-mono uppercase tracking-widest text-slate-500">Team Profile</div>${selected.map((t,i)=>`<div class="p-4 border-l border-white/5 relative"><div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${managerBarClasses[i]}"></div><strong class="text-white">${t.name}</strong><p class="text-[11px] text-slate-500 mt-1">${t.short}</p></div>`).join('')}</div>
-                ${[['시즌',t=>t.season],['경기 수',t=>t.metrics.played],['승-무-패',t=>`${t.metrics.wins}-${t.metrics.draws}-${t.metrics.losses}`],['득점-실점',t=>`${t.metrics.goalsFor}-${t.metrics.goalsAgainst}`],['승점',t=>t.metrics.points]].map(([l,getValue])=>`<div class="grid border-b border-white/5" style="grid-template-columns:${teamColumns}"><div class="px-4 py-3 bg-white/[.015] text-xs font-semibold text-slate-400">${l}</div>${selected.map(t=>`<div class="px-4 py-3 border-l border-white/5 text-sm text-slate-200">${getValue(t)}</div>`).join('')}</div>`).join('')}
-                <div class="grid" style="grid-template-columns:${teamColumns}"><div class="px-4 py-4 bg-white/[.015] text-xs font-semibold text-slate-400">출처</div>${selected.map(()=>`<div class="px-4 py-4 border-l border-white/5 text-xs text-slate-400">openfootball/england · Public Domain</div>`).join('')}</div>
+                ${[['현재 감독',t=>t.manager],['전술 정체성',t=>t.managerIdentity],['선호 포메이션',t=>t.formation],['등록 선수단',t=>`${t.squadSize}명 · 선발 기준 ${t.starterCount} · 벤치 ${t.benchCount}`],['━━ 2025-26 최종 순위',t=>t.previous?`${t.previous.rank}위`:'전년도 EPL 미참가'],['2025-26 경기 수',t=>t.previous?t.previous.played:'—'],['2025-26 승',t=>t.previous?t.previous.wins:'—'],['2025-26 무',t=>t.previous?t.previous.draws:'—'],['2025-26 패',t=>t.previous?t.previous.losses:'—'],['2025-26 득점',t=>t.previous?t.previous.goalsFor:'—'],['2025-26 실점',t=>t.previous?t.previous.goalsAgainst:'—'],['2025-26 득실차',t=>t.previous?`${t.previous.goalDifference>0?'+':''}${t.previous.goalDifference}`:'—'],['2025-26 승점',t=>t.previous?t.previous.points:'—'],['━━ 2026-27 현재 순위',t=>`${t.metrics.rank}위`],['2026-27 경기 수',t=>t.metrics.played],['2026-27 승',t=>t.metrics.wins],['2026-27 무',t=>t.metrics.draws],['2026-27 패',t=>t.metrics.losses],['2026-27 득점',t=>t.metrics.goalsFor],['2026-27 실점',t=>t.metrics.goalsAgainst],['2026-27 득실차',t=>`${t.metrics.goalDifference>0?'+':''}${t.metrics.goalDifference}`],['2026-27 승점',t=>t.metrics.points]].map(([l,getValue])=>`<div class="grid border-b border-white/5 ${String(l).startsWith('━━')?'bg-eplBlue/[.035]':''}" style="grid-template-columns:${teamColumns}"><div class="px-4 py-3 bg-white/[.015] text-xs font-semibold ${String(l).startsWith('━━')?'text-eplBlue':'text-slate-400'}">${l}</div>${selected.map(t=>`<div class="px-4 py-3 border-l border-white/5 text-sm ${String(l).startsWith('━━')?'font-bold text-white':'text-slate-200'}">${escapeHtml(getValue(t))}</div>`).join('')}</div>`).join('')}
+                <div class="grid" style="grid-template-columns:${teamColumns}"><div class="px-4 py-4 bg-white/[.015] text-xs font-semibold text-slate-400">출처</div>${selected.map(()=>`<div class="px-4 py-4 border-l border-white/5 text-xs text-slate-400">2025-26 openfootball · 2026-27 TheSportsDB</div>`).join('')}</div>
             </div></div>`;
-            metrics.innerHTML=Object.keys(teamMetricLabels).map(key=>{const values=selected.map(team=>team.metrics[key]).filter(value=>value!=null);const max=Math.max(...values.map(value=>Math.abs(value)),1);return `<div><div class="flex justify-between items-center mb-3"><span class="text-sm font-semibold text-slate-200">${teamMetricLabels[key]}</span><span class="text-[10px] text-slate-600 font-mono">EXTERNAL FACTS</span></div><div class="space-y-2.5">${selected.map((team,i)=>{const value=team.metrics[key];const width=value==null?0:Math.abs(value)/max*100;return `<div class="grid grid-cols-[92px_1fr_44px] md:grid-cols-[160px_1fr_52px] gap-3 items-center"><span class="text-xs text-slate-400 truncate">${team.name}</span><div class="h-2.5 rounded-full bg-white/5 overflow-hidden"><div class="metric-bar h-full rounded-full bg-gradient-to-r ${managerBarClasses[i]}" style="width:${width}%"></div></div><span class="text-xs font-mono font-bold text-white text-right">${value==null?'—':value}</span></div>`}).join('')}</div></div>`}).join('');
+            metrics.innerHTML=`<div class="grid gap-4" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">${selected.map((team,i)=>{const recent=team.recent.map(result=>{const home=result.homeTeamId===team.id,scored=home?result.homeScore:result.awayScore,conceded=home?result.awayScore:result.homeScore;return scored>conceded?'W':scored<conceded?'L':'D';});const stat=(label,value)=>`<div class="rounded-lg bg-black/20 p-3 text-center"><strong class="text-base">${value}</strong><span class="block text-[10px] text-slate-500 mt-1">${label}</span></div>`;return `<article class="rounded-xl border border-white/5 bg-white/[.025] p-5"><div class="flex items-center justify-between"><h4 class="font-bold">${escapeHtml(team.name)}</h4><span class="text-xs text-eplBlue">현재 ${team.metrics.rank}위</span></div><div class="grid grid-cols-4 gap-2 mt-4">${stat('경기',team.metrics.played)}${stat('승',team.metrics.wins)}${stat('무',team.metrics.draws)}${stat('패',team.metrics.losses)}${stat('득점',team.metrics.goalsFor)}${stat('실점',team.metrics.goalsAgainst)}${stat('득실',`${team.metrics.goalDifference>0?'+':''}${team.metrics.goalDifference}`)}${stat('승점',team.metrics.points)}</div><div class="mt-4 flex items-center justify-between"><span class="text-xs text-slate-500">최근 결과</span><div class="flex gap-1">${recent.length?recent.map(value=>`<span class="form-dot ${value==='W'?'bg-emerald-500':value==='L'?'bg-rose-500':'bg-slate-500'}">${value}</span>`).join(''):'<span class="text-xs text-slate-600">없음</span>'}</div></div></article>`;}).join('')}</div>`;
             summary.className=`px-6 pb-6 grid grid-cols-1 gap-4 ${selected.length===1?'md:grid-cols-1':selected.length===2?'md:grid-cols-2':'md:grid-cols-3'}`;
-            summary.innerHTML=selected.map((team,i)=>`<article class="rounded-xl border border-white/5 bg-white/[0.025] p-4"><div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-gradient-to-r ${managerBarClasses[i]}"></span><h4 class="font-bold text-sm text-white">${team.name} 실제 경기 기록</h4></div><p class="text-xs text-slate-400 leading-relaxed mt-3">${team.season} 시즌 ${team.metrics.played}경기 기준 ${team.metrics.wins}승 ${team.metrics.draws}무 ${team.metrics.losses}패, ${team.metrics.goalsFor}득점 ${team.metrics.goalsAgainst}실점입니다.</p><a class="inline-flex mt-3 text-[11px] text-eplBlue hover:underline" href="${team.sourceUrl}" target="_blank" rel="noopener noreferrer">원본 데이터 확인</a><p class="mt-2 text-[10px] font-mono text-slate-600">수집 ${new Date(team.asOf).toLocaleString('ko-KR')}</p></article>`).join('');
+            summary.innerHTML=selected.map((team,i)=>`<article class="rounded-xl border border-white/5 bg-white/[0.025] p-4"><div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-gradient-to-r ${managerBarClasses[i]}"></span><h4 class="font-bold text-sm text-white">${escapeHtml(team.name)} 시즌 변화</h4></div><p class="text-xs text-slate-400 leading-relaxed mt-3">${team.previous?`2025-26 시즌 ${team.previous.rank}위·${team.previous.points}점에서`:'2025-26 EPL 미참가 후 승격해'} 2026-27 현재 ${team.metrics.rank}위·${team.metrics.points}점입니다. 현재 감독은 ${escapeHtml(team.manager)}이며 등록 선수단 ${team.squadSize}명이 연결되어 있습니다.</p><p class="mt-3 text-[10px] font-mono text-slate-600">이전 시즌 380경기 완료 · 현재 시즌 ${entityData.standings.completedMatches}경기 완료</p></article>`).join('');
         }
 
         let playerPositionFilter='All';
@@ -725,15 +803,13 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
                             <div class="p-4 bg-white/[0.02] flex items-end"><span class="text-[10px] font-mono uppercase tracking-widest text-slate-500">Player Profile</span></div>
                             ${selected.map((p,i)=>`<div class="p-4 border-l border-white/5 relative"><div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${managerBarClasses[i]}"></div><div class="flex items-center gap-3 pt-1">${p.image?`<img src="${p.image}" alt="${p.name}" class="w-14 h-14 shrink-0 rounded-xl border border-white/10 bg-white/[0.02] object-contain object-bottom" loading="lazy" referrerpolicy="no-referrer">`:'<div class="w-14 h-14 shrink-0 rounded-xl border border-dashed border-white/10 bg-white/[0.02] flex items-center justify-center text-slate-600"><i class="fa-regular fa-image"></i></div>'}<div class="min-w-0"><div class="flex items-center gap-2"><span class="text-[10px] font-mono text-purple-300">${p.position}</span><span class="text-[10px] text-slate-600">${p.club}</span></div><button onclick="openPlayerProfile('${p.id}')" class="text-left group"><h3 class="text-base font-bold text-white mt-1 truncate group-hover:text-eplNeon">${p.name}</h3><p class="text-[11px] text-slate-500 truncate">${p.english}</p></button></div></div></div>`).join('')}
                         </div>
-                        ${[
-                            ['생년월일','birthDate'],['국적','nationality'],['신장','height']
-                        ].map(([label,key])=>`<div class="grid border-b border-white/5 last:border-b-0" style="grid-template-columns:${columnTemplate}"><div class="px-4 py-3 bg-white/[0.015] text-xs font-semibold text-slate-400">${label}</div>${selected.map(p=>`<div class="px-4 py-3 border-l border-white/5 text-sm text-slate-200">${p[key]}</div>`).join('')}</div>`).join('')}
+                        ${[['소속팀','club'],['소속팀 현재 순위','teamRank'],['등번호','number'],['등록 포지션','position'],['스쿼드 상태','squadRole'],['나이','birthDate'],['국적','nationality'],['신장','height'],['주발','foot']].map(([label,key])=>`<div class="grid border-b border-white/5 last:border-b-0" style="grid-template-columns:${columnTemplate}"><div class="px-4 py-3 bg-white/[0.015] text-xs font-semibold text-slate-400">${label}</div>${selected.map(p=>`<div class="px-4 py-3 border-l border-white/5 text-sm text-slate-200">${escapeHtml(key==='teamRank'&&p[key]!=='—'?`${p[key]}위`:p[key])}</div>`).join('')}</div>`).join('')}
                         <div class="grid border-b border-white/5" style="grid-template-columns:${columnTemplate}"><div class="px-4 py-4 bg-white/[0.015] text-xs font-semibold text-slate-400">등록 포지션</div>${selected.map(p=>`<div class="px-4 py-4 border-l border-white/5"><div class="flex flex-wrap gap-2">${p.tags.map(t=>`<span class="px-2 py-1 rounded-md bg-purple-400/10 border border-purple-400/20 text-[11px] text-purple-200">${t}</span>`).join('')}</div></div>`).join('')}</div>
-                        <div class="grid" style="grid-template-columns:${columnTemplate}"><div class="px-4 py-4 bg-white/[0.015] text-xs font-semibold text-slate-400">출처</div>${selected.map(p=>`<div class="px-4 py-4 border-l border-white/5"><a href="${p.sourceUrl}" target="_blank" rel="noopener noreferrer" class="text-xs text-purple-300 hover:underline">Wikidata ${p.sourceRevision}</a></div>`).join('')}</div>
+                        <div class="grid" style="grid-template-columns:${columnTemplate}"><div class="px-4 py-4 bg-white/[0.015] text-xs font-semibold text-slate-400">출처</div>${selected.map(p=>`<div class="px-4 py-4 border-l border-white/5">${p.sourceUrl?`<a href="${escapeHtml(p.sourceUrl)}" target="_blank" rel="noopener noreferrer" class="text-xs text-purple-300 hover:underline">${escapeHtml(p.sourceId)}</a>`:`<span class="text-xs text-slate-500">${escapeHtml(p.sourceId)}</span>`}</div>`).join('')}</div>
                     </div>
                 </div>`;
 
-            common.innerHTML='<div class="p-6 text-center text-xs text-slate-500">출처가 없는 0~100 능력치는 숨겼습니다. 검증 가능한 경기력 공급자 연동 후 제공됩니다.</div>';
+            common.innerHTML=`<div class="grid gap-3 p-5" style="grid-template-columns:repeat(auto-fit,minmax(210px,1fr))">${selected.map(player=>{const standing=currentStanding(player.teamId)||{};return `<article class="rounded-xl border border-white/5 bg-white/[.025] p-4"><div class="flex items-center justify-between"><strong class="text-sm">${escapeHtml(player.club)}</strong><span class="text-xs text-purple-300">${standing.rank||'—'}위</span></div><div class="grid grid-cols-4 gap-2 mt-4 text-center"><div><b>${standing.played??0}</b><span class="block text-[9px] text-slate-500">경기</span></div><div><b>${standing.points??0}</b><span class="block text-[9px] text-slate-500">승점</span></div><div><b>${standing.goalsFor??0}</b><span class="block text-[9px] text-slate-500">득점</span></div><div><b>${standing.goalsAgainst??0}</b><span class="block text-[9px] text-slate-500">실점</span></div></div></article>`;}).join('')}</div>`;
             /* `
                 <div class="overflow-x-auto"><div class="min-w-[760px]">
                     <div class="grid border-b border-white/5" style="grid-template-columns:${columnTemplate}"><div class="px-4 py-3 text-[10px] font-mono uppercase tracking-widest text-slate-500">Attribute</div>${selected.map((p,i)=>`<div class="px-4 py-3 border-l border-white/5 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-gradient-to-r ${managerBarClasses[i]}"></span><span class="text-xs font-semibold text-slate-300 truncate">${p.name}</span></div>`).join('')}</div>
@@ -742,7 +818,7 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
 
             const allRoleKeys=[];
             selected.forEach(p=>Object.keys(playerRoleStatLabels[p.positionGroup]||{}).forEach(k=>{if(!allRoleKeys.includes(k))allRoleKeys.push(k)}));
-            role.innerHTML='<div class="p-6 text-center text-xs text-slate-500">득점·xG·패스 등 시즌 성과는 사용 허용이 확인된 원본이 없어 현재 표시하지 않습니다.</div>';
+            role.innerHTML=`<div class="grid gap-3 p-5" style="grid-template-columns:repeat(auto-fit,minmax(210px,1fr))">${selected.map(player=>`<article class="rounded-xl border border-white/5 bg-white/[.025] p-4"><div class="flex items-center justify-between"><strong class="text-sm">${escapeHtml(player.name)}</strong><span class="font-mono text-xs text-purple-300">${escapeHtml(player.position)}</span></div><div class="mt-3 flex flex-wrap gap-2">${player.tags.map(tag=>`<span class="px-2 py-1 rounded bg-purple-400/10 text-[10px] text-purple-200">${escapeHtml(tag)}</span>`).join('')}</div><p class="mt-4 text-xs text-slate-400">${escapeHtml(player.squadRole)} · 등번호 ${escapeHtml(player.number)}</p></article>`).join('')}</div>`;
             /* `
                 <div class="overflow-x-auto"><div class="min-w-[760px]">
                     <div class="grid border-b border-white/5" style="grid-template-columns:${columnTemplate}"><div class="px-4 py-3 text-[10px] font-mono uppercase tracking-widest text-slate-500">Role Metric</div>${selected.map(p=>`<div class="px-4 py-3 border-l border-white/5"><span class="text-xs font-semibold text-slate-300">${p.name}</span><span class="ml-2 text-[10px] font-mono text-purple-300">${p.position}</span></div>`).join('')}</div>
@@ -764,12 +840,6 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
         let matchLineupState={home:null,away:null};
         let latestSubstitutionImpact=null;
         let provisionalLineupEnabled=false;
-        const playerStrengthNotes={
-            Trossard:'좁은 공간 연계와 박스 침투',Nwaneri:'전진 드리블과 창의적인 패스',Sterling:'뒷공간 침투와 1대1 돌파',Merino:'공중볼과 박스 진입',Jorginho:'템포 조절과 전진 패스',Calafiori:'좌측 빌드업과 전진 수비',Tomiyasu:'수비 안정성과 멀티 포지션',
-            Elliott:'하프스페이스 창의성과 전방 압박',Chiesa:'직선적인 돌파와 슈팅',Gakpo:'연계와 중앙 침투',Endo:'볼 회수와 수비 밸런스',Gomez:'커버 범위와 수비 전환',Bradley:'오버래핑과 활동량',
-            Grealish:'볼 소유와 파울 유도',Marmoush:'침투 속도와 직접적인 슈팅',Bernardo:'압박 회피와 패스 연결',Kovačić:'볼 운반과 중원 탈압박',Lewis:'인버티드 움직임과 중앙 수적 우위',Aké:'대인 수비와 좌측 안정성',
-            Nkunku:'세컨드 스트라이커 움직임과 마무리',Mudryk:'폭발적인 스피드와 전환 공격',Lavia:'수비형 미드필드의 압박 회피',Gusto:'오버래핑과 넓은 폭',Guiu:'박스 안 피지컬과 압박',Veiga:'멀티 포지션과 수비 강도'
-        };
         function matchTeamLabel(teamId){const team=entityData.teams?.[teamId];return team?.koreanName||team?.name||teamId;}
         function canonicalLineupPlayer(row,index){const player=entityData.players?.[row.id]||{};return {id:row.id,name:player.koreanName||row.name||player.name||'선수 미확정',pos:row.position||player.position||defaultMatchPositions[index]||'CM',naturalPos:row.position||player.position||'CM',custom:null};}
         function initMatchCompare(){
@@ -804,8 +874,6 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
             ['home','away'].forEach(side=>{const team=document.getElementById(`match-${side}-team`)?.value;if(!team)return;matchLineupState[side]=null;const state=ensureMatchSideState(side,team),form=state.formation,slots=buildFormationSlots(form);state.starters.forEach((p,i)=>{p.pos=slots[i]||p.pos;p.custom=null;});setFormationSelectorValue(side,form);});
             renderMatchCompare(true);showToast('양 팀 배치를 기본 포메이션으로 초기화했습니다.');
         }
-        function liveRating(teamIndex, playerIndex, side){const seed=(teamIndex+1)*17+(playerIndex+1)*11+(side==='home'?5:9);return (6.4+(seed%22)/10).toFixed(1);}
-        function ratingClass(r){const n=Number(r);return n>=8?'bg-emerald-400 text-slate-950':n>=7.5?'bg-lime-300 text-slate-950':n>=7?'bg-yellow-300 text-slate-950':n>=6.5?'bg-orange-300 text-slate-950':'bg-rose-400 text-white';}
         function updateMatchPosition(side,index,pos){
             const state=matchLineupState[side];if(!state)return;
             const player=state.starters[index],oldPos=player.pos;
@@ -822,16 +890,15 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
             renderMatchCompare(false);
         }
         function buildSubstitutionImpact(side,incoming,outgoing,targetPos,team){
-            const strength=playerStrengthNotes[incoming]||`${targetPos} 위치에서 새로운 움직임과 에너지 제공`;
             const roleImpact={GK:'후방 안정성과 빌드업 선택지가 변합니다.',RB:'오른쪽 폭과 오버래핑 빈도가 달라집니다.',LB:'왼쪽 전진 폭과 수비 복귀 속도가 달라집니다.',CB:'수비 라인의 커버 범위와 전진 패스가 달라집니다.',RCB:'오른쪽 빌드업과 대인 방어 구조가 변합니다.',LCB:'왼쪽 빌드업과 커버 구조가 변합니다.',DM:'중앙 보호와 1차 전개 방식이 달라집니다.',CM:'중원 볼 운반과 압박 연결이 달라집니다.',RCM:'오른쪽 하프스페이스 점유가 달라집니다.',LCM:'왼쪽 하프스페이스 점유가 달라집니다.',AM:'라인 사이 창의성과 마지막 패스 비중이 증가합니다.',RW:'오른쪽 1대1과 안쪽 침투 패턴이 달라집니다.',LW:'왼쪽 1대1과 안쪽 침투 패턴이 달라집니다.',ST:'최전방 압박, 침투, 박스 점유 방식이 달라집니다.'}[targetPos]||'해당 구역의 움직임과 연결 방식이 달라집니다.';
             const risk={GK:'발밑 전개 호흡이 흔들릴 수 있습니다.',CB:'수비 라인 간격 적응이 필요합니다.',RCB:'측면 커버 타이밍 적응이 필요합니다.',LCB:'측면 커버 타이밍 적응이 필요합니다.',DM:'중앙 전환 수비의 균형을 확인해야 합니다.',CM:'중원 간격과 압박 타이밍이 바뀔 수 있습니다.',RCM:'오른쪽 측면과의 역할 중복을 확인해야 합니다.',LCM:'왼쪽 측면과의 역할 중복을 확인해야 합니다.',RW:'수비 가담과 폭 유지가 약해질 수 있습니다.',LW:'수비 가담과 폭 유지가 약해질 수 있습니다.',ST:'연계 또는 공중볼 비중이 달라질 수 있습니다.'}[targetPos]||'기존 선수와의 역할 차이로 초기 간격 조정이 필요합니다.';
-            return {side,team,incoming,outgoing,targetPos,strength,roleImpact,risk};
+            return {side,team,incoming,outgoing,targetPos,roleImpact,risk};
         }
         function renderSubstitutionImpact(){
             const box=document.getElementById('substitution-impact');if(!box)return;
-            if(!latestSubstitutionImpact){box.textContent='선수를 교체하면 팀 구조 변화, 투입 선수의 장점, 예상 이득과 리스크가 여기에 표시됩니다.';return;}
+            if(!latestSubstitutionImpact){box.textContent='선수를 교체하면 선택한 포지션을 기준으로 예상되는 구조 변화와 확인할 항목을 표시합니다. 실제 경기 성과 예측은 아닙니다.';return;}
             const i=latestSubstitutionImpact,tint=i.side==='home'?'cyan':'rose';
-            box.innerHTML=`<div class="flex flex-wrap items-center gap-2 mb-3"><span class="px-2 py-1 rounded bg-${tint}-400/10 border border-${tint}-400/20 text-${tint}-200 font-bold">${i.team}</span><strong class="text-emerald-300">${i.incoming} IN</strong><span class="text-slate-600">·</span><strong class="text-rose-300">${i.outgoing} OUT</strong><span class="px-2 py-1 rounded bg-white/5 text-slate-300 font-mono">${i.targetPos}</span></div><div class="grid grid-cols-1 md:grid-cols-3 gap-3"><div class="rounded-xl bg-white/[0.025] border border-white/5 p-3"><span class="text-[10px] uppercase tracking-widest text-emerald-300 font-bold">투입 선수 장점</span><p class="mt-2 text-slate-300 leading-relaxed">${i.strength}</p></div><div class="rounded-xl bg-white/[0.025] border border-white/5 p-3"><span class="text-[10px] uppercase tracking-widest text-cyan-300 font-bold">팀 구조 변화</span><p class="mt-2 text-slate-300 leading-relaxed">${i.roleImpact}</p></div><div class="rounded-xl bg-white/[0.025] border border-white/5 p-3"><span class="text-[10px] uppercase tracking-widest text-amber-300 font-bold">확인할 리스크</span><p class="mt-2 text-slate-300 leading-relaxed">${i.risk}</p></div></div>`;
+            box.innerHTML=`<div class="flex flex-wrap items-center gap-2 mb-3"><span class="px-2 py-1 rounded bg-${tint}-400/10 border border-${tint}-400/20 text-${tint}-200 font-bold">${i.team}</span><strong class="text-emerald-300">${i.incoming} IN</strong><span class="text-slate-600">·</span><strong class="text-rose-300">${i.outgoing} OUT</strong><span class="px-2 py-1 rounded bg-white/5 text-slate-300 font-mono">${i.targetPos}</span></div><div class="grid grid-cols-1 md:grid-cols-2 gap-3"><div class="rounded-xl bg-white/[0.025] border border-white/5 p-3"><span class="text-[10px] uppercase tracking-widest text-cyan-300 font-bold">포지션 구조 변화</span><p class="mt-2 text-slate-300 leading-relaxed">${i.roleImpact}</p></div><div class="rounded-xl bg-white/[0.025] border border-white/5 p-3"><span class="text-[10px] uppercase tracking-widest text-amber-300 font-bold">사용자가 확인할 항목</span><p class="mt-2 text-slate-300 leading-relaxed">${i.risk}</p></div></div><p class="mt-3 text-[10px] text-slate-500">등록 스쿼드와 사용자가 선택한 배치를 바탕으로 한 구조 설명이며, 실제 선수 성과나 경기 결과 예측이 아닙니다.</p>`;
         }
         function substituteMatchPlayer(side,benchIndex,starterIndex){
             const state=matchLineupState[side];if(!state||starterIndex<0)return;
@@ -889,10 +956,10 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
             const currentHF=document.getElementById('match-home-formation').value,currentAF=document.getElementById('match-away-formation').value;
             const homeLabel=matchTeamLabel(ht),awayLabel=matchTeamLabel(at);
             document.getElementById('match-title').textContent=`${homeLabel}  vs  ${awayLabel}`;document.getElementById('match-home-board-title').textContent=`${homeLabel} · ${currentHF}`;document.getElementById('match-away-board-title').textContent=`${awayLabel} · ${currentAF}`;
-            pitch.querySelectorAll('.match-player').forEach(x=>x.remove());if(resetSelection){matchSelected={home:null,away:null};document.getElementById('matchup-info').textContent='홈 선수와 원정 선수를 차례로 클릭하면 능력 차이를 표시합니다.';}
+            pitch.querySelectorAll('.match-player').forEach(x=>x.remove());if(resetSelection){matchSelected={home:null,away:null};document.getElementById('matchup-info').textContent='홈 선수와 원정 선수를 차례로 클릭하면 두 선수의 배치 위치와 직접 대결 구역을 표시합니다.';}
             const officialLineupAvailable=hs.confirmed&&as.confirmed;
             if(!officialLineupAvailable&&!provisionalLineupEnabled){
-                document.getElementById('match-home-live-team-rating').textContent='—';document.getElementById('match-away-live-team-rating').textContent='—';
+                document.getElementById('match-home-live-team-rating').textContent='선발 대기';document.getElementById('match-away-live-team-rating').textContent='선발 대기';
                 document.getElementById('match-home-squad-title').textContent=homeLabel;document.getElementById('match-away-squad-title').textContent=awayLabel;
                 document.getElementById('match-squad-compare').innerHTML=`<div class="p-8 text-center"><div class="text-amber-300 font-bold">공식 선발 라인업 발표 전</div><p class="mt-2 text-xs text-slate-500">현재 등록 스쿼드는 실제 경기 선발 명단이 아니므로 기본 화면에 표시하지 않습니다.</p><button type="button" onclick="enableProvisionalLineup()" class="mt-4 px-4 py-2.5 rounded-xl border border-amber-300/20 bg-amber-300/10 text-xs font-bold text-amber-200">스쿼드 기반 예상 배치 보기</button></div>`;
                 document.getElementById('match-home-bench').innerHTML='<div class="text-xs text-slate-600">공식 후보 명단 발표 전입니다.</div>';document.getElementById('match-away-bench').innerHTML='<div class="text-xs text-slate-600">공식 후보 명단 발표 전입니다.</div>';
@@ -903,7 +970,7 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
                 const missing=[!hs.complete?`${homeLabel} ${hs.starters.length}명`:'',!as.complete?`${awayLabel} ${as.starters.length}명`:''].filter(Boolean).join(' · ');
                 document.getElementById('matchup-info').textContent=`라인업이 불완전합니다: ${missing}. 선발 11명이 연결된 팀을 선택해 주세요.`;
             }
-            const teamNames=Object.keys(entityData.teams),hi=teamNames.indexOf(ht),ai=teamNames.indexOf(at);
+            document.getElementById('match-home-live-team-rating').textContent=officialLineupAvailable?'공식 선발':'예상 배치';document.getElementById('match-away-live-team-rating').textContent=officialLineupAvailable?'공식 선발':'예상 배치';
             const positionDepth={GK:94,RB:76,RCB:79,CB:80,LCB:79,LB:76,RWB:61,DM:63,RCM:56,CM:55,LCM:56,LWB:61,RW:32,RAM:39,AM:40,LAM:39,LW:32,RF:23,ST:18,LF:23};
             const positionLateral={GK:50,RB:84,RCB:64,CB:50,LCB:36,LB:16,RWB:88,DM:50,RCM:67,CM:50,LCM:33,LWB:12,RW:84,RAM:70,AM:50,LAM:30,LW:16,RF:65,ST:50,LF:35};
             function coordsFromSelectedPositions(state,side){
@@ -926,27 +993,102 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
                     return side==='home'?[homeX,lateral]:[100-homeX,100-lateral];
                 });
             }
-            const add=(state,side,coords,teamIndex)=>state.starters.forEach((player,i)=>{const rating=liveRating(teamIndex,i,side);const el=document.createElement('button');el.className=`match-player absolute -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full border text-[8px] font-bold shadow-xl cursor-move select-none ${side==='home'?'bg-cyan-400/90 border-cyan-100 text-slate-950':'bg-rose-400/90 border-rose-100 text-slate-950'}`;el.style.left=coords[i][0]+'%';el.style.top=coords[i][1]+'%';el.innerHTML=`<span class="block truncate px-1 leading-tight">${player.name}</span><span class="text-[7px] opacity-75">${player.pos}</span><span class="absolute -right-2 -top-2 min-w-6 h-6 px-1 rounded-full flex items-center justify-center text-[8px] font-black ${ratingClass(rating)}">${rating}</span>`;el.onclick=()=>selectMatchPlayer(side,player.name);makeDraggable(el,pitch,side,i);pitch.appendChild(el);});
-            add(hs,'home',coordsFromSelectedPositions(hs,'home'),hi);add(as,'away',coordsFromSelectedPositions(as,'away'),ai);
-            const homeRatings=hs.starters.map((_,i)=>Number(liveRating(hi,i,'home'))),awayRatings=as.starters.map((_,i)=>Number(liveRating(ai,i,'away')));
-            document.getElementById('match-home-live-team-rating').textContent=(homeRatings.reduce((a,b)=>a+b,0)/homeRatings.length).toFixed(2);document.getElementById('match-away-live-team-rating').textContent=(awayRatings.reduce((a,b)=>a+b,0)/awayRatings.length).toFixed(2);
+            const add=(state,side,coords)=>state.starters.forEach((player,i)=>{const el=document.createElement('button');el.className=`match-player absolute -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full border text-[8px] font-bold shadow-xl cursor-move select-none ${side==='home'?'bg-cyan-400/90 border-cyan-100 text-slate-950':'bg-rose-400/90 border-rose-100 text-slate-950'}`;el.style.left=coords[i][0]+'%';el.style.top=coords[i][1]+'%';el.innerHTML=`<span class="block truncate px-1 leading-tight">${player.name}</span><span class="text-[7px] opacity-75">${player.pos}</span>`;el.onclick=()=>selectMatchPlayer(side,player.name);makeDraggable(el,pitch,side,i);pitch.appendChild(el);});
+            add(hs,'home',coordsFromSelectedPositions(hs,'home'));add(as,'away',coordsFromSelectedPositions(as,'away'));
             document.getElementById('match-home-squad-title').textContent=homeLabel;document.getElementById('match-away-squad-title').textContent=awayLabel;
-            document.getElementById('match-squad-compare').innerHTML=hs.starters.map((homePlayer,i)=>{const awayPlayer=as.starters[i],hr=liveRating(hi,i,'home'),ar=liveRating(ai,i,'away');const posSelect=(side,p)=>`<select onchange="updateMatchPosition('${side}',${i},this.value)" class="w-full bg-slate-950 border border-white/10 rounded-lg px-2 py-2 text-xs font-mono">${matchPositionOptions.map(pos=>`<option ${pos===p.pos?'selected':''}>${pos}</option>`).join('')}</select>`;return `<div class="grid grid-cols-[150px_1fr_90px_130px_1fr_90px] border-b border-white/5 last:border-b-0"><div class="px-3 py-2 bg-white/[0.015]">${posSelect('home',homePlayer)}</div><button onclick="selectMatchPlayer('home','${homePlayer.name}')" class="px-4 py-3 border-l border-white/5 text-left text-sm text-cyan-100 hover:bg-cyan-400/[0.06]">${homePlayer.name}</button><div class="px-4 py-3 border-l border-white/5 flex justify-center"><span class="min-w-10 px-2 py-1 rounded-lg text-xs font-black text-center ${ratingClass(hr)}">${hr}</span></div><div class="px-3 py-2 border-l border-white/5 bg-white/[0.015]">${posSelect('away',awayPlayer)}</div><button onclick="selectMatchPlayer('away','${awayPlayer.name}')" class="px-4 py-3 border-l border-white/5 text-left text-sm text-rose-100 hover:bg-rose-400/[0.06]">${awayPlayer.name}</button><div class="px-4 py-3 border-l border-white/5 flex justify-center"><span class="min-w-10 px-2 py-1 rounded-lg text-xs font-black text-center ${ratingClass(ar)}">${ar}</span></div></div>`}).join('');
+            document.getElementById('match-squad-compare').innerHTML=hs.starters.map((homePlayer,i)=>{const awayPlayer=as.starters[i];const posSelect=(side,p)=>`<select onchange="updateMatchPosition('${side}',${i},this.value)" class="w-full bg-slate-950 border border-white/10 rounded-lg px-2 py-2 text-xs font-mono">${matchPositionOptions.map(pos=>`<option ${pos===p.pos?'selected':''}>${pos}</option>`).join('')}</select>`;return `<div class="grid grid-cols-[150px_1fr_150px_1fr] border-b border-white/5 last:border-b-0"><div class="px-3 py-2 bg-white/[0.015]">${posSelect('home',homePlayer)}</div><button onclick="selectMatchPlayer('home','${homePlayer.name}')" class="px-4 py-3 border-l border-white/5 text-left text-sm text-cyan-100 hover:bg-cyan-400/[0.06]">${homePlayer.name}</button><div class="px-3 py-2 border-l border-white/5 bg-white/[0.015]">${posSelect('away',awayPlayer)}</div><button onclick="selectMatchPlayer('away','${awayPlayer.name}')" class="px-4 py-3 border-l border-white/5 text-left text-sm text-rose-100 hover:bg-rose-400/[0.06]">${awayPlayer.name}</button></div>`}).join('');
             renderBench('home');renderBench('away');renderSubstitutionImpact();
         }
         function makeDraggable(el,pitch,side,index){let drag=false;el.addEventListener('pointerdown',e=>{drag=true;el.setPointerCapture(e.pointerId)});el.addEventListener('pointermove',e=>{if(!drag)return;const r=pitch.getBoundingClientRect();el.style.left=Math.max(4,Math.min(96,(e.clientX-r.left)/r.width*100))+'%';el.style.top=Math.max(5,Math.min(95,(e.clientY-r.top)/r.height*100))+'%'});el.addEventListener('pointerup',()=>{if(!drag)return;drag=false;const x=parseFloat(el.style.left),y=parseFloat(el.style.top);if(matchLineupState[side]?.starters[index])matchLineupState[side].starters[index].custom=[x,y];renderMatchCompare(false);showToast('선수 위치를 자유 배치로 저장했습니다.');})}
-        function selectMatchPlayer(side,name){matchSelected[side]=name;const info=document.getElementById('matchup-info');if(matchSelected.home&&matchSelected.away)info.innerHTML=`<strong class="text-cyan-300">${matchSelected.home}</strong> vs <strong class="text-rose-300">${matchSelected.away}</strong><span class="block mt-2 text-slate-400">직접 대결 구도가 선택되었습니다. 향후 실제 능력치와 AI 매치업 분석을 연결할 수 있습니다.</span>`;else info.textContent=`${name} 선택됨. 반대 팀 선수를 선택하세요.`;}
+        function selectMatchPlayer(side,name){matchSelected[side]=name;const info=document.getElementById('matchup-info');if(matchSelected.home&&matchSelected.away)info.innerHTML=`<strong class="text-cyan-300">${matchSelected.home}</strong> vs <strong class="text-rose-300">${matchSelected.away}</strong><span class="block mt-2 text-slate-400">선택한 두 선수의 직접 대결 위치를 경기장에서 조정할 수 있습니다.</span>`;else info.textContent=`${name} 선택됨. 반대 팀 선수를 선택하세요.`;}
 
         function renderTacticalTeamFinder(){
             const select=document.getElementById('tactical-team-select'),results=document.getElementById('tactical-team-results');if(!select||!results)return;
-            const entries=[{id:'chelsea',name:'Chelsea',manager:'사비 알론소'},{id:'mancity',name:'Manchester City',manager:'엔초 마레스카'},{id:'tottenham',name:'Tottenham Hotspur',manager:'로베르토 데 제르비'}];
-            if(!select.dataset.ready){select.innerHTML=entries.map(t=>`<option value="${t.id}">${t.name} · ${t.manager}</option>`).join('');select.dataset.ready='1';}select.value=currentTeam;
+            const entries=Object.keys(entityData.teams||{}).map(id=>{const config=tacticalTeamConfig(id);return {id,name:config.name,manager:config.manager};});
+            if(select.options.length!==entries.length){select.innerHTML=entries.map(t=>`<option value="${t.id}">${t.name} · ${t.manager}</option>`).join('');select.dataset.ready='1';}select.value=currentTeam;
             const q=(document.getElementById('tactical-team-search')?.value||'').toLowerCase().trim(),filtered=entries.filter(t=>!q||`${t.name} ${t.manager}`.toLowerCase().includes(q));
             results.innerHTML=filtered.length?filtered.map(t=>`<button onclick="changeTeam('${t.id}')" id="btn-${t.id}" class="team-btn px-3 py-3 rounded-xl border font-bold text-sm transition-all duration-300 flex items-center justify-between ${currentTeam===t.id?'bg-eplPurple/20 border-eplNeon/40 text-white shadow-lg shadow-eplNeon/10':'border-white/5 bg-white/5 text-slate-400 hover:bg-white/10'}"><span><span class="block text-left">${t.name}</span><span class="block text-left text-[10px] opacity-60 mt-1">${t.manager}</span></span><i class="fa-solid fa-chevron-right text-[10px] opacity-50"></i></button>`).join(''):'<div class="p-4 text-center text-xs text-slate-600">검색 결과가 없습니다.</div>';
         }
 
-        let currentTeam = 'chelsea';
-        let currentFormation = '3-4-2-1';
+        const tacticalPresetLibrary={tikitaka:{defline:55,width:35,pressing:65},gegen:{defline:80,width:45,pressing:95},lowblock:{defline:20,width:25,pressing:20}};
+        const tacticalSquadState={};
+        const tacticalPositionOverrides={
+            'player-api-19465':['GK'],'player-api-22090':['RCB','CB'],'player-api-333682':['CB','RB'],'player-api-37127':['RCM','AM','CM'],'player-api-19586':['AM','LW','CM'],'player-api-1460':['RW'],'player-api-643':['ST','RW'],'player-api-19959':['RB','CB'],'player-api-127817':['LCB','LB'],'player-api-22224':['LCB','CB'],'player-api-127769':['LW'],
+            'player-api-727':['RW','LW'],'player-api-38746':['RB','CB'],'player-api-2273':['GK'],'player-api-18979':['ST'],'player-api-161800':['LW','RW'],'player-api-136723':['RW','LW'],'player-api-41725':['AM','CM'],'player-api-313236':['AM','RW'],'player-api-47311':['CM','DM'],'player-api-978':['ST','AM'],'player-api-20619':['GK'],
+            'player-api-47315':['DM','CM'],'player-api-10135':['CM','DM'],'player-api-2937':['LCM','DM','CM'],'player-api-313245':['LB','CM'],'player-api-442044':['AM','RW'],'player-api-157052':['LB','LCB']
+        };
+        const tacticalPreferredXI={arsenal:['player-api-19465','player-api-38746','player-api-22090','player-api-22224','player-api-157052','player-api-37127','player-api-47315','player-api-2937','player-api-1460','player-api-18979','player-api-127769']};
+        function tacticalSquadPlayer(row){const player=entityData.players?.[row.id]||{};let available=row.grid?[row.position]:(tacticalPositionOverrides[row.id]||row.availablePositions||player.positions||[row.position||player.position||'CM']);if(typeof available==='string')available=[available];return {id:row.id,name:player.koreanName||row.name||player.name||'선수 미확정',position:available[0],availablePositions:available};}
+        function tacticalPositionGroup(position){if(position==='GK')return'GK';if(['CB','RCB','LCB','RB','LB','RWB','LWB'].includes(position))return'DF';if(['CM','RCM','LCM','DM','RDM','LDM','AM','RAM','LAM','RM','LM'].includes(position))return'MF';return'FW';}
+        function tacticalFormationRequirements(formation){return (formationsMap[formation]||formationsMap['4-3-3']).reduce((counts,slot)=>{const group=tacticalPositionGroup(slot.pos);counts[group]=(counts[group]||0)+1;return counts;},{GK:0,DF:0,MF:0,FW:0});}
+        function buildBalancedTacticalSquad(teamId,formation){
+            const squad=entityData.squads?.[teamId]||{};
+            const preferred=(squad.starters||[]).map(tacticalSquadPlayer);
+            const reserves=(squad.substitutes||[]).map(tacticalSquadPlayer);
+            const priority=tacticalPreferredXI[teamId]||[];
+            const all=[...preferred,...reserves].filter((player,index,list)=>player.id&&list.findIndex(item=>item.id===player.id)===index).sort((a,b)=>{const ai=priority.indexOf(a.id),bi=priority.indexOf(b.id);return (ai<0?999:ai)-(bi<0?999:bi);});
+            const requirements=tacticalFormationRequirements(formation);
+            const selected=[];
+            ['GK','DF','MF','FW'].forEach(group=>{
+                const candidates=all.filter(player=>tacticalPositionGroup(player.position)===group&&!selected.some(item=>item.id===player.id));
+                selected.push(...candidates.slice(0,requirements[group]));
+            });
+            if(selected.length<11)selected.push(...all.filter(player=>!selected.some(item=>item.id===player.id)).slice(0,11-selected.length));
+            const ordered=(formationsMap[formation]||formationsMap['4-3-3']).map(slot=>{
+                const group=tacticalPositionGroup(slot.pos);
+                const exact=selected.find(player=>player.availablePositions?.includes(slot.pos)&&!player.assigned);
+                const compatible=selected.find(player=>tacticalPositionGroup(player.position)===group&&!player.assigned);
+                const fallback=selected.find(player=>!player.assigned);
+                const player=exact||compatible||fallback;if(player)player.assigned=true;return player;
+            }).filter(Boolean).map(player=>{const clean={...player};delete clean.assigned;return clean;});
+            const selectedIds=new Set(ordered.map(player=>player.id));
+            return {starters:ordered,bench:all.filter(player=>!selectedIds.has(player.id))};
+        }
+        function ensureTacticalSquad(teamId){
+            if(tacticalSquadState[teamId])return tacticalSquadState[teamId];
+            const firstMatch=entityData.firstMatchLineups?.teams?.[teamId];
+            if(firstMatch){tacticalSquadState[teamId]={starters:firstMatch.starters.map(tacticalSquadPlayer),bench:firstMatch.substitutes.map(tacticalSquadPlayer),status:firstMatch.status,formation:firstMatch.formation};return tacticalSquadState[teamId];}
+            const requested=entityData.teams?.[teamId]?.defaultFormation;const formation=formationsMap[requested]?requested:(requested==='3-2-4-1'?'3-4-2-1':'4-3-3');
+            tacticalSquadState[teamId]=buildBalancedTacticalSquad(teamId,formation);
+            return tacticalSquadState[teamId];
+        }
+        function tacticalTeamConfig(teamId=currentTeam){
+            const team=entityData.teams?.[teamId]||{};const manager=entityData.managers?.[teamId]||{};const current=entityData.currentManagers?.managers?.[teamId]||{};const squad=entityData.squads?.[teamId]||{};
+            const players=ensureTacticalSquad(teamId).starters;
+            const firstMatch=entityData.firstMatchLineups?.teams?.[teamId];return {id:teamId,name:team.koreanName||team.name||teamId,manager:current.koreanName||current.englishName||manager.name||'감독 미확정',nationality:current.nationalities?.join(', ')||manager.nationality||'미확정',defaultFormation:firstMatch?.formation||team.defaultFormation||'4-3-3',style:manager.style||'검증된 전술 설명을 준비 중입니다.',signings:manager.signings||'이적 정보 미확정',feedback:manager.feedback||'검증된 경기 자료 기반 전술 분석을 준비 중입니다.',traits:Array.isArray(manager.traits)?manager.traits:[],career:(current.coachingCareer||[]).slice(-3).map(item=>item.teamName),keyPlayers:players.slice(0,3).map(player=>player.name),players,presets:tacticalPresetLibrary};
+        }
+        let currentTeam = 'arsenal';
+        let currentFormation = '4-3-3';
+        const tacticalCustomPositions={};
+        const tacticalPlayerRoles={};
+        let selectedTacticalPlayerId=null;
+        function tacticalPositionKey(playerId){return `${currentTeam}:${currentFormation}:${playerId}`;}
+        function tacticalRoleKey(playerId){return `${currentTeam}:${currentFormation}:${playerId}`;}
+        function compatibleTacticalRoles(position){const groups=position==='GK'?['골키퍼']:['CB','RCB','LCB'].includes(position)?['센터백']:['RB','LB','RWB','LWB'].includes(position)?['풀백·윙백']:['DM','RDM','LDM'].includes(position)?['수비형 미드필더']:['CM','RCM','LCM','AM','RAM','LAM'].includes(position)?['미드필더']:['RW','LW','RM','LM'].includes(position)?['윙어']:['공격수'];return entityData.roles.filter(role=>groups.includes(role.group));}
+        function renderTacticalRoleControls(playerId=selectedTacticalPlayerId){
+            const pitch=document.getElementById('pitch-players'),header=pitch?.parentElement?.previousElementSibling;if(!header)return;let controls=document.getElementById('tactical-player-controls');if(!controls){controls=document.createElement('div');controls.id='tactical-player-controls';controls.className='hidden items-center gap-2';controls.innerHTML='<span id="tactical-selected-player" class="text-xs text-slate-300"></span><select id="tactical-role-select" class="max-w-[180px] bg-slate-950 border border-white/10 rounded-lg px-2 py-2 text-xs"></select><button id="tactical-player-detail" type="button" class="px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-xs">선수 상세</button>';header.appendChild(controls);}
+            const node=playerId?document.querySelector(`#pitch-players [data-player-id="${playerId}"]`):null;if(!node){controls.classList.add('hidden');controls.classList.remove('flex');return;}
+            selectedTacticalPlayerId=playerId;controls.classList.remove('hidden');controls.classList.add('flex');document.getElementById('tactical-selected-player').textContent=node.dataset.playerName||'선수';const roles=compatibleTacticalRoles(node.dataset.position);const select=document.getElementById('tactical-role-select');select.innerHTML='<option value="">역할 미지정</option>'+roles.map(role=>`<option value="${role.id}">${role.nameKo}</option>`).join('');select.value=tacticalPlayerRoles[tacticalRoleKey(playerId)]||'';select.onchange=()=>{if(select.value)tacticalPlayerRoles[tacticalRoleKey(playerId)]=select.value;else delete tacticalPlayerRoles[tacticalRoleKey(playerId)];updateSliders();renderTacticalRoleControls(playerId);showToast(`${node.dataset.playerName} 역할 상태를 변경했습니다.`);};document.getElementById('tactical-player-detail').onclick=()=>openPlayerProfile(playerId);
+        }
+        function inferTacticalShape(){
+            const nodes=[...document.querySelectorAll('#pitch-players [data-player-id]')].filter(node=>node.dataset.position!=='GK');const ys=nodes.map(node=>Number.parseFloat(node.style.top)).filter(Number.isFinite).sort((a,b)=>b-a);if(!ys.length)return currentFormation;
+            const lines=[];ys.forEach(y=>{const line=lines[lines.length-1];if(!line||Math.abs(line.mean-y)>12)lines.push({values:[y],mean:y});else{line.values.push(y);line.mean=line.values.reduce((sum,value)=>sum+value,0)/line.values.length;}});return lines.map(line=>line.values.length).join('-');
+        }
+        function makeTacticalPlayerDraggable(node,pitch,playerId){let dragging=false,moved=false;node.addEventListener('pointerdown',event=>{dragging=true;moved=false;node.dataset.dragged='false';node.setPointerCapture(event.pointerId);});node.addEventListener('pointermove',event=>{if(!dragging)return;const rect=pitch.getBoundingClientRect(),x=Math.max(4,Math.min(96,(event.clientX-rect.left)/rect.width*100)),y=Math.max(5,Math.min(95,(event.clientY-rect.top)/rect.height*100));node.style.left=`${x}%`;node.style.top=`${y}%`;moved=true;});node.addEventListener('pointerup',()=>{if(!dragging)return;dragging=false;if(!moved)return;node.dataset.dragged='true';const x=Number.parseFloat(node.style.left),y=Number.parseFloat(node.style.top);tacticalCustomPositions[tacticalPositionKey(playerId)]={x,y};const inferred=inferTacticalShape();showToast(`자유 배치 저장 · 감지 대형 ${inferred} · 사용자 위치는 유지됩니다.`);});}
+        function resetTacticalBoard(){const prefix=`${currentTeam}:${currentFormation}:`;Object.keys(tacticalCustomPositions).filter(key=>key.startsWith(prefix)).forEach(key=>delete tacticalCustomPositions[key]);Object.keys(tacticalPlayerRoles).filter(key=>key.startsWith(prefix)).forEach(key=>delete tacticalPlayerRoles[key]);selectedTacticalPlayerId=null;updateSliders();renderTacticalRoleControls(null);showToast(`${currentFormation} 기본 배치와 역할 상태로 초기화했습니다.`);}
+        function renderTacticalBench(){
+            const box=document.getElementById('tactical-bench'),count=document.getElementById('tactical-bench-count');if(!box)return;
+            const state=ensureTacticalSquad(currentTeam);if(count)count.textContent=`${state.bench.length}명 · ${state.status==='official-first-match-xi'?'첫 경기 공식 명단':'예상 명단'}`;
+            box.innerHTML=state.bench.length?state.bench.map((player,index)=>`<button type="button" onclick="substituteTacticalPlayer(${index})" class="shrink-0 min-w-[132px] rounded-lg border border-white/10 bg-white/[.035] px-3 py-2 text-left hover:border-eplNeon/30 hover:bg-eplNeon/5 transition"><strong class="block truncate text-xs text-white">${escapeHtml(player.name)}</strong><span class="mt-1 block text-[10px] font-mono text-eplNeon">${escapeHtml(player.position)} · 투입</span></button>`).join(''):'<span class="text-xs text-slate-600">등록된 교체 선수가 없습니다.</span>';
+        }
+        function substituteTacticalPlayer(benchIndex){
+            const state=ensureTacticalSquad(currentTeam),starterIndex=state.starters.findIndex(player=>player.id===selectedTacticalPlayerId);
+            if(starterIndex<0)return showToast('먼저 전술판에서 교체할 선발 선수를 선택해 주세요.');
+            const incoming=state.bench[benchIndex],outgoing=state.starters[starterIndex];if(!incoming||!outgoing)return;
+            state.starters[starterIndex]=incoming;state.bench[benchIndex]=outgoing;
+            const oldPositionKey=tacticalPositionKey(outgoing.id),newPositionKey=tacticalPositionKey(incoming.id);if(tacticalCustomPositions[oldPositionKey]){tacticalCustomPositions[newPositionKey]=tacticalCustomPositions[oldPositionKey];delete tacticalCustomPositions[oldPositionKey];}
+            selectedTacticalPlayerId=incoming.id;updateSliders();renderTacticalBench();renderTacticalRoleControls(incoming.id);showToast(`${outgoing.name} OUT · ${incoming.name} IN`);
+        }
 
         // Initialize Screen safely after DOM is ready
         document.addEventListener('DOMContentLoaded', function () {
@@ -959,8 +1101,10 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
         });
 
         // Select Team
-        function changeTeam(teamKey) {
+        function changeTeam(teamKey,notify=true) {
+            if(!entityData.teams?.[teamKey]){if(notify)showToast('선택한 팀 데이터를 찾을 수 없습니다.');return;}
             currentTeam = teamKey;
+            selectedTacticalPlayerId=null;
 
             // Toggle Button Styling
             document.querySelectorAll('.team-btn').forEach(btn => {
@@ -975,21 +1119,26 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
             }
 
             // Fallback default formation mapping if the team has default config
-            const teamDefaultForm = teamData[teamKey].defaultFormation;
-            if (formationsMap[teamDefaultForm]) {
+            const teamDefaultForm = tacticalTeamConfig(teamKey).defaultFormation;
+            if (entityData.firstMatchLineups?.teams?.[teamKey]) {
+                currentFormation = teamDefaultForm;
+            } else if (formationsMap[teamDefaultForm]) {
                 currentFormation = teamDefaultForm;
             } else {
                 currentFormation = '3-4-2-1'; // fallback
             }
+            if(!entityData.firstMatchLineups?.teams?.[teamKey])tacticalSquadState[teamKey]=buildBalancedTacticalSquad(teamKey,currentFormation);
 
             const tacticalSelect=document.getElementById('tactical-team-select');if(tacticalSelect)tacticalSelect.value=teamKey;renderTacticalTeamFinder();
-            showToast(`${teamKey.toUpperCase()} 구단 데이터가 정상 로드되었습니다.`);
+            if(notify)showToast(`${tacticalTeamConfig(teamKey).name} 데이터를 불러왔습니다.`);
             renderTeam();
         }
 
         // Handle Manual Formation Button click
         function changeFormation(formKey) {
             currentFormation = formKey;
+            selectedTacticalPlayerId=null;
+            tacticalSquadState[currentTeam]=buildBalancedTacticalSquad(currentTeam,currentFormation);
             showToast(`대형 포메이션이 ${formKey} 상태로 실시간 재배치되었습니다.`);
             renderTeam();
         }
@@ -1008,7 +1157,7 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
 
         // Render details and sync configuration controls
         function renderTeam() {
-            const team = teamData[currentTeam];
+            const team = tacticalTeamConfig(currentTeam);
             if (!team) return;
 
             // Sync formation select buttons highlighted
@@ -1031,7 +1180,7 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
             document.getElementById('txt-manager-feedback').innerText = team.feedback || '감독 분석 업데이트 예정';
             document.getElementById('txt-ai-feedback').innerText = team.feedback || '선택한 감독의 전술 데이터를 분석합니다.';
 
-            const experience = managerExperienceData[currentTeam] || { traits: ['전술 데이터 준비 중'], metrics: { buildUp: 50, pressing: 50, possession: 50, transition: 50 } };
+            const experience = {traits:team.traits.length?team.traits:['전술 데이터 준비 중'],metrics:{}};
             const traitBox = document.getElementById('manager-traits');
             if (traitBox) traitBox.innerHTML = experience.traits.map(trait => `<span class="manager-trait">${trait}</span>`).join('');
             const metricIds = { buildUp: 'build-up', pressing: 'pressing', possession: 'possession', transition: 'transition' };
@@ -1042,6 +1191,7 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
                 if (label) label.textContent = value;
                 if (bar) requestAnimationFrame(() => { bar.style.width = `${value}%`; });
             });
+            if(!Object.keys(experience.metrics).length){document.querySelectorAll('#manager-rating-grid strong').forEach(node=>node.textContent='—');document.querySelectorAll('#manager-rating-grid i').forEach(node=>node.style.width='0%');}
 
             const careerList = document.getElementById('txt-career');
             const keyPlayerList = document.getElementById('txt-key-players');
@@ -1054,23 +1204,23 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
 
             // Apply positions based on slider values
             updateSliders();
+            const pitch=document.getElementById('pitch-players'),header=pitch?.parentElement?.previousElementSibling;if(header&&!document.getElementById('tactical-reset-button')){const button=document.createElement('button');button.id='tactical-reset-button';button.type='button';button.className='px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-xs font-bold text-slate-300 hover:bg-white/10';button.innerHTML='<i class="fa-solid fa-rotate-right mr-1"></i>기본 배치';button.onclick=resetTacticalBoard;header.appendChild(button);}
         }
 
         function compareCurrentManager() {
-            const profile = managerExperienceData[currentTeam];
-            if (!profile?.comparisonId) {
+            if (!managerComparisonData.some(manager=>manager.id===currentTeam)) {
                 showToast('이 감독의 비교 데이터는 준비 중입니다.');
                 return;
             }
             selectedManagerIds.clear();
-            selectedManagerIds.add(profile.comparisonId);
+            selectedManagerIds.add(currentTeam);
             switchView('compare');
             window.scrollTo({ top: 0, behavior: 'smooth' });
             showToast('현재 감독을 비교 화면에 추가했습니다. 최대 2명을 더 선택할 수 있습니다.');
         }
 
         function applyManagerTactic() {
-            const team = teamData[currentTeam];
+            const team = tacticalTeamConfig(currentTeam);
             if (!team) return;
 
             const supportedFormations = Object.keys(formationsMap);
@@ -1079,8 +1229,9 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
             currentFormation = supportedFormations.includes(requestedFormation)
                 ? requestedFormation
                 : (fallbackMap[requestedFormation] || '4-3-3');
+            tacticalSquadState[currentTeam]=buildBalancedTacticalSquad(currentTeam,currentFormation);
 
-            const preset = team.presets?.tikitaka;
+            const preset = tacticalPresetLibrary.tikitaka;
             if (preset) {
                 document.getElementById('slider-defline').value = preset.defline;
                 document.getElementById('slider-width').value = preset.width;
@@ -1096,10 +1247,11 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
 
         // Sliders change calculations dynamically affecting DOM elements (Player dots)
         function updateSliders() {
-            const team = teamData[currentTeam];
-            const playersNames = teamPlayersBase[currentTeam];
-            const formationLayouts = formationsMap[currentFormation];
-            if (!team || !playersNames || !formationLayouts) return;
+            const team = tacticalTeamConfig(currentTeam);
+            const players = team.players;
+            const firstMatch=entityData.firstMatchLineups?.teams?.[currentTeam];
+            const formationLayouts=firstMatch&&currentFormation===firstMatch.formation?firstMatch.starters.map(player=>({pos:player.position,x:player.x,y:player.y,role:tacticalPositionGroup(player.position)==='GK'?'gk':tacticalPositionGroup(player.position)==='DF'?'def':['RB','LB','RWB','LWB','RW','LW','RM','LM','RAM','LAM'].includes(player.position)?'wide':'mid'})):formationsMap[currentFormation];
+            if (!team || players.length<11 || !formationLayouts) {const pitch=document.getElementById('pitch-players');if(pitch)pitch.innerHTML='<div class="absolute inset-0 grid place-items-center text-xs text-amber-200">유효한 11명 라인업 또는 포메이션 데이터가 없습니다.</div>';return;}
 
             const defLine = parseInt(document.getElementById('slider-defline').value);
             const width = parseInt(document.getElementById('slider-width').value);
@@ -1114,12 +1266,14 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
             const pitch = document.getElementById('pitch-players');
             if (!pitch) return;
             pitch.innerHTML = '';
+            renderTacticalBench();
 
             // Compute dynamic positions based on formation & sliders
             formationLayouts.forEach((p, idx) => {
                 let x = p.x;
                 let y = p.y;
-                const playerName = playersNames[idx] || `선수 ${idx + 1}`;
+                const player = players[idx];
+                const playerName = player?.name || `선수 ${idx + 1}`;
 
                 // 1. Shift Defensive Line (Y axis offset except GK)
                 if (p.role !== 'gk') {
@@ -1149,12 +1303,15 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
                 }
 
                 // Create player node
-                const dot = document.createElement('div');
-                dot.className = "absolute flex flex-col items-center justify-center transition-all duration-500 ease-out z-10 select-none";
-                dot.title = `${playerName} 상세 보기`;
-                dot.addEventListener('click', () => openPlayerProfileByName(playerName));
+                const dot = document.createElement('button');
+                dot.type='button';dot.dataset.playerId=player?.id||'';dot.dataset.playerName=playerName;dot.setAttribute('aria-label',`${playerName} ${p.pos} 위치 및 역할 선택`);
+                dot.dataset.position=p.pos;dot.className = `absolute flex flex-col items-center justify-center transition-all duration-200 ease-out z-10 select-none cursor-move touch-none ${selectedTacticalPlayerId===player?.id?'ring-2 ring-eplBlue rounded-xl':''}`;
+                dot.title = `${playerName} 선택 · 드래그로 이동`;
+                dot.addEventListener('click', () => {if(dot.dataset.dragged==='true'){dot.dataset.dragged='false';return;}if(player?.id){selectedTacticalPlayerId=player.id;updateSliders();renderTacticalRoleControls(player.id);}else showToast('선수 상세 데이터를 찾을 수 없습니다.');});
+                dot.addEventListener('dblclick',()=>{if(player?.id)openPlayerProfile(player.id);});
                 dot.style.left = `${x}%`;
                 dot.style.top = `${y}%`;
+                const custom=tacticalCustomPositions[tacticalPositionKey(player?.id||String(idx))];if(custom){dot.style.left=`${custom.x}%`;dot.style.top=`${custom.y}%`;}
                 dot.style.transform = "translate(-50%, -50%)";
 
                 // CSS Pressing Glow Pulse effect (Fast ping animation on high intensity)
@@ -1163,7 +1320,7 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
                     : (pressing > 40 ? "absolute w-9 h-9 rounded-full bg-eplNeon/15 animate-pulse" : "hidden");
 
                 // Check if signing to highlight them uniquely
-                const isSigning = team.signings.includes(playerName);
+                const isSigning = false;
                 const borderClass = isSigning
                     ? "border-eplBlue shadow-[0_0_12px_rgba(0,240,255,0.8)]"
                     : "border-eplNeon shadow-[0_0_8px_rgba(0,255,135,0.4)]";
@@ -1172,6 +1329,7 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
                     ? "bg-gradient-to-r from-slate-900 to-eplBlue/20 border border-eplBlue/40 text-eplBlue"
                     : "bg-slate-900/95 border border-slate-700/50 text-white";
 
+                const assignedRole=entityData.roles.find(role=>role.id===tacticalPlayerRoles[tacticalRoleKey(player?.id||'')]);
                 dot.innerHTML = `
                     <div class="relative flex items-center justify-center cursor-pointer group">
                         <div class="${pulseClass}"></div>
@@ -1182,16 +1340,17 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
                     <span class="mt-1 px-1.5 py-0.5 rounded text-[10px] font-bold whitespace-nowrap shadow-md ${labelClass}">
                         ${playerName}
                     </span>
+                    ${assignedRole?`<span class="mt-0.5 text-[8px] text-eplBlue bg-slate-950/90 px-1 rounded">${assignedRole.nameKo}</span>`:''}
                 `;
+                makeTacticalPlayerDraggable(dot,pitch,player?.id||String(idx));
                 pitch.appendChild(dot);
             });
+            renderTacticalRoleControls(selectedTacticalPlayerId);
         }
 
         // Apply tactical master template presets
         function applyPreset(presetKey) {
-            const team = teamData[currentTeam];
-            if (!team) return;
-            const preset = team.presets[presetKey];
+            const preset = tacticalPresetLibrary[presetKey];
             if (!preset) return;
 
             // Update inputs values
@@ -1205,7 +1364,7 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
 
         // Export Data and Trigger Mock Diagnostic report modal
         function exportTactics() {
-            const team = teamData[currentTeam];
+            const team = tacticalTeamConfig(currentTeam);
             if (!team) return;
             const defLine = document.getElementById('slider-defline').value;
             const width = document.getElementById('slider-width').value;
@@ -1308,7 +1467,7 @@ function normalisePersonName(value=''){
 }
 function findPlayerByName(name){
   const n=normalisePersonName(name);
-  const aliases={alisson:'alisson',haaland:'haaland',saka:'saka',saliba:'saliba',rice:'rice',palmer:'palmer',isak:'isak','alexanderarnold':'trent','trentaa':'trent'};
+  const aliases={alisson:'alisson',haaland:'haaland',saka:'saka',saliba:'saliba',rice:'rice',palmer:'palmer',isak:'isak'};
   const alias=Object.entries(aliases).find(([k])=>n.includes(k));
   if(alias) return playerComparisonData.find(p=>p.id===alias[1]);
   return playerComparisonData.find(p=>[p.name,p.english,p.english.split(' ').pop()].some(v=>n.includes(normalisePersonName(v))||normalisePersonName(v).includes(n)));

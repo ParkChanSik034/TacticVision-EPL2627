@@ -1,0 +1,3379 @@
+{
+  "schemaVersion": "1.0.0",
+  "season": "2026-27",
+  "asOf": "2026-08-24T12:25:21Z",
+  "sourceId": "api-football-first-match-lineups",
+  "sourceUrl": "https://v3.football.api-sports.io/fixtures/lineups",
+  "teams": {
+    "arsenal": {
+      "teamId": "arsenal",
+      "status": "official-first-match-xi",
+      "eventId": "2494000",
+      "fixtureId": "1557367",
+      "formation": "4-2-3-1",
+      "starters": [
+        {
+          "id": "player-api-19465",
+          "name": "다비드 라야",
+          "number": 1,
+          "position": "GK",
+          "grid": "1:1",
+          "x": 50,
+          "y": 92
+        },
+        {
+          "id": "player-api-19959",
+          "name": "벤 화이트",
+          "number": 4,
+          "position": "RB",
+          "grid": "2:4",
+          "x": 86.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-333682",
+          "name": "크리스티안 모스케라",
+          "number": 3,
+          "position": "RCB",
+          "grid": "2:3",
+          "x": 62.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-22224",
+          "name": "가브리에우 마갈량이스",
+          "number": 6,
+          "position": "LCB",
+          "grid": "2:2",
+          "x": 38.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-157052",
+          "name": "리카르도 칼라피오리",
+          "number": 33,
+          "position": "LB",
+          "grid": "2:1",
+          "x": 14.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-313245",
+          "name": "마일스 루이스스켈리",
+          "number": 49,
+          "position": "RDM",
+          "grid": "3:2",
+          "x": 86.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-2937",
+          "name": "데클란 라이스",
+          "number": 41,
+          "position": "LDM",
+          "grid": "3:1",
+          "x": 14.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-1460",
+          "name": "부카요 사카",
+          "number": 7,
+          "position": "RAM",
+          "grid": "4:3",
+          "x": 86.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-37127",
+          "name": "마르틴 외데고르",
+          "number": 8,
+          "position": "AM",
+          "grid": "4:2",
+          "x": 50.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-161800",
+          "name": "크리스토스 촐리스",
+          "number": 17,
+          "position": "LAM",
+          "grid": "4:1",
+          "x": 14.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-978",
+          "name": "카이 하베르츠",
+          "number": 29,
+          "position": "ST",
+          "grid": "5:1",
+          "x": 50,
+          "y": 18.0
+        }
+      ],
+      "substitutes": [
+        {
+          "id": "player-api-2273",
+          "name": "케파 아리사발라가",
+          "number": 13,
+          "position": "GK"
+        },
+        {
+          "id": "player-api-127817",
+          "name": "피에로 잉카피에",
+          "number": 5,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-47315",
+          "name": "마르틴 수비멘디",
+          "number": 36,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-313236",
+          "name": "에단 은와네리",
+          "number": 22,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-442044",
+          "name": "맥스 다우먼",
+          "number": 56,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-47311",
+          "name": "미켈 메리노",
+          "number": 23,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-19586",
+          "name": "에베레치 에제",
+          "number": 10,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-18979",
+          "name": "빅토르 요케레스",
+          "number": 14,
+          "position": "ST"
+        },
+        {
+          "id": "player-api-136723",
+          "name": "노니 마두에케",
+          "number": 20,
+          "position": "ST"
+        }
+      ]
+    },
+    "coventry": {
+      "teamId": "coventry",
+      "status": "official-first-match-xi",
+      "eventId": "2494000",
+      "fixtureId": "1557367",
+      "formation": "4-1-4-1",
+      "starters": [
+        {
+          "id": "player-api-278088",
+          "name": "칼 러시워스",
+          "number": 19,
+          "position": "GK",
+          "grid": "1:1",
+          "x": 50,
+          "y": 92
+        },
+        {
+          "id": "player-api-37961",
+          "name": "밀란 판에베이크",
+          "number": 27,
+          "position": "RB",
+          "grid": "2:4",
+          "x": 86.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-264437",
+          "name": "바비 토마스",
+          "number": 4,
+          "position": "RCB",
+          "grid": "2:3",
+          "x": 62.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-162414",
+          "name": "오렐 아멘다",
+          "number": 24,
+          "position": "LCB",
+          "grid": "2:2",
+          "x": 38.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-19260",
+          "name": "제이 다실바",
+          "number": 3,
+          "position": "LB",
+          "grid": "2:1",
+          "x": 14.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-19328",
+          "name": "맷 그라임스",
+          "number": 6,
+          "position": "DM",
+          "grid": "3:1",
+          "x": 50,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-161621",
+          "name": "L. Tchaouna",
+          "number": 18,
+          "position": "RM",
+          "grid": "4:4",
+          "x": 86.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-475575",
+          "name": "C. Yirenkyi",
+          "number": 8,
+          "position": "RCM",
+          "grid": "4:3",
+          "x": 62.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-15799",
+          "name": "프랭크 오니에카",
+          "number": 16,
+          "position": "LCM",
+          "grid": "4:2",
+          "x": 38.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-82090",
+          "name": "브랜든 토마스아산테",
+          "number": 23,
+          "position": "LM",
+          "grid": "4:1",
+          "x": 14.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-138786",
+          "name": "엘리스 심스",
+          "number": 9,
+          "position": "ST",
+          "grid": "5:1",
+          "x": 50,
+          "y": 18.0
+        }
+      ],
+      "substitutes": [
+        {
+          "id": "player-api-20484",
+          "name": "벤 윌슨",
+          "number": 13,
+          "position": "GK"
+        },
+        {
+          "id": "player-api-18202",
+          "name": "리암 키칭",
+          "number": 15,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-16046",
+          "name": "빅토르 토르프",
+          "number": 29,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-145538",
+          "name": "조엘 라티보디에어",
+          "number": 22,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-33462",
+          "name": "사카모토 타츠히로",
+          "number": 7,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-36929",
+          "name": "G. Hamer",
+          "number": 38,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-19984",
+          "name": "조시 에클스",
+          "number": 28,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-20372",
+          "name": "잭 루도니",
+          "number": 5,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-8598",
+          "name": "타이워 아워니이",
+          "number": 14,
+          "position": "ST"
+        }
+      ]
+    },
+    "hullcity": {
+      "teamId": "hullcity",
+      "status": "official-first-match-xi",
+      "eventId": "2494001",
+      "fixtureId": "1557368",
+      "formation": "5-4-1",
+      "starters": [
+        {
+          "id": "player-api-1591",
+          "name": "콘스탄티노스 촐라키스",
+          "number": 19,
+          "position": "GK",
+          "grid": "1:1",
+          "x": 50,
+          "y": 92
+        },
+        {
+          "id": "player-api-20073",
+          "name": "루이 코일",
+          "number": 2,
+          "position": "RWB",
+          "grid": "2:5",
+          "x": 86.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-2769",
+          "name": "세미 아제이",
+          "number": 6,
+          "position": "RCB",
+          "grid": "2:4",
+          "x": 68.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-19093",
+          "name": "존 이건",
+          "number": 15,
+          "position": "CB",
+          "grid": "2:3",
+          "x": 50.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-358431",
+          "name": "노벨 멘디",
+          "number": 32,
+          "position": "LCB",
+          "grid": "2:2",
+          "x": 32.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-18747",
+          "name": "라이언 자일스",
+          "number": 3,
+          "position": "LWB",
+          "grid": "2:1",
+          "x": 14.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-299923",
+          "name": "모하메드 벨루미",
+          "number": 10,
+          "position": "RM",
+          "grid": "3:4",
+          "x": 86.0,
+          "y": 47.0
+        },
+        {
+          "id": "player-api-19666",
+          "name": "맷 크룩스",
+          "number": 25,
+          "position": "RCM",
+          "grid": "3:3",
+          "x": 62.0,
+          "y": 47.0
+        },
+        {
+          "id": "player-api-17670",
+          "name": "리건 슬레이터",
+          "number": 27,
+          "position": "LCM",
+          "grid": "3:2",
+          "x": 38.0,
+          "y": 47.0
+        },
+        {
+          "id": "player-api-226765",
+          "name": "엘리엇 스트라우드",
+          "number": 21,
+          "position": "LM",
+          "grid": "3:1",
+          "x": 14.0,
+          "y": 47.0
+        },
+        {
+          "id": "player-api-19337",
+          "name": "올리버 맥버니",
+          "number": 9,
+          "position": "ST",
+          "grid": "4:1",
+          "x": 50,
+          "y": 18.0
+        }
+      ],
+      "substitutes": [
+        {
+          "id": "player-api-19811",
+          "name": "딜런 필립스",
+          "number": 12,
+          "position": "GK"
+        },
+        {
+          "id": "player-api-19242",
+          "name": "P. McNair",
+          "number": 17,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-153411",
+          "name": "코디 드라메",
+          "number": 18,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-18941",
+          "name": "맷 타겟",
+          "number": 23,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-426480",
+          "name": "루카스 헤링턴",
+          "number": 22,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-179843",
+          "name": "뤼카 구르나두아트",
+          "number": 29,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-19100",
+          "name": "키어런 다월",
+          "number": 26,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-396407",
+          "name": "옌스 예르퇴달",
+          "number": 14,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-44798",
+          "name": "리암 밀러",
+          "number": 7,
+          "position": "ST"
+        }
+      ]
+    },
+    "manutd": {
+      "teamId": "manutd",
+      "status": "official-first-match-xi",
+      "eventId": "2494001",
+      "fixtureId": "1557368",
+      "formation": "4-2-3-1",
+      "starters": [
+        {
+          "id": "player-api-162511",
+          "name": "센느 라먼스",
+          "number": 1,
+          "position": "GK",
+          "grid": "1:1",
+          "x": 50,
+          "y": 92
+        },
+        {
+          "id": "player-api-545",
+          "name": "누사이르 마즈라위",
+          "number": 3,
+          "position": "RB",
+          "grid": "2:4",
+          "x": 86.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-2935",
+          "name": "해리 매과이어",
+          "number": 5,
+          "position": "RCB",
+          "grid": "2:3",
+          "x": 62.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-402329",
+          "name": "에이든 헤븐",
+          "number": 26,
+          "position": "LCB",
+          "grid": "2:2",
+          "x": 38.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-891",
+          "name": "루크 쇼",
+          "number": 23,
+          "position": "LB",
+          "grid": "2:1",
+          "x": 14.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-2926",
+          "name": "유리 틸레만스",
+          "number": 18,
+          "position": "RDM",
+          "grid": "3:2",
+          "x": 86.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-305834",
+          "name": "안드레이 산투스",
+          "number": 17,
+          "position": "LDM",
+          "grid": "3:1",
+          "x": 14.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-20589",
+          "name": "브라이언 음뵈모",
+          "number": 19,
+          "position": "RAM",
+          "grid": "4:3",
+          "x": 86.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-1485",
+          "name": "브루노 페르난데스",
+          "number": 8,
+          "position": "AM",
+          "grid": "4:2",
+          "x": 50.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-382452",
+          "name": "파트리크 도르구",
+          "number": 13,
+          "position": "LAM",
+          "grid": "4:1",
+          "x": 14.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-1165",
+          "name": "마테우스 쿠냐",
+          "number": 10,
+          "position": "ST",
+          "grid": "5:1",
+          "x": 50,
+          "y": 18.0
+        }
+      ],
+      "substitutes": [
+        {
+          "id": "player-api-18885",
+          "name": "칼 달로우",
+          "number": 12,
+          "position": "GK"
+        },
+        {
+          "id": "player-api-886",
+          "name": "디오구 달로",
+          "number": 2,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-2467",
+          "name": "리산드로 마르티네스",
+          "number": 6,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-342970",
+          "name": "레니 요로",
+          "number": 15,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-284322",
+          "name": "코비 마이누",
+          "number": 37,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-70100",
+          "name": "조슈아 지르크지",
+          "number": 11,
+          "position": "ST"
+        },
+        {
+          "id": "player-api-909",
+          "name": "마커스 래시포드",
+          "number": 9,
+          "position": "ST"
+        },
+        {
+          "id": "player-api-115589",
+          "name": "베냐민 셰슈코",
+          "number": 30,
+          "position": "ST"
+        },
+        {
+          "id": "player-api-557462",
+          "name": "셰이 레이시",
+          "number": 31,
+          "position": "ST"
+        }
+      ]
+    },
+    "everton": {
+      "teamId": "everton",
+      "status": "official-first-match-xi",
+      "eventId": "2494002",
+      "fixtureId": "1557369",
+      "formation": "4-2-3-1",
+      "starters": [
+        {
+          "id": "player-api-2932",
+          "name": "조던 픽포드",
+          "number": 1,
+          "position": "GK",
+          "grid": "1:1",
+          "x": 50,
+          "y": 92
+        },
+        {
+          "id": "player-api-202854",
+          "name": "메를린 뢸",
+          "number": 34,
+          "position": "RB",
+          "grid": "2:4",
+          "x": 86.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-2936",
+          "name": "제임스 타코우스키",
+          "number": 6,
+          "position": "RCB",
+          "grid": "2:3",
+          "x": 62.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-17661",
+          "name": "재러드 브랜스웨이트",
+          "number": 4,
+          "position": "LCB",
+          "grid": "2:2",
+          "x": 38.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-2165",
+          "name": "비탈리 미콜렌코",
+          "number": 16,
+          "position": "LB",
+          "grid": "2:1",
+          "x": 14.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-405360",
+          "name": "해리슨 암스트롱",
+          "number": 45,
+          "position": "RDM",
+          "grid": "3:2",
+          "x": 86.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-179685",
+          "name": "H. Hackney",
+          "number": 30,
+          "position": "LDM",
+          "grid": "3:1",
+          "x": 14.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-18592",
+          "name": "일리망 은디아예",
+          "number": 10,
+          "position": "RAM",
+          "grid": "4:3",
+          "x": 86.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-148099",
+          "name": "키어넌 듀스버리홀",
+          "number": 8,
+          "position": "AM",
+          "grid": "4:2",
+          "x": 50.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-334037",
+          "name": "T. George",
+          "number": 19,
+          "position": "LAM",
+          "grid": "4:1",
+          "x": 14.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-343684",
+          "name": "티에르노 바리",
+          "number": 11,
+          "position": "ST",
+          "grid": "5:1",
+          "x": 50,
+          "y": 18.0
+        }
+      ],
+      "substitutes": [
+        {
+          "id": "player-api-18860",
+          "name": "마크 트래버스",
+          "number": 12,
+          "position": "GK"
+        },
+        {
+          "id": "player-api-138417",
+          "name": "네이선 패터슨",
+          "number": 2,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-270139",
+          "name": "J. O'Brien",
+          "number": 15,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-2934",
+          "name": "마이클 킨",
+          "number": 5,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-895",
+          "name": "제임스 가너",
+          "number": 37,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-195993",
+          "name": "카를로스 알카라스",
+          "number": 24,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-129711",
+          "name": "B. Johnson",
+          "number": 22,
+          "position": "ST"
+        },
+        {
+          "id": "player-api-125743",
+          "name": "Beto",
+          "number": 9,
+          "position": "ST"
+        },
+        {
+          "id": "player-api-304317",
+          "name": "타일러 디블링",
+          "number": 20,
+          "position": "ST"
+        }
+      ]
+    },
+    "crystalpalace": {
+      "teamId": "crystalpalace",
+      "status": "official-first-match-xi",
+      "eventId": "2494002",
+      "fixtureId": "1557369",
+      "formation": "3-4-2-1",
+      "starters": [
+        {
+          "id": "player-api-19088",
+          "name": "딘 헨더슨",
+          "number": 1,
+          "position": "GK",
+          "grid": "1:1",
+          "x": 50,
+          "y": 92
+        },
+        {
+          "id": "player-api-412759",
+          "name": "제이디 캉보",
+          "number": 6,
+          "position": "RCB",
+          "grid": "2:3",
+          "x": 86.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-126949",
+          "name": "크리스 리차즈",
+          "number": 26,
+          "position": "CB",
+          "grid": "2:2",
+          "x": 50.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-278898",
+          "name": "샤디 리아드",
+          "number": 4,
+          "position": "LCB",
+          "grid": "2:1",
+          "x": 14.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-13736",
+          "name": "다니엘 무뇨스",
+          "number": 2,
+          "position": "RM",
+          "grid": "3:4",
+          "x": 86.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-288102",
+          "name": "애덤 워튼",
+          "number": 20,
+          "position": "RCM",
+          "grid": "3:3",
+          "x": 62.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-2601",
+          "name": "D. Kamada",
+          "number": 18,
+          "position": "LCM",
+          "grid": "3:2",
+          "x": 38.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-182201",
+          "name": "타이릭 미첼",
+          "number": 3,
+          "position": "LM",
+          "grid": "3:1",
+          "x": 14.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-18929",
+          "name": "D. McNeil",
+          "number": 11,
+          "position": "RAM",
+          "grid": "4:2",
+          "x": 86.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-1468",
+          "name": "에디 은케티아",
+          "number": 9,
+          "position": "LAM",
+          "grid": "4:1",
+          "x": 14.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-25927",
+          "name": "장필리프 마테타",
+          "number": 14,
+          "position": "ST",
+          "grid": "5:1",
+          "x": 50,
+          "y": 18.0
+        }
+      ],
+      "substitutes": [
+        {
+          "id": "player-api-22157",
+          "name": "왈테르 베니테스",
+          "number": 44,
+          "position": "GK"
+        },
+        {
+          "id": "player-api-26303",
+          "name": "보르나 소사",
+          "number": 24,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-2597",
+          "name": "T. Tomiyasu",
+          "number": 17,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-162712",
+          "name": "오스카르 밍게사",
+          "number": 30,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-18806",
+          "name": "윌 휴즈",
+          "number": 19,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-2032",
+          "name": "예르겐 스트란 라르센",
+          "number": 22,
+          "position": "ST"
+        },
+        {
+          "id": "player-api-137303",
+          "name": "E. Guessand",
+          "number": 29,
+          "position": "ST"
+        },
+        {
+          "id": "player-api-184226",
+          "name": "예레미 피노",
+          "number": 10,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-338735",
+          "name": "A. Khalaili",
+          "number": 25,
+          "position": "ST"
+        }
+      ]
+    },
+    "ipswich": {
+      "teamId": "ipswich",
+      "status": "official-first-match-xi",
+      "eventId": "2494003",
+      "fixtureId": "1557370",
+      "formation": "4-2-3-1",
+      "starters": [
+        {
+          "id": "player-api-37276",
+          "name": "키엘 스헤르펀",
+          "number": 37,
+          "position": "GK",
+          "grid": "1:1",
+          "x": 50,
+          "y": 92
+        },
+        {
+          "id": "player-api-17597",
+          "name": "D. O'Shea",
+          "number": 26,
+          "position": "RB",
+          "grid": "2:4",
+          "x": 86.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-18814",
+          "name": "이사 디오프",
+          "number": 6,
+          "position": "RCB",
+          "grid": "2:3",
+          "x": 62.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-127579",
+          "name": "제이콥 그리브스",
+          "number": 24,
+          "position": "LCB",
+          "grid": "2:2",
+          "x": 38.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-19119",
+          "name": "리프 데이비스",
+          "number": 3,
+          "position": "LB",
+          "grid": "2:1",
+          "x": 14.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-195121",
+          "name": "마르셀리노 누녜스",
+          "number": 32,
+          "position": "RDM",
+          "grid": "3:2",
+          "x": 86.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-2823",
+          "name": "사샤 루키치",
+          "number": 23,
+          "position": "LDM",
+          "grid": "3:1",
+          "x": 14.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-303467",
+          "name": "I. Fatawu",
+          "number": 7,
+          "position": "RAM",
+          "grid": "4:3",
+          "x": 86.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-70747",
+          "name": "J. Enciso",
+          "number": 10,
+          "position": "AM",
+          "grid": "4:2",
+          "x": 50.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-33224",
+          "name": "D. Maeda",
+          "number": 38,
+          "position": "LAM",
+          "grid": "4:1",
+          "x": 14.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-321648",
+          "name": "에메르송",
+          "number": 19,
+          "position": "ST",
+          "grid": "5:1",
+          "x": 50,
+          "y": 18.0
+        }
+      ],
+      "substitutes": [
+        {
+          "id": "player-api-19541",
+          "name": "크리스찬 월튼",
+          "number": 28,
+          "position": "GK"
+        },
+        {
+          "id": "player-api-19546",
+          "name": "세드릭 키프레",
+          "number": 4,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-19577",
+          "name": "다넬 펄롱",
+          "number": 2,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-358166",
+          "name": "A. Ouattara",
+          "number": 42,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-326763",
+          "name": "캐머런 험프리스",
+          "number": 30,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-19136",
+          "name": "잭 클라크",
+          "number": 47,
+          "position": "ST"
+        },
+        {
+          "id": "player-api-283290",
+          "name": "케이시 매카티어",
+          "number": 20,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-342654",
+          "name": "신드레 발레 에겔리",
+          "number": 8,
+          "position": "ST"
+        },
+        {
+          "id": "player-api-2380",
+          "name": "추바 악폼",
+          "number": 29,
+          "position": "ST"
+        }
+      ]
+    },
+    "sunderland": {
+      "teamId": "sunderland",
+      "status": "official-first-match-xi",
+      "eventId": "2494003",
+      "fixtureId": "1557370",
+      "formation": "4-2-3-1",
+      "starters": [
+        {
+          "id": "player-api-194536",
+          "name": "로빈 루프스",
+          "number": 22,
+          "position": "GK",
+          "grid": "1:1",
+          "x": 50,
+          "y": 92
+        },
+        {
+          "id": "player-api-264",
+          "name": "T. Meunier",
+          "number": 12,
+          "position": "RB",
+          "grid": "2:4",
+          "x": 86.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-55904",
+          "name": "다니엘 발라드",
+          "number": 5,
+          "position": "RCB",
+          "grid": "2:3",
+          "x": 62.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-19911",
+          "name": "L. O'Nien",
+          "number": 13,
+          "position": "LCB",
+          "grid": "2:2",
+          "x": 38.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-22225",
+          "name": "헤이닐두 만다바",
+          "number": 17,
+          "position": "LB",
+          "grid": "2:1",
+          "x": 14.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-365331",
+          "name": "노아 사디키",
+          "number": 27,
+          "position": "RDM",
+          "grid": "3:2",
+          "x": 86.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-1464",
+          "name": "그라니트 자카",
+          "number": 34,
+          "position": "LDM",
+          "grid": "3:1",
+          "x": 14.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-119121",
+          "name": "트라이 흄",
+          "number": 32,
+          "position": "RAM",
+          "grid": "4:3",
+          "x": 86.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-20638",
+          "name": "엔조 르페",
+          "number": 28,
+          "position": "AM",
+          "grid": "4:2",
+          "x": 50.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-311543",
+          "name": "닐손 앙굴로",
+          "number": 10,
+          "position": "LAM",
+          "grid": "4:1",
+          "x": 14.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-38750",
+          "name": "브라이언 브로비",
+          "number": 9,
+          "position": "ST",
+          "grid": "5:1",
+          "x": 50,
+          "y": 18.0
+        }
+      ],
+      "substitutes": [
+        {
+          "id": "player-api-278454",
+          "name": "멜케르 엘보리",
+          "number": 31,
+          "position": "GK"
+        },
+        {
+          "id": "player-api-6168",
+          "name": "오마르 알데레테",
+          "number": 15,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-1146",
+          "name": "노르디 무키엘레",
+          "number": 20,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-339201",
+          "name": "크리스 리그",
+          "number": 11,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-327631",
+          "name": "하비브 디아라",
+          "number": 19,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-554280",
+          "name": "J. Ta Bi",
+          "number": 37,
+          "position": "ST"
+        },
+        {
+          "id": "player-api-284414",
+          "name": "로메인 먼들",
+          "number": 14,
+          "position": "ST"
+        },
+        {
+          "id": "player-api-336659",
+          "name": "솀스딘 탈비",
+          "number": 7,
+          "position": "ST"
+        },
+        {
+          "id": "player-api-84087",
+          "name": "윌손 이지도르",
+          "number": 18,
+          "position": "ST"
+        }
+      ]
+    },
+    "nottinghamforest": {
+      "teamId": "nottinghamforest",
+      "status": "official-first-match-xi",
+      "eventId": "2494004",
+      "fixtureId": "1557371",
+      "formation": "3-4-2-1",
+      "starters": [
+        {
+          "id": "player-api-2919",
+          "name": "마츠 셀스",
+          "number": 26,
+          "position": "GK",
+          "grid": "1:1",
+          "x": 50,
+          "y": 92
+        },
+        {
+          "id": "player-api-362711",
+          "name": "자이르 쿠냐",
+          "number": 23,
+          "position": "RCB",
+          "grid": "2:3",
+          "x": 86.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-2817",
+          "name": "니콜라 밀렌코비치",
+          "number": 31,
+          "position": "CB",
+          "grid": "2:2",
+          "x": 50.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-363695",
+          "name": "무릴루",
+          "number": 5,
+          "position": "LCB",
+          "grid": "2:1",
+          "x": 14.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-2771",
+          "name": "올라 아이나",
+          "number": 34,
+          "position": "RM",
+          "grid": "3:4",
+          "x": 86.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-158697",
+          "name": "제임스 매카티",
+          "number": 24,
+          "position": "RCM",
+          "grid": "3:3",
+          "x": 62.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-22149",
+          "name": "이브라힘 상가레",
+          "number": 6,
+          "position": "LCM",
+          "grid": "3:2",
+          "x": 38.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-138780",
+          "name": "니코 윌리엄스",
+          "number": 3,
+          "position": "LM",
+          "grid": "3:1",
+          "x": 14.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-48648",
+          "name": "단 은도이",
+          "number": 14,
+          "position": "RAM",
+          "grid": "4:2",
+          "x": 86.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-18746",
+          "name": "모건 깁스화이트",
+          "number": 10,
+          "position": "LAM",
+          "grid": "4:1",
+          "x": 14.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-9366",
+          "name": "이고르 제주스",
+          "number": 11,
+          "position": "ST",
+          "grid": "5:1",
+          "x": 50,
+          "y": 18.0
+        }
+      ],
+      "substitutes": [
+        {
+          "id": "player-api-70366",
+          "name": "John Victor",
+          "number": 12,
+          "position": "GK"
+        },
+        {
+          "id": "player-api-163069",
+          "name": "L. Netz",
+          "number": 25,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-354753",
+          "name": "O. Diomande",
+          "number": 2,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-329357",
+          "name": "자크 애보트",
+          "number": 44,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-1095",
+          "name": "X. Schlager",
+          "number": 21,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-2298",
+          "name": "칼럼 허드슨오도이",
+          "number": 7,
+          "position": "ST"
+        },
+        {
+          "id": "player-api-6056",
+          "name": "니콜라스 도밍게스",
+          "number": 8,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-18931",
+          "name": "크리스 우드",
+          "number": 9,
+          "position": "ST"
+        },
+        {
+          "id": "player-api-147831",
+          "name": "아르노 칼리뮈앙도",
+          "number": 15,
+          "position": "ST"
+        }
+      ]
+    },
+    "leeds": {
+      "teamId": "leeds",
+      "status": "official-first-match-xi",
+      "eventId": "2494004",
+      "fixtureId": "1557371",
+      "formation": "3-4-2-1",
+      "starters": [
+        {
+          "id": "player-api-162489",
+          "name": "제임스 트래포드",
+          "number": 1,
+          "position": "GK",
+          "grid": "1:1",
+          "x": 50,
+          "y": 92
+        },
+        {
+          "id": "player-api-19321",
+          "name": "조 로든",
+          "number": 6,
+          "position": "RCB",
+          "grid": "2:3",
+          "x": 86.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-833",
+          "name": "야카 비욜",
+          "number": 15,
+          "position": "CB",
+          "grid": "2:2",
+          "x": 50.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-271350",
+          "name": "타리크 무하레모비치",
+          "number": 5,
+          "position": "LCB",
+          "grid": "2:1",
+          "x": 14.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-19201",
+          "name": "제이든 보글",
+          "number": 2,
+          "position": "RM",
+          "grid": "3:4",
+          "x": 86.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-177665",
+          "name": "안톤 슈타흐",
+          "number": 18,
+          "position": "RCM",
+          "grid": "3:3",
+          "x": 62.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-2279",
+          "name": "이선 암파두",
+          "number": 4,
+          "position": "LCM",
+          "grid": "3:2",
+          "x": 38.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-19760",
+          "name": "제임스 저스틴",
+          "number": 24,
+          "position": "LM",
+          "grid": "3:1",
+          "x": 14.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-19221",
+          "name": "해리 윌슨",
+          "number": 10,
+          "position": "RAM",
+          "grid": "4:2",
+          "x": 86.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-50739",
+          "name": "브렌든 애런슨",
+          "number": 11,
+          "position": "LAM",
+          "grid": "4:1",
+          "x": 14.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-18766",
+          "name": "도미닉 칼버트르윈",
+          "number": 9,
+          "position": "ST",
+          "grid": "5:1",
+          "x": 50,
+          "y": 18.0
+        }
+      ],
+      "substitutes": [
+        {
+          "id": "player-api-80296",
+          "name": "루카스 페리",
+          "number": 23,
+          "position": "GK"
+        },
+        {
+          "id": "player-api-2803",
+          "name": "N. Elvedi",
+          "number": 30,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-557342",
+          "name": "알피 크레스웰",
+          "number": 50,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-545996",
+          "name": "제이든 리에누",
+          "number": 65,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-19329",
+          "name": "대니얼 제임스",
+          "number": 7,
+          "position": "ST"
+        },
+        {
+          "id": "player-api-18901",
+          "name": "션 롱스태프",
+          "number": 8,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-32966",
+          "name": "다나카 아오",
+          "number": 22,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-48389",
+          "name": "노아 오카포",
+          "number": 19,
+          "position": "ST"
+        },
+        {
+          "id": "player-api-19461",
+          "name": "루카스 은메차",
+          "number": 14,
+          "position": "ST"
+        }
+      ]
+    },
+    "brentford": {
+      "teamId": "brentford",
+      "status": "official-first-match-xi",
+      "eventId": "2494005",
+      "fixtureId": "1557372",
+      "formation": "4-2-3-1",
+      "starters": [
+        {
+          "id": "player-api-281",
+          "name": "퀴빈 켈러허",
+          "number": 1,
+          "position": "GK",
+          "grid": "1:1",
+          "x": 50,
+          "y": 92
+        },
+        {
+          "id": "player-api-342022",
+          "name": "마이클 카요데",
+          "number": 33,
+          "position": "RB",
+          "grid": "2:4",
+          "x": 86.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-1119",
+          "name": "크리스토페르 아예르",
+          "number": 20,
+          "position": "RCB",
+          "grid": "2:3",
+          "x": 62.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-19495",
+          "name": "네이선 콜린스",
+          "number": 22,
+          "position": "LCB",
+          "grid": "2:2",
+          "x": 38.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-106725",
+          "name": "킨 루이스포터",
+          "number": 23,
+          "position": "LB",
+          "grid": "2:1",
+          "x": 14.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-25073",
+          "name": "비탈리 야넬트",
+          "number": 27,
+          "position": "RDM",
+          "grid": "3:2",
+          "x": 86.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-277306",
+          "name": "M. Sangare",
+          "number": 18,
+          "position": "LDM",
+          "grid": "3:1",
+          "x": 14.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-284797",
+          "name": "D. Ouattara",
+          "number": 11,
+          "position": "RAM",
+          "grid": "4:3",
+          "x": 86.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-47438",
+          "name": "마티아스 옌센",
+          "number": 8,
+          "position": "AM",
+          "grid": "4:2",
+          "x": 50.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-178077",
+          "name": "케빈 샤데",
+          "number": 7,
+          "position": "LAM",
+          "grid": "4:1",
+          "x": 14.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-196156",
+          "name": "이고르 치아구",
+          "number": 9,
+          "position": "ST",
+          "grid": "5:1",
+          "x": 50,
+          "y": 18.0
+        }
+      ],
+      "substitutes": [
+        {
+          "id": "player-api-61742",
+          "name": "하콘 발디마르손",
+          "number": 12,
+          "position": "GK"
+        },
+        {
+          "id": "player-api-19346",
+          "name": "리코 헨리",
+          "number": 3,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-19789",
+          "name": "에단 피녹",
+          "number": 5,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-44871",
+          "name": "아론 히키",
+          "number": 2,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-15908",
+          "name": "미켈 담스가르드",
+          "number": 24,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-263538",
+          "name": "예호르 야르몰류크",
+          "number": 6,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-441271",
+          "name": "야니크 슈스터",
+          "number": 44,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-196855",
+          "name": "J. Anthony",
+          "number": 19,
+          "position": "ST"
+        },
+        {
+          "id": "player-api-2939",
+          "name": "C. Wilson",
+          "number": 13,
+          "position": "ST"
+        }
+      ]
+    },
+    "tottenham": {
+      "teamId": "tottenham",
+      "status": "official-first-match-xi",
+      "eventId": "2494005",
+      "fixtureId": "1557372",
+      "formation": "4-2-3-1",
+      "starters": [
+        {
+          "id": "player-api-265826",
+          "name": "안토닌 킨스키",
+          "number": 31,
+          "position": "GK",
+          "grid": "1:1",
+          "x": 50,
+          "y": 92
+        },
+        {
+          "id": "player-api-328089",
+          "name": "아치 그레이",
+          "number": 14,
+          "position": "RB",
+          "grid": "2:4",
+          "x": 86.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-38695",
+          "name": "얀 폴 반 헤케",
+          "number": 6,
+          "position": "RCB",
+          "grid": "2:3",
+          "x": 62.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-6610",
+          "name": "마르코스 세네시",
+          "number": 5,
+          "position": "LCB",
+          "grid": "2:2",
+          "x": 38.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-289",
+          "name": "앤디 로버트슨",
+          "number": 3,
+          "position": "LB",
+          "grid": "2:1",
+          "x": 14.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-31146",
+          "name": "산드로 토날리",
+          "number": 16,
+          "position": "RDM",
+          "grid": "3:2",
+          "x": 86.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-347316",
+          "name": "루카스 베리발",
+          "number": 15,
+          "position": "LDM",
+          "grid": "3:1",
+          "x": 14.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-380690",
+          "name": "M. Moore",
+          "number": 47,
+          "position": "RAM",
+          "grid": "4:3",
+          "x": 86.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-67972",
+          "name": "코너 갤러거",
+          "number": 8,
+          "position": "AM",
+          "grid": "4:2",
+          "x": 50.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-270510",
+          "name": "마티스 텔",
+          "number": 11,
+          "position": "LAM",
+          "grid": "4:1",
+          "x": 14.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-2413",
+          "name": "히샬리송",
+          "number": 9,
+          "position": "ST",
+          "grid": "5:1",
+          "x": 50,
+          "y": 18.0
+        }
+      ],
+      "substitutes": [
+        {
+          "id": "player-api-18886",
+          "name": "마르틴 두브라브카",
+          "number": 39,
+          "position": "GK"
+        },
+        {
+          "id": "player-api-164",
+          "name": "벤 데이비스",
+          "number": 33,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-25287",
+          "name": "케빈 단소",
+          "number": 4,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-204039",
+          "name": "데스티니 우도기",
+          "number": 13,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-18784",
+          "name": "제임스 매디슨",
+          "number": 10,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-863",
+          "name": "로드리고 벤탄쿠르",
+          "number": 30,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-336585",
+          "name": "마테우스 페르난데스",
+          "number": 18,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-465310",
+          "name": "L. Williams-Barnett",
+          "number": 68,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-18883",
+          "name": "도미닉 솔랑케",
+          "number": 19,
+          "position": "ST"
+        }
+      ]
+    },
+    "mancity": {
+      "teamId": "mancity",
+      "status": "official-first-match-xi",
+      "eventId": "2494006",
+      "fixtureId": "1557374",
+      "formation": "4-2-3-1",
+      "starters": [
+        {
+          "id": "player-api-1622",
+          "name": "잔루이지 돈나룸마",
+          "number": 1,
+          "position": "GK",
+          "grid": "1:1",
+          "x": 50,
+          "y": 92
+        },
+        {
+          "id": "player-api-284230",
+          "name": "리코 루이스",
+          "number": 82,
+          "position": "RB",
+          "grid": "2:4",
+          "x": 86.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-360114",
+          "name": "압두코디르 후사노프",
+          "number": 45,
+          "position": "RCB",
+          "grid": "2:3",
+          "x": 62.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-567",
+          "name": "후벵 디아스",
+          "number": 3,
+          "position": "LCB",
+          "grid": "2:2",
+          "x": 38.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-129033",
+          "name": "요슈코 그바르디올",
+          "number": 24,
+          "position": "LB",
+          "grid": "2:1",
+          "x": 14.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-138908",
+          "name": "엘리엇 앤더슨",
+          "number": 5,
+          "position": "RDM",
+          "grid": "3:2",
+          "x": 86.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-67971",
+          "name": "마크 게히",
+          "number": 6,
+          "position": "LDM",
+          "grid": "3:1",
+          "x": 14.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-631",
+          "name": "필 포든",
+          "number": 47,
+          "position": "RAM",
+          "grid": "4:3",
+          "x": 86.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-307123",
+          "name": "니코 오라일리",
+          "number": 33,
+          "position": "AM",
+          "grid": "4:2",
+          "x": 50.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-19281",
+          "name": "앙투안 세메뇨",
+          "number": 42,
+          "position": "LAM",
+          "grid": "4:1",
+          "x": 14.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-1100",
+          "name": "엘링 홀란드",
+          "number": 9,
+          "position": "ST",
+          "grid": "5:1",
+          "x": 50,
+          "y": 18.0
+        }
+      ],
+      "substitutes": [
+        {
+          "id": "player-api-47296",
+          "name": "헤로니모 룰리",
+          "number": 28,
+          "position": "GK"
+        },
+        {
+          "id": "player-api-21138",
+          "name": "라얀 아이트누리",
+          "number": 21,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-414359",
+          "name": "비토르 헤이스",
+          "number": 22,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-19187",
+          "name": "잭 그릴리쉬",
+          "number": 18,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-41621",
+          "name": "마테우스 누네스",
+          "number": 27,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-2291",
+          "name": "마테오 코바치치",
+          "number": 8,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-161933",
+          "name": "니코 곤살레스",
+          "number": 14,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-156477",
+          "name": "라얀 셰르키",
+          "number": 10,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-81573",
+          "name": "오마르 마르무시",
+          "number": 7,
+          "position": "ST"
+        }
+      ]
+    },
+    "bournemouth": {
+      "teamId": "bournemouth",
+      "status": "official-first-match-xi",
+      "eventId": "2494006",
+      "fixtureId": "1557374",
+      "formation": "4-2-3-1",
+      "starters": [
+        {
+          "id": "player-api-118307",
+          "name": "조르제 페트로비치",
+          "number": 1,
+          "position": "GK",
+          "grid": "1:1",
+          "x": 50,
+          "y": 92
+        },
+        {
+          "id": "player-api-18869",
+          "name": "아담 스미스",
+          "number": 15,
+          "position": "RB",
+          "grid": "2:4",
+          "x": 86.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-20093",
+          "name": "제임스 힐",
+          "number": 5,
+          "position": "RCB",
+          "grid": "2:3",
+          "x": 62.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-331832",
+          "name": "A. Silva",
+          "number": 14,
+          "position": "LCB",
+          "grid": "2:2",
+          "x": 38.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-162267",
+          "name": "아드리앵 트뤼페르",
+          "number": 3,
+          "position": "LB",
+          "grid": "2:1",
+          "x": 14.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-18872",
+          "name": "루이스 쿡",
+          "number": 4,
+          "position": "RDM",
+          "grid": "3:2",
+          "x": 86.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-304853",
+          "name": "알렉스 스콧",
+          "number": 8,
+          "position": "LDM",
+          "grid": "3:1",
+          "x": 14.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-407806",
+          "name": "하양",
+          "number": 37,
+          "position": "RAM",
+          "grid": "4:3",
+          "x": 86.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-792",
+          "name": "저스틴 클라위버르트",
+          "number": 19,
+          "position": "AM",
+          "grid": "4:2",
+          "x": 50.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-19245",
+          "name": "마커스 태버니어",
+          "number": 16,
+          "position": "LAM",
+          "grid": "4:1",
+          "x": 14.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-152856",
+          "name": "이바니우송",
+          "number": 9,
+          "position": "ST",
+          "grid": "5:1",
+          "x": 50,
+          "y": 18.0
+        }
+      ],
+      "substitutes": [
+        {
+          "id": "player-api-151756",
+          "name": "W. Dennis",
+          "number": 40,
+          "position": "GK"
+        },
+        {
+          "id": "player-api-22136",
+          "name": "바포데 디아키테",
+          "number": 18,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-182772",
+          "name": "후안루 산체스",
+          "number": 24,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-1150",
+          "name": "타일러 아담스",
+          "number": 12,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-361485",
+          "name": "A. Toth",
+          "number": 27,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-343202",
+          "name": "A. Rodriguez",
+          "number": 30,
+          "position": "ST"
+        },
+        {
+          "id": "player-api-18870",
+          "name": "데이비드 브룩스",
+          "number": 7,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-296458",
+          "name": "D. Jebbison",
+          "number": 29,
+          "position": "ST"
+        },
+        {
+          "id": "player-api-343576",
+          "name": "벤 개넌 도크",
+          "number": 11,
+          "position": "ST"
+        }
+      ]
+    },
+    "brighton": {
+      "teamId": "brighton",
+      "status": "official-first-match-xi",
+      "eventId": "2494007",
+      "fixtureId": "1557373",
+      "formation": "4-2-3-1",
+      "starters": [
+        {
+          "id": "player-api-129058",
+          "name": "바르트 페르브뤼헌",
+          "number": 1,
+          "position": "GK",
+          "grid": "1:1",
+          "x": 50,
+          "y": 92
+        },
+        {
+          "id": "player-api-92993",
+          "name": "마츠 비퍼르",
+          "number": 27,
+          "position": "RB",
+          "grid": "2:4",
+          "x": 86.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-387521",
+          "name": "L. Vuskovic",
+          "number": 44,
+          "position": "RCB",
+          "grid": "2:3",
+          "x": 62.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-18963",
+          "name": "L. Dunk",
+          "number": 5,
+          "position": "LCB",
+          "grid": "2:2",
+          "x": 38.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-22160",
+          "name": "올리비에 보스카글리",
+          "number": 21,
+          "position": "LB",
+          "grid": "2:1",
+          "x": 14.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-18970",
+          "name": "P. Gross",
+          "number": 13,
+          "position": "RDM",
+          "grid": "3:2",
+          "x": 86.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-265820",
+          "name": "야신 아야리",
+          "number": 26,
+          "position": "LDM",
+          "grid": "3:1",
+          "x": 14.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-278370",
+          "name": "디에고 고메스",
+          "number": 25,
+          "position": "RAM",
+          "grid": "4:3",
+          "x": 86.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-305730",
+          "name": "잭 힌셜우드",
+          "number": 8,
+          "position": "AM",
+          "grid": "4:2",
+          "x": 50.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-162007",
+          "name": "막심 더카위퍼르",
+          "number": 29,
+          "position": "LAM",
+          "grid": "4:1",
+          "x": 14.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-90590",
+          "name": "조르지뇨 뤼터",
+          "number": 10,
+          "position": "ST",
+          "grid": "5:1",
+          "x": 50,
+          "y": 18.0
+        }
+      ],
+      "substitutes": [
+        {
+          "id": "player-api-18960",
+          "name": "제이슨 스틸",
+          "number": 23,
+          "position": "GK"
+        },
+        {
+          "id": "player-api-7090",
+          "name": "M. Svoboda",
+          "number": 30,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-204037",
+          "name": "Costinha",
+          "number": 20,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-64003",
+          "name": "P. Struijk",
+          "number": 4,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-410125",
+          "name": "말릭 얄쿠예",
+          "number": 35,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-392482",
+          "name": "카라람포스 코스툴라스",
+          "number": 19,
+          "position": "ST"
+        },
+        {
+          "id": "player-api-313353",
+          "name": "P. David",
+          "number": 12,
+          "position": "ST"
+        },
+        {
+          "id": "player-api-293643",
+          "name": "이브라힘 오스만",
+          "number": 15,
+          "position": "ST"
+        },
+        {
+          "id": "player-api-524411",
+          "name": "Z. Yohanna",
+          "number": 36,
+          "position": "ST"
+        }
+      ]
+    },
+    "astonvilla": {
+      "teamId": "astonvilla",
+      "status": "official-first-match-xi",
+      "eventId": "2494007",
+      "fixtureId": "1557373",
+      "formation": "4-2-3-1",
+      "starters": [
+        {
+          "id": "player-api-36878",
+          "name": "마르코 비조트",
+          "number": 40,
+          "position": "GK",
+          "grid": "1:1",
+          "x": 50,
+          "y": 92
+        },
+        {
+          "id": "player-api-19298",
+          "name": "매티 캐시",
+          "number": 2,
+          "position": "RB",
+          "grid": "2:4",
+          "x": 86.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-889",
+          "name": "빅토르 린델뢰프",
+          "number": 3,
+          "position": "RCB",
+          "grid": "2:3",
+          "x": 62.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-46815",
+          "name": "파우 토레스",
+          "number": 14,
+          "position": "LCB",
+          "grid": "2:2",
+          "x": 38.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-138816",
+          "name": "이안 마트센",
+          "number": 22,
+          "position": "LB",
+          "grid": "2:1",
+          "x": 14.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-1904",
+          "name": "부바카르 카마라",
+          "number": 8,
+          "position": "RDM",
+          "grid": "3:2",
+          "x": 86.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-195103",
+          "name": "주앙 고메스",
+          "number": 35,
+          "position": "LDM",
+          "grid": "3:1",
+          "x": 14.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-19191",
+          "name": "존 맥긴",
+          "number": 7,
+          "position": "RAM",
+          "grid": "4:3",
+          "x": 86.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-2287",
+          "name": "로스 바클리",
+          "number": 6,
+          "position": "AM",
+          "grid": "4:2",
+          "x": 50.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-364566",
+          "name": "G. Hemmings",
+          "number": 53,
+          "position": "LAM",
+          "grid": "4:1",
+          "x": 14.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-19071",
+          "name": "E. Buendia",
+          "number": 10,
+          "position": "ST",
+          "grid": "5:1",
+          "x": 50,
+          "y": 18.0
+        }
+      ],
+      "substitutes": [
+        {
+          "id": "player-api-199578",
+          "name": "Z. Suzuki",
+          "number": 1,
+          "position": "GK"
+        },
+        {
+          "id": "player-api-19179",
+          "name": "타이론 밍스",
+          "number": 5,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-162012",
+          "name": "M. Ruggeri",
+          "number": 13,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-284457",
+          "name": "라마어 보하르더",
+          "number": 26,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-546703",
+          "name": "T. Rowe",
+          "number": 45,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-357247",
+          "name": "L. Lynch",
+          "number": 74,
+          "position": "ST"
+        },
+        {
+          "id": "player-api-453101",
+          "name": "B. Burrowes",
+          "number": 49,
+          "position": "ST"
+        },
+        {
+          "id": "player-api-284324",
+          "name": "알레한드로 가르나초",
+          "number": 17,
+          "position": "ST"
+        },
+        {
+          "id": "player-api-464004",
+          "name": "Alysson",
+          "number": 47,
+          "position": "ST"
+        }
+      ]
+    },
+    "newcastle": {
+      "teamId": "newcastle",
+      "status": "official-first-match-xi",
+      "eventId": "2494008",
+      "fixtureId": "1557375",
+      "formation": "4-2-3-1",
+      "starters": [
+        {
+          "id": "player-api-269349",
+          "name": "루카시 호르니첵",
+          "number": 21,
+          "position": "GK",
+          "grid": "1:1",
+          "x": 50,
+          "y": 92
+        },
+        {
+          "id": "player-api-7318",
+          "name": "A. Dedic",
+          "number": 37,
+          "position": "RB",
+          "grid": "2:4",
+          "x": 86.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-163189",
+          "name": "말릭 치아우",
+          "number": 12,
+          "position": "RCB",
+          "grid": "2:3",
+          "x": 62.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-38734",
+          "name": "스벤 보트만",
+          "number": 4,
+          "position": "LCB",
+          "grid": "2:2",
+          "x": 38.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-284492",
+          "name": "루이스 홀",
+          "number": 3,
+          "position": "LB",
+          "grid": "2:1",
+          "x": 14.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-469321",
+          "name": "숀 스퇴르",
+          "number": 14,
+          "position": "RDM",
+          "grid": "3:2",
+          "x": 86.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-328105",
+          "name": "루이스 마일리",
+          "number": 67,
+          "position": "LDM",
+          "grid": "3:1",
+          "x": 14.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-153430",
+          "name": "안토니 엘랑가",
+          "number": 19,
+          "position": "RAM",
+          "grid": "4:3",
+          "x": 86.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-20649",
+          "name": "요안 위사",
+          "number": 9,
+          "position": "AM",
+          "grid": "4:2",
+          "x": 50.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-18778",
+          "name": "하비 반스",
+          "number": 11,
+          "position": "LAM",
+          "grid": "4:1",
+          "x": 14.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-315237",
+          "name": "윌리엄 오술라",
+          "number": 10,
+          "position": "ST",
+          "grid": "5:1",
+          "x": 50,
+          "y": 18.0
+        }
+      ],
+      "substitutes": [
+        {
+          "id": "player-api-329640",
+          "name": "에웬 자우앙",
+          "number": 24,
+          "position": "GK"
+        },
+        {
+          "id": "player-api-337934",
+          "name": "L. Shahar",
+          "number": 51,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-2806",
+          "name": "파비안 셰어",
+          "number": 5,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-1463",
+          "name": "조 윌록",
+          "number": 28,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-19192",
+          "name": "제이콥 램지",
+          "number": 41,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-453792",
+          "name": "알라지 밤바",
+          "number": 8,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-387643",
+          "name": "바주마나 투레",
+          "number": 17,
+          "position": "ST"
+        },
+        {
+          "id": "player-api-19163",
+          "name": "J. Murphy",
+          "number": 23,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-158054",
+          "name": "닉 볼테마데",
+          "number": 27,
+          "position": "ST"
+        }
+      ]
+    },
+    "liverpool": {
+      "teamId": "liverpool",
+      "status": "official-first-match-xi",
+      "eventId": "2494008",
+      "fixtureId": "1557375",
+      "formation": "4-2-3-1",
+      "starters": [
+        {
+          "id": "player-api-280",
+          "name": "알리송 베케르",
+          "number": 1,
+          "position": "GK",
+          "grid": "1:1",
+          "x": 50,
+          "y": 92
+        },
+        {
+          "id": "player-api-152654",
+          "name": "제레미 프림퐁",
+          "number": 30,
+          "position": "RB",
+          "grid": "2:4",
+          "x": 86.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-367636",
+          "name": "제레미 자케",
+          "number": 5,
+          "position": "RCB",
+          "grid": "2:3",
+          "x": 62.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-290",
+          "name": "버질 반 다이크",
+          "number": 4,
+          "position": "LCB",
+          "grid": "2:2",
+          "x": 38.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-206254",
+          "name": "밀로시 케르케즈",
+          "number": 6,
+          "position": "LB",
+          "grid": "2:1",
+          "x": 14.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-1096",
+          "name": "도미니크 소보슬라이",
+          "number": 8,
+          "position": "RDM",
+          "grid": "3:2",
+          "x": 86.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-542",
+          "name": "라이언 흐라벤베르흐",
+          "number": 38,
+          "position": "LDM",
+          "grid": "3:1",
+          "x": 14.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-452685",
+          "name": "리오 은구모하",
+          "number": 73,
+          "position": "RAM",
+          "grid": "4:3",
+          "x": 86.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-203224",
+          "name": "플로리안 비르츠",
+          "number": 7,
+          "position": "AM",
+          "grid": "4:2",
+          "x": 50.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-247",
+          "name": "코디 각포",
+          "number": 18,
+          "position": "LAM",
+          "grid": "4:1",
+          "x": 14.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-2864",
+          "name": "알렉산더 이삭",
+          "number": 9,
+          "position": "ST",
+          "grid": "5:1",
+          "x": 50,
+          "y": 18.0
+        }
+      ],
+      "substitutes": [
+        {
+          "id": "player-api-24760",
+          "name": "기오르기 마마르다슈빌리",
+          "number": 25,
+          "position": "GK"
+        },
+        {
+          "id": "player-api-1600",
+          "name": "코스타스 치미카스",
+          "number": 21,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-101814",
+          "name": "로날드 아라우호",
+          "number": 33,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-6716",
+          "name": "알렉시스 맥 알리스터",
+          "number": 10,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-8500",
+          "name": "엔도 와타루",
+          "number": 3,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-287109",
+          "name": "제임스 매코널",
+          "number": 53,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-397997",
+          "name": "트레이 뇨니",
+          "number": 42,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-328107",
+          "name": "L. Koumas",
+          "number": 67,
+          "position": "ST"
+        },
+        {
+          "id": "player-api-338751",
+          "name": "빅토르 무뇨스",
+          "number": 23,
+          "position": "ST"
+        }
+      ]
+    },
+    "chelsea": {
+      "teamId": "chelsea",
+      "status": "tacticvision-predicted-xi",
+      "eventId": null,
+      "fixtureId": null,
+      "formation": "4-2-3-1",
+      "starters": [
+        {
+          "id": "player-api-18959",
+          "name": "로베르트 산체스",
+          "number": 1,
+          "position": "GK",
+          "grid": "1:1",
+          "x": 50,
+          "y": 92
+        },
+        {
+          "id": "player-api-19545",
+          "name": "리스 제임스",
+          "number": 24,
+          "position": "RB",
+          "grid": "2:1",
+          "x": 14.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-22094",
+          "name": "웨슬리 포파나",
+          "number": 3,
+          "position": "RCB",
+          "grid": "2:2",
+          "x": 38.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-152953",
+          "name": "리바이 콜윌",
+          "number": 6,
+          "position": "LCB",
+          "grid": "2:3",
+          "x": 62.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-341642",
+          "name": "조렐 하토",
+          "number": 21,
+          "position": "LB",
+          "grid": "2:4",
+          "x": 86.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-116117",
+          "name": "모이세스 카이세도",
+          "number": 25,
+          "position": "LDM",
+          "grid": "3:1",
+          "x": 14.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-5996",
+          "name": "엔소 페르난데스",
+          "number": 8,
+          "position": "RDM",
+          "grid": "3:2",
+          "x": 86.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-1864",
+          "name": "페드루 네투",
+          "number": 7,
+          "position": "LAM",
+          "grid": "4:1",
+          "x": 14.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-152982",
+          "name": "콜 파머",
+          "number": 10,
+          "position": "AM",
+          "grid": "4:2",
+          "x": 50.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-425733",
+          "name": "이스테방 윌리앙",
+          "number": 41,
+          "position": "RAM",
+          "grid": "4:3",
+          "x": 86.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-10329",
+          "name": "주앙 페드루",
+          "number": 20,
+          "position": "ST",
+          "grid": "5:1",
+          "x": 50,
+          "y": 18.0
+        }
+      ],
+      "substitutes": [
+        {
+          "id": "player-api-383018",
+          "name": "마르코 팔레스트라",
+          "number": 2,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-19145",
+          "name": "토신 아다라비오요",
+          "number": 4,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-422780",
+          "name": "아론 안셀미노",
+          "number": 5,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-292",
+          "name": "조던 헨더슨",
+          "number": 6,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-161948",
+          "name": "리암 델랍",
+          "number": 9,
+          "position": "ST"
+        },
+        {
+          "id": "player-api-95",
+          "name": "브누아 바디아실",
+          "number": 5,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-20995",
+          "name": "막상스 라크루아",
+          "number": 5,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-203762",
+          "name": "엠마누엘 에메가",
+          "number": 10,
+          "position": "ST"
+        },
+        {
+          "id": "player-api-286894",
+          "name": "제이미 기튼스",
+          "number": 11,
+          "position": "ST"
+        },
+        {
+          "id": "player-api-283058",
+          "name": "니콜라 잭슨",
+          "number": 11,
+          "position": "ST"
+        },
+        {
+          "id": "player-api-308678",
+          "name": "다리우 이수구",
+          "number": 14,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-19170",
+          "name": "모건 로저스",
+          "number": 17,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-1469",
+          "name": "대니 웰벡",
+          "number": 18,
+          "position": "ST"
+        },
+        {
+          "id": "player-api-276184",
+          "name": "마마두 사르",
+          "number": 19,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-161907",
+          "name": "말로 귀스토",
+          "number": 27,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-180940",
+          "name": "테디 샤먼로우",
+          "number": 28,
+          "position": "GK"
+        },
+        {
+          "id": "player-api-181734",
+          "name": "펩 차바리아",
+          "number": 29,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-366735",
+          "name": "조시 아체암퐁",
+          "number": 34,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-392270",
+          "name": "마르크 기우",
+          "number": 38,
+          "position": "ST"
+        },
+        {
+          "id": "player-api-340151",
+          "name": "마이크 펜더르스",
+          "number": 39,
+          "position": "GK"
+        },
+        {
+          "id": "player-api-282125",
+          "name": "로메오 라비아",
+          "number": 45,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-419582",
+          "name": "지오바니 켄다",
+          "number": 47,
+          "position": "ST"
+        },
+        {
+          "id": "player-api-319572",
+          "name": "발렌틴 바르코",
+          "number": 99,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-609590",
+          "name": "데네르 에반젤리스타",
+          "number": null,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-63577",
+          "name": "미하일로 무드리크",
+          "number": null,
+          "position": "ST"
+        }
+      ]
+    },
+    "fulham": {
+      "teamId": "fulham",
+      "status": "tacticvision-predicted-xi",
+      "eventId": null,
+      "fixtureId": null,
+      "formation": "4-2-3-1",
+      "starters": [
+        {
+          "id": "player-api-1438",
+          "name": "베른트 레노",
+          "number": 1,
+          "position": "GK",
+          "grid": "1:1",
+          "x": 50,
+          "y": 92
+        },
+        {
+          "id": "player-api-657",
+          "name": "케니 테터",
+          "number": 2,
+          "position": "RB",
+          "grid": "2:1",
+          "x": 14.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-2729",
+          "name": "요아킴 안데르센",
+          "number": 5,
+          "position": "RCB",
+          "grid": "2:2",
+          "x": 38.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-152967",
+          "name": "캘빈 배시",
+          "number": 3,
+          "position": "LCB",
+          "grid": "2:3",
+          "x": 62.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-19549",
+          "name": "안토니 로빈슨",
+          "number": 33,
+          "position": "LB",
+          "grid": "2:4",
+          "x": 86.0,
+          "y": 76.0
+        },
+        {
+          "id": "player-api-1934",
+          "name": "산데르 베르게",
+          "number": 16,
+          "position": "LDM",
+          "grid": "3:1",
+          "x": 14.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-1161",
+          "name": "에밀 스미스 로우",
+          "number": 32,
+          "position": "RDM",
+          "grid": "3:2",
+          "x": 86.0,
+          "y": 56.67
+        },
+        {
+          "id": "player-api-237819",
+          "name": "케빙",
+          "number": 11,
+          "position": "LAM",
+          "grid": "4:1",
+          "x": 14.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-1455",
+          "name": "알렉스 이워비",
+          "number": 17,
+          "position": "AM",
+          "grid": "4:2",
+          "x": 50.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-278133",
+          "name": "오스카르 보브",
+          "number": 14,
+          "position": "RAM",
+          "grid": "4:3",
+          "x": 86.0,
+          "y": 37.33
+        },
+        {
+          "id": "player-api-195106",
+          "name": "호드리구 무니스",
+          "number": 9,
+          "position": "ST",
+          "grid": "5:1",
+          "x": 50,
+          "y": 18.0
+        }
+      ],
+      "substitutes": [
+        {
+          "id": "player-api-131",
+          "name": "호르헤 쿠엔카",
+          "number": 4,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-19480",
+          "name": "해리슨 리드",
+          "number": 6,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-19025",
+          "name": "톰 케어니",
+          "number": 10,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-436443",
+          "name": "요나 쿠시아사레",
+          "number": 18,
+          "position": "ST"
+        },
+        {
+          "id": "player-api-2920",
+          "name": "티모시 카스타뉴",
+          "number": 21,
+          "position": "CB"
+        },
+        {
+          "id": "player-api-21566",
+          "name": "뱅자맹 르콩트",
+          "number": 23,
+          "position": "GK"
+        },
+        {
+          "id": "player-api-389315",
+          "name": "조시 킹",
+          "number": 24,
+          "position": "CM"
+        },
+        {
+          "id": "player-api-19032",
+          "name": "라이언 세세뇽",
+          "number": 30,
+          "position": "CM"
+        }
+      ]
+    }
+  }
+}

@@ -7,6 +7,10 @@
   "files": {
     "teams.json": { "layer": "external-facts", "sourceId": "api-football", "status": "partial" },
     "team-comparison.json": { "layer": "external-facts", "sourceId": "openfootball-england-public-domain", "status": "ready" },
+    "matches.json": { "layer": "external-facts", "sourceId": "openfootball-england-public-domain", "status": "ready" },
+    "standings.json": { "layer": "external-facts", "sourceId": "thesportsdb-free-season-results", "status": "ready" },
+    "team-history.json": { "layer": "external-facts", "sourceId": "openfootball-england-public-domain", "status": "ready" },
+    "first-match-lineups.json": { "layer": "external-facts", "sourceId": "api-football-first-match-lineups", "status": "ready" },
     "team-provider-crosscheck.json": { "layer": "external-facts", "sourceId": "thesportsdb-free-community", "status": "ready" },
     "people-comparison.json": { "layer": "external-facts", "sourceId": "wikidata-cc0", "status": "ready" },
     "player-name-ko-namuwiki.json": { "layer": "external-facts", "sourceId": "namuwiki-squad-template-pair", "status": "partial" },
