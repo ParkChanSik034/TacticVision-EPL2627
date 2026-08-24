@@ -1,0 +1,57 @@
+name: Sync openfootball data
+
+on:
+  schedule:
+    # 04:30 and 16:30 UTC = 13:30 and 01:30 KST
+    - cron: "30 4,16 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: sync-openfootball-data
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Fetch latest public-domain data
+        run: python3 scripts/sync_openfootball.py
+
+      - name: Validate generated data
+        run: python3 scripts/validate_data.py
+
+      - name: Create or update data PR
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: automation/openfootball-data
+          delete-branch: true
+          commit-message: "data: sync latest openfootball results"
+          title: "data: sync latest openfootball results"
+          body: |
+            ## 변경 내용
+
+            - openfootball/england의 2026/27 Premier League 원본 snapshot 갱신
+            - 실제 경기 결과 기반 Team Compare 지표 재생성
+            - 데이터 계약과 20팀 canonical ID 매핑 검증
+
+            ## 데이터 출처
+
+            - Source: https://github.com/openfootball/england
+            - License: Public Domain
+            - Raw: https://raw.githubusercontent.com/openfootball/england/master/2026-27/1-premierleague.txt
+
+            ## 검증
+
+            - `python3 scripts/validate_data.py`
+
+            자동 생성된 PR입니다. 검증 결과와 변경 경기 수를 확인한 뒤 병합해 주세요.

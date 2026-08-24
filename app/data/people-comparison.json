@@ -1,0 +1,254 @@
+{
+  "schemaVersion": "1.0.0",
+  "asOf": "2026-08-24T01:53:23Z",
+  "sourceId": "wikidata-cc0",
+  "sourceUrl": "https://www.wikidata.org/",
+  "license": "CC0-1.0",
+  "players": {
+    "haaland": {
+      "id": "haaland",
+      "wikidataId": "Q28967995",
+      "sourceUrl": "https://www.wikidata.org/wiki/Q28967995",
+      "sourceRevision": 2533010447,
+      "englishName": "Erling Haaland",
+      "koreanName": "엘링 홀란",
+      "birthDate": "2000-07-21",
+      "nationalities": [
+        "Norway"
+      ],
+      "heightCm": 195,
+      "positions": [
+        "forward"
+      ],
+      "factWarnings": {}
+    },
+    "isak": {
+      "id": "isak",
+      "wikidataId": "Q23759917",
+      "sourceUrl": "https://www.wikidata.org/wiki/Q23759917",
+      "sourceRevision": 2534994199,
+      "englishName": "Alexander Isak",
+      "koreanName": "알렉산데르 이사크",
+      "birthDate": "1999-09-21",
+      "nationalities": [
+        "Somalia"
+      ],
+      "heightCm": 190,
+      "positions": [
+        "forward"
+      ],
+      "factWarnings": {
+        "nationality": "Wikidata P27 conflicts with Sweden national-team records; do not publish automatically.",
+        "verificationUrl": "https://www.svenskfotboll.se/nyheter/landslag/2026/05/herr-trojnummer-vm-2026/"
+      }
+    },
+    "saka": {
+      "id": "saka",
+      "wikidataId": "Q59306386",
+      "sourceUrl": "https://www.wikidata.org/wiki/Q59306386",
+      "sourceRevision": 2529937162,
+      "englishName": "Bukayo Saka",
+      "koreanName": "부카요 사카",
+      "birthDate": "2001-09-05",
+      "nationalities": [
+        "United Kingdom"
+      ],
+      "heightCm": 178,
+      "positions": [
+        "winger"
+      ],
+      "factWarnings": {}
+    },
+    "palmer": {
+      "id": "palmer",
+      "wikidataId": "Q99760796",
+      "sourceUrl": "https://www.wikidata.org/wiki/Q99760796",
+      "sourceRevision": 2532240841,
+      "englishName": "Cole Palmer",
+      "koreanName": "콜 파머",
+      "birthDate": "2002-05-06",
+      "nationalities": [
+        "United Kingdom"
+      ],
+      "heightCm": 185,
+      "positions": [
+        "attacking midfielder",
+        "winger"
+      ],
+      "factWarnings": {}
+    },
+    "rice": {
+      "id": "rice",
+      "wikidataId": "Q30007142",
+      "sourceUrl": "https://www.wikidata.org/wiki/Q30007142",
+      "sourceRevision": 2534335959,
+      "englishName": "Declan Rice",
+      "koreanName": "데클런 라이스",
+      "birthDate": "1999-01-14",
+      "nationalities": [
+        "United Kingdom"
+      ],
+      "heightCm": 188,
+      "positions": [
+        "defensive midfielder"
+      ],
+      "factWarnings": {}
+    },
+    "saliba": {
+      "id": "saliba",
+      "wikidataId": "Q56868118",
+      "sourceUrl": "https://www.wikidata.org/wiki/Q56868118",
+      "sourceRevision": 2530183038,
+      "englishName": "William Saliba",
+      "koreanName": "윌리암 살리바",
+      "birthDate": "2001-03-24",
+      "nationalities": [
+        "France"
+      ],
+      "heightCm": 192,
+      "positions": [
+        "defender"
+      ],
+      "factWarnings": {}
+    },
+    "trent": {
+      "id": "trent",
+      "wikidataId": "Q27569376",
+      "sourceUrl": "https://www.wikidata.org/wiki/Q27569376",
+      "sourceRevision": 2534331124,
+      "englishName": "Trent Alexander-Arnold",
+      "koreanName": "트렌트 알렉산더아널드",
+      "birthDate": "1998-10-07",
+      "nationalities": [
+        "United Kingdom"
+      ],
+      "heightCm": 175,
+      "positions": [
+        "full-back",
+        "midfielder"
+      ],
+      "factWarnings": {}
+    },
+    "alisson": {
+      "id": "alisson",
+      "wikidataId": "Q18237361",
+      "sourceUrl": "https://www.wikidata.org/wiki/Q18237361",
+      "sourceRevision": 2529361856,
+      "englishName": "Alisson Becker",
+      "koreanName": "알리송 베케르",
+      "birthDate": "1992-10-02",
+      "nationalities": [
+        "Brazil"
+      ],
+      "heightCm": 193,
+      "positions": [
+        "goalkeeper"
+      ],
+      "factWarnings": {}
+    }
+  },
+  "managers": {
+    "alonso": {
+      "id": "alonso",
+      "wikidataId": "Q208104",
+      "sourceUrl": "https://www.wikidata.org/wiki/Q208104",
+      "sourceRevision": 2533442913,
+      "englishName": "Xabi Alonso",
+      "koreanName": "샤비 알론소",
+      "birthDate": "1981-11-25",
+      "nationalities": [
+        "Spain"
+      ],
+      "heightCm": 183,
+      "positions": [
+        "midfielder"
+      ],
+      "factWarnings": {}
+    },
+    "maresca": {
+      "id": "maresca",
+      "wikidataId": "Q317282",
+      "sourceUrl": "https://www.wikidata.org/wiki/Q317282",
+      "sourceRevision": 2531947074,
+      "englishName": "Enzo Maresca",
+      "koreanName": "엔초 마레스카",
+      "birthDate": "1980-02-10",
+      "nationalities": [
+        "Italy"
+      ],
+      "heightCm": 180,
+      "positions": [
+        "midfielder"
+      ],
+      "factWarnings": {}
+    },
+    "dezerbi": {
+      "id": "dezerbi",
+      "wikidataId": "Q2032119",
+      "sourceUrl": "https://www.wikidata.org/wiki/Q2032119",
+      "sourceRevision": 2488674253,
+      "englishName": "Roberto De Zerbi",
+      "koreanName": "로베르토 데 제르비",
+      "birthDate": "1979-06-06",
+      "nationalities": [
+        "Italy"
+      ],
+      "heightCm": 175,
+      "positions": [
+        "midfielder"
+      ],
+      "factWarnings": {}
+    },
+    "arteta": {
+      "id": "arteta",
+      "wikidataId": "Q185572",
+      "sourceUrl": "https://www.wikidata.org/wiki/Q185572",
+      "sourceRevision": 2520269528,
+      "englishName": "Mikel Arteta",
+      "koreanName": "미켈 아르테타",
+      "birthDate": "1982-03-26",
+      "nationalities": [
+        "Spain"
+      ],
+      "heightCm": 175,
+      "positions": [
+        "midfielder"
+      ],
+      "factWarnings": {}
+    },
+    "slot": {
+      "id": "slot",
+      "wikidataId": "Q1029223",
+      "sourceUrl": "https://www.wikidata.org/wiki/Q1029223",
+      "sourceRevision": 2525468896,
+      "englishName": "Arne Slot",
+      "koreanName": "아르너 슬로트",
+      "birthDate": "1978-09-17",
+      "nationalities": [
+        "Kingdom of the Netherlands"
+      ],
+      "heightCm": 185,
+      "positions": [
+        "midfielder"
+      ],
+      "factWarnings": {}
+    },
+    "emery": {
+      "id": "emery",
+      "wikidataId": "Q295610",
+      "sourceUrl": "https://www.wikidata.org/wiki/Q295610",
+      "sourceRevision": 2526685223,
+      "englishName": "Unai Emery",
+      "koreanName": "우나이 에메리",
+      "birthDate": "1971-11-03",
+      "nationalities": [
+        "Spain"
+      ],
+      "heightCm": 180,
+      "positions": [
+        "midfielder"
+      ],
+      "factWarnings": {}
+    }
+  }
+}

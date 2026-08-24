@@ -224,6 +224,9 @@ GitHub Actions가 매일 두 번 openfootball의 2026/27 Premier League 원본 �
 
 ```bash
 python3 scripts/sync_openfootball.py
+python3 scripts/sync_thesportsdb_teams.py
+python3 scripts/sync_thesportsdb_players.py
+python3 scripts/sync_wikidata_managers.py
 python3 scripts/validate_data.py
 ```
 

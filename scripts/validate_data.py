@@ -12,8 +12,8 @@ from typing import Any
 
 DATA_DIR = Path(__file__).resolve().parents[1] / "app" / "data"
 FILES = {
-    "formations.json", "managers.json", "manifest.json", "players.json",
-    "roles.json", "squads.json", "tactics.json", "team-comparison.json", "teams.json",
+    "formations.json", "managers.json", "managers-current.json", "manifest.json", "players.json",
+    "people-comparison.json", "player-provider-crosscheck.json", "roles.json", "squads.json", "tactics.json", "team-comparison.json", "team-provider-crosscheck.json", "teams.json",
 }
 KEBAB = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 FORMATION = re.compile(r"^\d(?:-\d)+$")
@@ -173,6 +173,56 @@ def validate_managers(value: Any, team_ids: set[str], formations: dict[str, Any]
             unique(preferred, f"{location}.preferredFormations")
             for formation_id in preferred:
                 check(formation_id in formations, f"{location}.preferredFormations", f"unknown formation {formation_id!r}")
+        if "analysisStatus" in manager:
+            check(manager["analysisStatus"].startswith(("reviewed-", "provisional-")), f"{location}.analysisStatus", "must be reviewed-* or provisional-*")
+            for field_name in ("identity", "traits", "achievements", "principles", "sourceLinks", "keyPlayers", "sliders", "controlValuesStatus"):
+                check(field_name in manager, location, f"analysis profile missing {field_name}")
+            check(isinstance(manager.get("traits"), list) and bool(manager.get("traits")), f"{location}.traits", "must be a non-empty array")
+            check(isinstance(manager.get("achievements"), list) and len(manager.get("achievements", [])) >= 2, f"{location}.achievements", "must contain at least two meaningful achievements")
+            check(isinstance(manager.get("principles"), list) and len(manager.get("principles", [])) == 3, f"{location}.principles", "must contain build-up, attack, and defence/transition")
+            check(isinstance(manager.get("sourceLinks"), list) and bool(manager.get("sourceLinks")), f"{location}.sourceLinks", "must contain at least one source")
+            check(isinstance(manager.get("keyPlayers"), list) and len(manager.get("keyPlayers", [])) == 3, f"{location}.keyPlayers", "must contain exactly three tactical roles")
+            sliders = manager.get("sliders", {})
+            check(isinstance(sliders, dict) and set(sliders) == {"defline", "width", "press"}, f"{location}.sliders", "must contain defline, width, and press")
+            if isinstance(sliders, dict):
+                for slider_name, slider_value in sliders.items():
+                    check(number_between(slider_value, 0, 100), f"{location}.sliders.{slider_name}", "must be between 0 and 100")
+            check(manager.get("controlValuesStatus") == "tacticvision-analysis-estimate", f"{location}.controlValuesStatus", "must identify values as TacticVision estimates")
+
+
+def validate_current_managers(value: Any, team_ids: set[str]) -> None:
+    location = "managers-current.json"
+    required = {"schemaVersion", "season", "asOf", "sourceId", "sourceUrl", "license", "relation", "managers"}
+    if not fields(value, required, location):
+        return
+    check(value["sourceId"] == "wikidata-cc0", f"{location}.sourceId", "unexpected source")
+    check(value["license"] == "CC0-1.0", f"{location}.license", "unexpected license")
+    managers = value["managers"]
+    check(isinstance(managers, dict) and set(managers) == team_ids, f"{location}.managers", "must contain every canonical team")
+    if not isinstance(managers, dict):
+        return
+    manager_qids = []
+    for team_id, manager in managers.items():
+        item = f"{location}.managers.{team_id}"
+        if not fields(manager, {"teamId", "teamWikidataId", "managerWikidataId", "englishName", "koreanName", "coachingCareer", "sourceUrl", "sourceRevision"}, item):
+            continue
+        check(manager["teamId"] == team_id, f"{item}.teamId", "must match object key")
+        check(manager["managerWikidataId"].startswith("Q"), f"{item}.managerWikidataId", "must be a QID")
+        check(nonempty(manager["englishName"]), f"{item}.englishName", "must be non-empty")
+        check(isinstance(manager["sourceRevision"], int), f"{item}.sourceRevision", "must be an integer")
+        career = manager["coachingCareer"]
+        check(isinstance(career, list), f"{item}.coachingCareer", "must be an array")
+        if isinstance(career, list):
+            for index, row in enumerate(career):
+                career_item = f"{item}.coachingCareer[{index}]"
+                if not fields(row, {"teamWikidataId", "teamName", "startDate", "endDate", "sourceUrl"}, career_item):
+                    continue
+                check(row["teamWikidataId"].startswith("Q"), f"{career_item}.teamWikidataId", "must be a QID")
+                check(nonempty(row["teamName"]), f"{career_item}.teamName", "must be non-empty")
+                check(row["startDate"] is None or bool(re.fullmatch(r"\d{4}-\d{2}-\d{2}", row["startDate"])), f"{career_item}.startDate", "must be null or YYYY-MM-DD")
+                check(row["endDate"] is None or bool(re.fullmatch(r"\d{4}-\d{2}-\d{2}", row["endDate"])), f"{career_item}.endDate", "must be null or YYYY-MM-DD")
+        manager_qids.append(manager["managerWikidataId"])
+    unique(manager_qids, f"{location} manager QIDs")
 
 
 def validate_squads(value: Any, team_ids: set[str]) -> None:
@@ -283,6 +333,70 @@ def validate_team_comparison(value: Any, team_ids: set[str]) -> None:
     check(played_total == value["completedMatches"] * 2, f"{location}.completedMatches", "must match team appearance total")
 
 
+def validate_people_comparison(value: Any) -> None:
+    location = "people-comparison.json"
+    if not fields(value, {"schemaVersion", "asOf", "sourceId", "sourceUrl", "license", "players", "managers"}, location):
+        return
+    check(value["sourceId"] == "wikidata-cc0", f"{location}.sourceId", "unexpected source")
+    check(value["license"] == "CC0-1.0", f"{location}.license", "unexpected license")
+    check(len(value["players"]) == 8, f"{location}.players", "must contain 8 records")
+    check(len(value["managers"]) == 6, f"{location}.managers", "must contain 6 records")
+    for group in ("players", "managers"):
+        for person_id, person in value[group].items():
+            item = f"{location}.{group}.{person_id}"
+            check(person["id"] == person_id, f"{item}.id", "must match its key")
+            check(person["wikidataId"].startswith("Q"), f"{item}.wikidataId", "must be a QID")
+            check(isinstance(person["sourceRevision"], int), f"{item}.sourceRevision", "must be an integer")
+            check(nonempty(person["birthDate"]), f"{item}.birthDate", "must be present")
+            check(number_between(person["heightCm"], 140, 220), f"{item}.heightCm", "must be 140..220")
+    check("nationality" in value["players"]["isak"]["factWarnings"],
+          f"{location}.players.isak.factWarnings", "nationality conflict must remain quarantined")
+
+
+def validate_team_provider_crosscheck(value: Any, team_ids: set[str]) -> None:
+    location = "team-provider-crosscheck.json"
+    required = {"schemaVersion", "season", "asOf", "sourceId", "sourceUrl", "usage", "limitations", "warnings", "teams"}
+    if not fields(value, required, location):
+        return
+    check(value["season"] == "2026-2027", f"{location}.season", "unexpected season")
+    check(value["sourceId"] == "thesportsdb-free-community", f"{location}.sourceId", "unexpected source")
+    teams = value["teams"]
+    check(isinstance(teams, dict) and set(teams) == team_ids, f"{location}.teams", "must contain every canonical team")
+    if isinstance(teams, dict):
+        provider_ids = []
+        for team_id, team in teams.items():
+            item = f"{location}.teams.{team_id}"
+            if not fields(team, {"teamId", "providerTeamId", "providerName", "providerLeagueId", "affiliationMatches"}, item):
+                continue
+            check(team["teamId"] == team_id, f"{item}.teamId", "must match object key")
+            check(nonempty(team["providerTeamId"]), f"{item}.providerTeamId", "must be non-empty")
+            check(isinstance(team["affiliationMatches"], bool), f"{item}.affiliationMatches", "must be boolean")
+            provider_ids.append(team["providerTeamId"])
+        unique(provider_ids, f"{location} provider team IDs")
+    check(isinstance(value["warnings"], list), f"{location}.warnings", "must be an array")
+
+
+def validate_player_provider_crosscheck(value: Any, people: dict[str, Any]) -> None:
+    location = "player-provider-crosscheck.json"
+    required = {"schemaVersion", "asOf", "sourceId", "sourceUrl", "usage", "limitations", "warnings", "players"}
+    if not fields(value, required, location):
+        return
+    check(value["sourceId"] == "thesportsdb-free-community", f"{location}.sourceId", "unexpected source")
+    players = value["players"]
+    expected = set(people["players"]) if isinstance(people, dict) and isinstance(people.get("players"), dict) else set()
+    check(isinstance(players, dict) and set(players) == expected, f"{location}.players", "must match Player Compare IDs")
+    if isinstance(players, dict):
+        provider_ids = []
+        for player_id, player in players.items():
+            item = f"{location}.players.{player_id}"
+            if not fields(player, {"playerId", "providerPlayerId", "providerName", "currentTeam", "position", "thumbnailUrl"}, item):
+                continue
+            check(player["playerId"] == player_id, f"{item}.playerId", "must match object key")
+            check(nonempty(player["providerPlayerId"]), f"{item}.providerPlayerId", "must be non-empty")
+            check(nonempty(player["providerName"]), f"{item}.providerName", "must be non-empty")
+            provider_ids.append(player["providerPlayerId"])
+        unique(provider_ids, f"{location} provider player IDs")
+    check(isinstance(value["warnings"], list), f"{location}.warnings", "must be an array")
 def main() -> int:
     actual = {path.name for path in DATA_DIR.glob("*.json")}
     check(actual == FILES, "app/data", "contract file set differs: "
@@ -294,10 +408,14 @@ def main() -> int:
     team_ids = validate_teams(data["teams.json"], formations)
     validate_players(data["players.json"], team_ids)
     validate_managers(data["managers.json"], team_ids, formations)
+    validate_current_managers(data["managers-current.json"], team_ids)
     validate_squads(data["squads.json"], team_ids)
     validate_roles(data["roles.json"])
     validate_tactics(data["tactics.json"], team_ids)
     validate_team_comparison(data["team-comparison.json"], team_ids)
+    validate_people_comparison(data["people-comparison.json"])
+    validate_player_provider_crosscheck(data["player-provider-crosscheck.json"], data["people-comparison.json"])
+    validate_team_provider_crosscheck(data["team-provider-crosscheck.json"], team_ids)
     if errors:
         print(f"Data validation failed with {len(errors)} error(s):", file=sys.stderr)
         for error in errors:
