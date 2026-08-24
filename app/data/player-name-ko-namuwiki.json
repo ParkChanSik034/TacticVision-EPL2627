@@ -1,0 +1,3011 @@
+{
+  "schemaVersion": "2.0.0",
+  "asOf": "2026-08-24T10:13:31Z",
+  "sourceId": "namuwiki-squad-template-pair",
+  "sourceUrl": "https://namu.wiki/",
+  "usage": "Korean/English display-name pairs from current club squad templates",
+  "limitations": [
+    "Only explicit Korean/English pairs in each current club squad template are adopted.",
+    "Unmatched API players display their English name instead of an inferred Korean spelling.",
+    "NamuWiki is not used for statistics or biographical facts."
+  ],
+  "matchedCount": 479,
+  "teams": {
+    "arsenal": {
+      "title": "틀:아스날 FC",
+      "sourceUrl": "https://namu.wiki/w/%ED%8B%80%3A%EC%95%84%EC%8A%A4%EB%82%A0%20FC",
+      "templatePlayerCount": 30,
+      "matchedPlayerCount": 29
+    },
+    "astonvilla": {
+      "title": "틀:아스톤 빌라 FC",
+      "sourceUrl": "https://namu.wiki/w/%ED%8B%80%3A%EC%95%84%EC%8A%A4%ED%86%A4%20%EB%B9%8C%EB%9D%BC%20FC",
+      "templatePlayerCount": 25,
+      "matchedPlayerCount": 20
+    },
+    "bournemouth": {
+      "title": "틀:AFC 본머스",
+      "sourceUrl": "https://namu.wiki/w/%ED%8B%80%3AAFC%20%EB%B3%B8%EB%A8%B8%EC%8A%A4",
+      "templatePlayerCount": 27,
+      "matchedPlayerCount": 21
+    },
+    "brentford": {
+      "title": "틀:브렌트포드 FC",
+      "sourceUrl": "https://namu.wiki/w/%ED%8B%80%3A%EB%B8%8C%EB%A0%8C%ED%8A%B8%ED%8F%AC%EB%93%9C%20FC",
+      "templatePlayerCount": 33,
+      "matchedPlayerCount": 21
+    },
+    "brighton": {
+      "title": "틀:브라이튼 앤 호브 알비온 FC",
+      "sourceUrl": "https://namu.wiki/w/%ED%8B%80%3A%EB%B8%8C%EB%9D%BC%EC%9D%B4%ED%8A%BC%20%EC%95%A4%20%ED%98%B8%EB%B8%8C%20%EC%95%8C%EB%B9%84%EC%98%A8%20FC",
+      "templatePlayerCount": 19,
+      "matchedPlayerCount": 19
+    },
+    "chelsea": {
+      "title": "틀:첼시 FC",
+      "sourceUrl": "https://namu.wiki/w/%ED%8B%80%3A%EC%B2%BC%EC%8B%9C%20FC",
+      "templatePlayerCount": 43,
+      "matchedPlayerCount": 36
+    },
+    "coventry": {
+      "title": "틀:코번트리 시티 FC",
+      "sourceUrl": "https://namu.wiki/w/%ED%8B%80%3A%EC%BD%94%EB%B2%88%ED%8A%B8%EB%A6%AC%20%EC%8B%9C%ED%8B%B0%20FC",
+      "templatePlayerCount": 0,
+      "matchedPlayerCount": 23
+    },
+    "crystalpalace": {
+      "title": "틀:크리스탈 팰리스 FC",
+      "sourceUrl": "https://namu.wiki/w/%ED%8B%80%3A%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%83%88%20%ED%8C%B0%EB%A6%AC%EC%8A%A4%20FC",
+      "templatePlayerCount": 32,
+      "matchedPlayerCount": 26
+    },
+    "everton": {
+      "title": "틀:에버튼 FC",
+      "sourceUrl": "https://namu.wiki/w/%ED%8B%80%3A%EC%97%90%EB%B2%84%ED%8A%BC%20FC",
+      "templatePlayerCount": 21,
+      "matchedPlayerCount": 17
+    },
+    "fulham": {
+      "title": "틀:풀럼 FC",
+      "sourceUrl": "https://namu.wiki/w/%ED%8B%80%3A%ED%92%80%EB%9F%BC%20FC",
+      "templatePlayerCount": 0,
+      "matchedPlayerCount": 19
+    },
+    "hullcity": {
+      "title": "틀:헐 시티 AFC",
+      "sourceUrl": "https://namu.wiki/w/%ED%8B%80%3A%ED%97%90%20%EC%8B%9C%ED%8B%B0%20AFC",
+      "templatePlayerCount": 0,
+      "matchedPlayerCount": 28
+    },
+    "ipswich": {
+      "title": "틀:입스위치 타운 FC",
+      "sourceUrl": "https://namu.wiki/w/%ED%8B%80%3A%EC%9E%85%EC%8A%A4%EC%9C%84%EC%B9%98%20%ED%83%80%EC%9A%B4%20FC",
+      "templatePlayerCount": 31,
+      "matchedPlayerCount": 23
+    },
+    "leeds": {
+      "title": "틀:리즈 유나이티드 FC",
+      "sourceUrl": "https://namu.wiki/w/%ED%8B%80%3A%EB%A6%AC%EC%A6%88%20%EC%9C%A0%EB%82%98%EC%9D%B4%ED%8B%B0%EB%93%9C%20FC",
+      "templatePlayerCount": 29,
+      "matchedPlayerCount": 26
+    },
+    "liverpool": {
+      "title": "틀:리버풀 FC",
+      "sourceUrl": "https://namu.wiki/w/%ED%8B%80%3A%EB%A6%AC%EB%B2%84%ED%92%80%20FC",
+      "templatePlayerCount": 31,
+      "matchedPlayerCount": 26
+    },
+    "mancity": {
+      "title": "틀:맨체스터 시티 FC",
+      "sourceUrl": "https://namu.wiki/w/%ED%8B%80%3A%EB%A7%A8%EC%B2%B4%EC%8A%A4%ED%84%B0%20%EC%8B%9C%ED%8B%B0%20FC",
+      "templatePlayerCount": 26,
+      "matchedPlayerCount": 25
+    },
+    "manutd": {
+      "title": "틀:맨체스터 유나이티드 FC",
+      "sourceUrl": "https://namu.wiki/w/%ED%8B%80%3A%EB%A7%A8%EC%B2%B4%EC%8A%A4%ED%84%B0%20%EC%9C%A0%EB%82%98%EC%9D%B4%ED%8B%B0%EB%93%9C%20FC",
+      "templatePlayerCount": 36,
+      "matchedPlayerCount": 31
+    },
+    "newcastle": {
+      "title": "틀:뉴캐슬 유나이티드 FC",
+      "sourceUrl": "https://namu.wiki/w/%ED%8B%80%3A%EB%89%B4%EC%BA%90%EC%8A%AC%20%EC%9C%A0%EB%82%98%EC%9D%B4%ED%8B%B0%EB%93%9C%20FC",
+      "templatePlayerCount": 21,
+      "matchedPlayerCount": 21
+    },
+    "nottinghamforest": {
+      "title": "틀:노팅엄 포레스트 FC",
+      "sourceUrl": "https://namu.wiki/w/%ED%8B%80%3A%EB%85%B8%ED%8C%85%EC%97%84%20%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8%20FC",
+      "templatePlayerCount": 28,
+      "matchedPlayerCount": 21
+    },
+    "sunderland": {
+      "title": "틀:선덜랜드 AFC",
+      "sourceUrl": "https://namu.wiki/w/%ED%8B%80%3A%EC%84%A0%EB%8D%9C%EB%9E%9C%EB%93%9C%20AFC",
+      "templatePlayerCount": 25,
+      "matchedPlayerCount": 20
+    },
+    "tottenham": {
+      "title": "틀:토트넘 홋스퍼 FC",
+      "sourceUrl": "https://namu.wiki/w/%ED%8B%80%3A%ED%86%A0%ED%8A%B8%EB%84%98%20%ED%99%8B%EC%8A%A4%ED%8D%BC%20FC",
+      "templatePlayerCount": 32,
+      "matchedPlayerCount": 27
+    }
+  },
+  "players": {
+    "player-api-643": {
+      "koreanName": "가브리에우 제주스",
+      "englishName": "Gabriel Jesus",
+      "sourceUrl": "https://namu.wiki/w/%EA%B0%80%EB%B8%8C%EB%A6%AC%EC%97%90%EC%9A%B0%20%EC%A0%9C%EC%A3%BC%EC%8A%A4",
+      "matchScore": 1.0
+    },
+    "player-api-47315": {
+      "koreanName": "마르틴 수비멘디",
+      "englishName": "Martín Zubimendi",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%88%EB%A5%B4%ED%8B%B4%20%EC%88%98%EB%B9%84%EB%A9%98%EB%94%94",
+      "matchScore": 1.0
+    },
+    "player-api-47311": {
+      "koreanName": "미켈 메리노",
+      "englishName": "Mikel Merino",
+      "sourceUrl": "https://namu.wiki/w/%EB%AF%B8%EC%BC%88%20%EB%A9%94%EB%A6%AC%EB%85%B8",
+      "matchScore": 1.0
+    },
+    "player-api-41725": {
+      "koreanName": "파비우 비에이라",
+      "englishName": "Fàbio Vieira",
+      "sourceUrl": "https://namu.wiki/w/%ED%8C%8C%EB%B9%84%EC%9A%B0%20%EB%B9%84%EC%97%90%EC%9D%B4%EB%9D%BC",
+      "matchScore": 1.0
+    },
+    "player-api-333682": {
+      "koreanName": "크리스티안 모스케라",
+      "englishName": "Cristhian Mosquera",
+      "sourceUrl": "https://namu.wiki/w/%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%8B%B0%EC%95%88%20%EB%AA%A8%EC%8A%A4%EC%BC%80%EB%9D%BC",
+      "matchScore": 1.0
+    },
+    "player-api-22224": {
+      "koreanName": "가브리에우 마갈량이스",
+      "englishName": "Gabriel Magalhães",
+      "sourceUrl": "https://namu.wiki/w/%EA%B0%80%EB%B8%8C%EB%A6%AC%EC%97%90%EC%9A%B0%20%EB%A7%88%EA%B0%88%EB%9F%89%EC%9D%B4%EC%8A%A4",
+      "matchScore": 1.0
+    },
+    "player-api-19465": {
+      "koreanName": "다비드 라야",
+      "englishName": "David Raya",
+      "sourceUrl": "https://namu.wiki/w/%EB%8B%A4%EB%B9%84%EB%93%9C%20%EB%9D%BC%EC%95%BC",
+      "matchScore": 1.0
+    },
+    "player-api-127769": {
+      "koreanName": "가브리에우 마르티넬리",
+      "englishName": "Gabriel Martinelli",
+      "sourceUrl": "https://namu.wiki/w/%EA%B0%80%EB%B8%8C%EB%A6%AC%EC%97%90%EC%9A%B0%20%EB%A7%88%EB%A5%B4%ED%8B%B0%EB%84%AC%EB%A6%AC",
+      "matchScore": 1.0
+    },
+    "player-api-10135": {
+      "koreanName": "브루누 기마랑이스",
+      "englishName": "Bruno Guimarães",
+      "sourceUrl": "https://namu.wiki/w/%EB%B8%8C%EB%A3%A8%EB%88%84%20%EA%B8%B0%EB%A7%88%EB%9E%91%EC%9D%B4%EC%8A%A4",
+      "matchScore": 1.0
+    },
+    "player-api-978": {
+      "koreanName": "카이 하베르츠",
+      "englishName": "Kai Havertz",
+      "sourceUrl": "https://namu.wiki/w/%EC%B9%B4%EC%9D%B4%20%ED%95%98%EB%B2%A0%EB%A5%B4%EC%B8%A0",
+      "matchScore": 0.99
+    },
+    "player-api-727": {
+      "koreanName": "리스 넬슨",
+      "englishName": "Reiss Nelson",
+      "sourceUrl": "https://namu.wiki/w/%EB%A6%AC%EC%8A%A4%20%EB%84%AC%EC%8A%A8",
+      "matchScore": 0.99
+    },
+    "player-api-442044": {
+      "koreanName": "맥스 다우먼",
+      "englishName": "Max Dowman",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%A5%EC%8A%A4%20%EB%8B%A4%EC%9A%B0%EB%A8%BC",
+      "matchScore": 0.99
+    },
+    "player-api-38746": {
+      "koreanName": "위리엔 팀버르",
+      "englishName": "Jurrien Timber",
+      "sourceUrl": "https://namu.wiki/w/%EC%9C%84%EB%A6%AC%EC%97%94%20%ED%8C%80%EB%B2%84%EB%A5%B4",
+      "matchScore": 0.99
+    },
+    "player-api-37127": {
+      "koreanName": "마르틴 외데고르",
+      "englishName": "Martin Ødegaard",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%88%EB%A5%B4%ED%8B%B4%20%EC%99%B8%EB%8D%B0%EA%B3%A0%EB%A5%B4",
+      "matchScore": 0.99
+    },
+    "player-api-342243": {
+      "koreanName": "토미 셋퍼드",
+      "englishName": "Tommy Setford",
+      "sourceUrl": "https://namu.wiki/w/%ED%86%A0%EB%AF%B8%20%EC%85%8B%ED%8D%BC%EB%93%9C",
+      "matchScore": 0.99
+    },
+    "player-api-313236": {
+      "koreanName": "에단 은와네리",
+      "englishName": "Ethan Nwaneri",
+      "sourceUrl": "https://namu.wiki/w/%EC%97%90%EB%8B%A8%20%EC%9D%80%EC%99%80%EB%84%A4%EB%A6%AC",
+      "matchScore": 0.99
+    },
+    "player-api-2937": {
+      "koreanName": "데클란 라이스",
+      "englishName": "Declan Rice",
+      "sourceUrl": "https://namu.wiki/w/%EB%8D%B0%ED%81%B4%EB%9E%80%20%EB%9D%BC%EC%9D%B4%EC%8A%A4",
+      "matchScore": 0.99
+    },
+    "player-api-22090": {
+      "koreanName": "윌리엄 살리바",
+      "englishName": "William Saliba",
+      "sourceUrl": "https://namu.wiki/w/%EC%9C%8C%EB%A6%AC%EC%97%84%20%EC%82%B4%EB%A6%AC%EB%B0%94",
+      "matchScore": 0.99
+    },
+    "player-api-20619": {
+      "koreanName": "일란 멜리에",
+      "englishName": "Illan Meslier",
+      "sourceUrl": "https://namu.wiki/w/%EC%9D%BC%EB%9E%80%20%EB%A9%9C%EB%A6%AC%EC%97%90",
+      "matchScore": 0.99
+    },
+    "player-api-19959": {
+      "koreanName": "벤 화이트",
+      "englishName": "Ben White",
+      "sourceUrl": "https://namu.wiki/w/%EB%B2%A4%20%ED%99%94%EC%9D%B4%ED%8A%B8",
+      "matchScore": 0.99
+    },
+    "player-api-19586": {
+      "koreanName": "에베레치 에제",
+      "englishName": "Eberechi Eze",
+      "sourceUrl": "https://namu.wiki/w/%EC%97%90%EB%B2%A0%EB%A0%88%EC%B9%98%20%EC%97%90%EC%A0%9C",
+      "matchScore": 0.99
+    },
+    "player-api-18979": {
+      "koreanName": "빅토르 요케레스",
+      "englishName": "Viktor Gyökeres",
+      "sourceUrl": "https://namu.wiki/w/%EB%B9%85%ED%86%A0%EB%A5%B4%20%EC%9A%94%EC%BC%80%EB%A0%88%EC%8A%A4",
+      "matchScore": 0.99
+    },
+    "player-api-161800": {
+      "koreanName": "크리스토스 촐리스",
+      "englishName": "Christos Tzolis",
+      "sourceUrl": "https://namu.wiki/w/%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%86%A0%EC%8A%A4%20%EC%B4%90%EB%A6%AC%EC%8A%A4",
+      "matchScore": 0.99
+    },
+    "player-api-157052": {
+      "koreanName": "리카르도 칼라피오리",
+      "englishName": "Riccardo Calafiori",
+      "sourceUrl": "https://namu.wiki/w/%EB%A6%AC%EC%B9%B4%EB%A5%B4%EB%8F%84%20%EC%B9%BC%EB%9D%BC%ED%94%BC%EC%98%A4%EB%A6%AC",
+      "matchScore": 0.99
+    },
+    "player-api-1460": {
+      "koreanName": "부카요 사카",
+      "englishName": "Bukayo Saka",
+      "sourceUrl": "https://namu.wiki/w/%EB%B6%80%EC%B9%B4%EC%9A%94%20%EC%82%AC%EC%B9%B4",
+      "matchScore": 0.99
+    },
+    "player-api-136723": {
+      "koreanName": "노니 마두에케",
+      "englishName": "Noni Madueke",
+      "sourceUrl": "https://namu.wiki/w/%EB%85%B8%EB%8B%88%20%EB%A7%88%EB%91%90%EC%97%90%EC%BC%80",
+      "matchScore": 0.99
+    },
+    "player-api-127817": {
+      "koreanName": "피에로 잉카피에",
+      "englishName": "Piero Hincapié",
+      "sourceUrl": "https://namu.wiki/w/%ED%94%BC%EC%97%90%EB%A1%9C%20%EC%9E%89%EC%B9%B4%ED%94%BC%EC%97%90",
+      "matchScore": 0.99
+    },
+    "player-api-2273": {
+      "koreanName": "케파 아리사발라가",
+      "englishName": "Kepa Arrizabalaga",
+      "sourceUrl": "https://namu.wiki/w/%EC%BC%80%ED%8C%8C%20%EC%95%84%EB%A6%AC%EC%82%AC%EB%B0%9C%EB%9D%BC%EA%B0%80",
+      "matchScore": 0.94
+    },
+    "player-api-313245": {
+      "koreanName": "마일스 루이스스켈리",
+      "englishName": "Myles Lewis-Skelly",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%88%EC%9D%BC%EC%8A%A4%20%EB%A3%A8%EC%9D%B4%EC%8A%A4%EC%8A%A4%EC%BC%88%EB%A6%AC",
+      "matchScore": 0.857
+    },
+    "player-api-514519": {
+      "koreanName": "브라이언 마조",
+      "englishName": "Brian Madjo",
+      "sourceUrl": "https://namu.wiki/w/%EB%B8%8C%EB%9D%BC%EC%9D%B4%EC%96%B8%20%EB%A7%88%EC%A1%B0",
+      "matchScore": 1.0
+    },
+    "player-api-46815": {
+      "koreanName": "파우 토레스",
+      "englishName": "Pau Torres",
+      "sourceUrl": "https://namu.wiki/w/%ED%8C%8C%EC%9A%B0%20%ED%86%A0%EB%A0%88%EC%8A%A4",
+      "matchScore": 1.0
+    },
+    "player-api-195103": {
+      "koreanName": "주앙 고메스",
+      "englishName": "João Gomes",
+      "sourceUrl": "https://namu.wiki/w/%EC%A3%BC%EC%95%99%20%EA%B3%A0%EB%A9%94%EC%8A%A4",
+      "matchScore": 1.0
+    },
+    "player-api-983": {
+      "koreanName": "레온 베일리",
+      "englishName": "Leon Bailey",
+      "sourceUrl": "https://namu.wiki/w/%EB%A0%88%EC%98%A8%20%EB%B2%A0%EC%9D%BC%EB%A6%AC",
+      "matchScore": 0.99
+    },
+    "player-api-889": {
+      "koreanName": "빅토르 린델뢰프",
+      "englishName": "Victor Lindelöf",
+      "sourceUrl": "https://namu.wiki/w/%EB%B9%85%ED%86%A0%EB%A5%B4%20%EB%A6%B0%EB%8D%B8%EB%A2%B0%ED%94%84",
+      "matchScore": 0.99
+    },
+    "player-api-478441": {
+      "koreanName": "모두 케바 시세",
+      "englishName": "Modou Kéba Cissé",
+      "sourceUrl": "https://namu.wiki/w/%EB%AA%A8%EB%91%90%20%EC%BC%80%EB%B0%94%20%EC%8B%9C%EC%84%B8",
+      "matchScore": 0.99
+    },
+    "player-api-406244": {
+      "koreanName": "요한 만잠비",
+      "englishName": "Johan Manzambi",
+      "sourceUrl": "https://namu.wiki/w/%EC%9A%94%ED%95%9C%20%EB%A7%8C%EC%9E%A0%EB%B9%84",
+      "matchScore": 0.99
+    },
+    "player-api-36878": {
+      "koreanName": "마르코 비조트",
+      "englishName": "Marco Bizot",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%88%EB%A5%B4%EC%BD%94%20%EB%B9%84%EC%A1%B0%ED%8A%B8",
+      "matchScore": 0.99
+    },
+    "player-api-284457": {
+      "koreanName": "라마어 보하르더",
+      "englishName": "Lamare Bogarde",
+      "sourceUrl": "https://namu.wiki/w/%EB%9D%BC%EB%A7%88%EC%96%B4%20%EB%B3%B4%ED%95%98%EB%A5%B4%EB%8D%94",
+      "matchScore": 0.99
+    },
+    "player-api-284324": {
+      "koreanName": "알레한드로 가르나초",
+      "englishName": "Alejandro Garnacho",
+      "sourceUrl": "https://namu.wiki/w/%EC%95%8C%EB%A0%88%ED%95%9C%EB%93%9C%EB%A1%9C%20%EA%B0%80%EB%A5%B4%EB%82%98%EC%B4%88",
+      "matchScore": 0.99
+    },
+    "player-api-2287": {
+      "koreanName": "로스 바클리",
+      "englishName": "Ross Barkley",
+      "sourceUrl": "https://namu.wiki/w/%EB%A1%9C%EC%8A%A4%20%EB%B0%94%ED%81%B4%EB%A6%AC",
+      "matchScore": 0.99
+    },
+    "player-api-19599": {
+      "koreanName": "에밀리아노 마르티네스",
+      "englishName": "Emiliano Martinez",
+      "sourceUrl": "https://namu.wiki/w/%EC%97%90%EB%B0%80%EB%A6%AC%EC%95%84%EB%85%B8%20%EB%A7%88%EB%A5%B4%ED%8B%B0%EB%84%A4%EC%8A%A4",
+      "matchScore": 0.99
+    },
+    "player-api-19366": {
+      "koreanName": "올리 왓킨스",
+      "englishName": "Ollie Watkins",
+      "sourceUrl": "https://namu.wiki/w/%EC%98%AC%EB%A6%AC%20%EC%99%93%ED%82%A8%EC%8A%A4",
+      "matchScore": 0.99
+    },
+    "player-api-19298": {
+      "koreanName": "매티 캐시",
+      "englishName": "Matty Cash",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%A4%ED%8B%B0%20%EC%BA%90%EC%8B%9C",
+      "matchScore": 0.99
+    },
+    "player-api-19194": {
+      "koreanName": "태미 에이브러햄",
+      "englishName": "Tammy Abraham",
+      "sourceUrl": "https://namu.wiki/w/%ED%83%9C%EB%AF%B8%20%EC%97%90%EC%9D%B4%EB%B8%8C%EB%9F%AC%ED%96%84",
+      "matchScore": 0.99
+    },
+    "player-api-19191": {
+      "koreanName": "존 맥긴",
+      "englishName": "John McGinn",
+      "sourceUrl": "https://namu.wiki/w/%EC%A1%B4%20%EB%A7%A5%EA%B8%B4",
+      "matchScore": 0.99
+    },
+    "player-api-19179": {
+      "koreanName": "타이론 밍스",
+      "englishName": "Tyrone Mings",
+      "sourceUrl": "https://namu.wiki/w/%ED%83%80%EC%9D%B4%EB%A1%A0%20%EB%B0%8D%EC%8A%A4",
+      "matchScore": 0.99
+    },
+    "player-api-1904": {
+      "koreanName": "부바카르 카마라",
+      "englishName": "Boubacar Kamara",
+      "sourceUrl": "https://namu.wiki/w/%EB%B6%80%EB%B0%94%EC%B9%B4%EB%A5%B4%20%EC%B9%B4%EB%A7%88%EB%9D%BC",
+      "matchScore": 0.99
+    },
+    "player-api-162714": {
+      "koreanName": "아마두 오나나",
+      "englishName": "Amadou Onana",
+      "sourceUrl": "https://namu.wiki/w/%EC%95%84%EB%A7%88%EB%91%90%20%EC%98%A4%EB%82%98%EB%82%98",
+      "matchScore": 0.99
+    },
+    "player-api-138816": {
+      "koreanName": "이안 마트센",
+      "englishName": "Ian Maatsen",
+      "sourceUrl": "https://namu.wiki/w/%EC%9D%B4%EC%95%88%20%EB%A7%88%ED%8A%B8%EC%84%BC",
+      "matchScore": 0.99
+    },
+    "player-api-412719": {
+      "koreanName": "벨코 밀로사브레비치",
+      "englishName": "Veljko Milosavljević",
+      "sourceUrl": "https://namu.wiki/w/%EB%B2%A8%EC%BD%94%20%EB%B0%80%EB%A1%9C%EC%82%AC%EB%B8%8C%EB%A0%88%EB%B9%84%EC%B9%98",
+      "matchScore": 1.0
+    },
+    "player-api-407806": {
+      "koreanName": "하양",
+      "englishName": "Rayan",
+      "sourceUrl": "https://namu.wiki/w/%ED%95%98%EC%96%91(%EC%B6%95%EA%B5%AC%EC%84%A0%EC%88%98)",
+      "matchScore": 1.0
+    },
+    "player-api-402434": {
+      "koreanName": "레미 리스도틴",
+      "englishName": "Remy Rees-Dottin",
+      "sourceUrl": "https://namu.wiki/w/%EB%A0%88%EB%AF%B8%20%EB%A6%AC%EC%8A%A4%EB%8F%84%ED%8B%B4",
+      "matchScore": 1.0
+    },
+    "player-api-182772": {
+      "koreanName": "후안루 산체스",
+      "englishName": "Juanlu Sánchez",
+      "sourceUrl": "https://namu.wiki/w/%ED%9B%84%EC%95%88%EB%A3%A8%20%EC%82%B0%EC%B2%B4%EC%8A%A4",
+      "matchScore": 1.0
+    },
+    "player-api-152856": {
+      "koreanName": "이바니우송",
+      "englishName": "Evanilson",
+      "sourceUrl": "https://namu.wiki/w/%EC%9D%B4%EB%B0%94%EB%8B%88%EC%9A%B0%EC%86%A1",
+      "matchScore": 1.0
+    },
+    "player-api-792": {
+      "koreanName": "저스틴 클라위버르트",
+      "englishName": "Justin Kluivert",
+      "sourceUrl": "https://namu.wiki/w/%EC%A0%80%EC%8A%A4%ED%8B%B4%20%ED%81%B4%EB%9D%BC%EC%9C%84%EB%B2%84%EB%A5%B4%ED%8A%B8",
+      "matchScore": 0.99
+    },
+    "player-api-368030": {
+      "koreanName": "엘리 주니오르 크라우피",
+      "englishName": "Eli Junior Kroupi",
+      "sourceUrl": "https://namu.wiki/w/%EC%97%98%EB%A6%AC%20%EC%A3%BC%EB%8B%88%EC%98%A4%EB%A5%B4%20%ED%81%AC%EB%9D%BC%EC%9A%B0%ED%94%BC",
+      "matchScore": 0.99
+    },
+    "player-api-363333": {
+      "koreanName": "훌리오 솔레르",
+      "englishName": "Julio Soler",
+      "sourceUrl": "https://namu.wiki/w/%ED%9B%8C%EB%A6%AC%EC%98%A4%20%EC%86%94%EB%A0%88%EB%A5%B4",
+      "matchScore": 0.99
+    },
+    "player-api-343576": {
+      "koreanName": "벤 개넌 도크",
+      "englishName": "Ben Gannon Doak",
+      "sourceUrl": "https://namu.wiki/w/%EB%B2%A4%20%EA%B0%9C%EB%84%8C%20%EB%8F%84%ED%81%AC",
+      "matchScore": 0.99
+    },
+    "player-api-304853": {
+      "koreanName": "알렉스 스콧",
+      "englishName": "Alex Scott",
+      "sourceUrl": "https://namu.wiki/w/%EC%95%8C%EB%A0%89%EC%8A%A4%20%EC%8A%A4%EC%BD%A7",
+      "matchScore": 0.99
+    },
+    "player-api-22136": {
+      "koreanName": "바포데 디아키테",
+      "englishName": "Bafodé Diakité",
+      "sourceUrl": "https://namu.wiki/w/%EB%B0%94%ED%8F%AC%EB%8D%B0%20%EB%94%94%EC%95%84%ED%82%A4%ED%85%8C",
+      "matchScore": 0.99
+    },
+    "player-api-20093": {
+      "koreanName": "제임스 힐",
+      "englishName": "James Hill",
+      "sourceUrl": "https://namu.wiki/w/%EC%A0%9C%EC%9E%84%EC%8A%A4%20%ED%9E%90",
+      "matchScore": 0.99
+    },
+    "player-api-19245": {
+      "koreanName": "마커스 태버니어",
+      "englishName": "Marcus Tavernier",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%88%EC%BB%A4%EC%8A%A4%20%ED%83%9C%EB%B2%84%EB%8B%88%EC%96%B4",
+      "matchScore": 0.99
+    },
+    "player-api-18872": {
+      "koreanName": "루이스 쿡",
+      "englishName": "Lewis Cook",
+      "sourceUrl": "https://namu.wiki/w/%EB%A3%A8%EC%9D%B4%EC%8A%A4%20%EC%BF%A1",
+      "matchScore": 0.99
+    },
+    "player-api-18870": {
+      "koreanName": "데이비드 브룩스",
+      "englishName": "David Brooks",
+      "sourceUrl": "https://namu.wiki/w/%EB%8D%B0%EC%9D%B4%EB%B9%84%EB%93%9C%20%EB%B8%8C%EB%A3%A9%EC%8A%A4",
+      "matchScore": 0.99
+    },
+    "player-api-18869": {
+      "koreanName": "아담 스미스",
+      "englishName": "Adam Smith",
+      "sourceUrl": "https://namu.wiki/w/%EC%95%84%EB%8B%B4%20%EC%8A%A4%EB%AF%B8%EC%8A%A4(%EC%B6%95%EA%B5%AC%EC%84%A0%EC%88%98)",
+      "matchScore": 0.99
+    },
+    "player-api-162267": {
+      "koreanName": "아드리앵 트뤼페르",
+      "englishName": "Adrien Truffert",
+      "sourceUrl": "https://namu.wiki/w/%EC%95%84%EB%93%9C%EB%A6%AC%EC%95%B5%20%ED%8A%B8%EB%A4%BC%ED%8E%98%EB%A5%B4",
+      "matchScore": 0.99
+    },
+    "player-api-129682": {
+      "koreanName": "아민 아들리",
+      "englishName": "Amine Adli",
+      "sourceUrl": "https://namu.wiki/w/%EC%95%84%EB%AF%BC%20%EC%95%84%EB%93%A4%EB%A6%AC",
+      "matchScore": 0.99
+    },
+    "player-api-1150": {
+      "koreanName": "타일러 아담스",
+      "englishName": "Tyler Adams",
+      "sourceUrl": "https://namu.wiki/w/%ED%83%80%EC%9D%BC%EB%9F%AC%20%EC%95%84%EB%8B%B4%EC%8A%A4",
+      "matchScore": 0.99
+    },
+    "player-api-1125": {
+      "koreanName": "라이언 크리스티",
+      "englishName": "Ryan Christie",
+      "sourceUrl": "https://namu.wiki/w/%EB%9D%BC%EC%9D%B4%EC%96%B8%20%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%8B%B0",
+      "matchScore": 0.99
+    },
+    "player-api-118307": {
+      "koreanName": "조르제 페트로비치",
+      "englishName": "Đorđe Petrović",
+      "sourceUrl": "https://namu.wiki/w/%EC%A1%B0%EB%A5%B4%EC%A0%9C%20%ED%8E%98%ED%8A%B8%EB%A1%9C%EB%B9%84%EC%B9%98",
+      "matchScore": 0.842
+    },
+    "player-api-441271": {
+      "koreanName": "야니크 슈스터",
+      "englishName": "Jannik Schuster",
+      "sourceUrl": "https://namu.wiki/w/%EC%95%BC%EB%8B%88%ED%81%AC%20%EC%8A%88%EC%8A%A4%ED%84%B0",
+      "matchScore": 1.0
+    },
+    "player-api-153066": {
+      "koreanName": "파비우 카르발류",
+      "englishName": "Fábio Carvalho",
+      "sourceUrl": "https://namu.wiki/w/%ED%8C%8C%EB%B9%84%EC%9A%B0%20%EC%B9%B4%EB%A5%B4%EB%B0%9C%EB%A5%98",
+      "matchScore": 1.0
+    },
+    "player-api-61742": {
+      "koreanName": "하콘 발디마르손",
+      "englishName": "Hákon Valdimarsson",
+      "sourceUrl": "https://namu.wiki/w/%ED%95%98%EC%BD%98%20%EB%B0%9C%EB%94%94%EB%A7%88%EB%A5%B4%EC%86%90",
+      "matchScore": 0.99
+    },
+    "player-api-47438": {
+      "koreanName": "마티아스 옌센",
+      "englishName": "Mathias Jensen",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%88%ED%8B%B0%EC%95%84%EC%8A%A4%20%EC%98%8C%EC%84%BC",
+      "matchScore": 0.99
+    },
+    "player-api-44871": {
+      "koreanName": "아론 히키",
+      "englishName": "Aaron Hickey",
+      "sourceUrl": "https://namu.wiki/w/%EC%95%84%EB%A1%A0%20%ED%9E%88%ED%82%A4",
+      "matchScore": 0.99
+    },
+    "player-api-350625": {
+      "koreanName": "제이든 메고마",
+      "englishName": "Jayden Meghoma",
+      "sourceUrl": "https://namu.wiki/w/%EC%A0%9C%EC%9D%B4%EB%93%A0%20%EB%A9%94%EA%B3%A0%EB%A7%88",
+      "matchScore": 0.99
+    },
+    "player-api-342022": {
+      "koreanName": "마이클 카요데",
+      "englishName": "Michael Kayode",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%88%EC%9D%B4%ED%81%B4%20%EC%B9%B4%EC%9A%94%EB%8D%B0",
+      "matchScore": 0.99
+    },
+    "player-api-281": {
+      "koreanName": "퀴빈 켈러허",
+      "englishName": "Caoimhin Kelleher",
+      "sourceUrl": "https://namu.wiki/w/%ED%80%B4%EB%B9%88%20%EC%BC%88%EB%9F%AC%ED%97%88",
+      "matchScore": 0.99
+    },
+    "player-api-263538": {
+      "koreanName": "예호르 야르몰류크",
+      "englishName": "Yehor Yarmolyuk",
+      "sourceUrl": "https://namu.wiki/w/%EC%98%88%ED%98%B8%EB%A5%B4%20%EC%95%BC%EB%A5%B4%EB%AA%B0%EB%A5%98%ED%81%AC",
+      "matchScore": 0.99
+    },
+    "player-api-25073": {
+      "koreanName": "비탈리 야넬트",
+      "englishName": "Vitaly Janelt",
+      "sourceUrl": "https://namu.wiki/w/%EB%B9%84%ED%83%88%EB%A6%AC%20%EC%95%BC%EB%84%AC%ED%8A%B8",
+      "matchScore": 0.99
+    },
+    "player-api-19789": {
+      "koreanName": "에단 피녹",
+      "englishName": "Ethan Pinnock",
+      "sourceUrl": "https://namu.wiki/w/%EC%97%90%EB%8B%A8%20%ED%94%BC%EB%85%B9",
+      "matchScore": 0.99
+    },
+    "player-api-19495": {
+      "koreanName": "네이선 콜린스",
+      "englishName": "Nathan Collins",
+      "sourceUrl": "https://namu.wiki/w/%EB%84%A4%EC%9D%B4%EC%84%A0%20%EC%BD%9C%EB%A6%B0%EC%8A%A4",
+      "matchScore": 0.99
+    },
+    "player-api-19346": {
+      "koreanName": "리코 헨리",
+      "englishName": "Rico Henry",
+      "sourceUrl": "https://namu.wiki/w/%EB%A6%AC%EC%BD%94%20%ED%97%A8%EB%A6%AC",
+      "matchScore": 0.99
+    },
+    "player-api-19340": {
+      "koreanName": "엘러리 발콤",
+      "englishName": "Ellery Balcombe",
+      "sourceUrl": "https://namu.wiki/w/%EC%97%98%EB%9F%AC%EB%A6%AC%20%EB%B0%9C%EC%BD%A4",
+      "matchScore": 0.99
+    },
+    "player-api-178077": {
+      "koreanName": "케빈 샤데",
+      "englishName": "Kevin Schade",
+      "sourceUrl": "https://namu.wiki/w/%EC%BC%80%EB%B9%88%20%EC%83%A4%EB%8D%B0",
+      "matchScore": 0.99
+    },
+    "player-api-15908": {
+      "koreanName": "미켈 담스가르드",
+      "englishName": "Mikkel Damsgaard",
+      "sourceUrl": "https://namu.wiki/w/%EB%AF%B8%EC%BC%88%20%EB%8B%B4%EC%8A%A4%EA%B0%80%EB%A5%B4%EB%93%9C",
+      "matchScore": 0.99
+    },
+    "player-api-1119": {
+      "koreanName": "크리스토페르 아예르",
+      "englishName": "Kristoffer Ajer",
+      "sourceUrl": "https://namu.wiki/w/%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%86%A0%ED%8E%98%EB%A5%B4%20%EC%95%84%EC%98%88%EB%A5%B4",
+      "matchScore": 0.99
+    },
+    "player-api-196156": {
+      "koreanName": "이고르 치아구",
+      "englishName": "Igor Thiago",
+      "sourceUrl": "https://namu.wiki/w/%EC%9D%B4%EA%B3%A0%EB%A5%B4%20%EC%B9%98%EC%95%84%EA%B5%AC",
+      "matchScore": 0.94
+    },
+    "player-api-36922": {
+      "koreanName": "세프 판덴베르흐",
+      "englishName": "Sepp van den Berg",
+      "sourceUrl": "https://namu.wiki/w/%EC%84%B8%ED%94%84%20%ED%8C%90%EB%8D%B4%EB%B2%A0%EB%A5%B4%ED%9D%90",
+      "matchScore": 0.88
+    },
+    "player-api-106725": {
+      "koreanName": "킨 루이스포터",
+      "englishName": "Keane Lewis-Potter",
+      "sourceUrl": "https://namu.wiki/w/%ED%82%A8%20%EB%A3%A8%EC%9D%B4%EC%8A%A4%ED%8F%AC%ED%84%B0",
+      "matchScore": 0.857
+    },
+    "player-api-427736": {
+      "koreanName": "구스타부 누니스",
+      "englishName": "Gustavo Nunes",
+      "sourceUrl": "https://namu.wiki/w/%EA%B5%AC%EC%8A%A4%ED%83%80%EB%B6%80%20%EB%88%84%EB%8B%88%EC%8A%A4",
+      "matchScore": 0.75
+    },
+    "player-api-92993": {
+      "koreanName": "마츠 비퍼르",
+      "englishName": "Mats Wieffer",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%88%EC%B8%A0%20%EB%B9%84%ED%8D%BC%EB%A5%B4",
+      "matchScore": 0.99
+    },
+    "player-api-90590": {
+      "koreanName": "조르지뇨 뤼터",
+      "englishName": "Georginio Rutter",
+      "sourceUrl": "https://namu.wiki/w/%EC%A1%B0%EB%A5%B4%EC%A7%80%EB%87%A8%20%EB%A4%BC%ED%84%B0",
+      "matchScore": 0.99
+    },
+    "player-api-410125": {
+      "koreanName": "말릭 얄쿠예",
+      "englishName": "Malick Yalcouyé",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%90%EB%A6%AD%20%EC%96%84%EC%BF%A0%EC%98%88",
+      "matchScore": 0.99
+    },
+    "player-api-356041": {
+      "koreanName": "카를로스 발레바",
+      "englishName": "Carlos Baleba",
+      "sourceUrl": "https://namu.wiki/w/%EC%B9%B4%EB%A5%BC%EB%A1%9C%EC%8A%A4%20%EB%B0%9C%EB%A0%88%EB%B0%94",
+      "matchScore": 0.99
+    },
+    "player-api-293643": {
+      "koreanName": "이브라힘 오스만",
+      "englishName": "Ibrahim Osman",
+      "sourceUrl": "https://namu.wiki/w/%EC%9D%B4%EB%B8%8C%EB%9D%BC%ED%9E%98%20%EC%98%A4%EC%8A%A4%EB%A7%8C",
+      "matchScore": 0.99
+    },
+    "player-api-265820": {
+      "koreanName": "야신 아야리",
+      "englishName": "Yasin Ayari",
+      "sourceUrl": "https://namu.wiki/w/%EC%95%BC%EC%8B%A0%20%EC%95%84%EC%95%BC%EB%A6%AC",
+      "matchScore": 0.99
+    },
+    "player-api-18960": {
+      "koreanName": "제이슨 스틸",
+      "englishName": "Jason Steele",
+      "sourceUrl": "https://namu.wiki/w/%EC%A0%9C%EC%9D%B4%EC%8A%A8%20%EC%8A%A4%ED%8B%B8",
+      "matchScore": 0.99
+    },
+    "player-api-167663": {
+      "koreanName": "톰 맥길",
+      "englishName": "Tom McGill",
+      "sourceUrl": "https://namu.wiki/w/%ED%86%B0%20%EB%A7%A5%EA%B8%B8",
+      "matchScore": 0.99
+    },
+    "player-api-161663": {
+      "koreanName": "에이런 카신",
+      "englishName": "Eíran Cashin",
+      "sourceUrl": "https://namu.wiki/w/%EC%97%90%EC%9D%B4%EB%9F%B0%20%EC%B9%B4%EC%8B%A0",
+      "matchScore": 0.99
+    },
+    "player-api-1361": {
+      "koreanName": "페르디 카디오글루",
+      "englishName": "Ferdi Kadıoğlu",
+      "sourceUrl": "https://namu.wiki/w/%ED%8E%98%EB%A5%B4%EB%94%94%20%EC%B9%B4%EB%94%94%EC%98%A4%EA%B8%80%EB%A3%A8",
+      "matchScore": 0.99
+    },
+    "player-api-129058": {
+      "koreanName": "바르트 페르브뤼헌",
+      "englishName": "Bart Verbruggen",
+      "sourceUrl": "https://namu.wiki/w/%EB%B0%94%EB%A5%B4%ED%8A%B8%20%ED%8E%98%EB%A5%B4%EB%B8%8C%EB%A4%BC%ED%97%8C",
+      "matchScore": 0.99
+    },
+    "player-api-162007": {
+      "koreanName": "막심 더카위퍼르",
+      "englishName": "Maxim De Cuyper",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%89%EC%8B%AC%20%EB%8D%94%EC%B9%B4%EC%9C%84%ED%8D%BC%EB%A5%B4",
+      "matchScore": 0.818
+    },
+    "player-api-22160": {
+      "koreanName": "올리비에 보스카글리",
+      "englishName": "O. Boscagli",
+      "sourceUrl": "https://namu.wiki/w/%EC%98%AC%EB%A6%AC%EB%B9%84%EC%97%90%20%EB%B3%B4%EC%8A%A4%EC%B9%B4%EA%B8%80%EB%A6%AC",
+      "matchScore": 1.0
+    },
+    "player-api-7600": {
+      "koreanName": "이고르 줄리우",
+      "englishName": "Igor",
+      "sourceUrl": "https://namu.wiki/w/%EC%9D%B4%EA%B3%A0%EB%A5%B4%20%EC%A4%84%EB%A6%AC%EC%9A%B0",
+      "matchScore": 1.0
+    },
+    "player-api-278370": {
+      "koreanName": "디에고 고메스",
+      "englishName": "D. Gómez",
+      "sourceUrl": "https://namu.wiki/w/%EB%94%94%EC%97%90%EA%B3%A0%20%EA%B3%A0%EB%A9%94%EC%8A%A4",
+      "matchScore": 1.0
+    },
+    "player-api-305730": {
+      "koreanName": "잭 힌셜우드",
+      "englishName": "J. Hinshelwood",
+      "sourceUrl": "https://namu.wiki/w/%EC%9E%AD%20%ED%9E%8C%EC%85%9C%EC%9A%B0%EB%93%9C",
+      "matchScore": 1.0
+    },
+    "player-api-392482": {
+      "koreanName": "카라람포스 코스툴라스",
+      "englishName": "C. Kostoulas",
+      "sourceUrl": "https://namu.wiki/w/%EC%B9%B4%EB%9D%BC%EB%9E%8C%ED%8F%AC%EC%8A%A4%20%EC%BD%94%EC%8A%A4%ED%88%B4%EB%9D%BC%EC%8A%A4",
+      "matchScore": 1.0
+    },
+    "player-api-383685": {
+      "koreanName": "얀쿠바 민테",
+      "englishName": "Y. Minteh",
+      "sourceUrl": "https://namu.wiki/w/%EC%96%80%EC%BF%A0%EB%B0%94%20%EB%AF%BC%ED%85%8C",
+      "matchScore": 1.0
+    },
+    "player-api-106835": {
+      "koreanName": "미토마 카오루",
+      "englishName": "K. Mitoma",
+      "sourceUrl": "https://namu.wiki/w/%EB%AF%B8%ED%86%A0%EB%A7%88%20%EC%B9%B4%EC%98%A4%EB%A3%A8",
+      "matchScore": 1.0
+    },
+    "player-api-392270": {
+      "koreanName": "마르크 기우",
+      "englishName": "Marc Guiu",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%88%EB%A5%B4%ED%81%AC%20%EA%B8%B0%EC%9A%B0",
+      "matchScore": 1.0
+    },
+    "player-api-308678": {
+      "koreanName": "다리우 이수구",
+      "englishName": "Dário Essugo",
+      "sourceUrl": "https://namu.wiki/w/%EB%8B%A4%EB%A6%AC%EC%9A%B0%20%EC%9D%B4%EC%88%98%EA%B5%AC",
+      "matchScore": 1.0
+    },
+    "player-api-18959": {
+      "koreanName": "로베르트 산체스",
+      "englishName": "Robert Sánchez",
+      "sourceUrl": "https://namu.wiki/w/%EB%A1%9C%EB%B2%A0%EB%A5%B4%ED%8A%B8%20%EC%82%B0%EC%B2%B4%EC%8A%A4",
+      "matchScore": 1.0
+    },
+    "player-api-1864": {
+      "koreanName": "페드루 네투",
+      "englishName": "Pedro Neto",
+      "sourceUrl": "https://namu.wiki/w/%ED%8E%98%EB%93%9C%EB%A3%A8%20%EB%84%A4%ED%88%AC",
+      "matchScore": 1.0
+    },
+    "player-api-181734": {
+      "koreanName": "펩 차바리아",
+      "englishName": "Pep Chavarría",
+      "sourceUrl": "https://namu.wiki/w/%ED%8E%A9%20%EC%B0%A8%EB%B0%94%EB%A6%AC%EC%95%84",
+      "matchScore": 1.0
+    },
+    "player-api-10329": {
+      "koreanName": "주앙 페드루",
+      "englishName": "João Pedro",
+      "sourceUrl": "https://namu.wiki/w/%EC%A3%BC%EC%95%99%20%ED%8E%98%EB%93%9C%EB%A3%A8",
+      "matchScore": 1.0
+    },
+    "player-api-95": {
+      "koreanName": "브누아 바디아실",
+      "englishName": "Benoît Badiashile",
+      "sourceUrl": "https://namu.wiki/w/%EB%B8%8C%EB%88%84%EC%95%84%20%EB%B0%94%EB%94%94%EC%95%84%EC%8B%A4",
+      "matchScore": 0.99
+    },
+    "player-api-63577": {
+      "koreanName": "미하일로 무드리크",
+      "englishName": "Mykhaylo Mudryk",
+      "sourceUrl": "https://namu.wiki/w/%EB%AF%B8%ED%95%98%EC%9D%BC%EB%A1%9C%20%EB%AC%B4%EB%93%9C%EB%A6%AC%ED%81%AC",
+      "matchScore": 0.99
+    },
+    "player-api-5996": {
+      "koreanName": "엔소 페르난데스",
+      "englishName": "Enzo Fernández",
+      "sourceUrl": "https://namu.wiki/w/%EC%97%94%EC%86%8C%20%ED%8E%98%EB%A5%B4%EB%82%9C%EB%8D%B0%EC%8A%A4",
+      "matchScore": 0.99
+    },
+    "player-api-422780": {
+      "koreanName": "아론 안셀미노",
+      "englishName": "Aarón Anselmino",
+      "sourceUrl": "https://namu.wiki/w/%EC%95%84%EB%A1%A0%20%EC%95%88%EC%85%80%EB%AF%B8%EB%85%B8",
+      "matchScore": 0.99
+    },
+    "player-api-383018": {
+      "koreanName": "마르코 팔레스트라",
+      "englishName": "Marco Palestra",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%88%EB%A5%B4%EC%BD%94%20%ED%8C%94%EB%A0%88%EC%8A%A4%ED%8A%B8%EB%9D%BC",
+      "matchScore": 0.99
+    },
+    "player-api-341642": {
+      "koreanName": "조렐 하토",
+      "englishName": "Jorrel Hato",
+      "sourceUrl": "https://namu.wiki/w/%EC%A1%B0%EB%A0%90%20%ED%95%98%ED%86%A0",
+      "matchScore": 0.99
+    },
+    "player-api-340151": {
+      "koreanName": "마이크 펜더르스",
+      "englishName": "Mike Penders",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%88%EC%9D%B4%ED%81%AC%20%ED%8E%9C%EB%8D%94%EB%A5%B4%EC%8A%A4",
+      "matchScore": 0.99
+    },
+    "player-api-319572": {
+      "koreanName": "발렌틴 바르코",
+      "englishName": "Valentín Barco",
+      "sourceUrl": "https://namu.wiki/w/%EB%B0%9C%EB%A0%8C%ED%8B%B4%20%EB%B0%94%EB%A5%B4%EC%BD%94",
+      "matchScore": 0.99
+    },
+    "player-api-292": {
+      "koreanName": "조던 헨더슨",
+      "englishName": "Jordan Henderson",
+      "sourceUrl": "https://namu.wiki/w/%EC%A1%B0%EB%8D%98%20%ED%97%A8%EB%8D%94%EC%8A%A8",
+      "matchScore": 0.99
+    },
+    "player-api-283058": {
+      "koreanName": "니콜라 잭슨",
+      "englishName": "Nicolas Jackson",
+      "sourceUrl": "https://namu.wiki/w/%EB%8B%88%EC%BD%9C%EB%9D%BC%20%EC%9E%AD%EC%8A%A8",
+      "matchScore": 0.99
+    },
+    "player-api-282125": {
+      "koreanName": "로메오 라비아",
+      "englishName": "Roméo Lavia",
+      "sourceUrl": "https://namu.wiki/w/%EB%A1%9C%EB%A9%94%EC%98%A4%20%EB%9D%BC%EB%B9%84%EC%95%84",
+      "matchScore": 0.99
+    },
+    "player-api-276184": {
+      "koreanName": "마마두 사르",
+      "englishName": "Mamadou Sarr",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%88%EB%A7%88%EB%91%90%20%EC%82%AC%EB%A5%B4",
+      "matchScore": 0.99
+    },
+    "player-api-22094": {
+      "koreanName": "웨슬리 포파나",
+      "englishName": "Wesley Fofana",
+      "sourceUrl": "https://namu.wiki/w/%EC%9B%A8%EC%8A%AC%EB%A6%AC%20%ED%8F%AC%ED%8C%8C%EB%82%98",
+      "matchScore": 0.99
+    },
+    "player-api-20995": {
+      "koreanName": "막상스 라크루아",
+      "englishName": "Maxence Lacroix",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%89%EC%83%81%EC%8A%A4%20%EB%9D%BC%ED%81%AC%EB%A3%A8%EC%95%84",
+      "matchScore": 0.99
+    },
+    "player-api-203762": {
+      "koreanName": "엠마누엘 에메가",
+      "englishName": "Emmanuel Emegha",
+      "sourceUrl": "https://namu.wiki/w/%EC%97%A0%EB%A7%88%EB%88%84%EC%97%98%20%EC%97%90%EB%A9%94%EA%B0%80",
+      "matchScore": 0.99
+    },
+    "player-api-19545": {
+      "koreanName": "리스 제임스",
+      "englishName": "Reece James",
+      "sourceUrl": "https://namu.wiki/w/%EB%A6%AC%EC%8A%A4%20%EC%A0%9C%EC%9E%84%EC%8A%A4",
+      "matchScore": 0.99
+    },
+    "player-api-19170": {
+      "koreanName": "모건 로저스",
+      "englishName": "Morgan Rogers",
+      "sourceUrl": "https://namu.wiki/w/%EB%AA%A8%EA%B1%B4%20%EB%A1%9C%EC%A0%80%EC%8A%A4",
+      "matchScore": 0.99
+    },
+    "player-api-19145": {
+      "koreanName": "토신 아다라비오요",
+      "englishName": "Tosin Adarabioyo",
+      "sourceUrl": "https://namu.wiki/w/%ED%86%A0%EC%8B%A0%20%EC%95%84%EB%8B%A4%EB%9D%BC%EB%B9%84%EC%98%A4%EC%9A%94",
+      "matchScore": 0.99
+    },
+    "player-api-161948": {
+      "koreanName": "리암 델랍",
+      "englishName": "Liam Delap",
+      "sourceUrl": "https://namu.wiki/w/%EB%A6%AC%EC%95%94%20%EB%8D%B8%EB%9E%8D",
+      "matchScore": 0.99
+    },
+    "player-api-161907": {
+      "koreanName": "말로 귀스토",
+      "englishName": "Malo Gusto",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%90%EB%A1%9C%20%EA%B7%80%EC%8A%A4%ED%86%A0",
+      "matchScore": 0.99
+    },
+    "player-api-152982": {
+      "koreanName": "콜 파머",
+      "englishName": "Cole Palmer",
+      "sourceUrl": "https://namu.wiki/w/%EC%BD%9C%20%ED%8C%8C%EB%A8%B8",
+      "matchScore": 0.99
+    },
+    "player-api-152953": {
+      "koreanName": "리바이 콜윌",
+      "englishName": "Levi Colwill",
+      "sourceUrl": "https://namu.wiki/w/%EB%A6%AC%EB%B0%94%EC%9D%B4%20%EC%BD%9C%EC%9C%8C",
+      "matchScore": 0.99
+    },
+    "player-api-1469": {
+      "koreanName": "대니 웰벡",
+      "englishName": "Danny Welbeck",
+      "sourceUrl": "https://namu.wiki/w/%EB%8C%80%EB%8B%88%20%EC%9B%B0%EB%B2%A1",
+      "matchScore": 0.99
+    },
+    "player-api-116117": {
+      "koreanName": "모이세스 카이세도",
+      "englishName": "Moisés Caicedo",
+      "sourceUrl": "https://namu.wiki/w/%EB%AA%A8%EC%9D%B4%EC%84%B8%EC%8A%A4%20%EC%B9%B4%EC%9D%B4%EC%84%B8%EB%8F%84",
+      "matchScore": 0.99
+    },
+    "player-api-609590": {
+      "koreanName": "데네르 에반젤리스타",
+      "englishName": "Denner Evangelista",
+      "sourceUrl": "https://namu.wiki/w/%EB%8D%B0%EB%84%A4%EB%A5%B4%20%EC%97%90%EB%B0%98%EC%A0%A4%EB%A6%AC%EC%8A%A4%ED%83%80",
+      "matchScore": 0.94
+    },
+    "player-api-425733": {
+      "koreanName": "이스테방 윌리앙",
+      "englishName": "Estêvão Willian",
+      "sourceUrl": "https://namu.wiki/w/%EC%9D%B4%EC%8A%A4%ED%85%8C%EB%B0%A9%20%EC%9C%8C%EB%A6%AC%EC%95%99",
+      "matchScore": 0.94
+    },
+    "player-api-180940": {
+      "koreanName": "테디 샤먼로우",
+      "englishName": "Teddy Sharman-Lowe",
+      "sourceUrl": "https://namu.wiki/w/%ED%85%8C%EB%94%94%20%EC%83%A4%EB%A8%BC%EB%A1%9C%EC%9A%B0",
+      "matchScore": 0.857
+    },
+    "player-api-366735": {
+      "koreanName": "조시 아체암퐁",
+      "englishName": "Josh Acheampong",
+      "sourceUrl": "https://namu.wiki/w/%EC%A1%B0%EC%8B%9C%20%EC%95%84%EC%B2%B4%EC%95%94%ED%90%81",
+      "matchScore": 0.824
+    },
+    "player-api-419582": {
+      "koreanName": "지오바니 켄다",
+      "englishName": "Geovany Quenda",
+      "sourceUrl": "https://namu.wiki/w/%EC%A7%80%EC%98%A4%EB%B0%94%EB%8B%88%20%EC%BC%84%EB%8B%A4",
+      "matchScore": 0.788
+    },
+    "player-api-286894": {
+      "koreanName": "제이미 기튼스",
+      "englishName": "Jamie Gittens",
+      "sourceUrl": "https://namu.wiki/w/%EC%A0%9C%EC%9D%B4%EB%AF%B8%20%EA%B8%B0%ED%8A%BC%EC%8A%A4",
+      "matchScore": 0.72
+    },
+    "player-api-47899": {
+      "koreanName": "올리버 도빈",
+      "englishName": "O. Dovin",
+      "sourceUrl": "https://namu.wiki/w/%EC%98%AC%EB%A6%AC%EB%B2%84%20%EB%8F%84%EB%B9%88",
+      "matchScore": 1.0
+    },
+    "player-api-278088": {
+      "koreanName": "칼 러시워스",
+      "englishName": "C. Rushworth",
+      "sourceUrl": "https://namu.wiki/w/%EC%B9%BC%20%EB%9F%AC%EC%8B%9C%EC%9B%8C%EC%8A%A4",
+      "matchScore": 1.0
+    },
+    "player-api-20484": {
+      "koreanName": "벤 윌슨",
+      "englishName": "B. Wilson",
+      "sourceUrl": "https://namu.wiki/w/%EB%B2%A4%20%EC%9C%8C%EC%8A%A8",
+      "matchScore": 1.0
+    },
+    "player-api-162414": {
+      "koreanName": "오렐 아멘다",
+      "englishName": "A. Amenda",
+      "sourceUrl": "https://namu.wiki/w/%EC%98%A4%EB%A0%90%20%EC%95%84%EB%A9%98%EB%8B%A4",
+      "matchScore": 1.0
+    },
+    "player-api-19574": {
+      "koreanName": "제이크 비드웰",
+      "englishName": "J. Bidwell",
+      "sourceUrl": "https://namu.wiki/w/%EC%A0%9C%EC%9D%B4%ED%81%AC%20%EB%B9%84%EB%93%9C%EC%9B%B0",
+      "matchScore": 1.0
+    },
+    "player-api-291147": {
+      "koreanName": "미겔 앙헬 브라우",
+      "englishName": "Miguel Brau",
+      "sourceUrl": "https://namu.wiki/w/%EB%AF%B8%EA%B2%94%20%EC%95%99%ED%97%AC%20%EB%B8%8C%EB%9D%BC%EC%9A%B0",
+      "matchScore": 1.0
+    },
+    "player-api-19260": {
+      "koreanName": "제이 다실바",
+      "englishName": "J. Dasilva",
+      "sourceUrl": "https://namu.wiki/w/%EC%A0%9C%EC%9D%B4%20%EB%8B%A4%EC%8B%A4%EB%B0%94",
+      "matchScore": 1.0
+    },
+    "player-api-298128": {
+      "koreanName": "케인 케슬러헤이든",
+      "englishName": "K. Kesler-Hayden",
+      "sourceUrl": "https://namu.wiki/w/%EC%BC%80%EC%9D%B8%20%EC%BC%80%EC%8A%AC%EB%9F%AC%ED%97%A4%EC%9D%B4%EB%93%A0",
+      "matchScore": 1.0
+    },
+    "player-api-18202": {
+      "koreanName": "리암 키칭",
+      "englishName": "L. Kitching",
+      "sourceUrl": "https://namu.wiki/w/%EB%A6%AC%EC%95%94%20%ED%82%A4%EC%B9%AD",
+      "matchScore": 1.0
+    },
+    "player-api-264437": {
+      "koreanName": "바비 토마스",
+      "englishName": "B. Thomas",
+      "sourceUrl": "https://namu.wiki/w/%EB%B0%94%EB%B9%84%20%ED%86%A0%EB%A7%88%EC%8A%A4",
+      "matchScore": 1.0
+    },
+    "player-api-17714": {
+      "koreanName": "루크 울펜덴",
+      "englishName": "L. Woolfenden",
+      "sourceUrl": "https://namu.wiki/w/%EB%A3%A8%ED%81%AC%20%EC%9A%B8%ED%8E%9C%EB%8D%B4",
+      "matchScore": 1.0
+    },
+    "player-api-37961": {
+      "koreanName": "밀란 판에베이크",
+      "englishName": "M. van Ewijk",
+      "sourceUrl": "https://namu.wiki/w/%EB%B0%80%EB%9E%80%20%ED%8C%90%EC%97%90%EB%B2%A0%EC%9D%B4%ED%81%AC",
+      "matchScore": 1.0
+    },
+    "player-api-19984": {
+      "koreanName": "조시 에클스",
+      "englishName": "J. Eccles",
+      "sourceUrl": "https://namu.wiki/w/%EC%A1%B0%EC%8B%9C%20%EC%97%90%ED%81%B4%EC%8A%A4",
+      "matchScore": 1.0
+    },
+    "player-api-19328": {
+      "koreanName": "맷 그라임스",
+      "englishName": "M. Grimes",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%B7%20%EA%B7%B8%EB%9D%BC%EC%9E%84%EC%8A%A4",
+      "matchScore": 1.0
+    },
+    "player-api-145538": {
+      "koreanName": "조엘 라티보디에어",
+      "englishName": "J. Latibeaudiere",
+      "sourceUrl": "https://namu.wiki/w/%EC%A1%B0%EC%97%98%20%EB%9D%BC%ED%8B%B0%EB%B3%B4%EB%94%94%EC%97%90%EC%96%B4",
+      "matchScore": 1.0
+    },
+    "player-api-15799": {
+      "koreanName": "프랭크 오니에카",
+      "englishName": "F. Onyeka",
+      "sourceUrl": "https://namu.wiki/w/%ED%94%84%EB%9E%AD%ED%81%AC%20%EC%98%A4%EB%8B%88%EC%97%90%EC%B9%B4",
+      "matchScore": 1.0
+    },
+    "player-api-20372": {
+      "koreanName": "잭 루도니",
+      "englishName": "J. Rudoni",
+      "sourceUrl": "https://namu.wiki/w/%EC%9E%AD%20%EB%A3%A8%EB%8F%84%EB%8B%88",
+      "matchScore": 1.0
+    },
+    "player-api-33462": {
+      "koreanName": "사카모토 타츠히로",
+      "englishName": "T. Sakamoto",
+      "sourceUrl": "https://namu.wiki/w/%EC%82%AC%EC%B9%B4%EB%AA%A8%ED%86%A0%20%ED%83%80%EC%B8%A0%ED%9E%88%EB%A1%9C",
+      "matchScore": 1.0
+    },
+    "player-api-138786": {
+      "koreanName": "엘리스 심스",
+      "englishName": "E. Simms",
+      "sourceUrl": "https://namu.wiki/w/%EC%97%98%EB%A6%AC%EC%8A%A4%20%EC%8B%AC%EC%8A%A4",
+      "matchScore": 1.0
+    },
+    "player-api-16046": {
+      "koreanName": "빅토르 토르프",
+      "englishName": "V. Torp",
+      "sourceUrl": "https://namu.wiki/w/%EB%B9%85%ED%86%A0%EB%A5%B4%20%ED%86%A0%EB%A5%B4%ED%94%84",
+      "matchScore": 1.0
+    },
+    "player-api-18404": {
+      "koreanName": "에프런 메이슨클라크",
+      "englishName": "E. Mason-Clark",
+      "sourceUrl": "https://namu.wiki/w/%EC%97%90%ED%94%84%EB%9F%B0%20%EB%A9%94%EC%9D%B4%EC%8A%A8%ED%81%B4%EB%9D%BC%ED%81%AC",
+      "matchScore": 1.0
+    },
+    "player-api-82090": {
+      "koreanName": "브랜든 토마스아산테",
+      "englishName": "B. Thomas-Asante",
+      "sourceUrl": "https://namu.wiki/w/%EB%B8%8C%EB%9E%9C%EB%93%A0%20%ED%86%A0%EB%A7%88%EC%8A%A4%EC%95%84%EC%82%B0%ED%85%8C",
+      "matchScore": 1.0
+    },
+    "player-api-427": {
+      "koreanName": "하지 라이트",
+      "englishName": "H. Wright",
+      "sourceUrl": "https://namu.wiki/w/%ED%95%98%EC%A7%80%20%EB%9D%BC%EC%9D%B4%ED%8A%B8",
+      "matchScore": 1.0
+    },
+    "player-api-311157": {
+      "koreanName": "마테우스 프랑사",
+      "englishName": "Matheus França",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%88%ED%85%8C%EC%9A%B0%EC%8A%A4%20%ED%94%84%EB%9E%91%EC%82%AC",
+      "matchScore": 1.0
+    },
+    "player-api-184226": {
+      "koreanName": "예레미 피노",
+      "englishName": "Yeremy Pino",
+      "sourceUrl": "https://namu.wiki/w/%EC%98%88%EB%A0%88%EB%AF%B8%20%ED%94%BC%EB%85%B8",
+      "matchScore": 1.0
+    },
+    "player-api-162712": {
+      "koreanName": "오스카르 밍게사",
+      "englishName": "Óscar Mingueza",
+      "sourceUrl": "https://namu.wiki/w/%EC%98%A4%EC%8A%A4%EC%B9%B4%EB%A5%B4%20%EB%B0%8D%EA%B2%8C%EC%82%AC",
+      "matchScore": 1.0
+    },
+    "player-api-412759": {
+      "koreanName": "제이디 캉보",
+      "englishName": "Jaydee Canvot",
+      "sourceUrl": "https://namu.wiki/w/%EC%A0%9C%EC%9D%B4%EB%94%94%20%EC%BA%89%EB%B3%B4",
+      "matchScore": 0.99
+    },
+    "player-api-402640": {
+      "koreanName": "로맹 에세",
+      "englishName": "Romain Esse",
+      "sourceUrl": "https://namu.wiki/w/%EB%A1%9C%EB%A7%B9%20%EC%97%90%EC%84%B8",
+      "matchScore": 0.99
+    },
+    "player-api-3339": {
+      "koreanName": "셰이크 두쿠레",
+      "englishName": "Cheick Doucouré",
+      "sourceUrl": "https://namu.wiki/w/%EC%85%B0%EC%9D%B4%ED%81%AC%20%EB%91%90%EC%BF%A0%EB%A0%88",
+      "matchScore": 0.99
+    },
+    "player-api-304320": {
+      "koreanName": "데이비드 오조",
+      "englishName": "David Ozoh",
+      "sourceUrl": "https://namu.wiki/w/%EB%8D%B0%EC%9D%B4%EB%B9%84%EB%93%9C%20%EC%98%A4%EC%A1%B0",
+      "matchScore": 0.99
+    },
+    "player-api-288102": {
+      "koreanName": "애덤 워튼",
+      "englishName": "Adam Wharton",
+      "sourceUrl": "https://namu.wiki/w/%EC%95%A0%EB%8D%A4%20%EC%9B%8C%ED%8A%BC",
+      "matchScore": 0.99
+    },
+    "player-api-286458": {
+      "koreanName": "저스틴 데버니",
+      "englishName": "Justin Devenny",
+      "sourceUrl": "https://namu.wiki/w/%EC%A0%80%EC%8A%A4%ED%8B%B4%20%EB%8D%B0%EB%B2%84%EB%8B%88",
+      "matchScore": 0.99
+    },
+    "player-api-284549": {
+      "koreanName": "조 위트워스",
+      "englishName": "Joe Whitworth",
+      "sourceUrl": "https://namu.wiki/w/%EC%A1%B0%20%EC%9C%84%ED%8A%B8%EC%9B%8C%EC%8A%A4",
+      "matchScore": 0.99
+    },
+    "player-api-284493": {
+      "koreanName": "타요 아다라몰라",
+      "englishName": "Tayo Adaramola",
+      "sourceUrl": "https://namu.wiki/w/%ED%83%80%EC%9A%94%20%EC%95%84%EB%8B%A4%EB%9D%BC%EB%AA%B0%EB%9D%BC",
+      "matchScore": 0.99
+    },
+    "player-api-278898": {
+      "koreanName": "샤디 리아드",
+      "englishName": "Chadi Riad",
+      "sourceUrl": "https://namu.wiki/w/%EC%83%A4%EB%94%94%20%EB%A6%AC%EC%95%84%EB%93%9C",
+      "matchScore": 0.99
+    },
+    "player-api-26303": {
+      "koreanName": "보르나 소사",
+      "englishName": "Borna Sosa",
+      "sourceUrl": "https://namu.wiki/w/%EB%B3%B4%EB%A5%B4%EB%82%98%20%EC%86%8C%EC%82%AC",
+      "matchScore": 0.99
+    },
+    "player-api-25927": {
+      "koreanName": "장필리프 마테타",
+      "englishName": "Jean-Philippe Mateta",
+      "sourceUrl": "https://namu.wiki/w/%EC%9E%A5%ED%95%84%EB%A6%AC%ED%94%84%20%EB%A7%88%ED%85%8C%ED%83%80",
+      "matchScore": 0.99
+    },
+    "player-api-2490": {
+      "koreanName": "헤페르손 레르마",
+      "englishName": "Jefferson Lerma",
+      "sourceUrl": "https://namu.wiki/w/%ED%97%A4%ED%8E%98%EB%A5%B4%EC%86%90%20%EB%A0%88%EB%A5%B4%EB%A7%88",
+      "matchScore": 0.99
+    },
+    "player-api-2218": {
+      "koreanName": "이스마일라 사르",
+      "englishName": "Ismaïla Sarr",
+      "sourceUrl": "https://namu.wiki/w/%EC%9D%B4%EC%8A%A4%EB%A7%88%EC%9D%BC%EB%9D%BC%20%EC%82%AC%EB%A5%B4",
+      "matchScore": 0.99
+    },
+    "player-api-22157": {
+      "koreanName": "왈테르 베니테스",
+      "englishName": "Walter Benitez",
+      "sourceUrl": "https://namu.wiki/w/%EC%99%88%ED%85%8C%EB%A5%B4%20%EB%B2%A0%EB%8B%88%ED%85%8C%EC%8A%A4",
+      "matchScore": 0.99
+    },
+    "player-api-19684": {
+      "koreanName": "레미 매튜스",
+      "englishName": "Remi Matthews",
+      "sourceUrl": "https://namu.wiki/w/%EB%A0%88%EB%AF%B8%20%EB%A7%A4%ED%8A%9C%EC%8A%A4",
+      "matchScore": 0.99
+    },
+    "player-api-18806": {
+      "koreanName": "윌 휴즈",
+      "englishName": "Will Hughes",
+      "sourceUrl": "https://namu.wiki/w/%EC%9C%8C%20%ED%9C%B4%EC%A6%88",
+      "matchScore": 0.99
+    },
+    "player-api-182201": {
+      "koreanName": "타이릭 미첼",
+      "englishName": "Tyrick Mitchell",
+      "sourceUrl": "https://namu.wiki/w/%ED%83%80%EC%9D%B4%EB%A6%AD%20%EB%AF%B8%EC%B2%BC",
+      "matchScore": 0.99
+    },
+    "player-api-1468": {
+      "koreanName": "에디 은케티아",
+      "englishName": "Eddie Nketiah",
+      "sourceUrl": "https://namu.wiki/w/%EC%97%90%EB%94%94%20%EC%9D%80%EC%BC%80%ED%8B%B0%EC%95%84",
+      "matchScore": 0.99
+    },
+    "player-api-13736": {
+      "koreanName": "다니엘 무뇨스",
+      "englishName": "Daniel Munoz",
+      "sourceUrl": "https://namu.wiki/w/%EB%8B%A4%EB%8B%88%EC%97%98%20%EB%AC%B4%EB%87%A8%EC%8A%A4",
+      "matchScore": 0.99
+    },
+    "player-api-126949": {
+      "koreanName": "크리스 리차즈",
+      "englishName": "Chris Richards",
+      "sourceUrl": "https://namu.wiki/w/%ED%81%AC%EB%A6%AC%EC%8A%A4%20%EB%A6%AC%EC%B0%A8%EC%A6%88",
+      "matchScore": 0.99
+    },
+    "player-api-2032": {
+      "koreanName": "예르겐 스트란 라르센",
+      "englishName": "Jørgen Strand Larsen",
+      "sourceUrl": "https://namu.wiki/w/%EC%98%88%EB%A5%B4%EA%B2%90%20%EC%8A%A4%ED%8A%B8%EB%9E%80%20%EB%9D%BC%EB%A5%B4%EC%84%BC",
+      "matchScore": 0.867
+    },
+    "player-api-19088": {
+      "koreanName": "딘 헨더슨",
+      "englishName": "Dean Heanderson",
+      "sourceUrl": "https://namu.wiki/w/%EB%94%98%20%ED%97%A8%EB%8D%94%EC%8A%A8",
+      "matchScore": 0.833
+    },
+    "player-api-284449": {
+      "koreanName": "제수룬 락사키",
+      "englishName": "Jesurun Rak-Sakyi",
+      "sourceUrl": "https://namu.wiki/w/%EC%A0%9C%EC%88%98%EB%A3%AC%20%EB%9D%BD%EC%82%AC%ED%82%A4",
+      "matchScore": 0.75
+    },
+    "player-api-895": {
+      "koreanName": "제임스 가너",
+      "englishName": "James Garner",
+      "sourceUrl": "https://namu.wiki/w/%EC%A0%9C%EC%9E%84%EC%8A%A4%20%EA%B0%80%EB%84%88",
+      "matchScore": 0.99
+    },
+    "player-api-82855": {
+      "koreanName": "톰 킹",
+      "englishName": "Tom King",
+      "sourceUrl": "https://namu.wiki/w/%ED%86%B0%20%ED%82%B9(%EC%B6%95%EA%B5%AC%EC%84%A0%EC%88%98)",
+      "matchScore": 0.99
+    },
+    "player-api-405360": {
+      "koreanName": "해리슨 암스트롱",
+      "englishName": "Harrison Armstrong",
+      "sourceUrl": "https://namu.wiki/w/%ED%95%B4%EB%A6%AC%EC%8A%A8%20%EC%95%94%EC%8A%A4%ED%8A%B8%EB%A1%B1",
+      "matchScore": 0.99
+    },
+    "player-api-343684": {
+      "koreanName": "티에르노 바리",
+      "englishName": "Thierno Barry",
+      "sourceUrl": "https://namu.wiki/w/%ED%8B%B0%EC%97%90%EB%A5%B4%EB%85%B8%20%EB%B0%94%EB%A6%AC",
+      "matchScore": 0.99
+    },
+    "player-api-304317": {
+      "koreanName": "타일러 디블링",
+      "englishName": "Tyler Dibling",
+      "sourceUrl": "https://namu.wiki/w/%ED%83%80%EC%9D%BC%EB%9F%AC%20%EB%94%94%EB%B8%94%EB%A7%81",
+      "matchScore": 0.99
+    },
+    "player-api-2936": {
+      "koreanName": "제임스 타코우스키",
+      "englishName": "James Tarkowski",
+      "sourceUrl": "https://namu.wiki/w/%EC%A0%9C%EC%9E%84%EC%8A%A4%20%ED%83%80%EC%BD%94%EC%9A%B0%EC%8A%A4%ED%82%A4",
+      "matchScore": 0.99
+    },
+    "player-api-2934": {
+      "koreanName": "마이클 킨",
+      "englishName": "Michael Keane",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%88%EC%9D%B4%ED%81%B4%20%ED%82%A8",
+      "matchScore": 0.99
+    },
+    "player-api-2932": {
+      "koreanName": "조던 픽포드",
+      "englishName": "Jordan Pickford",
+      "sourceUrl": "https://namu.wiki/w/%EC%A1%B0%EB%8D%98%20%ED%94%BD%ED%8F%AC%EB%93%9C",
+      "matchScore": 0.99
+    },
+    "player-api-284500": {
+      "koreanName": "팀 이로에그부남",
+      "englishName": "Tim Iroegbunam",
+      "sourceUrl": "https://namu.wiki/w/%ED%8C%80%20%EC%9D%B4%EB%A1%9C%EC%97%90%EA%B7%B8%EB%B6%80%EB%82%A8",
+      "matchScore": 0.99
+    },
+    "player-api-2165": {
+      "koreanName": "비탈리 미콜렌코",
+      "englishName": "Vitaliy Mykolenko",
+      "sourceUrl": "https://namu.wiki/w/%EB%B9%84%ED%83%88%EB%A6%AC%20%EB%AF%B8%EC%BD%9C%EB%A0%8C%EC%BD%94",
+      "matchScore": 0.99
+    },
+    "player-api-202854": {
+      "koreanName": "메를린 뢸",
+      "englishName": "Merlin Röhl",
+      "sourceUrl": "https://namu.wiki/w/%EB%A9%94%EB%A5%BC%EB%A6%B0%20%EB%A2%B8",
+      "matchScore": 0.99
+    },
+    "player-api-195993": {
+      "koreanName": "카를로스 알카라스",
+      "englishName": "Carlos Alcaraz",
+      "sourceUrl": "https://namu.wiki/w/%EC%B9%B4%EB%A5%BC%EB%A1%9C%EC%8A%A4%20%EC%95%8C%EC%B9%B4%EB%9D%BC%EC%8A%A4(%EC%B6%95%EA%B5%AC%EC%84%A0%EC%88%98)",
+      "matchScore": 0.99
+    },
+    "player-api-18860": {
+      "koreanName": "마크 트래버스",
+      "englishName": "Mark Travers",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%88%ED%81%AC%20%ED%8A%B8%EB%9E%98%EB%B2%84%EC%8A%A4",
+      "matchScore": 0.99
+    },
+    "player-api-18592": {
+      "koreanName": "일리망 은디아예",
+      "englishName": "Iliman Ndiaye",
+      "sourceUrl": "https://namu.wiki/w/%EC%9D%BC%EB%A6%AC%EB%A7%9D%20%EC%9D%80%EB%94%94%EC%95%84%EC%98%88",
+      "matchScore": 0.99
+    },
+    "player-api-17661": {
+      "koreanName": "재러드 브랜스웨이트",
+      "englishName": "Jarrad Branthwaite",
+      "sourceUrl": "https://namu.wiki/w/%EC%9E%AC%EB%9F%AC%EB%93%9C%20%EB%B8%8C%EB%9E%9C%EC%8A%A4%EC%9B%A8%EC%9D%B4%ED%8A%B8",
+      "matchScore": 0.99
+    },
+    "player-api-138417": {
+      "koreanName": "네이선 패터슨",
+      "englishName": "Nathan Patterson",
+      "sourceUrl": "https://namu.wiki/w/%EB%84%A4%EC%9D%B4%EC%84%A0%20%ED%8C%A8%ED%84%B0%EC%8A%A8",
+      "matchScore": 0.99
+    },
+    "player-api-148099": {
+      "koreanName": "키어넌 듀스버리홀",
+      "englishName": "Kiernan Dewsbury-Hall",
+      "sourceUrl": "https://namu.wiki/w/%ED%82%A4%EC%96%B4%EB%84%8C%20%EB%93%80%EC%8A%A4%EB%B2%84%EB%A6%AC%ED%99%80",
+      "matchScore": 0.812
+    },
+    "player-api-21566": {
+      "koreanName": "뱅자맹 르콩트",
+      "englishName": "B. Lecomte",
+      "sourceUrl": "https://namu.wiki/w/%EB%B1%85%EC%9E%90%EB%A7%B9%20%EB%A5%B4%EC%BD%A9%ED%8A%B8",
+      "matchScore": 1.0
+    },
+    "player-api-1438": {
+      "koreanName": "베른트 레노",
+      "englishName": "B. Leno",
+      "sourceUrl": "https://namu.wiki/w/%EB%B2%A0%EB%A5%B8%ED%8A%B8%20%EB%A0%88%EB%85%B8",
+      "matchScore": 1.0
+    },
+    "player-api-2729": {
+      "koreanName": "요아킴 안데르센",
+      "englishName": "J. Andersen",
+      "sourceUrl": "https://namu.wiki/w/%EC%9A%94%EC%95%84%ED%82%B4%20%EC%95%88%EB%8D%B0%EB%A5%B4%EC%84%BC",
+      "matchScore": 1.0
+    },
+    "player-api-152967": {
+      "koreanName": "캘빈 배시",
+      "englishName": "C. Bassey",
+      "sourceUrl": "https://namu.wiki/w/%EC%BA%98%EB%B9%88%20%EB%B0%B0%EC%8B%9C",
+      "matchScore": 1.0
+    },
+    "player-api-2920": {
+      "koreanName": "티모시 카스타뉴",
+      "englishName": "T. Castagne",
+      "sourceUrl": "https://namu.wiki/w/%ED%8B%B0%EB%AA%A8%EC%8B%9C%20%EC%B9%B4%EC%8A%A4%ED%83%80%EB%89%B4",
+      "matchScore": 1.0
+    },
+    "player-api-131": {
+      "koreanName": "호르헤 쿠엔카",
+      "englishName": "Jorge Cuenca",
+      "sourceUrl": "https://namu.wiki/w/%ED%98%B8%EB%A5%B4%ED%97%A4%20%EC%BF%A0%EC%97%94%EC%B9%B4",
+      "matchScore": 1.0
+    },
+    "player-api-19549": {
+      "koreanName": "안토니 로빈슨",
+      "englishName": "A. Robinson",
+      "sourceUrl": "https://namu.wiki/w/%EC%95%88%ED%86%A0%EB%8B%88%20%EB%A1%9C%EB%B9%88%EC%8A%A8",
+      "matchScore": 1.0
+    },
+    "player-api-657": {
+      "koreanName": "케니 테터",
+      "englishName": "K. Tete",
+      "sourceUrl": "https://namu.wiki/w/%EC%BC%80%EB%8B%88%20%ED%85%8C%ED%84%B0",
+      "matchScore": 1.0
+    },
+    "player-api-1934": {
+      "koreanName": "산데르 베르게",
+      "englishName": "S. Berge",
+      "sourceUrl": "https://namu.wiki/w/%EC%82%B0%EB%8D%B0%EB%A5%B4%20%EB%B2%A0%EB%A5%B4%EA%B2%8C",
+      "matchScore": 1.0
+    },
+    "player-api-278133": {
+      "koreanName": "오스카르 보브",
+      "englishName": "Oscar Bobb",
+      "sourceUrl": "https://namu.wiki/w/%EC%98%A4%EC%8A%A4%EC%B9%B4%EB%A5%B4%20%EB%B3%B4%EB%B8%8C",
+      "matchScore": 1.0
+    },
+    "player-api-19025": {
+      "koreanName": "톰 케어니",
+      "englishName": "T. Cairney",
+      "sourceUrl": "https://namu.wiki/w/%ED%86%B0%20%EC%BC%80%EC%96%B4%EB%8B%88",
+      "matchScore": 1.0
+    },
+    "player-api-1455": {
+      "koreanName": "알렉스 이워비",
+      "englishName": "A. Iwobi",
+      "sourceUrl": "https://namu.wiki/w/%EC%95%8C%EB%A0%89%EC%8A%A4%20%EC%9D%B4%EC%9B%8C%EB%B9%84",
+      "matchScore": 1.0
+    },
+    "player-api-389315": {
+      "koreanName": "조시 킹",
+      "englishName": "Joshua King",
+      "sourceUrl": "https://namu.wiki/w/%EC%A1%B0%EC%8B%9C%20%ED%82%B9",
+      "matchScore": 1.0
+    },
+    "player-api-19480": {
+      "koreanName": "해리슨 리드",
+      "englishName": "H. Reed",
+      "sourceUrl": "https://namu.wiki/w/%ED%95%B4%EB%A6%AC%EC%8A%A8%20%EB%A6%AC%EB%93%9C",
+      "matchScore": 1.0
+    },
+    "player-api-19032": {
+      "koreanName": "라이언 세세뇽",
+      "englishName": "R. Sessegnon",
+      "sourceUrl": "https://namu.wiki/w/%EB%9D%BC%EC%9D%B4%EC%96%B8%20%EC%84%B8%EC%84%B8%EB%87%BD",
+      "matchScore": 1.0
+    },
+    "player-api-1161": {
+      "koreanName": "에밀 스미스 로우",
+      "englishName": "E. Smith Rowe",
+      "sourceUrl": "https://namu.wiki/w/%EC%97%90%EB%B0%80%20%EC%8A%A4%EB%AF%B8%EC%8A%A4%20%EB%A1%9C%EC%9A%B0",
+      "matchScore": 1.0
+    },
+    "player-api-237819": {
+      "koreanName": "케빙",
+      "englishName": "Kevin",
+      "sourceUrl": "https://namu.wiki/w/%EC%BC%80%EB%B9%99",
+      "matchScore": 1.0
+    },
+    "player-api-436443": {
+      "koreanName": "요나 쿠시아사레",
+      "englishName": "J. Kusi-Asare",
+      "sourceUrl": "https://namu.wiki/w/%EC%9A%94%EB%82%98%20%EC%BF%A0%EC%8B%9C%EC%95%84%EC%82%AC%EB%A0%88",
+      "matchScore": 1.0
+    },
+    "player-api-195106": {
+      "koreanName": "호드리구 무니스",
+      "englishName": "Rodrigo Muniz",
+      "sourceUrl": "https://namu.wiki/w/%ED%98%B8%EB%93%9C%EB%A6%AC%EA%B5%AC%20%EB%AC%B4%EB%8B%88%EC%8A%A4",
+      "matchScore": 1.0
+    },
+    "player-api-2930": {
+      "koreanName": "잭 버틀랜드",
+      "englishName": "J. Butland",
+      "sourceUrl": "https://namu.wiki/w/%EC%9E%AD%20%EB%B2%84%ED%8B%80%EB%9E%9C%EB%93%9C",
+      "matchScore": 1.0
+    },
+    "player-api-19811": {
+      "koreanName": "딜런 필립스",
+      "englishName": "D. Phillips",
+      "sourceUrl": "https://namu.wiki/w/%EB%94%9C%EB%9F%B0%20%ED%95%84%EB%A6%BD%EC%8A%A4",
+      "matchScore": 1.0
+    },
+    "player-api-1591": {
+      "koreanName": "콘스탄티노스 촐라키스",
+      "englishName": "K. Tzolakis",
+      "sourceUrl": "https://namu.wiki/w/%EC%BD%98%EC%8A%A4%ED%83%84%ED%8B%B0%EB%85%B8%EC%8A%A4%20%EC%B4%90%EB%9D%BC%ED%82%A4%EC%8A%A4",
+      "matchScore": 1.0
+    },
+    "player-api-2769": {
+      "koreanName": "세미 아제이",
+      "englishName": "S. Ajayi",
+      "sourceUrl": "https://namu.wiki/w/%EC%84%B8%EB%AF%B8%20%EC%95%84%EC%A0%9C%EC%9D%B4",
+      "matchScore": 1.0
+    },
+    "player-api-20073": {
+      "koreanName": "루이 코일",
+      "englishName": "L. Coyle",
+      "sourceUrl": "https://namu.wiki/w/%EB%A3%A8%EC%9D%B4%20%EC%BD%94%EC%9D%BC",
+      "matchScore": 1.0
+    },
+    "player-api-153411": {
+      "koreanName": "코디 드라메",
+      "englishName": "C. Drameh",
+      "sourceUrl": "https://namu.wiki/w/%EC%BD%94%EB%94%94%20%EB%93%9C%EB%9D%BC%EB%A9%94",
+      "matchScore": 1.0
+    },
+    "player-api-19093": {
+      "koreanName": "존 이건",
+      "englishName": "J. Egan",
+      "sourceUrl": "https://namu.wiki/w/%EC%A1%B4%20%EC%9D%B4%EA%B1%B4",
+      "matchScore": 1.0
+    },
+    "player-api-18747": {
+      "koreanName": "라이언 자일스",
+      "englishName": "R. Giles",
+      "sourceUrl": "https://namu.wiki/w/%EB%9D%BC%EC%9D%B4%EC%96%B8%20%EC%9E%90%EC%9D%BC%EC%8A%A4",
+      "matchScore": 1.0
+    },
+    "player-api-426480": {
+      "koreanName": "루카스 헤링턴",
+      "englishName": "L. Herrington",
+      "sourceUrl": "https://namu.wiki/w/%EB%A3%A8%EC%B9%B4%EC%8A%A4%20%ED%97%A4%EB%A7%81%ED%84%B4",
+      "matchScore": 1.0
+    },
+    "player-api-331551": {
+      "koreanName": "찰리 휴즈",
+      "englishName": "C. Hughes",
+      "sourceUrl": "https://namu.wiki/w/%EC%B0%B0%EB%A6%AC%20%ED%9C%B4%EC%A6%88",
+      "matchScore": 1.0
+    },
+    "player-api-129713": {
+      "koreanName": "매티 제이콥",
+      "englishName": "M. Jacob",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%A4%ED%8B%B0%20%EC%A0%9C%EC%9D%B4%EC%BD%A5",
+      "matchScore": 1.0
+    },
+    "player-api-358431": {
+      "koreanName": "노벨 멘디",
+      "englishName": "N. Mendy",
+      "sourceUrl": "https://namu.wiki/w/%EB%85%B8%EB%B2%A8%20%EB%A9%98%EB%94%94",
+      "matchScore": 1.0
+    },
+    "player-api-18941": {
+      "koreanName": "맷 타겟",
+      "englishName": "M. Targett",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%B7%20%ED%83%80%EA%B2%9F",
+      "matchScore": 1.0
+    },
+    "player-api-19666": {
+      "koreanName": "맷 크룩스",
+      "englishName": "M. Crooks",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%B7%20%ED%81%AC%EB%A3%A9%EC%8A%A4",
+      "matchScore": 1.0
+    },
+    "player-api-19100": {
+      "koreanName": "키어런 다월",
+      "englishName": "K. Dowell",
+      "sourceUrl": "https://namu.wiki/w/%ED%82%A4%EC%96%B4%EB%9F%B0%20%EB%8B%A4%EC%9B%94",
+      "matchScore": 1.0
+    },
+    "player-api-179843": {
+      "koreanName": "뤼카 구르나두아트",
+      "englishName": "L. Gourna-Douath",
+      "sourceUrl": "https://namu.wiki/w/%EB%A4%BC%EC%B9%B4%20%EA%B5%AC%EB%A5%B4%EB%82%98%EB%91%90%EC%95%84%ED%8A%B8",
+      "matchScore": 1.0
+    },
+    "player-api-396407": {
+      "koreanName": "옌스 예르퇴달",
+      "englishName": "J. Hjertø-Dahl",
+      "sourceUrl": "https://namu.wiki/w/%EC%98%8C%EC%8A%A4%20%EC%98%88%EB%A5%B4%ED%87%B4%EB%8B%AC",
+      "matchScore": 1.0
+    },
+    "player-api-162991": {
+      "koreanName": "엘리엇 마타조",
+      "englishName": "E. Matazo",
+      "sourceUrl": "https://namu.wiki/w/%EC%97%98%EB%A6%AC%EC%97%87%20%EB%A7%88%ED%83%80%EC%A1%B0",
+      "matchScore": 1.0
+    },
+    "player-api-32960": {
+      "koreanName": "모리타 히데마사",
+      "englishName": "H. Morita",
+      "sourceUrl": "https://namu.wiki/w/%EB%AA%A8%EB%A6%AC%ED%83%80%20%ED%9E%88%EB%8D%B0%EB%A7%88%EC%82%AC",
+      "matchScore": 1.0
+    },
+    "player-api-49883": {
+      "koreanName": "압뒬카디르 외뮈르",
+      "englishName": "A. Ömür",
+      "sourceUrl": "https://namu.wiki/w/%EC%95%95%EB%92%AC%EC%B9%B4%EB%94%94%EB%A5%B4%20%EC%99%B8%EB%AE%88%EB%A5%B4",
+      "matchScore": 1.0
+    },
+    "player-api-17670": {
+      "koreanName": "리건 슬레이터",
+      "englishName": "R. Slater",
+      "sourceUrl": "https://namu.wiki/w/%EB%A6%AC%EA%B1%B4%20%EC%8A%AC%EB%A0%88%EC%9D%B4%ED%84%B0",
+      "matchScore": 1.0
+    },
+    "player-api-226765": {
+      "koreanName": "엘리엇 스트라우드",
+      "englishName": "E. Stroud",
+      "sourceUrl": "https://namu.wiki/w/%EC%97%98%EB%A6%AC%EC%97%87%20%EC%8A%A4%ED%8A%B8%EB%9D%BC%EC%9A%B0%EB%93%9C",
+      "matchScore": 1.0
+    },
+    "player-api-338046": {
+      "koreanName": "오스카르 삼브라노",
+      "englishName": "Óscar Steven Zambrano Preciado",
+      "sourceUrl": "https://namu.wiki/w/%EC%98%A4%EC%8A%A4%EC%B9%B4%EB%A5%B4%20%EC%82%BC%EB%B8%8C%EB%9D%BC%EB%85%B8",
+      "matchScore": 1.0
+    },
+    "player-api-1186": {
+      "koreanName": "데이비드 아킨톨라",
+      "englishName": "D. Akintola",
+      "sourceUrl": "https://namu.wiki/w/%EB%8D%B0%EC%9D%B4%EB%B9%84%EB%93%9C%20%EC%95%84%ED%82%A8%ED%86%A8%EB%9D%BC",
+      "matchScore": 1.0
+    },
+    "player-api-299923": {
+      "koreanName": "모하메드 벨루미",
+      "englishName": "M. Belloumi",
+      "sourceUrl": "https://namu.wiki/w/%EB%AA%A8%ED%95%98%EB%A9%94%EB%93%9C%20%EB%B2%A8%EB%A3%A8%EB%AF%B8",
+      "matchScore": 1.0
+    },
+    "player-api-19569": {
+      "koreanName": "조 겔하트",
+      "englishName": "J. Gelhardt",
+      "sourceUrl": "https://namu.wiki/w/%EC%A1%B0%20%EA%B2%94%ED%95%98%ED%8A%B8",
+      "matchScore": 1.0
+    },
+    "player-api-19337": {
+      "koreanName": "올리버 맥버니",
+      "englishName": "O. McBurnie",
+      "sourceUrl": "https://namu.wiki/w/%EC%98%AC%EB%A6%AC%EB%B2%84%20%EB%A7%A5%EB%B2%84%EB%8B%88",
+      "matchScore": 1.0
+    },
+    "player-api-44798": {
+      "koreanName": "리암 밀러",
+      "englishName": "L. Millar",
+      "sourceUrl": "https://namu.wiki/w/%EB%A6%AC%EC%95%94%20%EB%B0%80%EB%9F%AC",
+      "matchScore": 1.0
+    },
+    "player-api-321648": {
+      "koreanName": "에메르송",
+      "englishName": "Emersonn",
+      "sourceUrl": "https://namu.wiki/w/%EC%97%90%EB%A9%94%EB%A5%B4%EC%86%A1(2004)",
+      "matchScore": 1.0
+    },
+    "player-api-82097": {
+      "koreanName": "알렉스 파머",
+      "englishName": "Alex Palmer",
+      "sourceUrl": "https://namu.wiki/w/%EC%95%8C%EB%A0%89%EC%8A%A4%20%ED%8C%8C%EB%A8%B8",
+      "matchScore": 0.99
+    },
+    "player-api-37276": {
+      "koreanName": "키엘 스헤르펀",
+      "englishName": "Kjell Scherpen",
+      "sourceUrl": "https://namu.wiki/w/%ED%82%A4%EC%97%98%20%EC%8A%A4%ED%97%A4%EB%A5%B4%ED%8E%80",
+      "matchScore": 0.99
+    },
+    "player-api-37236": {
+      "koreanName": "아조르 마투시와",
+      "englishName": "Azor Matusiwa",
+      "sourceUrl": "https://namu.wiki/w/%EC%95%84%EC%A1%B0%EB%A5%B4%20%EB%A7%88%ED%88%AC%EC%8B%9C%EC%99%80",
+      "matchScore": 0.99
+    },
+    "player-api-342654": {
+      "koreanName": "신드레 발레 에겔리",
+      "englishName": "Sindre Walle Egeli",
+      "sourceUrl": "https://namu.wiki/w/%EC%8B%A0%EB%93%9C%EB%A0%88%20%EB%B0%9C%EB%A0%88%20%EC%97%90%EA%B2%94%EB%A6%AC",
+      "matchScore": 0.99
+    },
+    "player-api-326763": {
+      "koreanName": "캐머런 험프리스",
+      "englishName": "Cameron Humphreys",
+      "sourceUrl": "https://namu.wiki/w/%EC%BA%90%EB%A8%B8%EB%9F%B0%20%ED%97%98%ED%94%84%EB%A6%AC%EC%8A%A4",
+      "matchScore": 0.99
+    },
+    "player-api-286349": {
+      "koreanName": "아니스 메흐메티",
+      "englishName": "Anis Mehmeti",
+      "sourceUrl": "https://namu.wiki/w/%EC%95%84%EB%8B%88%EC%8A%A4%20%EB%A9%94%ED%9D%90%EB%A9%94%ED%8B%B0",
+      "matchScore": 0.99
+    },
+    "player-api-283290": {
+      "koreanName": "케이시 매카티어",
+      "englishName": "Kasey McAteer",
+      "sourceUrl": "https://namu.wiki/w/%EC%BC%80%EC%9D%B4%EC%8B%9C%20%EB%A7%A4%EC%B9%B4%ED%8B%B0%EC%96%B4",
+      "matchScore": 0.99
+    },
+    "player-api-2823": {
+      "koreanName": "사샤 루키치",
+      "englishName": "Saša Lukić",
+      "sourceUrl": "https://namu.wiki/w/%EC%82%AC%EC%83%A4%20%EB%A3%A8%ED%82%A4%EC%B9%98",
+      "matchScore": 0.99
+    },
+    "player-api-2380": {
+      "koreanName": "추바 악폼",
+      "englishName": "Chuba Akpom",
+      "sourceUrl": "https://namu.wiki/w/%EC%B6%94%EB%B0%94%20%EC%95%85%ED%8F%BC",
+      "matchScore": 0.99
+    },
+    "player-api-19577": {
+      "koreanName": "다넬 펄롱",
+      "englishName": "Darnell Furlong",
+      "sourceUrl": "https://namu.wiki/w/%EB%8B%A4%EB%84%AC%20%ED%8E%84%EB%A1%B1",
+      "matchScore": 0.99
+    },
+    "player-api-19546": {
+      "koreanName": "세드릭 키프레",
+      "englishName": "Cédric Kipré",
+      "sourceUrl": "https://namu.wiki/w/%EC%84%B8%EB%93%9C%EB%A6%AD%20%ED%82%A4%ED%94%84%EB%A0%88",
+      "matchScore": 0.99
+    },
+    "player-api-19541": {
+      "koreanName": "크리스찬 월튼",
+      "englishName": "Christian Walton",
+      "sourceUrl": "https://namu.wiki/w/%ED%81%AC%EB%A6%AC%EC%8A%A4%EC%B0%AC%20%EC%9B%94%ED%8A%BC",
+      "matchScore": 0.99
+    },
+    "player-api-195121": {
+      "koreanName": "마르셀리노 누녜스",
+      "englishName": "Marcelino Núñez",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%88%EB%A5%B4%EC%85%80%EB%A6%AC%EB%85%B8%20%EB%88%84%EB%85%9C%EC%8A%A4",
+      "matchScore": 0.99
+    },
+    "player-api-19365": {
+      "koreanName": "치에도지 오그베네",
+      "englishName": "Chiedozie Ogbene",
+      "sourceUrl": "https://namu.wiki/w/%EC%B9%98%EC%97%90%EB%8F%84%EC%A7%80%20%EC%98%A4%EA%B7%B8%EB%B2%A0%EB%84%A4",
+      "matchScore": 0.99
+    },
+    "player-api-19136": {
+      "koreanName": "잭 클라크",
+      "englishName": "Jack Clarke",
+      "sourceUrl": "https://namu.wiki/w/%EC%9E%AD%20%ED%81%B4%EB%9D%BC%ED%81%AC",
+      "matchScore": 0.99
+    },
+    "player-api-19119": {
+      "koreanName": "리프 데이비스",
+      "englishName": "Leif Davis",
+      "sourceUrl": "https://namu.wiki/w/%EB%A6%AC%ED%94%84%20%EB%8D%B0%EC%9D%B4%EB%B9%84%EC%8A%A4",
+      "matchScore": 0.99
+    },
+    "player-api-18958": {
+      "koreanName": "데이비드 버튼",
+      "englishName": "David Button",
+      "sourceUrl": "https://namu.wiki/w/%EB%8D%B0%EC%9D%B4%EB%B9%84%EB%93%9C%20%EB%B2%84%ED%8A%BC",
+      "matchScore": 0.99
+    },
+    "player-api-18814": {
+      "koreanName": "이사 디오프",
+      "englishName": "Issa Diop",
+      "sourceUrl": "https://namu.wiki/w/%EC%9D%B4%EC%82%AC%20%EB%94%94%EC%98%A4%ED%94%84",
+      "matchScore": 0.99
+    },
+    "player-api-18397": {
+      "koreanName": "잭 테일러",
+      "englishName": "Jack Taylor",
+      "sourceUrl": "https://namu.wiki/w/%EC%9E%AD%20%ED%85%8C%EC%9D%BC%EB%9F%AC(%EC%B6%95%EA%B5%AC%EC%84%A0%EC%88%98)",
+      "matchScore": 0.99
+    },
+    "player-api-127579": {
+      "koreanName": "제이콥 그리브스",
+      "englishName": "Jacob Greaves",
+      "sourceUrl": "https://namu.wiki/w/%EC%A0%9C%EC%9D%B4%EC%BD%A5%20%EA%B7%B8%EB%A6%AC%EB%B8%8C%EC%8A%A4",
+      "matchScore": 0.99
+    },
+    "player-api-575": {
+      "koreanName": "플로렌티누 루이스",
+      "englishName": "Florentino Luís",
+      "sourceUrl": "https://namu.wiki/w/%ED%94%8C%EB%A1%9C%EB%A0%8C%ED%8B%B0%EB%88%84%20%EB%A3%A8%EC%9D%B4%EC%8A%A4",
+      "matchScore": 0.94
+    },
+    "player-api-328669": {
+      "koreanName": "카인 판 외벨런",
+      "englishName": "Kayne van Oevelen",
+      "sourceUrl": "https://namu.wiki/w/%EC%B9%B4%EC%9D%B8%20%ED%8C%90%20%EC%99%B8%EB%B2%A8%EB%9F%B0",
+      "matchScore": 0.846
+    },
+    "player-api-80296": {
+      "koreanName": "루카스 페리",
+      "englishName": "Lucas Perri",
+      "sourceUrl": "https://namu.wiki/w/%EB%A3%A8%EC%B9%B4%EC%8A%A4%20%ED%8E%98%EB%A6%AC",
+      "matchScore": 1.0
+    },
+    "player-api-833": {
+      "koreanName": "야카 비욜",
+      "englishName": "Jaka Bijol",
+      "sourceUrl": "https://namu.wiki/w/%EC%95%BC%EC%B9%B4%20%EB%B9%84%EC%9A%9C",
+      "matchScore": 0.99
+    },
+    "player-api-579147": {
+      "koreanName": "칼럼 밀스",
+      "englishName": "Callum Mills",
+      "sourceUrl": "https://namu.wiki/w/%EC%B9%BC%EB%9F%BC%20%EB%B0%80%EC%8A%A4",
+      "matchScore": 0.99
+    },
+    "player-api-557342": {
+      "koreanName": "알피 크레스웰",
+      "englishName": "Alfie Cresswell",
+      "sourceUrl": "https://namu.wiki/w/%EC%95%8C%ED%94%BC%20%ED%81%AC%EB%A0%88%EC%8A%A4%EC%9B%B0",
+      "matchScore": 0.99
+    },
+    "player-api-545996": {
+      "koreanName": "제이든 리에누",
+      "englishName": "Jayden Lienou",
+      "sourceUrl": "https://namu.wiki/w/%EC%A0%9C%EC%9D%B4%EB%93%A0%20%EB%A6%AC%EC%97%90%EB%88%84",
+      "matchScore": 0.99
+    },
+    "player-api-538541": {
+      "koreanName": "로리 마하디",
+      "englishName": "Rory Mahady",
+      "sourceUrl": "https://namu.wiki/w/%EB%A1%9C%EB%A6%AC%20%EB%A7%88%ED%95%98%EB%94%94",
+      "matchScore": 0.99
+    },
+    "player-api-50739": {
+      "koreanName": "브렌든 애런슨",
+      "englishName": "Brenden Aaronson",
+      "sourceUrl": "https://namu.wiki/w/%EB%B8%8C%EB%A0%8C%EB%93%A0%20%EC%95%A0%EB%9F%B0%EC%8A%A8",
+      "matchScore": 0.99
+    },
+    "player-api-48389": {
+      "koreanName": "노아 오카포",
+      "englishName": "Noah Okafor",
+      "sourceUrl": "https://namu.wiki/w/%EB%85%B8%EC%95%84%20%EC%98%A4%EC%B9%B4%ED%8F%AC",
+      "matchScore": 0.99
+    },
+    "player-api-47969": {
+      "koreanName": "가브리엘 구드문드손",
+      "englishName": "Gabriel Gudmundsson",
+      "sourceUrl": "https://namu.wiki/w/%EA%B0%80%EB%B8%8C%EB%A6%AC%EC%97%98%20%EA%B5%AC%EB%93%9C%EB%AC%B8%EB%93%9C%EC%86%90",
+      "matchScore": 0.99
+    },
+    "player-api-32966": {
+      "koreanName": "다나카 아오",
+      "englishName": "Ao Tanaka",
+      "sourceUrl": "https://namu.wiki/w/%EB%8B%A4%EB%82%98%EC%B9%B4%20%EC%95%84%EC%98%A4",
+      "matchScore": 0.99
+    },
+    "player-api-271350": {
+      "koreanName": "타리크 무하레모비치",
+      "englishName": "Tarik Muharemović",
+      "sourceUrl": "https://namu.wiki/w/%ED%83%80%EB%A6%AC%ED%81%AC%20%EB%AC%B4%ED%95%98%EB%A0%88%EB%AA%A8%EB%B9%84%EC%B9%98",
+      "matchScore": 0.99
+    },
+    "player-api-2279": {
+      "koreanName": "이선 암파두",
+      "englishName": "Ethan Ampadu",
+      "sourceUrl": "https://namu.wiki/w/%EC%9D%B4%EC%84%A0%20%EC%95%94%ED%8C%8C%EB%91%90",
+      "matchScore": 0.99
+    },
+    "player-api-20068": {
+      "koreanName": "알렉스 케언스",
+      "englishName": "Alex Cairns",
+      "sourceUrl": "https://namu.wiki/w/%EC%95%8C%EB%A0%89%EC%8A%A4%20%EC%BC%80%EC%96%B8%EC%8A%A4",
+      "matchScore": 0.99
+    },
+    "player-api-19760": {
+      "koreanName": "제임스 저스틴",
+      "englishName": "James Justin",
+      "sourceUrl": "https://namu.wiki/w/%EC%A0%9C%EC%9E%84%EC%8A%A4%20%EC%A0%80%EC%8A%A4%ED%8B%B4",
+      "matchScore": 0.99
+    },
+    "player-api-19461": {
+      "koreanName": "루카스 은메차",
+      "englishName": "Lukas Nmecha",
+      "sourceUrl": "https://namu.wiki/w/%EB%A3%A8%EC%B9%B4%EC%8A%A4%20%EC%9D%80%EB%A9%94%EC%B0%A8",
+      "matchScore": 0.99
+    },
+    "player-api-19329": {
+      "koreanName": "대니얼 제임스",
+      "englishName": "Daniel James",
+      "sourceUrl": "https://namu.wiki/w/%EB%8C%80%EB%8B%88%EC%96%BC%20%EC%A0%9C%EC%9E%84%EC%8A%A4",
+      "matchScore": 0.99
+    },
+    "player-api-19321": {
+      "koreanName": "조 로든",
+      "englishName": "Joe Rodon",
+      "sourceUrl": "https://namu.wiki/w/%EC%A1%B0%20%EB%A1%9C%EB%93%A0",
+      "matchScore": 0.99
+    },
+    "player-api-19221": {
+      "koreanName": "해리 윌슨",
+      "englishName": "Harry Wilson",
+      "sourceUrl": "https://namu.wiki/w/%ED%95%B4%EB%A6%AC%20%EC%9C%8C%EC%8A%A8",
+      "matchScore": 0.99
+    },
+    "player-api-19201": {
+      "koreanName": "제이든 보글",
+      "englishName": "Jayden Bogle",
+      "sourceUrl": "https://namu.wiki/w/%EC%A0%9C%EC%9D%B4%EB%93%A0%20%EB%B3%B4%EA%B8%80",
+      "matchScore": 0.99
+    },
+    "player-api-18901": {
+      "koreanName": "션 롱스태프",
+      "englishName": "Sean Longstaff",
+      "sourceUrl": "https://namu.wiki/w/%EC%85%98%20%EB%A1%B1%EC%8A%A4%ED%83%9C%ED%94%84",
+      "matchScore": 0.99
+    },
+    "player-api-177665": {
+      "koreanName": "안톤 슈타흐",
+      "englishName": "Anton Stach",
+      "sourceUrl": "https://namu.wiki/w/%EC%95%88%ED%86%A4%20%EC%8A%88%ED%83%80%ED%9D%90",
+      "matchScore": 0.99
+    },
+    "player-api-162489": {
+      "koreanName": "제임스 트래포드",
+      "englishName": "James Trafford",
+      "sourceUrl": "https://namu.wiki/w/%EC%A0%9C%EC%9E%84%EC%8A%A4%20%ED%8A%B8%EB%9E%98%ED%8F%AC%EB%93%9C",
+      "matchScore": 0.99
+    },
+    "player-api-162128": {
+      "koreanName": "윌프리드 뇬토",
+      "englishName": "Wilfried Gnonto",
+      "sourceUrl": "https://namu.wiki/w/%EC%9C%8C%ED%94%84%EB%A6%AC%EB%93%9C%20%EB%87%AC%ED%86%A0",
+      "matchScore": 0.99
+    },
+    "player-api-129142": {
+      "koreanName": "일리아 그루에프",
+      "englishName": "Ilia Gruev",
+      "sourceUrl": "https://namu.wiki/w/%EC%9D%BC%EB%A6%AC%EC%95%84%20%EA%B7%B8%EB%A3%A8%EC%97%90%ED%94%84",
+      "matchScore": 0.99
+    },
+    "player-api-18766": {
+      "koreanName": "도미닉 칼버트르윈",
+      "englishName": "Dominic Calvert-Lewin",
+      "sourceUrl": "https://namu.wiki/w/%EB%8F%84%EB%AF%B8%EB%8B%89%20%EC%B9%BC%EB%B2%84%ED%8A%B8%EB%A5%B4%EC%9C%88",
+      "matchScore": 0.812
+    },
+    "player-api-328116": {
+      "koreanName": "대릴 옴방",
+      "englishName": "Darryl Ombang",
+      "sourceUrl": "https://namu.wiki/w/%EB%8C%80%EB%A6%B4%20%EC%98%B4%EB%B0%A9",
+      "matchScore": 0.774
+    },
+    "player-api-338751": {
+      "koreanName": "빅토르 무뇨스",
+      "englishName": "Víctor Muñoz",
+      "sourceUrl": "https://namu.wiki/w/%EB%B9%85%ED%86%A0%EB%A5%B4%20%EB%AC%B4%EB%87%A8%EC%8A%A4",
+      "matchScore": 1.0
+    },
+    "player-api-280": {
+      "koreanName": "알리송 베케르",
+      "englishName": "Alisson Becker",
+      "sourceUrl": "https://namu.wiki/w/%EC%95%8C%EB%A6%AC%EC%86%A1%20%EB%B2%A0%EC%BC%80%EB%A5%B4",
+      "matchScore": 1.0
+    },
+    "player-api-8500": {
+      "koreanName": "엔도 와타루",
+      "englishName": "Wataru Endo",
+      "sourceUrl": "https://namu.wiki/w/%EC%97%94%EB%8F%84%20%EC%99%80%ED%83%80%EB%A3%A8",
+      "matchScore": 0.99
+    },
+    "player-api-542": {
+      "koreanName": "라이언 흐라벤베르흐",
+      "englishName": "Ryan Gravenberch",
+      "sourceUrl": "https://namu.wiki/w/%EB%9D%BC%EC%9D%B4%EC%96%B8%20%ED%9D%90%EB%9D%BC%EB%B2%A4%EB%B2%A0%EB%A5%B4%ED%9D%90",
+      "matchScore": 0.99
+    },
+    "player-api-452685": {
+      "koreanName": "리오 은구모하",
+      "englishName": "Rio Ngumoha",
+      "sourceUrl": "https://namu.wiki/w/%EB%A6%AC%EC%98%A4%20%EC%9D%80%EA%B5%AC%EB%AA%A8%ED%95%98",
+      "matchScore": 0.99
+    },
+    "player-api-397997": {
+      "koreanName": "트레이 뇨니",
+      "englishName": "Trey Nyoni",
+      "sourceUrl": "https://namu.wiki/w/%ED%8A%B8%EB%A0%88%EC%9D%B4%20%EB%87%A8%EB%8B%88",
+      "matchScore": 0.99
+    },
+    "player-api-367636": {
+      "koreanName": "제레미 자케",
+      "englishName": "Jeremy Jacquet",
+      "sourceUrl": "https://namu.wiki/w/%EC%A0%9C%EB%A0%88%EB%AF%B8%20%EC%9E%90%EC%BC%80",
+      "matchScore": 0.99
+    },
+    "player-api-30410": {
+      "koreanName": "페데리코 키에사",
+      "englishName": "Federico Chiesa",
+      "sourceUrl": "https://namu.wiki/w/%ED%8E%98%EB%8D%B0%EB%A6%AC%EC%BD%94%20%ED%82%A4%EC%97%90%EC%82%AC",
+      "matchScore": 0.99
+    },
+    "player-api-287109": {
+      "koreanName": "제임스 매코널",
+      "englishName": "James McConnell",
+      "sourceUrl": "https://namu.wiki/w/%EC%A0%9C%EC%9E%84%EC%8A%A4%20%EB%A7%A4%EC%BD%94%EB%84%90",
+      "matchScore": 0.99
+    },
+    "player-api-2864": {
+      "koreanName": "알렉산더 이삭",
+      "englishName": "Alexander Isak",
+      "sourceUrl": "https://namu.wiki/w/%EC%95%8C%EB%A0%89%EC%82%B0%EB%8D%94%20%EC%9D%B4%EC%82%AD",
+      "matchScore": 0.99
+    },
+    "player-api-284": {
+      "koreanName": "조 고메즈",
+      "englishName": "Joe Gomez",
+      "sourceUrl": "https://namu.wiki/w/%EC%A1%B0%20%EA%B3%A0%EB%A9%94%EC%A6%88",
+      "matchScore": 0.99
+    },
+    "player-api-24760": {
+      "koreanName": "기오르기 마마르다슈빌리",
+      "englishName": "Giorgi Mamardashvili",
+      "sourceUrl": "https://namu.wiki/w/%EA%B8%B0%EC%98%A4%EB%A5%B4%EA%B8%B0%20%EB%A7%88%EB%A7%88%EB%A5%B4%EB%8B%A4%EC%8A%88%EB%B9%8C%EB%A6%AC",
+      "matchScore": 0.99
+    },
+    "player-api-247": {
+      "koreanName": "코디 각포",
+      "englishName": "Cody Gakpo",
+      "sourceUrl": "https://namu.wiki/w/%EC%BD%94%EB%94%94%20%EA%B0%81%ED%8F%AC",
+      "matchScore": 0.99
+    },
+    "player-api-206254": {
+      "koreanName": "밀로시 케르케즈",
+      "englishName": "Milos Kerkez",
+      "sourceUrl": "https://namu.wiki/w/%EB%B0%80%EB%A1%9C%EC%8B%9C%20%EC%BC%80%EB%A5%B4%EC%BC%80%EC%A6%88",
+      "matchScore": 0.99
+    },
+    "player-api-203224": {
+      "koreanName": "플로리안 비르츠",
+      "englishName": "Florian Wirtz",
+      "sourceUrl": "https://namu.wiki/w/%ED%94%8C%EB%A1%9C%EB%A6%AC%EC%95%88%20%EB%B9%84%EB%A5%B4%EC%B8%A0",
+      "matchScore": 0.99
+    },
+    "player-api-19035": {
+      "koreanName": "하비 엘리엇",
+      "englishName": "Harvey Elliott",
+      "sourceUrl": "https://namu.wiki/w/%ED%95%98%EB%B9%84%20%EC%97%98%EB%A6%AC%EC%97%87",
+      "matchScore": 0.99
+    },
+    "player-api-18889": {
+      "koreanName": "프레디 우드먼",
+      "englishName": "Freddie Woodman",
+      "sourceUrl": "https://namu.wiki/w/%ED%94%84%EB%A0%88%EB%94%94%20%EC%9A%B0%EB%93%9C%EB%A8%BC",
+      "matchScore": 0.99
+    },
+    "player-api-180316": {
+      "koreanName": "하비 데이비스",
+      "englishName": "Harvey Davies",
+      "sourceUrl": "https://namu.wiki/w/%ED%95%98%EB%B9%84%20%EB%8D%B0%EC%9D%B4%EB%B9%84%EC%8A%A4",
+      "matchScore": 0.99
+    },
+    "player-api-174565": {
+      "koreanName": "위고 에키티케",
+      "englishName": "Hugo Ekitiké",
+      "sourceUrl": "https://namu.wiki/w/%EC%9C%84%EA%B3%A0%20%EC%97%90%ED%82%A4%ED%8B%B0%EC%BC%80",
+      "matchScore": 0.99
+    },
+    "player-api-1600": {
+      "koreanName": "코스타스 치미카스",
+      "englishName": "Kostas Tsimikas",
+      "sourceUrl": "https://namu.wiki/w/%EC%BD%94%EC%8A%A4%ED%83%80%EC%8A%A4%20%EC%B9%98%EB%AF%B8%EC%B9%B4%EC%8A%A4",
+      "matchScore": 0.99
+    },
+    "player-api-152654": {
+      "koreanName": "제레미 프림퐁",
+      "englishName": "Jeremie Frimpong",
+      "sourceUrl": "https://namu.wiki/w/%EC%A0%9C%EB%A0%88%EB%AF%B8%20%ED%94%84%EB%A6%BC%ED%90%81",
+      "matchScore": 0.99
+    },
+    "player-api-135525": {
+      "koreanName": "칼빈 램지",
+      "englishName": "Calvin Ramsay",
+      "sourceUrl": "https://namu.wiki/w/%EC%B9%BC%EB%B9%88%20%EB%9E%A8%EC%A7%80",
+      "matchScore": 0.99
+    },
+    "player-api-1096": {
+      "koreanName": "도미니크 소보슬라이",
+      "englishName": "Dominik Szoboszlai",
+      "sourceUrl": "https://namu.wiki/w/%EB%8F%84%EB%AF%B8%EB%8B%88%ED%81%AC%20%EC%86%8C%EB%B3%B4%EC%8A%AC%EB%9D%BC%EC%9D%B4",
+      "matchScore": 0.99
+    },
+    "player-api-101814": {
+      "koreanName": "로날드 아라우호",
+      "englishName": "Ronald Araújo",
+      "sourceUrl": "https://namu.wiki/w/%EB%A1%9C%EB%82%A0%EB%93%9C%20%EC%95%84%EB%9D%BC%EC%9A%B0%ED%98%B8",
+      "matchScore": 0.99
+    },
+    "player-api-6716": {
+      "koreanName": "알렉시스 맥 알리스터",
+      "englishName": "Alexis Mac Allister",
+      "sourceUrl": "https://namu.wiki/w/%EC%95%8C%EB%A0%89%EC%8B%9C%EC%8A%A4%20%EB%A7%A5%20%EC%95%8C%EB%A6%AC%EC%8A%A4%ED%84%B0",
+      "matchScore": 0.828
+    },
+    "player-api-290": {
+      "koreanName": "버질 반 다이크",
+      "englishName": "Virgil van Dijk",
+      "sourceUrl": "https://namu.wiki/w/%EB%B2%84%EC%A7%88%20%EB%B0%98%20%EB%8B%A4%EC%9D%B4%ED%81%AC",
+      "matchScore": 0.762
+    },
+    "player-api-81573": {
+      "koreanName": "오마르 마르무시",
+      "englishName": "Omar Marmoush",
+      "sourceUrl": "https://namu.wiki/w/%EC%98%A4%EB%A7%88%EB%A5%B4%20%EB%A7%88%EB%A5%B4%EB%AC%B4%EC%8B%9C",
+      "matchScore": 1.0
+    },
+    "player-api-567": {
+      "koreanName": "후벵 디아스",
+      "englishName": "Rúben Dias",
+      "sourceUrl": "https://namu.wiki/w/%ED%9B%84%EB%B2%B5%20%EB%94%94%EC%95%84%EC%8A%A4",
+      "matchScore": 1.0
+    },
+    "player-api-41621": {
+      "koreanName": "마테우스 누네스",
+      "englishName": "Matheus Nunes",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%88%ED%85%8C%EC%9A%B0%EC%8A%A4%20%EB%88%84%EB%84%A4%EC%8A%A4",
+      "matchScore": 1.0
+    },
+    "player-api-161933": {
+      "koreanName": "니코 곤살레스",
+      "englishName": "Nico González",
+      "sourceUrl": "https://namu.wiki/w/%EB%8B%88%EC%BD%94%20%EA%B3%A4%EC%82%B4%EB%A0%88%EC%8A%A4",
+      "matchScore": 1.0
+    },
+    "player-api-67971": {
+      "koreanName": "마크 게히",
+      "englishName": "Marc Guéhi",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%88%ED%81%AC%20%EA%B2%8C%ED%9E%88",
+      "matchScore": 0.99
+    },
+    "player-api-631": {
+      "koreanName": "필 포든",
+      "englishName": "Phil Foden",
+      "sourceUrl": "https://namu.wiki/w/%ED%95%84%20%ED%8F%AC%EB%93%A0",
+      "matchScore": 0.99
+    },
+    "player-api-47296": {
+      "koreanName": "헤로니모 룰리",
+      "englishName": "Gerónimo Rulli",
+      "sourceUrl": "https://namu.wiki/w/%ED%97%A4%EB%A1%9C%EB%8B%88%EB%AA%A8%20%EB%A3%B0%EB%A6%AC",
+      "matchScore": 0.99
+    },
+    "player-api-460853": {
+      "koreanName": "제레미 몽가",
+      "englishName": "Jeremy Monga",
+      "sourceUrl": "https://namu.wiki/w/%EC%A0%9C%EB%A0%88%EB%AF%B8%20%EB%AA%BD%EA%B0%80",
+      "matchScore": 0.99
+    },
+    "player-api-414385": {
+      "koreanName": "클라우디오 에체베리",
+      "englishName": "Claudio Echeverri",
+      "sourceUrl": "https://namu.wiki/w/%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%94%94%EC%98%A4%20%EC%97%90%EC%B2%B4%EB%B2%A0%EB%A6%AC",
+      "matchScore": 0.99
+    },
+    "player-api-360114": {
+      "koreanName": "압두코디르 후사노프",
+      "englishName": "Abdukodir Khusanov",
+      "sourceUrl": "https://namu.wiki/w/%EC%95%95%EB%91%90%EC%BD%94%EB%94%94%EB%A5%B4%20%ED%9B%84%EC%82%AC%EB%85%B8%ED%94%84",
+      "matchScore": 0.99
+    },
+    "player-api-284230": {
+      "koreanName": "리코 루이스",
+      "englishName": "Rico Lewis",
+      "sourceUrl": "https://namu.wiki/w/%EB%A6%AC%EC%BD%94%20%EB%A3%A8%EC%9D%B4%EC%8A%A4",
+      "matchScore": 0.99
+    },
+    "player-api-2291": {
+      "koreanName": "마테오 코바치치",
+      "englishName": "Mateo Kovačić",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%88%ED%85%8C%EC%98%A4%20%EC%BD%94%EB%B0%94%EC%B9%98%EC%B9%98",
+      "matchScore": 0.99
+    },
+    "player-api-19281": {
+      "koreanName": "앙투안 세메뇨",
+      "englishName": "Antoine Semenyo",
+      "sourceUrl": "https://namu.wiki/w/%EC%95%99%ED%88%AC%EC%95%88%20%EC%84%B8%EB%A9%94%EB%87%A8",
+      "matchScore": 0.99
+    },
+    "player-api-19187": {
+      "koreanName": "잭 그릴리쉬",
+      "englishName": "Jack Grealish",
+      "sourceUrl": "https://namu.wiki/w/%EC%9E%AD%20%EA%B7%B8%EB%A6%B4%EB%A6%AC%EC%89%AC",
+      "matchScore": 0.99
+    },
+    "player-api-19012": {
+      "koreanName": "마커스 베티넬리",
+      "englishName": "Marcus Bettinelli",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%88%EC%BB%A4%EC%8A%A4%20%EB%B2%A0%ED%8B%B0%EB%84%AC%EB%A6%AC",
+      "matchScore": 0.99
+    },
+    "player-api-1622": {
+      "koreanName": "잔루이지 돈나룸마",
+      "englishName": "Gianluigi Donnarumma",
+      "sourceUrl": "https://namu.wiki/w/%EC%9E%94%EB%A3%A8%EC%9D%B4%EC%A7%80%20%EB%8F%88%EB%82%98%EB%A3%B8%EB%A7%88",
+      "matchScore": 0.99
+    },
+    "player-api-156477": {
+      "koreanName": "라얀 셰르키",
+      "englishName": "Rayan Cherki",
+      "sourceUrl": "https://namu.wiki/w/%EB%9D%BC%EC%96%80%20%EC%85%B0%EB%A5%B4%ED%82%A4",
+      "matchScore": 0.99
+    },
+    "player-api-1422": {
+      "koreanName": "제레미 도쿠",
+      "englishName": "Jérémy Doku",
+      "sourceUrl": "https://namu.wiki/w/%EC%A0%9C%EB%A0%88%EB%AF%B8%20%EB%8F%84%EC%BF%A0",
+      "matchScore": 0.99
+    },
+    "player-api-138908": {
+      "koreanName": "엘리엇 앤더슨",
+      "englishName": "Elliot Anderson",
+      "sourceUrl": "https://namu.wiki/w/%EC%97%98%EB%A6%AC%EC%97%87%20%EC%95%A4%EB%8D%94%EC%8A%A8",
+      "matchScore": 0.99
+    },
+    "player-api-129033": {
+      "koreanName": "요슈코 그바르디올",
+      "englishName": "Joško Gvardiol",
+      "sourceUrl": "https://namu.wiki/w/%EC%9A%94%EC%8A%88%EC%BD%94%20%EA%B7%B8%EB%B0%94%EB%A5%B4%EB%94%94%EC%98%AC",
+      "matchScore": 0.99
+    },
+    "player-api-1100": {
+      "koreanName": "엘링 홀란드",
+      "englishName": "Erling Haaland",
+      "sourceUrl": "https://namu.wiki/w/%EC%97%98%EB%A7%81%20%ED%99%80%EB%9E%80%EB%93%9C",
+      "matchScore": 0.99
+    },
+    "player-api-266657": {
+      "koreanName": "사비뉴",
+      "englishName": "Savinho",
+      "sourceUrl": "https://namu.wiki/w/%EC%82%AC%EB%B9%84%EB%89%B4",
+      "matchScore": 0.833
+    },
+    "player-api-21138": {
+      "koreanName": "라얀 아이트누리",
+      "englishName": "Rayan Aït-Nouri",
+      "sourceUrl": "https://namu.wiki/w/%EB%9D%BC%EC%96%80%20%EC%95%84%EC%9D%B4%ED%8A%B8%EB%88%84%EB%A6%AC",
+      "matchScore": 0.818
+    },
+    "player-api-307123": {
+      "koreanName": "니코 오라일리",
+      "englishName": "Nico O'Reilly",
+      "sourceUrl": "https://namu.wiki/w/%EB%8B%88%EC%BD%94%20%EC%98%A4%EB%9D%BC%EC%9D%BC%EB%A6%AC",
+      "matchScore": 0.783
+    },
+    "player-api-414359": {
+      "koreanName": "비토르 헤이스",
+      "englishName": "Vitor Reis",
+      "sourceUrl": "https://namu.wiki/w/%EB%B9%84%ED%86%A0%EB%A5%B4%20%ED%97%A4%EC%9D%B4%EC%8A%A4",
+      "matchScore": 0.737
+    },
+    "player-api-886": {
+      "koreanName": "디오구 달로",
+      "englishName": "Diogo Dalot",
+      "sourceUrl": "https://namu.wiki/w/%EB%94%94%EC%98%A4%EA%B5%AC%20%EB%8B%AC%EB%A1%9C",
+      "matchScore": 1.0
+    },
+    "player-api-305834": {
+      "koreanName": "안드레이 산투스",
+      "englishName": "Andrey Santos",
+      "sourceUrl": "https://namu.wiki/w/%EC%95%88%EB%93%9C%EB%A0%88%EC%9D%B4%20%EC%82%B0%ED%88%AC%EC%8A%A4",
+      "matchScore": 1.0
+    },
+    "player-api-2467": {
+      "koreanName": "리산드로 마르티네스",
+      "englishName": "Lisandro Martínez",
+      "sourceUrl": "https://namu.wiki/w/%EB%A6%AC%EC%82%B0%EB%93%9C%EB%A1%9C%20%EB%A7%88%EB%A5%B4%ED%8B%B0%EB%84%A4%EC%8A%A4",
+      "matchScore": 1.0
+    },
+    "player-api-1485": {
+      "koreanName": "브루노 페르난데스",
+      "englishName": "Bruno Fernandes",
+      "sourceUrl": "https://namu.wiki/w/%EB%B8%8C%EB%A3%A8%EB%85%B8%20%ED%8E%98%EB%A5%B4%EB%82%9C%EB%8D%B0%EC%8A%A4",
+      "matchScore": 1.0
+    },
+    "player-api-1165": {
+      "koreanName": "마테우스 쿠냐",
+      "englishName": "Matheus Cunha",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%88%ED%85%8C%EC%9A%B0%EC%8A%A4%20%EC%BF%A0%EB%83%90",
+      "matchScore": 1.0
+    },
+    "player-api-909": {
+      "koreanName": "마커스 래시포드",
+      "englishName": "Marcus Rashford",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%88%EC%BB%A4%EC%8A%A4%20%EB%9E%98%EC%8B%9C%ED%8F%AC%EB%93%9C",
+      "matchScore": 0.99
+    },
+    "player-api-891": {
+      "koreanName": "루크 쇼",
+      "englishName": "Luke Shaw",
+      "sourceUrl": "https://namu.wiki/w/%EB%A3%A8%ED%81%AC%20%EC%87%BC",
+      "matchScore": 0.99
+    },
+    "player-api-70100": {
+      "koreanName": "조슈아 지르크지",
+      "englishName": "Joshua Zirkzee",
+      "sourceUrl": "https://namu.wiki/w/%EC%A1%B0%EC%8A%88%EC%95%84%20%EC%A7%80%EB%A5%B4%ED%81%AC%EC%A7%80",
+      "matchScore": 0.99
+    },
+    "player-api-557462": {
+      "koreanName": "셰이 레이시",
+      "englishName": "Shea Lacey",
+      "sourceUrl": "https://namu.wiki/w/%EC%85%B0%EC%9D%B4%20%EB%A0%88%EC%9D%B4%EC%8B%9C",
+      "matchScore": 0.99
+    },
+    "player-api-557460": {
+      "koreanName": "타일러 플레처",
+      "englishName": "Tyler Fletcher",
+      "sourceUrl": "https://namu.wiki/w/%ED%83%80%EC%9D%BC%EB%9F%AC%20%ED%94%8C%EB%A0%88%EC%B2%98",
+      "matchScore": 0.99
+    },
+    "player-api-557391": {
+      "koreanName": "타이난 톰슨",
+      "englishName": "Tynan Thompson",
+      "sourceUrl": "https://namu.wiki/w/%ED%83%80%EC%9D%B4%EB%82%9C%20%ED%86%B0%EC%8A%A8",
+      "matchScore": 0.99
+    },
+    "player-api-545": {
+      "koreanName": "누사이르 마즈라위",
+      "englishName": "Noussair Mazraoui",
+      "sourceUrl": "https://namu.wiki/w/%EB%88%84%EC%82%AC%EC%9D%B4%EB%A5%B4%20%EB%A7%88%EC%A6%88%EB%9D%BC%EC%9C%84",
+      "matchScore": 0.99
+    },
+    "player-api-51494": {
+      "koreanName": "마누엘 우가르테",
+      "englishName": "Manuel Ugarte",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%88%EB%88%84%EC%97%98%20%EC%9A%B0%EA%B0%80%EB%A5%B4%ED%85%8C",
+      "matchScore": 0.99
+    },
+    "player-api-403064": {
+      "koreanName": "해리 애머스",
+      "englishName": "Harry Amass",
+      "sourceUrl": "https://namu.wiki/w/%ED%95%B4%EB%A6%AC%20%EC%95%A0%EB%A8%B8%EC%8A%A4",
+      "matchScore": 0.99
+    },
+    "player-api-402329": {
+      "koreanName": "에이든 헤븐",
+      "englishName": "Ayden Heaven",
+      "sourceUrl": "https://namu.wiki/w/%EC%97%90%EC%9D%B4%EB%93%A0%20%ED%97%A4%EB%B8%90",
+      "matchScore": 0.99
+    },
+    "player-api-383770": {
+      "koreanName": "잭 플레처",
+      "englishName": "Jack Fletcher",
+      "sourceUrl": "https://namu.wiki/w/%EC%9E%AD%20%ED%94%8C%EB%A0%88%EC%B2%98",
+      "matchScore": 0.99
+    },
+    "player-api-382452": {
+      "koreanName": "파트리크 도르구",
+      "englishName": "Patrick Dorgu",
+      "sourceUrl": "https://namu.wiki/w/%ED%8C%8C%ED%8A%B8%EB%A6%AC%ED%81%AC%20%EB%8F%84%EB%A5%B4%EA%B5%AC",
+      "matchScore": 0.99
+    },
+    "player-api-342970": {
+      "koreanName": "레니 요로",
+      "englishName": "Leny Yoro",
+      "sourceUrl": "https://namu.wiki/w/%EB%A0%88%EB%8B%88%20%EC%9A%94%EB%A1%9C",
+      "matchScore": 0.99
+    },
+    "player-api-2935": {
+      "koreanName": "해리 매과이어",
+      "englishName": "Harry Maguire",
+      "sourceUrl": "https://namu.wiki/w/%ED%95%B4%EB%A6%AC%20%EB%A7%A4%EA%B3%BC%EC%9D%B4%EC%96%B4",
+      "matchScore": 0.99
+    },
+    "player-api-2931": {
+      "koreanName": "톰 히튼",
+      "englishName": "Tom Heaton",
+      "sourceUrl": "https://namu.wiki/w/%ED%86%B0%20%ED%9E%88%ED%8A%BC",
+      "matchScore": 0.99
+    },
+    "player-api-2926": {
+      "koreanName": "유리 틸레만스",
+      "englishName": "Youri Tielemans",
+      "sourceUrl": "https://namu.wiki/w/%EC%9C%A0%EB%A6%AC%20%ED%8B%B8%EB%A0%88%EB%A7%8C%EC%8A%A4",
+      "matchScore": 0.99
+    },
+    "player-api-284322": {
+      "koreanName": "코비 마이누",
+      "englishName": "Kobbie Mainoo",
+      "sourceUrl": "https://namu.wiki/w/%EC%BD%94%EB%B9%84%20%EB%A7%88%EC%9D%B4%EB%88%84",
+      "matchScore": 0.99
+    },
+    "player-api-20589": {
+      "koreanName": "브라이언 음뵈모",
+      "englishName": "Bryan Mbeumo",
+      "sourceUrl": "https://namu.wiki/w/%EB%B8%8C%EB%9D%BC%EC%9D%B4%EC%96%B8%20%EC%9D%8C%EB%B5%88%EB%AA%A8",
+      "matchScore": 0.99
+    },
+    "player-api-19220": {
+      "koreanName": "메이슨 마운트",
+      "englishName": "Mason Mount",
+      "sourceUrl": "https://namu.wiki/w/%EB%A9%94%EC%9D%B4%EC%8A%A8%20%EB%A7%88%EC%9A%B4%ED%8A%B8",
+      "matchScore": 0.99
+    },
+    "player-api-18885": {
+      "koreanName": "칼 달로우",
+      "englishName": "Karl Darlow",
+      "sourceUrl": "https://namu.wiki/w/%EC%B9%BC%20%EB%8B%AC%EB%A1%9C%EC%9A%B0",
+      "matchScore": 0.99
+    },
+    "player-api-162511": {
+      "koreanName": "센느 라먼스",
+      "englishName": "Senne Lammens",
+      "sourceUrl": "https://namu.wiki/w/%EC%84%BC%EB%8A%90%20%EB%9D%BC%EB%A8%BC%EC%8A%A4",
+      "matchScore": 0.99
+    },
+    "player-api-157997": {
+      "koreanName": "아마드 디알로",
+      "englishName": "Amad Diallo",
+      "sourceUrl": "https://namu.wiki/w/%EC%95%84%EB%A7%88%EB%93%9C%20%EB%94%94%EC%95%8C%EB%A1%9C",
+      "matchScore": 0.99
+    },
+    "player-api-115589": {
+      "koreanName": "베냐민 셰슈코",
+      "englishName": "Benjamin Šeško",
+      "sourceUrl": "https://namu.wiki/w/%EB%B2%A0%EB%83%90%EB%AF%BC%20%EC%85%B0%EC%8A%88%EC%BD%94",
+      "matchScore": 0.99
+    },
+    "player-api-303010": {
+      "koreanName": "대니얼 고어",
+      "englishName": "Danial Gore",
+      "sourceUrl": "https://namu.wiki/w/%EB%8C%80%EB%8B%88%EC%96%BC%20%EA%B3%A0%EC%96%B4",
+      "matchScore": 0.9
+    },
+    "player-api-362270": {
+      "koreanName": "에단 휘틀리",
+      "englishName": "Ethan Wheathley",
+      "sourceUrl": "https://namu.wiki/w/%EC%97%90%EB%8B%A8%20%ED%9C%98%ED%8B%80%EB%A6%AC",
+      "matchScore": 0.783
+    },
+    "player-api-284382": {
+      "koreanName": "더멋 미",
+      "englishName": "Dermot Mee",
+      "sourceUrl": "https://namu.wiki/w/%EB%8D%94%EB%A9%8B%20%EB%AF%B8",
+      "matchScore": 0.72
+    },
+    "player-api-723": {
+      "koreanName": "조엘린통",
+      "englishName": "Joelinton",
+      "sourceUrl": "https://namu.wiki/w/%EC%A1%B0%EC%97%98%EB%A6%B0%ED%86%B5",
+      "matchScore": 1.0
+    },
+    "player-api-469321": {
+      "koreanName": "숀 스퇴르",
+      "englishName": "Sean Steur",
+      "sourceUrl": "https://namu.wiki/w/%EC%88%80%20%EC%8A%A4%ED%87%B4%EB%A5%B4",
+      "matchScore": 1.0
+    },
+    "player-api-453792": {
+      "koreanName": "알라지 밤바",
+      "englishName": "Aladji Bamba",
+      "sourceUrl": "https://namu.wiki/w/%EC%95%8C%EB%9D%BC%EC%A7%80%20%EB%B0%A4%EB%B0%94",
+      "matchScore": 0.99
+    },
+    "player-api-44912": {
+      "koreanName": "마크 길레스피",
+      "englishName": "Mark Gillespie",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%88%ED%81%AC%20%EA%B8%B8%EB%A0%88%EC%8A%A4%ED%94%BC",
+      "matchScore": 0.99
+    },
+    "player-api-387643": {
+      "koreanName": "바주마나 투레",
+      "englishName": "Bazoumana Touré",
+      "sourceUrl": "https://namu.wiki/w/%EB%B0%94%EC%A3%BC%EB%A7%88%EB%82%98%20%ED%88%AC%EB%A0%88",
+      "matchScore": 0.99
+    },
+    "player-api-38734": {
+      "koreanName": "스벤 보트만",
+      "englishName": "Sven Botman",
+      "sourceUrl": "https://namu.wiki/w/%EC%8A%A4%EB%B2%A4%20%EB%B3%B4%ED%8A%B8%EB%A7%8C",
+      "matchScore": 0.99
+    },
+    "player-api-329640": {
+      "koreanName": "에웬 자우앙",
+      "englishName": "Ewen Jaouen",
+      "sourceUrl": "https://namu.wiki/w/%EC%97%90%EC%9B%AC%20%EC%9E%90%EC%9A%B0%EC%95%99",
+      "matchScore": 0.99
+    },
+    "player-api-328105": {
+      "koreanName": "루이스 마일리",
+      "englishName": "Lewis Miley",
+      "sourceUrl": "https://namu.wiki/w/%EB%A3%A8%EC%9D%B4%EC%8A%A4%20%EB%A7%88%EC%9D%BC%EB%A6%AC",
+      "matchScore": 0.99
+    },
+    "player-api-315237": {
+      "koreanName": "윌리엄 오술라",
+      "englishName": "William Osula",
+      "sourceUrl": "https://namu.wiki/w/%EC%9C%8C%EB%A6%AC%EC%97%84%20%EC%98%A4%EC%88%A0%EB%9D%BC",
+      "matchScore": 0.99
+    },
+    "player-api-284492": {
+      "koreanName": "루이스 홀",
+      "englishName": "Lewis Hall",
+      "sourceUrl": "https://namu.wiki/w/%EB%A3%A8%EC%9D%B4%EC%8A%A4%20%ED%99%80",
+      "matchScore": 0.99
+    },
+    "player-api-2806": {
+      "koreanName": "파비안 셰어",
+      "englishName": "Fabian Schär",
+      "sourceUrl": "https://namu.wiki/w/%ED%8C%8C%EB%B9%84%EC%95%88%20%EC%85%B0%EC%96%B4",
+      "matchScore": 0.99
+    },
+    "player-api-269349": {
+      "koreanName": "루카시 호르니첵",
+      "englishName": "Lukáš Horníček",
+      "sourceUrl": "https://namu.wiki/w/%EB%A3%A8%EC%B9%B4%EC%8B%9C%20%ED%98%B8%EB%A5%B4%EB%8B%88%EC%B2%B5",
+      "matchScore": 0.99
+    },
+    "player-api-20649": {
+      "koreanName": "요안 위사",
+      "englishName": "Yoane Wissa",
+      "sourceUrl": "https://namu.wiki/w/%EC%9A%94%EC%95%88%20%EC%9C%84%EC%82%AC",
+      "matchScore": 0.99
+    },
+    "player-api-19192": {
+      "koreanName": "제이콥 램지",
+      "englishName": "Jacob Ramsey",
+      "sourceUrl": "https://namu.wiki/w/%EC%A0%9C%EC%9D%B4%EC%BD%A5%20%EB%9E%A8%EC%A7%80",
+      "matchScore": 0.99
+    },
+    "player-api-18911": {
+      "koreanName": "닉 포프",
+      "englishName": "Nick Pope",
+      "sourceUrl": "https://namu.wiki/w/%EB%8B%89%20%ED%8F%AC%ED%94%84",
+      "matchScore": 0.99
+    },
+    "player-api-18778": {
+      "koreanName": "하비 반스",
+      "englishName": "Harvey Barnes",
+      "sourceUrl": "https://namu.wiki/w/%ED%95%98%EB%B9%84%20%EB%B0%98%EC%8A%A4",
+      "matchScore": 0.99
+    },
+    "player-api-163189": {
+      "koreanName": "말릭 치아우",
+      "englishName": "Malick Thiaw",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%90%EB%A6%AD%20%EC%B9%98%EC%95%84%EC%9A%B0",
+      "matchScore": 0.99
+    },
+    "player-api-158694": {
+      "koreanName": "티노 리브라멘토",
+      "englishName": "Tino Livramento",
+      "sourceUrl": "https://namu.wiki/w/%ED%8B%B0%EB%85%B8%20%EB%A6%AC%EB%B8%8C%EB%9D%BC%EB%A9%98%ED%86%A0",
+      "matchScore": 0.99
+    },
+    "player-api-153430": {
+      "koreanName": "안토니 엘랑가",
+      "englishName": "Anthony Elanga",
+      "sourceUrl": "https://namu.wiki/w/%EC%95%88%ED%86%A0%EB%8B%88%20%EC%97%98%EB%9E%91%EA%B0%80",
+      "matchScore": 0.99
+    },
+    "player-api-1463": {
+      "koreanName": "조 윌록",
+      "englishName": "Joe Willock",
+      "sourceUrl": "https://namu.wiki/w/%EC%A1%B0%20%EC%9C%8C%EB%A1%9D",
+      "matchScore": 0.99
+    },
+    "player-api-158054": {
+      "koreanName": "닉 볼테마데",
+      "englishName": "Nick Woltdmade",
+      "sourceUrl": "https://namu.wiki/w/%EB%8B%89%20%EB%B3%BC%ED%85%8C%EB%A7%88%EB%8D%B0",
+      "matchScore": 0.783
+    },
+    "player-api-9366": {
+      "koreanName": "이고르 제주스",
+      "englishName": "Igor Jesus",
+      "sourceUrl": "https://namu.wiki/w/%EC%9D%B4%EA%B3%A0%EB%A5%B4%20%EC%A0%9C%EC%A3%BC%EC%8A%A4",
+      "matchScore": 1.0
+    },
+    "player-api-67943": {
+      "koreanName": "모라투",
+      "englishName": "Morato",
+      "sourceUrl": "https://namu.wiki/w/%EB%AA%A8%EB%9D%BC%ED%88%AC",
+      "matchScore": 1.0
+    },
+    "player-api-363695": {
+      "koreanName": "무릴루",
+      "englishName": "Murillo",
+      "sourceUrl": "https://namu.wiki/w/%EB%AC%B4%EB%A6%B4%EB%A3%A8",
+      "matchScore": 1.0
+    },
+    "player-api-8598": {
+      "koreanName": "타이워 아워니이",
+      "englishName": "Taiwo Awoniyi",
+      "sourceUrl": "https://namu.wiki/w/%ED%83%80%EC%9D%B4%EC%9B%8C%20%EC%95%84%EC%9B%8C%EB%8B%88%EC%9D%B4",
+      "matchScore": 0.99
+    },
+    "player-api-6056": {
+      "koreanName": "니콜라스 도밍게스",
+      "englishName": "Nicolás Domínguez",
+      "sourceUrl": "https://namu.wiki/w/%EB%8B%88%EC%BD%9C%EB%9D%BC%EC%8A%A4%20%EB%8F%84%EB%B0%8D%EA%B2%8C%EC%8A%A4",
+      "matchScore": 0.99
+    },
+    "player-api-48648": {
+      "koreanName": "단 은도이",
+      "englishName": "Dan Ndoye",
+      "sourceUrl": "https://namu.wiki/w/%EB%8B%A8%20%EC%9D%80%EB%8F%84%EC%9D%B4",
+      "matchScore": 0.99
+    },
+    "player-api-329357": {
+      "koreanName": "자크 애보트",
+      "englishName": "Zach Abbott",
+      "sourceUrl": "https://namu.wiki/w/%EC%9E%90%ED%81%AC%20%EC%95%A0%EB%B3%B4%ED%8A%B8",
+      "matchScore": 0.99
+    },
+    "player-api-2919": {
+      "koreanName": "마츠 셀스",
+      "englishName": "Matz Sels",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%88%EC%B8%A0%20%EC%85%80%EC%8A%A4",
+      "matchScore": 0.99
+    },
+    "player-api-284428": {
+      "koreanName": "오마리 허친슨",
+      "englishName": "Omari Hutchinson",
+      "sourceUrl": "https://namu.wiki/w/%EC%98%A4%EB%A7%88%EB%A6%AC%20%ED%97%88%EC%B9%9C%EC%8A%A8",
+      "matchScore": 0.99
+    },
+    "player-api-2817": {
+      "koreanName": "니콜라 밀렌코비치",
+      "englishName": "Nikola Milenković",
+      "sourceUrl": "https://namu.wiki/w/%EB%8B%88%EC%BD%9C%EB%9D%BC%20%EB%B0%80%EB%A0%8C%EC%BD%94%EB%B9%84%EC%B9%98",
+      "matchScore": 0.99
+    },
+    "player-api-2771": {
+      "koreanName": "올라 아이나",
+      "englishName": "Ola Aina",
+      "sourceUrl": "https://namu.wiki/w/%EC%98%AC%EB%9D%BC%20%EC%95%84%EC%9D%B4%EB%82%98",
+      "matchScore": 0.99
+    },
+    "player-api-22149": {
+      "koreanName": "이브라힘 상가레",
+      "englishName": "Ibrahim Sangaré",
+      "sourceUrl": "https://namu.wiki/w/%EC%9D%B4%EB%B8%8C%EB%9D%BC%ED%9E%98%20%EC%83%81%EA%B0%80%EB%A0%88",
+      "matchScore": 0.99
+    },
+    "player-api-19305": {
+      "koreanName": "라이언 예이츠",
+      "englishName": "Ryan Yates",
+      "sourceUrl": "https://namu.wiki/w/%EB%9D%BC%EC%9D%B4%EC%96%B8%20%EC%98%88%EC%9D%B4%EC%B8%A0",
+      "matchScore": 0.99
+    },
+    "player-api-18931": {
+      "koreanName": "크리스 우드",
+      "englishName": "Chris Wood",
+      "sourceUrl": "https://namu.wiki/w/%ED%81%AC%EB%A6%AC%EC%8A%A4%20%EC%9A%B0%EB%93%9C",
+      "matchScore": 0.99
+    },
+    "player-api-158697": {
+      "koreanName": "제임스 매카티",
+      "englishName": "James McAtee",
+      "sourceUrl": "https://namu.wiki/w/%EC%A0%9C%EC%9E%84%EC%8A%A4%20%EB%A7%A4%EC%B9%B4%ED%8B%B0",
+      "matchScore": 0.99
+    },
+    "player-api-147831": {
+      "koreanName": "아르노 칼리뮈앙도",
+      "englishName": "Arnaud Kalimuendo",
+      "sourceUrl": "https://namu.wiki/w/%EC%95%84%EB%A5%B4%EB%85%B8%20%EC%B9%BC%EB%A6%AC%EB%AE%88%EC%95%99%EB%8F%84",
+      "matchScore": 0.99
+    },
+    "player-api-138780": {
+      "koreanName": "니코 윌리엄스",
+      "englishName": "Neco Williams",
+      "sourceUrl": "https://namu.wiki/w/%EB%8B%88%EC%BD%94%20%EC%9C%8C%EB%A6%AC%EC%97%84%EC%8A%A4",
+      "matchScore": 0.99
+    },
+    "player-api-362711": {
+      "koreanName": "자이르 쿠냐",
+      "englishName": "Jair Cunha",
+      "sourceUrl": "https://namu.wiki/w/%EC%9E%90%EC%9D%B4%EB%A5%B4%20%EC%BF%A0%EB%83%90",
+      "matchScore": 0.94
+    },
+    "player-api-380492": {
+      "koreanName": "에릭 다실바 모레이라",
+      "englishName": "Eric Da Silva Moreira",
+      "sourceUrl": "https://namu.wiki/w/%EC%97%90%EB%A6%AD%20%EB%8B%A4%EC%8B%A4%EB%B0%94%20%EB%AA%A8%EB%A0%88%EC%9D%B4%EB%9D%BC",
+      "matchScore": 0.837
+    },
+    "player-api-2298": {
+      "koreanName": "칼럼 허드슨오도이",
+      "englishName": "Callum Hudson-Odoi",
+      "sourceUrl": "https://namu.wiki/w/%EC%B9%BC%EB%9F%BC%20%ED%97%88%EB%93%9C%EC%8A%A8%EC%98%A4%EB%8F%84%EC%9D%B4",
+      "matchScore": 0.815
+    },
+    "player-api-18746": {
+      "koreanName": "모건 깁스화이트",
+      "englishName": "Morgan Gibbs-White",
+      "sourceUrl": "https://namu.wiki/w/%EB%AA%A8%EA%B1%B4%20%EA%B9%81%EC%8A%A4%ED%99%94%EC%9D%B4%ED%8A%B8",
+      "matchScore": 0.815
+    },
+    "player-api-84087": {
+      "koreanName": "윌손 이지도르",
+      "englishName": "Wilson Isidor",
+      "sourceUrl": "https://namu.wiki/w/%EC%9C%8C%EC%86%90%20%EC%9D%B4%EC%A7%80%EB%8F%84%EB%A5%B4",
+      "matchScore": 0.99
+    },
+    "player-api-6168": {
+      "koreanName": "오마르 알데레테",
+      "englishName": "Omar Alderete",
+      "sourceUrl": "https://namu.wiki/w/%EC%98%A4%EB%A7%88%EB%A5%B4%20%EC%95%8C%EB%8D%B0%EB%A0%88%ED%85%8C",
+      "matchScore": 0.99
+    },
+    "player-api-55904": {
+      "koreanName": "다니엘 발라드",
+      "englishName": "Daniel Ballard",
+      "sourceUrl": "https://namu.wiki/w/%EB%8B%A4%EB%8B%88%EC%97%98%20%EB%B0%9C%EB%9D%BC%EB%93%9C",
+      "matchScore": 0.99
+    },
+    "player-api-38750": {
+      "koreanName": "브라이언 브로비",
+      "englishName": "Brian Brobbey",
+      "sourceUrl": "https://namu.wiki/w/%EB%B8%8C%EB%9D%BC%EC%9D%B4%EC%96%B8%20%EB%B8%8C%EB%A1%9C%EB%B9%84",
+      "matchScore": 0.99
+    },
+    "player-api-365331": {
+      "koreanName": "노아 사디키",
+      "englishName": "Noah Sadiki",
+      "sourceUrl": "https://namu.wiki/w/%EB%85%B8%EC%95%84%20%EC%82%AC%EB%94%94%ED%82%A4",
+      "matchScore": 0.99
+    },
+    "player-api-339201": {
+      "koreanName": "크리스 리그",
+      "englishName": "Chris Rigg",
+      "sourceUrl": "https://namu.wiki/w/%ED%81%AC%EB%A6%AC%EC%8A%A4%20%EB%A6%AC%EA%B7%B8",
+      "matchScore": 0.99
+    },
+    "player-api-336659": {
+      "koreanName": "솀스딘 탈비",
+      "englishName": "Chemsdine Talbi",
+      "sourceUrl": "https://namu.wiki/w/%EC%86%80%EC%8A%A4%EB%94%98%20%ED%83%88%EB%B9%84",
+      "matchScore": 0.99
+    },
+    "player-api-327631": {
+      "koreanName": "하비브 디아라",
+      "englishName": "Habib Diarra",
+      "sourceUrl": "https://namu.wiki/w/%ED%95%98%EB%B9%84%EB%B8%8C%20%EB%94%94%EC%95%84%EB%9D%BC",
+      "matchScore": 0.99
+    },
+    "player-api-311543": {
+      "koreanName": "닐손 앙굴로",
+      "englishName": "Nilson Angulo",
+      "sourceUrl": "https://namu.wiki/w/%EB%8B%90%EC%86%90%20%EC%95%99%EA%B5%B4%EB%A1%9C",
+      "matchScore": 0.99
+    },
+    "player-api-301771": {
+      "koreanName": "시몬 아딩그라",
+      "englishName": "Simon Adingra",
+      "sourceUrl": "https://namu.wiki/w/%EC%8B%9C%EB%AA%AC%20%EC%95%84%EB%94%A9%EA%B7%B8%EB%9D%BC",
+      "matchScore": 0.99
+    },
+    "player-api-290545": {
+      "koreanName": "젠슨 세일트",
+      "englishName": "Jenson Seelt",
+      "sourceUrl": "https://namu.wiki/w/%EC%A0%A0%EC%8A%A8%20%EC%84%B8%EC%9D%BC%ED%8A%B8",
+      "matchScore": 0.99
+    },
+    "player-api-284414": {
+      "koreanName": "로메인 먼들",
+      "englishName": "Romaine Mundle",
+      "sourceUrl": "https://namu.wiki/w/%EB%A1%9C%EB%A9%94%EC%9D%B8%20%EB%A8%BC%EB%93%A4",
+      "matchScore": 0.99
+    },
+    "player-api-278454": {
+      "koreanName": "멜케르 엘보리",
+      "englishName": "Melker Ellborg",
+      "sourceUrl": "https://namu.wiki/w/%EB%A9%9C%EC%BC%80%EB%A5%B4%20%EC%97%98%EB%B3%B4%EB%A6%AC",
+      "matchScore": 0.99
+    },
+    "player-api-194536": {
+      "koreanName": "로빈 루프스",
+      "englishName": "Robin Roefs",
+      "sourceUrl": "https://namu.wiki/w/%EB%A1%9C%EB%B9%88%20%EB%A3%A8%ED%94%84%EC%8A%A4",
+      "matchScore": 0.99
+    },
+    "player-api-19089": {
+      "koreanName": "사이먼 무어",
+      "englishName": "Simon Moore",
+      "sourceUrl": "https://namu.wiki/w/%EC%82%AC%EC%9D%B4%EB%A8%BC%20%EB%AC%B4%EC%96%B4",
+      "matchScore": 0.99
+    },
+    "player-api-1464": {
+      "koreanName": "그라니트 자카",
+      "englishName": "Granit Xhaka",
+      "sourceUrl": "https://namu.wiki/w/%EA%B7%B8%EB%9D%BC%EB%8B%88%ED%8A%B8%20%EC%9E%90%EC%B9%B4",
+      "matchScore": 0.99
+    },
+    "player-api-119121": {
+      "koreanName": "트라이 흄",
+      "englishName": "Trai Hume",
+      "sourceUrl": "https://namu.wiki/w/%ED%8A%B8%EB%9D%BC%EC%9D%B4%20%ED%9D%84",
+      "matchScore": 0.99
+    },
+    "player-api-1146": {
+      "koreanName": "노르디 무키엘레",
+      "englishName": "Nordi Mukiele",
+      "sourceUrl": "https://namu.wiki/w/%EB%85%B8%EB%A5%B4%EB%94%94%20%EB%AC%B4%ED%82%A4%EC%97%98%EB%A0%88",
+      "matchScore": 0.99
+    },
+    "player-api-22225": {
+      "koreanName": "헤이닐두 만다바",
+      "englishName": "Reinildo Mandava",
+      "sourceUrl": "https://namu.wiki/w/%ED%97%A4%EC%9D%B4%EB%8B%90%EB%91%90%20%EB%A7%8C%EB%8B%A4%EB%B0%94",
+      "matchScore": 0.94
+    },
+    "player-api-20638": {
+      "koreanName": "엔조 르페",
+      "englishName": "Enzo Le Fée",
+      "sourceUrl": "https://namu.wiki/w/%EC%97%94%EC%A1%B0%20%EB%A5%B4%ED%8E%98",
+      "matchScore": 0.8
+    },
+    "player-api-47519": {
+      "koreanName": "페드로 포로",
+      "englishName": "Pedro Porro",
+      "sourceUrl": "https://namu.wiki/w/%ED%8E%98%EB%93%9C%EB%A1%9C%20%ED%8F%AC%EB%A1%9C",
+      "matchScore": 1.0
+    },
+    "player-api-414455": {
+      "koreanName": "소우자",
+      "englishName": "Souza",
+      "sourceUrl": "https://namu.wiki/w/%EC%A3%BC%EC%95%99%20%EB%B9%85%ED%86%A0%EB%A5%B4%20%EC%86%8C%EC%9A%B0%EC%9E%90",
+      "matchScore": 1.0
+    },
+    "player-api-336585": {
+      "koreanName": "마테우스 페르난데스",
+      "englishName": "Mateus Fernandes",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%88%ED%85%8C%EC%9A%B0%EC%8A%A4%20%ED%8E%98%EB%A5%B4%EB%82%9C%EB%8D%B0%EC%8A%A4",
+      "matchScore": 1.0
+    },
+    "player-api-2413": {
+      "koreanName": "히샬리송",
+      "englishName": "Richarlison",
+      "sourceUrl": "https://namu.wiki/w/%ED%9E%88%EC%83%AC%EB%A6%AC%EC%86%A1",
+      "matchScore": 1.0
+    },
+    "player-api-863": {
+      "koreanName": "로드리고 벤탄쿠르",
+      "englishName": "Rodrigo Bentancur",
+      "sourceUrl": "https://namu.wiki/w/%EB%A1%9C%EB%93%9C%EB%A6%AC%EA%B3%A0%20%EB%B2%A4%ED%83%84%EC%BF%A0%EB%A5%B4",
+      "matchScore": 0.99
+    },
+    "player-api-67972": {
+      "koreanName": "코너 갤러거",
+      "englishName": "Conor Gallagher",
+      "sourceUrl": "https://namu.wiki/w/%EC%BD%94%EB%84%88%20%EA%B0%A4%EB%9F%AC%EA%B1%B0",
+      "matchScore": 0.99
+    },
+    "player-api-6610": {
+      "koreanName": "마르코스 세네시",
+      "englishName": "Marcos Senesi",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%88%EB%A5%B4%EC%BD%94%EC%8A%A4%20%EC%84%B8%EB%84%A4%EC%8B%9C",
+      "matchScore": 0.99
+    },
+    "player-api-347316": {
+      "koreanName": "루카스 베리발",
+      "englishName": "Lucas Bergvall",
+      "sourceUrl": "https://namu.wiki/w/%EB%A3%A8%EC%B9%B4%EC%8A%A4%20%EB%B2%A0%EB%A6%AC%EB%B0%9C",
+      "matchScore": 0.99
+    },
+    "player-api-337593": {
+      "koreanName": "타카이 코타",
+      "englishName": "Kōta Takai",
+      "sourceUrl": "https://namu.wiki/w/%ED%83%80%EC%B9%B4%EC%9D%B4%20%EC%BD%94%ED%83%80",
+      "matchScore": 0.99
+    },
+    "player-api-328089": {
+      "koreanName": "아치 그레이",
+      "englishName": "Archie Gray",
+      "sourceUrl": "https://namu.wiki/w/%EC%95%84%EC%B9%98%20%EA%B7%B8%EB%A0%88%EC%9D%B4",
+      "matchScore": 0.99
+    },
+    "player-api-31354": {
+      "koreanName": "굴리엘모 비카리오",
+      "englishName": "Guglielmo Vicario",
+      "sourceUrl": "https://namu.wiki/w/%EA%B5%B4%EB%A6%AC%EC%97%98%EB%AA%A8%20%EB%B9%84%EC%B9%B4%EB%A6%AC%EC%98%A4",
+      "matchScore": 0.99
+    },
+    "player-api-31146": {
+      "koreanName": "산드로 토날리",
+      "englishName": "Sandro Tonali",
+      "sourceUrl": "https://namu.wiki/w/%EC%82%B0%EB%93%9C%EB%A1%9C%20%ED%86%A0%EB%82%A0%EB%A6%AC",
+      "matchScore": 0.99
+    },
+    "player-api-289": {
+      "koreanName": "앤디 로버트슨",
+      "englishName": "Andy Robertson",
+      "sourceUrl": "https://namu.wiki/w/%EC%95%A4%EB%94%94%20%EB%A1%9C%EB%B2%84%ED%8A%B8%EC%8A%A8",
+      "matchScore": 0.99
+    },
+    "player-api-270510": {
+      "koreanName": "마티스 텔",
+      "englishName": "Mathys Tel",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%88%ED%8B%B0%EC%8A%A4%20%ED%85%94",
+      "matchScore": 0.99
+    },
+    "player-api-265826": {
+      "koreanName": "안토닌 킨스키",
+      "englishName": "Antonín Kinský",
+      "sourceUrl": "https://namu.wiki/w/%EC%95%88%ED%86%A0%EB%8B%8C%20%ED%82%A8%EC%8A%A4%ED%82%A4",
+      "matchScore": 0.99
+    },
+    "player-api-25287": {
+      "koreanName": "케빈 단소",
+      "englishName": "Kevin Danso",
+      "sourceUrl": "https://namu.wiki/w/%EC%BC%80%EB%B9%88%20%EB%8B%A8%EC%86%8C",
+      "matchScore": 0.99
+    },
+    "player-api-237129": {
+      "koreanName": "파페 마타르 사르",
+      "englishName": "Pape Matar Sarr",
+      "sourceUrl": "https://namu.wiki/w/%ED%8C%8C%ED%8E%98%20%EB%A7%88%ED%83%80%EB%A5%B4%20%EC%82%AC%EB%A5%B4",
+      "matchScore": 0.99
+    },
+    "player-api-204039": {
+      "koreanName": "데스티니 우도기",
+      "englishName": "Destiny Udogie",
+      "sourceUrl": "https://namu.wiki/w/%EB%8D%B0%EC%8A%A4%ED%8B%B0%EB%8B%88%20%EC%9A%B0%EB%8F%84%EA%B8%B0",
+      "matchScore": 0.99
+    },
+    "player-api-18886": {
+      "koreanName": "마르틴 두브라브카",
+      "englishName": "Martin Dúbravka",
+      "sourceUrl": "https://namu.wiki/w/%EB%A7%88%EB%A5%B4%ED%8B%B4%20%EB%91%90%EB%B8%8C%EB%9D%BC%EB%B8%8C%EC%B9%B4",
+      "matchScore": 0.99
+    },
+    "player-api-18883": {
+      "koreanName": "도미닉 솔랑케",
+      "englishName": "Dominic Solanke",
+      "sourceUrl": "https://namu.wiki/w/%EB%8F%84%EB%AF%B8%EB%8B%89%20%EC%86%94%EB%9E%91%EC%BC%80",
+      "matchScore": 0.99
+    },
+    "player-api-18784": {
+      "koreanName": "제임스 매디슨",
+      "englishName": "James Maddison",
+      "sourceUrl": "https://namu.wiki/w/%EC%A0%9C%EC%9E%84%EC%8A%A4%20%EB%A7%A4%EB%94%94%EC%8A%A8(1996)",
+      "matchScore": 0.99
+    },
+    "player-api-164": {
+      "koreanName": "벤 데이비스",
+      "englishName": "Ben Davies",
+      "sourceUrl": "https://namu.wiki/w/%EB%B2%A4%20%EB%8D%B0%EC%9D%B4%EB%B9%84%EC%8A%A4",
+      "matchScore": 0.99
+    },
+    "player-api-162552": {
+      "koreanName": "데인 스칼렛",
+      "englishName": "Dane Scarlett",
+      "sourceUrl": "https://namu.wiki/w/%EB%8D%B0%EC%9D%B8%20%EC%8A%A4%EC%B9%BC%EB%A0%9B",
+      "matchScore": 0.99
+    },
+    "player-api-162016": {
+      "koreanName": "사비 시몬스",
+      "englishName": "Xavi Simons",
+      "sourceUrl": "https://namu.wiki/w/%EC%82%AC%EB%B9%84%20%EC%8B%9C%EB%AA%AC%EC%8A%A4",
+      "matchScore": 0.99
+    },
+    "player-api-156428": {
+      "koreanName": "브랜던 오스틴",
+      "englishName": "Brandon Austin",
+      "sourceUrl": "https://namu.wiki/w/%EB%B8%8C%EB%9E%9C%EB%8D%98%20%EC%98%A4%EC%8A%A4%ED%8B%B4",
+      "matchScore": 0.99
+    },
+    "player-api-152849": {
+      "koreanName": "미키 판더펜",
+      "englishName": "Micky van de Ven",
+      "sourceUrl": "https://namu.wiki/w/%EB%AF%B8%ED%82%A4%20%ED%8C%90%EB%8D%94%ED%8E%9C",
+      "matchScore": 0.818
+    },
+    "player-api-38695": {
+      "koreanName": "얀 폴 반 헤케",
+      "englishName": "Jan Paul van Hecke",
+      "sourceUrl": "https://namu.wiki/w/%EC%96%80%20%ED%8F%B4%20%EB%B0%98%20%ED%97%A4%EC%BC%80",
+      "matchScore": 0.75
+    }
+  }
+}
