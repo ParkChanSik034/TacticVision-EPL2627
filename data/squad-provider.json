@@ -1,0 +1,135 @@
+{
+  "schemaVersion": "1.0.0",
+  "asOf": "2026-08-24T10:13:12Z",
+  "sourceId": "api-football",
+  "sourceUrl": "https://www.api-football.com/",
+  "usage": "current-team-squad-registration",
+  "limitations": [
+    "The endpoint supplies broad positions rather than detailed tactical positions.",
+    "Nationality, height, and preferred foot require a separate verified enrichment source.",
+    "The default XI is a TacticVision provisional positional selection, not a match lineup."
+  ],
+  "teams": {
+    "arsenal": {
+      "canonicalTeamId": "arsenal",
+      "providerTeamId": 42,
+      "providerName": "Arsenal",
+      "playerCount": 36
+    },
+    "astonvilla": {
+      "canonicalTeamId": "astonvilla",
+      "providerTeamId": 66,
+      "providerName": "Aston Villa",
+      "playerCount": 36
+    },
+    "bournemouth": {
+      "canonicalTeamId": "bournemouth",
+      "providerTeamId": 35,
+      "providerName": "Bournemouth",
+      "playerCount": 33
+    },
+    "brentford": {
+      "canonicalTeamId": "brentford",
+      "providerTeamId": 55,
+      "providerName": "Brentford",
+      "playerCount": 32
+    },
+    "brighton": {
+      "canonicalTeamId": "brighton",
+      "providerTeamId": 51,
+      "providerName": "Brighton",
+      "playerCount": 30
+    },
+    "chelsea": {
+      "canonicalTeamId": "chelsea",
+      "providerTeamId": 49,
+      "providerName": "Chelsea",
+      "playerCount": 44
+    },
+    "coventry": {
+      "canonicalTeamId": "coventry",
+      "providerTeamId": 1346,
+      "providerName": "Coventry",
+      "playerCount": 28
+    },
+    "crystalpalace": {
+      "canonicalTeamId": "crystalpalace",
+      "providerTeamId": 52,
+      "providerName": "Crystal Palace",
+      "playerCount": 35
+    },
+    "everton": {
+      "canonicalTeamId": "everton",
+      "providerTeamId": 45,
+      "providerName": "Everton",
+      "playerCount": 30
+    },
+    "fulham": {
+      "canonicalTeamId": "fulham",
+      "providerTeamId": 36,
+      "providerName": "Fulham",
+      "playerCount": 28
+    },
+    "hullcity": {
+      "canonicalTeamId": "hullcity",
+      "providerTeamId": 64,
+      "providerName": "Hull City",
+      "playerCount": 35
+    },
+    "ipswich": {
+      "canonicalTeamId": "ipswich",
+      "providerTeamId": 57,
+      "providerName": "Ipswich",
+      "playerCount": 29
+    },
+    "leeds": {
+      "canonicalTeamId": "leeds",
+      "providerTeamId": 63,
+      "providerName": "Leeds",
+      "playerCount": 32
+    },
+    "liverpool": {
+      "canonicalTeamId": "liverpool",
+      "providerTeamId": 40,
+      "providerName": "Liverpool",
+      "playerCount": 36
+    },
+    "mancity": {
+      "canonicalTeamId": "mancity",
+      "providerTeamId": 50,
+      "providerName": "Manchester City",
+      "playerCount": 31
+    },
+    "manutd": {
+      "canonicalTeamId": "manutd",
+      "providerTeamId": 33,
+      "providerName": "Manchester United",
+      "playerCount": 39
+    },
+    "newcastle": {
+      "canonicalTeamId": "newcastle",
+      "providerTeamId": 34,
+      "providerName": "Newcastle",
+      "playerCount": 30
+    },
+    "nottinghamforest": {
+      "canonicalTeamId": "nottinghamforest",
+      "providerTeamId": 65,
+      "providerName": "Nottingham Forest",
+      "playerCount": 38
+    },
+    "sunderland": {
+      "canonicalTeamId": "sunderland",
+      "providerTeamId": 746,
+      "providerName": "Sunderland",
+      "playerCount": 35
+    },
+    "tottenham": {
+      "canonicalTeamId": "tottenham",
+      "providerTeamId": 47,
+      "providerName": "Tottenham",
+      "playerCount": 37
+    }
+  },
+  "playerCount": 674
+}
