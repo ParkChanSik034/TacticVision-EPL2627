@@ -115,7 +115,7 @@
                     <div class="relative flex items-start justify-between gap-4">
                         <div>
                             <div class="text-[10px] uppercase tracking-[0.22em] text-eplNeon font-extrabold">Match of the week</div>
-                            <h2 class="font-urban text-3xl md:text-5xl font-extrabold mt-3"><button onclick="openTeamProfile('arsenal')" class="hover:text-eplNeon transition">Arsenal</button> <span class="text-slate-600">vs</span> <button onclick="openTeamProfile('liverpool')" class="hover:text-eplNeon transition">Liverpool</button></h2>
+                            <h2 class="font-urban text-3xl md:text-5xl font-extrabold mt-3"><button onclick="openTeamProfile('arsenal')" class="hover:text-eplNeon transition">아스널</button> <span class="text-slate-600">vs</span> <button onclick="openTeamProfile('liverpool')" class="hover:text-eplNeon transition">리버풀</button></h2>
                             <p class="mt-3 text-sm text-slate-400">점유 빌드업과 직선적 전환 축구가 충돌하는 이번 주 핵심 매치업</p>
                         </div>
                         <span class="shrink-0 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold text-slate-300">SUN · 20:30</span>
@@ -136,7 +136,7 @@
                     </div>
 
                     <button onclick="openMatchHub()" class="relative w-full mb-3 py-4 rounded-xl bg-gradient-to-r from-eplPurple/80 to-cyan-500/30 border border-eplNeon/20 text-sm font-extrabold hover:border-eplNeon/50 hover:-translate-y-0.5 transition">
-                        <i class="fa-solid fa-circle-nodes mr-2 text-eplNeon"></i>Arsenal vs Liverpool 경기 허브 열기
+                        <i class="fa-solid fa-circle-nodes mr-2 text-eplNeon"></i>아스널 vs 리버풀 경기 허브 열기
                     </button>
                     <div class="relative grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <button onclick="openFeaturedMatch('compare')" class="py-3.5 rounded-xl bg-eplNeon text-slate-950 text-sm font-extrabold hover:-translate-y-0.5 transition"><i class="fa-solid fa-code-compare mr-2"></i>전술 비교</button>
@@ -148,7 +148,7 @@
                 <aside class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 gap-4">
                     <div class="rounded-2xl border border-white/5 bg-white/[0.03] p-5">
                         <div class="flex items-center justify-between"><div><div class="text-[10px] uppercase tracking-widest text-slate-500">Quick Search</div><h3 class="font-bold mt-1">팀·선수·감독 찾기</h3></div><i class="fa-solid fa-magnifying-glass text-eplNeon"></i></div>
-                        <div class="relative mt-4"><input id="home-global-search" type="search" role="combobox" aria-label="팀, 선수, 감독 검색" aria-controls="home-search-results" aria-expanded="false" aria-autocomplete="list" autocomplete="off" oninput="renderHomeSearch()" onkeydown="handleHomeSearchKeydown(event)" placeholder="예: Arsenal, Cole Palmer, 감독" class="w-full bg-slate-950 border border-white/10 rounded-xl px-4 py-3 text-sm outline-none focus:border-eplNeon/40"><div id="home-search-results" role="listbox" aria-label="통합 검색 결과" class="hidden absolute z-30 top-full mt-2 left-0 right-0 max-h-80 overflow-y-auto rounded-xl border border-white/10 bg-[#0a0314] shadow-2xl"></div></div>
+                        <div class="relative mt-4"><input id="home-global-search" type="search" role="combobox" aria-label="팀, 선수, 감독 검색" aria-controls="home-search-results" aria-expanded="false" aria-autocomplete="list" autocomplete="off" oninput="renderHomeSearch()" onkeydown="handleHomeSearchKeydown(event)" placeholder="예: 아스널, 콜 파머, 감독" class="w-full bg-slate-950 border border-white/10 rounded-xl px-4 py-3 text-sm outline-none focus:border-eplNeon/40"><div id="home-search-results" role="listbox" aria-label="통합 검색 결과" class="hidden absolute z-30 top-full mt-2 left-0 right-0 max-h-80 overflow-y-auto rounded-xl border border-white/10 bg-[#0a0314] shadow-2xl"></div></div>
                     </div>
                     <div class="rounded-2xl border border-white/5 bg-gradient-to-br from-eplPurple/30 to-slate-950 p-5">
                         <div class="text-[10px] uppercase tracking-widest text-purple-300 font-bold">Trending tactic</div>
@@ -169,9 +169,9 @@
             <!-- Today's matches -->
             <div class="flex items-end justify-between"><div><div class="text-[10px] uppercase tracking-[.2em] text-eplNeon font-bold">Match center</div><h3 class="font-urban text-3xl font-extrabold mt-1">오늘의 경기</h3></div><button onclick="switchView('matchCompare')" class="text-xs font-bold text-slate-400 hover:text-white">전체 매치업 보기 <i class="fa-solid fa-arrow-right ml-1"></i></button></div>
             <div class="mt-5 grid grid-cols-1 md:grid-cols-3 gap-4">
-                <button onclick="openMatchHub()" class="text-left rounded-2xl border border-white/5 bg-white/[.025] p-5 hover:border-eplNeon/25 hover:-translate-y-1 transition"><div class="flex justify-between text-[10px] text-slate-500"><span>20:30</span><span>Emirates Stadium</span></div><div class="mt-5 flex items-center justify-between text-lg font-bold"><span>Arsenal</span><span class="text-slate-600">VS</span><span>Liverpool</span></div><div class="mt-4 text-xs text-eplNeon font-bold">MATCH HUB 열기</div></button>
-                <button onclick="switchView('matchCompare')" class="text-left rounded-2xl border border-white/5 bg-white/[.025] p-5 hover:border-cyan-300/25 hover:-translate-y-1 transition"><div class="flex justify-between text-[10px] text-slate-500"><span>23:00</span><span>Etihad Stadium</span></div><div class="mt-5 flex items-center justify-between text-lg font-bold"><span>Man City</span><span class="text-slate-600">VS</span><span>Chelsea</span></div><div class="mt-4 text-xs text-cyan-300 font-bold">TACTICAL PREVIEW</div></button>
-                <button onclick="switchView('matchCompare')" class="text-left rounded-2xl border border-white/5 bg-white/[.025] p-5 hover:border-purple-300/25 hover:-translate-y-1 transition"><div class="flex justify-between text-[10px] text-slate-500"><span>01:30</span><span>St James' Park</span></div><div class="mt-5 flex items-center justify-between text-lg font-bold"><span>Newcastle</span><span class="text-slate-600">VS</span><span>Tottenham</span></div><div class="mt-4 text-xs text-purple-300 font-bold">TACTICAL PREVIEW</div></button>
+                <button onclick="openMatchHub()" class="text-left rounded-2xl border border-white/5 bg-white/[.025] p-5 hover:border-eplNeon/25 hover:-translate-y-1 transition"><div class="flex justify-between text-[10px] text-slate-500"><span>20:30</span><span>에미레이츠 스타디움</span></div><div class="mt-5 flex items-center justify-between text-lg font-bold"><span>아스널</span><span class="text-slate-600">VS</span><span>리버풀</span></div><div class="mt-4 text-xs text-eplNeon font-bold">MATCH HUB 열기</div></button>
+                <button onclick="switchView('matchCompare')" class="text-left rounded-2xl border border-white/5 bg-white/[.025] p-5 hover:border-cyan-300/25 hover:-translate-y-1 transition"><div class="flex justify-between text-[10px] text-slate-500"><span>23:00</span><span>에티하드 스타디움</span></div><div class="mt-5 flex items-center justify-between text-lg font-bold"><span>맨체스터 시티</span><span class="text-slate-600">VS</span><span>첼시</span></div><div class="mt-4 text-xs text-cyan-300 font-bold">TACTICAL PREVIEW</div></button>
+                <button onclick="switchView('matchCompare')" class="text-left rounded-2xl border border-white/5 bg-white/[.025] p-5 hover:border-purple-300/25 hover:-translate-y-1 transition"><div class="flex justify-between text-[10px] text-slate-500"><span>01:30</span><span>세인트 제임스 파크</span></div><div class="mt-5 flex items-center justify-between text-lg font-bold"><span>뉴캐슬 유나이티드</span><span class="text-slate-600">VS</span><span>토트넘 홋스퍼</span></div><div class="mt-4 text-xs text-purple-300 font-bold">TACTICAL PREVIEW</div></button>
             </div>
 
             <!-- Portal style main grid -->
@@ -309,16 +309,18 @@
             <div class="grid grid-cols-1 xl:grid-cols-[.8fr_1.2fr] gap-0">
                 <aside class="p-6 md:p-8 border-b xl:border-b-0 xl:border-r border-white/5 bg-white/[.018]">
                     <div class="flex items-start gap-5">
-                        <div class="w-24 h-24 rounded-3xl bg-gradient-to-br from-eplPurple/70 to-cyan-400/20 border border-white/10 grid place-items-center text-4xl text-eplNeon shadow-xl">
+                        <div id="profile-photo-frame" class="w-24 h-28 shrink-0 rounded-3xl bg-gradient-to-br from-eplPurple/70 to-cyan-400/20 border border-white/10 grid place-items-center text-4xl text-eplNeon shadow-xl overflow-hidden">
                             <i class="fa-solid fa-user-tie"></i>
                         </div>
                         <div class="min-w-0">
                             <div id="profile-team" class="text-xs font-mono text-eplNeon font-bold">CHELSEA</div>
                             <h3 id="profile-name" class="font-urban text-2xl md:text-3xl font-extrabold mt-1 leading-tight">Xabi Alonso</h3>
+                            <p id="profile-english-name" class="text-xs text-slate-500 mt-1"></p>
                             <div class="mt-3 flex flex-wrap items-center gap-2">
                                 <span class="px-2.5 py-1 rounded-full bg-eplNeon/10 border border-eplNeon/20 text-[10px] font-bold text-eplNeon uppercase tracking-wider">Nationality</span>
                                 <strong id="profile-nationality" class="text-sm text-white">스페인</strong>
                             </div>
+                            <p id="profile-birth-date" class="text-xs text-slate-500 mt-2"></p>
                         </div>
                     </div>
                     <div class="mt-7 grid grid-cols-2 gap-3">
@@ -337,6 +339,7 @@
                         <div class="text-[10px] uppercase tracking-[.2em] text-slate-500 font-bold">Tactical model</div>
                         <h4 class="font-urban text-2xl font-extrabold mt-1">전술 철학</h4>
                         <p id="profile-style" class="mt-4 text-sm text-slate-300 leading-7"></p>
+                        <div id="profile-sources" class="mt-4 flex flex-wrap gap-2"></div>
                     </div>
                     <div id="profile-ratings" class="mt-7 grid grid-cols-1 md:grid-cols-2 gap-4"></div>
                     <div class="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-5">
@@ -648,10 +651,10 @@
                 <div class="rounded-2xl border border-white/5 bg-slate-950/40 overflow-hidden">
                     <div class="px-5 py-4 border-b border-white/5 flex items-center justify-between">
                         <div>
-                            <h3 class="font-bold text-white">전술 DNA 비교</h3>
-                            <p class="text-xs text-slate-500 mt-1">0~100 정규화 샘플 점수</p>
+                            <h3 class="font-bold text-white">감독 데이터 비교</h3>
+                            <p class="text-xs text-slate-500 mt-1">검증된 전술 지표 공급자 연동 상태</p>
                         </div>
-                        <span class="text-[10px] font-mono uppercase tracking-widest text-slate-500">Prototype Dataset</span>
+                        <span class="text-[10px] font-mono uppercase tracking-widest text-slate-500">Wikidata · CC0</span>
                     </div>
                     <div id="comparison-metrics" class="p-5 space-y-6"></div>
                 </div>
@@ -733,7 +736,7 @@
                     <h2 class="text-2xl font-urban font-extrabold text-white mt-2">선수 능력 비교</h2>
                     <p class="text-sm text-slate-400 mt-2">팀과 포지션으로 1군 스쿼드를 탐색하거나 이름을 검색해 최대 3명을 가로로 비교합니다.</p>
                 </div>
-                <div class="px-3 py-2 rounded-lg bg-amber-400/10 border border-amber-400/20 text-amber-300 text-xs"><i class="fa-solid fa-flask mr-1"></i> 현재 데이터는 UI 검증용 샘플입니다.</div>
+                <div class="px-3 py-2 rounded-lg bg-purple-400/10 border border-purple-400/20 text-purple-200 text-xs"><i class="fa-solid fa-database mr-1"></i> 기본 인물 정보 · Wikidata CC0</div>
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-[300px_minmax(0,1fr)] min-h-[720px]">
                 <aside class="border-r border-white/5 bg-slate-950/25 p-5 space-y-5">
@@ -763,7 +766,7 @@
                     <div id="empty-player-comparison" class="p-12 text-center"><i class="fa-solid fa-user-plus text-3xl text-slate-700"></i><h3 class="font-bold text-white mt-4">왼쪽에서 선수를 선택하세요</h3><p class="text-xs text-slate-500 mt-2">검색 또는 팀·포지션 필터를 사용할 수 있습니다.</p></div>
                     <div id="player-comparison-content" class="hidden p-5 space-y-5">
                         <div id="player-cards"></div>
-                        <div class="rounded-2xl border border-white/5 bg-slate-950/40 overflow-hidden"><div class="px-5 py-4 border-b border-white/5"><h3 class="font-bold text-white">공통 축구 능력</h3><p class="text-xs text-slate-500 mt-1">최고 수치를 강조합니다.</p></div><div id="player-common-metrics"></div></div>
+                        <div class="rounded-2xl border border-white/5 bg-slate-950/40 overflow-hidden"><div class="px-5 py-4 border-b border-white/5"><h3 class="font-bold text-white">공통 축구 능력</h3><p class="text-xs text-slate-500 mt-1">검증된 경기력 공급자 연동 상태</p></div><div id="player-common-metrics"></div></div>
                         <div class="rounded-2xl border border-white/5 bg-slate-950/40 overflow-hidden"><div class="px-5 py-4 border-b border-white/5"><h3 class="font-bold text-white">포지션별 핵심 성과</h3><p class="text-xs text-slate-500 mt-1">해당되지 않는 기록은 — 로 표시합니다.</p></div><div id="player-role-stats"></div></div>
                     </div>
                 </div>
@@ -973,7 +976,7 @@
     </footer>
 
         <!-- Interactive Logic Script -->
-    <script src="assets/js/app.js" defer></script>
+    <script src="assets/js/app.js?v=20260824-current-managers" defer></script>
 </body>
 
 </html>
