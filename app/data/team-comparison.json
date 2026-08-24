@@ -1,0 +1,329 @@
+{
+  "schemaVersion": "1.0.0",
+  "season": "2026-27",
+  "asOf": "2026-08-23T19:11:26Z",
+  "sourceId": "openfootball-england-public-domain",
+  "sourceUrl": "https://raw.githubusercontent.com/openfootball/england/master/2026-27/1-premierleague.txt",
+  "sourceSha256": "3c823c4a185357087d97182cf0e96e470dd19f01ee9fd4d1c57fb70b602e847f",
+  "completedMatches": 6,
+  "metrics": {
+    "played": {
+      "unit": "matches",
+      "layer": "external-facts"
+    },
+    "wins": {
+      "unit": "matches",
+      "layer": "external-facts"
+    },
+    "draws": {
+      "unit": "matches",
+      "layer": "external-facts"
+    },
+    "losses": {
+      "unit": "matches",
+      "layer": "external-facts"
+    },
+    "goalsFor": {
+      "unit": "goals",
+      "layer": "external-facts"
+    },
+    "goalsAgainst": {
+      "unit": "goals",
+      "layer": "external-facts"
+    },
+    "goalDifference": {
+      "unit": "goals",
+      "layer": "derived-fact"
+    },
+    "points": {
+      "unit": "points",
+      "layer": "derived-fact"
+    },
+    "pointsPerGame": {
+      "unit": "points-per-match",
+      "layer": "derived-fact"
+    }
+  },
+  "teams": {
+    "arsenal": {
+      "teamId": "arsenal",
+      "name": "Arsenal",
+      "shortName": "ARS",
+      "played": 1,
+      "wins": 1,
+      "draws": 0,
+      "losses": 0,
+      "goalsFor": 3,
+      "goalsAgainst": 0,
+      "goalDifference": 3,
+      "points": 3,
+      "pointsPerGame": 3.0
+    },
+    "astonvilla": {
+      "teamId": "astonvilla",
+      "name": "Aston Villa",
+      "shortName": "AVL",
+      "played": 0,
+      "wins": 0,
+      "draws": 0,
+      "losses": 0,
+      "goalsFor": 0,
+      "goalsAgainst": 0,
+      "goalDifference": 0,
+      "points": 0,
+      "pointsPerGame": null
+    },
+    "bournemouth": {
+      "teamId": "bournemouth",
+      "name": "AFC Bournemouth",
+      "shortName": "BOU",
+      "played": 0,
+      "wins": 0,
+      "draws": 0,
+      "losses": 0,
+      "goalsFor": 0,
+      "goalsAgainst": 0,
+      "goalDifference": 0,
+      "points": 0,
+      "pointsPerGame": null
+    },
+    "brentford": {
+      "teamId": "brentford",
+      "name": "Brentford",
+      "shortName": "BRE",
+      "played": 1,
+      "wins": 1,
+      "draws": 0,
+      "losses": 0,
+      "goalsFor": 3,
+      "goalsAgainst": 0,
+      "goalDifference": 3,
+      "points": 3,
+      "pointsPerGame": 3.0
+    },
+    "brighton": {
+      "teamId": "brighton",
+      "name": "Brighton & Hove Albion",
+      "shortName": "BHA",
+      "played": 0,
+      "wins": 0,
+      "draws": 0,
+      "losses": 0,
+      "goalsFor": 0,
+      "goalsAgainst": 0,
+      "goalDifference": 0,
+      "points": 0,
+      "pointsPerGame": null
+    },
+    "chelsea": {
+      "teamId": "chelsea",
+      "name": "Chelsea",
+      "shortName": "CHE",
+      "played": 0,
+      "wins": 0,
+      "draws": 0,
+      "losses": 0,
+      "goalsFor": 0,
+      "goalsAgainst": 0,
+      "goalDifference": 0,
+      "points": 0,
+      "pointsPerGame": null
+    },
+    "coventry": {
+      "teamId": "coventry",
+      "name": "Coventry City",
+      "shortName": "COV",
+      "played": 1,
+      "wins": 0,
+      "draws": 0,
+      "losses": 1,
+      "goalsFor": 0,
+      "goalsAgainst": 3,
+      "goalDifference": -3,
+      "points": 0,
+      "pointsPerGame": 0.0
+    },
+    "crystalpalace": {
+      "teamId": "crystalpalace",
+      "name": "Crystal Palace",
+      "shortName": "CRY",
+      "played": 1,
+      "wins": 0,
+      "draws": 0,
+      "losses": 1,
+      "goalsFor": 0,
+      "goalsAgainst": 2,
+      "goalDifference": -2,
+      "points": 0,
+      "pointsPerGame": 0.0
+    },
+    "everton": {
+      "teamId": "everton",
+      "name": "Everton",
+      "shortName": "EVE",
+      "played": 1,
+      "wins": 1,
+      "draws": 0,
+      "losses": 0,
+      "goalsFor": 2,
+      "goalsAgainst": 0,
+      "goalDifference": 2,
+      "points": 3,
+      "pointsPerGame": 3.0
+    },
+    "fulham": {
+      "teamId": "fulham",
+      "name": "Fulham",
+      "shortName": "FUL",
+      "played": 0,
+      "wins": 0,
+      "draws": 0,
+      "losses": 0,
+      "goalsFor": 0,
+      "goalsAgainst": 0,
+      "goalDifference": 0,
+      "points": 0,
+      "pointsPerGame": null
+    },
+    "hullcity": {
+      "teamId": "hullcity",
+      "name": "Hull City",
+      "shortName": "HUL",
+      "played": 1,
+      "wins": 1,
+      "draws": 0,
+      "losses": 0,
+      "goalsFor": 2,
+      "goalsAgainst": 0,
+      "goalDifference": 2,
+      "points": 3,
+      "pointsPerGame": 3.0
+    },
+    "ipswich": {
+      "teamId": "ipswich",
+      "name": "Ipswich Town",
+      "shortName": "IPS",
+      "played": 1,
+      "wins": 1,
+      "draws": 0,
+      "losses": 0,
+      "goalsFor": 2,
+      "goalsAgainst": 1,
+      "goalDifference": 1,
+      "points": 3,
+      "pointsPerGame": 3.0
+    },
+    "leeds": {
+      "teamId": "leeds",
+      "name": "Leeds United",
+      "shortName": "LEE",
+      "played": 1,
+      "wins": 1,
+      "draws": 0,
+      "losses": 0,
+      "goalsFor": 1,
+      "goalsAgainst": 0,
+      "goalDifference": 1,
+      "points": 3,
+      "pointsPerGame": 3.0
+    },
+    "liverpool": {
+      "teamId": "liverpool",
+      "name": "Liverpool",
+      "shortName": "LIV",
+      "played": 0,
+      "wins": 0,
+      "draws": 0,
+      "losses": 0,
+      "goalsFor": 0,
+      "goalsAgainst": 0,
+      "goalDifference": 0,
+      "points": 0,
+      "pointsPerGame": null
+    },
+    "mancity": {
+      "teamId": "mancity",
+      "name": "Manchester City",
+      "shortName": "MCI",
+      "played": 0,
+      "wins": 0,
+      "draws": 0,
+      "losses": 0,
+      "goalsFor": 0,
+      "goalsAgainst": 0,
+      "goalDifference": 0,
+      "points": 0,
+      "pointsPerGame": null
+    },
+    "manutd": {
+      "teamId": "manutd",
+      "name": "Manchester United",
+      "shortName": "MUN",
+      "played": 1,
+      "wins": 0,
+      "draws": 0,
+      "losses": 1,
+      "goalsFor": 0,
+      "goalsAgainst": 2,
+      "goalDifference": -2,
+      "points": 0,
+      "pointsPerGame": 0.0
+    },
+    "newcastle": {
+      "teamId": "newcastle",
+      "name": "Newcastle United",
+      "shortName": "NEW",
+      "played": 0,
+      "wins": 0,
+      "draws": 0,
+      "losses": 0,
+      "goalsFor": 0,
+      "goalsAgainst": 0,
+      "goalDifference": 0,
+      "points": 0,
+      "pointsPerGame": null
+    },
+    "nottinghamforest": {
+      "teamId": "nottinghamforest",
+      "name": "Nottingham Forest",
+      "shortName": "NFO",
+      "played": 1,
+      "wins": 0,
+      "draws": 0,
+      "losses": 1,
+      "goalsFor": 0,
+      "goalsAgainst": 1,
+      "goalDifference": -1,
+      "points": 0,
+      "pointsPerGame": 0.0
+    },
+    "sunderland": {
+      "teamId": "sunderland",
+      "name": "Sunderland",
+      "shortName": "SUN",
+      "played": 1,
+      "wins": 0,
+      "draws": 0,
+      "losses": 1,
+      "goalsFor": 1,
+      "goalsAgainst": 2,
+      "goalDifference": -1,
+      "points": 0,
+      "pointsPerGame": 0.0
+    },
+    "tottenham": {
+      "teamId": "tottenham",
+      "name": "Tottenham Hotspur",
+      "shortName": "TOT",
+      "played": 1,
+      "wins": 0,
+      "draws": 0,
+      "losses": 1,
+      "goalsFor": 0,
+      "goalsAgainst": 3,
+      "goalDifference": -3,
+      "points": 0,
+      "pointsPerGame": 0.0
+    }
+  }
+}

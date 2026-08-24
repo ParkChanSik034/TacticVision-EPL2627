@@ -1,11 +1,12 @@
 {
-  "schemaVersion": "1.1.0",
-  "datasetVersion": "2026.08.24-prototype.2",
+  "schemaVersion": "1.2.0",
+  "datasetVersion": "2026.08.24-openfootball.1",
   "asOf": "2026-08-24",
   "generatedAt": "2026-08-24T00:00:00Z",
   "defaultSourceId": "internal-prototype",
   "files": {
     "teams.json": { "layer": "external-facts", "sourceId": "internal-prototype", "status": "prototype" },
+    "team-comparison.json": { "layer": "external-facts", "sourceId": "openfootball-england-public-domain", "status": "ready" },
     "players.json": { "layer": "external-facts", "sourceId": "internal-prototype", "status": "prototype" },
     "managers.json": { "layer": "external-facts", "sourceId": "internal-prototype", "status": "prototype" },
     "squads.json": { "layer": "external-facts", "sourceId": "internal-prototype", "status": "prototype" },

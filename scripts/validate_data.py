@@ -13,7 +13,7 @@ from typing import Any
 DATA_DIR = Path(__file__).resolve().parents[1] / "app" / "data"
 FILES = {
     "formations.json", "managers.json", "manifest.json", "players.json",
-    "roles.json", "squads.json", "tactics.json", "teams.json",
+    "roles.json", "squads.json", "tactics.json", "team-comparison.json", "teams.json",
 }
 KEBAB = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 FORMATION = re.compile(r"^\d(?:-\d)+$")
@@ -254,6 +254,35 @@ def validate_tactics(value: Any, team_ids: set[str]) -> None:
                 check(number_between(preset[metric], 0, 100), f"{item}.{metric}", "must be 0..100")
 
 
+def validate_team_comparison(value: Any, team_ids: set[str]) -> None:
+    location = "team-comparison.json"
+    required = {"schemaVersion", "season", "asOf", "sourceId", "sourceUrl", "sourceSha256", "completedMatches", "metrics", "teams"}
+    if not fields(value, required, location):
+        return
+    check(value["sourceId"] == "openfootball-england-public-domain", f"{location}.sourceId", "unexpected source")
+    check(isinstance(value["sourceSha256"], str) and bool(re.fullmatch(r"[0-9a-f]{64}", value["sourceSha256"])), f"{location}.sourceSha256", "must be SHA-256")
+    rows = value["teams"]
+    check(isinstance(rows, dict) and set(rows) == team_ids, f"{location}.teams", "team IDs must match teams.json")
+    if not isinstance(rows, dict):
+        return
+    played_total = 0
+    for team_id, row in rows.items():
+        item = f"{location}.teams.{team_id}"
+        row_fields = {"teamId", "name", "shortName", "played", "wins", "draws", "losses", "goalsFor", "goalsAgainst", "goalDifference", "points", "pointsPerGame"}
+        if not fields(row, row_fields, item):
+            continue
+        check(row["teamId"] == team_id, f"{item}.teamId", "must match its key")
+        for metric in ("played", "wins", "draws", "losses", "goalsFor", "goalsAgainst", "points"):
+            check(isinstance(row[metric], int) and row[metric] >= 0, f"{item}.{metric}", "must be a non-negative integer")
+        check(row["played"] == row["wins"] + row["draws"] + row["losses"], item, "played must equal W+D+L")
+        check(row["goalDifference"] == row["goalsFor"] - row["goalsAgainst"], f"{item}.goalDifference", "must equal GF-GA")
+        check(row["points"] == row["wins"] * 3 + row["draws"], f"{item}.points", "must equal 3W+D")
+        expected_ppg = round(row["points"] / row["played"], 2) if row["played"] else None
+        check(row["pointsPerGame"] == expected_ppg, f"{item}.pointsPerGame", "does not match points/played")
+        played_total += row["played"]
+    check(played_total == value["completedMatches"] * 2, f"{location}.completedMatches", "must match team appearance total")
+
+
 def main() -> int:
     actual = {path.name for path in DATA_DIR.glob("*.json")}
     check(actual == FILES, "app/data", "contract file set differs: "
@@ -268,6 +297,7 @@ def main() -> int:
     validate_squads(data["squads.json"], team_ids)
     validate_roles(data["roles.json"])
     validate_tactics(data["tactics.json"], team_ids)
+    validate_team_comparison(data["team-comparison.json"], team_ids)
     if errors:
         print(f"Data validation failed with {len(errors)} error(s):", file=sys.stderr)
         for error in errors:
