@@ -209,7 +209,7 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
 
         const selectedTeamIds = new Set(['arsenal','liverpool','mancity']);
         const MAX_TEAM_SELECTION = 3;
-        const teamMetricLabels = {attack:'공격력', defense:'수비 안정성', possession:'점유 및 빌드업', pressing:'압박 강도', transition:'전환 속도'};
+        const teamMetricLabels = {played:'경기 수', wins:'승', draws:'무', losses:'패', goalsFor:'득점', goalsAgainst:'실점', goalDifference:'득실차', points:'승점', pointsPerGame:'경기당 승점'};
 
         const selectedManagerIds = new Set(['alonso', 'maresca', 'dezerbi']);
         const MAX_MANAGER_SELECTION = 3;
@@ -224,7 +224,7 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
 
         const managerBarClasses = ['from-eplNeon to-emerald-300', 'from-eplBlue to-cyan-300', 'from-purple-400 to-fuchsia-300'];
 
-        const entityData = { status:'idle', teams:{}, players:{}, managers:{}, squads:{}, error:null, readyPromise:null };
+        const entityData = { status:'idle', teams:{}, players:{}, managers:{}, squads:{}, teamComparison:null, error:null, readyPromise:null };
         let homeSearchRows=[];
         let homeSearchIndex=-1;
 
@@ -265,13 +265,49 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
             if(select){delete select.dataset.ready;initialiseManagerProfile();}
         }
 
+        function buildTeamComparisonFromExternalFacts(){
+            const dataset=entityData.teamComparison;
+            if(!dataset?.teams)return;
+            const rows=Object.values(dataset.teams).map(row=>{
+                const team=entityData.teams[row.teamId]||{};
+                return {id:row.teamId,name:team.name||row.name,short:team.shortName||row.shortName,season:dataset.season,asOf:dataset.asOf,sourceId:dataset.sourceId,sourceUrl:dataset.sourceUrl,sourceSha256:dataset.sourceSha256,metrics:{played:row.played,wins:row.wins,draws:row.draws,losses:row.losses,goalsFor:row.goalsFor,goalsAgainst:row.goalsAgainst,goalDifference:row.goalDifference,points:row.points,pointsPerGame:row.pointsPerGame}};
+            });
+            teamComparisonData.splice(0,teamComparisonData.length,...rows);
+        }
+
+        function renderHomeLeagueTable(){
+            const table=document.getElementById('home-league-table');
+            const status=document.getElementById('home-table-status');
+            const source=document.getElementById('home-table-source');
+            if(!table||!status||!source)return;
+            if(entityData.status==='error'){
+                status.textContent='LOAD ERROR';
+                status.className='text-[10px] px-2 py-1 rounded-full bg-rose-400/10 border border-rose-400/20 text-rose-300';
+                table.innerHTML='<div class="p-6 text-center text-xs text-rose-300">순위 데이터를 불러오지 못했습니다. HTTP 서버 실행 상태를 확인해 주세요.</div>';
+                source.textContent='';
+                return;
+            }
+            if(entityData.status!=='ready')return;
+            const ranked=[...teamComparisonData].sort((a,b)=>b.metrics.points-a.metrics.points||b.metrics.goalDifference-a.metrics.goalDifference||b.metrics.goalsFor-a.metrics.goalsFor||a.name.localeCompare(b.name,'en'));
+            table.innerHTML=ranked.map((team,index)=>{
+                const gd=team.metrics.goalDifference;
+                return `<button type="button" onclick="openTeamProfile('${team.id}')" class="w-full grid grid-cols-[36px_1fr_38px_50px_50px] px-4 py-3 text-left hover:bg-white/5 focus:bg-white/5 transition group"><span class="${index<4?'text-eplNeon font-bold':'text-slate-500'}">${index+1}</span><span class="font-bold truncate group-hover:text-eplNeon">${escapeHtml(team.name)} <i class="fa-solid fa-chevron-right ml-1 text-[9px] opacity-0 group-hover:opacity-100"></i></span><span class="text-slate-500">${team.metrics.played}</span><span class="text-slate-500">${gd>0?'+':''}${gd}</span><span class="font-bold">${team.metrics.points}</span></button>`;
+            }).join('');
+            status.textContent='CURRENT RESULTS';
+            status.className='text-[10px] px-2 py-1 rounded-full bg-eplNeon/10 border border-eplNeon/20 text-eplNeon';
+            const collected=new Date(entityData.teamComparison.asOf).toLocaleString('ko-KR');
+            source.textContent=`승점 · 득실차 · 득점순 · openfootball/england · ${collected} 수집`;
+        }
+
         async function initialiseEntityData(){
             if(entityData.readyPromise)return entityData.readyPromise;
             entityData.status='loading';
-            entityData.readyPromise=Promise.all(['teams','players','managers','squads'].map(fetchEntityJson))
-                .then(([teams,players,managers,squads])=>{
-                    entityData.teams=teams;entityData.players=players;entityData.managers=managers;entityData.squads=squads;
+            entityData.readyPromise=Promise.all(['teams','players','managers','squads','team-comparison'].map(fetchEntityJson))
+                .then(([teams,players,managers,squads,teamComparison])=>{
+                    entityData.teams=teams;entityData.players=players;entityData.managers=managers;entityData.squads=squads;entityData.teamComparison=teamComparison;
+                    buildTeamComparisonFromExternalFacts();
                     entityData.status='ready';entityData.error=null;
+                    renderHomeLeagueTable();
                     buildManagerProfilesFromContract();
                     restoreEntityRoute();
                     return entityData;
@@ -279,6 +315,7 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
                 .catch(error=>{
                     entityData.status='error';entityData.error=error;
                     console.error('Entity data load failed',error);
+                    renderHomeLeagueTable();
                     renderHomeSearch();
                     return entityData;
                 });
@@ -553,8 +590,9 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
 
         function renderTeamSelector() {
             const selector=document.getElementById('team-selector'),count=document.getElementById('selected-team-count'),guide=document.getElementById('team-selection-guide');if(!selector||!count||!guide)return;
-            const q=(document.getElementById('team-search')?.value||'').toLowerCase().trim();const filtered=teamComparisonData.filter(team=>!q||`${team.name} ${team.short} ${team.manager} ${team.identity}`.toLowerCase().includes(q));
-            selector.innerHTML=filtered.length?filtered.map(team=>{const selected=selectedTeamIds.has(team.id),disabled=!selected&&selectedTeamIds.size>=MAX_TEAM_SELECTION;return `<button type="button" onclick="toggleTeamSelection('${team.id}')" class="text-left rounded-xl border p-4 transition-all ${selected?'bg-eplBlue/10 border-eplBlue/40 shadow-lg shadow-eplBlue/5':'bg-white/[0.025] border-white/5 hover:bg-white/5 hover:border-white/10'} ${disabled?'opacity-45 cursor-not-allowed':''}"><div class="flex items-start justify-between gap-3"><div><span class="text-[10px] font-mono text-eplBlue">${team.short}</span><h4 class="font-bold text-sm text-white mt-1">${team.name}</h4><p class="text-[11px] text-slate-500">${team.manager}</p></div><span class="w-6 h-6 rounded-full border flex items-center justify-center ${selected?'bg-eplBlue border-eplBlue text-slate-950':'border-white/15 text-transparent'}"><i class="fa-solid fa-check text-[10px]"></i></span></div><div class="mt-3 flex items-center justify-between gap-2"><span class="text-[11px] text-slate-400 truncate">${team.identity}</span><span class="px-2 py-0.5 rounded bg-white/5 text-[10px] font-mono text-slate-300">${team.formation}</span></div></button>`}).join(''):'<div class="col-span-full p-8 text-center text-xs text-slate-600">검색 결과가 없습니다.</div>';
+            if(entityData.status!=='ready'){selector.innerHTML='<div class="col-span-full p-8 text-center text-xs text-slate-500">실제 경기 데이터를 불러오는 중입니다.</div>';return;}
+            const q=(document.getElementById('team-search')?.value||'').toLowerCase().trim();const filtered=teamComparisonData.filter(team=>!q||`${team.name} ${team.short}`.toLowerCase().includes(q));
+            selector.innerHTML=filtered.length?filtered.map(team=>{const selected=selectedTeamIds.has(team.id),disabled=!selected&&selectedTeamIds.size>=MAX_TEAM_SELECTION;return `<button type="button" onclick="toggleTeamSelection('${team.id}')" class="text-left rounded-xl border p-4 transition-all ${selected?'bg-eplBlue/10 border-eplBlue/40 shadow-lg shadow-eplBlue/5':'bg-white/[0.025] border-white/5 hover:bg-white/5 hover:border-white/10'} ${disabled?'opacity-45 cursor-not-allowed':''}"><div class="flex items-start justify-between gap-3"><div><span class="text-[10px] font-mono text-eplBlue">${team.short}</span><h4 class="font-bold text-sm text-white mt-1">${team.name}</h4><p class="text-[11px] text-slate-500">${team.season} Premier League</p></div><span class="w-6 h-6 rounded-full border flex items-center justify-center ${selected?'bg-eplBlue border-eplBlue text-slate-950':'border-white/15 text-transparent'}"><i class="fa-solid fa-check text-[10px]"></i></span></div><div class="mt-3 flex items-center justify-between gap-2"><span class="text-[11px] text-slate-400">${team.metrics.played}경기 · ${team.metrics.wins}승 ${team.metrics.draws}무 ${team.metrics.losses}패</span><span class="px-2 py-0.5 rounded bg-white/5 text-[10px] font-mono text-slate-300">${team.metrics.points} PTS</span></div></button>`}).join(''):'<div class="col-span-full p-8 text-center text-xs text-slate-600">검색 결과가 없습니다.</div>';
             count.textContent=`${selectedTeamIds.size} / ${MAX_TEAM_SELECTION} 선택`;guide.textContent=selectedTeamIds.size===0?'팀을 1개 이상 선택하세요.':selectedTeamIds.size===MAX_TEAM_SELECTION?'최대 3개 팀이 선택되었습니다. 다른 팀을 고르려면 기존 선택을 해제하세요.':`팀을 ${MAX_TEAM_SELECTION-selectedTeamIds.size}개 더 선택할 수 있습니다.`;
         }
 
@@ -568,6 +606,7 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
         function renderTeamComparison(){
             const cards=document.getElementById('team-cards'), metrics=document.getElementById('team-comparison-metrics'), summary=document.getElementById('team-summary'), empty=document.getElementById('empty-team-comparison'), content=document.getElementById('team-comparison-content');
             if(!cards||!metrics||!summary||!empty||!content) return;
+            if(entityData.status!=='ready'){renderTeamSelector();initialiseEntityData().then(()=>renderTeamComparison());return;}
             renderTeamSelector();
             const selected=teamComparisonData.filter(t=>selectedTeamIds.has(t.id));
             const has=selected.length>0;
@@ -577,12 +616,12 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
             const teamColumns=`minmax(150px,.8fr) repeat(${selected.length},minmax(210px,1fr))`;
             cards.innerHTML=`<div class="overflow-x-auto rounded-2xl border border-white/5 bg-slate-950/40"><div class="min-w-[760px]">
                 <div class="grid border-b border-white/5" style="grid-template-columns:${teamColumns}"><div class="p-4 bg-white/[.02] text-[10px] font-mono uppercase tracking-widest text-slate-500">Team Profile</div>${selected.map((t,i)=>`<div class="p-4 border-l border-white/5 relative"><div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${managerBarClasses[i]}"></div><strong class="text-white">${t.name}</strong><p class="text-[11px] text-slate-500 mt-1">${t.short}</p></div>`).join('')}</div>
-                ${[['감독','manager'],['포메이션','formation'],['플레이 모델','identity'],['경기장','stadium'],['핵심 선수','keyPlayer']].map(([l,k])=>`<div class="grid border-b border-white/5" style="grid-template-columns:${teamColumns}"><div class="px-4 py-3 bg-white/[.015] text-xs font-semibold text-slate-400">${l}</div>${selected.map(t=>`<div class="px-4 py-3 border-l border-white/5 text-sm text-slate-200">${t[k]}</div>`).join('')}</div>`).join('')}
-                <div class="grid" style="grid-template-columns:${teamColumns}"><div class="px-4 py-4 bg-white/[.015] text-xs font-semibold text-slate-400">강점</div>${selected.map(t=>`<div class="px-4 py-4 border-l border-white/5 flex flex-wrap gap-2">${t.strengths.map(x=>`<span class="px-2 py-1 rounded bg-white/5 text-[11px] text-slate-400">${x}</span>`).join('')}</div>`).join('')}</div>
+                ${[['시즌',t=>t.season],['경기 수',t=>t.metrics.played],['승-무-패',t=>`${t.metrics.wins}-${t.metrics.draws}-${t.metrics.losses}`],['득점-실점',t=>`${t.metrics.goalsFor}-${t.metrics.goalsAgainst}`],['승점',t=>t.metrics.points]].map(([l,getValue])=>`<div class="grid border-b border-white/5" style="grid-template-columns:${teamColumns}"><div class="px-4 py-3 bg-white/[.015] text-xs font-semibold text-slate-400">${l}</div>${selected.map(t=>`<div class="px-4 py-3 border-l border-white/5 text-sm text-slate-200">${getValue(t)}</div>`).join('')}</div>`).join('')}
+                <div class="grid" style="grid-template-columns:${teamColumns}"><div class="px-4 py-4 bg-white/[.015] text-xs font-semibold text-slate-400">출처</div>${selected.map(()=>`<div class="px-4 py-4 border-l border-white/5 text-xs text-slate-400">openfootball/england · Public Domain</div>`).join('')}</div>
             </div></div>`;
-            metrics.innerHTML=Object.keys(teamMetricLabels).map(key=>`<div><div class="flex justify-between items-center mb-3"><span class="text-sm font-semibold text-slate-200">${teamMetricLabels[key]}</span><span class="text-[10px] text-slate-600 font-mono">TEAM INDEX</span></div><div class="space-y-2.5">${selected.map((team,i)=>`<div class="grid grid-cols-[92px_1fr_34px] md:grid-cols-[160px_1fr_42px] gap-3 items-center"><span class="text-xs text-slate-400 truncate">${team.name}</span><div class="h-2.5 rounded-full bg-white/5 overflow-hidden"><div class="metric-bar h-full rounded-full bg-gradient-to-r ${managerBarClasses[i]}" style="width:${team.metrics[key]}%"></div></div><span class="text-xs font-mono font-bold text-white text-right">${team.metrics[key]}</span></div>`).join('')}</div></div>`).join('');
+            metrics.innerHTML=Object.keys(teamMetricLabels).map(key=>{const values=selected.map(team=>team.metrics[key]).filter(value=>value!=null);const max=Math.max(...values.map(value=>Math.abs(value)),1);return `<div><div class="flex justify-between items-center mb-3"><span class="text-sm font-semibold text-slate-200">${teamMetricLabels[key]}</span><span class="text-[10px] text-slate-600 font-mono">EXTERNAL FACTS</span></div><div class="space-y-2.5">${selected.map((team,i)=>{const value=team.metrics[key];const width=value==null?0:Math.abs(value)/max*100;return `<div class="grid grid-cols-[92px_1fr_44px] md:grid-cols-[160px_1fr_52px] gap-3 items-center"><span class="text-xs text-slate-400 truncate">${team.name}</span><div class="h-2.5 rounded-full bg-white/5 overflow-hidden"><div class="metric-bar h-full rounded-full bg-gradient-to-r ${managerBarClasses[i]}" style="width:${width}%"></div></div><span class="text-xs font-mono font-bold text-white text-right">${value==null?'—':value}</span></div>`}).join('')}</div></div>`}).join('');
             summary.className=`px-6 pb-6 grid grid-cols-1 gap-4 ${selected.length===1?'md:grid-cols-1':selected.length===2?'md:grid-cols-2':'md:grid-cols-3'}`;
-            summary.innerHTML=selected.map((team,i)=>`<article class="rounded-xl border border-white/5 bg-white/[0.025] p-4"><div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-gradient-to-r ${managerBarClasses[i]}"></span><h4 class="font-bold text-sm text-white">${team.name} 플레이 모델</h4></div><p class="text-xs text-slate-400 leading-relaxed mt-3">${team.summary}</p><div class="mt-3 flex flex-wrap gap-2">${team.strengths.map(x=>`<span class="px-2 py-1 rounded-md bg-white/5 text-[11px] text-slate-400 border border-white/5">${x}</span>`).join('')}</div></article>`).join('');
+            summary.innerHTML=selected.map((team,i)=>`<article class="rounded-xl border border-white/5 bg-white/[0.025] p-4"><div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-gradient-to-r ${managerBarClasses[i]}"></span><h4 class="font-bold text-sm text-white">${team.name} 실제 경기 기록</h4></div><p class="text-xs text-slate-400 leading-relaxed mt-3">${team.season} 시즌 ${team.metrics.played}경기 기준 ${team.metrics.wins}승 ${team.metrics.draws}무 ${team.metrics.losses}패, ${team.metrics.goalsFor}득점 ${team.metrics.goalsAgainst}실점입니다.</p><a class="inline-flex mt-3 text-[11px] text-eplBlue hover:underline" href="${team.sourceUrl}" target="_blank" rel="noopener noreferrer">원본 데이터 확인</a><p class="mt-2 text-[10px] font-mono text-slate-600">수집 ${new Date(team.asOf).toLocaleString('ko-KR')}</p></article>`).join('');
         }
 
         let playerPositionFilter='All';

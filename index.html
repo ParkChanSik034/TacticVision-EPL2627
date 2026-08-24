@@ -186,30 +186,12 @@
                 </div>
 
                 <div>
-                    <div class="flex items-end justify-between"><div><div class="text-[10px] uppercase tracking-[.2em] text-slate-500">League table</div><h3 class="font-urban text-3xl font-extrabold mt-1">EPL 순위</h3></div><span class="text-[10px] px-2 py-1 rounded-full bg-amber-400/10 border border-amber-400/20 text-amber-300">PRE-SEASON MOCK</span></div>
+                    <div class="flex items-end justify-between"><div><div class="text-[10px] uppercase tracking-[.2em] text-slate-500">League table</div><h3 class="font-urban text-3xl font-extrabold mt-1">EPL 순위</h3></div><span id="home-table-status" class="text-[10px] px-2 py-1 rounded-full bg-eplNeon/10 border border-eplNeon/20 text-eplNeon">LOADING</span></div>
                     <div class="mt-5 rounded-2xl border border-white/5 bg-white/[.025] overflow-hidden">
-                        <div class="grid grid-cols-[36px_1fr_50px_50px] px-4 py-3 text-[10px] text-slate-500 border-b border-white/5"><span>#</span><span>TEAM</span><span>GD</span><span>PTS</span></div>
-                        <div class="divide-y divide-white/5 text-sm">
-                            <button type="button" onclick="openTeamProfile('liverpool')" class="w-full grid grid-cols-[36px_1fr_50px_50px] px-4 py-3.5 text-left hover:bg-white/5 focus:bg-white/5 transition group">
-                                <span class="text-eplNeon font-bold">1</span><span class="font-bold group-hover:text-eplNeon">Liverpool <i class="fa-solid fa-chevron-right ml-1 text-[9px] opacity-0 group-hover:opacity-100"></i></span><span class="text-slate-500">+0</span><span class="font-bold">0</span>
-                            </button>
-                            <button type="button" onclick="openTeamProfile('arsenal')" class="w-full grid grid-cols-[36px_1fr_50px_50px] px-4 py-3.5 text-left hover:bg-white/5 focus:bg-white/5 transition group">
-                                <span class="text-eplNeon font-bold">2</span><span class="font-bold group-hover:text-eplNeon">Arsenal <i class="fa-solid fa-chevron-right ml-1 text-[9px] opacity-0 group-hover:opacity-100"></i></span><span class="text-slate-500">+0</span><span class="font-bold">0</span>
-                            </button>
-                            <button type="button" onclick="openTeamProfile('mancity')" class="w-full grid grid-cols-[36px_1fr_50px_50px] px-4 py-3.5 text-left hover:bg-white/5 focus:bg-white/5 transition group">
-                                <span>3</span><span class="font-bold group-hover:text-eplNeon">Manchester City <i class="fa-solid fa-chevron-right ml-1 text-[9px] opacity-0 group-hover:opacity-100"></i></span><span class="text-slate-500">+0</span><span class="font-bold">0</span>
-                            </button>
-                            <button type="button" onclick="openTeamProfile('chelsea')" class="w-full grid grid-cols-[36px_1fr_50px_50px] px-4 py-3.5 text-left hover:bg-white/5 focus:bg-white/5 transition group">
-                                <span>4</span><span class="font-bold group-hover:text-eplNeon">Chelsea <i class="fa-solid fa-chevron-right ml-1 text-[9px] opacity-0 group-hover:opacity-100"></i></span><span class="text-slate-500">+0</span><span class="font-bold">0</span>
-                            </button>
-                            <button type="button" onclick="openTeamProfile('newcastle')" class="w-full grid grid-cols-[36px_1fr_50px_50px] px-4 py-3.5 text-left hover:bg-white/5 focus:bg-white/5 transition group">
-                                <span>5</span><span class="font-bold group-hover:text-eplNeon">Newcastle <i class="fa-solid fa-chevron-right ml-1 text-[9px] opacity-0 group-hover:opacity-100"></i></span><span class="text-slate-500">+0</span><span class="font-bold">0</span>
-                            </button>
-                            <button type="button" onclick="openTeamProfile('tottenham')" class="w-full grid grid-cols-[36px_1fr_50px_50px] px-4 py-3.5 text-left hover:bg-white/5 focus:bg-white/5 transition group">
-                                <span>6</span><span class="font-bold group-hover:text-eplNeon">Tottenham <i class="fa-solid fa-chevron-right ml-1 text-[9px] opacity-0 group-hover:opacity-100"></i></span><span class="text-slate-500">+0</span><span class="font-bold">0</span>
-                            </button>
-                        </div>
+                        <div class="grid grid-cols-[36px_1fr_38px_50px_50px] px-4 py-3 text-[10px] text-slate-500 border-b border-white/5"><span>#</span><span>TEAM</span><span>P</span><span>GD</span><span>PTS</span></div>
+                        <div id="home-league-table" class="divide-y divide-white/5 text-sm max-h-[430px] overflow-y-auto"><div class="p-6 text-center text-xs text-slate-500"><i class="fa-solid fa-spinner fa-spin mr-2"></i>실제 경기 데이터를 불러오는 중입니다.</div></div>
                     </div>
+                    <p id="home-table-source" class="mt-3 text-[10px] text-slate-600 text-right"></p>
                 </div>
             </div>
 
@@ -689,10 +671,10 @@
                         <i class="fa-solid fa-shield-halved"></i> Team Intelligence
                     </div>
                     <h2 class="text-2xl font-urban font-extrabold text-white mt-2">팀 전력 비교</h2>
-                    <p class="text-sm text-slate-400 mt-2">최대 3개 팀을 선택해 경기 운영 방식과 전력 지표를 한 화면에서 비교합니다.</p>
+                    <p class="text-sm text-slate-400 mt-2">최대 3개 팀을 선택해 실제 리그 경기 결과 지표를 한 화면에서 비교합니다.</p>
                 </div>
                 <div class="px-3 py-2 rounded-lg bg-amber-400/10 border border-amber-400/20 text-amber-300 text-xs">
-                    <i class="fa-solid fa-flask mr-1"></i> 현재 팀 정보와 수치는 기능 검증용 샘플 데이터입니다.
+                    <i class="fa-solid fa-database mr-1"></i> 2026/27 실제 경기 결과 · openfootball Public Domain
                 </div>
             </div>
 
@@ -708,7 +690,7 @@
                     </div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-[1fr_230px] gap-3 mb-4">
-                    <div class="relative"><i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-slate-600 text-xs"></i><input id="team-search" oninput="renderTeamSelector()" placeholder="팀 또는 감독 검색" class="w-full bg-slate-950 border border-white/10 rounded-xl pl-9 pr-3 py-2.5 text-sm outline-none focus:border-eplBlue/40"></div>
+                    <div class="relative"><i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-slate-600 text-xs"></i><input id="team-search" oninput="renderTeamSelector()" placeholder="팀 이름 검색" class="w-full bg-slate-950 border border-white/10 rounded-xl pl-9 pr-3 py-2.5 text-sm outline-none focus:border-eplBlue/40"></div>
                     <select id="team-region-filter" class="bg-slate-950 border border-white/10 rounded-xl px-3 py-2.5 text-sm outline-none focus:border-eplBlue/40"><option>Premier League 전체</option></select>
                 </div>
                 <div id="team-selector" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3"></div>
@@ -730,9 +712,9 @@
                         <div class="px-5 py-4 border-b border-white/5 flex items-center justify-between">
                             <div>
                                 <h3 class="font-bold text-white">팀 전력 지표 비교</h3>
-                                <p class="text-xs text-slate-500 mt-1">0~100 정규화 샘플 점수</p>
+                                <p class="text-xs text-slate-500 mt-1">실제 경기 결과 · 막대는 선택 팀 내 상대 길이</p>
                             </div>
-                            <span class="text-[10px] font-mono uppercase tracking-widest text-slate-500">Prototype Dataset</span>
+                            <span class="text-[10px] font-mono uppercase tracking-widest text-slate-500">Openfootball · Public Domain</span>
                         </div>
                         <div id="team-comparison-metrics" class="p-5 space-y-6"></div>
                     </div>
