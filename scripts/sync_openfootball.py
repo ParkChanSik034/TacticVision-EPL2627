@@ -10,6 +10,7 @@ import re
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -18,6 +19,7 @@ RAW_DIR = ROOT / "data" / "raw" / "openfootball" / "2026-27"
 RAW_FILE = RAW_DIR / "1-premierleague.txt"
 SNAPSHOT_FILE = RAW_DIR / "snapshot.json"
 OUTPUT_FILE = ROOT / "app" / "data" / "team-comparison.json"
+MATCHES_OUTPUT_FILE = ROOT / "app" / "data" / "matches.json"
 
 TEAM_ALIASES = {
     "Arsenal FC": "arsenal",
@@ -45,6 +47,10 @@ TEAM_ALIASES = {
 RESULT = re.compile(
     r"^\s+(?:\d{2}:\d{2}\s+)?(.+?)\s{2,}v\s+(.+?)\s{2,}(\d+)-(\d+)\s+\("
 )
+MATCHDAY = re.compile(r"^▪ Matchday (\d+)$")
+MATCH_DATE = re.compile(r"^\s+(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)\s+([A-Z][a-z]{2})\s+(\d{1,2})(?:\s+(\d{4}))?\s*$")
+MATCH_ROW = re.compile(r"^\s+(?:(\d{2}:\d{2})\s+)?(.+?)\s+v\s+(.+?)(?:\s{2,}(\d+)-(\d+)\s+\(.*)?$")
+MONTHS = {name: index for index, name in enumerate(("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"), start=1)}
 
 
 def read_teams() -> dict[str, dict]:
@@ -147,6 +153,70 @@ def build_team_comparison(text: str, teams: dict[str, dict], collected_at: str, 
     }
 
 
+def build_matches(text: str, teams: dict[str, dict], collected_at: str, sha256: str) -> dict:
+    provider_path = ROOT / "app" / "data" / "team-provider-crosscheck.json"
+    provider_teams = json.loads(provider_path.read_text(encoding="utf-8")).get("teams", {})
+    london = ZoneInfo("Europe/London")
+    matchday = None
+    month = day = None
+    explicit_year = None
+    kickoff_time = None
+    matches: list[dict] = []
+    for line_number, raw_line in enumerate(text.splitlines(), start=1):
+        line = raw_line.rstrip()
+        round_match = MATCHDAY.match(line)
+        if round_match:
+            matchday = int(round_match.group(1))
+            continue
+        date_match = MATCH_DATE.match(line)
+        if date_match:
+            month_name, raw_day, raw_year = date_match.groups()
+            month, day = MONTHS[month_name], int(raw_day)
+            explicit_year = int(raw_year) if raw_year else (2027 if month <= 5 else 2026)
+            kickoff_time = None
+            continue
+        row = MATCH_ROW.match(line)
+        if not row:
+            continue
+        raw_time, home_name, away_name, home_goals, away_goals = row.groups()
+        if matchday is None or month is None or day is None:
+            raise ValueError(f"Match row has no date context at source line {line_number}")
+        if home_name not in TEAM_ALIASES or away_name not in TEAM_ALIASES:
+            raise ValueError(f"Unknown fixture team at source line {line_number}: {home_name!r} v {away_name!r}")
+        kickoff_time = raw_time or kickoff_time or "15:00"
+        hour, minute = map(int, kickoff_time.split(":"))
+        kickoff = datetime(explicit_year, month, day, hour, minute, tzinfo=london)
+        home_id, away_id = TEAM_ALIASES[home_name], TEAM_ALIASES[away_name]
+        if home_id not in teams or away_id not in teams:
+            raise ValueError(f"Fixture team is missing from teams.json: {home_id} or {away_id}")
+        completed = home_goals is not None and away_goals is not None
+        match_id = f"2026-27-md{matchday:02d}-{home_id}-{away_id}"
+        matches.append({
+            "id": match_id,
+            "matchday": matchday,
+            "kickoff": kickoff.isoformat(),
+            "homeTeamId": home_id,
+            "awayTeamId": away_id,
+            "venue": provider_teams.get(home_id, {}).get("stadium") or "경기장 미확정",
+            "status": "completed" if completed else "scheduled",
+            "score": {"home": int(home_goals), "away": int(away_goals)} if completed else None,
+        })
+    if len(matches) != 380:
+        raise ValueError(f"Expected 380 EPL matches, parsed {len(matches)}")
+    if len({match["id"] for match in matches}) != len(matches):
+        raise ValueError("Generated duplicate match IDs")
+    return {
+        "schemaVersion": "1.0.0",
+        "season": "2026-27",
+        "asOf": collected_at,
+        "sourceId": "openfootball-england-public-domain",
+        "sourceUrl": SOURCE_URL,
+        "sourceSha256": sha256,
+        "timezone": "Europe/London",
+        "matches": matches,
+    }
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--force", action="store_true", help="Rebuild outputs even when the source SHA is unchanged")
@@ -166,6 +236,7 @@ def main() -> int:
 
     collected_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
     output = build_team_comparison(text, teams, collected_at, sha256)
+    matches_output = build_matches(text, teams, collected_at, sha256)
 
     RAW_DIR.mkdir(parents=True, exist_ok=True)
     RAW_FILE.write_bytes(content)
@@ -177,7 +248,8 @@ def main() -> int:
         **response_headers,
     }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     OUTPUT_FILE.write_text(json.dumps(output, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Synced openfootball: {output['completedMatches']} completed matches, {len(output['teams'])} teams, sha256={sha256}")
+    MATCHES_OUTPUT_FILE.write_text(json.dumps(matches_output, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"Synced openfootball: {output['completedMatches']} completed matches, {len(matches_output['matches'])} fixtures, {len(output['teams'])} teams, sha256={sha256}")
     return 0
 
 

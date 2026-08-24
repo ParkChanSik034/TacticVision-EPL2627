@@ -1,0 +1,333 @@
+{
+  "schemaVersion": "1.0.0",
+  "season": "2026-27",
+  "asOf": "2026-08-24T11:37:22Z",
+  "sourceId": "thesportsdb-free-season-results",
+  "sourceUrl": "https://www.thesportsdb.com/api/v1/json/123/eventsseason.php?id=4328&s=2026-2027",
+  "completedMatches": 9,
+  "standings": [
+    {
+      "teamId": "brighton",
+      "played": 1,
+      "wins": 1,
+      "draws": 0,
+      "losses": 0,
+      "goalsFor": 4,
+      "goalsAgainst": 0,
+      "goalDifference": 4,
+      "points": 3,
+      "rank": 1
+    },
+    {
+      "teamId": "arsenal",
+      "played": 1,
+      "wins": 1,
+      "draws": 0,
+      "losses": 0,
+      "goalsFor": 3,
+      "goalsAgainst": 0,
+      "goalDifference": 3,
+      "points": 3,
+      "rank": 2
+    },
+    {
+      "teamId": "brentford",
+      "played": 1,
+      "wins": 1,
+      "draws": 0,
+      "losses": 0,
+      "goalsFor": 3,
+      "goalsAgainst": 0,
+      "goalDifference": 3,
+      "points": 3,
+      "rank": 3
+    },
+    {
+      "teamId": "everton",
+      "played": 1,
+      "wins": 1,
+      "draws": 0,
+      "losses": 0,
+      "goalsFor": 2,
+      "goalsAgainst": 0,
+      "goalDifference": 2,
+      "points": 3,
+      "rank": 4
+    },
+    {
+      "teamId": "hullcity",
+      "played": 1,
+      "wins": 1,
+      "draws": 0,
+      "losses": 0,
+      "goalsFor": 2,
+      "goalsAgainst": 0,
+      "goalDifference": 2,
+      "points": 3,
+      "rank": 5
+    },
+    {
+      "teamId": "ipswich",
+      "played": 1,
+      "wins": 1,
+      "draws": 0,
+      "losses": 0,
+      "goalsFor": 2,
+      "goalsAgainst": 1,
+      "goalDifference": 1,
+      "points": 3,
+      "rank": 6
+    },
+    {
+      "teamId": "mancity",
+      "played": 1,
+      "wins": 1,
+      "draws": 0,
+      "losses": 0,
+      "goalsFor": 2,
+      "goalsAgainst": 1,
+      "goalDifference": 1,
+      "points": 3,
+      "rank": 7
+    },
+    {
+      "teamId": "leeds",
+      "played": 1,
+      "wins": 1,
+      "draws": 0,
+      "losses": 0,
+      "goalsFor": 1,
+      "goalsAgainst": 0,
+      "goalDifference": 1,
+      "points": 3,
+      "rank": 8
+    },
+    {
+      "teamId": "liverpool",
+      "played": 1,
+      "wins": 0,
+      "draws": 1,
+      "losses": 0,
+      "goalsFor": 2,
+      "goalsAgainst": 2,
+      "goalDifference": 0,
+      "points": 1,
+      "rank": 9
+    },
+    {
+      "teamId": "newcastle",
+      "played": 1,
+      "wins": 0,
+      "draws": 1,
+      "losses": 0,
+      "goalsFor": 2,
+      "goalsAgainst": 2,
+      "goalDifference": 0,
+      "points": 1,
+      "rank": 10
+    },
+    {
+      "teamId": "chelsea",
+      "played": 0,
+      "wins": 0,
+      "draws": 0,
+      "losses": 0,
+      "goalsFor": 0,
+      "goalsAgainst": 0,
+      "goalDifference": 0,
+      "points": 0,
+      "rank": 11
+    },
+    {
+      "teamId": "fulham",
+      "played": 0,
+      "wins": 0,
+      "draws": 0,
+      "losses": 0,
+      "goalsFor": 0,
+      "goalsAgainst": 0,
+      "goalDifference": 0,
+      "points": 0,
+      "rank": 12
+    },
+    {
+      "teamId": "bournemouth",
+      "played": 1,
+      "wins": 0,
+      "draws": 0,
+      "losses": 1,
+      "goalsFor": 1,
+      "goalsAgainst": 2,
+      "goalDifference": -1,
+      "points": 0,
+      "rank": 13
+    },
+    {
+      "teamId": "sunderland",
+      "played": 1,
+      "wins": 0,
+      "draws": 0,
+      "losses": 1,
+      "goalsFor": 1,
+      "goalsAgainst": 2,
+      "goalDifference": -1,
+      "points": 0,
+      "rank": 14
+    },
+    {
+      "teamId": "nottinghamforest",
+      "played": 1,
+      "wins": 0,
+      "draws": 0,
+      "losses": 1,
+      "goalsFor": 0,
+      "goalsAgainst": 1,
+      "goalDifference": -1,
+      "points": 0,
+      "rank": 15
+    },
+    {
+      "teamId": "crystalpalace",
+      "played": 1,
+      "wins": 0,
+      "draws": 0,
+      "losses": 1,
+      "goalsFor": 0,
+      "goalsAgainst": 2,
+      "goalDifference": -2,
+      "points": 0,
+      "rank": 16
+    },
+    {
+      "teamId": "manutd",
+      "played": 1,
+      "wins": 0,
+      "draws": 0,
+      "losses": 1,
+      "goalsFor": 0,
+      "goalsAgainst": 2,
+      "goalDifference": -2,
+      "points": 0,
+      "rank": 17
+    },
+    {
+      "teamId": "coventry",
+      "played": 1,
+      "wins": 0,
+      "draws": 0,
+      "losses": 1,
+      "goalsFor": 0,
+      "goalsAgainst": 3,
+      "goalDifference": -3,
+      "points": 0,
+      "rank": 18
+    },
+    {
+      "teamId": "tottenham",
+      "played": 1,
+      "wins": 0,
+      "draws": 0,
+      "losses": 1,
+      "goalsFor": 0,
+      "goalsAgainst": 3,
+      "goalDifference": -3,
+      "points": 0,
+      "rank": 19
+    },
+    {
+      "teamId": "astonvilla",
+      "played": 1,
+      "wins": 0,
+      "draws": 0,
+      "losses": 1,
+      "goalsFor": 0,
+      "goalsAgainst": 4,
+      "goalDifference": -4,
+      "points": 0,
+      "rank": 20
+    }
+  ],
+  "results": [
+    {
+      "id": "2494008",
+      "date": "2026-08-23",
+      "homeTeamId": "newcastle",
+      "awayTeamId": "liverpool",
+      "homeScore": 2,
+      "awayScore": 2,
+      "status": "FT"
+    },
+    {
+      "id": "2494007",
+      "date": "2026-08-23",
+      "homeTeamId": "brighton",
+      "awayTeamId": "astonvilla",
+      "homeScore": 4,
+      "awayScore": 0,
+      "status": "FT"
+    },
+    {
+      "id": "2494006",
+      "date": "2026-08-23",
+      "homeTeamId": "mancity",
+      "awayTeamId": "bournemouth",
+      "homeScore": 2,
+      "awayScore": 1,
+      "status": "FT"
+    },
+    {
+      "id": "2494005",
+      "date": "2026-08-22",
+      "homeTeamId": "brentford",
+      "awayTeamId": "tottenham",
+      "homeScore": 3,
+      "awayScore": 0,
+      "status": "FT"
+    },
+    {
+      "id": "2494004",
+      "date": "2026-08-22",
+      "homeTeamId": "nottinghamforest",
+      "awayTeamId": "leeds",
+      "homeScore": 0,
+      "awayScore": 1,
+      "status": "FT"
+    },
+    {
+      "id": "2494003",
+      "date": "2026-08-22",
+      "homeTeamId": "ipswich",
+      "awayTeamId": "sunderland",
+      "homeScore": 2,
+      "awayScore": 1,
+      "status": "FT"
+    },
+    {
+      "id": "2494002",
+      "date": "2026-08-22",
+      "homeTeamId": "everton",
+      "awayTeamId": "crystalpalace",
+      "homeScore": 2,
+      "awayScore": 0,
+      "status": "FT"
+    },
+    {
+      "id": "2494001",
+      "date": "2026-08-22",
+      "homeTeamId": "hullcity",
+      "awayTeamId": "manutd",
+      "homeScore": 2,
+      "awayScore": 0,
+      "status": "FT"
+    },
+    {
+      "id": "2494000",
+      "date": "2026-08-21",
+      "homeTeamId": "arsenal",
+      "awayTeamId": "coventry",
+      "homeScore": 3,
+      "awayScore": 0,
+      "status": "FT"
+    }
+  ]
+}

@@ -12,7 +12,7 @@ from typing import Any
 
 DATA_DIR = Path(__file__).resolve().parents[1] / "app" / "data"
 FILES = {
-    "formations.json", "managers.json", "managers-current.json", "manifest.json", "players.json",
+    "first-match-lineups.json", "formations.json", "managers.json", "managers-current.json", "manifest.json", "matches.json", "standings.json", "team-history.json", "players.json",
     "people-comparison.json", "player-name-ko-namuwiki.json", "player-provider-crosscheck.json", "roles.json", "squad-provider.json", "squads.json", "tactics.json", "team-comparison.json", "team-provider-crosscheck.json", "teams.json",
 }
 KEBAB = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
@@ -341,6 +341,101 @@ def validate_team_comparison(value: Any, team_ids: set[str]) -> None:
     check(played_total == value["completedMatches"] * 2, f"{location}.completedMatches", "must match team appearance total")
 
 
+def validate_matches(value: Any, team_ids: set[str]) -> None:
+    location = "matches.json"
+    if not fields(value, {"schemaVersion", "season", "asOf", "sourceId", "sourceUrl", "sourceSha256", "timezone", "matches"}, location):
+        return
+    check(value["sourceId"] == "openfootball-england-public-domain", f"{location}.sourceId", "unexpected source")
+    matches = value["matches"]
+    check(isinstance(matches, list) and len(matches) == 380, f"{location}.matches", "must contain 380 EPL fixtures")
+    if not isinstance(matches, list):
+        return
+    ids = []
+    appearances = {team_id: 0 for team_id in team_ids}
+    for index, match in enumerate(matches):
+        item = f"{location}.matches[{index}]"
+        if not fields(match, {"id", "matchday", "kickoff", "homeTeamId", "awayTeamId", "venue", "status", "score"}, item):
+            continue
+        ids.append(match["id"])
+        check(match["homeTeamId"] in team_ids and match["awayTeamId"] in team_ids, item, "must reference teams.json")
+        check(match["homeTeamId"] != match["awayTeamId"], item, "home and away teams must differ")
+        check(isinstance(match["matchday"], int) and 1 <= match["matchday"] <= 38, f"{item}.matchday", "must be 1..38")
+        check(match["status"] in {"scheduled", "completed"}, f"{item}.status", "unknown status")
+        check(nonempty(match["kickoff"]) and nonempty(match["venue"]), item, "kickoff and venue must be non-empty")
+        if match["status"] == "completed":
+            check(isinstance(match["score"], dict) and set(match["score"]) == {"home", "away"}, f"{item}.score", "completed match needs home/away score")
+        else:
+            check(match["score"] is None, f"{item}.score", "scheduled match score must be null")
+        if match["homeTeamId"] in appearances: appearances[match["homeTeamId"]] += 1
+        if match["awayTeamId"] in appearances: appearances[match["awayTeamId"]] += 1
+    unique(ids, f"{location} match IDs")
+    check(all(count == 38 for count in appearances.values()), location, "each team must have 38 fixtures")
+
+
+def validate_standings(value: Any, team_ids: set[str]) -> None:
+    location = "standings.json"
+    if not fields(value, {"schemaVersion", "season", "asOf", "sourceId", "sourceUrl", "completedMatches", "standings", "results"}, location):
+        return
+    rows = value["standings"]
+    check(isinstance(rows, list) and len(rows) == 20, f"{location}.standings", "must contain 20 teams")
+    if not isinstance(rows, list):
+        return
+    check({row.get("teamId") for row in rows if isinstance(row, dict)} == team_ids, f"{location}.standings", "must reference every canonical team exactly once")
+    check([row.get("rank") for row in rows if isinstance(row, dict)] == list(range(1, 21)), f"{location}.standings", "ranks must be 1 through 20")
+    for index, row in enumerate(rows):
+        if not isinstance(row, dict): continue
+        item = f"{location}.standings[{index}]"
+        check(row.get("wins", 0) + row.get("draws", 0) + row.get("losses", 0) == row.get("played"), item, "wins + draws + losses must equal played")
+        check(row.get("goalsFor", 0) - row.get("goalsAgainst", 0) == row.get("goalDifference"), item, "goalsFor - goalsAgainst must equal goalDifference")
+
+
+def validate_team_history(value: Any, team_ids: set[str]) -> None:
+    location = "team-history.json"
+    if not fields(value, {"schemaVersion", "asOf", "sourceId", "sourceUrl", "previousSeason", "completedMatches", "teams", "previousLeagueTeams"}, location): return
+    check(value["completedMatches"] == 380, f"{location}.completedMatches", "must equal 380")
+    check(isinstance(value["teams"], dict) and set(value["teams"]) == team_ids, f"{location}.teams", "must cover all current teams")
+    check(isinstance(value["previousLeagueTeams"], list) and len(value["previousLeagueTeams"]) == 20, f"{location}.previousLeagueTeams", "must contain 20 teams")
+    if isinstance(value["previousLeagueTeams"], list):
+        for index, row in enumerate(value["previousLeagueTeams"]):
+            if not isinstance(row, dict): continue
+            item = f"{location}.previousLeagueTeams[{index}]"
+            check(row.get("wins", 0) + row.get("draws", 0) + row.get("losses", 0) == row.get("played"), item, "wins + draws + losses must equal played")
+            check(row.get("goalsFor", 0) - row.get("goalsAgainst", 0) == row.get("goalDifference"), item, "goalsFor - goalsAgainst must equal goalDifference")
+
+
+def validate_first_match_lineups(value: Any, team_ids: set[str], players: dict[str, Any]) -> None:
+    location = "first-match-lineups.json"
+    if not fields(value, {"schemaVersion", "season", "asOf", "sourceId", "sourceUrl", "teams"}, location):
+        return
+    check(value["sourceId"] == "api-football-first-match-lineups", f"{location}.sourceId", "unexpected source")
+    teams = value["teams"]
+    check(isinstance(teams, dict) and set(teams) == team_ids, f"{location}.teams", "must cover all 20 teams")
+    if not isinstance(teams, dict):
+        return
+    official = predicted = 0
+    for team_id, lineup in teams.items():
+        item = f"{location}.teams.{team_id}"
+        if not fields(lineup, {"teamId", "status", "eventId", "fixtureId", "formation", "starters", "substitutes"}, item):
+            continue
+        check(lineup["teamId"] == team_id, f"{item}.teamId", "must match object key")
+        check(bool(FORMATION.fullmatch(lineup["formation"])), f"{item}.formation", "invalid formation")
+        check(isinstance(lineup["starters"], list) and len(lineup["starters"]) == 11, f"{item}.starters", "must contain 11 players")
+        check(isinstance(lineup["substitutes"], list) and len(lineup["substitutes"]) >= 1, f"{item}.substitutes", "must contain substitutes")
+        if lineup["status"] == "official-first-match-xi": official += 1
+        elif lineup["status"] == "tacticvision-predicted-xi": predicted += 1
+        else: check(False, f"{item}.status", "unknown lineup status")
+        if isinstance(lineup["starters"], list):
+            ids = [player.get("id") for player in lineup["starters"] if isinstance(player, dict)]
+            unique(ids, f"{item}.starter IDs")
+            for index, player in enumerate(lineup["starters"]):
+                starter = f"{item}.starters[{index}]"
+                if not fields(player, {"id", "name", "number", "position", "grid", "x", "y"}, starter): continue
+                check(number_between(player["x"], 0, 100) and number_between(player["y"], 0, 100), starter, "coordinates must be 0..100")
+                if lineup["status"] == "tacticvision-predicted-xi": check(player["id"] in players, f"{starter}.id", "predicted player must be canonical")
+    check(official == 18, location, "must contain 18 official first-match XIs")
+    check(predicted == 2 and {team for team, row in teams.items() if row.get("status") == "tacticvision-predicted-xi"} == {"chelsea", "fulham"}, location, "only Chelsea and Fulham may use predicted XIs")
+
+
 def validate_people_comparison(value: Any) -> None:
     location = "people-comparison.json"
     if not fields(value, {"schemaVersion", "asOf", "sourceId", "sourceUrl", "license", "players", "managers"}, location):
@@ -421,6 +516,10 @@ def main() -> int:
     validate_roles(data["roles.json"])
     validate_tactics(data["tactics.json"], team_ids)
     validate_team_comparison(data["team-comparison.json"], team_ids)
+    validate_matches(data["matches.json"], team_ids)
+    validate_standings(data["standings.json"], team_ids)
+    validate_team_history(data["team-history.json"], team_ids)
+    validate_first_match_lineups(data["first-match-lineups.json"], team_ids, data["players.json"])
     validate_people_comparison(data["people-comparison.json"])
     validate_player_provider_crosscheck(data["player-provider-crosscheck.json"], data["people-comparison.json"])
     validate_team_provider_crosscheck(data["team-provider-crosscheck.json"], team_ids)
