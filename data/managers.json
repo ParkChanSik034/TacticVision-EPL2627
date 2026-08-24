@@ -1,242 +1,1365 @@
 {
   "arsenal": {
-    "name": "감독 데이터 업데이트 예정",
-    "nationality": "업데이트 예정",
+    "name": "미켈 아르테타",
+    "nationality": "스페인",
     "career": [],
     "preferredFormations": [
-      "4-3-3"
+      "4-3-3",
+      "4-2-3-1"
     ],
-    "style": "전술 데이터 업데이트 예정",
-    "keyPlayers": [],
-    "signings": "이적 데이터 업데이트 예정",
-    "feedback": "해당 구단의 26/27 상세 데이터는 이후 단계에서 추가됩니다."
+    "style": "4-3-3과 4-2-3-1을 상대에 맞게 변형하며, 중앙 안정성·전방 압박·세트피스로 경기를 통제하는 모델",
+    "identity": "가변 점유·압박 제어",
+    "traits": [
+      "가변 4-3-3",
+      "더블 피벗",
+      "전방 회수",
+      "세트피스",
+      "리드 관리"
+    ],
+    "keyPlayers": [
+      [
+        "더블 피벗",
+        "라이스의 전진과 중앙 보호를 상황에 따라 전환",
+        "rice"
+      ],
+      [
+        "우측 플레이메이커",
+        "사카와 10번이 우측 하프스페이스를 연결",
+        "saka"
+      ],
+      [
+        "빌드업 키퍼",
+        "후방 수적 우위와 중·장거리 전개 선택",
+        ""
+      ]
+    ],
+    "achievements": [
+      "2025/26 프리미어리그 우승",
+      "2019/20 FA컵 우승",
+      "2025/26 리그 19클린시트·최소 실점 수비"
+    ],
+    "principles": [
+      [
+        "빌드업",
+        "풀백이 중앙에 합류하거나 더블 피벗을 구성해 1차 압박 통과 경로를 확보한다."
+      ],
+      [
+        "공격",
+        "윙어는 폭을 유지하고 8번·10번 자원이 하프스페이스에서 연결과 침투를 담당한다."
+      ],
+      [
+        "수비·전환",
+        "전방에서 공을 다시 회수하되, 리드 후에는 중앙 보호와 경기 관리 비중을 높인다."
+      ]
+    ],
+    "signings": "검증된 이적 데이터 연동 준비 중",
+    "feedback": "전술판에서는 라이스를 단독 6번으로 고정하기보다 상대 압박 규모에 따라 더블 피벗과 전진형 8번을 전환하는 것이 핵심입니다.",
+    "sourceLinks": [
+      {
+        "label": "Arsenal 2025/26 전술 분석",
+        "url": "https://www.arsenal.com/news/arsenal-analysed-how-we-won-the-premier-league-aO1ug2E0S5oq"
+      },
+      {
+        "label": "Premier League 우승 전술 분석",
+        "url": "https://www.premierleague.com/en/news/4662597/arsenal"
+      },
+      {
+        "label": "Arsenal 리그 우승 공식 발표",
+        "url": "https://www.arsenal.com/news/arsenal-crowned-202526-premier-league-champions-aOhcw4T06mFw"
+      }
+    ],
+    "analysisStatus": "reviewed-2026-08-24",
+    "sliders": {
+      "defline": 76,
+      "width": 68,
+      "press": 86
+    },
+    "controlValuesStatus": "tacticvision-analysis-estimate"
   },
   "astonvilla": {
-    "name": "감독 데이터 업데이트 예정",
-    "nationality": "업데이트 예정",
+    "name": "우나이 에메리",
+    "nationality": "스페인",
     "career": [],
     "preferredFormations": [
-      "4-2-3-1"
+      "4-2-3-1",
+      "4-4-2"
     ],
-    "style": "전술 데이터 업데이트 예정",
-    "keyPlayers": [],
-    "signings": "이적 데이터 업데이트 예정",
-    "feedback": "해당 구단의 26/27 상세 데이터는 이후 단계에서 추가됩니다."
+    "style": "상대 분석에 따라 구조를 바꾸면서 후방의 짧은 패스로 압박을 유인한 뒤 빠르게 전진하는 모델",
+    "keyPlayers": [
+      [
+        "전진형 센터백",
+        "압박을 유인한 뒤 라인 사이로 패스",
+        ""
+      ],
+      [
+        "채널 스트라이커",
+        "수비 뒷공간과 측면 채널을 반복 공략",
+        ""
+      ],
+      [
+        "인사이드 10번",
+        "박스 미드필드와 컷백 지점 점유",
+        ""
+      ]
+    ],
+    "signings": "검증된 이적 데이터 연동 준비 중",
+    "feedback": "고정 대형보다 상대 압박 방식에 맞춘 첫 전진 경로와 수비 라인 높이를 먼저 설정해야 합니다.",
+    "identity": "상대 맞춤형 인공 전환",
+    "traits": [
+      "박스 미드필드",
+      "압박 유인",
+      "하이 라인",
+      "채널 침투"
+    ],
+    "achievements": [
+      "UEFA 유로파리그 4회 우승(세비야 3회·비야레알 1회)",
+      "2023/24 애스턴 빌라 프리미어리그 4위·챔피언스리그 진출",
+      "2022/23 강등권 인근의 빌라를 리그 7위로 반등"
+    ],
+    "principles": [
+      [
+        "빌드업",
+        "센터백과 더블 피벗이 상대 압박을 끌어내고 전진 패스 순간을 기다린다."
+      ],
+      [
+        "공격",
+        "공격수의 채널 이동과 2선의 중앙 합류로 박스 미드필드 및 컷백 기회를 만든다."
+      ],
+      [
+        "수비·전환",
+        "좁은 미드블록과 높은 수비 라인을 병행하며 상대에 따라 깊이를 조절한다."
+      ]
+    ],
+    "sourceLinks": [
+      {
+        "label": "Premier League 전술 분석",
+        "url": "https://www.premierleague.com/en/news/3750635"
+      }
+    ],
+    "analysisStatus": "reviewed-2026-08-24",
+    "sliders": {
+      "defline": 78,
+      "width": 57,
+      "press": 67
+    },
+    "controlValuesStatus": "tacticvision-analysis-estimate"
   },
   "bournemouth": {
-    "name": "감독 데이터 업데이트 예정",
-    "nationality": "업데이트 예정",
+    "name": "마르코 로제",
+    "nationality": "독일",
     "career": [],
     "preferredFormations": [
       "4-2-3-1"
     ],
-    "style": "전술 데이터 업데이트 예정",
-    "keyPlayers": [],
-    "signings": "이적 데이터 업데이트 예정",
-    "feedback": "해당 구단의 26/27 상세 데이터는 이후 단계에서 추가됩니다."
+    "style": "마르코 로제의 이전 팀에서 확인된 강한 압박과 수직 전개 성향을 본머스에 적용할 가능성을 정리한 잠정 프로필",
+    "keyPlayers": [
+      [
+        "압박형 9번",
+        "센터백 전개를 막고 전진 패스의 첫 목표가 됨",
+        ""
+      ],
+      [
+        "좁은 10번",
+        "세컨드볼과 하프스페이스를 공격",
+        ""
+      ],
+      [
+        "볼 위닝 6번",
+        "역압박 뒤 전진 패스를 즉시 선택",
+        ""
+      ]
+    ],
+    "signings": "검증된 이적 데이터 연동 준비 중",
+    "feedback": "현재 본머스 경기 표본이 쌓이기 전까지 압박 높이와 대형은 잠정값으로 사용해야 합니다.",
+    "identity": "레드불 계열 수직 압박",
+    "traits": [
+      "전방 압박",
+      "빠른 전진",
+      "좁은 2선",
+      "세컨드볼"
+    ],
+    "achievements": [
+      "RB 잘츠부르크 오스트리아 리그 2연패",
+      "2022/23 RB 라이프치히 DFB-포칼 우승",
+      "묀헨글라트바흐를 2019/20 챔피언스리그 진출로 이끔"
+    ],
+    "principles": [
+      [
+        "빌드업",
+        "중앙 미드필더를 가깝게 두고 첫 패스부터 전진 방향을 우선한다."
+      ],
+      [
+        "공격",
+        "두 명의 10번 또는 좁은 윙어가 세컨드볼과 하프스페이스를 공략한다."
+      ],
+      [
+        "수비·전환",
+        "공을 잃은 지점 주변에서 즉시 압박하되 배후 공간 보호가 핵심이다."
+      ]
+    ],
+    "sourceLinks": [
+      {
+        "label": "Bournemouth 공식 첫 인터뷰 요약",
+        "url": "https://www.premierleague.com/en/news/4673195/the-briefing-roses-first-day-brentfords-future-plans-and-transfer-news"
+      }
+    ],
+    "analysisStatus": "provisional-2026-08-24",
+    "sliders": {
+      "defline": 74,
+      "width": 54,
+      "press": 88
+    },
+    "controlValuesStatus": "tacticvision-analysis-estimate"
   },
   "brentford": {
-    "name": "감독 데이터 업데이트 예정",
-    "nationality": "업데이트 예정",
+    "name": "키스 앤드루스",
+    "nationality": "아일랜드",
     "career": [],
     "preferredFormations": [
-      "4-3-3"
+      "4-2-3-1",
+      "3-5-2"
     ],
-    "style": "전술 데이터 업데이트 예정",
-    "keyPlayers": [],
-    "signings": "이적 데이터 업데이트 예정",
-    "feedback": "해당 구단의 26/27 상세 데이터는 이후 단계에서 추가됩니다."
+    "style": "상대에 따라 백4와 백5를 바꾸며 탈취 직후 빠른 공격수에게 긴 패스를 연결하는 모델",
+    "keyPlayers": [
+      [
+        "타깃 9번",
+        "긴 패스를 지키고 전환 공격을 마무리",
+        ""
+      ],
+      [
+        "스프린트 포워드",
+        "탈취 순간 빈 배후 공간을 공격",
+        ""
+      ],
+      [
+        "롱패스 미드필더",
+        "전환 첫 패스와 세컨드볼 회수를 담당",
+        ""
+      ]
+    ],
+    "signings": "검증된 이적 데이터 연동 준비 중",
+    "feedback": "상대가 전원을 전진시켰을 때 전환 패스의 목표와 두 번째 침투 선수를 미리 지정해야 합니다.",
+    "identity": "직선적 전환·상대 맞춤 대형",
+    "traits": [
+      "롱패스",
+      "빠른 역습",
+      "투톱 전환",
+      "세트피스"
+    ],
+    "achievements": [
+      "2025/26 첫 감독 시즌 프리미어리그 14승",
+      "2025/26 프리미어리그 올해의 감독 후보",
+      "맨유·리버풀·애스턴 빌라 상대 승리"
+    ],
+    "principles": [
+      [
+        "빌드업",
+        "후방에서 무리하게 점유하기보다 상대 전진을 유도한 뒤 전방 공간을 확인한다."
+      ],
+      [
+        "공격",
+        "빠른 공격수의 배후 침투와 중앙 공격수의 경합으로 짧은 시간에 슈팅을 만든다."
+      ],
+      [
+        "수비·전환",
+        "대형을 낮춰 공간을 지키고 세트피스 및 공중볼 상황을 조직적으로 관리한다."
+      ]
+    ],
+    "sourceLinks": [
+      {
+        "label": "Premier League Brentford 분석",
+        "url": "https://www.premierleague.com/en/news/4450551/talking-tactics-analysis-can-brentford-direct-playing-style-keep-delivering-big-wins"
+      }
+    ],
+    "analysisStatus": "reviewed-2026-08-24",
+    "sliders": {
+      "defline": 52,
+      "width": 62,
+      "press": 64
+    },
+    "controlValuesStatus": "tacticvision-analysis-estimate"
   },
   "brighton": {
-    "name": "감독 데이터 업데이트 예정",
-    "nationality": "업데이트 예정",
+    "name": "파비안 휘르첼러",
+    "nationality": "독일, 스위스, 미국",
     "career": [],
     "preferredFormations": [
-      "4-2-3-1"
+      "4-2-3-1",
+      "4-4-2"
     ],
-    "style": "전술 데이터 업데이트 예정",
-    "keyPlayers": [],
-    "signings": "이적 데이터 업데이트 예정",
-    "feedback": "해당 구단의 26/27 상세 데이터는 이후 단계에서 추가됩니다."
+    "style": "점유를 유지하되 기회가 보이면 빠른 전진 패스를 선택하고 여러 명이 최종 라인을 공격하는 모델",
+    "keyPlayers": [
+      [
+        "연결형 9번",
+        "투톱 사이 연계와 박스 침투를 병행",
+        ""
+      ],
+      [
+        "전진형 10번",
+        "라인 사이 수신 후 위험 패스를 선택",
+        ""
+      ],
+      [
+        "역압박 8번",
+        "전진 지원과 즉시 압박의 균형 담당",
+        ""
+      ]
+    ],
+    "signings": "검증된 이적 데이터 연동 준비 중",
+    "feedback": "공격 숫자를 늘릴수록 잔류 수비와 중앙 커버 위치를 명확히 해야 합니다.",
+    "identity": "고강도 압박·직접적 전진",
+    "traits": [
+      "맨투맨 압박",
+      "전진 패스",
+      "다수 박스 침투",
+      "투톱 연계"
+    ],
+    "achievements": [
+      "2023/24 장크트파울리 2.분데스리가 우승·분데스리가 승격",
+      "브라이튼 구단 역사상 최고 수준의 프리미어리그 초반 성적",
+      "2024/25 맨시티·맨유·뉴캐슬·토트넘 상대 승리"
+    ],
+    "principles": [
+      [
+        "빌드업",
+        "후방 전개 능력은 유지하지만 긴 점유보다 전진 가능한 순간을 빠르게 선택한다."
+      ],
+      [
+        "공격",
+        "투톱과 2선의 위치 교환으로 박스 안 숫자와 깊은 침투를 늘린다."
+      ],
+      [
+        "수비·전환",
+        "전방 맨투맨 압박과 역압박을 사용하며 많은 선수가 전진한 뒤의 역습 대비가 과제다."
+      ]
+    ],
+    "sourceLinks": [
+      {
+        "label": "Premier League Hurzeler 분석",
+        "url": "https://www.premierleague.com/en/news/4171172"
+      }
+    ],
+    "analysisStatus": "reviewed-2026-08-24",
+    "sliders": {
+      "defline": 73,
+      "width": 69,
+      "press": 87
+    },
+    "controlValuesStatus": "tacticvision-analysis-estimate"
   },
   "chelsea": {
-    "name": "사비 알론소 (Xabi Alonso)",
-    "nationality": "업데이트 예정",
+    "name": "샤비 알론소",
+    "nationality": "스페인",
     "career": [],
     "preferredFormations": [
       "3-4-2-1"
     ],
-    "style": "하이브리드 윙백 & 하프스페이스 좁은 채널 빌드업",
-    "keyPlayers": [],
-    "signings": "피에로 인카피에 (Piero Hincapié) 완전 영입",
-    "feedback": "알론소 감독의 첼시는 가변 3백과 좁혀진 공격 포지션이 특징입니다. 인카피에의 합류로 수비 시 백4로 부드럽게 복귀할 수 있습니다."
+    "style": "레버쿠젠 시절의 3-4-2-1을 기준으로 중앙에 인원을 모으고 윙백이 폭을 제공하는 첼시 초기 모델",
+    "keyPlayers": [
+      [
+        "전진 윙백",
+        "마지막 라인의 폭과 깊이를 제공",
+        ""
+      ],
+      [
+        "인사이드 포워드",
+        "라인 사이에서 전진 패스와 박스 침투 연결",
+        "palmer"
+      ],
+      [
+        "볼 플레이잉 센터백",
+        "백3 외곽에서 전진 패스와 운반 담당",
+        ""
+      ]
+    ],
+    "signings": "검증된 이적 데이터 연동 준비 중",
+    "feedback": "첼시 실전 표본이 적으므로 레버쿠젠 기반 예상과 실제 경기 분석을 구분해야 합니다.",
+    "identity": "중앙 과밀·윙백 폭",
+    "traits": [
+      "백3",
+      "더블 피벗",
+      "인사이드 포워드",
+      "즉시 역압박"
+    ],
+    "achievements": [
+      "2023/24 레버쿠젠 분데스리가 무패 우승",
+      "2023/24 DFB-포칼 우승",
+      "2023/24 전 대회 53경기 중 1패"
+    ],
+    "principles": [
+      [
+        "빌드업",
+        "세 명의 수비수와 더블 피벗이 중앙 패스망을 만들고 한쪽 윙백이 빌드업에 가담한다."
+      ],
+      [
+        "공격",
+        "두 명의 인사이드 포워드가 라인 사이를 점유하고 윙백이 바깥 폭을 제공한다."
+      ],
+      [
+        "수비·전환",
+        "소유권 상실 직후 높은 위치에서 압박해 상대 전진을 차단한다."
+      ]
+    ],
+    "sourceLinks": [
+      {
+        "label": "Premier League Alonso 전망",
+        "url": "https://www.premierleague.com/en/news/4677087/analysis-how-will-chelsea-look-under-alonso"
+      }
+    ],
+    "analysisStatus": "provisional-2026-08-24",
+    "sliders": {
+      "defline": 72,
+      "width": 72,
+      "press": 84
+    },
+    "controlValuesStatus": "tacticvision-analysis-estimate"
   },
   "coventry": {
-    "name": "감독 데이터 업데이트 예정",
-    "nationality": "업데이트 예정",
+    "name": "프랭크 램퍼드",
+    "nationality": "영국",
     "career": [],
     "preferredFormations": [
       "4-2-3-1"
     ],
-    "style": "전술 데이터 업데이트 예정",
-    "keyPlayers": [],
-    "signings": "이적 데이터 업데이트 예정",
-    "feedback": "해당 구단의 26/27 상세 데이터는 이후 단계에서 추가됩니다."
+    "style": "프랭크 램퍼드의 코번트리 경기 데이터와 공식 전술 자료를 추가 확인하기 전 사용하는 잠정 구조",
+    "keyPlayers": [
+      [
+        "중앙 10번",
+        "2선 창조성과 박스 침투의 중심",
+        ""
+      ],
+      [
+        "전진형 윙어",
+        "측면 1대1과 뒷공간 공격",
+        ""
+      ],
+      [
+        "균형형 더블 피벗",
+        "전진 패스와 풀백 전진 커버",
+        ""
+      ]
+    ],
+    "signings": "검증된 이적 데이터 연동 준비 중",
+    "feedback": "코번트리의 2026/27 경기 표본 확보 후 압박과 빌드업 설명을 재검증해야 합니다.",
+    "identity": "점유 기반 전진·2선 활용",
+    "traits": [
+      "더블 피벗",
+      "10번 활용",
+      "측면 전개",
+      "전방 압박"
+    ],
+    "achievements": [
+      "2018/19 더비 카운티 Championship 플레이오프 결승 진출",
+      "2019/20 첼시를 프리미어리그 4위·FA컵 결승으로 이끔",
+      "이적 금지 상황에서 첼시 유스 자원 다수 정착"
+    ],
+    "principles": [
+      [
+        "빌드업",
+        "더블 피벗을 거쳐 측면과 10번에게 안정적으로 전진한다."
+      ],
+      [
+        "공격",
+        "2선 미드필더의 박스 침투와 측면 공격수의 직접성을 활용한다."
+      ],
+      [
+        "수비·전환",
+        "중앙 간격을 유지하며 전방 압박 시 풀백 뒤 공간을 관리한다."
+      ]
+    ],
+    "sourceLinks": [
+      {
+        "label": "Premier League 감독 프로필",
+        "url": "https://www.premierleague.com/"
+      }
+    ],
+    "analysisStatus": "provisional-2026-08-24",
+    "sliders": {
+      "defline": 62,
+      "width": 66,
+      "press": 70
+    },
+    "controlValuesStatus": "tacticvision-analysis-estimate"
   },
   "crystalpalace": {
-    "name": "감독 데이터 업데이트 예정",
-    "nationality": "업데이트 예정",
+    "name": "피에르 사주",
+    "nationality": "프랑스",
     "career": [],
     "preferredFormations": [
-      "3-4-2-1"
+      "4-2-3-1",
+      "4-3-3"
     ],
-    "style": "전술 데이터 업데이트 예정",
-    "keyPlayers": [],
-    "signings": "이적 데이터 업데이트 예정",
-    "feedback": "해당 구단의 26/27 상세 데이터는 이후 단계에서 추가됩니다."
+    "style": "리옹과 랑스 경력을 바탕으로 한 잠정 프로필이며 팰리스 실전 전술은 경기 표본 이후 확정",
+    "keyPlayers": [
+      [
+        "유동적 10번",
+        "중앙과 측면 사이를 이동하며 공격 연결",
+        ""
+      ],
+      [
+        "볼 운반 윙어",
+        "전환 상황에서 직접 전진",
+        ""
+      ],
+      [
+        "커버형 6번",
+        "2선 전진 뒤 중앙 공간 보호",
+        ""
+      ]
+    ],
+    "signings": "검증된 이적 데이터 연동 준비 중",
+    "feedback": "현재 팰리스에서 검증된 전술 표본이 적으므로 대형과 역할을 단정하지 않아야 합니다.",
+    "identity": "선수 개발·균형형 점유",
+    "traits": [
+      "중앙 연결",
+      "유동적 2선",
+      "조직적 압박",
+      "선수 개발"
+    ],
+    "achievements": [
+      "2025/26 RC Lens 쿠프 드 프랑스 우승",
+      "2025/26 Ligue 1 준우승·챔피언스리그 진출",
+      "2023/24 리옹을 강등권에서 유럽대항전 진출권으로 반등"
+    ],
+    "principles": [
+      [
+        "빌드업",
+        "중앙 미드필더를 통해 안정적으로 전진하고 2선이 패스 각도를 만든다."
+      ],
+      [
+        "공격",
+        "유동적인 2선과 측면 전개로 박스 진입 경로를 다양화한다."
+      ],
+      [
+        "수비·전환",
+        "라인 간격을 유지한 조직적 압박과 수비 전환을 우선한다."
+      ]
+    ],
+    "sourceLinks": [
+      {
+        "label": "Premier League Pierre Sage 프로필",
+        "url": "https://www.premierleague.com/en/news/4679663/pierre-sage"
+      }
+    ],
+    "analysisStatus": "provisional-2026-08-24",
+    "sliders": {
+      "defline": 61,
+      "width": 65,
+      "press": 72
+    },
+    "controlValuesStatus": "tacticvision-analysis-estimate"
   },
   "everton": {
-    "name": "감독 데이터 업데이트 예정",
-    "nationality": "업데이트 예정",
+    "name": "데이비드 모예스",
+    "nationality": "영국",
     "career": [],
     "preferredFormations": [
       "4-2-3-1"
     ],
-    "style": "전술 데이터 업데이트 예정",
-    "keyPlayers": [],
-    "signings": "이적 데이터 업데이트 예정",
-    "feedback": "해당 구단의 26/27 상세 데이터는 이후 단계에서 추가됩니다."
+    "style": "이전보다 긴 패스를 줄이고 수비진에서 차분히 전진하면서 박스 안 숫자와 찬스 질을 높이는 모델",
+    "keyPlayers": [
+      [
+        "측면 창조자",
+        "드리블과 컷백으로 찬스 질을 높임",
+        ""
+      ],
+      [
+        "박스 10번",
+        "공격수 주변에서 세컨드볼과 침투 담당",
+        ""
+      ],
+      [
+        "운반형 센터백",
+        "성급한 롱패스 대신 중원까지 전진",
+        ""
+      ]
+    ],
+    "signings": "검증된 이적 데이터 연동 준비 중",
+    "feedback": "점유 안정성과 전진 속도 사이의 균형을 경기 상태에 따라 조절해야 합니다.",
+    "identity": "통제된 전진·박스 공략",
+    "traits": [
+      "점진적 빌드업",
+      "측면 창출",
+      "빠른 시작",
+      "수비 조직"
+    ],
+    "achievements": [
+      "2022/23 웨스트햄 UEFA 유로파 콘퍼런스리그 우승",
+      "LMA 올해의 감독 3회",
+      "에버턴 첫 임기 중 8차례 리그 7위 이상"
+    ],
+    "principles": [
+      [
+        "빌드업",
+        "센터백의 볼 운반과 중원을 거친 전진으로 첫 패스를 서두르지 않는다."
+      ],
+      [
+        "공격",
+        "측면 창의성과 10번을 활용해 크로스 일변도에서 벗어나 더 좋은 슈팅을 만든다."
+      ],
+      [
+        "수비·전환",
+        "조직적인 블록을 유지하고 탈취 후에는 빠르게 전방 공간을 공격한다."
+      ]
+    ],
+    "sourceLinks": [
+      {
+        "label": "Premier League Moyes 분석",
+        "url": "https://www.premierleague.com/en/news/4429115/analysis-dewsbury-hall-at-the-centre-of-moyes-everton-evolution"
+      }
+    ],
+    "analysisStatus": "reviewed-2026-08-24",
+    "sliders": {
+      "defline": 56,
+      "width": 67,
+      "press": 68
+    },
+    "controlValuesStatus": "tacticvision-analysis-estimate"
   },
   "fulham": {
-    "name": "감독 데이터 업데이트 예정",
-    "nationality": "업데이트 예정",
+    "name": "알바로 아르벨로아",
+    "nationality": "스페인",
     "career": [],
     "preferredFormations": [
       "4-2-3-1"
     ],
-    "style": "전술 데이터 업데이트 예정",
-    "keyPlayers": [],
-    "signings": "이적 데이터 업데이트 예정",
-    "feedback": "해당 구단의 26/27 상세 데이터는 이후 단계에서 추가됩니다."
+    "style": "프리시즌에서 확인된 4-2-3-1과 풀백 오버래핑을 바탕으로 측면 수적 우위를 만드는 초기 모델",
+    "keyPlayers": [
+      [
+        "오버래핑 풀백",
+        "윙어 바깥을 돌아 측면 수적 우위 형성",
+        ""
+      ],
+      [
+        "인사이드 윙어",
+        "풀백에게 폭을 넘기고 박스 안으로 이동",
+        ""
+      ],
+      [
+        "박스 스트라이커",
+        "크로스와 컷백의 최종 지점 점유",
+        ""
+      ]
+    ],
+    "signings": "검증된 이적 데이터 연동 준비 중",
+    "feedback": "프리시즌 기반이므로 리그 경기에서 측면 과부하가 유지되는지 재검증해야 합니다.",
+    "identity": "측면 과부하·오버래핑",
+    "traits": [
+      "측면 2대1",
+      "공격적 풀백",
+      "넓은 폭",
+      "박스 공급"
+    ],
+    "achievements": [
+      "2025/26 레알 마드리드 임시 감독으로 LaLiga 2위",
+      "2025/26 UEFA 챔피언스리그 8강",
+      "레알 마드리드 유소년·카스티야를 거쳐 1군 감독 승격"
+    ],
+    "principles": [
+      [
+        "빌드업",
+        "더블 피벗이 풀백의 전진을 지원하고 반대쪽은 잔류 균형을 잡는다."
+      ],
+      [
+        "공격",
+        "윙어와 풀백이 2대1 또는 3대2를 만들고 박스 안 공격수에게 공급한다."
+      ],
+      [
+        "수비·전환",
+        "풀백 전진 뒤 측면 공간과 수비 전환을 더블 피벗이 커버한다."
+      ]
+    ],
+    "sourceLinks": [
+      {
+        "label": "Premier League 2026/27 라인업 분석",
+        "url": "https://www.premierleague.com/en/news/4688364/how-every-premier-league-club-could-line-up-in-202627"
+      }
+    ],
+    "analysisStatus": "provisional-2026-08-24",
+    "sliders": {
+      "defline": 65,
+      "width": 78,
+      "press": 72
+    },
+    "controlValuesStatus": "tacticvision-analysis-estimate"
   },
   "hullcity": {
-    "name": "감독 데이터 업데이트 예정",
-    "nationality": "업데이트 예정",
+    "name": "세르게이 야키로비치",
+    "nationality": "보스니아 헤르체고비나",
     "career": [],
     "preferredFormations": [
-      "4-2-3-1"
-    ],
-    "style": "전술 데이터 업데이트 예정",
-    "keyPlayers": [],
-    "signings": "이적 데이터 업데이트 예정",
-    "feedback": "해당 구단의 26/27 상세 데이터는 이후 단계에서 추가됩니다."
-  },
-  "ipswich": {
-    "name": "감독 데이터 업데이트 예정",
-    "nationality": "업데이트 예정",
-    "career": [],
-    "preferredFormations": [
-      "4-2-3-1"
-    ],
-    "style": "전술 데이터 업데이트 예정",
-    "keyPlayers": [],
-    "signings": "이적 데이터 업데이트 예정",
-    "feedback": "해당 구단의 26/27 상세 데이터는 이후 단계에서 추가됩니다."
-  },
-  "leeds": {
-    "name": "감독 데이터 업데이트 예정",
-    "nationality": "업데이트 예정",
-    "career": [],
-    "preferredFormations": [
-      "4-2-3-1"
-    ],
-    "style": "전술 데이터 업데이트 예정",
-    "keyPlayers": [],
-    "signings": "이적 데이터 업데이트 예정",
-    "feedback": "해당 구단의 26/27 상세 데이터는 이후 단계에서 추가됩니다."
-  },
-  "liverpool": {
-    "name": "감독 데이터 업데이트 예정",
-    "nationality": "업데이트 예정",
-    "career": [],
-    "preferredFormations": [
+      "4-2-3-1",
       "4-3-3"
     ],
-    "style": "전술 데이터 업데이트 예정",
-    "keyPlayers": [],
-    "signings": "이적 데이터 업데이트 예정",
-    "feedback": "해당 구단의 26/27 상세 데이터는 이후 단계에서 추가됩니다."
+    "style": "승격 과정에서 확인된 상대 맞춤 운영을 기반으로 한 잠정 프로필이며 EPL 표본 이후 세부 전술을 확정",
+    "keyPlayers": [
+      [
+        "전환형 윙어",
+        "탈취 후 측면 공간으로 빠르게 전진",
+        ""
+      ],
+      [
+        "연결형 10번",
+        "중앙 공격수와 2선 사이를 연결",
+        ""
+      ],
+      [
+        "수비형 6번",
+        "실용적인 경기 운영과 중앙 보호",
+        ""
+      ]
+    ],
+    "signings": "검증된 이적 데이터 연동 준비 중",
+    "feedback": "승격 시즌과 프리미어리그의 압박 수준 차이를 반영해 빌드업 위험도를 낮춰야 합니다.",
+    "identity": "조직적 전환·실용적 운영",
+    "traits": [
+      "중앙 안정",
+      "빠른 전환",
+      "상대 맞춤",
+      "플레이오프 운영"
+    ],
+    "achievements": [
+      "2025/26 헐 시티 Championship 플레이오프 우승·승격",
+      "2023/24 디나모 자그레브 리그·컵 더블",
+      "2021/22 즈린스키 모스타르 보스니아 리그 우승"
+    ],
+    "principles": [
+      [
+        "빌드업",
+        "중앙 숫자를 확보하고 위험 지역에서 단순한 전진 선택을 사용한다."
+      ],
+      [
+        "공격",
+        "측면 속도와 2선 합류를 통해 전환 상황을 마무리한다."
+      ],
+      [
+        "수비·전환",
+        "조직적 블록과 경합 강도를 유지하며 경기 상태에 맞춰 위험을 조절한다."
+      ]
+    ],
+    "sourceLinks": [
+      {
+        "label": "Premier League 2026/27 라인업 분석",
+        "url": "https://www.premierleague.com/en/news/4688364/how-every-premier-league-club-could-line-up-in-202627"
+      }
+    ],
+    "analysisStatus": "provisional-2026-08-24",
+    "sliders": {
+      "defline": 54,
+      "width": 63,
+      "press": 66
+    },
+    "controlValuesStatus": "tacticvision-analysis-estimate"
   },
-  "mancity": {
-    "name": "엔초 마레스카 (Enzo Maresca)",
-    "nationality": "업데이트 예정",
+  "ipswich": {
+    "name": "게리 오닐",
+    "nationality": "영국",
     "career": [],
     "preferredFormations": [
+      "3-4-2-1",
+      "4-2-3-1"
+    ],
+    "style": "게리 오닐의 이전 프리미어리그 팀에서 확인된 대형 유연성과 빠른 전환을 입스위치에 적용한 잠정 모델",
+    "keyPlayers": [
+      [
+        "공격형 윙백",
+        "측면에서 폭과 박스 침투를 제공",
+        ""
+      ],
+      [
+        "하프스페이스 10번",
+        "전환 패스를 받아 직접 공격",
+        ""
+      ],
+      [
+        "커버 센터백",
+        "윙백 뒤와 넓은 공간을 방어",
+        ""
+      ]
+    ],
+    "signings": "검증된 이적 데이터 연동 준비 중",
+    "feedback": "입스위치 실전 표본이 쌓일 때까지 울버햄프턴 시절 분석과 구분해야 합니다.",
+    "identity": "상대 맞춤 전환·과부하",
+    "traits": [
+      "대형 전환",
+      "측면 과부하",
+      "직접적 역습",
+      "세트피스"
+    ],
+    "achievements": [
+      "2022/23 본머스를 강등 예상 속 프리미어리그 잔류로 이끔",
+      "2023/24 울버햄프턴의 득점력과 리그 성적 반등",
+      "2023/24 울버햄프턴에서 세트피스 12골"
+    ],
+    "principles": [
+      [
+        "빌드업",
+        "상대 압박에 따라 백3와 백4를 바꾸며 과부하 지점을 만든다."
+      ],
+      [
+        "공격",
+        "측면 속도와 10번의 하프스페이스 수신으로 빠르게 박스에 접근한다."
+      ],
+      [
+        "수비·전환",
+        "점유보다 공간 보호를 우선하고 탈취 직후 직접적인 역습을 시도한다."
+      ]
+    ],
+    "sourceLinks": [
+      {
+        "label": "Premier League O'Neil 전술 분석",
+        "url": "https://www.premierleague.com/en/news/3959985"
+      }
+    ],
+    "analysisStatus": "provisional-2026-08-24",
+    "sliders": {
+      "defline": 55,
+      "width": 73,
+      "press": 69
+    },
+    "controlValuesStatus": "tacticvision-analysis-estimate"
+  },
+  "leeds": {
+    "name": "다니엘 파르케",
+    "nationality": "독일",
+    "career": [],
+    "preferredFormations": [
+      "4-3-3",
+      "3-5-2"
+    ],
+    "style": "점유형 4-3-3에서 필요 시 직접적인 3-5-2로 바꾸며 생존 경쟁에 맞춰 실용성을 높인 모델",
+    "keyPlayers": [
+      [
+        "타깃 스트라이커",
+        "직접 전개의 경합과 박스 마무리",
+        ""
+      ],
+      [
+        "왕복 윙백",
+        "3-5-2 전환 시 폭과 수비 복귀 담당",
+        ""
+      ],
+      [
+        "볼 위닝 8번",
+        "선택적 압박과 세컨드볼 회수",
+        ""
+      ]
+    ],
+    "signings": "검증된 이적 데이터 연동 준비 중",
+    "feedback": "상대와 경기 상태에 따라 점유형 4-3-3과 직접형 3-5-2를 빠르게 전환해야 합니다.",
+    "identity": "상황 대응형 점유·직접 전환",
+    "traits": [
+      "4-5-1 수비",
+      "투톱 전환",
+      "공중 경합",
+      "선택적 압박"
+    ],
+    "achievements": [
+      "노리치 시티 Championship 우승 2회",
+      "2024/25 리즈 유나이티드 Championship 우승·승격",
+      "2025/26 4-3-3에서 3-5-2로 전환해 강등권 탈출 기반 마련"
+    ],
+    "principles": [
+      [
+        "빌드업",
+        "4-3-3으로 전개하되 강한 압박에는 투톱과 윙백을 활용한 직접 전개를 선택한다."
+      ],
+      [
+        "공격",
+        "측면 전개 또는 두 공격수의 경합과 세컨드볼로 박스 접근을 단순화한다."
+      ],
+      [
+        "수비·전환",
+        "안정 시 4-5-1로 후퇴하고 압박 타이밍을 선택해 중앙을 보호한다."
+      ]
+    ],
+    "sourceLinks": [
+      {
+        "label": "Premier League Leeds 전술 변화",
+        "url": "https://www.premierleague.com/en/news/4515136/dominic-calvert-lewin-analysis-leeds-united"
+      }
+    ],
+    "analysisStatus": "reviewed-2026-08-24",
+    "sliders": {
+      "defline": 57,
+      "width": 65,
+      "press": 73
+    },
+    "controlValuesStatus": "tacticvision-analysis-estimate"
+  },
+  "liverpool": {
+    "name": "안도니 이라올라",
+    "nationality": "스페인",
+    "career": [],
+    "preferredFormations": [
+      "4-2-3-1"
+    ],
+    "style": "높은 압박으로 혼란을 만든 뒤 짧은 시간 안에 9번과 전방 공간으로 직선적으로 전진하는 모델",
+    "keyPlayers": [
+      [
+        "압박형 9번",
+        "첫 압박과 탈취 후 전진 패스의 기준점",
+        ""
+      ],
+      [
+        "다이내믹 10번",
+        "압박·운반·배후 침투를 연속 수행",
+        ""
+      ],
+      [
+        "공격형 풀백",
+        "높은 위치에서 폭과 빠른 전진 제공",
+        ""
+      ]
+    ],
+    "signings": "검증된 이적 데이터 연동 준비 중",
+    "feedback": "낮은 블록을 상대할 때는 직접 전환만으로 공간을 만들기 어려워 점유 구조 보완이 필요합니다.",
+    "identity": "초고강도 압박·직선 전진",
+    "traits": [
+      "게겐프레싱",
+      "높은 턴오버",
+      "빠른 공격",
+      "공격적 풀백"
+    ],
+    "achievements": [
+      "2025/26 본머스 프리미어리그 6위·구단 최초 유럽대항전 진출",
+      "본머스에서 프리미어리그 18경기 연속 무패",
+      "2020/21 라요 바예카노 LaLiga 승격"
+    ],
+    "principles": [
+      [
+        "빌드업",
+        "긴 점유보다 전진 가능한 패스와 풀백의 높은 위치를 우선한다."
+      ],
+      [
+        "공격",
+        "탈취 직후 9번 또는 10번에게 연결하고 빠른 드리블러가 배후를 공격한다."
+      ],
+      [
+        "수비·전환",
+        "전방에서 집단으로 압박하고 실패했을 때 수비 라인 앞 공간을 즉시 압축한다."
+      ]
+    ],
+    "sourceLinks": [
+      {
+        "label": "Premier League Iraola 전망",
+        "url": "https://www.premierleague.com/en/news/4673093/analysis-how-will-liverpool-look-under-iraola"
+      }
+    ],
+    "analysisStatus": "provisional-2026-08-24",
+    "sliders": {
+      "defline": 82,
+      "width": 72,
+      "press": 94
+    },
+    "controlValuesStatus": "tacticvision-analysis-estimate"
+  },
+  "mancity": {
+    "name": "엔초 마레스카",
+    "nationality": "이탈리아",
+    "career": [],
+    "preferredFormations": [
+      "4-3-3",
       "3-2-4-1"
     ],
-    "style": "극단적 인버티드 풀백 기용 및 하프스페이스 수적 우위 점유",
-    "keyPlayers": [],
-    "signings": "엘리엇 앤더슨 (Elliot Anderson) 영입 (€135M)",
-    "feedback": "마레스카 볼은 인버티드 풀백인 스톤스 또는 그바르디올이 로드리와 나란히 서서 중앙 박스를 장악하고, 더 브라위너와 신입생 앤더슨이 메짤라처럼 전진합니다."
+    "style": "세밀한 위치 점유와 후방 빌드업을 기반으로 하되 전환 상황의 직접성과 드리블을 결합하는 모델",
+    "keyPlayers": [
+      [
+        "인버티드 풀백",
+        "중앙 3-2 빌드업과 역압박 기반 형성",
+        ""
+      ],
+      [
+        "하프스페이스 8번",
+        "라인 사이 수신과 박스 침투",
+        ""
+      ],
+      [
+        "폭 유지 윙어",
+        "블록을 넓히고 1대1 돌파",
+        ""
+      ]
+    ],
+    "signings": "검증된 이적 데이터 연동 준비 중",
+    "feedback": "점유 속도가 느려질 때는 드리블과 빠른 전진 패스로 상대 블록을 흔들어야 합니다.",
+    "identity": "포지셔널 점유·전환 가속",
+    "traits": [
+      "인버티드 풀백",
+      "3-2 빌드업",
+      "공간 점유",
+      "빠른 역습"
+    ],
+    "achievements": [
+      "2023/24 레스터 시티 Championship 우승·프리미어리그 승격",
+      "2024/25 첼시 UEFA 콘퍼런스리그 우승",
+      "2025 FIFA 클럽 월드컵 우승"
+    ],
+    "principles": [
+      [
+        "빌드업",
+        "풀백 또는 미드필더가 중앙에 합류해 3-2 구조와 안정적인 패스망을 만든다."
+      ],
+      [
+        "공격",
+        "윙어는 폭을 유지하고 8번이 하프스페이스에서 침투하며 전환 시 빠르게 전진한다."
+      ],
+      [
+        "수비·전환",
+        "소유권 상실 직후 중앙을 닫고 공격 구조를 활용해 역압박한다."
+      ]
+    ],
+    "sourceLinks": [
+      {
+        "label": "Premier League Maresca 전망",
+        "url": "https://www.premierleague.com/en/news/4676111/analysis-how-will-man-city-look-under-maresca"
+      }
+    ],
+    "analysisStatus": "provisional-2026-08-24",
+    "sliders": {
+      "defline": 79,
+      "width": 76,
+      "press": 82
+    },
+    "controlValuesStatus": "tacticvision-analysis-estimate"
   },
   "manutd": {
-    "name": "감독 데이터 업데이트 예정",
-    "nationality": "업데이트 예정",
+    "name": "마이클 캐릭",
+    "nationality": "영국",
+    "career": [],
+    "preferredFormations": [
+      "4-2-3-1",
+      "4-4-2"
+    ],
+    "style": "더블 피벗으로 수비 기반을 만들고 브루노에게 자유를 주며 탈취 후 측면으로 빠르게 전진하는 모델",
+    "keyPlayers": [
+      [
+        "자유 10번",
+        "브루노가 전진 패스와 최종 선택에 집중",
+        ""
+      ],
+      [
+        "균형형 더블 피벗",
+        "10번의 자유와 중앙 수비를 지원",
+        ""
+      ],
+      [
+        "스피드 윙어",
+        "탈취 후 측면 배후를 직접 공격",
+        ""
+      ]
+    ],
+    "signings": "검증된 이적 데이터 연동 준비 중",
+    "feedback": "브루노의 자유를 보장하는 대신 두 중앙 미드필더와 측면의 복귀 책임을 명확히 해야 합니다.",
+    "identity": "중앙 관통·측면 가속",
+    "traits": [
+      "브루노 10번",
+      "더블 피벗",
+      "빠른 측면",
+      "미드블록"
+    ],
+    "achievements": [
+      "2022/23 미들즈브러를 강등권 인근에서 Championship 플레이오프로 반등",
+      "2025/26 맨유 부임 후 리그 첫 4경기 전승",
+      "2025/26 프리미어리그 올해의 감독 후보"
+    ],
+    "principles": [
+      [
+        "빌드업",
+        "센터백의 라인 브레이킹 패스와 더블 피벗을 통해 10번에게 연결한다."
+      ],
+      [
+        "공격",
+        "브루노의 자유로운 창조성과 공격수·윙어의 빠른 위치 교환을 활용한다."
+      ],
+      [
+        "수비·전환",
+        "4-4-2 미드블록으로 중앙을 닫고 박스 수비의 안정성을 우선한다."
+      ]
+    ],
+    "sourceLinks": [
+      {
+        "label": "Premier League Carrick 변화 분석",
+        "url": "https://www.premierleague.com/en/news/4590795/five-changes-carrick-has-made-to-spark-man-utd-back-on-track"
+      }
+    ],
+    "analysisStatus": "reviewed-2026-08-24",
+    "sliders": {
+      "defline": 60,
+      "width": 72,
+      "press": 71
+    },
+    "controlValuesStatus": "tacticvision-analysis-estimate"
+  },
+  "newcastle": {
+    "name": "마티아스 야이슬레",
+    "nationality": "독일",
+    "career": [],
+    "preferredFormations": [
+      "4-2-3-1",
+      "4-3-3"
+    ],
+    "style": "잘츠부르크에서 확인된 공격적 압박과 빠른 전환을 뉴캐슬에 적용할 가능성을 정리한 초기 프로필",
+    "keyPlayers": [
+      [
+        "압박형 투톱",
+        "전방 수비와 배후 침투를 분담",
+        ""
+      ],
+      [
+        "좁은 10번",
+        "세컨드볼 회수와 즉시 전진",
+        ""
+      ],
+      [
+        "볼 위닝 미드필더",
+        "강한 경합 후 전환의 첫 패스 담당",
+        ""
+      ]
+    ],
+    "signings": "검증된 이적 데이터 연동 준비 중",
+    "feedback": "뉴캐슬 공식 경기 표본이 없으므로 잘츠부르크·알아흘리 성향과 구분해야 합니다.",
+    "identity": "레드불식 압박·속도",
+    "traits": [
+      "공격적 압박",
+      "빠른 전환",
+      "좁은 공격",
+      "세컨드볼"
+    ],
+    "achievements": [
+      "2021/22 잘츠부르크 오스트리아 리그·컵 더블",
+      "잘츠부르크 구단 최초 챔피언스리그 16강",
+      "2024/25·2025/26 알아흘리 AFC 챔피언스리그 엘리트 2연패"
+    ],
+    "principles": [
+      [
+        "빌드업",
+        "중앙에 선수를 가깝게 배치하고 탈압박보다 전진 가능성을 우선한다."
+      ],
+      [
+        "공격",
+        "탈취 후 적은 패스로 배후를 공격하고 빠른 공격수가 채널을 점유한다."
+      ],
+      [
+        "수비·전환",
+        "공격적인 전방 압박과 세컨드볼 회수를 통해 상대 진영에 머문다."
+      ]
+    ],
+    "sourceLinks": [
+      {
+        "label": "Premier League Jaissle 소개",
+        "url": "https://www.premierleague.com/en/news/4682104/who-is-newcastle-new-head-coach-matthias-jaissle"
+      }
+    ],
+    "analysisStatus": "provisional-2026-08-24",
+    "sliders": {
+      "defline": 77,
+      "width": 55,
+      "press": 91
+    },
+    "controlValuesStatus": "tacticvision-analysis-estimate"
+  },
+  "nottinghamforest": {
+    "name": "올리버 글라스너",
+    "nationality": "오스트리아",
     "career": [],
     "preferredFormations": [
       "3-4-2-1"
     ],
-    "style": "전술 데이터 업데이트 예정",
-    "keyPlayers": [],
-    "signings": "이적 데이터 업데이트 예정",
-    "feedback": "해당 구단의 26/27 상세 데이터는 이후 단계에서 추가됩니다."
-  },
-  "newcastle": {
-    "name": "감독 데이터 업데이트 예정",
-    "nationality": "업데이트 예정",
-    "career": [],
-    "preferredFormations": [
-      "4-3-3"
+    "style": "글라스너가 이전 팀에서 주로 사용한 3-4-2-1과 프리시즌 발언을 바탕으로 한 초기 프로필",
+    "keyPlayers": [
+      [
+        "전진 윙백",
+        "백3 바깥에서 폭과 크로스 제공",
+        ""
+      ],
+      [
+        "두 명의 10번",
+        "공격수 주변에서 전환과 박스 침투 연결",
+        ""
+      ],
+      [
+        "경합형 9번",
+        "직접 패스의 기준점과 공중볼 담당",
+        ""
+      ]
     ],
-    "style": "전술 데이터 업데이트 예정",
-    "keyPlayers": [],
-    "signings": "이적 데이터 업데이트 예정",
-    "feedback": "해당 구단의 26/27 상세 데이터는 이후 단계에서 추가됩니다."
-  },
-  "nottinghamforest": {
-    "name": "감독 데이터 업데이트 예정",
-    "nationality": "업데이트 예정",
-    "career": [],
-    "preferredFormations": [
-      "4-2-3-1"
+    "signings": "검증된 이적 데이터 연동 준비 중",
+    "feedback": "포레스트 실전에서는 윙백 높이와 공격 시 박스 진입 숫자를 우선 확인해야 합니다.",
+    "identity": "백3·직접 전환",
+    "traits": [
+      "윙백 폭",
+      "두 명의 10번",
+      "공중 경합",
+      "빠른 역습"
     ],
-    "style": "전술 데이터 업데이트 예정",
-    "keyPlayers": [],
-    "signings": "이적 데이터 업데이트 예정",
-    "feedback": "해당 구단의 26/27 상세 데이터는 이후 단계에서 추가됩니다."
+    "achievements": [
+      "2021/22 아인트라흐트 프랑크푸르트 UEFA 유로파리그 우승",
+      "2024/25 크리스털 팰리스 FA컵 우승",
+      "팰리스 구단 사상 첫 주요 국내 컵 우승 달성"
+    ],
+    "principles": [
+      [
+        "빌드업",
+        "세 명의 수비수와 중앙 미드필더가 안정적으로 첫 전진을 준비한다."
+      ],
+      [
+        "공격",
+        "윙백이 폭을 제공하고 두 명의 10번이 공격수 주변에서 박스로 침투한다."
+      ],
+      [
+        "수비·전환",
+        "중앙 블록을 유지한 뒤 탈취하면 전방으로 빠르게 연결한다."
+      ]
+    ],
+    "sourceLinks": [
+      {
+        "label": "Premier League Glasner 프리시즌",
+        "url": "https://www.premierleague.com/en/news/4680069/glasner-happy-with-opening-win"
+      }
+    ],
+    "analysisStatus": "provisional-2026-08-24",
+    "sliders": {
+      "defline": 54,
+      "width": 72,
+      "press": 66
+    },
+    "controlValuesStatus": "tacticvision-analysis-estimate"
   },
   "sunderland": {
-    "name": "감독 데이터 업데이트 예정",
-    "nationality": "업데이트 예정",
+    "name": "레지 르 브리",
+    "nationality": "프랑스",
     "career": [],
     "preferredFormations": [
-      "4-3-3"
+      "4-3-3",
+      "4-2-3-1",
+      "3-4-2-1"
     ],
-    "style": "전술 데이터 업데이트 예정",
-    "keyPlayers": [],
-    "signings": "이적 데이터 업데이트 예정",
-    "feedback": "해당 구단의 26/27 상세 데이터는 이후 단계에서 추가됩니다."
+    "style": "점유 시 측면 수적 우위를 만들고 필요하면 깊게 수비한 뒤 긴 패스와 빠른 전환으로 공격하는 모델",
+    "keyPlayers": [
+      [
+        "딥 플레이메이커",
+        "후방 안정과 긴 전환 패스를 제공",
+        ""
+      ],
+      [
+        "공격형 풀백",
+        "측면 3대2와 크로스 생산",
+        ""
+      ],
+      [
+        "멀티 포워드",
+        "9번·10번·측면을 오가며 전환 공격",
+        ""
+      ]
+    ],
+    "signings": "검증된 이적 데이터 연동 준비 중",
+    "feedback": "점유와 깊은 수비를 모두 사용할 수 있으므로 상대 전진 구조에 맞춰 기준 대형을 선택해야 합니다.",
+    "identity": "유연한 점유·강한 전환",
+    "traits": [
+      "측면 3대2",
+      "빠른 역습",
+      "중원 에너지",
+      "대형 전환"
+    ],
+    "achievements": [
+      "2024/25 Championship 플레이오프 우승·프리미어리그 승격",
+      "2025/26 프리미어리그 7위·유로파리그 진출",
+      "선덜랜드의 53년 만의 유럽대항전 진출"
+    ],
+    "principles": [
+      [
+        "빌드업",
+        "풀백이 전진해 측면 3대2를 만들고 중앙 미드필더가 전환 패스를 공급한다."
+      ],
+      [
+        "공격",
+        "공간이 열리면 빠른 공격수를 향한 직접 패스로 적은 시간 안에 박스에 도달한다."
+      ],
+      [
+        "수비·전환",
+        "상대에 따라 백3로 바꾸며 공중 경합과 세컨드볼, 활동량으로 경기 강도를 높인다."
+      ]
+    ],
+    "sourceLinks": [
+      {
+        "label": "Premier League Sunderland 분석",
+        "url": "https://www.premierleague.com/en/news/4323178"
+      }
+    ],
+    "analysisStatus": "reviewed-2026-08-24",
+    "sliders": {
+      "defline": 58,
+      "width": 69,
+      "press": 78
+    },
+    "controlValuesStatus": "tacticvision-analysis-estimate"
   },
   "tottenham": {
-    "name": "로베르토 데 제르비 (Roberto De Zerbi)",
-    "nationality": "업데이트 예정",
+    "name": "로베르토 데 제르비",
+    "nationality": "이탈리아",
     "career": [],
     "preferredFormations": [
-      "4-2-3-1"
+      "4-3-3",
+      "3-2-4-1"
     ],
-    "style": "골키퍼를 유인 요소로 삼는 고도 설계 빌드업 및 빠른 종전환",
-    "keyPlayers": [],
-    "signings": "산드로 토날리 (€108M), 마테우스 페르난데스 (€99M)",
-    "feedback": "데 제르비 수장 아래에서 토트넘은 토날리와 페르난데스라는 엄청난 더블 피벗을 구축해 후방 빌드업에서 상대 압박을 유도하고 손흥민과 쿨루셉스키 공간을 엽니다."
+    "style": "후방 점유로 상대 압박을 끌어들여 라인을 통과하고, 공격 시 3-2-5와 넓은 윙어를 활용하는 모델",
+    "keyPlayers": [
+      [
+        "탈압박 더블 피벗",
+        "상대 압박을 유인하고 짧은 패스로 통과",
+        ""
+      ],
+      [
+        "터치라인 윙어",
+        "넓은 폭을 유지한 뒤 대각 전진",
+        ""
+      ],
+      [
+        "전진 압박 8번",
+        "맨투맨 압박과 박스 침투를 병행",
+        ""
+      ]
+    ],
+    "signings": "검증된 이적 데이터 연동 준비 중",
+    "feedback": "후방 선수 간격이 벌어지면 압박 유인 구조가 무너지므로 짧은 연결 거리를 유지해야 합니다.",
+    "identity": "압박 유인·맨투맨 압박",
+    "traits": [
+      "프레스 베이팅",
+      "3-2-5",
+      "넓은 윙어",
+      "고강도 압박"
+    ],
+    "achievements": [
+      "2022/23 브라이튼 프리미어리그 6위·구단 최초 유럽대항전 진출",
+      "2024/25 마르세유 Ligue 1 준우승",
+      "2021 샤흐타르 도네츠크 우크라이나 슈퍼컵 우승"
+    ],
+    "principles": [
+      [
+        "빌드업",
+        "골키퍼와 수비수가 상대를 가까이 유인한 뒤 중앙 조합 또는 대각 전환으로 압박을 넘는다."
+      ],
+      [
+        "공격",
+        "윙어는 터치라인 폭을 유지하고 중앙의 다섯 명이 라인 사이와 박스를 점유한다."
+      ],
+      [
+        "수비·전환",
+        "공격적인 맨투맨 압박으로 높은 위치에서 탈취하지만 압박 실패 뒤 공간이 위험하다."
+      ]
+    ],
+    "sourceLinks": [
+      {
+        "label": "Premier League De Zerbi 변화",
+        "url": "https://www.premierleague.com/en/news/4639124/what-has-de-zerbi-changed-at-spurs-and-which-players-have-benefited"
+      }
+    ],
+    "analysisStatus": "reviewed-2026-08-24",
+    "sliders": {
+      "defline": 75,
+      "width": 79,
+      "press": 90
+    },
+    "controlValuesStatus": "tacticvision-analysis-estimate"
   }
 }

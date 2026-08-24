@@ -1,0 +1,958 @@
+{
+  "schemaVersion": "1.0.0",
+  "season": "2026-27",
+  "asOf": "2026-08-24T05:16:47Z",
+  "sourceId": "wikidata-cc0",
+  "sourceUrl": "https://www.wikidata.org/",
+  "license": "CC0-1.0",
+  "relation": "preferred P286 (head coach)",
+  "managers": {
+    "arsenal": {
+      "teamId": "arsenal",
+      "teamWikidataId": "Q9617",
+      "managerWikidataId": "Q185572",
+      "englishName": "Mikel Arteta",
+      "koreanName": "미켈 아르테타",
+      "birthDate": "1982-03-26",
+      "nationalities": [
+        "스페인"
+      ],
+      "imageFileName": "Mikel Arteta 2021 (cropped).png",
+      "imageUrl": null,
+      "imageSelection": "wikidata-p18",
+      "imageFocus": "50% 18%",
+      "imageProviderId": null,
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Mikel%20Arteta%202021%20%28cropped%29.png",
+      "coachingCareer": [
+        {
+          "teamWikidataId": "Q9617",
+          "teamName": "아스널 FC",
+          "startDate": "2019-12-20",
+          "endDate": null,
+          "sourceUrl": "https://www.wikidata.org/wiki/Q9617"
+        }
+      ],
+      "sourceUrl": "https://www.wikidata.org/wiki/Q185572",
+      "sourceRevision": 2520269528
+    },
+    "astonvilla": {
+      "teamId": "astonvilla",
+      "teamWikidataId": "Q18711",
+      "managerWikidataId": "Q295610",
+      "englishName": "Unai Emery",
+      "koreanName": "우나이 에메리",
+      "birthDate": "1971-11-03",
+      "nationalities": [
+        "스페인"
+      ],
+      "imageFileName": "Unai Emery - Sevilla (cropped).jpg",
+      "imageUrl": null,
+      "imageSelection": "wikidata-p18",
+      "imageFocus": "50% 18%",
+      "imageProviderId": null,
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Unai%20Emery%20-%20Sevilla%20%28cropped%29.jpg",
+      "coachingCareer": [
+        {
+          "teamWikidataId": "Q10329",
+          "teamName": "세비야 FC",
+          "startDate": "2013-01-01",
+          "endDate": "2016-06-01",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q10329"
+        },
+        {
+          "teamWikidataId": "Q483020",
+          "teamName": "파리 생제르맹 FC",
+          "startDate": "2016-07-01",
+          "endDate": "2018-06-30",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q483020"
+        },
+        {
+          "teamWikidataId": "Q9617",
+          "teamName": "아스널 FC",
+          "startDate": "2018-05-23",
+          "endDate": "2019-11-29",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q9617"
+        },
+        {
+          "teamWikidataId": "Q12297",
+          "teamName": "비야레알 CF",
+          "startDate": "2020-07-23",
+          "endDate": "2022-10-25",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q12297"
+        },
+        {
+          "teamWikidataId": "Q18711",
+          "teamName": "아스톤 빌라 FC",
+          "startDate": "2022-11-01",
+          "endDate": null,
+          "sourceUrl": "https://www.wikidata.org/wiki/Q18711"
+        }
+      ],
+      "sourceUrl": "https://www.wikidata.org/wiki/Q295610",
+      "sourceRevision": 2526685223
+    },
+    "bournemouth": {
+      "teamId": "bournemouth",
+      "teamWikidataId": "Q19568",
+      "managerWikidataId": "Q542990",
+      "englishName": "Marco Rose",
+      "koreanName": "마르코 로제",
+      "birthDate": "1976-09-11",
+      "nationalities": [
+        "독일"
+      ],
+      "imageFileName": "FC Admira Wacker Mödling vs. FC Red Bull Salzburg 2018-04-15 (023).jpg",
+      "imageUrl": null,
+      "imageSelection": "wikidata-p18",
+      "imageFocus": "50% 18%",
+      "imageProviderId": null,
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:FC%20Admira%20Wacker%20M%C3%B6dling%20vs.%20FC%20Red%20Bull%20Salzburg%202018-04-15%20%28023%29.jpg",
+      "coachingCareer": [
+        {
+          "teamWikidataId": "Q28936927",
+          "teamName": "1. FC Lokomotive Leipzig",
+          "startDate": "2012-01-01",
+          "endDate": "2013-01-01",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q28936927"
+        },
+        {
+          "teamWikidataId": "Q101959",
+          "teamName": "보루시아 묀헨글라트바흐",
+          "startDate": "2019-07-01",
+          "endDate": "2021-06-30",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q101959"
+        },
+        {
+          "teamWikidataId": "Q41420",
+          "teamName": "보루시아 도르트문트",
+          "startDate": "2021-07-01",
+          "endDate": "2022-05-20",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q41420"
+        },
+        {
+          "teamWikidataId": "Q702455",
+          "teamName": "RB 라이프치히",
+          "startDate": "2022-09-08",
+          "endDate": "2025-03-30",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q702455"
+        },
+        {
+          "teamWikidataId": "Q19568",
+          "teamName": "AFC 본머스",
+          "startDate": "2026-06-03",
+          "endDate": null,
+          "sourceUrl": "https://www.wikidata.org/wiki/Q19568"
+        }
+      ],
+      "sourceUrl": "https://www.wikidata.org/wiki/Q542990",
+      "sourceRevision": 2518359098
+    },
+    "brentford": {
+      "teamId": "brentford",
+      "teamWikidataId": "Q19571",
+      "managerWikidataId": "Q316704",
+      "englishName": "Keith Andrews",
+      "koreanName": "키스 앤드루스",
+      "birthDate": "1980-09-13",
+      "nationalities": [
+        "아일랜드"
+      ],
+      "imageFileName": "Keith Andrews, Brentford F.C. head coach, August 2025.jpg",
+      "imageUrl": null,
+      "imageSelection": "wikidata-p18",
+      "imageFocus": "50% 18%",
+      "imageProviderId": null,
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Keith%20Andrews%2C%20Brentford%20F.C.%20head%20coach%2C%20August%202025.jpg",
+      "coachingCareer": [
+        {
+          "teamWikidataId": "Q19571",
+          "teamName": "브렌트퍼드 FC",
+          "startDate": "2025-06-27",
+          "endDate": null,
+          "sourceUrl": "https://www.wikidata.org/wiki/Q19571"
+        }
+      ],
+      "sourceUrl": "https://www.wikidata.org/wiki/Q316704",
+      "sourceRevision": 2516116626
+    },
+    "brighton": {
+      "teamId": "brighton",
+      "teamWikidataId": "Q19453",
+      "managerWikidataId": "Q115819313",
+      "englishName": "Fabian Hürzeler",
+      "koreanName": "파비안 휘르첼러",
+      "birthDate": "1993-02-26",
+      "nationalities": [
+        "독일",
+        "스위스",
+        "미국"
+      ],
+      "imageFileName": "Fabian Hürzeler 24012026 (1).jpg",
+      "imageUrl": null,
+      "imageSelection": "wikidata-p18",
+      "imageFocus": "50% 18%",
+      "imageProviderId": null,
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Fabian%20H%C3%BCrzeler%2024012026%20%281%29.jpg",
+      "coachingCareer": [
+        {
+          "teamWikidataId": "Q6463",
+          "teamName": "FC 장크트파울리",
+          "startDate": "2022-12-06",
+          "endDate": "2024-06-30",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q6463"
+        },
+        {
+          "teamWikidataId": "Q19453",
+          "teamName": "브라이턴 앤 호브 앨비언 FC",
+          "startDate": "2024-07-01",
+          "endDate": null,
+          "sourceUrl": "https://www.wikidata.org/wiki/Q19453"
+        }
+      ],
+      "sourceUrl": "https://www.wikidata.org/wiki/Q115819313",
+      "sourceRevision": 2530459738
+    },
+    "chelsea": {
+      "teamId": "chelsea",
+      "teamWikidataId": "Q9616",
+      "managerWikidataId": "Q208104",
+      "englishName": "Xabi Alonso",
+      "koreanName": "샤비 알론소",
+      "birthDate": "1981-11-25",
+      "nationalities": [
+        "스페인"
+      ],
+      "imageFileName": "Los Caminos del fútbol. Xabi Alonso (39666778464) (cropped).jpg",
+      "imageUrl": null,
+      "imageSelection": "wikidata-p18",
+      "imageFocus": "50% 18%",
+      "imageProviderId": null,
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Los%20Caminos%20del%20f%C3%BAtbol.%20Xabi%20Alonso%20%2839666778464%29%20%28cropped%29.jpg",
+      "coachingCareer": [
+        {
+          "teamWikidataId": "Q1067750",
+          "teamName": "레알 소시에다드 B",
+          "startDate": "2020-01-01",
+          "endDate": null,
+          "sourceUrl": "https://www.wikidata.org/wiki/Q1067750"
+        },
+        {
+          "teamWikidataId": "Q104761",
+          "teamName": "바이어 04 레버쿠젠",
+          "startDate": "2022-10-05",
+          "endDate": "2025-05-25",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q104761"
+        },
+        {
+          "teamWikidataId": "Q8682",
+          "teamName": "레알 마드리드 CF",
+          "startDate": "2025-05-25",
+          "endDate": "2026-01-12",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q8682"
+        },
+        {
+          "teamWikidataId": "Q9616",
+          "teamName": "첼시 FC",
+          "startDate": "2026-07-01",
+          "endDate": null,
+          "sourceUrl": "https://www.wikidata.org/wiki/Q9616"
+        }
+      ],
+      "sourceUrl": "https://www.wikidata.org/wiki/Q208104",
+      "sourceRevision": 2533442913
+    },
+    "coventry": {
+      "teamId": "coventry",
+      "teamWikidataId": "Q19580",
+      "managerWikidataId": "Q41533",
+      "englishName": "Frank Lampard",
+      "koreanName": "프랭크 램퍼드",
+      "birthDate": "1978-06-20",
+      "nationalities": [
+        "영국"
+      ],
+      "imageFileName": "Frank Lampard 2019.jpg",
+      "imageUrl": null,
+      "imageSelection": "wikidata-p18",
+      "imageFocus": "50% 18%",
+      "imageProviderId": null,
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Frank%20Lampard%202019.jpg",
+      "coachingCareer": [
+        {
+          "teamWikidataId": "Q19470",
+          "teamName": "더비 카운티 FC",
+          "startDate": "2018-05-31",
+          "endDate": "2019-07-04",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q19470"
+        },
+        {
+          "teamWikidataId": "Q9616",
+          "teamName": "첼시 FC",
+          "startDate": "2019-07-03",
+          "endDate": "2021-01-25",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q9616"
+        },
+        {
+          "teamWikidataId": "Q5794",
+          "teamName": "에버턴 FC",
+          "startDate": "2022-01-31",
+          "endDate": "2023-01-23",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q5794"
+        },
+        {
+          "teamWikidataId": "Q9616",
+          "teamName": "첼시 FC",
+          "startDate": "2023-04-06",
+          "endDate": "2023-06-30",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q9616"
+        },
+        {
+          "teamWikidataId": "Q19580",
+          "teamName": "코번트리 시티 FC",
+          "startDate": "2024-11-28",
+          "endDate": null,
+          "sourceUrl": "https://www.wikidata.org/wiki/Q19580"
+        }
+      ],
+      "sourceUrl": "https://www.wikidata.org/wiki/Q41533",
+      "sourceRevision": 2534902671
+    },
+    "crystalpalace": {
+      "teamId": "crystalpalace",
+      "teamWikidataId": "Q19467",
+      "managerWikidataId": "Q123584452",
+      "englishName": "Pierre Sage",
+      "koreanName": "피에르 사주",
+      "birthDate": "1979-05-05",
+      "nationalities": [
+        "프랑스"
+      ],
+      "imageFileName": "Pierre Sage lors d’un entraînement.jpg",
+      "imageUrl": "https://r2.thesportsdb.com/images/media/player/thumb/uepsdr1765991153.jpg",
+      "imageSelection": "thesportsdb-reviewed-portrait",
+      "imageFocus": "50% 22%",
+      "imageProviderId": "34433303",
+      "imageSourceUrl": "https://www.thesportsdb.com/player/34433303/pierre-sage",
+      "coachingCareer": [
+        {
+          "teamWikidataId": "Q704",
+          "teamName": "올랭피크 리오네",
+          "startDate": "2023-11-30",
+          "endDate": "2025-01-27",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q704"
+        },
+        {
+          "teamWikidataId": "Q191843",
+          "teamName": "RC 랑스",
+          "startDate": "2025-06-02",
+          "endDate": "2026-06-01",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q191843"
+        },
+        {
+          "teamWikidataId": "Q19467",
+          "teamName": "크리스털 팰리스 FC",
+          "startDate": "2026-06-15",
+          "endDate": null,
+          "sourceUrl": "https://www.wikidata.org/wiki/Q19467"
+        }
+      ],
+      "sourceUrl": "https://www.wikidata.org/wiki/Q123584452",
+      "sourceRevision": 2534851270
+    },
+    "everton": {
+      "teamId": "everton",
+      "teamWikidataId": "Q5794",
+      "managerWikidataId": "Q297252",
+      "englishName": "David Moyes",
+      "koreanName": "데이비드 모예스",
+      "birthDate": "1963-04-25",
+      "nationalities": [
+        "영국"
+      ],
+      "imageFileName": "David Moyes 2025.jpg",
+      "imageUrl": null,
+      "imageSelection": "wikidata-p18",
+      "imageFocus": "50% 18%",
+      "imageProviderId": null,
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:David%20Moyes%202025.jpg",
+      "coachingCareer": [
+        {
+          "teamWikidataId": "Q18656",
+          "teamName": "맨체스터 유나이티드 FC",
+          "startDate": "2013-07-01",
+          "endDate": "2014-04-22",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q18656"
+        },
+        {
+          "teamWikidataId": "Q18747",
+          "teamName": "웨스트햄 유나이티드 FC",
+          "startDate": "2019-12-29",
+          "endDate": "2024-06-30",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q18747"
+        },
+        {
+          "teamWikidataId": "Q5794",
+          "teamName": "에버턴 FC",
+          "startDate": "2025-01-11",
+          "endDate": null,
+          "sourceUrl": "https://www.wikidata.org/wiki/Q5794"
+        }
+      ],
+      "sourceUrl": "https://www.wikidata.org/wiki/Q297252",
+      "sourceRevision": 2526685042
+    },
+    "fulham": {
+      "teamId": "fulham",
+      "teamWikidataId": "Q18708",
+      "managerWikidataId": "Q250901",
+      "englishName": "Álvaro Arbeloa",
+      "koreanName": "알바로 아르벨로아",
+      "birthDate": "1983-01-17",
+      "nationalities": [
+        "스페인"
+      ],
+      "imageFileName": "Álvaro Arbeloa.jpg",
+      "imageUrl": null,
+      "imageSelection": "wikidata-p18",
+      "imageFocus": "50% 18%",
+      "imageProviderId": null,
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%C3%81lvaro%20Arbeloa.jpg",
+      "coachingCareer": [
+        {
+          "teamWikidataId": "Q6101985",
+          "teamName": "레알 마드리드 후베닐",
+          "startDate": "2022-07-01",
+          "endDate": null,
+          "sourceUrl": "https://www.wikidata.org/wiki/Q6101985"
+        },
+        {
+          "teamWikidataId": "Q8682",
+          "teamName": "레알 마드리드 CF",
+          "startDate": "2026-01-13",
+          "endDate": "2026-01-01",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q8682"
+        },
+        {
+          "teamWikidataId": "Q18708",
+          "teamName": "풀럼 FC",
+          "startDate": "2026-07-08",
+          "endDate": null,
+          "sourceUrl": "https://www.wikidata.org/wiki/Q18708"
+        }
+      ],
+      "sourceUrl": "https://www.wikidata.org/wiki/Q250901",
+      "sourceRevision": 2532211180
+    },
+    "hullcity": {
+      "teamId": "hullcity",
+      "teamWikidataId": "Q19477",
+      "managerWikidataId": "Q1444714",
+      "englishName": "Sergej Jakirović",
+      "koreanName": "세르게이 야키로비치",
+      "birthDate": "1976-12-23",
+      "nationalities": [
+        "보스니아 헤르체고비나"
+      ],
+      "imageFileName": "Sergej Jakirović 2024 (cropped).png",
+      "imageUrl": null,
+      "imageSelection": "wikidata-p18",
+      "imageFocus": "50% 18%",
+      "imageProviderId": null,
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Sergej%20Jakirovi%C4%87%202024%20%28cropped%29.png",
+      "coachingCareer": [
+        {
+          "teamWikidataId": "Q918425",
+          "teamName": "HNK 고리차",
+          "startDate": "2018-07-01",
+          "endDate": "2020-02-24",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q918425"
+        },
+        {
+          "teamWikidataId": "Q210530",
+          "teamName": "NK 마리보르",
+          "startDate": "2020-04-23",
+          "endDate": "2020-08-29",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q210530"
+        },
+        {
+          "teamWikidataId": "Q399282",
+          "teamName": "HSK 즈리니스키 모스타르",
+          "startDate": "2020-12-28",
+          "endDate": "2022-11-29",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q399282"
+        },
+        {
+          "teamWikidataId": "Q172803",
+          "teamName": "GNK 디나모 자그레브",
+          "startDate": "2023-08-21",
+          "endDate": "2024-09-19",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q172803"
+        },
+        {
+          "teamWikidataId": "Q608122",
+          "teamName": "카이세리스포르",
+          "startDate": "2025-01-28",
+          "endDate": "2025-06-30",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q608122"
+        },
+        {
+          "teamWikidataId": "Q19477",
+          "teamName": "헐 시티 AFC",
+          "startDate": "2025-06-01",
+          "endDate": null,
+          "sourceUrl": "https://www.wikidata.org/wiki/Q19477"
+        }
+      ],
+      "sourceUrl": "https://www.wikidata.org/wiki/Q1444714",
+      "sourceRevision": 2527297860
+    },
+    "ipswich": {
+      "teamId": "ipswich",
+      "teamWikidataId": "Q9653",
+      "managerWikidataId": "Q731946",
+      "englishName": "Gary O'Neil",
+      "koreanName": "게리 오닐",
+      "birthDate": "1983-05-18",
+      "nationalities": [
+        "영국"
+      ],
+      "imageFileName": "GaryO'NeilWHU.jpg",
+      "imageUrl": null,
+      "imageSelection": "wikidata-p18",
+      "imageFocus": "50% 18%",
+      "imageProviderId": null,
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:GaryO%27NeilWHU.jpg",
+      "coachingCareer": [
+        {
+          "teamWikidataId": "Q19568",
+          "teamName": "AFC 본머스",
+          "startDate": "2022-08-30",
+          "endDate": "2022-11-27",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q19568"
+        },
+        {
+          "teamWikidataId": "Q19568",
+          "teamName": "AFC 본머스",
+          "startDate": "2022-11-28",
+          "endDate": "2023-06-19",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q19568"
+        },
+        {
+          "teamWikidataId": "Q19500",
+          "teamName": "울버햄프턴 원더러스 FC",
+          "startDate": "2023-08-09",
+          "endDate": "2024-12-15",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q19500"
+        },
+        {
+          "teamWikidataId": "Q126334",
+          "teamName": "RC 스트라스부르",
+          "startDate": "2026-01-07",
+          "endDate": "2026-06-01",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q126334"
+        },
+        {
+          "teamWikidataId": "Q9653",
+          "teamName": "입스위치 타운 FC",
+          "startDate": "2026-06-23",
+          "endDate": null,
+          "sourceUrl": "https://www.wikidata.org/wiki/Q9653"
+        }
+      ],
+      "sourceUrl": "https://www.wikidata.org/wiki/Q731946",
+      "sourceRevision": 2530453126
+    },
+    "leeds": {
+      "teamId": "leeds",
+      "teamWikidataId": "Q1128631",
+      "managerWikidataId": "Q30015253",
+      "englishName": "Daniel Farke",
+      "koreanName": "다니엘 파르케",
+      "birthDate": "1976-10-30",
+      "nationalities": [
+        "독일"
+      ],
+      "imageFileName": "Daniel Farke.jpg",
+      "imageUrl": null,
+      "imageSelection": "wikidata-p18",
+      "imageFocus": "50% 18%",
+      "imageProviderId": null,
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Daniel%20Farke.jpg",
+      "coachingCareer": [
+        {
+          "teamWikidataId": "Q865720",
+          "teamName": "보루시아 도르트문트 II",
+          "startDate": "2015-01-01",
+          "endDate": "2017-01-01",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q865720"
+        },
+        {
+          "teamWikidataId": "Q220854",
+          "teamName": "FC 크라스노다르",
+          "startDate": "2022-01-13",
+          "endDate": "2022-03-02",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q220854"
+        },
+        {
+          "teamWikidataId": "Q101959",
+          "teamName": "보루시아 묀헨글라트바흐",
+          "startDate": "2022-07-01",
+          "endDate": "2023-06-02",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q101959"
+        },
+        {
+          "teamWikidataId": "Q1128631",
+          "teamName": "리즈 유나이티드 FC",
+          "startDate": "2023-07-04",
+          "endDate": null,
+          "sourceUrl": "https://www.wikidata.org/wiki/Q1128631"
+        }
+      ],
+      "sourceUrl": "https://www.wikidata.org/wiki/Q30015253",
+      "sourceRevision": 2535359042
+    },
+    "liverpool": {
+      "teamId": "liverpool",
+      "teamWikidataId": "Q1130849",
+      "managerWikidataId": "Q317216",
+      "englishName": "Andoni Iraola",
+      "koreanName": "안도니 이라올라",
+      "birthDate": "1982-06-22",
+      "nationalities": [
+        "스페인"
+      ],
+      "imageFileName": "Andoni Iraola 2023.jpg",
+      "imageUrl": null,
+      "imageSelection": "wikidata-p18",
+      "imageFocus": "50% 18%",
+      "imageProviderId": null,
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Andoni%20Iraola%202023.jpg",
+      "coachingCareer": [
+        {
+          "teamWikidataId": "Q291447",
+          "teamName": "AEK 라르나카 FC",
+          "startDate": "2018-05-23",
+          "endDate": "2019-01-14",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q291447"
+        },
+        {
+          "teamWikidataId": "Q11997",
+          "teamName": "CD 미란데스",
+          "startDate": "2019-07-10",
+          "endDate": "2020-07-21",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q11997"
+        },
+        {
+          "teamWikidataId": "Q10300",
+          "teamName": "라요 바예카노",
+          "startDate": "2020-08-06",
+          "endDate": "2023-06-30",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q10300"
+        },
+        {
+          "teamWikidataId": "Q19568",
+          "teamName": "AFC 본머스",
+          "startDate": "2023-07-01",
+          "endDate": "2026-05-01",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q19568"
+        },
+        {
+          "teamWikidataId": "Q1130849",
+          "teamName": "리버풀 FC",
+          "startDate": "2026-06-04",
+          "endDate": null,
+          "sourceUrl": "https://www.wikidata.org/wiki/Q1130849"
+        }
+      ],
+      "sourceUrl": "https://www.wikidata.org/wiki/Q317216",
+      "sourceRevision": 2526685258
+    },
+    "mancity": {
+      "teamId": "mancity",
+      "teamWikidataId": "Q50602",
+      "managerWikidataId": "Q317282",
+      "englishName": "Enzo Maresca",
+      "koreanName": "엔초 마레스카",
+      "birthDate": "1980-02-10",
+      "nationalities": [
+        "이탈리아"
+      ],
+      "imageFileName": "Maresca Championship trophy Leicester (cropped).jpg",
+      "imageUrl": null,
+      "imageSelection": "wikidata-p18",
+      "imageFocus": "50% 18%",
+      "imageProviderId": null,
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Maresca%20Championship%20trophy%20Leicester%20%28cropped%29.jpg",
+      "coachingCareer": [
+        {
+          "teamWikidataId": "Q2693",
+          "teamName": "파르마 FC",
+          "startDate": "2021-05-27",
+          "endDate": "2021-11-23",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q2693"
+        },
+        {
+          "teamWikidataId": "Q19481",
+          "teamName": "레스터 시티 FC",
+          "startDate": "2023-07-01",
+          "endDate": "2024-06-30",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q19481"
+        },
+        {
+          "teamWikidataId": "Q9616",
+          "teamName": "첼시 FC",
+          "startDate": "2024-07-01",
+          "endDate": "2026-01-01",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q9616"
+        },
+        {
+          "teamWikidataId": "Q50602",
+          "teamName": "맨체스터 시티 FC",
+          "startDate": "2026-06-29",
+          "endDate": null,
+          "sourceUrl": "https://www.wikidata.org/wiki/Q50602"
+        }
+      ],
+      "sourceUrl": "https://www.wikidata.org/wiki/Q317282",
+      "sourceRevision": 2531947074
+    },
+    "manutd": {
+      "teamId": "manutd",
+      "teamWikidataId": "Q18656",
+      "managerWikidataId": "Q29566",
+      "englishName": "Michael Carrick",
+      "koreanName": "마이클 캐릭",
+      "birthDate": "1981-07-28",
+      "nationalities": [
+        "영국"
+      ],
+      "imageFileName": "Michael Carrick 12042025 (5) (cropped).jpg",
+      "imageUrl": null,
+      "imageSelection": "wikidata-p18",
+      "imageFocus": "50% 18%",
+      "imageProviderId": null,
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Michael%20Carrick%2012042025%20%285%29%20%28cropped%29.jpg",
+      "coachingCareer": [
+        {
+          "teamWikidataId": "Q18656",
+          "teamName": "맨체스터 유나이티드 FC",
+          "startDate": "2021-11-21",
+          "endDate": "2021-11-29",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q18656"
+        },
+        {
+          "teamWikidataId": "Q18661",
+          "teamName": "미들즈브러 FC",
+          "startDate": "2022-10-25",
+          "endDate": "2025-06-04",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q18661"
+        },
+        {
+          "teamWikidataId": "Q18656",
+          "teamName": "맨체스터 유나이티드 FC",
+          "startDate": "2026-01-13",
+          "endDate": null,
+          "sourceUrl": "https://www.wikidata.org/wiki/Q18656"
+        }
+      ],
+      "sourceUrl": "https://www.wikidata.org/wiki/Q29566",
+      "sourceRevision": 2530466470
+    },
+    "newcastle": {
+      "teamId": "newcastle",
+      "teamWikidataId": "Q18716",
+      "managerWikidataId": "Q690028",
+      "englishName": "Matthias Jaissle",
+      "koreanName": "마티아스 야이슬레",
+      "birthDate": "1988-04-05",
+      "nationalities": [
+        "독일"
+      ],
+      "imageFileName": "FC Salzburg vs. AC Mailand (UEFA Championsleague 2022-09-06) 15.jpg",
+      "imageUrl": null,
+      "imageSelection": "wikidata-p18",
+      "imageFocus": "50% 18%",
+      "imageProviderId": null,
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:FC%20Salzburg%20vs.%20AC%20Mailand%20%28UEFA%20Championsleague%202022-09-06%29%2015.jpg",
+      "coachingCareer": [
+        {
+          "teamWikidataId": "Q1387293",
+          "teamName": "FC 리퍼링",
+          "startDate": "2021-01-01",
+          "endDate": "2021-07-12",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q1387293"
+        },
+        {
+          "teamWikidataId": "Q994811",
+          "teamName": "FC 레드불 잘츠부르크",
+          "startDate": "2021-07-01",
+          "endDate": "2023-07-28",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q994811"
+        },
+        {
+          "teamWikidataId": "Q44441",
+          "teamName": "알아흘리",
+          "startDate": "2023-07-28",
+          "endDate": null,
+          "sourceUrl": "https://www.wikidata.org/wiki/Q44441"
+        },
+        {
+          "teamWikidataId": "Q18716",
+          "teamName": "뉴캐슬 유나이티드 FC",
+          "startDate": "2026-08-05",
+          "endDate": null,
+          "sourceUrl": "https://www.wikidata.org/wiki/Q18716"
+        }
+      ],
+      "sourceUrl": "https://www.wikidata.org/wiki/Q690028",
+      "sourceRevision": 2534027938
+    },
+    "nottinghamforest": {
+      "teamId": "nottinghamforest",
+      "teamWikidataId": "Q19490",
+      "managerWikidataId": "Q874777",
+      "englishName": "Oliver Glasner",
+      "koreanName": "올리버 글라스너",
+      "birthDate": "1974-08-28",
+      "nationalities": [
+        "오스트리아"
+      ],
+      "imageFileName": "2022128173931 2022-05-08 Fussball Eintracht Frankfurt vs Borussia Mönchengladbach - Sven - 1D X MK II - 2395 - B70I8506 (cropped).jpg",
+      "imageUrl": null,
+      "imageSelection": "wikidata-p18",
+      "imageFocus": "50% 18%",
+      "imageProviderId": null,
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:2022128173931%202022-05-08%20Fussball%20Eintracht%20Frankfurt%20vs%20Borussia%20M%C3%B6nchengladbach%20-%20Sven%20-%201D%20X%20MK%20II%20-%202395%20-%20B70I8506%20%28cropped%29.jpg",
+      "coachingCareer": [
+        {
+          "teamWikidataId": "Q392310",
+          "teamName": "LASK",
+          "startDate": "2015-06-01",
+          "endDate": "2019-06-30",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q392310"
+        },
+        {
+          "teamWikidataId": "Q101859",
+          "teamName": "VfL 볼프스부르크",
+          "startDate": "2019-07-01",
+          "endDate": "2021-06-30",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q101859"
+        },
+        {
+          "teamWikidataId": "Q38245",
+          "teamName": "아인트라흐트 프랑크푸르트",
+          "startDate": "2021-07-01",
+          "endDate": "2023-06-30",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q38245"
+        },
+        {
+          "teamWikidataId": "Q19467",
+          "teamName": "크리스털 팰리스 FC",
+          "startDate": "2024-02-20",
+          "endDate": "2026-05-01",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q19467"
+        },
+        {
+          "teamWikidataId": "Q19490",
+          "teamName": "노팅엄 포리스트 FC",
+          "startDate": "2026-07-06",
+          "endDate": null,
+          "sourceUrl": "https://www.wikidata.org/wiki/Q19490"
+        }
+      ],
+      "sourceUrl": "https://www.wikidata.org/wiki/Q874777",
+      "sourceRevision": 2526311502
+    },
+    "sunderland": {
+      "teamId": "sunderland",
+      "teamWikidataId": "Q18739",
+      "managerWikidataId": "Q3455749",
+      "englishName": "Régis Le Bris",
+      "koreanName": "레지 르 브리",
+      "birthDate": "1975-12-06",
+      "nationalities": [
+        "프랑스"
+      ],
+      "imageFileName": null,
+      "imageUrl": "https://r2.thesportsdb.com/images/media/player/thumb/0pefxo1681225433.jpg",
+      "imageSelection": "thesportsdb-reviewed-portrait",
+      "imageFocus": "50% 22%",
+      "imageProviderId": "34217257",
+      "imageSourceUrl": "https://www.thesportsdb.com/player/34217257/regis-le-bris",
+      "coachingCareer": [
+        {
+          "teamWikidataId": "Q48911",
+          "teamName": "FC 로리앙",
+          "startDate": "2022-06-27",
+          "endDate": "2024-06-30",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q48911"
+        },
+        {
+          "teamWikidataId": "Q18739",
+          "teamName": "선덜랜드 AFC",
+          "startDate": "2024-07-01",
+          "endDate": null,
+          "sourceUrl": "https://www.wikidata.org/wiki/Q18739"
+        }
+      ],
+      "sourceUrl": "https://www.wikidata.org/wiki/Q3455749",
+      "sourceRevision": 2522578714
+    },
+    "tottenham": {
+      "teamId": "tottenham",
+      "teamWikidataId": "Q18741",
+      "managerWikidataId": "Q2032119",
+      "englishName": "Roberto De Zerbi",
+      "koreanName": "로베르토 데 제르비",
+      "birthDate": "1979-06-06",
+      "nationalities": [
+        "이탈리아"
+      ],
+      "imageFileName": "Roberto De Zerbi, 2019 (cropped).png",
+      "imageUrl": null,
+      "imageSelection": "wikidata-p18",
+      "imageFocus": "50% 18%",
+      "imageProviderId": null,
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Roberto%20De%20Zerbi%2C%202019%20%28cropped%29.png",
+      "coachingCareer": [
+        {
+          "teamWikidataId": "Q8603",
+          "teamName": "US 사수올로 칼초",
+          "startDate": "2018-06-13",
+          "endDate": "2021-05-25",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q8603"
+        },
+        {
+          "teamWikidataId": "Q172969",
+          "teamName": "FC 샤흐타르 도네츠크",
+          "startDate": "2021-07-01",
+          "endDate": "2022-07-11",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q172969"
+        },
+        {
+          "teamWikidataId": "Q19453",
+          "teamName": "브라이턴 앤 호브 앨비언 FC",
+          "startDate": "2022-09-18",
+          "endDate": "2024-05-20",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q19453"
+        },
+        {
+          "teamWikidataId": "Q132885",
+          "teamName": "올랭피크 드 마르세유",
+          "startDate": "2024-07-01",
+          "endDate": "2026-02-11",
+          "sourceUrl": "https://www.wikidata.org/wiki/Q132885"
+        },
+        {
+          "teamWikidataId": "Q18741",
+          "teamName": "토트넘 홋스퍼 FC",
+          "startDate": "2026-03-31",
+          "endDate": null,
+          "sourceUrl": "https://www.wikidata.org/wiki/Q18741"
+        }
+      ],
+      "sourceUrl": "https://www.wikidata.org/wiki/Q2032119",
+      "sourceRevision": 2488674253
+    }
+  }
+}
