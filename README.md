@@ -9,14 +9,14 @@ TacticVision은 EPL 팀·선수·감독·경기·전술 데이터를 연결해 �
 
 ## 프로젝트 상태
 
-현재 앱 화면과 주요 상호작용은 `app/`에 통합되어 있습니다. openfootball의
-Public Domain 경기 결과는 정기 동기화하며, 나머지 샘플·정적 데이터는 검증된
-EPL 데이터 계약으로 순차적으로 정규화하고 있습니다.
+현재 앱 화면과 주요 상호작용은 `app/`에 통합되어 있습니다. 일정·결과·순위,
+이전 시즌 비교, 20팀 스쿼드와 첫 경기 라인업을 외부 사실 데이터에 연결하고
+JSON 계약으로 검증합니다.
 
 - 공식 MVP 진입점: `app/index.html`
 - 앱 구조: HTML, CSS, JavaScript, JSON
-- 현재 데이터: 데모용 정적 데이터와 JSON이 혼합된 상태
-- 현재 단계: MVP 기준선 확정 및 데이터 연동 준비
+- 현재 데이터: 19개 JSON 계약, EPL 20팀, canonical 선수 479명
+- 현재 단계: MVP 공개 배포와 포트폴리오 최종 검증
 - 구현 완료 판정: [`docs/product/ACCEPTANCE.md`](docs/product/ACCEPTANCE.md)
 
 루트 `index.html`과 `apps/web/`은 이전 구현을 비교하기 위해 보존한 레거시
@@ -73,6 +73,14 @@ python3 -m http.server 8000
 브라우저 보안 정책 때문에 JSON 요청이 실패할 수 있으므로 HTTP 서버를
 사용해야 합니다.
 
+## 공개 배포
+
+`main`의 `app/`은 데이터와 정적 구조를 검증한 뒤 `gh-pages` 브랜치로 배포합니다.
+
+- 배포 주소: <https://parkchansik034.github.io/TacticVision-EPL2627/>
+- 배포 명령: `git subtree push --prefix app origin gh-pages`
+- 출시·시연 문서: [`docs/verification/ISSUE_15_RELEASE.md`](docs/verification/ISSUE_15_RELEASE.md)
+
 ## 저장소 구조
 
 ```text
@@ -102,7 +110,7 @@ MVP 데이터는 세 층으로 구분합니다.
 2. TacticVision Standards: Position, Role, Playstyle, Archetype, Tactical Function
 3. TacticVision Analysis: 비교 지표, 전술 적합도와 분석 결과
 
-실제 데이터 연동 전 다음을 확정해야 합니다.
+실제 데이터 운영을 확장할 때 다음 조건을 계속 유지해야 합니다.
 
 - 데이터 출처, 기준 시점, 라이선스와 재배포 조건
 - 팀·선수·감독·포메이션·전술·역할 필드
@@ -199,10 +207,11 @@ MVP 데이터는 세 층으로 구분합니다.
 
 ## 현재 알려진 제한
 
-- 실제 EPL 전체 데이터와 라이브 API는 아직 연결되지 않았습니다.
-- 일부 화면 데이터와 비교 지표는 JavaScript 내부 데모 정의를 사용합니다.
+- 현재 순위는 TheSportsDB에서 확인된 완료 경기 기준이며 경기 종료 후 동기화가 필요합니다.
+- 첫 경기를 치른 18팀은 공식 선발을 사용하고 Chelsea·Fulham은 예상 XI를 사용합니다.
+- 일부 전술 설명은 TacticVision 분석 문구이며 관측 통계나 AI 예측이 아닙니다.
 - 백엔드, 사용자 계정, 저장, AI 분석과 경기 시뮬레이션은 MVP 범위 밖입니다.
-- 자동화된 브라우저·접근성·데이터 무결성 검증은 후속 작업입니다.
+- 데이터 계약·참조 무결성은 자동 검증하며 실제 브라우저·접근성 결과는 출시 검증 문서에 기록합니다.
 - 외부 CDN을 사용하므로 오프라인 환경에서는 일부 스타일·아이콘·폰트가
   표시되지 않을 수 있습니다.
 
@@ -210,6 +219,13 @@ MVP 데이터는 세 층으로 구분합니다.
 
 ```bash
 python3 scripts/validate_data.py
+python3 scripts/validate_app.py
+```
+
+검증 후 GitHub Pages를 갱신하려면 저장소 루트에서 실행합니다.
+
+```bash
+git subtree push --prefix app origin gh-pages
 ```
 
 ### 경기 결과 자동 갱신
