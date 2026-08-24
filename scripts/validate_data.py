@@ -13,7 +13,7 @@ from typing import Any
 DATA_DIR = Path(__file__).resolve().parents[1] / "app" / "data"
 FILES = {
     "formations.json", "managers.json", "managers-current.json", "manifest.json", "players.json",
-    "people-comparison.json", "player-provider-crosscheck.json", "roles.json", "squads.json", "tactics.json", "team-comparison.json", "team-provider-crosscheck.json", "teams.json",
+    "people-comparison.json", "player-name-ko-namuwiki.json", "player-provider-crosscheck.json", "roles.json", "squad-provider.json", "squads.json", "tactics.json", "team-comparison.json", "team-provider-crosscheck.json", "teams.json",
 }
 KEBAB = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 FORMATION = re.compile(r"^\d(?:-\d)+$")
@@ -128,13 +128,20 @@ def validate_players(value: Any, team_ids: set[str]) -> None:
     check(isinstance(value, dict), "players.json", "must be an object")
     if not isinstance(value, dict):
         return
-    required = {"name", "teamId", "number", "position", "age", "height", "foot", "nationality", "positions"}
+    required = {"name", "englishName", "koreanName", "teamId", "number", "position", "age", "height", "foot", "nationality", "positions"}
     for player_id, player in value.items():
         location = f"players.json.{player_id}"
         check(player_id.startswith("player-") and bool(KEBAB.fullmatch(player_id)), location, "must use player-<name-slug>")
         if not fields(player, required, location):
             continue
         check(nonempty(player["name"]), f"{location}.name", "must be non-empty")
+        check(nonempty(player["englishName"]), f"{location}.englishName", "must be non-empty")
+        check(nonempty(player["koreanName"]), f"{location}.koreanName", "must be non-empty")
+        if player.get("nameLocalizationSource") == "namuwiki-squad-template-pair":
+            check(bool(re.search(r"[가-힣]", player["koreanName"])), f"{location}.koreanName", "verified NamuWiki name must contain Hangul")
+            check(nonempty(player.get("nameSourceUrl")), f"{location}.nameSourceUrl", "verified name must include its document URL")
+        elif player.get("nameLocalizationSource") == "unverified-use-english":
+            check(player["koreanName"] == player["englishName"], f"{location}.koreanName", "unverified name must safely fall back to English")
         check(player["teamId"] in team_ids, f"{location}.teamId", "must reference teams.json")
         check(player["number"] is None or (isinstance(player["number"], int) and 1 <= player["number"] <= 99),
               f"{location}.number", "must be null or 1..99")
@@ -234,10 +241,11 @@ def validate_squads(value: Any, team_ids: set[str]) -> None:
         if not fields(squad, {"starters", "substitutes"}, location):
             continue
         starters, substitutes = squad["starters"], squad["substitutes"]
-        check(isinstance(starters, list) and len(starters) == 11, f"{location}.starters", "must contain 11 records")
+        check(isinstance(starters, list) and len(starters) <= 11, f"{location}.starters", "must contain at most 11 verified records")
         check(isinstance(substitutes, list), f"{location}.substitutes", "must be an array")
         if not isinstance(starters, list) or not isinstance(substitutes, list):
             continue
+        check(len(starters) + len(substitutes) >= 15, f"{location}.roster", "must contain at least 15 verified players for the MVP")
         team_ids_seen: list[str] = []
         for index, player in enumerate(starters + substitutes):
             item = f"{location}.roster[{index}]"

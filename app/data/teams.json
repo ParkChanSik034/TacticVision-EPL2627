@@ -6,7 +6,7 @@
     "shortName": "ARS",
     "primaryColor": "#EF0107",
     "defaultFormation": "4-3-3",
-    "dataStatus": "planned"
+    "dataStatus": "partial"
   },
   "astonvilla": {
     "id": "astonvilla",
@@ -15,7 +15,7 @@
     "shortName": "AVL",
     "primaryColor": "#670E36",
     "defaultFormation": "4-2-3-1",
-    "dataStatus": "planned"
+    "dataStatus": "partial"
   },
   "bournemouth": {
     "id": "bournemouth",
@@ -24,7 +24,7 @@
     "shortName": "BOU",
     "primaryColor": "#DA291C",
     "defaultFormation": "4-2-3-1",
-    "dataStatus": "planned"
+    "dataStatus": "partial"
   },
   "brentford": {
     "id": "brentford",
@@ -33,7 +33,7 @@
     "shortName": "BRE",
     "primaryColor": "#E30613",
     "defaultFormation": "4-3-3",
-    "dataStatus": "planned"
+    "dataStatus": "partial"
   },
   "brighton": {
     "id": "brighton",
@@ -42,7 +42,7 @@
     "shortName": "BHA",
     "primaryColor": "#0057B8",
     "defaultFormation": "4-2-3-1",
-    "dataStatus": "planned"
+    "dataStatus": "partial"
   },
   "chelsea": {
     "id": "chelsea",
@@ -60,7 +60,7 @@
     "shortName": "COV",
     "primaryColor": "#69B3E7",
     "defaultFormation": "4-2-3-1",
-    "dataStatus": "planned"
+    "dataStatus": "partial"
   },
   "crystalpalace": {
     "id": "crystalpalace",
@@ -69,7 +69,7 @@
     "shortName": "CRY",
     "primaryColor": "#1B458F",
     "defaultFormation": "3-4-2-1",
-    "dataStatus": "planned"
+    "dataStatus": "partial"
   },
   "everton": {
     "id": "everton",
@@ -78,7 +78,7 @@
     "shortName": "EVE",
     "primaryColor": "#003399",
     "defaultFormation": "4-2-3-1",
-    "dataStatus": "planned"
+    "dataStatus": "partial"
   },
   "fulham": {
     "id": "fulham",
@@ -87,7 +87,7 @@
     "shortName": "FUL",
     "primaryColor": "#000000",
     "defaultFormation": "4-2-3-1",
-    "dataStatus": "planned"
+    "dataStatus": "partial"
   },
   "hullcity": {
     "id": "hullcity",
@@ -96,7 +96,7 @@
     "shortName": "HUL",
     "primaryColor": "#F5A12D",
     "defaultFormation": "4-2-3-1",
-    "dataStatus": "planned"
+    "dataStatus": "partial"
   },
   "ipswich": {
     "id": "ipswich",
@@ -105,7 +105,7 @@
     "shortName": "IPS",
     "primaryColor": "#0044AA",
     "defaultFormation": "4-2-3-1",
-    "dataStatus": "planned"
+    "dataStatus": "partial"
   },
   "leeds": {
     "id": "leeds",
@@ -114,7 +114,7 @@
     "shortName": "LEE",
     "primaryColor": "#FFCD00",
     "defaultFormation": "4-2-3-1",
-    "dataStatus": "planned"
+    "dataStatus": "partial"
   },
   "liverpool": {
     "id": "liverpool",
@@ -123,7 +123,7 @@
     "shortName": "LIV",
     "primaryColor": "#C8102E",
     "defaultFormation": "4-3-3",
-    "dataStatus": "planned"
+    "dataStatus": "partial"
   },
   "mancity": {
     "id": "mancity",
@@ -141,7 +141,7 @@
     "shortName": "MUN",
     "primaryColor": "#DA291C",
     "defaultFormation": "3-4-2-1",
-    "dataStatus": "planned"
+    "dataStatus": "partial"
   },
   "newcastle": {
     "id": "newcastle",
@@ -150,7 +150,7 @@
     "shortName": "NEW",
     "primaryColor": "#241F20",
     "defaultFormation": "4-3-3",
-    "dataStatus": "planned"
+    "dataStatus": "partial"
   },
   "nottinghamforest": {
     "id": "nottinghamforest",
@@ -159,7 +159,7 @@
     "shortName": "NFO",
     "primaryColor": "#DD0000",
     "defaultFormation": "4-2-3-1",
-    "dataStatus": "planned"
+    "dataStatus": "partial"
   },
   "sunderland": {
     "id": "sunderland",
@@ -168,7 +168,7 @@
     "shortName": "SUN",
     "primaryColor": "#EB172B",
     "defaultFormation": "4-3-3",
-    "dataStatus": "planned"
+    "dataStatus": "partial"
   },
   "tottenham": {
     "id": "tottenham",

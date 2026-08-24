@@ -378,8 +378,8 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
                     comparisonId:comparison?.id||null,
                     teamId:player.teamId,
                     club:team?.koreanName||team?.name||'소속 미확정',
-                    name:comparison?.name||player.name,
-                    english:player.name,
+                    name:comparison?.name||player.koreanName||player.name,
+                    english:player.englishName||player.name,
                     number:player.number,
                     position:player.position,
                     positions:player.positions,
@@ -388,6 +388,7 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
                     birthDate:player.age==null?'미확정':`${player.age}세 · ${entityData.teams[player.teamId]?.dataStatus||'prototype'} snapshot`,
                     height:player.height==null?'미확정':`${player.height} cm`,
                     foot:player.foot||'미확정',
+                    nameLocalizationSource:player.nameLocalizationSource||'unverified-use-english',
                     tags:player.positions,
                     attributes:{},
                     positionGroup:'',
@@ -408,7 +409,7 @@ const completeTeamDirectory = [{"id": "arsenal", "name": "Arsenal", "short": "AR
                 {label:'팀 비교',meta:'기능 · 팀 스타일 비교',type:'view',target:'teamCompare',icon:'fa-shield-halved'},
                 {label:'선수 비교',meta:'기능 · 선수 데이터 비교',type:'view',target:'playerCompare',icon:'fa-person-running'}
             ];
-            const players = getContractPlayers().map(p=>({label:p.name,meta:`선수 · ${p.club} · ${p.position}`,type:'player',target:p.id,icon:'fa-person-running'}));
+            const players = getContractPlayers().filter(p=>p.nameLocalizationSource!=='unverified-use-english').map(p=>({label:p.name,meta:`선수 · ${p.club} · ${p.position}`,type:'player',target:p.id,icon:'fa-person-running'}));
             const managers = Object.entries(entityData.currentManagers?.managers||{}).map(([teamId,m])=>({label:m.koreanName||m.englishName,meta:`감독 · ${entityData.teams[teamId]?.koreanName||entityData.teams[teamId]?.name||teamId}`,type:'manager',target:teamId,icon:'fa-user-tie'}));
             const teams = getAllTeams().map(t=>({label:t.name,sub:`${t.koreanName||''} ${t.short}`,meta:`팀 · ${t.manager} · ${t.formation}`,type:'team',target:t.id,icon:'fa-shield-halved'}));
             return [...players,...managers,...teams,...tools];
@@ -1353,7 +1354,7 @@ function renderTeamProfile(t){
   const strengths=document.getElementById('team-detail-strengths');if(strengths)strengths.innerHTML=t.strengths.length?t.strengths.map(x=>`<span class="px-3 py-1.5 rounded-lg bg-cyan-400/10 border border-cyan-400/20 text-xs text-cyan-200">${escapeHtml(x)}</span>`).join(''):'<span class="text-xs text-slate-500">전술 강점 데이터가 아직 없습니다.</span>';
   const metrics=document.getElementById('team-detail-metrics');if(metrics)metrics.innerHTML=Object.keys(t.metrics).length?Object.entries(t.metrics).map(([k,v])=>`<div><div class="flex justify-between text-xs"><span class="text-slate-400">${teamMetricLabels[k]||k}</span><b>${v}</b></div><div class="h-2 bg-white/5 rounded-full mt-2 overflow-hidden"><div class="h-full bg-cyan-400 rounded-full" style="width:${v}%"></div></div></div>`).join(''):'<div class="sm:col-span-2 rounded-xl border border-white/5 p-4 text-xs text-slate-500">팀 분석 지표가 아직 없습니다.</div>';
   const managerKey=Object.entries(managerProfileData).find(([,m])=>m.teamId===t.id)?.[0]; const manager=document.getElementById('team-detail-manager');if(manager)manager.innerHTML=managerKey?`<button onclick="openManagerProfile('${managerKey}')" class="w-full text-left rounded-xl border border-eplNeon/20 bg-eplNeon/5 p-4 hover:bg-eplNeon/10"><div class="text-[10px] text-eplNeon">MANAGER PROFILE</div><strong class="block mt-1">${managerProfileData[managerKey].name}</strong><p class="text-xs text-slate-400 mt-2">${managerProfileData[managerKey].identity} · 감독 상세 보기</p></button>`:`<div class="rounded-xl border border-white/5 p-4 text-sm text-slate-400">${t.manager}<p class="text-xs mt-2 text-slate-600">상세 감독 프로필은 데이터 업데이트 예정입니다.</p></div>`;
-  const players=getContractPlayers().filter(p=>p.teamId===t.id);const box=document.getElementById('team-detail-players');if(box)box.innerHTML=players.length?players.map(p=>`<button onclick="openPlayerProfile('${p.id}')" class="text-left rounded-xl border border-white/5 bg-white/[.025] p-4 hover:border-purple-400/30"><div class="text-[10px] font-mono text-purple-300">${p.position}</div><strong class="block mt-1">${escapeHtml(p.name)}</strong><span class="text-[11px] text-slate-500">#${p.number??'—'} · 선수 상세 보기</span></button>`).join(''):`<div class="sm:col-span-2 rounded-xl border border-white/5 p-5 text-xs text-slate-500">이 팀에 연결된 canonical 선수 데이터가 아직 없습니다.</div>`;
+  const allPlayers=getContractPlayers().filter(p=>p.teamId===t.id);const players=allPlayers.filter(p=>p.nameLocalizationSource!=='unverified-use-english');const hiddenCount=allPlayers.length-players.length;const box=document.getElementById('team-detail-players');if(box)box.innerHTML=(players.length?players.map(p=>`<button onclick="openPlayerProfile('${p.id}')" class="text-left rounded-xl border border-white/5 bg-white/[.025] p-4 hover:border-purple-400/30"><div class="text-[10px] font-mono text-purple-300">${p.position}</div><strong class="block mt-1">${escapeHtml(p.name)}</strong><span class="text-[11px] text-slate-500">#${p.number??'—'} · 선수 상세 보기</span></button>`).join(''):`<div class="sm:col-span-2 rounded-xl border border-white/5 p-5 text-xs text-slate-500">검증된 한글 이름 선수가 아직 없습니다.</div>`)+(hiddenCount?`<div class="sm:col-span-2 rounded-xl border border-amber-300/10 bg-amber-300/[.03] p-4 text-xs text-amber-100/70">한글 이름을 확인하지 못한 ${hiddenCount}명은 잘못된 표기를 방지하기 위해 숨겼습니다.</div>`:'');
   const tactic=document.getElementById('team-detail-tactics');if(tactic)tactic.onclick=()=>{if(typeof changeTeam==='function')changeTeam(t.id);switchView('tactical');};
 }
 
